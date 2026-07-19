@@ -126,6 +126,49 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-19 (8)
+- **Realwerte-Spalten von der Projections-Seite entfernt** — die gehören
+  ausschließlich auf die Teams-Seite (rechte Spalte pro Team). Projections
+  zeigt jetzt nur noch die eigene Projektion + Z-Score, dafür wieder
+  schmaler und übersichtlicher.
+- **Zubac-Korrektur:** kein Datenfehler — er wurde tatsächlich für den
+  #5 Pick zu den Pacers getradet. Der vorherige Hinweis dazu war falsch,
+  danke für den Gegencheck.
+- **Z-Score-Basis wählbar:** Top 200 / Top 400 / Alle als Ranking-
+  Population für die Mittelwert-/Streuungsberechnung der Z-Scores
+  (sortiert nach projizierten Punkten). Ändert sichtbar die Z-Scores und
+  damit das Ranking — getestet an Jokić: 11,06 (Top 200) vs. 17,71
+  (Alle). Auswahl liegt im einklappbaren Gewichtungs-Panel.
+- **Bedingte Farbformatierung (Excel-Stil)** auf der Projections-Seite:
+  jede Stat-Spalte einzeln von Rot (schlechtester Wert der aktuell
+  angezeigten Spieler) bis Grün (bester Wert) eingefärbt, TOV invertiert.
+  Neu berechnet bei jeder Sortierung/Suche.
+- **Dieselbe Farbformatierung auf der Teams-Seite**, aber pro Team separat
+  berechnet (nicht global) — sowohl links (aktueller Kader) als auch
+  rechts (End-Rotation), damit der Vergleich innerhalb des Kaders
+  aussagekräftig bleibt statt gegen die ganze Liga.
+
+### 2026-07-19 (7)
+- **Team-Seite umgebaut:** Missverständnis aus der letzten Runde korrigiert
+  — das Zwei-Spalten-Layout ("meine Minuten" vs. "Realwerte") gehört auf
+  die Team-Seite, nicht (nur) auf die Projections-Seite. Jedes Team zeigt
+  jetzt zwei Tabellen nebeneinander:
+  - **Links:** aktueller Kader (ESPN-Fetch) mit editierbaren Minuten,
+    9-Cat-Stats hochgerechnet aus den Pro-Minute-Raten der letzten Saison,
+    plus GP der letzten Saison als Referenz.
+  - **Rechts:** tatsächliche End-Rotation der letzten Saison (aktuell
+    2025-26, aus den BBM-Daten gefiltert nach Team) mit echten Minuten,
+    echten 9-Cat-Stats und echtem GP — nicht editierbar, dient als
+    Vergleich.
+- **Team-Kürzel-Mapping ergänzt** (`ESPN_TO_BBM_TEAM`): ESPN und die
+  BBM-Exportdateien nutzen teils unterschiedliche Abkürzungen (z.B. ESPN
+  "GS" vs. BBM "GSW", "NO" vs. "NOR", "SA" vs. "SAS", "UTAH" vs. "UTA",
+  "WSH" vs. "WAS") — ohne Mapping wäre die rechte Spalte für diese Teams
+  leer geblieben.
+- **Datenqualitäts-Hinweis entdeckt:** In `Player_Rankings_25-26.xls`
+  steht Ivica Zubac unter Team "IND" statt "LAC" — vermutlich ein Fehler
+  in der Rohdaten-Quelle, nicht im Code. Lohnt sich gegenzuchecken.
+
 ### 2026-07-19 (6)
 - **Bug behoben:** Spieler, die eine ganze Saison komplett verpasst haben
   (z.B. Haliburton, Lillard 2025-26), wurden bisher so dargestellt, als

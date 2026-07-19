@@ -14,7 +14,7 @@
   }
   *{box-sizing:border-box;}
   body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px;}
+  .wrap{max-width:1440px;margin:0 auto;padding:28px 20px 80px;}
   .topnav{display:flex; gap:14px; margin-bottom:22px; font-size:13px;}
   .topnav a{color:var(--muted); text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;}
   .topnav a.active{color:var(--text); border-color:var(--accent); font-weight:600;}
@@ -22,7 +22,7 @@
   .hero{margin-bottom:22px;}
   .eyebrow{font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
   h1{font-family:'Playfair Display',serif; font-weight:800; font-size:32px; margin:0 0 6px; letter-spacing:-0.01em;}
-  .sub{color:var(--muted); font-size:13.5px; line-height:1.5; max-width:680px;}
+  .sub{color:var(--muted); font-size:13.5px; line-height:1.5; max-width:720px;}
 
   .search-row{position:relative; margin-bottom:20px;}
   .search-row input{
@@ -38,33 +38,50 @@
   }
   .empty-state code{background:var(--surface2); padding:2px 6px; border-radius:5px; font-family:'DM Mono',monospace; color:var(--accent2);}
 
-  .team-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:16px;}
-  .team-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+  .team-block{background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:18px; overflow:hidden;}
   .team-header{
-    padding:14px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;
+    padding:14px 18px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;
     background:var(--surface2);
   }
-  .team-name{font-family:'Playfair Display',serif; font-weight:800; font-size:16px;}
+  .team-name{font-family:'Playfair Display',serif; font-weight:800; font-size:17px;}
   .team-count{font-size:11px; color:var(--muted); font-family:'DM Mono',monospace;}
-  .player-row{
-    display:flex; align-items:center; justify-content:space-between; gap:10px;
-    padding:9px 16px; border-bottom:1px solid var(--border); font-size:13px;
+
+  .team-cols{display:grid; grid-template-columns:1fr 1fr;}
+  @media (max-width:900px){.team-cols{grid-template-columns:1fr;}}
+  .col{overflow-x:auto;}
+  .col + .col{border-left:1px solid var(--border);}
+  @media (max-width:900px){.col + .col{border-left:none; border-top:1px solid var(--border);}}
+  .col-title{
+    padding:10px 14px; font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--accent2); background:var(--bg); border-bottom:1px solid var(--border);
   }
-  .player-row:last-child{border-bottom:none;}
-  .player-row.unmatched{opacity:0.55;}
-  .p-name{font-weight:600;}
-  .p-meta{color:var(--muted); font-size:11px; margin-top:1px;}
-  .p-controls{display:flex; align-items:center; gap:6px; flex-shrink:0;}
+  .col-title.right{color:var(--muted);}
+
+  table.stat-table{width:100%; border-collapse:collapse; min-width:520px;}
+  table.stat-table thead th{
+    text-align:right; font-size:9.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--muted); padding:6px 8px; border-bottom:1px solid var(--border); white-space:nowrap;
+  }
+  table.stat-table thead th:first-child{text-align:left;}
+  table.stat-table tbody td{
+    padding:6px 8px; border-bottom:1px solid var(--border); text-align:right; font-size:11.5px;
+    font-variant-numeric:tabular-nums; white-space:nowrap;
+  }
+  table.stat-table tbody tr:last-child td{border-bottom:none;}
+  table.stat-table tbody tr:hover{background:var(--surface2);}
+  table.stat-table td.name-cell{text-align:left; font-weight:600; font-size:12px;}
+  table.stat-table tr.unmatched td{opacity:0.5; font-style:italic;}
+  .pause-tag{color:var(--bad); font-size:9px; font-weight:700; margin-left:5px;}
   .min-input{
-    width:52px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
-    font-family:'DM Mono',monospace; font-size:13px; text-align:right; border-radius:6px; padding:5px 6px; outline:none;
+    width:44px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
+    font-family:'DM Mono',monospace; font-size:11.5px; text-align:right; border-radius:5px; padding:3px 5px; outline:none;
   }
   .min-input:focus{border-color:var(--accent);}
   .min-input.edited{border-color:var(--accent); color:var(--warn);}
-  .p-pts{font-family:'DM Mono',monospace; font-size:12px; color:var(--muted); min-width:44px; text-align:right;}
-  .reset-btn{background:none; border:1px solid var(--border); color:var(--muted); font-size:11px; padding:3px 8px; border-radius:6px; cursor:pointer;}
-  .reset-btn:hover{border-color:var(--accent); color:var(--accent2);}
-  .no-data-tag{font-size:10px; color:var(--bad); font-family:'DM Mono',monospace;}
+  .reset-btn{background:none; border:none; color:var(--muted); font-size:11px; padding:0 2px; cursor:pointer;}
+  .reset-btn:hover{color:var(--accent2);}
+  .no-match-note{padding:10px 14px; font-size:11px; color:var(--muted); font-style:italic;}
+
   footer{margin-top:24px; font-size:11.5px; color:var(--muted); line-height:1.6;}
 </style>
 </head>
@@ -78,7 +95,7 @@
   <div class="hero">
     <div class="eyebrow">MFHFB · Testseite</div>
     <h1>NBA Teams</h1>
-    <p class="sub" id="heroSub">Alle Spieler ihrem aktuellen Team zugeordnet. Minuten hier eintragen — sie werden automatisch in die Projections-Seite übernommen (dort live neu geranked).</p>
+    <p class="sub" id="heroSub">Pro Team zwei Spalten: links der aktuelle Kader mit deinen Minuten (editierbar, 9-Cat-Stats basierend auf letzter Saison), rechts zum Vergleich die tatsächliche End-Rotation der letzten Saison.</p>
   </div>
 
   <div class="search-row">
@@ -94,15 +111,124 @@
 <script src="players-data.js"></script>
 <script>
   // rosters-data.js existiert erst, nachdem scripts/fetch-rosters.mjs
-  // (manuell oder via GitHub Action) einmal gelaufen ist. Falls nicht
-  // vorhanden, zeigen wir einen Hinweis statt eines Fehlers.
+  // (manuell oder via GitHub Action) einmal gelaufen ist.
   window.addEventListener('error', function(){});
 </script>
 <script src="rosters-data.js" onerror="window.__rostersMissing = true"></script>
 <script src="assets/shared.js"></script>
 <script>
+// ESPN- und BBM-Team-Kürzel weichen bei ein paar Teams voneinander ab.
+const ESPN_TO_BBM_TEAM = {
+  GS: 'GSW', NO: 'NOR', NY: 'NYK', PHX: 'PHO', SA: 'SAS', UTAH: 'UTA', WSH: 'WAS',
+};
+function toBbmAbbr(espnAbbr) { return ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
+
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
+const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 let query = '';
+
+function fmt(v, d=1) { return v.toFixed(d); }
+
+function statHeaderRow() {
+  return `<tr><th>Spieler</th><th>Min</th><th>GP</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>3PM</th><th>FG%</th><th>FT%</th><th>TO</th></tr>`;
+}
+
+const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'ftpct', 'tov'];
+const HEAT_INVERT = { tov: true };
+
+function computeHeatRange(items, getVal) {
+  const range = {};
+  HEAT_COLS.forEach(col => {
+    const vals = items.map(it => getVal(it, col)).filter(v => v !== null && !isNaN(v));
+    range[col] = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 0, max: 0 };
+  });
+  return range;
+}
+function heatFor(range, col, val) {
+  return mfhfbHeatStyle(val, range[col].min, range[col].max, !!HEAT_INVERT[col]);
+}
+
+// Linke Spalte: aktueller (ESPN-)Kader, editierbare Minuten, Stats aus den
+// Pro-Minute-Raten der letzten Saison hochgerechnet. Heatmap-Farben werden
+// pro Team (also innerhalb dieser Liste) berechnet.
+function renderLeftRows(rosterPlayers, weights, overrides) {
+  if (!rosterPlayers.length) return `<tr><td colspan="11" class="no-match-note">Keine Spieler</td></tr>`;
+
+  const items = rosterPlayers.map(rp => {
+    const match = nameIndex.get(mfhfbNormalizeName(rp.name));
+    if (!match) return { rp, match: null };
+    const key = mfhfbNormalizeName(rp.name);
+    const isEdited = overrides[key] !== undefined;
+    const latest = mfhfbLatestSeason(match);
+    const newestActual = mfhfbNewestSeasonActual(match);
+    const minutes = isEdited ? overrides[key] : latest.mpg;
+    const s = mfhfbComputeProjection(match, minutes, weights);
+    return { rp, match, isEdited, latest, newestActual, minutes, s };
+  });
+
+  const range = computeHeatRange(items.filter(it => it.match), (it, col) => col === 'min' ? it.minutes : it.s[col]);
+
+  return items.map(it => {
+    if (!it.match) return `<tr class="unmatched"><td class="name-cell">${it.rp.name}</td><td colspan="10">keine Rate-Daten</td></tr>`;
+    const { rp, match, isEdited, latest, newestActual, minutes, s } = it;
+    return `<tr>
+      <td class="name-cell">${match.name}${newestActual.missed ? `<span class="pause-tag">⚠ pausiert ${newestActual.label}</span>` : ''}</td>
+      <td style="${heatFor(range,'min',minutes)}">
+        <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48"
+          value="${fmt(minutes)}" data-name="${match.name.replace(/"/g,'&quot;')}" onchange="onMinutesChange(this)">
+        ${isEdited ? `<button class="reset-btn" onclick="onReset('${match.name.replace(/'/g,"\\'")}')">↺</button>` : ''}
+      </td>
+      <td>${latest.gp}</td>
+      <td style="${heatFor(range,'pts',s.pts)}">${fmt(s.pts)}</td>
+      <td style="${heatFor(range,'reb',s.reb)}">${fmt(s.reb)}</td>
+      <td style="${heatFor(range,'ast',s.ast)}">${fmt(s.ast)}</td>
+      <td style="${heatFor(range,'stl',s.stl)}">${fmt(s.stl,1)}</td>
+      <td style="${heatFor(range,'blk',s.blk)}">${fmt(s.blk,1)}</td>
+      <td style="${heatFor(range,'fg3m',s.fg3m)}">${fmt(s.fg3m,1)}</td>
+      <td style="${heatFor(range,'fgpct',s.fgpct)}">${fmt(s.fgpct)}%</td>
+      <td style="${heatFor(range,'ftpct',s.ftpct)}">${fmt(s.ftpct)}%</td>
+      <td style="${heatFor(range,'tov',s.tov)}">${fmt(s.tov,1)}</td>
+    </tr>`;
+  }).join('');
+}
+
+// Rechte Spalte: tatsächliche End-Rotation der letzten Saison für dieses
+// Team (aus players-data.js gefiltert), reale Minuten/Stats, nicht editierbar.
+function renderRightRows(bbmAbbr) {
+  const players = PLAYER_RATES
+    .filter(p => p.team === bbmAbbr)
+    .map(p => {
+      const latest = mfhfbLatestSeason(p);
+      const r = latest.rates;
+      return {
+        p, latest,
+        min: latest.mpg, gp: latest.gp,
+        pts: r.pts * latest.mpg, reb: r.reb * latest.mpg, ast: r.ast * latest.mpg,
+        stl: r.stl * latest.mpg, blk: r.blk * latest.mpg, fg3m: r.fg3m * latest.mpg,
+        fgpct: (r.fgm / r.fga) * 100 || 0, ftpct: (r.ftm / r.fta) * 100 || 0, tov: r.tov * latest.mpg,
+      };
+    })
+    .sort((a, b) => b.min - a.min);
+
+  if (!players.length) return `<tr><td colspan="11" class="no-match-note">Keine Daten für ${bbmAbbr}</td></tr>`;
+
+  const range = computeHeatRange(players, (it, col) => it[col]);
+
+  return players.map(it => `<tr>
+      <td class="name-cell">${it.p.name}</td>
+      <td style="${heatFor(range,'min',it.min)}">${fmt(it.min)}</td>
+      <td>${it.gp}</td>
+      <td style="${heatFor(range,'pts',it.pts)}">${fmt(it.pts)}</td>
+      <td style="${heatFor(range,'reb',it.reb)}">${fmt(it.reb)}</td>
+      <td style="${heatFor(range,'ast',it.ast)}">${fmt(it.ast)}</td>
+      <td style="${heatFor(range,'stl',it.stl)}">${fmt(it.stl,1)}</td>
+      <td style="${heatFor(range,'blk',it.blk)}">${fmt(it.blk,1)}</td>
+      <td style="${heatFor(range,'fg3m',it.fg3m)}">${fmt(it.fg3m,1)}</td>
+      <td style="${heatFor(range,'fgpct',it.fgpct)}">${fmt(it.fgpct)}%</td>
+      <td style="${heatFor(range,'ftpct',it.ftpct)}">${fmt(it.ftpct)}%</td>
+      <td style="${heatFor(range,'tov',it.tov)}">${fmt(it.tov,1)}</td>
+    </tr>`).join('');
+}
 
 function render() {
   const container = document.getElementById('content');
@@ -123,59 +249,45 @@ function render() {
   const q = query.toLowerCase().trim();
 
   document.getElementById('footerText').textContent =
-    `Roster-Stand: ${new Date(ROSTERS_DATA.fetchedAt).toLocaleString('de-DE')} · Quelle: ${ROSTERS_DATA.source} · ${ROSTERS_DATA.teamCount}/30 Teams geladen.`;
+    `Roster-Stand: ${new Date(ROSTERS_DATA.fetchedAt).toLocaleString('de-DE')} · Quelle: ${ROSTERS_DATA.source} · ${ROSTERS_DATA.teamCount}/30 Teams geladen. Rechte Spalte = End-Rotation ${NEWEST_LABEL}.`;
 
   const teamEntries = Object.entries(ROSTERS_DATA.rosters).sort((a, b) => a[0].localeCompare(b[0]));
 
-  const filtered = teamEntries
-    .map(([abbr, team]) => {
-      const players = team.players.filter(p =>
-        !q || team.name.toLowerCase().includes(q) || abbr.toLowerCase().includes(q) || p.name.toLowerCase().includes(q)
-      );
-      return { abbr, team, players };
-    })
-    .filter(t => t.players.length > 0 || (!q));
+  const filtered = teamEntries.filter(([abbr, team]) => {
+    if (!q) return true;
+    if (team.name.toLowerCase().includes(q) || abbr.toLowerCase().includes(q)) return true;
+    return team.players.some(p => p.name.toLowerCase().includes(q));
+  });
 
-  container.innerHTML = `<div class="team-grid">` + filtered.map(({ abbr, team, players }) => {
-    const rows = players.map(rp => {
-      const match = nameIndex.get(mfhfbNormalizeName(rp.name));
-      if (!match) {
-        return `<div class="player-row unmatched">
-          <div>
-            <div class="p-name">${rp.name}</div>
-            <div class="p-meta">${rp.position || ''}${rp.jersey ? ' · #' + rp.jersey : ''}</div>
-          </div>
-          <span class="no-data-tag">keine Rate-Daten</span>
-        </div>`;
-      }
-      const key = mfhfbNormalizeName(rp.name);
-      const isEdited = overrides[key] !== undefined;
-      const latest = mfhfbLatestSeason(match);
-      const newestActual = mfhfbNewestSeasonActual(match);
-      const minutes = isEdited ? overrides[key] : latest.mpg;
-      const proj = mfhfbComputeProjection(match, minutes, weights);
-      return `<div class="player-row">
-        <div>
-          <div class="p-name">${match.name}${newestActual.missed ? ' <span style="color:var(--bad);font-size:10px;font-weight:700;">⚠ pausiert ' + newestActual.label + '</span>' : ''}</div>
-          <div class="p-meta">${rp.position || match.pos} · ${latest.mpg} MPG zuletzt</div>
-        </div>
-        <div class="p-controls">
-          <span class="p-pts">${proj.pts.toFixed(1)} pts</span>
-          <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48"
-            value="${minutes.toFixed(1)}" data-name="${match.name.replace(/"/g,'&quot;')}" onchange="onMinutesChange(this)">
-          ${isEdited ? `<button class="reset-btn" onclick="onReset('${match.name.replace(/'/g,"\\'")}')">↺</button>` : ''}
-        </div>
-      </div>`;
-    }).join('');
+  container.innerHTML = filtered.map(([abbr, team]) => {
+    const bbmAbbr = toBbmAbbr(abbr);
+    const leftPlayers = q
+      ? team.players.filter(p => p.name.toLowerCase().includes(q) || team.name.toLowerCase().includes(q) || abbr.toLowerCase().includes(q))
+      : team.players;
 
-    return `<div class="team-card">
+    return `<div class="team-block">
       <div class="team-header">
         <div class="team-name">${abbr} — ${team.name}</div>
-        <div class="team-count">${players.length} Spieler</div>
+        <div class="team-count">${team.players.length} Spieler (aktuell)</div>
       </div>
-      ${rows || '<div class="player-row"><span class="p-meta">Keine Treffer</span></div>'}
+      <div class="team-cols">
+        <div class="col">
+          <div class="col-title">Aktueller Kader — meine Minuten</div>
+          <table class="stat-table">
+            <thead>${statHeaderRow()}</thead>
+            <tbody>${renderLeftRows(leftPlayers, weights, overrides)}</tbody>
+          </table>
+        </div>
+        <div class="col">
+          <div class="col-title right">End-Rotation ${NEWEST_LABEL} (real)</div>
+          <table class="stat-table">
+            <thead>${statHeaderRow()}</thead>
+            <tbody>${renderRightRows(bbmAbbr)}</tbody>
+          </table>
+        </div>
+      </div>
     </div>`;
-  }).join('') + `</div>`;
+  }).join('') || `<div class="empty-state">Keine Treffer.</div>`;
 }
 
 function onMinutesChange(input) {

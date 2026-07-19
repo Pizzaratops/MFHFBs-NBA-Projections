@@ -176,3 +176,25 @@ function mfhfbComputeProjection(player, minutes, weights) {
     ftpct: fta > 0 ? (ftm / fta) * 100 : 0,
   };
 }
+
+const MFHFB_POOL_KEY = 'mfhfb_zscore_pool_v1';
+
+function mfhfbGetPoolSize() {
+  return localStorage.getItem(MFHFB_POOL_KEY) || 'all'; // 'all' | '200' | '400'
+}
+
+function mfhfbSetPoolSize(v) {
+  localStorage.setItem(MFHFB_POOL_KEY, v);
+}
+
+// Excel-artige bedingte Formatierung: interpoliert zwischen Rot (schlecht)
+// und Grün (gut) je nach Position von `value` zwischen `min` und `max`.
+// invert=true für Kategorien, bei denen weniger besser ist (z.B. TOV).
+function mfhfbHeatStyle(value, min, max, invert) {
+  if (max === min || !isFinite(min) || !isFinite(max)) return '';
+  let t = (value - min) / (max - min);
+  if (invert) t = 1 - t;
+  t = Math.max(0, Math.min(1, t));
+  const hue = Math.round(t * 120); // 0 = rot, 120 = grün
+  return `background-color:hsla(${hue},70%,45%,0.22);color:hsl(${hue},75%,78%);`;
+}

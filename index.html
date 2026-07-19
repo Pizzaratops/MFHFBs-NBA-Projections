@@ -14,7 +14,7 @@
   }
   *{box-sizing:border-box;}
   body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1320px;margin:0 auto;padding:28px 20px 80px;}
+  .wrap{max-width:1280px;margin:0 auto;padding:28px 20px 80px;}
   .topnav{display:flex; gap:14px; margin-bottom:22px; font-size:13px;}
   .topnav a{color:var(--muted); text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;}
   .topnav a.active{color:var(--text); border-color:var(--accent); font-weight:600;}
@@ -34,6 +34,17 @@
   .panel.collapsed .chevron{transform:rotate(-90deg);}
   .panel-body{padding:0 20px 18px;}
   .panel.collapsed .panel-body{display:none;}
+
+  .pool-title{font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:0 0 10px;}
+  .pool-toggle{display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap;}
+  .pool-btn{
+    background:var(--surface2); border:1px solid var(--border); color:var(--muted);
+    font-family:'DM Sans',sans-serif; font-size:12.5px; font-weight:600; padding:7px 14px;
+    border-radius:20px; cursor:pointer;
+  }
+  .pool-btn.active{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .pool-btn:hover:not(.active){border-color:var(--accent); color:var(--accent2);}
+  .pool-hint{font-size:11.5px; color:var(--muted); line-height:1.4; margin:-10px 0 18px;}
 
   .weight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:18px;}
   @media (max-width:640px){.weight-grid{grid-template-columns:1fr;}}
@@ -72,31 +83,26 @@
   .count{font-size:12px; color:var(--muted); margin-bottom:10px;}
 
   .table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow-x:auto;}
-  table{width:100%; border-collapse:collapse; min-width:1140px;}
-  thead tr.group-row th{background:var(--surface2); font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:8px 10px; border-bottom:1px solid var(--border); text-align:center;}
-  thead tr.group-row th.mine{color:var(--accent2);}
-  thead tr.group-row th.actual{color:var(--muted);}
-  thead tr.col-row th{
+  table{width:100%; border-collapse:collapse; min-width:920px;}
+  thead th{
     position:sticky; top:0; background:var(--surface2); text-align:right;
     font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
     color:var(--muted); padding:9px 10px; border-bottom:1px solid var(--border); cursor:pointer; white-space:nowrap;
   }
-  thead tr.col-row th:nth-child(1){text-align:center;}
-  thead tr.col-row th:nth-child(2), thead tr.col-row th:nth-child(3), thead tr.col-row th:nth-child(4){text-align:left;}
-  thead tr.col-row th:hover{color:var(--text);}
-  thead tr.col-row th.sep-col{border-left:1px solid var(--border);}
+  thead th:nth-child(1){text-align:center;}
+  thead th:nth-child(2), thead th:nth-child(3), thead th:nth-child(4){text-align:left;}
+  thead th:hover{color:var(--text);}
+  thead th.sep-col{border-left:1px solid var(--border);}
   tbody td{padding:9px 10px; border-bottom:1px solid var(--border); text-align:right; font-size:13px; font-variant-numeric:tabular-nums; white-space:nowrap;}
   tbody tr:last-child td{border-bottom:none;}
-  tbody tr:hover{background:var(--surface2);}
+  tbody tr:hover td:not([style*="background-color"]){background:var(--surface2);}
   td.rank-cell{text-align:center; color:var(--muted); font-family:'DM Mono',monospace; font-size:12px;}
   td.name-cell{text-align:left;}
   .p-name{font-weight:700; font-size:13.5px;}
   .p-meta{color:var(--muted); font-size:11px; margin-top:1px; font-family:'DM Mono',monospace;}
   td.left{text-align:left;}
   td.sep-col{border-left:1px solid var(--border);}
-  .col-pts{color:var(--text); font-weight:700;}
   .col-z{font-weight:700;}
-  .col-pts-actual{color:var(--muted); font-weight:600;}
   footer{margin-top:22px; font-size:11.5px; color:var(--muted); line-height:1.6;}
 </style>
 </head>
@@ -110,11 +116,11 @@
   <div class="hero">
     <div class="eyebrow">MFHFB · Testseite</div>
     <h1>NBA Projections</h1>
-    <p class="sub" id="heroSub">Basis: Pro-Minute-Produktion mehrerer Saisons. Links deine eingetragene Projektion inkl. Z-Score, rechts die realen Season-Averages.</p>
+    <p class="sub" id="heroSub">Basis: Pro-Minute-Produktion mehrerer Saisons. Deine eingetragene Projektion inkl. Z-Score, farblich markiert je Kategorie.</p>
   </div>
 
   <div class="info-note">
-    Minuten werden hier nicht mehr direkt bearbeitet — trag sie auf der <a href="teams.html">NBA-Teams-Seite</a> ein. Änderungen fließen sofort in dieses Ranking ein.
+    Minuten werden hier nicht mehr direkt bearbeitet — trag sie auf der <a href="teams.html">NBA-Teams-Seite</a> ein. Änderungen fließen sofort in dieses Ranking ein. Reale Season-Averages stehen ebenfalls auf der Teams-Seite (rechte Spalte pro Team).
   </div>
 
   <div class="panel collapsed" id="weightPanel">
@@ -123,6 +129,14 @@
       <span class="chevron">▾</span>
     </div>
     <div class="panel-body">
+      <div class="pool-title">Z-Score-Basis (Ranking-Population)</div>
+      <div class="pool-toggle" id="poolToggle">
+        <button class="pool-btn" data-pool="200">Top 200</button>
+        <button class="pool-btn" data-pool="400">Top 400</button>
+        <button class="pool-btn" data-pool="all">Alle</button>
+      </div>
+      <div class="pool-hint">Bestimmt, welche Spieler in die Mittelwert-/Streuungsberechnung für den Z-Score einfließen (sortiert nach projizierten Punkten). Kleinere Basis = strengerer Maßstab, größere Basis = mehr Grundrauschen von Tiefenkader-Spielern.</div>
+
       <div class="weight-grid">
         <div class="weight-row">
           <div class="weight-label"><span id="w1Label">Vorletztes Jahr</span><span class="weight-val" id="w1val">1.50×</span></div>
@@ -154,12 +168,7 @@
   <div class="table-wrap">
     <table>
       <thead>
-        <tr class="group-row">
-          <th colspan="4"></th>
-          <th colspan="10" class="mine">Meine Projektion</th>
-          <th colspan="5" class="actual">Realwerte <span id="actualSeasonLabel"></span></th>
-        </tr>
-        <tr class="col-row">
+        <tr>
           <th data-k="rank">#</th>
           <th data-k="name">Name</th>
           <th data-k="team">Team</th>
@@ -174,11 +183,6 @@
           <th data-k="fgpct">FG%</th>
           <th data-k="tov">TOV</th>
           <th data-k="z">Z</th>
-          <th data-k="aMin" class="sep-col">Min</th>
-          <th data-k="aPts">PTS</th>
-          <th data-k="aReb">REB</th>
-          <th data-k="aAst">AST</th>
-          <th data-k="aFg3m">3PM</th>
         </tr>
       </thead>
       <tbody id="body"></tbody>
@@ -197,11 +201,13 @@ let query = '';
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 const Z_CATS = ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'tov', 'ftpct', 'fgpct'];
 const CAT_LABELS = { pts:'PTS', reb:'REB', ast:'AST', stl:'STL', blk:'BLK', fg3m:'3PM', tov:'TOV', ftpct:'FT%', fgpct:'FG%' };
+// Spalten, die im Table auch farblich (Heatmap) markiert werden — TOV invertiert.
+const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'tov', 'z'];
+const HEAT_INVERT = { tov: true };
 
 document.getElementById('heroSub').textContent =
   `Basis: Pro-Minute-Produktion aus ${SEASON_LABELS.length} Saison${SEASON_LABELS.length !== 1 ? 's' : ''} (${SEASON_LABELS.join(', ')}), ${PLAYER_RATES.length} Spieler.`;
 document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
-document.getElementById('actualSeasonLabel').textContent = `(${NEWEST_LABEL})`;
 
 if (SEASON_LABELS.length >= 2) {
   document.getElementById('w1Label').textContent = `Vorletztes Jahr (${SEASON_LABELS[SEASON_LABELS.length - 2]})`;
@@ -210,10 +216,26 @@ if (SEASON_LABELS.length >= 2) {
 
 let weights = mfhfbGetWeights();
 let catWeights = mfhfbGetCategoryWeights();
+let poolSize = mfhfbGetPoolSize();
 document.getElementById('w1').value = weights.w1;
 document.getElementById('w2').value = weights.w2;
 document.getElementById('w1val').textContent = weights.w1.toFixed(2) + '×';
 document.getElementById('w2val').textContent = weights.w2.toFixed(2) + '×';
+
+function updatePoolButtons() {
+  document.querySelectorAll('.pool-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.pool === poolSize);
+  });
+}
+updatePoolButtons();
+document.querySelectorAll('.pool-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    poolSize = btn.dataset.pool;
+    mfhfbSetPoolSize(poolSize);
+    updatePoolButtons();
+    render();
+  });
+});
 
 // Kategorie-Slider dynamisch bauen
 document.getElementById('catGrid').innerHTML = Z_CATS.map(cat => `
@@ -239,12 +261,15 @@ document.getElementById('weightPanelHead').addEventListener('click', () => {
 function resetWeights() {
   weights = { ...MFHFB_DEFAULT_SEASON_WEIGHTS };
   catWeights = { ...MFHFB_DEFAULT_CATEGORY_WEIGHTS };
+  poolSize = 'all';
   mfhfbSetWeights(weights);
   mfhfbSetCategoryWeights(catWeights);
+  mfhfbSetPoolSize(poolSize);
   document.getElementById('w1').value = weights.w1;
   document.getElementById('w2').value = weights.w2;
   document.getElementById('w1val').textContent = weights.w1.toFixed(2) + '×';
   document.getElementById('w2val').textContent = weights.w2.toFixed(2) + '×';
+  updatePoolButtons();
   Z_CATS.forEach(cat => {
     document.getElementById(`cw_${cat}`).value = catWeights[cat];
     document.getElementById(`cw_${cat}_val`).textContent = catWeights[cat].toFixed(2);
@@ -267,14 +292,21 @@ function computeAll() {
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : latest.mpg;
     const proj = mfhfbComputeProjection(p, minutes, weights);
-    const actual = mfhfbNewestSeasonActual(p);
-    return { p, s: proj, a: actual, edited: overrides[key] !== undefined };
+    return { p, s: proj, edited: overrides[key] !== undefined };
   });
 
-  // Z-Scores über den kompletten Datensatz berechnen (Kategorie für Kategorie)
+  // Z-Score-Population bestimmen: Top 200 / Top 400 / Alle, sortiert nach
+  // projizierten Punkten. Mean/SD kommen aus dieser Population, angewendet
+  // wird der Z-Score trotzdem auf ALLE Spieler (auch außerhalb der Basis).
+  let pool = rows;
+  if (poolSize === '200' || poolSize === '400') {
+    const n = poolSize === '200' ? 200 : 400;
+    pool = [...rows].sort((a, b) => b.s.pts - a.s.pts).slice(0, n);
+  }
+
   const stats = {};
   Z_CATS.forEach(cat => {
-    const vals = rows.map(r => r.s[cat]);
+    const vals = pool.map(r => r.s[cat]);
     const m = mean(vals);
     stats[cat] = { mean: m, sd: stdev(vals, m) };
   });
@@ -304,10 +336,7 @@ function render() {
     else if (sortKey === 'team') { av = x.p.team; bv = y.p.team; }
     else if (sortKey === 'pos') { av = x.p.pos; bv = y.p.pos; }
     else if (sortKey === 'z') { av = x.z; bv = y.z; }
-    else if (/^a[A-Z]/.test(sortKey)) {
-      const k = sortKey[1].toLowerCase() + sortKey.slice(2);
-      av = x.a[k]; bv = y.a[k];
-    } else { av = x.s[sortKey]; bv = y.s[sortKey]; }
+    else { av = x.s[sortKey]; bv = y.s[sortKey]; }
     const c = typeof av === 'string' ? av.localeCompare(bv) : av - bv;
     return sortAsc ? c : -c;
   });
@@ -315,7 +344,15 @@ function render() {
   window.__mfhfbCurrentRows = rows;
   document.getElementById('count').textContent = `${rows.length} Spieler`;
 
-  document.getElementById('body').innerHTML = rows.map(({p, s, a, z, edited}, i) => `<tr>
+  // Min/Max je Heatmap-Spalte über die aktuell angezeigten (gefilterten) Zeilen.
+  const heatRange = {};
+  HEAT_COLS.forEach(col => {
+    const vals = rows.map(r => col === 'z' ? r.z : r.s[col]);
+    heatRange[col] = { min: Math.min(...vals), max: Math.max(...vals) };
+  });
+  const heat = (col, val) => mfhfbHeatStyle(val, heatRange[col].min, heatRange[col].max, !!HEAT_INVERT[col]);
+
+  document.getElementById('body').innerHTML = rows.map(({p, s, z, edited}, i) => `<tr>
       <td class="rank-cell">${i + 1}.</td>
       <td class="name-cell">
         <div class="p-name">${p.name}</div>
@@ -323,38 +360,28 @@ function render() {
       </td>
       <td class="left">${p.team}</td>
       <td class="left">${p.pos}</td>
-      <td class="sep-col" style="color:${edited ? 'var(--warn)' : 'var(--text)'}">${fmt(s.min)}</td>
-      <td class="col-pts">${fmt(s.pts)}</td>
-      <td>${fmt(s.reb)}</td>
-      <td>${fmt(s.ast)}</td>
-      <td>${fmt(s.stl,1)}</td>
-      <td>${fmt(s.blk,1)}</td>
-      <td>${fmt(s.fg3m,1)}</td>
-      <td>${fmt(s.fgpct)}%</td>
-      <td>${fmt(s.tov,1)}</td>
-      <td class="col-z" style="color:${z >= 0 ? 'var(--good)' : 'var(--bad)'}">${z >= 0 ? '+' : ''}${fmt(z,2)}</td>
-      ${a.missed
-        ? `<td class="sep-col" colspan="5" style="text-align:center;color:var(--muted);font-style:italic;">nicht gespielt (${a.label})</td>`
-        : `<td class="sep-col">${fmt(a.min)}</td>
-      <td class="col-pts-actual">${fmt(a.pts)}</td>
-      <td>${fmt(a.reb)}</td>
-      <td>${fmt(a.ast)}</td>
-      <td>${fmt(a.fg3m,1)}</td>`}
+      <td class="sep-col" style="${edited ? 'color:var(--warn);' : ''}${heat('min', s.min)}">${fmt(s.min)}</td>
+      <td style="${heat('pts', s.pts)}">${fmt(s.pts)}</td>
+      <td style="${heat('reb', s.reb)}">${fmt(s.reb)}</td>
+      <td style="${heat('ast', s.ast)}">${fmt(s.ast)}</td>
+      <td style="${heat('stl', s.stl)}">${fmt(s.stl,1)}</td>
+      <td style="${heat('blk', s.blk)}">${fmt(s.blk,1)}</td>
+      <td style="${heat('fg3m', s.fg3m)}">${fmt(s.fg3m,1)}</td>
+      <td style="${heat('fgpct', s.fgpct)}">${fmt(s.fgpct)}%</td>
+      <td style="${heat('tov', s.tov)}">${fmt(s.tov,1)}</td>
+      <td class="col-z" style="${heat('z', z)}">${z >= 0 ? '+' : ''}${fmt(z,2)}</td>
     </tr>`).join('');
 }
 
 function downloadCSV() {
   const rows = window.__mfhfbCurrentRows || computeAll();
-  const header = ['Rank','Name','Team','Pos','Min','PTS','REB','AST','STL','BLK','3PM','FG%','TOV','Z-Score',
-                   `Actual_Min_${NEWEST_LABEL}`,`Actual_PTS_${NEWEST_LABEL}`,`Actual_REB_${NEWEST_LABEL}`,`Actual_AST_${NEWEST_LABEL}`,`Actual_3PM_${NEWEST_LABEL}`,`Missed_${NEWEST_LABEL}`,'RecentGP'];
+  const header = ['Rank','Name','Team','Pos','Min','PTS','REB','AST','STL','BLK','3PM','FG%','TOV','Z-Score','RecentGP'];
   const lines = [header.join(',')];
   rows.forEach((r, i) => {
     const row = [
       i + 1, `"${r.p.name}"`, r.p.team, r.p.pos,
       fmt(r.s.min), fmt(r.s.pts), fmt(r.s.reb), fmt(r.s.ast), fmt(r.s.stl,1), fmt(r.s.blk,1), fmt(r.s.fg3m,1), fmt(r.s.fgpct), fmt(r.s.tov,1),
       fmt(r.z,2),
-      fmt(r.a.min), fmt(r.a.pts), fmt(r.a.reb), fmt(r.a.ast), fmt(r.a.fg3m,1),
-      r.a.missed ? 'ja' : 'nein',
       mfhfbRecentGP(r.p),
     ];
     lines.push(row.join(','));
@@ -372,7 +399,7 @@ function downloadCSV() {
 
 document.getElementById('search').addEventListener('input', e => { query = e.target.value; render(); });
 
-document.querySelectorAll('thead tr.col-row th').forEach(th => {
+document.querySelectorAll('thead th').forEach(th => {
   th.addEventListener('click', () => {
     const k = th.dataset.k;
     if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = false; }
@@ -394,13 +421,15 @@ document.getElementById('w2').addEventListener('input', e => {
 });
 
 document.getElementById('footerText').textContent =
-  `Pro-Minute-Raten aus Season-Totals ÷ MPG je Saison (${SEASON_LABELS.join(', ')}). Z-Score wird kategorienweise über den gesamten Datensatz berechnet und mit den Kategorie-Gewichtungen kombiniert (TOV invertiert). "Realwerte" zeigen die tatsächlichen Averages der Saison ${NEWEST_LABEL} — sobald 2026-27 läuft, werden diese Spalten täglich mit den aktuellen Live-Stats überschrieben. Minuten-Änderungen kommen von der Teams-Seite (localStorage, geräteweit noch nicht synchronisiert).`;
+  `Pro-Minute-Raten aus Season-Totals ÷ MPG je Saison (${SEASON_LABELS.join(', ')}). Z-Score wird kategorienweise über die gewählte Ranking-Population berechnet und mit den Kategorie-Gewichtungen kombiniert (TOV invertiert). Farben markieren je Spalte den besten (grün) bis schlechtesten (rot) Wert der aktuell angezeigten Spieler. Minuten-Änderungen kommen von der Teams-Seite (localStorage, geräteweit noch nicht synchronisiert).`;
 
 // Live-Update, wenn auf der Teams-Seite (anderer Tab) Minuten geändert werden
 window.addEventListener('storage', (e) => {
-  if (e.key === MFHFB_STORAGE_KEY || e.key === MFHFB_WEIGHT_KEY || e.key === MFHFB_CATWEIGHT_KEY) {
+  if (e.key === MFHFB_STORAGE_KEY || e.key === MFHFB_WEIGHT_KEY || e.key === MFHFB_CATWEIGHT_KEY || e.key === MFHFB_POOL_KEY) {
     weights = mfhfbGetWeights();
     catWeights = mfhfbGetCategoryWeights();
+    poolSize = mfhfbGetPoolSize();
+    updatePoolButtons();
     render();
   }
 });
