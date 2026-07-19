@@ -5,6 +5,13 @@
 
 const MFHFB_STORAGE_KEY = 'mfhfb_proj_minutes_v1';
 const MFHFB_WEIGHT_KEY = 'mfhfb_proj_weights_v1';
+const MFHFB_CATWEIGHT_KEY = 'mfhfb_cat_weights_v1';
+
+const MFHFB_DEFAULT_SEASON_WEIGHTS = { w1: 1.5, w2: 1.75 };
+const MFHFB_DEFAULT_CATEGORY_WEIGHTS = {
+  pts: 0.9, reb: 1, ast: 1, stl: 0.75, blk: 0.75, fg3m: 0.75,
+  tov: 0.25, ftpct: 0.9, fgpct: 1,
+};
 
 // Namen aus unterschiedlichen Quellen (BBM-Export vs. ESPN) normalisieren,
 // damit z.B. "Nikola Jokić" (ESPN) und "Nikola Jokic" (BBM) gematcht werden.
@@ -59,14 +66,36 @@ function mfhfbResetAllMinutes() {
 
 function mfhfbGetWeights() {
   try {
-    return JSON.parse(localStorage.getItem(MFHFB_WEIGHT_KEY) || 'null') || { w1: 1, w2: 1 };
+    return JSON.parse(localStorage.getItem(MFHFB_WEIGHT_KEY) || 'null') || { ...MFHFB_DEFAULT_SEASON_WEIGHTS };
   } catch {
-    return { w1: 1, w2: 1 };
+    return { ...MFHFB_DEFAULT_SEASON_WEIGHTS };
   }
 }
 
 function mfhfbSetWeights(weights) {
   localStorage.setItem(MFHFB_WEIGHT_KEY, JSON.stringify(weights));
+}
+
+function mfhfbGetCategoryWeights() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(MFHFB_CATWEIGHT_KEY) || 'null');
+    return stored ? { ...MFHFB_DEFAULT_CATEGORY_WEIGHTS, ...stored } : { ...MFHFB_DEFAULT_CATEGORY_WEIGHTS };
+  } catch {
+    return { ...MFHFB_DEFAULT_CATEGORY_WEIGHTS };
+  }
+}
+
+function mfhfbSetCategoryWeights(weights) {
+  localStorage.setItem(MFHFB_CATWEIGHT_KEY, JSON.stringify(weights));
+}
+
+// Letzte bis zu 3 Saisons (neueste zuerst) als GP-Kürzel, z.B. "65/71/82".
+// Fehlende ältere Saisons werden mit "-" aufgefüllt.
+function mfhfbRecentGP(player) {
+  const labels = Object.keys(player.seasons).sort().reverse().slice(0, 3);
+  const gps = labels.map((l) => String(player.seasons[l].gp));
+  while (gps.length < 3) gps.push('-');
+  return gps.join('/');
 }
 
 // Gewichtete Pro-Minute-Rate über die eigenen verfügbaren Saisons eines Spielers.

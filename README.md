@@ -126,6 +126,30 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-19 (5)
+- **Rangnummer** (1., 2., 3., …) links auf der Projections-Seite ergänzt —
+  passt sich automatisch der aktuellen Sortierung an.
+- **Z-Score** hinzugefügt: kategorienweise über den gesamten Datensatz
+  berechnet, mit einstellbaren Kategorie-Gewichtungen kombiniert (TOV
+  invertiert, da weniger besser ist), sortierbar wie jede andere Spalte.
+  Standard-Sortierung der Seite ist jetzt Z-Score absteigend.
+- **Season-Liste unter dem Namen entfernt**, stattdessen kompaktes
+  GP-Kürzel der letzten bis zu 3 Saisons (neueste zuerst, `-` wenn eine
+  Saison fehlt), z.B. `65/70/-`.
+- **Neue Standard-Gewichtung:** vorletzte Saison 1,5×, letzte Saison
+  1,75×; Kategorie-Gewichte PTS 0,9 / REB 1 / AST 1 / STL 0,75 / BLK 0,75
+  / 3PM 0,75 / TOV 0,25 / FT% 0,9 / FG% 1 (Reset-Button stellt diese
+  Werte jederzeit wieder her).
+- **Gewichtungs-Panel ist jetzt einklappbar** (standardmäßig eingeklappt,
+  um Platz zu sparen).
+- **CSV-Export**: Button lädt die aktuell sortierte/gefilterte Tabelle
+  (inkl. Rang, Z-Score, Realwerten, GP-Kürzel) als `.csv` herunter.
+
+**Bekannte Vereinfachung:** FG%/FT% fließen als reine Prozentwerte in den
+Z-Score ein, nicht volumen-gewichtet ("Impact Score" wie bei manchen
+Fantasy-Tools) — ein Spieler mit wenigen, aber sehr genauen Würfen wird
+dadurch etwas überbewertet. Kann bei Bedarf nachgebessert werden.
+
 ### 2026-07-19 (4)
 - **NBA-Teams-Seite** (`teams.html`) hinzugefügt: alle Spieler nach den
   30 NBA-Teams gruppiert, mit Minuten-Eingabe pro Spieler.
