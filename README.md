@@ -16,10 +16,15 @@ Minuten für die kommende Saison — live im Browser, ohne Excel.
 2. **Build-Skript** (`scripts/build-players-data.py`) rechnet jede Stat-Kategorie
    auf eine Pro-Minute-Rate runter: `Rate = Stat/Spiel ÷ Minuten/Spiel`.
 3. **`players-data.js`** enthält das Ergebnis als JS-Array, das `index.html`
-   direkt lädt.
-4. Auf der Seite trägst du projizierte Minuten pro Spieler ein — alle Stats
-   (PTS, REB, AST, STL, BLK, 3PM, FG%, FT%, TOV) werden sofort neu berechnet:
-   `Projizierter Stat = Rate × projizierte Minuten`.
+   und `teams.html` laden.
+4. **Roster-Skript** (`scripts/fetch-rosters.mjs`) zieht 1x täglich (via
+   GitHub Action) die aktuellen Kader aller 30 Teams von ESPN und schreibt
+   sie nach `rosters-data.js`.
+5. Auf der **Teams-Seite** (`teams.html`) trägst du pro Spieler projizierte
+   Minuten ein — landet in `localStorage`, geteilt mit `index.html`.
+6. Die **Projections-Seite** (`index.html`) zeigt links deine Projektion
+   (Rate × deine Minuten) und rechts die realen Season-Averages zum
+   Vergleich, live sortierbar/rankbar.
 
 ## Nutzung
 
@@ -35,6 +40,9 @@ python3 build-players-data.py ../players-data.js \
   2023-24=../data/Player_Rankings_23-24.xls \
   2024-25=../data/Player_Rankings_24-25.xls \
   2025-26=../data/Player_Rankings_25-26.xls
+
+# Aktuelle Roster von ESPN ziehen (Node >= 18, keine Abhängigkeiten)
+node fetch-rosters.mjs
 ```
 
 Neue Saison hinzufügen: einfach eine weitere `<label>=<datei.xls>`-Angabe an
@@ -44,13 +52,30 @@ selbst chronologisch anhand des Labels.
 Danach `index.html` einfach im Browser öffnen oder per GitHub Pages hosten
 (Settings → Pages → Branch `main`, Root-Verzeichnis).
 
+### Roster-Automatisierung einrichten
+
+Der Workflow `.github/workflows/update-rosters.yml` läuft automatisch jeden
+Tag um 09:00 UTC und committet Änderungen zurück ins Repo. Nach dem
+Hochladen einmal manuell testen:
+
+**Actions-Tab → "Update NBA Rosters" → "Run workflow"**
+
+Falls das fehlschlägt: unter **Settings → Actions → General → Workflow
+permissions** muss "Read and write permissions" aktiviert sein, sonst darf
+die Action nicht zurück committen.
+
 ## Struktur
 
 ```
-index.html                  Testseite (Tabelle, Suche, Minuten-Eingabe)
-players-data.js              generierte Pro-Minute-Raten (Output des Build-Skripts)
+index.html                     Projections-Seite (2 Spalten: meine Projektion vs. Realwerte)
+teams.html                     NBA-Teams-Seite (Minuten-Eingabe pro Team)
+assets/shared.js               gemeinsame Logik (Name-Matching, Storage, Gewichtung)
+players-data.js                generierte Pro-Minute-Raten (Output von build-players-data.py)
+rosters-data.js                generierte Team-Kader (Output von fetch-rosters.mjs, täglich aktualisiert)
 scripts/build-players-data.py  Konvertierungsskript Rohdaten → players-data.js
-data/                        Rohdaten-Exports (Season-Stats)
+scripts/fetch-rosters.mjs      Roster-Fetcher (ESPN) → rosters-data.js
+.github/workflows/update-rosters.yml  tägliche GitHub Action für den Roster-Fetch
+data/                          Rohdaten-Exports (Season-Stats)
 ```
 
 ## Aktueller Stand
@@ -62,14 +87,58 @@ data/                        Rohdaten-Exports (Season-Stats)
   "letztes Jahr", Stufen 1 / 1,25 / 1,5 / 1,75 / 2). Für jeden Spieler
   gelten die beiden **jüngsten Saisons, in denen er Daten hat** als
   "letztes" bzw. "vorletztes" Jahr — ältere Saisons zählen automatisch fix
-  mit Gewicht 1. Damit funktioniert das auch für Spieler mit Lücken
-  (z.B. Verletzungsjahr) korrekt.
+  mit Gewicht 1.
+- **Roster-Automatisierung:** täglicher ESPN-Fetch via GitHub Action —
+  noch nicht live getestet (siehe unten, "Roster-Automatisierung
+  einrichten"), da ich von hier aus nicht direkt ins Repo pushen/Actions
+  auslösen kann. Erster Lauf sollte manuell über den Actions-Tab geprüft
+  werden.
+- **NBA-Teams-Seite:** neu, zeigt alle Spieler nach Team gruppiert, mit
+  Minuten-Eingabe. Ordnet ESPN-Rosternamen den BBM-Ratennamen über einen
+  normalisierten Namensabgleich zu (Akzente/Punkte/Jr.-Suffixe werden
+  ignoriert) — bei Uneindeutigkeiten wird der Spieler als "keine
+  Rate-Daten" markiert statt falsch gematcht.
+- **Zwei-Spalten-Ansicht** auf der Projections-Seite: links deine
+  Projektion (editierbar nur noch über die Teams-Seite), rechts die realen
+  Season-Averages der Saison 2025–26 als Referenz. Sobald 2026-27 läuft,
+  ersetzt ein Live-Stats-Fetch diese rechte Spalte täglich — dafür fehlt
+  aktuell noch die Datenquelle/das Skript (folgt, sobald die Saison näher
+  rückt).
+- **Live-Reranking:** Minuten-Änderungen auf der Teams-Seite aktualisieren
+  die Projections-Tabelle automatisch (per `storage`-Event, wenn beide
+  Seiten offen sind; sonst beim nächsten Laden).
 - **Rookies:** noch kein automatischer Pfad — Minuten + Rate werden vorerst
   manuell eingetragen.
 - **Noch nicht bei TTHQ integriert** — bewusst als eigenständiges Repo, bis
   die Methodik stabil ist.
 
+## Bekannte Einschränkungen
+
+- Die ESPN-Roster-API ist inoffiziell/unbekannt und kann sich ohne
+  Vorwarnung ändern. Das Fetch-Skript ist defensiv geschrieben (mehrere
+  Wiederholungsversuche, Fallback-Teamliste), aber noch nicht gegen einen
+  echten täglichen Lauf getestet.
+- `localStorage` ist geräte-/browserweit, nicht account-weit — auf einem
+  zweiten Gerät siehst du nicht automatisch dieselben Minuten-Einträge.
+- Die rechte "Realwerte"-Spalte zeigt aktuell **2025-26**-Zahlen (die
+  letzte abgeschlossene Saison), nicht 2026-27, da diese Saison noch
+  nicht läuft.
+
 ## Changelog
+
+### 2026-07-19 (4)
+- **NBA-Teams-Seite** (`teams.html`) hinzugefügt: alle Spieler nach den
+  30 NBA-Teams gruppiert, mit Minuten-Eingabe pro Spieler.
+- **Roster-Fetcher** (`scripts/fetch-rosters.mjs`) + tägliche **GitHub
+  Action** (`.github/workflows/update-rosters.yml`) für automatische
+  Kader-Updates von ESPN (bevorzugt, da meist am aktuellsten).
+- **Gemeinsames Storage-Modul** (`assets/shared.js`): Minuten werden jetzt
+  nur noch auf der Teams-Seite eingetragen und über `localStorage` mit der
+  Projections-Seite geteilt (inkl. Name-Matching zwischen ESPN- und
+  BBM-Namen).
+- **Projections-Seite umgebaut:** zwei Spaltengruppen (meine Projektion /
+  reale Season-Averages), Minuten-Felder dort nicht mehr editierbar,
+  Live-Reranking bei Änderungen auf der Teams-Seite.
 
 ### 2026-07-19 (3)
 - 5 weitere Saisons eingespeist: 2018–19, 2019–20, 2020–21, 2021–22, 2022–23

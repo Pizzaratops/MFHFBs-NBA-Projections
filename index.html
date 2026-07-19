@@ -13,117 +13,86 @@
     --good:#4caf81; --warn:#f5c842; --bad:#ff6584;
   }
   *{box-sizing:border-box;}
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1280px;margin:0 auto;padding:28px 20px 80px;}
+  .topnav{display:flex; gap:14px; margin-bottom:22px; font-size:13px;}
+  .topnav a{color:var(--muted); text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;}
+  .topnav a.active{color:var(--text); border-color:var(--accent); font-weight:600;}
+  .topnav a:hover{color:var(--text);}
   .hero{margin-bottom:26px;}
-  .eyebrow{
-    font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em;
-    text-transform:uppercase; color:var(--accent2); margin-bottom:8px;
-  }
-  h1{
-    font-family:'Playfair Display',serif; font-weight:800; font-size:34px;
-    margin:0 0 6px; letter-spacing:-0.01em;
-  }
-  .sub{color:var(--muted); font-size:13.5px; line-height:1.5; max-width:640px;}
+  .eyebrow{font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
+  h1{font-family:'Playfair Display',serif; font-weight:800; font-size:34px; margin:0 0 6px; letter-spacing:-0.01em;}
+  .sub{color:var(--muted); font-size:13.5px; line-height:1.5; max-width:680px;}
 
-  .panel{
-    background:var(--surface); border:1px solid var(--border); border-radius:14px;
-    padding:18px 20px; margin-bottom:18px;
-  }
-  .panel-title{
-    font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--muted); margin-bottom:14px; display:flex; align-items:center; gap:8px;
-  }
-  .badge{
-    font-family:'DM Mono',monospace; font-size:10px; background:var(--surface2);
-    border:1px solid var(--border); color:var(--warn); padding:2px 8px; border-radius:20px;
-    text-transform:none; letter-spacing:0;
-  }
-
+  .panel{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:18px 20px; margin-bottom:18px;}
+  .panel-title{font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+  .badge{font-family:'DM Mono',monospace; font-size:10px; background:var(--surface2); border:1px solid var(--border); color:var(--warn); padding:2px 8px; border-radius:20px; text-transform:none; letter-spacing:0;}
   .weight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media (max-width:640px){.weight-grid{grid-template-columns:1fr;}}
   .weight-row{display:flex; flex-direction:column; gap:8px;}
   .weight-label{display:flex; justify-content:space-between; font-size:13px; font-weight:600;}
   .weight-val{font-family:'DM Mono',monospace; color:var(--accent2); font-size:13px;}
-  input[type=range]{
-    -webkit-appearance:none; width:100%; height:4px; border-radius:4px;
-    background:var(--surface2); outline:none;
-  }
-  input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance:none; width:16px; height:16px; border-radius:50%;
-    background:var(--accent); cursor:pointer; border:2px solid var(--bg);
-  }
-  input[type=range]:disabled{opacity:0.35; cursor:not-allowed;}
-  input[type=range]:disabled::-webkit-slider-thumb{background:var(--muted); cursor:not-allowed;}
+  input[type=range]{-webkit-appearance:none; width:100%; height:4px; border-radius:4px; background:var(--surface2); outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--accent); cursor:pointer; border:2px solid var(--bg);}
   .weight-hint{font-size:11.5px; color:var(--muted); line-height:1.4;}
 
-  .search-row{position:relative; margin-bottom:14px;}
-  .search-row input{
-    width:100%; background:var(--surface); border:1px solid var(--border); color:var(--text);
-    font-family:'DM Sans',sans-serif; font-size:14px; padding:11px 16px 11px 40px;
-    border-radius:10px; outline:none;
+  .info-note{
+    background:var(--surface2); border:1px solid var(--border); border-radius:10px;
+    padding:10px 14px; font-size:12.5px; color:var(--muted); margin-bottom:14px; line-height:1.5;
   }
+  .info-note a{color:var(--accent2);}
+
+  .search-row{position:relative; margin-bottom:14px;}
+  .search-row input{width:100%; background:var(--surface); border:1px solid var(--border); color:var(--text); font-family:'DM Sans',sans-serif; font-size:14px; padding:11px 16px 11px 40px; border-radius:10px; outline:none;}
   .search-row input:focus{border-color:var(--accent);}
   .search-row svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--muted);}
 
-  .table-wrap{
-    background:var(--surface); border:1px solid var(--border); border-radius:14px;
-    overflow-x:auto;
+  .table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; min-width:1080px;}
+  thead tr.group-row th{
+    background:var(--surface2); font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    padding:8px 10px; border-bottom:1px solid var(--border); text-align:center;
   }
-  table{width:100%; border-collapse:collapse; min-width:920px;}
-  thead th{
+  thead tr.group-row th.mine{color:var(--accent2);}
+  thead tr.group-row th.actual{color:var(--muted);}
+  thead tr.col-row th{
     position:sticky; top:0; background:var(--surface2); text-align:right;
     font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--muted); padding:11px 10px; border-bottom:1px solid var(--border);
-    cursor:pointer; white-space:nowrap;
+    color:var(--muted); padding:9px 10px; border-bottom:1px solid var(--border); cursor:pointer; white-space:nowrap;
   }
-  thead th:first-child, thead th:nth-child(2), thead th:nth-child(3){text-align:left;}
-  thead th:hover{color:var(--text);}
-  tbody td{
-    padding:9px 10px; border-bottom:1px solid var(--border); text-align:right;
-    font-size:13px; font-variant-numeric:tabular-nums; white-space:nowrap;
-  }
+  thead tr.col-row th:nth-child(1), thead tr.col-row th:nth-child(2), thead tr.col-row th:nth-child(3){text-align:left;}
+  thead tr.col-row th:hover{color:var(--text);}
+  thead tr.col-row th.sep-col{border-left:1px solid var(--border);}
+  tbody td{padding:9px 10px; border-bottom:1px solid var(--border); text-align:right; font-size:13px; font-variant-numeric:tabular-nums; white-space:nowrap;}
   tbody tr:last-child td{border-bottom:none;}
   tbody tr:hover{background:var(--surface2);}
   td.name-cell{text-align:left;}
   .p-name{font-weight:700; font-size:13.5px;}
   .p-meta{color:var(--muted); font-size:11px; margin-top:1px;}
   td.left{text-align:left;}
-  .min-input{
-    width:56px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
-    font-family:'DM Mono',monospace; font-size:13px; text-align:right; border-radius:6px;
-    padding:5px 7px; outline:none;
-  }
-  .min-input:focus{border-color:var(--accent);}
-  .min-input.edited{border-color:var(--accent); color:var(--warn);}
+  td.sep-col{border-left:1px solid var(--border);}
   .col-pts{color:var(--text); font-weight:700;}
-  .reset-btn{
-    background:none; border:1px solid var(--border); color:var(--muted);
-    font-family:'DM Sans',sans-serif; font-size:11px; padding:3px 9px; border-radius:6px;
-    cursor:pointer; margin-left:6px;
-  }
-  .reset-btn:hover{border-color:var(--accent); color:var(--accent2);}
+  .col-pts-actual{color:var(--muted); font-weight:600;}
   .toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;}
   .count{font-size:12px; color:var(--muted);}
-  .reset-all{
-    background:var(--surface2); border:1px solid var(--border); color:var(--text);
-    font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; padding:7px 14px;
-    border-radius:8px; cursor:pointer;
-  }
-  .reset-all:hover{border-color:var(--accent);}
   footer{margin-top:22px; font-size:11.5px; color:var(--muted); line-height:1.6;}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="topnav">
+    <a href="index.html" class="active">Projections</a>
+    <a href="teams.html">NBA Teams</a>
+  </div>
 
   <div class="hero">
     <div class="eyebrow">MFHFB · Testseite</div>
     <h1>NBA Projections</h1>
-    <p class="sub" id="heroSub">Basis: Pro-Minute-Produktion mehrerer Saisons. Minuten eintragen → Stats werden live neu berechnet, genau wie in der manuellen Excel-Methodik.</p>
+    <p class="sub" id="heroSub">Basis: Pro-Minute-Produktion mehrerer Saisons. Links deine eingetragene Projektion, rechts die realen Season-Averages.</p>
+  </div>
+
+  <div class="info-note">
+    Minuten werden hier nicht mehr direkt bearbeitet — trag sie auf der <a href="teams.html">NBA-Teams-Seite</a> ein. Änderungen fließen sofort in dieses Ranking ein.
   </div>
 
   <div class="panel">
@@ -132,12 +101,12 @@
       <div class="weight-row">
         <div class="weight-label"><span id="w1Label">Vorletztes Jahr</span><span class="weight-val" id="w1val">1.00×</span></div>
         <input type="range" id="w1" min="1" max="2" step="0.25" value="1">
-        <div class="weight-hint" id="w1Hint">Gewicht der zweitjüngsten Saison, die für den jeweiligen Spieler vorliegt.</div>
+        <div class="weight-hint">Gewicht der zweitjüngsten Saison, die für den jeweiligen Spieler vorliegt.</div>
       </div>
       <div class="weight-row">
         <div class="weight-label"><span id="w2Label">Letztes Jahr</span><span class="weight-val" id="w2val">1.00×</span></div>
         <input type="range" id="w2" min="1" max="2" step="0.25" value="1">
-        <div class="weight-hint" id="w2Hint">Gewicht der jüngsten Saison, die für den jeweiligen Spieler vorliegt.</div>
+        <div class="weight-hint">Gewicht der jüngsten Saison, die für den jeweiligen Spieler vorliegt.</div>
       </div>
     </div>
   </div>
@@ -147,18 +116,22 @@
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="search" placeholder="Spieler, Team oder Position suchen…">
     </div>
-    <button class="reset-all" onclick="resetAll()">Alle Minuten zurücksetzen</button>
   </div>
   <div class="count" id="count" style="margin-bottom:10px;"></div>
 
   <div class="table-wrap">
     <table>
       <thead>
-        <tr>
+        <tr class="group-row">
+          <th colspan="3"></th>
+          <th colspan="9" class="mine">Meine Projektion</th>
+          <th colspan="5" class="actual">Realwerte <span id="actualSeasonLabel"></span></th>
+        </tr>
+        <tr class="col-row">
           <th data-k="name">Name</th>
           <th data-k="team">Team</th>
           <th data-k="pos">Pos</th>
-          <th data-k="projMin">Proj. Min</th>
+          <th data-k="min" class="sep-col">Min</th>
           <th data-k="pts">PTS</th>
           <th data-k="reb">REB</th>
           <th data-k="ast">AST</th>
@@ -166,8 +139,12 @@
           <th data-k="blk">BLK</th>
           <th data-k="fg3m">3PM</th>
           <th data-k="fgpct">FG%</th>
-          <th data-k="ftpct">FT%</th>
           <th data-k="tov">TOV</th>
+          <th data-k="aMin" class="sep-col">Min</th>
+          <th data-k="aPts">PTS</th>
+          <th data-k="aReb">REB</th>
+          <th data-k="aAst">AST</th>
+          <th data-k="aFg3m">3PM</th>
         </tr>
       </thead>
       <tbody id="body"></tbody>
@@ -178,122 +155,79 @@
 </div>
 
 <script src="players-data.js"></script>
+<script src="assets/shared.js"></script>
 <script>
-const STORAGE_KEY = 'mfhfb_proj_minutes_v1';
-const WEIGHT_KEY = 'mfhfb_proj_weights_v1';
-let overrides = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-let weights = JSON.parse(localStorage.getItem(WEIGHT_KEY) || 'null') || { w1: 1, w2: 1 };
 let sortKey = 'pts', sortAsc = false;
 let query = '';
 
-// SEASON_LABELS is chronological, e.g. ["2023-24","2024-25","2025-26"]
 const OLDEST_LABEL = SEASON_LABELS[0];
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 
 document.getElementById('heroSub').textContent =
-  `Basis: Pro-Minute-Produktion aus ${SEASON_LABELS.length} Saison${SEASON_LABELS.length !== 1 ? 's' : ''} (${SEASON_LABELS.join(', ')}), ${PLAYER_RATES.length} Spieler. Minuten eintragen → Stats werden live neu berechnet.`;
+  `Basis: Pro-Minute-Produktion aus ${SEASON_LABELS.length} Saison${SEASON_LABELS.length !== 1 ? 's' : ''} (${SEASON_LABELS.join(', ')}), ${PLAYER_RATES.length} Spieler.`;
 document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
+document.getElementById('actualSeasonLabel').textContent = `(${NEWEST_LABEL})`;
 document.getElementById('footerText').textContent =
-  `Pro-Minute-Raten berechnet aus Season-Totals ÷ MPG je Saison (${SEASON_LABELS.join(', ')}). Ältere Saisons zählen fix mit Gewicht 1, die beiden jüngsten sind über die Slider oben einstellbar. Standard-Projektion = MPG der jüngsten verfügbaren Saison; manuell überschreibbar. Änderungen werden lokal im Browser gespeichert (localStorage), noch nicht synchronisiert.`;
+  `Pro-Minute-Raten aus Season-Totals ÷ MPG je Saison (${SEASON_LABELS.join(', ')}). "Realwerte" zeigen die tatsächlichen Averages der Saison ${NEWEST_LABEL} — sobald 2026-27 läuft, werden diese Spalten täglich mit den aktuellen Live-Stats überschrieben. Minuten-Änderungen kommen von der Teams-Seite (localStorage, geräteweit noch nicht synchronisiert).`;
 
 if (SEASON_LABELS.length >= 2) {
   document.getElementById('w1Label').textContent = `Vorletztes Jahr (${SEASON_LABELS[SEASON_LABELS.length - 2]})`;
   document.getElementById('w2Label').textContent = `Letztes Jahr (${NEWEST_LABEL})`;
-} else {
-  document.getElementById('w1Label').textContent = 'Vorletztes Jahr';
-  document.getElementById('w1Hint').textContent = 'Noch keine zweite Saison geladen — Slider wirkt sich erst mit mehr Daten aus.';
-  document.getElementById('w2Label').textContent = `Letztes Jahr (${NEWEST_LABEL || '–'})`;
 }
 
+let weights = mfhfbGetWeights();
 document.getElementById('w1').value = weights.w1;
 document.getElementById('w2').value = weights.w2;
 document.getElementById('w1val').textContent = weights.w1.toFixed(2) + '×';
 document.getElementById('w2val').textContent = weights.w2.toFixed(2) + '×';
 
-// Weighted per-minute rate across a player's own available seasons.
-// The player's own two most recent seasons get the slider weights (w1 = second-most-recent, w2 = most recent);
-// any earlier seasons (for players with 3+ seasons on record) count fixed at weight 1.
-function weightedRates(p) {
-  const labels = Object.keys(p.seasons).sort(); // chronological for this player
-  const n = labels.length;
-  const sums = {}; let wsum = 0;
-  labels.forEach((label, i) => {
-    let w = 1;
-    if (i === n - 1) w = weights.w2;
-    else if (i === n - 2) w = weights.w1;
-    const rates = p.seasons[label].rates;
-    for (const key in rates) {
-      sums[key] = (sums[key] || 0) + rates[key] * w;
-    }
-    wsum += w;
-  });
-  const out = {};
-  for (const key in sums) out[key] = sums[key] / wsum;
-  return out;
-}
-
-function latestSeason(p) {
-  const labels = Object.keys(p.seasons).sort();
-  return p.seasons[labels[labels.length - 1]];
-}
-
-function computeStats(p) {
-  const latest = latestSeason(p);
-  const min = overrides[p.name] !== undefined ? overrides[p.name] : latest.mpg;
-  const r = weightedRates(p);
-  const fgm = r.fgm * min, fga = r.fga * min;
-  const ftm = r.ftm * min, fta = r.fta * min;
-  return {
-    projMin: min,
-    pts: r.pts * min,
-    reb: r.reb * min,
-    ast: r.ast * min,
-    stl: r.stl * min,
-    blk: r.blk * min,
-    fg3m: r.fg3m * min,
-    tov: r.tov * min,
-    fgpct: fga > 0 ? (fgm / fga) * 100 : 0,
-    ftpct: fta > 0 ? (ftm / fta) * 100 : 0,
-  };
-}
-
 function fmt(v, d=1) { return v.toFixed(d); }
 
 function render() {
+  const overrides = mfhfbGetOverrides();
   const q = query.toLowerCase().trim();
   let data = PLAYER_RATES.filter(p =>
     !q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q) || p.pos.toLowerCase().includes(q)
   );
 
-  const enriched = data.map(p => ({ p, s: computeStats(p) }));
-  enriched.sort((a, b) => {
+  const enriched = data.map(p => {
+    const latest = mfhfbLatestSeason(p);
+    const key = mfhfbNormalizeName(p.name);
+    const minutes = overrides[key] !== undefined ? overrides[key] : latest.mpg;
+    const proj = mfhfbComputeProjection(p, minutes, weights);
+    const actual = {
+      min: latest.mpg,
+      pts: latest.rates.pts * latest.mpg,
+      reb: latest.rates.reb * latest.mpg,
+      ast: latest.rates.ast * latest.mpg,
+      fg3m: latest.rates.fg3m * latest.mpg,
+    };
+    return { p, s: proj, a: actual, edited: overrides[key] !== undefined };
+  });
+
+  enriched.sort((x, y) => {
     let av, bv;
-    if (sortKey === 'name') { av = a.p.name; bv = b.p.name; }
-    else if (sortKey === 'team') { av = a.p.team; bv = b.p.team; }
-    else if (sortKey === 'pos') { av = a.p.pos; bv = b.p.pos; }
-    else { av = a.s[sortKey]; bv = b.s[sortKey]; }
+    if (sortKey === 'name') { av = x.p.name; bv = y.p.name; }
+    else if (sortKey === 'team') { av = x.p.team; bv = y.p.team; }
+    else if (sortKey === 'pos') { av = x.p.pos; bv = y.p.pos; }
+    else if (sortKey.startsWith('a')) {
+      const k = sortKey[1].toLowerCase() + sortKey.slice(2);
+      av = x.a[k]; bv = y.a[k];
+    } else { av = x.s[sortKey]; bv = y.s[sortKey]; }
     const c = typeof av === 'string' ? av.localeCompare(bv) : av - bv;
     return sortAsc ? c : -c;
   });
 
   document.getElementById('count').textContent = `${enriched.length} Spieler`;
 
-  document.getElementById('body').innerHTML = enriched.map(({p, s}) => {
-    const isEdited = overrides[p.name] !== undefined;
-    const latest = latestSeason(p);
-    const seasonLabels = Object.keys(p.seasons).sort().join(', ');
-    return `<tr>
+  document.getElementById('body').innerHTML = enriched.map(({p, s, a, edited}) => `<tr>
       <td class="name-cell">
         <div class="p-name">${p.name}</div>
-        <div class="p-meta">${latest.gp} GP · ${latest.mpg} MPG · Saisons: ${seasonLabels}</div>
+        <div class="p-meta">Saisons: ${Object.keys(p.seasons).sort().join(', ')}</div>
       </td>
       <td class="left">${p.team}</td>
       <td class="left">${p.pos}</td>
-      <td>
-        <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48"
-          value="${fmt(s.projMin,1)}" data-name="${p.name.replace(/"/g,'&quot;')}" onchange="setMinutes(this)">
-        ${isEdited ? `<button class="reset-btn" onclick="resetOne('${p.name.replace(/'/g,"\\'")}')">↺</button>` : ''}
-      </td>
+      <td class="sep-col" style="color:${edited ? 'var(--warn)' : 'var(--text)'}">${fmt(s.min)}</td>
       <td class="col-pts">${fmt(s.pts)}</td>
       <td>${fmt(s.reb)}</td>
       <td>${fmt(s.ast)}</td>
@@ -301,36 +235,18 @@ function render() {
       <td>${fmt(s.blk,1)}</td>
       <td>${fmt(s.fg3m,1)}</td>
       <td>${fmt(s.fgpct)}%</td>
-      <td>${fmt(s.ftpct)}%</td>
       <td>${fmt(s.tov,1)}</td>
-    </tr>`;
-  }).join('');
-}
-
-function setMinutes(input) {
-  const name = input.dataset.name;
-  const val = parseFloat(input.value);
-  if (isNaN(val) || val < 0) return;
-  overrides[name] = val;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
-  render();
-}
-
-function resetOne(name) {
-  delete overrides[name];
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
-  render();
-}
-
-function resetAll() {
-  overrides = {};
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
-  render();
+      <td class="sep-col">${fmt(a.min)}</td>
+      <td class="col-pts-actual">${fmt(a.pts)}</td>
+      <td>${fmt(a.reb)}</td>
+      <td>${fmt(a.ast)}</td>
+      <td>${fmt(a.fg3m,1)}</td>
+    </tr>`).join('');
 }
 
 document.getElementById('search').addEventListener('input', e => { query = e.target.value; render(); });
 
-document.querySelectorAll('thead th').forEach(th => {
+document.querySelectorAll('thead tr.col-row th').forEach(th => {
   th.addEventListener('click', () => {
     const k = th.dataset.k;
     if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = false; }
@@ -341,14 +257,22 @@ document.querySelectorAll('thead th').forEach(th => {
 document.getElementById('w1').addEventListener('input', e => {
   weights.w1 = parseFloat(e.target.value);
   document.getElementById('w1val').textContent = weights.w1.toFixed(2) + '×';
-  localStorage.setItem(WEIGHT_KEY, JSON.stringify(weights));
+  mfhfbSetWeights(weights);
   render();
 });
 document.getElementById('w2').addEventListener('input', e => {
   weights.w2 = parseFloat(e.target.value);
   document.getElementById('w2val').textContent = weights.w2.toFixed(2) + '×';
-  localStorage.setItem(WEIGHT_KEY, JSON.stringify(weights));
+  mfhfbSetWeights(weights);
   render();
+});
+
+// Live-Update, wenn auf der Teams-Seite (anderer Tab) Minuten geändert werden
+window.addEventListener('storage', (e) => {
+  if (e.key === MFHFB_STORAGE_KEY || e.key === MFHFB_WEIGHT_KEY) {
+    weights = mfhfbGetWeights();
+    render();
+  }
 });
 
 render();

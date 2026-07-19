@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBA Teams — MFHFBs Projections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#101116; --surface:#191a21; --surface2:#212330; --border:#2b2d3a;
+    --text:#e9e9ef; --muted:#8d8fa0; --accent:#6c63ff; --accent2:#4fc3f7;
+    --good:#4caf81; --warn:#f5c842; --bad:#ff6584;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px;}
+  .topnav{display:flex; gap:14px; margin-bottom:22px; font-size:13px;}
+  .topnav a{color:var(--muted); text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;}
+  .topnav a.active{color:var(--text); border-color:var(--accent); font-weight:600;}
+  .topnav a:hover{color:var(--text);}
+  .hero{margin-bottom:22px;}
+  .eyebrow{font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
+  h1{font-family:'Playfair Display',serif; font-weight:800; font-size:32px; margin:0 0 6px; letter-spacing:-0.01em;}
+  .sub{color:var(--muted); font-size:13.5px; line-height:1.5; max-width:680px;}
+
+  .search-row{position:relative; margin-bottom:20px;}
+  .search-row input{
+    width:100%; background:var(--surface); border:1px solid var(--border); color:var(--text);
+    font-family:'DM Sans',sans-serif; font-size:14px; padding:11px 16px 11px 40px; border-radius:10px; outline:none;
+  }
+  .search-row input:focus{border-color:var(--accent);}
+  .search-row svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--muted);}
+
+  .empty-state{
+    background:var(--surface); border:1px dashed var(--border); border-radius:14px;
+    padding:32px; text-align:center; color:var(--muted); font-size:13.5px; line-height:1.7;
+  }
+  .empty-state code{background:var(--surface2); padding:2px 6px; border-radius:5px; font-family:'DM Mono',monospace; color:var(--accent2);}
+
+  .team-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:16px;}
+  .team-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+  .team-header{
+    padding:14px 16px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;
+    background:var(--surface2);
+  }
+  .team-name{font-family:'Playfair Display',serif; font-weight:800; font-size:16px;}
+  .team-count{font-size:11px; color:var(--muted); font-family:'DM Mono',monospace;}
+  .player-row{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:9px 16px; border-bottom:1px solid var(--border); font-size:13px;
+  }
+  .player-row:last-child{border-bottom:none;}
+  .player-row.unmatched{opacity:0.55;}
+  .p-name{font-weight:600;}
+  .p-meta{color:var(--muted); font-size:11px; margin-top:1px;}
+  .p-controls{display:flex; align-items:center; gap:6px; flex-shrink:0;}
+  .min-input{
+    width:52px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
+    font-family:'DM Mono',monospace; font-size:13px; text-align:right; border-radius:6px; padding:5px 6px; outline:none;
+  }
+  .min-input:focus{border-color:var(--accent);}
+  .min-input.edited{border-color:var(--accent); color:var(--warn);}
+  .p-pts{font-family:'DM Mono',monospace; font-size:12px; color:var(--muted); min-width:44px; text-align:right;}
+  .reset-btn{background:none; border:1px solid var(--border); color:var(--muted); font-size:11px; padding:3px 8px; border-radius:6px; cursor:pointer;}
+  .reset-btn:hover{border-color:var(--accent); color:var(--accent2);}
+  .no-data-tag{font-size:10px; color:var(--bad); font-family:'DM Mono',monospace;}
+  footer{margin-top:24px; font-size:11.5px; color:var(--muted); line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topnav">
+    <a href="index.html">Projections</a>
+    <a href="teams.html" class="active">NBA Teams</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">MFHFB · Testseite</div>
+    <h1>NBA Teams</h1>
+    <p class="sub" id="heroSub">Alle Spieler ihrem aktuellen Team zugeordnet. Minuten hier eintragen — sie werden automatisch in die Projections-Seite übernommen (dort live neu geranked).</p>
+  </div>
+
+  <div class="search-row">
+    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search" placeholder="Team oder Spieler suchen…">
+  </div>
+
+  <div id="content"></div>
+
+  <footer id="footerText"></footer>
+</div>
+
+<script src="players-data.js"></script>
+<script>
+  // rosters-data.js existiert erst, nachdem scripts/fetch-rosters.mjs
+  // (manuell oder via GitHub Action) einmal gelaufen ist. Falls nicht
+  // vorhanden, zeigen wir einen Hinweis statt eines Fehlers.
+  window.addEventListener('error', function(){});
+</script>
+<script src="rosters-data.js" onerror="window.__rostersMissing = true"></script>
+<script src="assets/shared.js"></script>
+<script>
+const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
+let query = '';
+
+function render() {
+  const container = document.getElementById('content');
+
+  if (typeof ROSTERS_DATA === 'undefined' || window.__rostersMissing) {
+    container.innerHTML = `<div class="empty-state">
+      Noch keine Roster-Daten geladen.<br><br>
+      Einmal lokal ausführen: <code>node scripts/fetch-rosters.mjs</code><br>
+      oder im Repo unter <b>Actions → Update NBA Rosters → Run workflow</b> manuell anstoßen.<br>
+      Danach läuft es automatisch 1x täglich.
+    </div>`;
+    document.getElementById('footerText').textContent = 'Warte auf ersten Roster-Fetch von ESPN.';
+    return;
+  }
+
+  const weights = mfhfbGetWeights();
+  const overrides = mfhfbGetOverrides();
+  const q = query.toLowerCase().trim();
+
+  document.getElementById('footerText').textContent =
+    `Roster-Stand: ${new Date(ROSTERS_DATA.fetchedAt).toLocaleString('de-DE')} · Quelle: ${ROSTERS_DATA.source} · ${ROSTERS_DATA.teamCount}/30 Teams geladen.`;
+
+  const teamEntries = Object.entries(ROSTERS_DATA.rosters).sort((a, b) => a[0].localeCompare(b[0]));
+
+  const filtered = teamEntries
+    .map(([abbr, team]) => {
+      const players = team.players.filter(p =>
+        !q || team.name.toLowerCase().includes(q) || abbr.toLowerCase().includes(q) || p.name.toLowerCase().includes(q)
+      );
+      return { abbr, team, players };
+    })
+    .filter(t => t.players.length > 0 || (!q));
+
+  container.innerHTML = `<div class="team-grid">` + filtered.map(({ abbr, team, players }) => {
+    const rows = players.map(rp => {
+      const match = nameIndex.get(mfhfbNormalizeName(rp.name));
+      if (!match) {
+        return `<div class="player-row unmatched">
+          <div>
+            <div class="p-name">${rp.name}</div>
+            <div class="p-meta">${rp.position || ''}${rp.jersey ? ' · #' + rp.jersey : ''}</div>
+          </div>
+          <span class="no-data-tag">keine Rate-Daten</span>
+        </div>`;
+      }
+      const key = mfhfbNormalizeName(rp.name);
+      const isEdited = overrides[key] !== undefined;
+      const latest = mfhfbLatestSeason(match);
+      const minutes = isEdited ? overrides[key] : latest.mpg;
+      const proj = mfhfbComputeProjection(match, minutes, weights);
+      return `<div class="player-row">
+        <div>
+          <div class="p-name">${match.name}</div>
+          <div class="p-meta">${rp.position || match.pos} · ${latest.mpg} MPG zuletzt</div>
+        </div>
+        <div class="p-controls">
+          <span class="p-pts">${proj.pts.toFixed(1)} pts</span>
+          <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48"
+            value="${minutes.toFixed(1)}" data-name="${match.name.replace(/"/g,'&quot;')}" onchange="onMinutesChange(this)">
+          ${isEdited ? `<button class="reset-btn" onclick="onReset('${match.name.replace(/'/g,"\\'")}')">↺</button>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="team-card">
+      <div class="team-header">
+        <div class="team-name">${abbr} — ${team.name}</div>
+        <div class="team-count">${players.length} Spieler</div>
+      </div>
+      ${rows || '<div class="player-row"><span class="p-meta">Keine Treffer</span></div>'}
+    </div>`;
+  }).join('') + `</div>`;
+}
+
+function onMinutesChange(input) {
+  const val = parseFloat(input.value);
+  if (isNaN(val) || val < 0) return;
+  mfhfbSetMinutes(input.dataset.name, val);
+  render();
+}
+
+function onReset(name) {
+  mfhfbResetMinutes(name);
+  render();
+}
+
+document.getElementById('search').addEventListener('input', e => { query = e.target.value; render(); });
+
+render();
+</script>
+</body>
+</html>
