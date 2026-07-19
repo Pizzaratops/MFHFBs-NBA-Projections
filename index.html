@@ -307,7 +307,22 @@ function computeAll() {
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : latest.mpg;
     const proj = mfhfbComputeProjection(p, minutes, weights);
-    return { p, s: proj, edited: overrides[key] !== undefined };
+    return { p, s: proj, edited: overrides[key] !== undefined, manual: false };
+  });
+
+  // Manuell gepflegte Spieler (Rookies etc. ohne Rate-Daten, auf der
+  // Teams-Seite eingetragen) als eigenständige Zeilen mit einmischen.
+  const manualStats = mfhfbGetManualStats();
+  Object.values(manualStats).forEach(m => {
+    const s = {
+      min: m.min || 0, pts: m.pts || 0, reb: m.reb || 0, ast: m.ast || 0,
+      stl: m.stl || 0, blk: m.blk || 0, fg3m: m.fg3m || 0, tov: m.tov || 0,
+      fgpct: m.fgpct || 0, ftpct: m.ftpct || 0,
+    };
+    rows.push({
+      p: { name: m.name, team: m.team || '-', pos: m.pos || '-', seasons: {}, manualGP: m.gp },
+      s, edited: true, manual: true,
+    });
   });
 
   // Z-Score-Population bestimmen: Top 200 / Top 400 / Alle, sortiert nach
@@ -367,11 +382,11 @@ function render() {
   });
   const heat = (col, val) => mfhfbHeatStyle(val, heatRange[col].min, heatRange[col].max, !!HEAT_INVERT[col]);
 
-  document.getElementById('body').innerHTML = rows.map(({p, s, z, edited}, i) => `<tr>
+  document.getElementById('body').innerHTML = rows.map(({p, s, z, edited, manual}, i) => `<tr>
       <td class="rank-cell">${i + 1}.</td>
       <td class="name-cell">
-        <div class="p-name">${p.name}</div>
-        <div class="p-meta">GP: ${mfhfbRecentGP(p)}</div>
+        <div class="p-name">${p.name}${manual ? '<span style="color:var(--accent2);font-size:9px;font-weight:700;margin-left:5px;">MANUELL</span>' : ''}</div>
+        <div class="p-meta">GP: ${manual ? (p.manualGP !== undefined ? p.manualGP : '-') : mfhfbRecentGP(p)}</div>
       </td>
       <td class="left">${p.team}</td>
       <td class="left">${p.pos}</td>
@@ -397,7 +412,7 @@ function downloadCSV() {
       i + 1, `"${r.p.name}"`, r.p.team, r.p.pos,
       fmt(r.s.min), fmt(r.s.pts), fmt(r.s.reb), fmt(r.s.ast), fmt(r.s.stl,1), fmt(r.s.blk,1), fmt(r.s.fg3m,1), fmt(r.s.fgpct), fmt(r.s.tov,1),
       fmt(r.z,2),
-      mfhfbRecentGP(r.p),
+      r.manual ? (r.p.manualGP !== undefined ? r.p.manualGP : '-') : mfhfbRecentGP(r.p),
     ];
     lines.push(row.join(','));
   });

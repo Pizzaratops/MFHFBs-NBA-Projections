@@ -126,6 +126,25 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-19 (10)
+- **Manuelle Stat-Eingabe für Rookies/Two-Way-Spieler ohne Rate-Daten:**
+  Statt "keine Rate-Daten" gibt es jetzt editierbare Felder für Minuten,
+  GP und alle 9 Cats direkt in der Team-Tabelle. Werte werden gespeichert
+  und fließen automatisch auch in die Projections-Seite ein (als
+  eigenständige Zeile, mit "MANUELL"-Kennzeichnung).
+- **Positionsspalte ergänzt** — war bei der letzten Umstrukturierung der
+  Team-Seite versehentlich rausgefallen, jetzt wieder da (links und
+  rechts, aus ESPN bzw. BBM-Daten).
+- **Drag & Drop innerhalb der linken Team-Tabelle:** Reihenfolge lässt
+  sich per Ziehen anpassen (kleines ⠿-Handle), z.B. um eine Starting 5
+  nach oben zu sortieren. Wird pro Team in `localStorage` gespeichert und
+  bleibt über Neuladen hinweg erhalten. Gilt nur für die linke (aktuelle)
+  Tabelle, nicht für die rechte Referenz-Spalte.
+- **Trade-Frage beantwortet:** Roster-Updates laufen über die tägliche
+  GitHub Action; ESPN übernimmt Trades meist noch am selben oder
+  nächsten Tag. Bei Bedarf lässt sich der Fetch jederzeit manuell über
+  den Actions-Tab anstoßen, statt auf den Cron zu warten.
+
 ### 2026-07-19 (9)
 - **Projections-Seite aufgeräumt:** "MFHFB · Testseite"-Eyebrow, der lange
   Basis-Text unter der Überschrift und die Info-Box zur Teams-Seite sind

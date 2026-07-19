@@ -225,3 +225,66 @@ function mfhfbInitThemeToggle(buttonId) {
     updateLabel();
   });
 }
+
+// --- Manuelle Stats fuer Spieler ohne Rate-Daten (Rookies, Two-Way etc.) ---
+// Speichert einen kompletten, selbststaendigen Stat-Datensatz (nicht nur
+// Minuten), damit auch die Projections-Seite (die keinen ESPN-Roster laedt)
+// diese Spieler anzeigen kann, ohne rosters-data.js zu brauchen.
+const MFHFB_MANUAL_KEY = 'mfhfb_manual_stats_v1';
+
+function mfhfbGetManualStats() {
+  try {
+    return JSON.parse(localStorage.getItem(MFHFB_MANUAL_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function mfhfbSetManualStat(playerName, team, pos, stats) {
+  const key = mfhfbNormalizeName(playerName);
+  const all = mfhfbGetManualStats();
+  all[key] = { name: playerName, team, pos, ...stats };
+  localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(all));
+  return all;
+}
+
+function mfhfbDeleteManualStat(playerName) {
+  const key = mfhfbNormalizeName(playerName);
+  const all = mfhfbGetManualStats();
+  delete all[key];
+  localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(all));
+  return all;
+}
+
+// --- Reihenfolge innerhalb eines Teams (Drag & Drop, z.B. fuer Starting 5) ---
+const MFHFB_ORDER_KEY = 'mfhfb_team_order_v1';
+
+function mfhfbGetTeamOrder(teamAbbr) {
+  try {
+    const all = JSON.parse(localStorage.getItem(MFHFB_ORDER_KEY) || '{}');
+    return all[teamAbbr] || null; // Array normalisierter Namen, oder null wenn noch nicht gesetzt
+  } catch {
+    return null;
+  }
+}
+
+function mfhfbSetTeamOrder(teamAbbr, orderedNormalizedNames) {
+  let all = {};
+  try { all = JSON.parse(localStorage.getItem(MFHFB_ORDER_KEY) || '{}'); } catch {}
+  all[teamAbbr] = orderedNormalizedNames;
+  localStorage.setItem(MFHFB_ORDER_KEY, JSON.stringify(all));
+}
+
+// Sortiert eine Liste von Items (mit .key = normalisierter Name) nach einer
+// gespeicherten Reihenfolge; neue/unbekannte Spieler werden ans Ende gehängt.
+function mfhfbApplyTeamOrder(items, teamAbbr) {
+  const order = mfhfbGetTeamOrder(teamAbbr);
+  if (!order) return items;
+  const pos = new Map(order.map((k, i) => [k, i]));
+  return [...items].sort((a, b) => {
+    const ai = pos.has(a.key) ? pos.get(a.key) : Infinity;
+    const bi = pos.has(b.key) ? pos.get(b.key) : Infinity;
+    if (ai !== bi) return ai - bi;
+    return 0;
+  });
+}

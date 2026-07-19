@@ -89,6 +89,13 @@
   table.stat-table tbody tr:hover{background:var(--surface2);}
   table.stat-table td.name-cell{text-align:left; font-weight:600; font-size:12px;}
   table.stat-table tr.unmatched td{opacity:0.5; font-style:italic;}
+  table.stat-table tr.manual-row td{background:rgba(108,99,255,0.06);}
+  .manual-tag{font-size:9px; font-weight:700; color:var(--accent2); text-transform:uppercase; margin-left:4px;}
+  .stat-input{
+    width:38px; background:var(--bg); border:1px solid var(--border); color:var(--text);
+    font-family:'DM Mono',monospace; font-size:11px; text-align:right; border-radius:5px; padding:3px 4px; outline:none;
+  }
+  .stat-input:focus{border-color:var(--accent); color:var(--accent2);}
   .pause-tag{color:var(--bad); font-size:9px; font-weight:700; margin-left:5px;}
   .min-input{
     width:44px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
@@ -99,6 +106,10 @@
   .reset-btn{background:none; border:none; color:var(--muted); font-size:11px; padding:0 2px; cursor:pointer;}
   .reset-btn:hover{color:var(--accent2);}
   .no-match-note{padding:10px 14px; font-size:11px; color:var(--muted); font-style:italic;}
+  .left-table tbody tr[draggable]{cursor:grab;}
+  .left-table tbody tr[draggable]:active{cursor:grabbing;}
+  .left-table tbody tr.drag-over{outline:2px dashed var(--accent); outline-offset:-2px;}
+  .drag-handle{color:var(--muted); font-size:11px; margin-right:5px; user-select:none;}
 
   footer{margin-top:24px; font-size:11.5px; color:var(--muted); line-height:1.6;}
 </style>
@@ -152,7 +163,7 @@ let query = '';
 function fmt(v, d=1) { return v.toFixed(d); }
 
 function statHeaderRow() {
-  return `<tr><th>Spieler</th><th>Min</th><th>GP</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>3PM</th><th>FG%</th><th>FT%</th><th>TO</th></tr>`;
+  return `<tr><th>Spieler</th><th>Pos</th><th>Min</th><th>GP</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>3PM</th><th>FG%</th><th>FT%</th><th>TO</th></tr>`;
 }
 
 const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'ftpct', 'tov'];
@@ -161,40 +172,87 @@ const HEAT_INVERT = { tov: true };
 function computeHeatRange(items, getVal) {
   const range = {};
   HEAT_COLS.forEach(col => {
-    const vals = items.map(it => getVal(it, col)).filter(v => v !== null && !isNaN(v));
+    const vals = items.map(it => getVal(it, col)).filter(v => v !== null && v !== undefined && !isNaN(v));
     range[col] = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 0, max: 0 };
   });
   return range;
 }
 function heatFor(range, col, val) {
+  if (val === null || val === undefined || isNaN(val)) return '';
   return mfhfbHeatStyle(val, range[col].min, range[col].max, !!HEAT_INVERT[col]);
+}
+
+// Zeile für Spieler ohne Rate-Daten (Rookies, Two-Way etc.): editierbare
+// Felder für alle 9 Cats + Min + GP, manuell gepflegt und in localStorage
+// gespeichert (name/team/pos + stats), damit auch die Projections-Seite
+// sie anzeigen kann.
+function renderManualRow(rp, teamBbmAbbr, range) {
+  const key = mfhfbNormalizeName(rp.name);
+  const manual = mfhfbGetManualStats()[key] || {};
+  const field = (id, step) => {
+    const v = manual[id];
+    const heatStyle = HEAT_COLS.includes(id) ? heatFor(range, id, v) : '';
+    return `<td style="${heatStyle}"><input class="stat-input" type="number" step="${step}" min="0"
+      value="${v !== undefined ? v : ''}" placeholder="–"
+      data-key="${key}" data-team="${teamBbmAbbr}" data-field="${id}"
+      data-name="${rp.name.replace(/"/g,'&quot;')}" data-pos="${(rp.position||'').replace(/"/g,'&quot;')}"
+      onchange="onManualChange(this)"></td>`;
+  };
+  return `<tr draggable="true" data-key="${key}" data-team="${teamBbmAbbr}" class="manual-row">
+    <td class="name-cell"><span class="drag-handle">⠿</span>${rp.name}<span class="manual-tag">manuell</span></td>
+    <td class="left">${rp.position || '-'}</td>
+    ${field('min', 0.5)}
+    ${field('gp', 1)}
+    ${field('pts', 0.1)}
+    ${field('reb', 0.1)}
+    ${field('ast', 0.1)}
+    ${field('stl', 0.1)}
+    ${field('blk', 0.1)}
+    ${field('fg3m', 0.1)}
+    ${field('fgpct', 0.5)}
+    ${field('ftpct', 0.5)}
+    ${field('tov', 0.1)}
+  </tr>`;
 }
 
 // Linke Spalte: aktueller (ESPN-)Kader, editierbare Minuten, Stats aus den
 // Pro-Minute-Raten der letzten Saison hochgerechnet. Heatmap-Farben werden
-// pro Team (also innerhalb dieser Liste) berechnet.
-function renderLeftRows(rosterPlayers, weights, overrides) {
-  if (!rosterPlayers.length) return `<tr><td colspan="11" class="no-match-note">Keine Spieler</td></tr>`;
+// pro Team (also innerhalb dieser Liste) berechnet. Reihenfolge kann per
+// Drag & Drop angepasst werden (z.B. für eine Starting 5 oben).
+function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr) {
+  if (!rosterPlayers.length) return `<tr><td colspan="12" class="no-match-note">Keine Spieler</td></tr>`;
 
-  const items = rosterPlayers.map(rp => {
-    const match = nameIndex.get(mfhfbNormalizeName(rp.name));
-    if (!match) return { rp, match: null };
+  const manualStats = mfhfbGetManualStats();
+
+  let items = rosterPlayers.map(rp => {
     const key = mfhfbNormalizeName(rp.name);
+    const match = nameIndex.get(key);
+    if (!match) return { key, rp, match: null, manual: manualStats[key] || null };
     const isEdited = overrides[key] !== undefined;
     const latest = mfhfbLatestSeason(match);
     const newestActual = mfhfbNewestSeasonActual(match);
     const minutes = isEdited ? overrides[key] : latest.mpg;
     const s = mfhfbComputeProjection(match, minutes, weights);
-    return { rp, match, isEdited, latest, newestActual, minutes, s };
+    return { key, rp, match, isEdited, latest, newestActual, minutes, s };
   });
 
-  const range = computeHeatRange(items.filter(it => it.match), (it, col) => col === 'min' ? it.minutes : it.s[col]);
+  items = mfhfbApplyTeamOrder(items, teamAbbr);
+
+  const range = computeHeatRange(
+    items.filter(it => it.match),
+    (it, col) => col === 'min' ? it.minutes : it.s[col]
+  );
+  const manualRange = computeHeatRange(
+    items.filter(it => !it.match).map(it => it.manual || {}),
+    (it, col) => it[col]
+  );
 
   return items.map(it => {
-    if (!it.match) return `<tr class="unmatched"><td class="name-cell">${it.rp.name}</td><td colspan="10">keine Rate-Daten</td></tr>`;
-    const { rp, match, isEdited, latest, newestActual, minutes, s } = it;
-    return `<tr>
-      <td class="name-cell">${match.name}${newestActual.missed ? `<span class="pause-tag">⚠ pausiert ${newestActual.label}</span>` : ''}</td>
+    if (!it.match) return renderManualRow(it.rp, teamBbmAbbr, manualRange);
+    const { rp, match, isEdited, latest, newestActual, minutes, s, key } = it;
+    return `<tr draggable="true" data-key="${key}" data-team="${teamAbbr}">
+      <td class="name-cell"><span class="drag-handle">⠿</span>${match.name}${newestActual.missed ? `<span class="pause-tag">⚠ pausiert ${newestActual.label}</span>` : ''}</td>
+      <td class="left">${rp.position || match.pos || '-'}</td>
       <td style="${heatFor(range,'min',minutes)}">
         <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48"
           value="${fmt(minutes)}" data-name="${match.name.replace(/"/g,'&quot;')}" onchange="onMinutesChange(this)">
@@ -232,12 +290,13 @@ function renderRightRows(bbmAbbr) {
     })
     .sort((a, b) => b.min - a.min);
 
-  if (!players.length) return `<tr><td colspan="11" class="no-match-note">Keine Daten für ${bbmAbbr}</td></tr>`;
+  if (!players.length) return `<tr><td colspan="12" class="no-match-note">Keine Daten für ${bbmAbbr}</td></tr>`;
 
   const range = computeHeatRange(players, (it, col) => it[col]);
 
   return players.map(it => `<tr>
       <td class="name-cell">${it.p.name}</td>
+      <td class="left">${it.p.pos}</td>
       <td style="${heatFor(range,'min',it.min)}">${fmt(it.min)}</td>
       <td>${it.gp}</td>
       <td style="${heatFor(range,'pts',it.pts)}">${fmt(it.pts)}</td>
@@ -294,10 +353,10 @@ function render() {
       </div>
       <div class="team-cols">
         <div class="col">
-          <div class="col-title">Aktueller Kader — meine Minuten</div>
-          <table class="stat-table">
+          <div class="col-title">Aktueller Kader — meine Minuten (ziehbar für Starting 5)</div>
+          <table class="stat-table left-table">
             <thead>${statHeaderRow()}</thead>
-            <tbody>${renderLeftRows(leftPlayers, weights, overrides)}</tbody>
+            <tbody>${renderLeftRows(leftPlayers, weights, overrides, abbr, bbmAbbr)}</tbody>
           </table>
         </div>
         <div class="col">
@@ -310,6 +369,8 @@ function render() {
       </div>
     </div>`;
   }).join('') || `<div class="empty-state">Keine Treffer.</div>`;
+
+  attachDragHandlers();
 }
 
 function onMinutesChange(input) {
@@ -322,6 +383,53 @@ function onMinutesChange(input) {
 function onReset(name) {
   mfhfbResetMinutes(name);
   render();
+}
+
+// Manuelle Stat-Eingabe (Rookies / Spieler ohne Rate-Daten): jedes Feld
+// speichert einzeln, leere Felder werden als "nicht gesetzt" behandelt.
+function onManualChange(input) {
+  const { key, team, field, name, pos } = input.dataset;
+  const raw = input.value.trim();
+  const all = mfhfbGetManualStats();
+  const existing = all[key] || {};
+  const stats = { ...existing };
+  if (raw === '') delete stats[field];
+  else stats[field] = parseFloat(raw);
+  mfhfbSetManualStat(name, team, pos, stats);
+  render();
+}
+
+// Drag & Drop innerhalb der linken Tabelle (aktueller Kader), pro Team
+// gespeichert — damit lässt sich z.B. eine Starting 5 nach oben ziehen.
+let dragKey = null, dragTeam = null;
+function attachDragHandlers() {
+  document.querySelectorAll('.left-table tbody tr[draggable]').forEach(tr => {
+    tr.addEventListener('dragstart', () => {
+      dragKey = tr.dataset.key;
+      dragTeam = tr.dataset.team;
+    });
+    tr.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      if (tr.dataset.team === dragTeam) tr.classList.add('drag-over');
+    });
+    tr.addEventListener('dragleave', () => tr.classList.remove('drag-over'));
+    tr.addEventListener('drop', (e) => {
+      e.preventDefault();
+      tr.classList.remove('drag-over');
+      if (!dragKey || tr.dataset.team !== dragTeam || tr.dataset.key === dragKey) return;
+      const tbody = tr.closest('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr[draggable]'));
+      const fromEl = rows.find(r => r.dataset.key === dragKey);
+      if (!fromEl) return;
+      const fromIdx = rows.indexOf(fromEl);
+      const toIdx = rows.indexOf(tr);
+      if (fromIdx < toIdx) tr.after(fromEl); else tr.before(fromEl);
+      const newOrder = Array.from(tbody.querySelectorAll('tr[draggable]')).map(r => r.dataset.key);
+      mfhfbSetTeamOrder(dragTeam, newOrder);
+      dragKey = null; dragTeam = null;
+      render();
+    });
+  });
 }
 
 document.getElementById('search').addEventListener('input', e => { query = e.target.value; render(); });
