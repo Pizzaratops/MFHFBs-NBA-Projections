@@ -267,13 +267,7 @@ function computeAll() {
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : latest.mpg;
     const proj = mfhfbComputeProjection(p, minutes, weights);
-    const actual = {
-      min: latest.mpg,
-      pts: latest.rates.pts * latest.mpg,
-      reb: latest.rates.reb * latest.mpg,
-      ast: latest.rates.ast * latest.mpg,
-      fg3m: latest.rates.fg3m * latest.mpg,
-    };
+    const actual = mfhfbNewestSeasonActual(p);
     return { p, s: proj, a: actual, edited: overrides[key] !== undefined };
   });
 
@@ -339,18 +333,20 @@ function render() {
       <td>${fmt(s.fgpct)}%</td>
       <td>${fmt(s.tov,1)}</td>
       <td class="col-z" style="color:${z >= 0 ? 'var(--good)' : 'var(--bad)'}">${z >= 0 ? '+' : ''}${fmt(z,2)}</td>
-      <td class="sep-col">${fmt(a.min)}</td>
+      ${a.missed
+        ? `<td class="sep-col" colspan="5" style="text-align:center;color:var(--muted);font-style:italic;">nicht gespielt (${a.label})</td>`
+        : `<td class="sep-col">${fmt(a.min)}</td>
       <td class="col-pts-actual">${fmt(a.pts)}</td>
       <td>${fmt(a.reb)}</td>
       <td>${fmt(a.ast)}</td>
-      <td>${fmt(a.fg3m,1)}</td>
+      <td>${fmt(a.fg3m,1)}</td>`}
     </tr>`).join('');
 }
 
 function downloadCSV() {
   const rows = window.__mfhfbCurrentRows || computeAll();
   const header = ['Rank','Name','Team','Pos','Min','PTS','REB','AST','STL','BLK','3PM','FG%','TOV','Z-Score',
-                   `Actual_Min_${NEWEST_LABEL}`,`Actual_PTS_${NEWEST_LABEL}`,`Actual_REB_${NEWEST_LABEL}`,`Actual_AST_${NEWEST_LABEL}`,`Actual_3PM_${NEWEST_LABEL}`,'RecentGP'];
+                   `Actual_Min_${NEWEST_LABEL}`,`Actual_PTS_${NEWEST_LABEL}`,`Actual_REB_${NEWEST_LABEL}`,`Actual_AST_${NEWEST_LABEL}`,`Actual_3PM_${NEWEST_LABEL}`,`Missed_${NEWEST_LABEL}`,'RecentGP'];
   const lines = [header.join(',')];
   rows.forEach((r, i) => {
     const row = [
@@ -358,6 +354,7 @@ function downloadCSV() {
       fmt(r.s.min), fmt(r.s.pts), fmt(r.s.reb), fmt(r.s.ast), fmt(r.s.stl,1), fmt(r.s.blk,1), fmt(r.s.fg3m,1), fmt(r.s.fgpct), fmt(r.s.tov,1),
       fmt(r.z,2),
       fmt(r.a.min), fmt(r.a.pts), fmt(r.a.reb), fmt(r.a.ast), fmt(r.a.fg3m,1),
+      r.a.missed ? 'ja' : 'nein',
       mfhfbRecentGP(r.p),
     ];
     lines.push(row.join(','));

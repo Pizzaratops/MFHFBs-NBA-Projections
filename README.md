@@ -126,6 +126,32 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-19 (6)
+- **Bug behoben:** Spieler, die eine ganze Saison komplett verpasst haben
+  (z.B. Haliburton, Lillard 2025-26), wurden bisher so dargestellt, als
+  wäre ihre letzte *gespielte* Saison automatisch die aktuellste — dadurch
+  stand z.B. bei Haliburton "73 GP" da, wo eigentlich "0 GP (2025-26)"
+  hingehört hätte.
+- **Build-Skript** trackt jetzt explizit "missed"-Saisons (0 GP) zwischen
+  dem Debüt eines Spielers und der insgesamt jüngsten geladenen Saison,
+  statt Lücken einfach stillschweigend auszulassen. Saisons vor dem Debüt
+  bleiben weiterhin unangetastet (kein "0 GP", weil schlicht nicht
+  anwendbar).
+- **GP-Kürzel** zeigt jetzt korrekt `0/73/69` statt `73/69/-` für
+  Haliburton — die aktuellste (verpasste) Saison steht explizit mit 0 da.
+- **Realwerte-Spalte** auf der Projections-Seite zeigt bei einer verpassten
+  aktuellsten Saison jetzt "nicht gespielt (2025-26)" statt stillschweigend
+  die Vorjahreszahlen unterzuschieben.
+- **Team-Seite** markiert Spieler mit verpasster aktuellster Saison jetzt
+  mit einem "⚠ pausiert"-Hinweis neben dem Namen.
+- **Rate-/Gewichtungsberechnung unverändert korrekt:** floss schon vorher
+  nur aus tatsächlich gespielten Saisons ein — eine 0-GP-Saison verzerrt
+  die Projektion also nicht künstlich nach unten. Das war kein Bug, nur
+  die Anzeige war irreführend.
+- Referenzdokument `player-absences-2025-26.md` ergänzt: recherchierte
+  Gründe (Verletzung, Rücktritt, Ligawechsel, etc.) für alle relevanten
+  Spieler, die 2025-26 fehlen.
+
 ### 2026-07-19 (5)
 - **Rangnummer** (1., 2., 3., …) links auf der Projections-Seite ergänzt —
   passt sich automatisch der aktuellen Sortierung an.

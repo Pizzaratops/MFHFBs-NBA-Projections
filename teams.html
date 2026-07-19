@@ -151,11 +151,12 @@ function render() {
       const key = mfhfbNormalizeName(rp.name);
       const isEdited = overrides[key] !== undefined;
       const latest = mfhfbLatestSeason(match);
+      const newestActual = mfhfbNewestSeasonActual(match);
       const minutes = isEdited ? overrides[key] : latest.mpg;
       const proj = mfhfbComputeProjection(match, minutes, weights);
       return `<div class="player-row">
         <div>
-          <div class="p-name">${match.name}</div>
+          <div class="p-name">${match.name}${newestActual.missed ? ' <span style="color:var(--bad);font-size:10px;font-weight:700;">⚠ pausiert ' + newestActual.label + '</span>' : ''}</div>
           <div class="p-meta">${rp.position || match.pos} · ${latest.mpg} MPG zuletzt</div>
         </div>
         <div class="p-controls">

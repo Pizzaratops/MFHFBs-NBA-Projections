@@ -858,6 +858,13 @@ const PLAYER_RATES = [
      "fta": 0.19955,
      "tov": 0.0638
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -2270,6 +2277,13 @@ const PLAYER_RATES = [
      "fta": 0.16495,
      "tov": 0.08689
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -2410,6 +2424,13 @@ const PLAYER_RATES = [
      "fta": 0.14706,
      "tov": 0.06448
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -2614,6 +2635,13 @@ const PLAYER_RATES = [
      "fta": 0.18778,
      "tov": 0.07741
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -2754,6 +2782,13 @@ const PLAYER_RATES = [
      "fta": 0.11863,
      "tov": 0.06153
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -4671,6 +4706,13 @@ const PLAYER_RATES = [
      "fta": 0.25257,
      "tov": 0.06844
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -6581,6 +6623,27 @@ const PLAYER_RATES = [
      "fta": 0.03472,
      "tov": 0.06944
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -7803,6 +7866,13 @@ const PLAYER_RATES = [
      "fta": 0.09059,
      "tov": 0.04897
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -8937,6 +9007,13 @@ const PLAYER_RATES = [
      "fta": 0.13137,
      "tov": 0.03028
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -9141,6 +9218,13 @@ const PLAYER_RATES = [
      "fta": 0.12371,
      "tov": 0.08723
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -9727,6 +9811,13 @@ const PLAYER_RATES = [
      "fta": 0.10598,
      "tov": 0.04482
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -10059,6 +10150,55 @@ const PLAYER_RATES = [
      "fta": 0.07692,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -11129,6 +11269,41 @@ const PLAYER_RATES = [
      "fta": 0.05885,
      "tov": 0.03923
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -11492,6 +11667,13 @@ const PLAYER_RATES = [
      "fta": 0.06132,
      "tov": 0.03636
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -11767,6 +11949,41 @@ const PLAYER_RATES = [
      "fta": 0.09499,
      "tov": 0.12665
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -12818,6 +13035,20 @@ const PLAYER_RATES = [
      "fta": 0.10082,
      "tov": 0.06834
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -13124,6 +13355,55 @@ const PLAYER_RATES = [
      "fta": 0.0996,
      "tov": 0.03855
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -13309,6 +13589,55 @@ const PLAYER_RATES = [
      "fta": 0.12361,
      "tov": 0.08806
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -13354,6 +13683,20 @@ const PLAYER_RATES = [
      "fta": 0.12105,
      "tov": 0.06475
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -13814,6 +14157,34 @@ const PLAYER_RATES = [
      "fta": 0.05844,
      "tov": 0.03339
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -14165,6 +14536,55 @@ const PLAYER_RATES = [
      "fta": 0.06587,
      "tov": 0.05988
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -15038,6 +15458,13 @@ const PLAYER_RATES = [
      "fta": 0.06489,
      "tov": 0.04121
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -17187,6 +17614,34 @@ const PLAYER_RATES = [
      "fta": 0.08866,
      "tov": 0.0329
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -17614,6 +18069,13 @@ const PLAYER_RATES = [
      "fta": 0.20784,
      "tov": 0.08546
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -17856,6 +18318,34 @@ const PLAYER_RATES = [
      "fta": 0.09713,
      "tov": 0.04095
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -18117,6 +18607,13 @@ const PLAYER_RATES = [
      "fta": 0.16311,
      "tov": 0.06737
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -18774,6 +19271,13 @@ const PLAYER_RATES = [
      "fta": 0.06293,
      "tov": 0.05244
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -20942,6 +21446,20 @@ const PLAYER_RATES = [
      "fta": 0.0314,
      "tov": 0.04209
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -21390,6 +21908,48 @@ const PLAYER_RATES = [
      "fta": 0.13885,
      "tov": 0.05478
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -21435,6 +21995,34 @@ const PLAYER_RATES = [
      "fta": 0.06928,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -21812,6 +22400,41 @@ const PLAYER_RATES = [
      "fta": 0.14972,
      "tov": 0.10599
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -22182,6 +22805,48 @@ const PLAYER_RATES = [
      "fta": 0.08213,
      "tov": 0.07729
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -22533,6 +23198,13 @@ const PLAYER_RATES = [
      "fta": 0.11376,
      "tov": 0.04775
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -22680,6 +23352,41 @@ const PLAYER_RATES = [
      "fta": 0.09499,
      "tov": 0.02375
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -23534,6 +24241,27 @@ const PLAYER_RATES = [
      "fta": 0.07146,
      "tov": 0.07869
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -23617,6 +24345,13 @@ const PLAYER_RATES = [
      "fta": 0.08562,
      "tov": 0.05238
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -23681,6 +24416,41 @@ const PLAYER_RATES = [
      "fta": 0.05854,
      "tov": 0.02509
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -23764,6 +24534,13 @@ const PLAYER_RATES = [
      "fta": 0.0722,
      "tov": 0.06026
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -23904,6 +24681,13 @@ const PLAYER_RATES = [
      "fta": 0.06513,
      "tov": 0.04704
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -24326,6 +25110,55 @@ const PLAYER_RATES = [
      "fta": 0.13599,
      "tov": 0.04533
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -24556,6 +25389,13 @@ const PLAYER_RATES = [
      "fta": 0.08347,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -24627,6 +25467,48 @@ const PLAYER_RATES = [
      "fta": 0.11384,
      "tov": 0.09524
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -24736,6 +25618,34 @@ const PLAYER_RATES = [
      "fta": 0.06849,
      "tov": 0.04281
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -24762,6 +25672,55 @@ const PLAYER_RATES = [
      "fta": 0.11412,
      "tov": 0.08488
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -25431,6 +26390,13 @@ const PLAYER_RATES = [
      "fta": 0.09042,
      "tov": 0.03617
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -26036,6 +27002,34 @@ const PLAYER_RATES = [
      "fta": 0.04843,
      "tov": 0.03459
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -26489,6 +27483,13 @@ const PLAYER_RATES = [
      "fta": 0.03417,
      "tov": 0.04831
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -26681,6 +27682,34 @@ const PLAYER_RATES = [
      "fta": 0.08452,
      "tov": 0.08599
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -26961,6 +27990,20 @@ const PLAYER_RATES = [
      "fta": 0.09636,
      "tov": 0.053
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -27203,6 +28246,13 @@ const PLAYER_RATES = [
      "fta": 0.10885,
      "tov": 0.05443
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -27300,6 +28350,55 @@ const PLAYER_RATES = [
      "fta": 0.14624,
      "tov": 0.08635
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -27568,6 +28667,55 @@ const PLAYER_RATES = [
      "fta": 0.12363,
      "tov": 0.07478
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -28600,6 +29748,55 @@ const PLAYER_RATES = [
      "fta": 0.04616,
      "tov": 0.03666
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -28747,6 +29944,34 @@ const PLAYER_RATES = [
      "fta": 0.0801,
      "tov": 0.05874
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -29544,6 +30769,13 @@ const PLAYER_RATES = [
      "fta": 0.08719,
      "tov": 0.07665
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -29672,6 +30904,41 @@ const PLAYER_RATES = [
      "fta": 0.17428,
      "tov": 0.11851
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -30433,6 +31700,27 @@ const PLAYER_RATES = [
      "fta": 0.08327,
      "tov": 0.05909
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -30554,6 +31842,13 @@ const PLAYER_RATES = [
      "fta": 0.09843,
      "tov": 0.05625
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -31524,6 +32819,13 @@ const PLAYER_RATES = [
      "fta": 0.11055,
      "tov": 0.0398
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -31963,6 +33265,13 @@ const PLAYER_RATES = [
      "fta": 0.06544,
      "tov": 0.0476
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -32167,6 +33476,48 @@ const PLAYER_RATES = [
      "fta": 0.09828,
      "tov": 0.08845
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -32333,6 +33684,48 @@ const PLAYER_RATES = [
      "fta": 0.02273,
      "tov": 0.09091
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -32532,6 +33925,27 @@ const PLAYER_RATES = [
      "fta": 0.02555,
      "tov": 0.03232
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -32909,6 +34323,34 @@ const PLAYER_RATES = [
      "fta": 0.14368,
      "tov": 0.0456
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -33369,6 +34811,27 @@ const PLAYER_RATES = [
      "fta": 0.08571,
      "tov": 0.08714
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -33599,6 +35062,27 @@ const PLAYER_RATES = [
      "fta": 0.03583,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -33644,6 +35128,13 @@ const PLAYER_RATES = [
      "fta": 0.08801,
      "tov": 0.06601
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -33708,6 +35199,20 @@ const PLAYER_RATES = [
      "fta": 0.09968,
      "tov": 0.11268
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -33810,6 +35315,27 @@ const PLAYER_RATES = [
      "fta": 0.14593,
      "tov": 0.0278
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -33855,6 +35381,27 @@ const PLAYER_RATES = [
      "fta": 0.03292,
      "tov": 0.02195
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -34066,6 +35613,41 @@ const PLAYER_RATES = [
      "fta": 0.2603,
      "tov": 0.13015
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -34187,6 +35769,20 @@ const PLAYER_RATES = [
      "fta": 0.06762,
      "tov": 0.07763
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -34519,6 +36115,27 @@ const PLAYER_RATES = [
      "fta": 0.06094,
      "tov": 0.08633
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -34820,6 +36437,41 @@ const PLAYER_RATES = [
      "fta": 0.11441,
      "tov": 0.08475
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -34929,6 +36581,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02562
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -34974,6 +36640,48 @@ const PLAYER_RATES = [
      "fta": 0.04889,
      "tov": 0.08444
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -35332,6 +37040,48 @@ const PLAYER_RATES = [
      "fta": 0.10384,
      "tov": 0.06095
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -35384,6 +37134,55 @@ const PLAYER_RATES = [
      "fta": 0.06736,
      "tov": 0.05293
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -35716,6 +37515,41 @@ const PLAYER_RATES = [
      "fta": 0.10426,
      "tov": 0.0
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -35920,6 +37754,48 @@ const PLAYER_RATES = [
      "fta": 0.13985,
      "tov": 0.05569
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -35946,6 +37822,48 @@ const PLAYER_RATES = [
      "fta": 0.04039,
      "tov": 0.06897
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -36169,6 +38087,41 @@ const PLAYER_RATES = [
      "fta": 0.0719,
      "tov": 0.04978
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -36456,6 +38409,13 @@ const PLAYER_RATES = [
      "fta": 0.11233,
      "tov": 0.03931
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -36679,6 +38639,34 @@ const PLAYER_RATES = [
      "fta": 0.09328,
      "tov": 0.04664
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -36807,6 +38795,41 @@ const PLAYER_RATES = [
      "fta": 0.05229,
      "tov": 0.08134
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37075,6 +39098,34 @@ const PLAYER_RATES = [
      "fta": 0.04865,
      "tov": 0.01216
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37101,6 +39152,55 @@ const PLAYER_RATES = [
      "fta": 0.09168,
      "tov": 0.04222
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37184,6 +39284,34 @@ const PLAYER_RATES = [
      "fta": 0.11332,
      "tov": 0.03955
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37293,6 +39421,55 @@ const PLAYER_RATES = [
      "fta": 0.06289,
      "tov": 0.02264
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37338,6 +39515,13 @@ const PLAYER_RATES = [
      "fta": 0.05474,
      "tov": 0.05474
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37383,6 +39567,13 @@ const PLAYER_RATES = [
      "fta": 0.1224,
      "tov": 0.0416
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37594,6 +39785,13 @@ const PLAYER_RATES = [
      "fta": 0.04049,
      "tov": 0.08368
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -37734,6 +39932,13 @@ const PLAYER_RATES = [
      "fta": 0.05675,
      "tov": 0.03359
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38111,6 +40316,55 @@ const PLAYER_RATES = [
      "fta": 0.08929,
      "tov": 0.03571
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38194,6 +40448,34 @@ const PLAYER_RATES = [
      "fta": 0.1467,
      "tov": 0.06792
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38417,6 +40699,34 @@ const PLAYER_RATES = [
      "fta": 0.04256,
      "tov": 0.06851
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38519,6 +40829,27 @@ const PLAYER_RATES = [
      "fta": 0.22724,
      "tov": 0.08521
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38564,6 +40895,13 @@ const PLAYER_RATES = [
      "fta": 0.06674,
      "tov": 0.0572
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38609,6 +40947,13 @@ const PLAYER_RATES = [
      "fta": 0.01847,
      "tov": 0.03233
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38839,6 +41184,27 @@ const PLAYER_RATES = [
      "fta": 0.05039,
      "tov": 0.07558
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -38922,6 +41288,20 @@ const PLAYER_RATES = [
      "fta": 0.07451,
      "tov": 0.07451
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39114,6 +41494,27 @@ const PLAYER_RATES = [
      "fta": 0.19246,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39140,6 +41541,13 @@ const PLAYER_RATES = [
      "fta": 0.13417,
      "tov": 0.07156
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39204,6 +41612,34 @@ const PLAYER_RATES = [
      "fta": 0.24415,
      "tov": 0.12208
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39256,6 +41692,55 @@ const PLAYER_RATES = [
      "fta": 0.14079,
      "tov": 0.09747
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39282,6 +41767,20 @@ const PLAYER_RATES = [
      "fta": 0.08932,
      "tov": 0.06203
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39365,6 +41864,13 @@ const PLAYER_RATES = [
      "fta": 0.0725,
      "tov": 0.02417
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39486,6 +41992,20 @@ const PLAYER_RATES = [
      "fta": 0.1078,
      "tov": 0.05734
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39709,6 +42229,27 @@ const PLAYER_RATES = [
      "fta": 0.06633,
      "tov": 0.03553
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -39830,6 +42371,20 @@ const PLAYER_RATES = [
      "fta": 0.06211,
      "tov": 0.03623
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40015,6 +42570,20 @@ const PLAYER_RATES = [
      "fta": 0.08221,
      "tov": 0.04111
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40181,6 +42750,20 @@ const PLAYER_RATES = [
      "fta": 0.04099,
      "tov": 0.03704
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40385,6 +42968,13 @@ const PLAYER_RATES = [
      "fta": 0.05797,
      "tov": 0.04459
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40487,6 +43077,27 @@ const PLAYER_RATES = [
      "fta": 0.04733,
      "tov": 0.04834
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40589,6 +43200,27 @@ const PLAYER_RATES = [
      "fta": 0.03609,
      "tov": 0.05543
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40653,6 +43285,41 @@ const PLAYER_RATES = [
      "fta": 0.11051,
      "tov": 0.06736
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -40774,6 +43441,20 @@ const PLAYER_RATES = [
      "fta": 0.04897,
      "tov": 0.02671
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41099,6 +43780,27 @@ const PLAYER_RATES = [
      "fta": 0.04955,
      "tov": 0.05781
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41125,6 +43827,55 @@ const PLAYER_RATES = [
      "fta": 0.14737,
      "tov": 0.02105
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41310,6 +44061,13 @@ const PLAYER_RATES = [
      "fta": 0.0395,
      "tov": 0.02765
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41374,6 +44132,27 @@ const PLAYER_RATES = [
      "fta": 0.05021,
      "tov": 0.04519
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41419,6 +44198,48 @@ const PLAYER_RATES = [
      "fta": 0.04895,
      "tov": 0.07343
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41445,6 +44266,55 @@ const PLAYER_RATES = [
      "fta": 0.03803,
      "tov": 0.05961
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41649,6 +44519,34 @@ const PLAYER_RATES = [
      "fta": 0.01358,
      "tov": 0.02345
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41777,6 +44675,48 @@ const PLAYER_RATES = [
      "fta": 0.04271,
      "tov": 0.05
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41886,6 +44826,13 @@ const PLAYER_RATES = [
      "fta": 0.0709,
      "tov": 0.07635
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -41912,6 +44859,34 @@ const PLAYER_RATES = [
      "fta": 0.14055,
      "tov": 0.0937
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42059,6 +45034,20 @@ const PLAYER_RATES = [
      "fta": 0.05479,
      "tov": 0.06423
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42104,6 +45093,13 @@ const PLAYER_RATES = [
      "fta": 0.05223,
      "tov": 0.09809
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42130,6 +45126,55 @@ const PLAYER_RATES = [
      "fta": 0.08527,
      "tov": 0.05426
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42270,6 +45315,13 @@ const PLAYER_RATES = [
      "fta": 0.05928,
      "tov": 0.0289
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42391,6 +45443,13 @@ const PLAYER_RATES = [
      "fta": 0.13542,
      "tov": 0.05527
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42417,6 +45476,55 @@ const PLAYER_RATES = [
      "fta": 0.09117,
      "tov": 0.06391
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42799,6 +45907,20 @@ const PLAYER_RATES = [
      "fta": 0.07451,
      "tov": 0.06054
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42863,6 +45985,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42927,6 +46084,27 @@ const PLAYER_RATES = [
      "fta": 0.06641,
      "tov": 0.09961
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -42953,6 +46131,55 @@ const PLAYER_RATES = [
      "fta": 0.06349,
      "tov": 0.03175
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -43017,6 +46244,41 @@ const PLAYER_RATES = [
      "fta": 0.05734,
      "tov": 0.05495
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -43292,6 +46554,48 @@ const PLAYER_RATES = [
      "fta": 0.14777,
      "tov": 0.0756
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -43413,6 +46717,20 @@ const PLAYER_RATES = [
      "fta": 0.05386,
      "tov": 0.03672
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -43496,6 +46814,34 @@ const PLAYER_RATES = [
      "fta": 0.09278,
      "tov": 0.05663
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -43598,6 +46944,27 @@ const PLAYER_RATES = [
      "fta": 0.0841,
      "tov": 0.06527
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -43662,6 +47029,41 @@ const PLAYER_RATES = [
      "fta": 0.124,
      "tov": 0.062
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44032,6 +47434,55 @@ const PLAYER_RATES = [
      "fta": 0.00962,
      "tov": 0.01923
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44096,6 +47547,41 @@ const PLAYER_RATES = [
      "fta": 0.06016,
      "tov": 0.02533
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44198,6 +47684,13 @@ const PLAYER_RATES = [
      "fta": 0.05156,
      "tov": 0.02633
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44281,6 +47774,34 @@ const PLAYER_RATES = [
      "fta": 0.0128,
      "tov": 0.02703
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44390,6 +47911,41 @@ const PLAYER_RATES = [
      "fta": 0.03696,
      "tov": 0.10163
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44435,6 +47991,48 @@ const PLAYER_RATES = [
      "fta": 0.06569,
      "tov": 0.02152
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44518,6 +48116,34 @@ const PLAYER_RATES = [
      "fta": 0.09768,
      "tov": 0.05385
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44582,6 +48208,13 @@ const PLAYER_RATES = [
      "fta": 0.03605,
      "tov": 0.05151
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44608,6 +48241,55 @@ const PLAYER_RATES = [
      "fta": 0.12512,
      "tov": 0.05229
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44710,6 +48392,27 @@ const PLAYER_RATES = [
      "fta": 0.05172,
      "tov": 0.07241
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44781,6 +48484,55 @@ const PLAYER_RATES = [
      "fta": 0.06568,
      "tov": 0.0353
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44807,6 +48559,55 @@ const PLAYER_RATES = [
      "fta": 0.11154,
      "tov": 0.04423
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44833,6 +48634,34 @@ const PLAYER_RATES = [
      "fta": 0.02338,
      "tov": 0.05261
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -44897,6 +48726,41 @@ const PLAYER_RATES = [
      "fta": 0.08829,
      "tov": 0.06306
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45139,6 +49003,34 @@ const PLAYER_RATES = [
      "fta": 0.15005,
      "tov": 0.0483
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45165,6 +49057,34 @@ const PLAYER_RATES = [
      "fta": 0.05789,
      "tov": 0.00965
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45497,6 +49417,20 @@ const PLAYER_RATES = [
      "fta": 0.06154,
      "tov": 0.04445
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45746,6 +49680,55 @@ const PLAYER_RATES = [
      "fta": 0.04262,
      "tov": 0.04871
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45772,6 +49755,41 @@ const PLAYER_RATES = [
      "fta": 0.12907,
      "tov": 0.01986
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45836,6 +49854,41 @@ const PLAYER_RATES = [
      "fta": 0.04183,
      "tov": 0.04693
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -45919,6 +49972,34 @@ const PLAYER_RATES = [
      "fta": 0.07089,
      "tov": 0.07614
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46002,6 +50083,13 @@ const PLAYER_RATES = [
      "fta": 0.13317,
      "tov": 0.06658
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46073,6 +50161,55 @@ const PLAYER_RATES = [
      "fta": 0.03822,
      "tov": 0.05414
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46137,6 +50274,13 @@ const PLAYER_RATES = [
      "fta": 0.11516,
      "tov": 0.0
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46182,6 +50326,48 @@ const PLAYER_RATES = [
      "fta": 0.15385,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46208,6 +50394,48 @@ const PLAYER_RATES = [
      "fta": 0.10526,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46324,6 +50552,27 @@ const PLAYER_RATES = [
      "fta": 0.02479,
      "tov": 0.06196
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46369,6 +50618,13 @@ const PLAYER_RATES = [
      "fta": 0.12808,
      "tov": 0.06781
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46478,6 +50734,48 @@ const PLAYER_RATES = [
      "fta": 0.05049,
      "tov": 0.02923
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46542,6 +50840,13 @@ const PLAYER_RATES = [
      "fta": 0.0059,
      "tov": 0.0236
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46644,6 +50949,13 @@ const PLAYER_RATES = [
      "fta": 0.01525,
      "tov": 0.01525
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -46950,6 +51262,48 @@ const PLAYER_RATES = [
      "fta": 0.03134,
      "tov": 0.04632
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -47173,6 +51527,13 @@ const PLAYER_RATES = [
      "fta": 0.09277,
      "tov": 0.09277
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -47218,6 +51579,34 @@ const PLAYER_RATES = [
      "fta": 0.07153,
      "tov": 0.04769
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -47358,6 +51747,13 @@ const PLAYER_RATES = [
      "fta": 0.11089,
      "tov": 0.04791
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -47875,6 +52271,27 @@ const PLAYER_RATES = [
      "fta": 0.08307,
      "tov": 0.07029
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48041,6 +52458,55 @@ const PLAYER_RATES = [
      "fta": 0.0957,
      "tov": 0.04854
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48150,6 +52616,34 @@ const PLAYER_RATES = [
      "fta": 0.06452,
      "tov": 0.03871
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48259,6 +52753,34 @@ const PLAYER_RATES = [
      "fta": 0.11677,
      "tov": 0.03666
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48323,6 +52845,34 @@ const PLAYER_RATES = [
      "fta": 0.01263,
      "tov": 0.06316
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48425,6 +52975,27 @@ const PLAYER_RATES = [
      "fta": 0.04199,
      "tov": 0.021
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48610,6 +53181,27 @@ const PLAYER_RATES = [
      "fta": 0.15572,
      "tov": 0.03655
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -48719,6 +53311,34 @@ const PLAYER_RATES = [
      "fta": 0.02891,
      "tov": 0.03114
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49255,6 +53875,34 @@ const PLAYER_RATES = [
      "fta": 0.03002,
      "tov": 0.05827
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49357,6 +54005,27 @@ const PLAYER_RATES = [
      "fta": 0.14831,
      "tov": 0.0514
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49402,6 +54071,41 @@ const PLAYER_RATES = [
      "fta": 0.18973,
      "tov": 0.04464
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49511,6 +54215,41 @@ const PLAYER_RATES = [
      "fta": 0.06572,
      "tov": 0.02191
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49575,6 +54314,41 @@ const PLAYER_RATES = [
      "fta": 0.0715,
      "tov": 0.04071
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49760,6 +54534,13 @@ const PLAYER_RATES = [
      "fta": 0.07055,
      "tov": 0.04783
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49805,6 +54586,48 @@ const PLAYER_RATES = [
      "fta": 0.07667,
      "tov": 0.06
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -49952,6 +54775,20 @@ const PLAYER_RATES = [
      "fta": 0.10045,
      "tov": 0.10045
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -50016,6 +54853,34 @@ const PLAYER_RATES = [
      "fta": 0.05135,
      "tov": 0.05135
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -50692,6 +55557,20 @@ const PLAYER_RATES = [
      "fta": 0.07709,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -50737,6 +55616,48 @@ const PLAYER_RATES = [
      "fta": 0.11808,
      "tov": 0.06161
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -50891,6 +55812,41 @@ const PLAYER_RATES = [
      "fta": 0.01621,
      "tov": 0.01621
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51026,6 +55982,20 @@ const PLAYER_RATES = [
      "fta": 0.02935,
      "tov": 0.02348
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51173,6 +56143,34 @@ const PLAYER_RATES = [
      "fta": 0.04868,
      "tov": 0.0634
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51275,6 +56273,20 @@ const PLAYER_RATES = [
      "fta": 0.07903,
      "tov": 0.05269
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51301,6 +56313,55 @@ const PLAYER_RATES = [
      "fta": 0.02211,
      "tov": 0.02381
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51327,6 +56388,55 @@ const PLAYER_RATES = [
      "fta": 0.04808,
      "tov": 0.02885
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51410,6 +56520,34 @@ const PLAYER_RATES = [
      "fta": 0.03831,
      "tov": 0.01379
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51474,6 +56612,41 @@ const PLAYER_RATES = [
      "fta": 0.06228,
      "tov": 0.02979
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51576,6 +56749,27 @@ const PLAYER_RATES = [
      "fta": 0.11497,
      "tov": 0.05866
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51678,6 +56872,27 @@ const PLAYER_RATES = [
      "fta": 0.06008,
      "tov": 0.04537
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -51806,6 +57021,20 @@ const PLAYER_RATES = [
      "fta": 0.10114,
      "tov": 0.04687
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52349,6 +57578,41 @@ const PLAYER_RATES = [
      "fta": 0.02923,
      "tov": 0.01891
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52515,6 +57779,27 @@ const PLAYER_RATES = [
      "fta": 0.06183,
      "tov": 0.05476
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52676,6 +57961,55 @@ const PLAYER_RATES = [
      "fta": 0.09508,
      "tov": 0.04262
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52759,6 +58093,34 @@ const PLAYER_RATES = [
      "fta": 0.05213,
      "tov": 0.05893
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52785,6 +58147,55 @@ const PLAYER_RATES = [
      "fta": 0.02804,
      "tov": 0.05607
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52868,6 +58279,34 @@ const PLAYER_RATES = [
      "fta": 0.03411,
      "tov": 0.03022
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -52951,6 +58390,34 @@ const PLAYER_RATES = [
      "fta": 0.11003,
      "tov": 0.03449
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53060,6 +58527,13 @@ const PLAYER_RATES = [
      "fta": 0.05554,
      "tov": 0.02777
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53086,6 +58560,55 @@ const PLAYER_RATES = [
      "fta": 0.12617,
      "tov": 0.03738
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53252,6 +58775,27 @@ const PLAYER_RATES = [
      "fta": 0.06591,
      "tov": 0.04075
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53316,6 +58860,41 @@ const PLAYER_RATES = [
      "fta": 0.05035,
      "tov": 0.05337
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53437,6 +59016,20 @@ const PLAYER_RATES = [
      "fta": 0.02947,
      "tov": 0.0911
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53501,6 +59094,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.01483
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53546,6 +59174,48 @@ const PLAYER_RATES = [
      "fta": 0.09402,
      "tov": 0.06838
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53591,6 +59261,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53693,6 +59405,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53840,6 +59573,48 @@ const PLAYER_RATES = [
      "fta": 0.03311,
      "tov": 0.03767
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53961,6 +59736,20 @@ const PLAYER_RATES = [
      "fta": 0.05113,
      "tov": 0.05432
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -53987,6 +59776,55 @@ const PLAYER_RATES = [
      "fta": 0.06391,
      "tov": 0.06658
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54051,6 +59889,20 @@ const PLAYER_RATES = [
      "fta": 0.06832,
      "tov": 0.03843
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54115,6 +59967,41 @@ const PLAYER_RATES = [
      "fta": 0.03601,
      "tov": 0.05916
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54198,6 +60085,13 @@ const PLAYER_RATES = [
      "fta": 0.04881,
      "tov": 0.05113
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54300,6 +60194,27 @@ const PLAYER_RATES = [
      "fta": 0.03838,
      "tov": 0.02263
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54364,6 +60279,34 @@ const PLAYER_RATES = [
      "fta": 0.05955,
      "tov": 0.03164
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54390,6 +60333,48 @@ const PLAYER_RATES = [
      "fta": 0.0378,
      "tov": 0.06529
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54416,6 +60401,55 @@ const PLAYER_RATES = [
      "fta": 0.09184,
      "tov": 0.03061
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54442,6 +60476,13 @@ const PLAYER_RATES = [
      "fta": 0.04191,
      "tov": 0.05029
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54532,6 +60573,48 @@ const PLAYER_RATES = [
      "fta": 0.06948,
      "tov": 0.04897
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54596,6 +60679,20 @@ const PLAYER_RATES = [
      "fta": 0.1246,
      "tov": 0.0534
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54641,6 +60738,48 @@ const PLAYER_RATES = [
      "fta": 0.1232,
      "tov": 0.07392
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54724,6 +60863,34 @@ const PLAYER_RATES = [
      "fta": 0.07913,
      "tov": 0.05275
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54890,6 +61057,34 @@ const PLAYER_RATES = [
      "fta": 0.03725,
      "tov": 0.09456
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54916,6 +61111,48 @@ const PLAYER_RATES = [
      "fta": 0.08889,
      "tov": 0.06667
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -54999,6 +61236,34 @@ const PLAYER_RATES = [
      "fta": 0.07576,
      "tov": 0.07377
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55070,6 +61335,34 @@ const PLAYER_RATES = [
      "fta": 0.04351,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55096,6 +61389,55 @@ const PLAYER_RATES = [
      "fta": 0.05405,
      "tov": 0.02703
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55141,6 +61483,48 @@ const PLAYER_RATES = [
      "fta": 0.02144,
      "tov": 0.02603
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55205,6 +61589,41 @@ const PLAYER_RATES = [
      "fta": 0.0917,
      "tov": 0.04743
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55288,6 +61707,34 @@ const PLAYER_RATES = [
      "fta": 0.03243,
      "tov": 0.0359
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55378,6 +61825,34 @@ const PLAYER_RATES = [
      "fta": 0.05004,
      "tov": 0.05838
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55684,6 +62159,20 @@ const PLAYER_RATES = [
      "fta": 0.02886,
      "tov": 0.07145
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -55729,6 +62218,20 @@ const PLAYER_RATES = [
      "fta": 0.13113,
      "tov": 0.07061
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -56016,6 +62519,34 @@ const PLAYER_RATES = [
      "fta": 0.09546,
      "tov": 0.04918
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -56355,6 +62886,48 @@ const PLAYER_RATES = [
      "fta": 0.0875,
      "tov": 0.0375
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -56426,6 +62999,48 @@ const PLAYER_RATES = [
      "fta": 0.02029,
      "tov": 0.03188
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -56452,6 +63067,55 @@ const PLAYER_RATES = [
      "fta": 0.17341,
      "tov": 0.0578
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -56580,6 +63244,41 @@ const PLAYER_RATES = [
      "fta": 0.05068,
      "tov": 0.0645
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -56995,6 +63694,48 @@ const PLAYER_RATES = [
      "fta": 0.06028,
      "tov": 0.03122
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57237,6 +63978,34 @@ const PLAYER_RATES = [
      "fta": 0.08002,
      "tov": 0.07113
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57282,6 +64051,48 @@ const PLAYER_RATES = [
      "fta": 0.06938,
      "tov": 0.05981
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57365,6 +64176,27 @@ const PLAYER_RATES = [
      "fta": 0.09495,
      "tov": 0.05113
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57505,6 +64337,13 @@ const PLAYER_RATES = [
      "fta": 0.02344,
      "tov": 0.04427
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57626,6 +64465,20 @@ const PLAYER_RATES = [
      "fta": 0.05324,
      "tov": 0.02252
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57697,6 +64550,48 @@ const PLAYER_RATES = [
      "fta": 0.08597,
      "tov": 0.04525
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -57939,6 +64834,13 @@ const PLAYER_RATES = [
      "fta": 0.07075,
      "tov": 0.06432
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58067,6 +64969,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02663
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58202,6 +65132,55 @@ const PLAYER_RATES = [
      "fta": 0.0343,
      "tov": 0.03694
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58522,6 +65501,34 @@ const PLAYER_RATES = [
      "fta": 0.05985,
      "tov": 0.0292
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58662,6 +65669,13 @@ const PLAYER_RATES = [
      "fta": 0.05956,
      "tov": 0.04024
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58733,6 +65747,48 @@ const PLAYER_RATES = [
      "fta": 0.03008,
      "tov": 0.02256
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58842,6 +65898,34 @@ const PLAYER_RATES = [
      "fta": 0.15736,
      "tov": 0.08992
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -58887,6 +65971,27 @@ const PLAYER_RATES = [
      "fta": 0.08296,
      "tov": 0.06222
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59162,6 +66267,20 @@ const PLAYER_RATES = [
      "fta": 0.09036,
      "tov": 0.03732
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59207,6 +66326,27 @@ const PLAYER_RATES = [
      "fta": 0.05671,
      "tov": 0.05671
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59278,6 +66418,55 @@ const PLAYER_RATES = [
      "fta": 0.02961,
      "tov": 0.02506
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59304,6 +66493,20 @@ const PLAYER_RATES = [
      "fta": 0.00286,
      "tov": 0.04296
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59349,6 +66552,34 @@ const PLAYER_RATES = [
      "fta": 0.05387,
      "tov": 0.09507
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59515,6 +66746,13 @@ const PLAYER_RATES = [
      "fta": 0.02137,
      "tov": 0.0263
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59541,6 +66779,55 @@ const PLAYER_RATES = [
      "fta": 0.14894,
      "tov": 0.02128
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59605,6 +66892,34 @@ const PLAYER_RATES = [
      "fta": 0.09885,
      "tov": 0.01412
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59669,6 +66984,27 @@ const PLAYER_RATES = [
      "fta": 0.01922,
      "tov": 0.02883
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59816,6 +67152,20 @@ const PLAYER_RATES = [
      "fta": 0.04477,
      "tov": 0.0363
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59842,6 +67192,55 @@ const PLAYER_RATES = [
      "fta": 0.07463,
      "tov": 0.04478
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59887,6 +67286,48 @@ const PLAYER_RATES = [
      "fta": 0.04444,
      "tov": 0.03333
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -59951,6 +67392,41 @@ const PLAYER_RATES = [
      "fta": 0.01409,
      "tov": 0.02231
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60091,6 +67567,13 @@ const PLAYER_RATES = [
      "fta": 0.03822,
      "tov": 0.02548
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60212,6 +67695,20 @@ const PLAYER_RATES = [
      "fta": 0.03413,
      "tov": 0.03413
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60314,6 +67811,27 @@ const PLAYER_RATES = [
      "fta": 0.05625,
      "tov": 0.03867
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60359,6 +67877,13 @@ const PLAYER_RATES = [
      "fta": 0.03052,
      "tov": 0.04272
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60442,6 +67967,34 @@ const PLAYER_RATES = [
      "fta": 0.08993,
      "tov": 0.03597
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60544,6 +68097,27 @@ const PLAYER_RATES = [
      "fta": 0.07014,
      "tov": 0.05935
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60627,6 +68201,27 @@ const PLAYER_RATES = [
      "fta": 0.1385,
      "tov": 0.06925
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60774,6 +68369,20 @@ const PLAYER_RATES = [
      "fta": 0.00464,
      "tov": 0.01624
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60800,6 +68409,41 @@ const PLAYER_RATES = [
      "fta": 0.07695,
      "tov": 0.08794
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60883,6 +68527,27 @@ const PLAYER_RATES = [
      "fta": 0.08657,
      "tov": 0.06545
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60909,6 +68574,41 @@ const PLAYER_RATES = [
      "fta": 0.13095,
      "tov": 0.0744
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -60992,6 +68692,20 @@ const PLAYER_RATES = [
      "fta": 0.03924,
      "tov": 0.04616
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61037,6 +68751,34 @@ const PLAYER_RATES = [
      "fta": 0.13034,
      "tov": 0.03967
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61101,6 +68843,34 @@ const PLAYER_RATES = [
      "fta": 0.0167,
      "tov": 0.0334
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61146,6 +68916,48 @@ const PLAYER_RATES = [
      "fta": 0.06097,
      "tov": 0.04065
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61286,6 +69098,13 @@ const PLAYER_RATES = [
      "fta": 0.09543,
      "tov": 0.03995
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61357,6 +69176,55 @@ const PLAYER_RATES = [
      "fta": 0.05274,
      "tov": 0.0393
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61421,6 +69289,34 @@ const PLAYER_RATES = [
      "fta": 0.04353,
      "tov": 0.01741
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61542,6 +69438,20 @@ const PLAYER_RATES = [
      "fta": 0.13262,
      "tov": 0.1002
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61708,6 +69618,55 @@ const PLAYER_RATES = [
      "fta": 0.15625,
      "tov": 0.03125
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61848,6 +69807,13 @@ const PLAYER_RATES = [
      "fta": 0.02676,
      "tov": 0.05351
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61893,6 +69859,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.01532
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -61919,6 +69920,55 @@ const PLAYER_RATES = [
      "fta": 0.125,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62021,6 +70071,13 @@ const PLAYER_RATES = [
      "fta": 0.13735,
      "tov": 0.09157
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62047,6 +70104,55 @@ const PLAYER_RATES = [
      "fta": 0.08475,
      "tov": 0.02542
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62130,6 +70236,34 @@ const PLAYER_RATES = [
      "fta": 0.03893,
      "tov": 0.02379
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62156,6 +70290,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.11278
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62182,6 +70344,20 @@ const PLAYER_RATES = [
      "fta": 0.02649,
      "tov": 0.01766
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62208,6 +70384,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62253,6 +70443,48 @@ const PLAYER_RATES = [
      "fta": 0.09875,
      "tov": 0.05285
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62438,6 +70670,55 @@ const PLAYER_RATES = [
      "fta": 0.0775,
      "tov": 0.08507
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62464,6 +70745,55 @@ const PLAYER_RATES = [
      "fta": 0.1108,
      "tov": 0.04432
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62490,6 +70820,48 @@ const PLAYER_RATES = [
      "fta": 0.05372,
      "tov": 0.07438
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62516,6 +70888,55 @@ const PLAYER_RATES = [
      "fta": 0.14123,
      "tov": 0.06606
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62542,6 +70963,55 @@ const PLAYER_RATES = [
      "fta": 0.0802,
      "tov": 0.05263
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62810,6 +71280,27 @@ const PLAYER_RATES = [
      "fta": 0.0363,
      "tov": 0.08936
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62862,6 +71353,20 @@ const PLAYER_RATES = [
      "fta": 0.06029,
      "tov": 0.0536
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62926,6 +71431,34 @@ const PLAYER_RATES = [
      "fta": 0.06462,
      "tov": 0.07001
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -62971,6 +71504,34 @@ const PLAYER_RATES = [
      "fta": 0.01546,
      "tov": 0.03865
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63061,6 +71622,41 @@ const PLAYER_RATES = [
      "fta": 0.11599,
      "tov": 0.04833
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63163,6 +71759,27 @@ const PLAYER_RATES = [
      "fta": 0.07059,
      "tov": 0.01412
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63215,6 +71832,34 @@ const PLAYER_RATES = [
      "fta": 0.01133,
      "tov": 0.02833
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63355,6 +72000,13 @@ const PLAYER_RATES = [
      "fta": 0.04366,
      "tov": 0.05301
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63419,6 +72071,41 @@ const PLAYER_RATES = [
      "fta": 0.03389,
      "tov": 0.05422
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63445,6 +72132,55 @@ const PLAYER_RATES = [
      "fta": 0.07711,
      "tov": 0.05721
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63471,6 +72207,27 @@ const PLAYER_RATES = [
      "fta": 0.0795,
      "tov": 0.0636
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63554,6 +72311,13 @@ const PLAYER_RATES = [
      "fta": 0.17316,
      "tov": 0.08658
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63898,6 +72662,27 @@ const PLAYER_RATES = [
      "fta": 0.08005,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -63988,6 +72773,41 @@ const PLAYER_RATES = [
      "fta": 0.14382,
      "tov": 0.03922
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64128,6 +72948,13 @@ const PLAYER_RATES = [
      "fta": 0.03649,
      "tov": 0.03041
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64275,6 +73102,27 @@ const PLAYER_RATES = [
      "fta": 0.03209,
      "tov": 0.03209
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64422,6 +73270,20 @@ const PLAYER_RATES = [
      "fta": 0.0632,
      "tov": 0.02257
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64448,6 +73310,55 @@ const PLAYER_RATES = [
      "fta": 0.04781,
      "tov": 0.05378
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64493,6 +73404,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02674
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64519,6 +73437,55 @@ const PLAYER_RATES = [
      "fta": 0.1,
      "tov": 0.06667
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64666,6 +73633,41 @@ const PLAYER_RATES = [
      "fta": 0.19597,
      "tov": 0.03266
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64775,6 +73777,55 @@ const PLAYER_RATES = [
      "fta": 0.10256,
      "tov": 0.02564
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64801,6 +73852,13 @@ const PLAYER_RATES = [
      "fta": 0.11598,
      "tov": 0.01933
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64827,6 +73885,55 @@ const PLAYER_RATES = [
      "fta": 0.09231,
      "tov": 0.07692
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64891,6 +73998,27 @@ const PLAYER_RATES = [
      "fta": 0.19604,
      "tov": 0.07223
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -64974,6 +74102,34 @@ const PLAYER_RATES = [
      "fta": 0.06806,
      "tov": 0.04862
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65223,6 +74379,48 @@ const PLAYER_RATES = [
      "fta": 0.14483,
      "tov": 0.05862
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65332,6 +74530,34 @@ const PLAYER_RATES = [
      "fta": 0.07822,
      "tov": 0.07196
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65358,6 +74584,55 @@ const PLAYER_RATES = [
      "fta": 0.15385,
      "tov": 0.03846
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65441,6 +74716,34 @@ const PLAYER_RATES = [
      "fta": 0.05961,
      "tov": 0.05078
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65467,6 +74770,55 @@ const PLAYER_RATES = [
      "fta": 0.08608,
      "tov": 0.02015
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65493,6 +74845,55 @@ const PLAYER_RATES = [
      "fta": 0.04106,
      "tov": 0.03812
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65557,6 +74958,20 @@ const PLAYER_RATES = [
      "fta": 0.02472,
      "tov": 0.02472
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65685,6 +75100,27 @@ const PLAYER_RATES = [
      "fta": 0.05603,
      "tov": 0.04482
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65768,6 +75204,13 @@ const PLAYER_RATES = [
      "fta": 0.08825,
      "tov": 0.0361
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65794,6 +75237,55 @@ const PLAYER_RATES = [
      "fta": 0.02239,
      "tov": 0.0597
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -65896,6 +75388,27 @@ const PLAYER_RATES = [
      "fta": 0.0137,
      "tov": 0.1155
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66036,6 +75549,13 @@ const PLAYER_RATES = [
      "fta": 0.02942,
      "tov": 0.02942
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66119,6 +75639,34 @@ const PLAYER_RATES = [
      "fta": 0.00486,
      "tov": 0.0231
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66164,6 +75712,48 @@ const PLAYER_RATES = [
      "fta": 0.0639,
      "tov": 0.0639
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66292,6 +75882,13 @@ const PLAYER_RATES = [
      "fta": 0.12706,
      "tov": 0.05083
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66337,6 +75934,34 @@ const PLAYER_RATES = [
      "fta": 0.02072,
      "tov": 0.03913
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66363,6 +75988,55 @@ const PLAYER_RATES = [
      "fta": 0.04651,
      "tov": 0.05546
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66446,6 +76120,34 @@ const PLAYER_RATES = [
      "fta": 0.06392,
      "tov": 0.0506
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66472,6 +76174,20 @@ const PLAYER_RATES = [
      "fta": 0.01866,
      "tov": 0.03732
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66555,6 +76271,34 @@ const PLAYER_RATES = [
      "fta": 0.03878,
      "tov": 0.03393
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66638,6 +76382,20 @@ const PLAYER_RATES = [
      "fta": 0.07036,
      "tov": 0.08443
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66702,6 +76460,34 @@ const PLAYER_RATES = [
      "fta": 0.0128,
      "tov": 0.02561
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66868,6 +76654,20 @@ const PLAYER_RATES = [
      "fta": 0.03661,
      "tov": 0.04092
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -66913,6 +76713,48 @@ const PLAYER_RATES = [
      "fta": 0.04082,
      "tov": 0.06122
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67098,6 +76940,13 @@ const PLAYER_RATES = [
      "fta": 0.05457,
      "tov": 0.0955
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67404,6 +77253,20 @@ const PLAYER_RATES = [
      "fta": 0.06172,
      "tov": 0.09875
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67487,6 +77350,34 @@ const PLAYER_RATES = [
      "fta": 0.03122,
      "tov": 0.03856
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67589,6 +77480,20 @@ const PLAYER_RATES = [
      "fta": 0.04365,
      "tov": 0.03056
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67615,6 +77520,55 @@ const PLAYER_RATES = [
      "fta": 0.03558,
      "tov": 0.03184
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67679,6 +77633,34 @@ const PLAYER_RATES = [
      "fta": 0.03299,
      "tov": 0.02474
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -67743,6 +77725,34 @@ const PLAYER_RATES = [
      "fta": 0.16027,
      "tov": 0.03506
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68056,6 +78066,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.07955
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68381,6 +78419,20 @@ const PLAYER_RATES = [
      "fta": 0.14583,
      "tov": 0.06944
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68445,6 +78497,41 @@ const PLAYER_RATES = [
      "fta": 0.05083,
      "tov": 0.04448
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68585,6 +78672,13 @@ const PLAYER_RATES = [
      "fta": 0.09566,
      "tov": 0.04783
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68630,6 +78724,34 @@ const PLAYER_RATES = [
      "fta": 0.01737,
      "tov": 0.02822
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68732,6 +78854,27 @@ const PLAYER_RATES = [
      "fta": 0.0673,
      "tov": 0.0475
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68815,6 +78958,34 @@ const PLAYER_RATES = [
      "fta": 0.07146,
      "tov": 0.01971
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68860,6 +79031,48 @@ const PLAYER_RATES = [
      "fta": 0.05578,
      "tov": 0.10359
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68943,6 +79156,34 @@ const PLAYER_RATES = [
      "fta": 0.04336,
      "tov": 0.07226
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68969,6 +79210,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.06787
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -68995,6 +79264,55 @@ const PLAYER_RATES = [
      "fta": 0.08377,
      "tov": 0.06806
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69021,6 +79339,20 @@ const PLAYER_RATES = [
      "fta": 0.05918,
      "tov": 0.08286
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69123,6 +79455,13 @@ const PLAYER_RATES = [
      "fta": 0.03422,
      "tov": 0.08554
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69588,6 +79927,20 @@ const PLAYER_RATES = [
      "fta": 0.0054,
      "tov": 0.06344
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69709,6 +80062,20 @@ const PLAYER_RATES = [
      "fta": 0.19746,
      "tov": 0.07052
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69735,6 +80102,55 @@ const PLAYER_RATES = [
      "fta": 0.04667,
      "tov": 0.14
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69856,6 +80272,13 @@ const PLAYER_RATES = [
      "fta": 0.04411,
      "tov": 0.02036
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69939,6 +80362,20 @@ const PLAYER_RATES = [
      "fta": 0.0757,
      "tov": 0.05299
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -69965,6 +80402,55 @@ const PLAYER_RATES = [
      "fta": 0.09677,
      "tov": 0.06452
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70145,6 +80631,34 @@ const PLAYER_RATES = [
      "fta": 0.02678,
      "tov": 0.01551
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70285,6 +80799,13 @@ const PLAYER_RATES = [
      "fta": 0.0394,
      "tov": 0.03467
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70349,6 +80870,34 @@ const PLAYER_RATES = [
      "fta": 0.02634,
      "tov": 0.05598
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70375,6 +80924,27 @@ const PLAYER_RATES = [
      "fta": 0.10887,
      "tov": 0.08468
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70401,6 +80971,13 @@ const PLAYER_RATES = [
      "fta": 0.07938,
      "tov": 0.03175
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70491,6 +81068,34 @@ const PLAYER_RATES = [
      "fta": 0.05784,
      "tov": 0.02479
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70536,6 +81141,34 @@ const PLAYER_RATES = [
      "fta": 0.03149,
      "tov": 0.04866
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70657,6 +81290,20 @@ const PLAYER_RATES = [
      "fta": 0.05813,
      "tov": 0.01938
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70683,6 +81330,55 @@ const PLAYER_RATES = [
      "fta": 0.0194,
      "tov": 0.02371
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70754,6 +81450,13 @@ const PLAYER_RATES = [
      "fta": 0.10076,
      "tov": 0.10076
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70799,6 +81502,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -70825,6 +81570,55 @@ const PLAYER_RATES = [
      "fta": 0.02941,
      "tov": 0.07843
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71124,6 +81918,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.01728
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71150,6 +81951,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71266,6 +82116,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71292,6 +82184,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71337,6 +82278,48 @@ const PLAYER_RATES = [
      "fta": 0.07222,
      "tov": 0.02778
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71427,6 +82410,34 @@ const PLAYER_RATES = [
      "fta": 0.27088,
      "tov": 0.27088
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71472,6 +82483,34 @@ const PLAYER_RATES = [
      "fta": 0.18326,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71517,6 +82556,41 @@ const PLAYER_RATES = [
      "fta": 0.04416,
      "tov": 0.0212
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71797,6 +82871,20 @@ const PLAYER_RATES = [
      "fta": 0.04166,
      "tov": 0.03666
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -71880,6 +82968,20 @@ const PLAYER_RATES = [
      "fta": 0.21087,
      "tov": 0.04325
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72295,6 +83397,27 @@ const PLAYER_RATES = [
      "fta": 0.02608,
      "tov": 0.02445
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72494,6 +83617,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05406
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72539,6 +83690,27 @@ const PLAYER_RATES = [
      "fta": 0.14294,
      "tov": 0.03574
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72584,6 +83756,34 @@ const PLAYER_RATES = [
      "fta": 0.03597,
      "tov": 0.03597
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72693,6 +83893,41 @@ const PLAYER_RATES = [
      "fta": 0.06674,
      "tov": 0.0267
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72738,6 +83973,48 @@ const PLAYER_RATES = [
      "fta": 0.02532,
      "tov": 0.05063
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72764,6 +84041,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.01198
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72847,6 +84173,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02189
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -72911,6 +84265,41 @@ const PLAYER_RATES = [
      "fta": 0.05489,
      "tov": 0.10979
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73288,6 +84677,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05556
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73333,6 +84764,48 @@ const PLAYER_RATES = [
      "fta": 0.16,
      "tov": 0.12
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73378,6 +84851,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.06383
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73404,6 +84919,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05441
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73430,6 +84973,55 @@ const PLAYER_RATES = [
      "fta": 0.03963,
      "tov": 0.03354
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73456,6 +85048,20 @@ const PLAYER_RATES = [
      "fta": 0.06685,
      "tov": 0.06685
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73482,6 +85088,48 @@ const PLAYER_RATES = [
      "fta": 0.14286,
      "tov": 0.10714
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73603,6 +85251,20 @@ const PLAYER_RATES = [
      "fta": 0.07786,
      "tov": 0.0482
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73667,6 +85329,34 @@ const PLAYER_RATES = [
      "fta": 0.0681,
      "tov": 0.04086
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73693,6 +85383,20 @@ const PLAYER_RATES = [
      "fta": 0.01878,
      "tov": 0.02816
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73719,6 +85423,48 @@ const PLAYER_RATES = [
      "fta": 0.03774,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -73783,6 +85529,13 @@ const PLAYER_RATES = [
      "fta": 0.04205,
      "tov": 0.04486
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74070,6 +85823,13 @@ const PLAYER_RATES = [
      "fta": 0.05932,
      "tov": 0.05932
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74153,6 +85913,34 @@ const PLAYER_RATES = [
      "fta": 0.02645,
      "tov": 0.02645
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74338,6 +86126,41 @@ const PLAYER_RATES = [
      "fta": 0.10245,
      "tov": 0.1366
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74364,6 +86187,41 @@ const PLAYER_RATES = [
      "fta": 0.25046,
      "tov": 0.02783
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74390,6 +86248,20 @@ const PLAYER_RATES = [
      "fta": 0.01594,
      "tov": 0.01594
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74511,6 +86383,20 @@ const PLAYER_RATES = [
      "fta": 0.01724,
      "tov": 0.01149
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74537,6 +86423,55 @@ const PLAYER_RATES = [
      "fta": 0.00781,
      "tov": 0.03906
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74563,6 +86498,13 @@ const PLAYER_RATES = [
      "fta": 0.04475,
      "tov": 0.04475
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74684,6 +86626,20 @@ const PLAYER_RATES = [
      "fta": 0.11135,
      "tov": 0.03456
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74710,6 +86666,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.03672
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74850,6 +86841,13 @@ const PLAYER_RATES = [
      "fta": 0.0584,
      "tov": 0.03894
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -74952,6 +86950,27 @@ const PLAYER_RATES = [
      "fta": 0.06813,
      "tov": 0.03832
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75035,6 +87054,13 @@ const PLAYER_RATES = [
      "fta": 0.10409,
      "tov": 0.04383
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75118,6 +87144,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.01845
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75239,6 +87279,20 @@ const PLAYER_RATES = [
      "fta": 0.06667,
      "tov": 0.03334
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75265,6 +87319,55 @@ const PLAYER_RATES = [
      "fta": 0.05263,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75291,6 +87394,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75495,6 +87647,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.07143
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75559,6 +87753,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75623,6 +87845,20 @@ const PLAYER_RATES = [
      "fta": 0.22651,
      "tov": 0.10067
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75649,6 +87885,20 @@ const PLAYER_RATES = [
      "fta": 0.04973,
      "tov": 0.04973
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75822,6 +88072,41 @@ const PLAYER_RATES = [
      "fta": 0.14911,
      "tov": 0.01864
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75867,6 +88152,41 @@ const PLAYER_RATES = [
      "fta": 0.06653,
      "tov": 0.07984
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -75988,6 +88308,20 @@ const PLAYER_RATES = [
      "fta": 0.01177,
      "tov": 0.02354
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76071,6 +88405,34 @@ const PLAYER_RATES = [
      "fta": 0.13011,
      "tov": 0.06005
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76154,6 +88516,34 @@ const PLAYER_RATES = [
      "fta": 0.06887,
      "tov": 0.07576
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76180,6 +88570,55 @@ const PLAYER_RATES = [
      "fta": 0.2,
      "tov": 0.03636
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76225,6 +88664,48 @@ const PLAYER_RATES = [
      "fta": 0.05903,
      "tov": 0.12847
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76296,6 +88777,20 @@ const PLAYER_RATES = [
      "fta": 0.01172,
      "tov": 0.04687
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76341,6 +88836,48 @@ const PLAYER_RATES = [
      "fta": 0.04982,
      "tov": 0.05694
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76450,6 +88987,34 @@ const PLAYER_RATES = [
      "fta": 0.07807,
      "tov": 0.04337
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76699,6 +89264,27 @@ const PLAYER_RATES = [
      "fta": 0.04026,
      "tov": 0.03717
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76725,6 +89311,27 @@ const PLAYER_RATES = [
      "fta": 0.01809,
      "tov": 0.00452
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76789,6 +89396,20 @@ const PLAYER_RATES = [
      "fta": 0.01677,
      "tov": 0.04193
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76815,6 +89436,55 @@ const PLAYER_RATES = [
      "fta": 0.01741,
      "tov": 0.05538
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76879,6 +89549,13 @@ const PLAYER_RATES = [
      "fta": 0.06209,
      "tov": 0.02897
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -76995,6 +89672,48 @@ const PLAYER_RATES = [
      "fta": 0.17857,
      "tov": 0.10714
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77040,6 +89759,34 @@ const PLAYER_RATES = [
      "fta": 0.05898,
      "tov": 0.05055
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77066,6 +89813,13 @@ const PLAYER_RATES = [
      "fta": 0.05728,
      "tov": 0.0
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77111,6 +89865,20 @@ const PLAYER_RATES = [
      "fta": 0.10893,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77424,6 +90192,55 @@ const PLAYER_RATES = [
      "fta": 0.09375,
      "tov": 0.04062
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77507,6 +90324,20 @@ const PLAYER_RATES = [
      "fta": 0.11013,
      "tov": 0.02203
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77533,6 +90364,20 @@ const PLAYER_RATES = [
      "fta": 0.1083,
      "tov": 0.06189
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77578,6 +90423,48 @@ const PLAYER_RATES = [
      "fta": 0.15471,
      "tov": 0.02578
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77604,6 +90491,48 @@ const PLAYER_RATES = [
      "fta": 0.18182,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77630,6 +90559,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05405
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77675,6 +90653,48 @@ const PLAYER_RATES = [
      "fta": 0.01835,
      "tov": 0.0344
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77860,6 +90880,55 @@ const PLAYER_RATES = [
      "fta": 0.01575,
      "tov": 0.02756
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -77912,6 +90981,55 @@ const PLAYER_RATES = [
      "fta": 0.05405,
      "tov": 0.09009
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78002,6 +91120,27 @@ const PLAYER_RATES = [
      "fta": 0.06708,
      "tov": 0.04025
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78149,6 +91288,20 @@ const PLAYER_RATES = [
      "fta": 0.11518,
      "tov": 0.03544
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78232,6 +91385,20 @@ const PLAYER_RATES = [
      "fta": 0.04109,
      "tov": 0.04834
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78353,6 +91520,20 @@ const PLAYER_RATES = [
      "fta": 0.0024,
      "tov": 0.02395
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78379,6 +91560,41 @@ const PLAYER_RATES = [
      "fta": 0.05074,
      "tov": 0.02537
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78469,6 +91685,48 @@ const PLAYER_RATES = [
      "fta": 0.17073,
      "tov": 0.12195
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78571,6 +91829,27 @@ const PLAYER_RATES = [
      "fta": 0.03089,
      "tov": 0.04943
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78673,6 +91952,27 @@ const PLAYER_RATES = [
      "fta": 0.02664,
      "tov": 0.07993
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78756,6 +92056,13 @@ const PLAYER_RATES = [
      "fta": 0.10745,
      "tov": 0.01343
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78782,6 +92089,55 @@ const PLAYER_RATES = [
      "fta": 0.01415,
      "tov": 0.07547
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78846,6 +92202,20 @@ const PLAYER_RATES = [
      "fta": 0.03207,
      "tov": 0.03207
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78898,6 +92268,48 @@ const PLAYER_RATES = [
      "fta": 0.09655,
      "tov": 0.03448
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -78962,6 +92374,41 @@ const PLAYER_RATES = [
      "fta": 0.07007,
      "tov": 0.05839
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79064,6 +92511,27 @@ const PLAYER_RATES = [
      "fta": 0.06164,
      "tov": 0.06678
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79491,6 +92959,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.16529
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79574,6 +93056,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.33149
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79600,6 +93103,20 @@ const PLAYER_RATES = [
      "fta": 0.09167,
      "tov": 0.04584
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79626,6 +93143,20 @@ const PLAYER_RATES = [
      "fta": 0.56872,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79882,6 +93413,20 @@ const PLAYER_RATES = [
      "fta": 0.26258,
      "tov": 0.13129
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79908,6 +93453,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05268
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -79991,6 +93564,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80036,6 +93637,48 @@ const PLAYER_RATES = [
      "fta": 0.10676,
      "tov": 0.16014
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80126,6 +93769,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80171,6 +93856,34 @@ const PLAYER_RATES = [
      "fta": 0.10261,
      "tov": 0.07696
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80235,6 +93948,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.10517
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80261,6 +94002,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80287,6 +94077,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80313,6 +94131,55 @@ const PLAYER_RATES = [
      "fta": 0.33333,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80339,32 +94206,48 @@ const PLAYER_RATES = [
      "fta": 0.02439,
      "tov": 0.07317
     }
-   }
-  }
- },
- {
-  "name": "Josh Reaves",
-  "team": "DAL",
-  "pos": "SG",
-  "seasons": {
-   "2019-20": {
-    "team": "DAL",
-    "pos": "SG",
-    "gp": 4,
-    "mpg": 7.0,
-    "rates": {
-     "pts": 0.28571,
-     "fg3m": 0.0,
-     "reb": 0.10714,
-     "ast": 0.10714,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.10714,
-     "fga": 0.32143,
-     "ftm": 0.07143,
-     "fta": 0.07143,
-     "tov": 0.0
-    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80391,6 +94274,123 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.14286
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Josh Reaves",
+  "team": "DAL",
+  "pos": "SG",
+  "seasons": {
+   "2019-20": {
+    "team": "DAL",
+    "pos": "SG",
+    "gp": 4,
+    "mpg": 7.0,
+    "rates": {
+     "pts": 0.28571,
+     "fg3m": 0.0,
+     "reb": 0.10714,
+     "ast": 0.10714,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.10714,
+     "fga": 0.32143,
+     "ftm": 0.07143,
+     "fta": 0.07143,
+     "tov": 0.0
+    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80436,6 +94436,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.04655
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80519,6 +94526,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05623
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80583,6 +94618,20 @@ const PLAYER_RATES = [
      "fta": 0.08654,
      "tov": 0.08654
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80609,6 +94658,20 @@ const PLAYER_RATES = [
      "fta": 0.04848,
      "tov": 0.02424
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80692,6 +94755,20 @@ const PLAYER_RATES = [
      "fta": 0.24557,
      "tov": 0.04093
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80744,6 +94821,55 @@ const PLAYER_RATES = [
      "fta": 0.15385,
      "tov": 0.23077
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80815,6 +94941,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80841,6 +94988,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80924,6 +95099,34 @@ const PLAYER_RATES = [
      "fta": 0.00807,
      "tov": 0.08604
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -80988,6 +95191,41 @@ const PLAYER_RATES = [
      "fta": 0.03689,
      "tov": 0.03228
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81040,6 +95278,55 @@ const PLAYER_RATES = [
      "fta": 0.11702,
      "tov": 0.14894
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81066,6 +95353,48 @@ const PLAYER_RATES = [
      "fta": 0.09677,
      "tov": 0.03226
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81111,6 +95440,41 @@ const PLAYER_RATES = [
      "fta": 0.07156,
      "tov": 0.05963
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81163,6 +95527,55 @@ const PLAYER_RATES = [
      "fta": 0.14384,
      "tov": 0.04452
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81265,6 +95678,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.08098
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81336,6 +95763,48 @@ const PLAYER_RATES = [
      "fta": 0.09877,
      "tov": 0.06173
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81457,6 +95926,20 @@ const PLAYER_RATES = [
      "fta": 0.11887,
      "tov": 0.05005
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81540,6 +96023,13 @@ const PLAYER_RATES = [
      "fta": 0.03454,
      "tov": 0.03454
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81566,6 +96056,27 @@ const PLAYER_RATES = [
      "fta": 0.10588,
      "tov": 0.03529
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81592,6 +96103,55 @@ const PLAYER_RATES = [
      "fta": 0.05556,
      "tov": 0.02778
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81682,6 +96242,13 @@ const PLAYER_RATES = [
      "fta": 0.00986,
      "tov": 0.01971
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81727,6 +96294,34 @@ const PLAYER_RATES = [
      "fta": 0.08354,
      "tov": 0.10025
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81969,6 +96564,27 @@ const PLAYER_RATES = [
      "fta": 0.06776,
      "tov": 0.13552
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -81995,6 +96611,41 @@ const PLAYER_RATES = [
      "fta": 0.11438,
      "tov": 0.0
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82199,6 +96850,20 @@ const PLAYER_RATES = [
      "fta": 0.09142,
      "tov": 0.04266
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82225,6 +96890,13 @@ const PLAYER_RATES = [
      "fta": 0.01596,
      "tov": 0.03192
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82289,6 +96961,41 @@ const PLAYER_RATES = [
      "fta": 0.05647,
      "tov": 0.05647
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82334,6 +97041,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02812
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82386,6 +97107,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82412,6 +97175,55 @@ const PLAYER_RATES = [
      "fta": 0.0813,
      "tov": 0.03252
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82495,6 +97307,34 @@ const PLAYER_RATES = [
      "fta": 0.01094,
      "tov": 0.03829
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82521,6 +97361,55 @@ const PLAYER_RATES = [
      "fta": 0.02062,
      "tov": 0.03093
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82566,6 +97455,48 @@ const PLAYER_RATES = [
      "fta": 0.04188,
      "tov": 0.04188
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82694,6 +97625,48 @@ const PLAYER_RATES = [
      "fta": 0.20906,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82720,6 +97693,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82765,6 +97787,48 @@ const PLAYER_RATES = [
      "fta": 0.08,
      "tov": 0.04
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82950,6 +98014,13 @@ const PLAYER_RATES = [
      "fta": 0.04477,
      "tov": 0.05267
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -82976,6 +98047,34 @@ const PLAYER_RATES = [
      "fta": 0.0241,
      "tov": 0.04217
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83002,6 +98101,13 @@ const PLAYER_RATES = [
      "fta": 0.04506,
      "tov": 0.02253
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83137,6 +98243,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.04624
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83163,6 +98276,20 @@ const PLAYER_RATES = [
      "fta": 0.07695,
      "tov": 0.01924
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83189,6 +98316,13 @@ const PLAYER_RATES = [
      "fta": 0.105,
      "tov": 0.045
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83412,6 +98546,41 @@ const PLAYER_RATES = [
      "fta": 0.06066,
      "tov": 0.03033
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83438,6 +98607,20 @@ const PLAYER_RATES = [
      "fta": 0.05314,
      "tov": 0.06643
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83687,6 +98870,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83713,6 +98917,13 @@ const PLAYER_RATES = [
      "fta": 0.07069,
      "tov": 0.08837
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83739,6 +98950,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.09217
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83803,6 +99042,34 @@ const PLAYER_RATES = [
      "fta": 0.05489,
      "tov": 0.02745
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83848,6 +99115,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.03143
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83874,58 +99155,48 @@ const PLAYER_RATES = [
      "fta": 0.05263,
      "tov": 0.13158
     }
-   }
-  }
- },
- {
-  "name": "Vincent Edwards",
-  "team": "HOU",
-  "pos": "SF",
-  "seasons": {
-   "2018-19": {
-    "team": "HOU",
-    "pos": "SF",
-    "gp": 2,
-    "mpg": 8.0,
-    "rates": {
-     "pts": 0.1875,
-     "fg3m": 0.0625,
-     "reb": 0.125,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0625,
-     "fga": 0.25,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Angel Delgado",
-  "team": "LAC",
-  "pos": "C",
-  "seasons": {
-   "2018-19": {
-    "team": "LAC",
-    "pos": "C",
-    "gp": 2,
-    "mpg": 7.5,
-    "rates": {
-     "pts": 0.2,
-     "fg3m": 0.0,
-     "reb": 0.26667,
-     "ast": 0.0,
-     "stl": 0.06667,
-     "blk": 0.0,
-     "fgm": 0.06667,
-     "fga": 0.33333,
-     "ftm": 0.06667,
-     "fta": 0.13333,
-     "tov": 0.0
-    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -83990,6 +99261,163 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Angel Delgado",
+  "team": "LAC",
+  "pos": "C",
+  "seasons": {
+   "2018-19": {
+    "team": "LAC",
+    "pos": "C",
+    "gp": 2,
+    "mpg": 7.5,
+    "rates": {
+     "pts": 0.2,
+     "fg3m": 0.0,
+     "reb": 0.26667,
+     "ast": 0.0,
+     "stl": 0.06667,
+     "blk": 0.0,
+     "fgm": 0.06667,
+     "fga": 0.33333,
+     "ftm": 0.06667,
+     "fta": 0.13333,
+     "tov": 0.0
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Vincent Edwards",
+  "team": "HOU",
+  "pos": "SF",
+  "seasons": {
+   "2018-19": {
+    "team": "HOU",
+    "pos": "SF",
+    "gp": 2,
+    "mpg": 8.0,
+    "rates": {
+     "pts": 0.1875,
+     "fg3m": 0.0625,
+     "reb": 0.125,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0625,
+     "fga": 0.25,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84016,6 +99444,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.09709
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84080,6 +99515,41 @@ const PLAYER_RATES = [
      "fta": 0.36419,
      "tov": 0.09105
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84125,6 +99595,27 @@ const PLAYER_RATES = [
      "fta": 0.03257,
      "tov": 0.03257
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84189,6 +99680,41 @@ const PLAYER_RATES = [
      "fta": 0.03212,
      "tov": 0.10439
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84272,6 +99798,13 @@ const PLAYER_RATES = [
      "fta": 0.02948,
      "tov": 0.04423
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84355,6 +99888,34 @@ const PLAYER_RATES = [
      "fta": 0.0329,
      "tov": 0.047
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84521,6 +100082,48 @@ const PLAYER_RATES = [
      "fta": 0.08511,
      "tov": 0.04255
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84547,6 +100150,20 @@ const PLAYER_RATES = [
      "fta": 0.03327,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84630,6 +100247,34 @@ const PLAYER_RATES = [
      "fta": 0.13628,
      "tov": 0.02478
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84675,6 +100320,20 @@ const PLAYER_RATES = [
      "fta": 0.128,
      "tov": 0.032
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84701,6 +100360,48 @@ const PLAYER_RATES = [
      "fta": 0.04,
      "tov": 0.06
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84727,6 +100428,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.11628
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84772,6 +100522,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.03187
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84893,6 +100671,13 @@ const PLAYER_RATES = [
      "fta": 0.20279,
      "tov": 0.0676
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84919,6 +100704,55 @@ const PLAYER_RATES = [
      "fta": 0.04854,
      "tov": 0.07767
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -84990,6 +100824,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02691
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85016,6 +100892,48 @@ const PLAYER_RATES = [
      "fta": 0.13333,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85118,6 +101036,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85144,6 +101083,20 @@ const PLAYER_RATES = [
      "fta": 0.03913,
      "tov": 0.04566
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85227,6 +101180,27 @@ const PLAYER_RATES = [
      "fta": 0.03228,
      "tov": 0.02825
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85355,6 +101329,48 @@ const PLAYER_RATES = [
      "fta": 0.05936,
      "tov": 0.03653
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85471,6 +101487,41 @@ const PLAYER_RATES = [
      "fta": 0.11487,
      "tov": 0.03829
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85535,6 +101586,41 @@ const PLAYER_RATES = [
      "fta": 0.1915,
      "tov": 0.04788
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85670,6 +101756,48 @@ const PLAYER_RATES = [
      "fta": 0.04938,
      "tov": 0.02469
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85734,6 +101862,27 @@ const PLAYER_RATES = [
      "fta": 0.03835,
      "tov": 0.05753
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85817,6 +101966,20 @@ const PLAYER_RATES = [
      "fta": 0.0263,
      "tov": 0.03946
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85843,6 +102006,34 @@ const PLAYER_RATES = [
      "fta": 0.20362,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85888,6 +102079,41 @@ const PLAYER_RATES = [
      "fta": 0.24725,
      "tov": 0.0
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -85914,6 +102140,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.06042
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86144,6 +102384,41 @@ const PLAYER_RATES = [
      "fta": 0.03178,
      "tov": 0.03178
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86170,6 +102445,34 @@ const PLAYER_RATES = [
      "fta": 0.03842,
      "tov": 0.05764
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86215,6 +102518,48 @@ const PLAYER_RATES = [
      "fta": 0.125,
      "tov": 0.0625
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86298,6 +102643,27 @@ const PLAYER_RATES = [
      "fta": 0.02372,
      "tov": 0.05929
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86324,6 +102690,13 @@ const PLAYER_RATES = [
      "fta": 0.13172,
      "tov": 0.13172
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86445,6 +102818,20 @@ const PLAYER_RATES = [
      "fta": 0.03091,
      "tov": 0.03091
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86471,6 +102858,41 @@ const PLAYER_RATES = [
      "fta": 0.05661,
      "tov": 0.03397
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86535,6 +102957,34 @@ const PLAYER_RATES = [
      "fta": 0.11912,
      "tov": 0.05105
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86618,6 +103068,34 @@ const PLAYER_RATES = [
      "fta": 0.0117,
      "tov": 0.06435
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86644,6 +103122,34 @@ const PLAYER_RATES = [
      "fta": 0.02818,
      "tov": 0.01409
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86670,6 +103176,34 @@ const PLAYER_RATES = [
      "fta": 0.1054,
      "tov": 0.1054
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86715,6 +103249,41 @@ const PLAYER_RATES = [
      "fta": 0.01781,
      "tov": 0.08905
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86741,6 +103310,34 @@ const PLAYER_RATES = [
      "fta": 0.06376,
      "tov": 0.04782
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86786,6 +103383,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86907,6 +103532,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.21053
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -86952,6 +103591,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87035,6 +103688,13 @@ const PLAYER_RATES = [
      "fta": 0.5547,
      "tov": 0.09245
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87170,6 +103830,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.02014
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87234,6 +103915,41 @@ const PLAYER_RATES = [
      "fta": 0.08987,
      "tov": 0.0
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87260,6 +103976,27 @@ const PLAYER_RATES = [
      "fta": 0.25263,
      "tov": 0.25263
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87286,6 +104023,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.20374
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87331,6 +104096,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87357,6 +104150,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.21739
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87402,6 +104237,48 @@ const PLAYER_RATES = [
      "fta": 0.09091,
      "tov": 0.06061
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87428,6 +104305,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87454,6 +104380,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.07692
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87480,6 +104448,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87525,6 +104500,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87551,6 +104568,55 @@ const PLAYER_RATES = [
      "fta": 0.2,
      "tov": 0.2
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87672,6 +104738,20 @@ const PLAYER_RATES = [
      "fta": 0.04662,
      "tov": 0.02331
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87698,6 +104778,20 @@ const PLAYER_RATES = [
      "fta": 0.21505,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87838,6 +104932,13 @@ const PLAYER_RATES = [
      "fta": 0.04848,
      "tov": 0.04848
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87902,6 +105003,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.09105
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87928,6 +105064,41 @@ const PLAYER_RATES = [
      "fta": 0.07047,
      "tov": 0.04228
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -87954,6 +105125,48 @@ const PLAYER_RATES = [
      "fta": 0.1087,
      "tov": 0.04348
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88018,6 +105231,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.38961
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88044,6 +105271,55 @@ const PLAYER_RATES = [
      "fta": 0.09091,
      "tov": 0.09091
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88172,6 +105448,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88217,6 +105521,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88281,6 +105606,13 @@ const PLAYER_RATES = [
      "fta": 0.01987,
      "tov": 0.04967
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88307,6 +105639,55 @@ const PLAYER_RATES = [
      "fta": 0.03947,
      "tov": 0.03289
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88333,6 +105714,55 @@ const PLAYER_RATES = [
      "fta": 0.03226,
      "tov": 0.04301
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88601,6 +106031,34 @@ const PLAYER_RATES = [
      "fta": 0.06953,
      "tov": 0.02483
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88627,6 +106085,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.09023
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88672,6 +106137,27 @@ const PLAYER_RATES = [
      "fta": 0.10213,
      "tov": 0.0
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88717,6 +106203,48 @@ const PLAYER_RATES = [
      "fta": 0.18919,
      "tov": 0.04054
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88807,6 +106335,55 @@ const PLAYER_RATES = [
      "fta": 0.05128,
      "tov": 0.02564
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88890,6 +106467,34 @@ const PLAYER_RATES = [
      "fta": 0.11653,
      "tov": 0.02913
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -88954,6 +106559,41 @@ const PLAYER_RATES = [
      "fta": 0.23291,
      "tov": 0.19707
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89158,6 +106798,41 @@ const PLAYER_RATES = [
      "fta": 0.15332,
      "tov": 0.07666
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89279,6 +106954,20 @@ const PLAYER_RATES = [
      "fta": 0.17184,
      "tov": 0.02864
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89535,6 +107224,13 @@ const PLAYER_RATES = [
      "fta": 0.02996,
      "tov": 0.11982
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89580,6 +107276,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.14286
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89606,6 +107344,55 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.09375
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89689,6 +107476,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05364
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89760,6 +107568,13 @@ const PLAYER_RATES = [
      "fta": 0.06218,
      "tov": 0.06218
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89786,6 +107601,13 @@ const PLAYER_RATES = [
      "fta": 0.17554,
      "tov": 0.10532
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89812,6 +107634,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -89895,6 +107745,34 @@ const PLAYER_RATES = [
      "fta": 0.08942,
      "tov": 0.17884
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90016,6 +107894,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90156,6 +108048,13 @@ const PLAYER_RATES = [
      "fta": 0.02731,
      "tov": 0.10924
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90201,6 +108100,48 @@ const PLAYER_RATES = [
      "fta": 0.24948,
      "tov": 0.06237
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90329,6 +108270,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.038
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90412,6 +108367,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.00717
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90438,6 +108421,41 @@ const PLAYER_RATES = [
      "fta": 0.04212,
      "tov": 0.06318
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90464,6 +108482,13 @@ const PLAYER_RATES = [
      "fta": 0.19386,
      "tov": 0.0
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90509,6 +108534,34 @@ const PLAYER_RATES = [
      "fta": 0.04741,
      "tov": 0.02371
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90573,6 +108626,27 @@ const PLAYER_RATES = [
      "fta": 0.07022,
      "tov": 0.07022
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90599,6 +108673,34 @@ const PLAYER_RATES = [
      "fta": 0.30534,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90644,6 +108746,48 @@ const PLAYER_RATES = [
      "fta": 0.06061,
      "tov": 0.06061
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90708,6 +108852,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0565
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90772,6 +108937,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0248
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90836,6 +109036,20 @@ const PLAYER_RATES = [
      "fta": 0.11246,
      "tov": 0.11246
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90881,6 +109095,41 @@ const PLAYER_RATES = [
      "fta": 0.06734,
      "tov": 0.0
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -90926,6 +109175,27 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.10226
     }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91009,6 +109279,13 @@ const PLAYER_RATES = [
      "fta": 0.15113,
      "tov": 0.30227
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91035,6 +109312,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.11776
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91099,6 +109404,34 @@ const PLAYER_RATES = [
      "fta": 0.02266,
      "tov": 0.02266
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91144,6 +109477,48 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91170,6 +109545,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91215,6 +109618,48 @@ const PLAYER_RATES = [
      "fta": 0.10435,
      "tov": 0.05217
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91279,6 +109724,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.08111
     }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91309,6 +109789,128 @@ const PLAYER_RATES = [
   }
  },
  {
+  "name": "Anthony Barber",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 3,
+    "mpg": 4.28,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.23346,
+     "ast": 0.23346,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.31128,
+     "ftm": 0.0,
+     "fta": 0.31128,
+     "tov": 0.07782
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Stanton Kidd",
+  "team": "FA",
+  "pos": "PF",
+  "seasons": {
+   "2019-20": {
+    "team": "FA",
+    "pos": "PF",
+    "gp": 4,
+    "mpg": 3.75,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.2,
+     "ast": 0.06667,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.2,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.13333
+    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
   "name": "JaQuori McLaughlin",
   "team": "FA",
   "pos": "PG",
@@ -91331,6 +109933,88 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Jon Teske",
+  "team": "FA",
+  "pos": "C",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "C",
+    "gp": 3,
+    "mpg": 2.58,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.25862,
+     "ast": 0.12931,
+     "stl": 0.12931,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.12931,
+     "ftm": 0.0,
+     "fta": 0.25862,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91357,6 +110041,354 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Javonte Smart",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2021-22": {
+    "team": "MIA",
+    "pos": "PG",
+    "gp": 17,
+    "mpg": 11.75,
+    "rates": {
+     "pts": 0.25526,
+     "fg3m": 0.04004,
+     "reb": 0.12012,
+     "ast": 0.08008,
+     "stl": 0.03003,
+     "blk": 0.01502,
+     "fgm": 0.0951,
+     "fga": 0.3003,
+     "ftm": 0.02503,
+     "fta": 0.03003,
+     "tov": 0.05506
+    }
+   },
+   "2023-24": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 1,
+    "mpg": 0.67,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "David Johnson",
+  "team": "TOR",
+  "pos": "PG",
+  "seasons": {
+   "2021-22": {
+    "team": "TOR",
+    "pos": "PG",
+    "gp": 2,
+    "mpg": 0.99,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.5042,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Matt Mooney",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2019-20": {
+    "team": "CLE",
+    "pos": "SG",
+    "gp": 4,
+    "mpg": 4.75,
+    "rates": {
+     "pts": 0.10526,
+     "fg3m": 0.0,
+     "reb": 0.15789,
+     "ast": 0.05263,
+     "stl": 0.10526,
+     "blk": 0.05263,
+     "fgm": 0.05263,
+     "fga": 0.21053,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2021-22": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 1,
+    "mpg": 1.93,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.51724,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.51724,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.51724
+    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Deonte Burton",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2018-19": {
+    "team": "OKC",
+    "pos": "PG",
+    "gp": 32,
+    "mpg": 7.5,
+    "rates": {
+     "pts": 0.34167,
+     "fg3m": 0.03333,
+     "reb": 0.11667,
+     "ast": 0.0375,
+     "stl": 0.025,
+     "blk": 0.03333,
+     "fgm": 0.1375,
+     "fga": 0.34167,
+     "ftm": 0.03333,
+     "fta": 0.05,
+     "tov": 0.0375
+    }
+   },
+   "2019-20": {
+    "team": "OKC",
+    "pos": "PG",
+    "gp": 39,
+    "mpg": 9.13,
+    "rates": {
+     "pts": 0.29213,
+     "fg3m": 0.02809,
+     "reb": 0.16011,
+     "ast": 0.04775,
+     "stl": 0.01966,
+     "blk": 0.02809,
+     "fgm": 0.12079,
+     "fga": 0.35112,
+     "ftm": 0.02247,
+     "fta": 0.03933,
+     "tov": 0.05337
+    }
+   },
+   "2022-23": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 2,
+    "mpg": 3.24,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.30848,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -91478,593 +110510,13 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
-   }
-  }
- },
- {
-  "name": "Jaime Echenique",
-  "team": "FA",
-  "pos": "C",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "C",
-    "gp": 1,
-    "mpg": 3.07,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Jon Teske",
-  "team": "FA",
-  "pos": "C",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "C",
-    "gp": 3,
-    "mpg": 2.58,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.25862,
-     "ast": 0.12931,
-     "stl": 0.12931,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.12931,
-     "ftm": 0.0,
-     "fta": 0.25862,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Jaysean Paige",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 6.62,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.15113,
-     "ast": 0.15113,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.4534,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.15113
-    }
-   }
-  }
- },
- {
-  "name": "Chucky Hepburn",
-  "team": "TOR",
-  "pos": "PG",
-  "seasons": {
+   },
    "2025-26": {
-    "team": "TOR",
-    "pos": "PG",
-    "gp": 2,
-    "mpg": 6.62,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.07557,
-     "ast": 0.15113,
-     "stl": 0.07557,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.4534,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.07557
-    }
-   }
-  }
- },
- {
-  "name": "Kaiser Gates",
-  "team": "FA",
-  "pos": "SF",
-  "seasons": {
-   "2023-24": {
-    "team": "FA",
-    "pos": "SF",
-    "gp": 1,
-    "mpg": 7.43,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.13453,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.53812,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Michael Foster",
-  "team": "FA",
-  "pos": "PF",
-  "seasons": {
-   "2022-23": {
-    "team": "FA",
-    "pos": "PF",
-    "gp": 1,
-    "mpg": 1.03,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Zach Lofton",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2018-19": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 4.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.25,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.25,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.25
-    }
-   }
-  }
- },
- {
-  "name": "Arnoldas Kulboka",
-  "team": "CHA",
-  "pos": "SF",
-  "seasons": {
-   "2021-22": {
-    "team": "CHA",
-    "pos": "SF",
-    "gp": 2,
-    "mpg": 2.65,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.18868,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Stanton Kidd",
-  "team": "FA",
-  "pos": "PF",
-  "seasons": {
-   "2019-20": {
-    "team": "FA",
-    "pos": "PF",
-    "gp": 4,
-    "mpg": 3.75,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.2,
-     "ast": 0.06667,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.2,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.13333
-    }
-   }
-  }
- },
- {
-  "name": "Ryan Arcidiacono",
-  "team": "FA",
-  "pos": "PG",
-  "seasons": {
-   "2018-19": {
-    "team": "CHI",
-    "pos": "PG",
-    "gp": 81,
-    "mpg": 24.21,
-    "rates": {
-     "pts": 0.27741,
-     "fg3m": 0.04131,
-     "reb": 0.11168,
-     "ast": 0.13768,
-     "stl": 0.03315,
-     "blk": 0.00255,
-     "fgm": 0.09536,
-     "fga": 0.21367,
-     "ftm": 0.04539,
-     "fta": 0.05201,
-     "tov": 0.03162
-    }
-   },
-   "2019-20": {
-    "team": "CHI",
-    "pos": "PG",
-    "gp": 58,
-    "mpg": 16.03,
-    "rates": {
-     "pts": 0.28065,
-     "fg3m": 0.05806,
-     "reb": 0.11828,
-     "ast": 0.10323,
-     "stl": 0.02903,
-     "blk": 0.00323,
-     "fgm": 0.09677,
-     "fga": 0.23656,
-     "ftm": 0.02903,
-     "fta": 0.04086,
-     "tov": 0.03978
-    }
-   },
-   "2020-21": {
-    "team": "CHI",
-    "pos": "PG",
-    "gp": 44,
-    "mpg": 10.23,
-    "rates": {
-     "pts": 0.30202,
-     "fg3m": 0.05552,
-     "reb": 0.14879,
-     "ast": 0.12436,
-     "stl": 0.01999,
-     "blk": 0.0,
-     "fgm": 0.10882,
-     "fga": 0.25983,
-     "ftm": 0.02887,
-     "fta": 0.04441,
-     "tov": 0.02221
-    }
-   },
-   "2021-22": {
-    "team": "NYK",
-    "pos": "PG",
-    "gp": 10,
-    "mpg": 7.62,
-    "rates": {
-     "pts": 0.20988,
-     "fg3m": 0.05247,
-     "reb": 0.10494,
-     "ast": 0.05247,
-     "stl": 0.01312,
-     "blk": 0.0,
-     "fgm": 0.07871,
-     "fga": 0.15741,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.03935
-    }
-   },
-   "2022-23": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 20,
-    "mpg": 8.62,
-    "rates": {
-     "pts": 0.15087,
-     "fg3m": 0.04642,
-     "reb": 0.08704,
-     "ast": 0.13346,
-     "stl": 0.02901,
-     "blk": 0.0,
-     "fgm": 0.05222,
-     "fga": 0.2147,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.04062
-    }
-   },
-   "2023-24": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 20,
-    "mpg": 2.26,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.17725,
-     "ast": 0.08863,
-     "stl": 0.04431,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.13294,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.04431
-    }
-   }
-  }
- },
- {
-  "name": "Andre Ingram",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2018-19": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 4,
-    "mpg": 3.75,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.13333,
-     "ast": 0.0,
-     "stl": 0.06667,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.4,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.06667
-    }
-   }
-  }
- },
- {
-  "name": "Andrew Funk",
-  "team": "CHI",
-  "pos": "SG",
-  "seasons": {
-   "2023-24": {
-    "team": "CHI",
-    "pos": "SG",
-    "gp": 5,
-    "mpg": 2.68,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.07463,
-     "blk": 0.07463,
-     "fgm": 0.0,
-     "fga": 0.29851,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Tyler Ulis",
-  "team": "FA",
-  "pos": "PG",
-  "seasons": {
-   "2018-19": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 1,
-    "mpg": 1.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Emanuel Terry",
-  "team": "FA",
-  "pos": "PF",
-  "seasons": {
-   "2018-19": {
-    "team": "MIA",
-    "pos": "SF",
-    "gp": 3,
-    "mpg": 7.67,
-    "rates": {
-     "pts": 0.43478,
-     "fg3m": 0.0,
-     "reb": 0.30435,
-     "ast": 0.08696,
-     "stl": 0.13043,
-     "blk": 0.0,
-     "fgm": 0.17391,
-     "fga": 0.30435,
-     "ftm": 0.08696,
-     "fta": 0.17391,
-     "tov": 0.08696
-    }
-   },
-   "2021-22": {
-    "team": "FA",
-    "pos": "PF",
-    "gp": 3,
-    "mpg": 6.07,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.76923,
-     "ast": 0.10989,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.27473,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.21978
-    }
-   }
-  }
- },
- {
-  "name": "J.P. Macura",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2018-19": {
-    "team": "CHA",
-    "pos": "SG",
-    "gp": 2,
-    "mpg": 8.5,
-    "rates": {
-     "pts": 0.35294,
-     "fg3m": 0.0,
-     "reb": 0.17647,
-     "ast": 0.11765,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.17647,
-     "fga": 0.52941,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   },
-   "2019-20": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 1.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Deonte Burton",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2018-19": {
-    "team": "OKC",
-    "pos": "PG",
-    "gp": 32,
-    "mpg": 7.5,
-    "rates": {
-     "pts": 0.34167,
-     "fg3m": 0.03333,
-     "reb": 0.11667,
-     "ast": 0.0375,
-     "stl": 0.025,
-     "blk": 0.03333,
-     "fgm": 0.1375,
-     "fga": 0.34167,
-     "ftm": 0.03333,
-     "fta": 0.05,
-     "tov": 0.0375
-    }
-   },
-   "2019-20": {
-    "team": "OKC",
-    "pos": "PG",
-    "gp": 39,
-    "mpg": 9.13,
-    "rates": {
-     "pts": 0.29213,
-     "fg3m": 0.02809,
-     "reb": 0.16011,
-     "ast": 0.04775,
-     "stl": 0.01966,
-     "blk": 0.02809,
-     "fgm": 0.12079,
-     "fga": 0.35112,
-     "ftm": 0.02247,
-     "fta": 0.03933,
-     "tov": 0.05337
-    }
-   },
-   "2022-23": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 2,
-    "mpg": 3.24,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.30848,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -92110,83 +110562,80 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
  {
-  "name": "Dmytro Skapintsev",
+  "name": "J.P. Macura",
   "team": "FA",
-  "pos": "C",
+  "pos": "SG",
   "seasons": {
-   "2023-24": {
-    "team": "FA",
-    "pos": "C",
+   "2018-19": {
+    "team": "CHA",
+    "pos": "SG",
     "gp": 2,
-    "mpg": 1.07,
+    "mpg": 8.5,
     "rates": {
-     "pts": 0.0,
+     "pts": 0.35294,
      "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
+     "reb": 0.17647,
+     "ast": 0.11765,
      "stl": 0.0,
      "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.46875,
+     "fgm": 0.17647,
+     "fga": 0.52941,
      "ftm": 0.0,
      "fta": 0.0,
      "tov": 0.0
     }
-   }
-  }
- },
- {
-  "name": "C.J. Miles",
-  "team": "FA",
-  "pos": "SF",
-  "seasons": {
-   "2018-19": {
-    "team": "MEM",
-    "pos": "SF",
-    "gp": 53,
-    "mpg": 16.15,
-    "rates": {
-     "pts": 0.39603,
-     "fg3m": 0.07827,
-     "reb": 0.10864,
-     "ast": 0.04206,
-     "stl": 0.03154,
-     "blk": 0.01636,
-     "fgm": 0.13084,
-     "fga": 0.36332,
-     "ftm": 0.05607,
-     "fta": 0.06776,
-     "tov": 0.03505
-    }
    },
    "2019-20": {
     "team": "FA",
-    "pos": "SF",
-    "gp": 10,
-    "mpg": 16.1,
-    "rates": {
-     "pts": 0.39752,
-     "fg3m": 0.06832,
-     "reb": 0.07453,
-     "ast": 0.07453,
-     "stl": 0.06211,
-     "blk": 0.02484,
-     "fgm": 0.11801,
-     "fga": 0.36646,
-     "ftm": 0.09317,
-     "fta": 0.12422,
-     "tov": 0.02484
-    }
-   },
-   "2021-22": {
-    "team": "FA",
-    "pos": "SF",
+    "pos": "SG",
     "gp": 1,
-    "mpg": 1.95,
+    "mpg": 1.0,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
@@ -92200,236 +110649,433 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
  {
-  "name": "Terence Davis",
-  "team": "SAC",
-  "pos": "SG",
+  "name": "Arnoldas Kulboka",
+  "team": "CHA",
+  "pos": "SF",
   "seasons": {
-   "2019-20": {
-    "team": "TOR",
-    "pos": "SG",
-    "gp": 72,
-    "mpg": 16.79,
-    "rates": {
-     "pts": 0.44913,
-     "fg3m": 0.07775,
-     "reb": 0.19603,
-     "ast": 0.09512,
-     "stl": 0.03226,
-     "blk": 0.01158,
-     "fgm": 0.1646,
-     "fga": 0.36063,
-     "ftm": 0.04218,
-     "fta": 0.0488,
-     "tov": 0.06286
-    }
-   },
-   "2020-21": {
-    "team": "SAC",
-    "pos": "SG",
-    "gp": 61,
-    "mpg": 17.61,
-    "rates": {
-     "pts": 0.49627,
-     "fg3m": 0.09125,
-     "reb": 0.14339,
-     "ast": 0.07728,
-     "stl": 0.0419,
-     "blk": 0.01304,
-     "fgm": 0.18156,
-     "fga": 0.42457,
-     "ftm": 0.0419,
-     "fta": 0.05121,
-     "tov": 0.05866
-    }
-   },
    "2021-22": {
-    "team": "SAC",
-    "pos": "SG",
-    "gp": 30,
-    "mpg": 17.87,
-    "rates": {
-     "pts": 0.57997,
-     "fg3m": 0.09138,
-     "reb": 0.1753,
-     "ast": 0.07459,
-     "stl": 0.04849,
-     "blk": 0.01865,
-     "fgm": 0.21073,
-     "fga": 0.49792,
-     "ftm": 0.06713,
-     "fta": 0.08205,
-     "tov": 0.06154
-    }
-   },
-   "2022-23": {
-    "team": "SAC",
-    "pos": "SG",
-    "gp": 64,
-    "mpg": 13.14,
-    "rates": {
-     "pts": 0.51253,
-     "fg3m": 0.10583,
-     "reb": 0.16529,
-     "ast": 0.07967,
-     "stl": 0.05113,
-     "blk": 0.01427,
-     "fgm": 0.18313,
-     "fga": 0.43285,
-     "ftm": 0.04043,
-     "fta": 0.05113,
-     "tov": 0.06303
-    }
-   },
-   "2024-25": {
-    "team": "SAC",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 7.88,
+    "team": "CHA",
+    "pos": "SF",
+    "gp": 2,
+    "mpg": 2.65,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
-     "reb": 0.12685,
-     "ast": 0.12685,
+     "reb": 0.0,
+     "ast": 0.0,
      "stl": 0.0,
      "blk": 0.0,
      "fgm": 0.0,
-     "fga": 0.2537,
+     "fga": 0.18868,
      "ftm": 0.0,
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
  {
-  "name": "Feron Hunt",
-  "team": "NYK",
-  "pos": "PF",
+  "name": "Kaiser Gates",
+  "team": "FA",
+  "pos": "SF",
   "seasons": {
-   "2021-22": {
-    "team": "NYK",
-    "pos": "PF",
-    "gp": 2,
-    "mpg": 4.18,
+   "2023-24": {
+    "team": "FA",
+    "pos": "SF",
+    "gp": 1,
+    "mpg": 7.43,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
-     "reb": 0.11952,
-     "ast": 0.11952,
-     "stl": 0.11952,
+     "reb": 0.13453,
+     "ast": 0.0,
+     "stl": 0.0,
      "blk": 0.0,
      "fgm": 0.0,
-     "fga": 0.23904,
+     "fga": 0.53812,
      "ftm": 0.0,
      "fta": 0.0,
-     "tov": 0.11952
+     "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
  {
-  "name": "Sterling Brown",
+  "name": "Greg Whittington",
+  "team": "FA",
+  "pos": "SF",
+  "seasons": {
+   "2020-21": {
+    "team": "FA",
+    "pos": "SF",
+    "gp": 4,
+    "mpg": 3.0,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.24965,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Ade Murkey",
+  "team": "FA",
+  "pos": "SF",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "SF",
+    "gp": 1,
+    "mpg": 1.47,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "John Holland",
   "team": "FA",
   "pos": "SG",
   "seasons": {
    "2018-19": {
-    "team": "MIL",
-    "pos": "SG",
-    "gp": 58,
-    "mpg": 17.83,
-    "rates": {
-     "pts": 0.35977,
-     "fg3m": 0.05126,
-     "reb": 0.17698,
-     "ast": 0.08124,
-     "stl": 0.02418,
-     "blk": 0.00774,
-     "fgm": 0.14023,
-     "fga": 0.30174,
-     "ftm": 0.02805,
-     "fta": 0.04062,
-     "tov": 0.04352
-    }
-   },
-   "2019-20": {
-    "team": "MIL",
-    "pos": "SG",
-    "gp": 52,
-    "mpg": 14.75,
-    "rates": {
-     "pts": 0.34681,
-     "fg3m": 0.05737,
-     "reb": 0.23859,
-     "ast": 0.06649,
-     "stl": 0.03781,
-     "blk": 0.00913,
-     "fgm": 0.12386,
-     "fga": 0.33377,
-     "ftm": 0.04172,
-     "fta": 0.05215,
-     "tov": 0.05476
-    }
-   },
-   "2020-21": {
-    "team": "HOU",
-    "pos": "SG/SF",
-    "gp": 51,
-    "mpg": 24.09,
-    "rates": {
-     "pts": 0.33858,
-     "fg3m": 0.07406,
-     "reb": 0.18231,
-     "ast": 0.0586,
-     "stl": 0.03093,
-     "blk": 0.00977,
-     "fgm": 0.12208,
-     "fga": 0.27184,
-     "ftm": 0.02035,
-     "fta": 0.02523,
-     "tov": 0.03337
-    }
-   },
-   "2021-22": {
-    "team": "DAL",
-    "pos": "SG/SF",
-    "gp": 49,
-    "mpg": 12.82,
-    "rates": {
-     "pts": 0.25464,
-     "fg3m": 0.04456,
-     "reb": 0.23713,
-     "ast": 0.05411,
-     "stl": 0.02228,
-     "blk": 0.00955,
-     "fgm": 0.0939,
-     "fga": 0.24668,
-     "ftm": 0.02228,
-     "fta": 0.02387,
-     "tov": 0.0366
-    }
-   },
-   "2022-23": {
     "team": "FA",
     "pos": "SG",
-    "gp": 4,
-    "mpg": 6.09,
+    "gp": 1,
+    "mpg": 1.0,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
-     "reb": 0.32832,
-     "ast": 0.08208,
-     "stl": 0.12312,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
      "blk": 0.0,
      "fgm": 0.0,
-     "fga": 0.16416,
+     "fga": 0.0,
      "ftm": 0.0,
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Darius Brown II",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2025-26": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 1,
+    "mpg": 2.67,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.375,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.375,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   }
+  }
+ },
+ {
+  "name": "Donte Grantham",
+  "team": "OKC",
+  "pos": "SF",
+  "seasons": {
+   "2018-19": {
+    "team": "OKC",
+    "pos": "SF",
+    "gp": 3,
+    "mpg": 0.67,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 1.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -92456,6 +111102,359 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.05964
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Jahlil Okafor",
+  "team": "FA",
+  "pos": "C",
+  "seasons": {
+   "2018-19": {
+    "team": "NOR",
+    "pos": "C",
+    "gp": 59,
+    "mpg": 15.85,
+    "rates": {
+     "pts": 0.51765,
+     "fg3m": 0.00107,
+     "reb": 0.29733,
+     "ast": 0.04278,
+     "stl": 0.01604,
+     "blk": 0.04278,
+     "fgm": 0.22674,
+     "fga": 0.38717,
+     "ftm": 0.0631,
+     "fta": 0.09519,
+     "tov": 0.05561
+    }
+   },
+   "2019-20": {
+    "team": "NOR",
+    "pos": "C",
+    "gp": 30,
+    "mpg": 15.57,
+    "rates": {
+     "pts": 0.52034,
+     "fg3m": 0.00214,
+     "reb": 0.27195,
+     "ast": 0.07923,
+     "stl": 0.01499,
+     "blk": 0.04711,
+     "fgm": 0.21627,
+     "fga": 0.3469,
+     "ftm": 0.08565,
+     "fta": 0.13276,
+     "tov": 0.08137
+    }
+   },
+   "2020-21": {
+    "team": "DET",
+    "pos": "C",
+    "gp": 27,
+    "mpg": 12.86,
+    "rates": {
+     "pts": 0.41757,
+     "fg3m": 0.00576,
+     "reb": 0.18719,
+     "ast": 0.03744,
+     "stl": 0.01728,
+     "blk": 0.0144,
+     "fgm": 0.18143,
+     "fga": 0.29086,
+     "ftm": 0.04896,
+     "fta": 0.06911,
+     "tov": 0.06048
+    }
+   },
+   "2024-25": {
+    "team": "FA",
+    "pos": "C",
+    "gp": 1,
+    "mpg": 3.37,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.29703,
+     "ast": 0.29703,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Andrew Funk",
+  "team": "CHI",
+  "pos": "SG",
+  "seasons": {
+   "2023-24": {
+    "team": "CHI",
+    "pos": "SG",
+    "gp": 5,
+    "mpg": 2.68,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.07463,
+     "blk": 0.07463,
+     "fgm": 0.0,
+     "fga": 0.29851,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "M.J. Walker",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 2,
+    "mpg": 4.19,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.11928,
+     "ast": 0.11928,
+     "stl": 0.35785,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.47714,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Malcolm Cazalon",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2023-24": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 1,
+    "mpg": 2.58,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Noa Essengue",
+  "team": "CHI",
+  "pos": "PF",
+  "seasons": {
+   "2025-26": {
+    "team": "CHI",
+    "pos": "PF",
+    "gp": 2,
+    "mpg": 3.02,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.16575,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.49724,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   }
+  }
+ },
+ {
+  "name": "Javin DeLaurier",
+  "team": "FA",
+  "pos": "C",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "C",
+    "gp": 1,
+    "mpg": 2.8,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.35714,
+     "ast": 0.0,
+     "stl": 0.35714,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -92501,418 +111500,41 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.79156
     }
-   }
-  }
- },
- {
-  "name": "Greg Whittington",
-  "team": "FA",
-  "pos": "SF",
-  "seasons": {
-   "2020-21": {
-    "team": "FA",
-    "pos": "SF",
-    "gp": 4,
-    "mpg": 3.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.24965,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Will Magnay",
-  "team": "FA",
-  "pos": "PF",
-  "seasons": {
-   "2020-21": {
-    "team": "FA",
-    "pos": "PF",
-    "gp": 1,
-    "mpg": 3.27,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.30612,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.30612
-    }
-   }
-  }
- },
- {
-  "name": "David Johnson",
-  "team": "TOR",
-  "pos": "PG",
-  "seasons": {
-   "2021-22": {
-    "team": "TOR",
-    "pos": "PG",
-    "gp": 2,
-    "mpg": 0.99,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.5042,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Matt Mooney",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2019-20": {
-    "team": "CLE",
-    "pos": "SG",
-    "gp": 4,
-    "mpg": 4.75,
-    "rates": {
-     "pts": 0.10526,
-     "fg3m": 0.0,
-     "reb": 0.15789,
-     "ast": 0.05263,
-     "stl": 0.10526,
-     "blk": 0.05263,
-     "fgm": 0.05263,
-     "fga": 0.21053,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
    },
    "2021-22": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 1.93,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.51724,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.51724,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.51724
-    }
-   }
-  }
- },
- {
-  "name": "Frank Jackson",
-  "team": "FA",
-  "pos": "PG",
-  "seasons": {
-   "2018-19": {
-    "team": "NOR",
-    "pos": "PG",
-    "gp": 61,
-    "mpg": 19.16,
-    "rates": {
-     "pts": 0.42344,
-     "fg3m": 0.04534,
-     "reb": 0.11377,
-     "ast": 0.05902,
-     "stl": 0.02139,
-     "blk": 0.00171,
-     "fgm": 0.16595,
-     "fga": 0.38323,
-     "ftm": 0.04619,
-     "fta": 0.06245,
-     "tov": 0.04021
-    }
-   },
-   "2019-20": {
-    "team": "NOR",
-    "pos": "PG",
-    "gp": 59,
-    "mpg": 13.51,
-    "rates": {
-     "pts": 0.4655,
-     "fg3m": 0.05897,
-     "reb": 0.10414,
-     "ast": 0.07654,
-     "stl": 0.02133,
-     "blk": 0.00502,
-     "fgm": 0.16813,
-     "fga": 0.41531,
-     "ftm": 0.07026,
-     "fta": 0.0941,
-     "tov": 0.06148
-    }
-   },
-   "2020-21": {
-    "team": "DET",
-    "pos": "PG",
-    "gp": 40,
-    "mpg": 18.46,
-    "rates": {
-     "pts": 0.5283,
-     "fg3m": 0.08263,
-     "reb": 0.1165,
-     "ast": 0.04877,
-     "stl": 0.02032,
-     "blk": 0.00135,
-     "fgm": 0.18152,
-     "fga": 0.3969,
-     "ftm": 0.08263,
-     "fta": 0.1016,
-     "tov": 0.04741
-    }
-   },
-   "2021-22": {
-    "team": "DET",
-    "pos": "PG",
-    "gp": 53,
-    "mpg": 21.96,
-    "rates": {
-     "pts": 0.48113,
-     "fg3m": 0.07389,
-     "reb": 0.07475,
-     "ast": 0.04725,
-     "stl": 0.0232,
-     "blk": 0.00687,
-     "fgm": 0.16668,
-     "fga": 0.41497,
-     "ftm": 0.07389,
-     "fta": 0.08935,
-     "tov": 0.03265
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    },
    "2022-23": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 1,
-    "mpg": 5.05,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.39604,
-     "ast": 0.19802,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.59406,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Noa Essengue",
-  "team": "CHI",
-  "pos": "PF",
-  "seasons": {
-   "2025-26": {
-    "team": "CHI",
-    "pos": "PF",
-    "gp": 2,
-    "mpg": 3.02,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.16575,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.49724,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Ike Anigbogu",
-  "team": "FA",
-  "pos": "PF",
-  "seasons": {
-   "2018-19": {
-    "team": "FA",
-    "pos": "PF",
-    "gp": 3,
-    "mpg": 2.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.5,
-     "ast": 0.16667,
-     "stl": 0.0,
-     "blk": 0.16667,
-     "fgm": 0.0,
-     "fga": 0.5,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.16667
-    }
-   }
-  }
- },
- {
-  "name": "Terry Taylor",
-  "team": "FA",
-  "pos": "PF/C",
-  "seasons": {
-   "2021-22": {
-    "team": "IND",
-    "pos": "SG",
-    "gp": 33,
-    "mpg": 21.63,
-    "rates": {
-     "pts": 0.44552,
-     "fg3m": 0.01681,
-     "reb": 0.24098,
-     "ast": 0.05744,
-     "stl": 0.01961,
-     "blk": 0.01261,
-     "fgm": 0.18914,
-     "fga": 0.30682,
-     "ftm": 0.05044,
-     "fta": 0.07145,
-     "tov": 0.03362
-    }
-   },
-   "2022-23": {
-    "team": "CHI",
-    "pos": "SG",
-    "gp": 31,
-    "mpg": 8.5,
-    "rates": {
-     "pts": 0.33787,
-     "fg3m": 0.01898,
-     "reb": 0.17842,
-     "ast": 0.03796,
-     "stl": 0.01139,
-     "blk": 0.02278,
-     "fgm": 0.14805,
-     "fga": 0.28472,
-     "ftm": 0.02278,
-     "fta": 0.04176,
-     "tov": 0.03417
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    },
    "2023-24": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 31,
-    "mpg": 6.05,
-    "rates": {
-     "pts": 0.2452,
-     "fg3m": 0.01066,
-     "reb": 0.19723,
-     "ast": 0.0533,
-     "stl": 0.02665,
-     "blk": 0.01066,
-     "fgm": 0.10661,
-     "fga": 0.20789,
-     "ftm": 0.02132,
-     "fta": 0.02665,
-     "tov": 0.03731
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    },
    "2024-25": {
-    "team": "FA",
-    "pos": "PF/C",
-    "gp": 3,
-    "mpg": 2.11,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.15789,
-     "ast": 0.31579,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.15789,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Ade Murkey",
-  "team": "FA",
-  "pos": "SF",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "SF",
-    "gp": 1,
-    "mpg": 1.47,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Jesse Edwards",
-  "team": "MIN",
-  "pos": "C",
-  "seasons": {
-   "2024-25": {
-    "team": "MIN",
-    "pos": "C",
-    "gp": 2,
-    "mpg": 2.33,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.21429,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -92981,53 +111603,210 @@ const PLAYER_RATES = [
   }
  },
  {
-  "name": "Donte Grantham",
-  "team": "OKC",
-  "pos": "SF",
+  "name": "Jesse Edwards",
+  "team": "MIN",
+  "pos": "C",
   "seasons": {
-   "2018-19": {
-    "team": "OKC",
-    "pos": "SF",
-    "gp": 3,
-    "mpg": 0.67,
+   "2024-25": {
+    "team": "MIN",
+    "pos": "C",
+    "gp": 2,
+    "mpg": 2.33,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
      "reb": 0.0,
-     "ast": 0.0,
+     "ast": 0.21429,
      "stl": 0.0,
      "blk": 0.0,
      "fgm": 0.0,
-     "fga": 1.0,
+     "fga": 0.0,
      "ftm": 0.0,
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
  {
-  "name": "Jalen Crutcher",
+  "name": "Zach Lofton",
   "team": "FA",
-  "pos": "PG",
+  "pos": "SG",
   "seasons": {
-   "2023-24": {
+   "2018-19": {
     "team": "FA",
-    "pos": "PG",
+    "pos": "SG",
     "gp": 1,
-    "mpg": 2.65,
+    "mpg": 4.0,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
      "reb": 0.0,
      "ast": 0.0,
-     "stl": 0.0,
+     "stl": 0.25,
      "blk": 0.0,
      "fgm": 0.0,
-     "fga": 0.37736,
+     "fga": 0.25,
      "ftm": 0.0,
      "fta": 0.0,
-     "tov": 0.0
+     "tov": 0.25
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Ike Anigbogu",
+  "team": "FA",
+  "pos": "PF",
+  "seasons": {
+   "2018-19": {
+    "team": "FA",
+    "pos": "PF",
+    "gp": 3,
+    "mpg": 2.0,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.5,
+     "ast": 0.16667,
+     "stl": 0.0,
+     "blk": 0.16667,
+     "fgm": 0.0,
+     "fga": 0.5,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.16667
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Chucky Hepburn",
+  "team": "TOR",
+  "pos": "PG",
+  "seasons": {
+   "2025-26": {
+    "team": "TOR",
+    "pos": "PG",
+    "gp": 2,
+    "mpg": 6.62,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.07557,
+     "ast": 0.15113,
+     "stl": 0.07557,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.4534,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.07557
     }
    }
   }
@@ -93112,275 +111891,52 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
-   }
-  }
- },
- {
-  "name": "Malcolm Cazalon",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2023-24": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 2.58,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Tyler Davis",
-  "team": "FA",
-  "pos": "C",
-  "seasons": {
-   "2018-19": {
-    "team": "FA",
-    "pos": "C",
-    "gp": 1,
-    "mpg": 1.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 1.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 1.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Anthony Barber",
-  "team": "FA",
-  "pos": "PG",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 3,
-    "mpg": 4.28,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.23346,
-     "ast": 0.23346,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.31128,
-     "ftm": 0.0,
-     "fta": 0.31128,
-     "tov": 0.07782
-    }
-   }
-  }
- },
- {
-  "name": "Tyler Hall",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 1.93,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Javonte Smart",
-  "team": "FA",
-  "pos": "PG",
-  "seasons": {
-   "2021-22": {
-    "team": "MIA",
-    "pos": "PG",
-    "gp": 17,
-    "mpg": 11.75,
-    "rates": {
-     "pts": 0.25526,
-     "fg3m": 0.04004,
-     "reb": 0.12012,
-     "ast": 0.08008,
-     "stl": 0.03003,
-     "blk": 0.01502,
-     "fgm": 0.0951,
-     "fga": 0.3003,
-     "ftm": 0.02503,
-     "fta": 0.03003,
-     "tov": 0.05506
-    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    },
    "2023-24": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 1,
-    "mpg": 0.67,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Zylan Cheatham",
-  "team": "FA",
-  "pos": "SF",
-  "seasons": {
-   "2019-20": {
-    "team": "NOR",
-    "pos": "PF",
-    "gp": 4,
-    "mpg": 12.75,
-    "rates": {
-     "pts": 0.23529,
-     "fg3m": 0.0,
-     "reb": 0.17647,
-     "ast": 0.05882,
-     "stl": 0.01961,
-     "blk": 0.01961,
-     "fgm": 0.11765,
-     "fga": 0.17647,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.07843
-    }
-   },
-   "2021-22": {
-    "team": "FA",
-    "pos": "SF",
-    "gp": 1,
-    "mpg": 5.18,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.57878,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Jahlil Okafor",
-  "team": "FA",
-  "pos": "C",
-  "seasons": {
-   "2018-19": {
-    "team": "NOR",
-    "pos": "C",
-    "gp": 59,
-    "mpg": 15.85,
-    "rates": {
-     "pts": 0.51765,
-     "fg3m": 0.00107,
-     "reb": 0.29733,
-     "ast": 0.04278,
-     "stl": 0.01604,
-     "blk": 0.04278,
-     "fgm": 0.22674,
-     "fga": 0.38717,
-     "ftm": 0.0631,
-     "fta": 0.09519,
-     "tov": 0.05561
-    }
-   },
-   "2019-20": {
-    "team": "NOR",
-    "pos": "C",
-    "gp": 30,
-    "mpg": 15.57,
-    "rates": {
-     "pts": 0.52034,
-     "fg3m": 0.00214,
-     "reb": 0.27195,
-     "ast": 0.07923,
-     "stl": 0.01499,
-     "blk": 0.04711,
-     "fgm": 0.21627,
-     "fga": 0.3469,
-     "ftm": 0.08565,
-     "fta": 0.13276,
-     "tov": 0.08137
-    }
-   },
-   "2020-21": {
-    "team": "DET",
-    "pos": "C",
-    "gp": 27,
-    "mpg": 12.86,
-    "rates": {
-     "pts": 0.41757,
-     "fg3m": 0.00576,
-     "reb": 0.18719,
-     "ast": 0.03744,
-     "stl": 0.01728,
-     "blk": 0.0144,
-     "fgm": 0.18143,
-     "fga": 0.29086,
-     "ftm": 0.04896,
-     "fta": 0.06911,
-     "tov": 0.06048
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    },
    "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Jaime Echenique",
+  "team": "FA",
+  "pos": "C",
+  "seasons": {
+   "2021-22": {
     "team": "FA",
     "pos": "C",
     "gp": 1,
-    "mpg": 3.37,
+    "mpg": 3.07,
     "rates": {
      "pts": 0.0,
      "fg3m": 0.0,
-     "reb": 0.29703,
-     "ast": 0.29703,
+     "reb": 0.0,
+     "ast": 0.0,
      "stl": 0.0,
      "blk": 0.0,
      "fgm": 0.0,
@@ -93389,6 +111945,34 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -93510,6 +112094,1259 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Frank Jackson",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2018-19": {
+    "team": "NOR",
+    "pos": "PG",
+    "gp": 61,
+    "mpg": 19.16,
+    "rates": {
+     "pts": 0.42344,
+     "fg3m": 0.04534,
+     "reb": 0.11377,
+     "ast": 0.05902,
+     "stl": 0.02139,
+     "blk": 0.00171,
+     "fgm": 0.16595,
+     "fga": 0.38323,
+     "ftm": 0.04619,
+     "fta": 0.06245,
+     "tov": 0.04021
+    }
+   },
+   "2019-20": {
+    "team": "NOR",
+    "pos": "PG",
+    "gp": 59,
+    "mpg": 13.51,
+    "rates": {
+     "pts": 0.4655,
+     "fg3m": 0.05897,
+     "reb": 0.10414,
+     "ast": 0.07654,
+     "stl": 0.02133,
+     "blk": 0.00502,
+     "fgm": 0.16813,
+     "fga": 0.41531,
+     "ftm": 0.07026,
+     "fta": 0.0941,
+     "tov": 0.06148
+    }
+   },
+   "2020-21": {
+    "team": "DET",
+    "pos": "PG",
+    "gp": 40,
+    "mpg": 18.46,
+    "rates": {
+     "pts": 0.5283,
+     "fg3m": 0.08263,
+     "reb": 0.1165,
+     "ast": 0.04877,
+     "stl": 0.02032,
+     "blk": 0.00135,
+     "fgm": 0.18152,
+     "fga": 0.3969,
+     "ftm": 0.08263,
+     "fta": 0.1016,
+     "tov": 0.04741
+    }
+   },
+   "2021-22": {
+    "team": "DET",
+    "pos": "PG",
+    "gp": 53,
+    "mpg": 21.96,
+    "rates": {
+     "pts": 0.48113,
+     "fg3m": 0.07389,
+     "reb": 0.07475,
+     "ast": 0.04725,
+     "stl": 0.0232,
+     "blk": 0.00687,
+     "fgm": 0.16668,
+     "fga": 0.41497,
+     "ftm": 0.07389,
+     "fta": 0.08935,
+     "tov": 0.03265
+    }
+   },
+   "2022-23": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 1,
+    "mpg": 5.05,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.39604,
+     "ast": 0.19802,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.59406,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Terry Taylor",
+  "team": "FA",
+  "pos": "PF/C",
+  "seasons": {
+   "2021-22": {
+    "team": "IND",
+    "pos": "SG",
+    "gp": 33,
+    "mpg": 21.63,
+    "rates": {
+     "pts": 0.44552,
+     "fg3m": 0.01681,
+     "reb": 0.24098,
+     "ast": 0.05744,
+     "stl": 0.01961,
+     "blk": 0.01261,
+     "fgm": 0.18914,
+     "fga": 0.30682,
+     "ftm": 0.05044,
+     "fta": 0.07145,
+     "tov": 0.03362
+    }
+   },
+   "2022-23": {
+    "team": "CHI",
+    "pos": "SG",
+    "gp": 31,
+    "mpg": 8.5,
+    "rates": {
+     "pts": 0.33787,
+     "fg3m": 0.01898,
+     "reb": 0.17842,
+     "ast": 0.03796,
+     "stl": 0.01139,
+     "blk": 0.02278,
+     "fgm": 0.14805,
+     "fga": 0.28472,
+     "ftm": 0.02278,
+     "fta": 0.04176,
+     "tov": 0.03417
+    }
+   },
+   "2023-24": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 31,
+    "mpg": 6.05,
+    "rates": {
+     "pts": 0.2452,
+     "fg3m": 0.01066,
+     "reb": 0.19723,
+     "ast": 0.0533,
+     "stl": 0.02665,
+     "blk": 0.01066,
+     "fgm": 0.10661,
+     "fga": 0.20789,
+     "ftm": 0.02132,
+     "fta": 0.02665,
+     "tov": 0.03731
+    }
+   },
+   "2024-25": {
+    "team": "FA",
+    "pos": "PF/C",
+    "gp": 3,
+    "mpg": 2.11,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.15789,
+     "ast": 0.31579,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.15789,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Terence Davis",
+  "team": "SAC",
+  "pos": "SG",
+  "seasons": {
+   "2019-20": {
+    "team": "TOR",
+    "pos": "SG",
+    "gp": 72,
+    "mpg": 16.79,
+    "rates": {
+     "pts": 0.44913,
+     "fg3m": 0.07775,
+     "reb": 0.19603,
+     "ast": 0.09512,
+     "stl": 0.03226,
+     "blk": 0.01158,
+     "fgm": 0.1646,
+     "fga": 0.36063,
+     "ftm": 0.04218,
+     "fta": 0.0488,
+     "tov": 0.06286
+    }
+   },
+   "2020-21": {
+    "team": "SAC",
+    "pos": "SG",
+    "gp": 61,
+    "mpg": 17.61,
+    "rates": {
+     "pts": 0.49627,
+     "fg3m": 0.09125,
+     "reb": 0.14339,
+     "ast": 0.07728,
+     "stl": 0.0419,
+     "blk": 0.01304,
+     "fgm": 0.18156,
+     "fga": 0.42457,
+     "ftm": 0.0419,
+     "fta": 0.05121,
+     "tov": 0.05866
+    }
+   },
+   "2021-22": {
+    "team": "SAC",
+    "pos": "SG",
+    "gp": 30,
+    "mpg": 17.87,
+    "rates": {
+     "pts": 0.57997,
+     "fg3m": 0.09138,
+     "reb": 0.1753,
+     "ast": 0.07459,
+     "stl": 0.04849,
+     "blk": 0.01865,
+     "fgm": 0.21073,
+     "fga": 0.49792,
+     "ftm": 0.06713,
+     "fta": 0.08205,
+     "tov": 0.06154
+    }
+   },
+   "2022-23": {
+    "team": "SAC",
+    "pos": "SG",
+    "gp": 64,
+    "mpg": 13.14,
+    "rates": {
+     "pts": 0.51253,
+     "fg3m": 0.10583,
+     "reb": 0.16529,
+     "ast": 0.07967,
+     "stl": 0.05113,
+     "blk": 0.01427,
+     "fgm": 0.18313,
+     "fga": 0.43285,
+     "ftm": 0.04043,
+     "fta": 0.05113,
+     "tov": 0.06303
+    }
+   },
+   "2024-25": {
+    "team": "SAC",
+    "pos": "SG",
+    "gp": 1,
+    "mpg": 7.88,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.12685,
+     "ast": 0.12685,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.2537,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Zylan Cheatham",
+  "team": "FA",
+  "pos": "SF",
+  "seasons": {
+   "2019-20": {
+    "team": "NOR",
+    "pos": "PF",
+    "gp": 4,
+    "mpg": 12.75,
+    "rates": {
+     "pts": 0.23529,
+     "fg3m": 0.0,
+     "reb": 0.17647,
+     "ast": 0.05882,
+     "stl": 0.01961,
+     "blk": 0.01961,
+     "fgm": 0.11765,
+     "fga": 0.17647,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.07843
+    }
+   },
+   "2021-22": {
+    "team": "FA",
+    "pos": "SF",
+    "gp": 1,
+    "mpg": 5.18,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.57878,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Sterling Brown",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2018-19": {
+    "team": "MIL",
+    "pos": "SG",
+    "gp": 58,
+    "mpg": 17.83,
+    "rates": {
+     "pts": 0.35977,
+     "fg3m": 0.05126,
+     "reb": 0.17698,
+     "ast": 0.08124,
+     "stl": 0.02418,
+     "blk": 0.00774,
+     "fgm": 0.14023,
+     "fga": 0.30174,
+     "ftm": 0.02805,
+     "fta": 0.04062,
+     "tov": 0.04352
+    }
+   },
+   "2019-20": {
+    "team": "MIL",
+    "pos": "SG",
+    "gp": 52,
+    "mpg": 14.75,
+    "rates": {
+     "pts": 0.34681,
+     "fg3m": 0.05737,
+     "reb": 0.23859,
+     "ast": 0.06649,
+     "stl": 0.03781,
+     "blk": 0.00913,
+     "fgm": 0.12386,
+     "fga": 0.33377,
+     "ftm": 0.04172,
+     "fta": 0.05215,
+     "tov": 0.05476
+    }
+   },
+   "2020-21": {
+    "team": "HOU",
+    "pos": "SG/SF",
+    "gp": 51,
+    "mpg": 24.09,
+    "rates": {
+     "pts": 0.33858,
+     "fg3m": 0.07406,
+     "reb": 0.18231,
+     "ast": 0.0586,
+     "stl": 0.03093,
+     "blk": 0.00977,
+     "fgm": 0.12208,
+     "fga": 0.27184,
+     "ftm": 0.02035,
+     "fta": 0.02523,
+     "tov": 0.03337
+    }
+   },
+   "2021-22": {
+    "team": "DAL",
+    "pos": "SG/SF",
+    "gp": 49,
+    "mpg": 12.82,
+    "rates": {
+     "pts": 0.25464,
+     "fg3m": 0.04456,
+     "reb": 0.23713,
+     "ast": 0.05411,
+     "stl": 0.02228,
+     "blk": 0.00955,
+     "fgm": 0.0939,
+     "fga": 0.24668,
+     "ftm": 0.02228,
+     "fta": 0.02387,
+     "tov": 0.0366
+    }
+   },
+   "2022-23": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 4,
+    "mpg": 6.09,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.32832,
+     "ast": 0.08208,
+     "stl": 0.12312,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.16416,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Feron Hunt",
+  "team": "NYK",
+  "pos": "PF",
+  "seasons": {
+   "2021-22": {
+    "team": "NYK",
+    "pos": "PF",
+    "gp": 2,
+    "mpg": 4.18,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.11952,
+     "ast": 0.11952,
+     "stl": 0.11952,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.23904,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.11952
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Tyler Davis",
+  "team": "FA",
+  "pos": "C",
+  "seasons": {
+   "2018-19": {
+    "team": "FA",
+    "pos": "C",
+    "gp": 1,
+    "mpg": 1.0,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 1.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 1.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Emanuel Terry",
+  "team": "FA",
+  "pos": "PF",
+  "seasons": {
+   "2018-19": {
+    "team": "MIA",
+    "pos": "SF",
+    "gp": 3,
+    "mpg": 7.67,
+    "rates": {
+     "pts": 0.43478,
+     "fg3m": 0.0,
+     "reb": 0.30435,
+     "ast": 0.08696,
+     "stl": 0.13043,
+     "blk": 0.0,
+     "fgm": 0.17391,
+     "fga": 0.30435,
+     "ftm": 0.08696,
+     "fta": 0.17391,
+     "tov": 0.08696
+    }
+   },
+   "2021-22": {
+    "team": "FA",
+    "pos": "PF",
+    "gp": 3,
+    "mpg": 6.07,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.76923,
+     "ast": 0.10989,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.27473,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.21978
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "C.J. Miles",
+  "team": "FA",
+  "pos": "SF",
+  "seasons": {
+   "2018-19": {
+    "team": "MEM",
+    "pos": "SF",
+    "gp": 53,
+    "mpg": 16.15,
+    "rates": {
+     "pts": 0.39603,
+     "fg3m": 0.07827,
+     "reb": 0.10864,
+     "ast": 0.04206,
+     "stl": 0.03154,
+     "blk": 0.01636,
+     "fgm": 0.13084,
+     "fga": 0.36332,
+     "ftm": 0.05607,
+     "fta": 0.06776,
+     "tov": 0.03505
+    }
+   },
+   "2019-20": {
+    "team": "FA",
+    "pos": "SF",
+    "gp": 10,
+    "mpg": 16.1,
+    "rates": {
+     "pts": 0.39752,
+     "fg3m": 0.06832,
+     "reb": 0.07453,
+     "ast": 0.07453,
+     "stl": 0.06211,
+     "blk": 0.02484,
+     "fgm": 0.11801,
+     "fga": 0.36646,
+     "ftm": 0.09317,
+     "fta": 0.12422,
+     "tov": 0.02484
+    }
+   },
+   "2021-22": {
+    "team": "FA",
+    "pos": "SF",
+    "gp": 1,
+    "mpg": 1.95,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Dmytro Skapintsev",
+  "team": "FA",
+  "pos": "C",
+  "seasons": {
+   "2023-24": {
+    "team": "FA",
+    "pos": "C",
+    "gp": 2,
+    "mpg": 1.07,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.46875,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Michael Foster",
+  "team": "FA",
+  "pos": "PF",
+  "seasons": {
+   "2022-23": {
+    "team": "FA",
+    "pos": "PF",
+    "gp": 1,
+    "mpg": 1.03,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Will Magnay",
+  "team": "FA",
+  "pos": "PF",
+  "seasons": {
+   "2020-21": {
+    "team": "FA",
+    "pos": "PF",
+    "gp": 1,
+    "mpg": 3.27,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.30612,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.30612
+    }
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Jalen Crutcher",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2023-24": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 1,
+    "mpg": 2.65,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.37736,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Andre Ingram",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2018-19": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 4,
+    "mpg": 3.75,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.13333,
+     "ast": 0.0,
+     "stl": 0.06667,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.4,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.06667
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Tyler Ulis",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2018-19": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 1,
+    "mpg": 1.0,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2019-20": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Jaysean Paige",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 1,
+    "mpg": 6.62,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.15113,
+     "ast": 0.15113,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.4534,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.15113
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -93536,6 +113373,237 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.07692
     }
+   },
+   "2020-21": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2021-22": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Ryan Arcidiacono",
+  "team": "FA",
+  "pos": "PG",
+  "seasons": {
+   "2018-19": {
+    "team": "CHI",
+    "pos": "PG",
+    "gp": 81,
+    "mpg": 24.21,
+    "rates": {
+     "pts": 0.27741,
+     "fg3m": 0.04131,
+     "reb": 0.11168,
+     "ast": 0.13768,
+     "stl": 0.03315,
+     "blk": 0.00255,
+     "fgm": 0.09536,
+     "fga": 0.21367,
+     "ftm": 0.04539,
+     "fta": 0.05201,
+     "tov": 0.03162
+    }
+   },
+   "2019-20": {
+    "team": "CHI",
+    "pos": "PG",
+    "gp": 58,
+    "mpg": 16.03,
+    "rates": {
+     "pts": 0.28065,
+     "fg3m": 0.05806,
+     "reb": 0.11828,
+     "ast": 0.10323,
+     "stl": 0.02903,
+     "blk": 0.00323,
+     "fgm": 0.09677,
+     "fga": 0.23656,
+     "ftm": 0.02903,
+     "fta": 0.04086,
+     "tov": 0.03978
+    }
+   },
+   "2020-21": {
+    "team": "CHI",
+    "pos": "PG",
+    "gp": 44,
+    "mpg": 10.23,
+    "rates": {
+     "pts": 0.30202,
+     "fg3m": 0.05552,
+     "reb": 0.14879,
+     "ast": 0.12436,
+     "stl": 0.01999,
+     "blk": 0.0,
+     "fgm": 0.10882,
+     "fga": 0.25983,
+     "ftm": 0.02887,
+     "fta": 0.04441,
+     "tov": 0.02221
+    }
+   },
+   "2021-22": {
+    "team": "NYK",
+    "pos": "PG",
+    "gp": 10,
+    "mpg": 7.62,
+    "rates": {
+     "pts": 0.20988,
+     "fg3m": 0.05247,
+     "reb": 0.10494,
+     "ast": 0.05247,
+     "stl": 0.01312,
+     "blk": 0.0,
+     "fgm": 0.07871,
+     "fga": 0.15741,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.03935
+    }
+   },
+   "2022-23": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 20,
+    "mpg": 8.62,
+    "rates": {
+     "pts": 0.15087,
+     "fg3m": 0.04642,
+     "reb": 0.08704,
+     "ast": 0.13346,
+     "stl": 0.02901,
+     "blk": 0.0,
+     "fgm": 0.05222,
+     "fga": 0.2147,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.04062
+    }
+   },
+   "2023-24": {
+    "team": "FA",
+    "pos": "PG",
+    "gp": 20,
+    "mpg": 2.26,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.17725,
+     "ast": 0.08863,
+     "stl": 0.04431,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.13294,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.04431
+    }
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   }
+  }
+ },
+ {
+  "name": "Tyler Hall",
+  "team": "FA",
+  "pos": "SG",
+  "seasons": {
+   "2021-22": {
+    "team": "FA",
+    "pos": "SG",
+    "gp": 1,
+    "mpg": 1.93,
+    "rates": {
+     "pts": 0.0,
+     "fg3m": 0.0,
+     "reb": 0.0,
+     "ast": 0.0,
+     "stl": 0.0,
+     "blk": 0.0,
+     "fgm": 0.0,
+     "fga": 0.0,
+     "ftm": 0.0,
+     "fta": 0.0,
+     "tov": 0.0
+    }
+   },
+   "2022-23": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2023-24": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
+   "2025-26": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  },
@@ -93657,110 +113725,20 @@ const PLAYER_RATES = [
      "fta": 0.0,
      "tov": 0.0
     }
-   }
-  }
- },
- {
-  "name": "Javin DeLaurier",
-  "team": "FA",
-  "pos": "C",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "C",
-    "gp": 1,
-    "mpg": 2.8,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.35714,
-     "ast": 0.0,
-     "stl": 0.35714,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "Darius Brown II",
-  "team": "FA",
-  "pos": "PG",
-  "seasons": {
+   },
+   "2024-25": {
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
+   },
    "2025-26": {
-    "team": "FA",
-    "pos": "PG",
-    "gp": 1,
-    "mpg": 2.67,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.375,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.375,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "John Holland",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2018-19": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 1,
-    "mpg": 1.0,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.0,
-     "ast": 0.0,
-     "stl": 0.0,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.0,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
-   }
-  }
- },
- {
-  "name": "M.J. Walker",
-  "team": "FA",
-  "pos": "SG",
-  "seasons": {
-   "2021-22": {
-    "team": "FA",
-    "pos": "SG",
-    "gp": 2,
-    "mpg": 4.19,
-    "rates": {
-     "pts": 0.0,
-     "fg3m": 0.0,
-     "reb": 0.11928,
-     "ast": 0.11928,
-     "stl": 0.35785,
-     "blk": 0.0,
-     "fgm": 0.0,
-     "fga": 0.47714,
-     "ftm": 0.0,
-     "fta": 0.0,
-     "tov": 0.0
-    }
+    "team": null,
+    "pos": null,
+    "gp": 0,
+    "mpg": 0,
+    "missed": true
    }
   }
  }

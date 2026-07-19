@@ -89,19 +89,31 @@ function mfhfbSetCategoryWeights(weights) {
   localStorage.setItem(MFHFB_CATWEIGHT_KEY, JSON.stringify(weights));
 }
 
-// Letzte bis zu 3 Saisons (neueste zuerst) als GP-Kürzel, z.B. "65/71/82".
-// Fehlende ältere Saisons werden mit "-" aufgefüllt.
-function mfhfbRecentGP(player) {
-  const labels = Object.keys(player.seasons).sort().reverse().slice(0, 3);
-  const gps = labels.map((l) => String(player.seasons[l].gp));
-  while (gps.length < 3) gps.push('-');
-  return gps.join('/');
+// Liste nur der tatsächlich gespielten Saisons eines Spielers (ohne "missed").
+function mfhfbPlayedSeasonLabels(player) {
+  return Object.keys(player.seasons).filter(l => !player.seasons[l].missed).sort();
 }
 
-// Gewichtete Pro-Minute-Rate über die eigenen verfügbaren Saisons eines Spielers.
-// Die zwei jüngsten Saisons bekommen die Slider-Gewichte, ältere zählen fix 1.
+// GP der letzten bis zu 3 bekannten Saisons (neueste zuerst), z.B. "0/73/69"
+// wenn die aktuellste Saison komplett verpasst wurde (0 GP), gefolgt von den
+// beiden Saisons davor. "-" nur, wenn der Spieler zu dem Zeitpunkt noch gar
+// nicht in der Liga war (vor seinem Debüt).
+function mfhfbRecentGP(player) {
+  const labels = SEASON_LABELS.slice(-3).reverse();
+  return labels.map((l) => {
+    const s = player.seasons[l];
+    if (!s) return '-';
+    return s.missed ? '0' : String(s.gp);
+  }).join('/');
+}
+
+// Gewichtete Pro-Minute-Rate über die tatsächlich gespielten Saisons eines
+// Spielers ("missed"-Saisons mit 0 GP fließen NICHT in die Rate ein, sonst
+// würde eine Verletzungssaison die Projektion künstlich auf 0 drücken).
+// Die zwei jüngsten GESPIELTEN Saisons bekommen die Slider-Gewichte,
+// ältere zählen fix 1.
 function mfhfbWeightedRates(player, weights) {
-  const labels = Object.keys(player.seasons).sort();
+  const labels = mfhfbPlayedSeasonLabels(player);
   const n = labels.length;
   const sums = {};
   let wsum = 0;
@@ -118,9 +130,33 @@ function mfhfbWeightedRates(player, weights) {
   return out;
 }
 
+// Letzte tatsächlich GESPIELTE Saison (überspringt "missed"-Einträge) —
+// Basis für Standard-Projektionsminuten und Team/Pos-Anzeige.
 function mfhfbLatestSeason(player) {
-  const labels = Object.keys(player.seasons).sort();
+  const labels = mfhfbPlayedSeasonLabels(player);
   return player.seasons[labels[labels.length - 1]];
+}
+
+// Realwerte für die insgesamt jüngste geladene Saison (z.B. 2025-26) —
+// getrennt von mfhfbLatestSeason, weil die jeweils AKTUELLSTE Saison bei
+// verletzten/inaktiven Spielern eine "missed"-Saison sein kann. In dem
+// Fall soll die Projections-Seite das auch so anzeigen, nicht still die
+// Vorjahreszahlen unterschieben.
+function mfhfbNewestSeasonActual(player) {
+  const newestLabel = SEASON_LABELS[SEASON_LABELS.length - 1];
+  const s = player.seasons[newestLabel];
+  if (!s || s.missed) {
+    return { min: 0, pts: 0, reb: 0, ast: 0, fg3m: 0, missed: true, label: newestLabel };
+  }
+  return {
+    min: s.mpg,
+    pts: s.rates.pts * s.mpg,
+    reb: s.rates.reb * s.mpg,
+    ast: s.rates.ast * s.mpg,
+    fg3m: s.rates.fg3m * s.mpg,
+    missed: false,
+    label: newestLabel,
+  };
 }
 
 function mfhfbComputeProjection(player, minutes, weights) {

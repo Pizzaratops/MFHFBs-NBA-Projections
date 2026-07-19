@@ -91,19 +91,34 @@ def build(output_path: str, season_args: list) -> None:
         if not seasons:
             continue
 
-        # Team/Pos aus der juengsten verfuegbaren Saison
-        latest = seasons[max(seasons.keys())]
+        # Zwischen dem Debüt und der insgesamt jüngsten geladenen Saison
+        # werden fehlende Saisons explizit als "missed" (0 GP) markiert —
+        # das erfasst sowohl Lücken mittendrin als auch eine komplett
+        # verpasste aktuellste Saison (z.B. Verletzung). Saisons VOR dem
+        # Debüt bleiben bewusst aus dem seasons-Objekt raus ("war noch
+        # nicht in der Liga" statt "hat 0 Spiele gemacht").
+        played_labels = sorted(seasons.keys())
+        debut = played_labels[0]
+        last_played = played_labels[-1]
+        newest_overall = season_labels[-1]
+        for label in season_labels:
+            if debut <= label <= newest_overall and label not in seasons:
+                seasons[label] = {"team": None, "pos": None, "gp": 0, "mpg": 0, "missed": True}
+
+        # Team/Pos aus der juengsten *tatsaechlich gespielten* Saison
+        latest_played = seasons[last_played]
         players.append({
             "name": name,
-            "team": latest["team"],
-            "pos": latest["pos"],
+            "team": latest_played["team"],
+            "pos": latest_played["pos"],
             "seasons": seasons,
         })
 
-    # Standard-Sortierung: projizierte Punkte der juengsten Saison absteigend
+    # Standard-Sortierung: projizierte Punkte der juengsten gespielten Saison absteigend
     def sort_key(p):
-        latest_label = max(p["seasons"].keys())
-        s = p["seasons"][latest_label]
+        played = {l: s for l, s in p["seasons"].items() if not s.get("missed")}
+        latest_label = max(played.keys())
+        s = played[latest_label]
         return -(s["rates"]["pts"] * s["mpg"])
 
     players.sort(key=sort_key)
