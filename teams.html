@@ -6,19 +6,37 @@
 <title>NBA Teams — MFHFBs Projections</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  (function(){
+    var t = localStorage.getItem('mfhfb_theme_v1') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
 <style>
   :root{
     --bg:#101116; --surface:#191a21; --surface2:#212330; --border:#2b2d3a;
     --text:#e9e9ef; --muted:#8d8fa0; --accent:#6c63ff; --accent2:#4fc3f7;
     --good:#4caf81; --warn:#f5c842; --bad:#ff6584;
   }
+  :root[data-theme="light"]{
+    --bg:#f6f6f9; --surface:#ffffff; --surface2:#eef0f5; --border:#dfe1e8;
+    --text:#15161b; --muted:#666a78; --accent:#5b52f0; --accent2:#0284c7;
+    --good:#1f9d63; --warn:#a8710a; --bad:#d6304f;
+  }
   *{box-sizing:border-box;}
-  body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color 0.15s, color 0.15s;}
   .wrap{max-width:1440px;margin:0 auto;padding:28px 20px 80px;}
-  .topnav{display:flex; gap:14px; margin-bottom:22px; font-size:13px;}
+  .topnav{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:22px; font-size:13px;}
+  .topnav-links{display:flex; gap:14px;}
   .topnav a{color:var(--muted); text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;}
   .topnav a.active{color:var(--text); border-color:var(--accent); font-weight:600;}
   .topnav a:hover{color:var(--text);}
+  .theme-toggle{
+    background:var(--surface2); border:1px solid var(--border); color:var(--text);
+    font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; padding:7px 12px;
+    border-radius:20px; cursor:pointer;
+  }
+  .theme-toggle:hover{border-color:var(--accent); color:var(--accent2);}
   .hero{margin-bottom:22px;}
   .eyebrow{font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
   h1{font-family:'Playfair Display',serif; font-weight:800; font-size:32px; margin:0 0 6px; letter-spacing:-0.01em;}
@@ -88,8 +106,11 @@
 <body>
 <div class="wrap">
   <div class="topnav">
-    <a href="index.html">Projections</a>
-    <a href="teams.html" class="active">NBA Teams</a>
+    <div class="topnav-links">
+      <a href="index.html">Projections</a>
+      <a href="teams.html" class="active">NBA Teams</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle"></button>
   </div>
 
   <div class="hero">
@@ -123,6 +144,7 @@ const ESPN_TO_BBM_TEAM = {
 };
 function toBbmAbbr(espnAbbr) { return ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
 
+mfhfbInitThemeToggle('themeToggle');
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 let query = '';

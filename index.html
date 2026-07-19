@@ -6,19 +6,39 @@
 <title>MFHFBs NBA Projections</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  // Theme so frueh wie moeglich setzen, damit die Seite nicht kurz im
+  // falschen Theme aufblitzt.
+  (function(){
+    var t = localStorage.getItem('mfhfb_theme_v1') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
 <style>
   :root{
     --bg:#101116; --surface:#191a21; --surface2:#212330; --border:#2b2d3a;
     --text:#e9e9ef; --muted:#8d8fa0; --accent:#6c63ff; --accent2:#4fc3f7;
     --good:#4caf81; --warn:#f5c842; --bad:#ff6584;
   }
+  :root[data-theme="light"]{
+    --bg:#f6f6f9; --surface:#ffffff; --surface2:#eef0f5; --border:#dfe1e8;
+    --text:#15161b; --muted:#666a78; --accent:#5b52f0; --accent2:#0284c7;
+    --good:#1f9d63; --warn:#a8710a; --bad:#d6304f;
+  }
   *{box-sizing:border-box;}
-  body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; transition:background-color 0.15s, color 0.15s;}
   .wrap{max-width:1280px;margin:0 auto;padding:28px 20px 80px;}
-  .topnav{display:flex; gap:14px; margin-bottom:22px; font-size:13px;}
+  .topnav{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:22px; font-size:13px;}
+  .topnav-links{display:flex; gap:14px;}
   .topnav a{color:var(--muted); text-decoration:none; padding:6px 0; border-bottom:2px solid transparent;}
   .topnav a.active{color:var(--text); border-color:var(--accent); font-weight:600;}
   .topnav a:hover{color:var(--text);}
+  .theme-toggle{
+    background:var(--surface2); border:1px solid var(--border); color:var(--text);
+    font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; padding:7px 12px;
+    border-radius:20px; cursor:pointer;
+  }
+  .theme-toggle:hover{border-color:var(--accent); color:var(--accent2);}
   .hero{margin-bottom:26px;}
   .eyebrow{font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
   h1{font-family:'Playfair Display',serif; font-weight:800; font-size:34px; margin:0 0 6px; letter-spacing:-0.01em;}
@@ -66,8 +86,6 @@
   }
   .reset-weights:hover{border-color:var(--accent); color:var(--accent2);}
 
-  .info-note{background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:10px 14px; font-size:12.5px; color:var(--muted); margin-bottom:14px; line-height:1.5;}
-  .info-note a{color:var(--accent2);}
 
   .toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;}
   .search-row{position:relative; flex:1; min-width:220px;}
@@ -109,18 +127,15 @@
 <body>
 <div class="wrap">
   <div class="topnav">
-    <a href="index.html" class="active">Projections</a>
-    <a href="teams.html">NBA Teams</a>
+    <div class="topnav-links">
+      <a href="index.html" class="active">Projections</a>
+      <a href="teams.html">NBA Teams</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle"></button>
   </div>
 
   <div class="hero">
-    <div class="eyebrow">MFHFB · Testseite</div>
     <h1>NBA Projections</h1>
-    <p class="sub" id="heroSub">Basis: Pro-Minute-Produktion mehrerer Saisons. Deine eingetragene Projektion inkl. Z-Score, farblich markiert je Kategorie.</p>
-  </div>
-
-  <div class="info-note">
-    Minuten werden hier nicht mehr direkt bearbeitet — trag sie auf der <a href="teams.html">NBA-Teams-Seite</a> ein. Änderungen fließen sofort in dieses Ranking ein. Reale Season-Averages stehen ebenfalls auf der Teams-Seite (rechte Spalte pro Team).
   </div>
 
   <div class="panel collapsed" id="weightPanel">
@@ -205,8 +220,8 @@ const CAT_LABELS = { pts:'PTS', reb:'REB', ast:'AST', stl:'STL', blk:'BLK', fg3m
 const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'tov', 'z'];
 const HEAT_INVERT = { tov: true };
 
-document.getElementById('heroSub').textContent =
-  `Basis: Pro-Minute-Produktion aus ${SEASON_LABELS.length} Saison${SEASON_LABELS.length !== 1 ? 's' : ''} (${SEASON_LABELS.join(', ')}), ${PLAYER_RATES.length} Spieler.`;
+mfhfbInitThemeToggle('themeToggle');
+
 document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
 
 if (SEASON_LABELS.length >= 2) {

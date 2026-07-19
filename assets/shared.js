@@ -198,3 +198,30 @@ function mfhfbHeatStyle(value, min, max, invert) {
   const hue = Math.round(t * 120); // 0 = rot, 120 = grün
   return `background-color:hsla(${hue},70%,45%,0.22);color:hsl(${hue},75%,78%);`;
 }
+
+const MFHFB_THEME_KEY = 'mfhfb_theme_v1';
+
+function mfhfbGetTheme() {
+  return localStorage.getItem(MFHFB_THEME_KEY) || 'dark';
+}
+
+function mfhfbSetTheme(theme) {
+  localStorage.setItem(MFHFB_THEME_KEY, theme);
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+// Baut den Theme-Toggle-Button auf (Text + Klick-Handler). Der data-theme-
+// Attribut-Wert selbst wird schon per Inline-Script im <head> gesetzt,
+// damit es beim Laden nicht kurz "flackert".
+function mfhfbInitThemeToggle(buttonId) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  const updateLabel = () => {
+    btn.textContent = mfhfbGetTheme() === 'light' ? '🌙 Dark' : '☀️ Light';
+  };
+  updateLabel();
+  btn.addEventListener('click', () => {
+    mfhfbSetTheme(mfhfbGetTheme() === 'light' ? 'dark' : 'light');
+    updateLabel();
+  });
+}

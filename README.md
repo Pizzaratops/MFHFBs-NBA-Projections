@@ -126,6 +126,17 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-19 (9)
+- **Projections-Seite aufgeräumt:** "MFHFB · Testseite"-Eyebrow, der lange
+  Basis-Text unter der Überschrift und die Info-Box zur Teams-Seite sind
+  komplett raus — die Seite wirkt jetzt deutlich schlanker.
+- **Light Mode ergänzt** (zusätzlich zu Dark): Toggle-Button oben rechts
+  in der Navigation auf beiden Seiten (Projections + Teams). Theme wird
+  in `localStorage` gespeichert und beim Laden sofort angewendet (kein
+  Flackern durch falsches Theme beim Start). Farbpalette an der
+  bestehenden TTHQ-Optik orientiert (gleiche Akzentfarbe, helle statt
+  dunkle Flächen).
+
 ### 2026-07-19 (8)
 - **Realwerte-Spalten von der Projections-Seite entfernt** — die gehören
   ausschließlich auf die Teams-Seite (rechte Spalte pro Team). Projections
