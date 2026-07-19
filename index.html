@@ -123,21 +123,21 @@
   <div class="hero">
     <div class="eyebrow">MFHFB · Testseite</div>
     <h1>NBA Projections</h1>
-    <p class="sub">Basis: Pro-Minute-Produktion der Saison 2025–26 (582 Spieler). Minuten eintragen → Stats werden live neu berechnet, genau wie in der manuellen Excel-Methodik.</p>
+    <p class="sub" id="heroSub">Basis: Pro-Minute-Produktion mehrerer Saisons. Minuten eintragen → Stats werden live neu berechnet, genau wie in der manuellen Excel-Methodik.</p>
   </div>
 
   <div class="panel">
-    <div class="panel-title">Gewichtung <span class="badge">wartet auf 2. Saison</span></div>
+    <div class="panel-title">Gewichtung <span class="badge" id="seasonBadge"></span></div>
     <div class="weight-grid">
       <div class="weight-row">
-        <div class="weight-label"><span>Vorletztes Jahr</span><span class="weight-val" id="w1val">1.00×</span></div>
-        <input type="range" id="w1" min="0" max="4" step="1" value="0" disabled>
-        <div class="weight-hint">Noch keine Daten für die vorletzte Saison geladen — Slider aktiviert sich, sobald diese hinzugefügt wird.</div>
+        <div class="weight-label"><span id="w1Label">Vorletztes Jahr</span><span class="weight-val" id="w1val">1.00×</span></div>
+        <input type="range" id="w1" min="1" max="2" step="0.25" value="1">
+        <div class="weight-hint" id="w1Hint">Gewicht der zweitjüngsten Saison, die für den jeweiligen Spieler vorliegt.</div>
       </div>
       <div class="weight-row">
-        <div class="weight-label"><span>Letztes Jahr</span><span class="weight-val" id="w2val">1.00×</span></div>
-        <input type="range" id="w2" min="0" max="4" step="1" value="0" disabled>
-        <div class="weight-hint">Aktuell einzige geladene Saison — zählt fix mit Gewicht 1, bis eine zweite Saison ergänzt wird.</div>
+        <div class="weight-label"><span id="w2Label">Letztes Jahr</span><span class="weight-val" id="w2val">1.00×</span></div>
+        <input type="range" id="w2" min="1" max="2" step="0.25" value="1">
+        <div class="weight-hint" id="w2Hint">Gewicht der jüngsten Saison, die für den jeweiligen Spieler vorliegt.</div>
       </div>
     </div>
   </div>
@@ -174,21 +174,73 @@
     </table>
   </div>
 
-  <footer>
-    Pro-Minute-Raten berechnet aus Season-Totals ÷ MPG (2025–26). Standard-Projektion = letzte MPG der Saison; manuell überschreibbar. Änderungen werden lokal im Browser gespeichert (localStorage), noch nicht synchronisiert.
-  </footer>
+  <footer id="footerText"></footer>
 </div>
 
 <script src="players-data.js"></script>
 <script>
 const STORAGE_KEY = 'mfhfb_proj_minutes_v1';
+const WEIGHT_KEY = 'mfhfb_proj_weights_v1';
 let overrides = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+let weights = JSON.parse(localStorage.getItem(WEIGHT_KEY) || 'null') || { w1: 1, w2: 1 };
 let sortKey = 'pts', sortAsc = false;
 let query = '';
 
+// SEASON_LABELS is chronological, e.g. ["2023-24","2024-25","2025-26"]
+const OLDEST_LABEL = SEASON_LABELS[0];
+const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
+
+document.getElementById('heroSub').textContent =
+  `Basis: Pro-Minute-Produktion aus ${SEASON_LABELS.length} Saison${SEASON_LABELS.length !== 1 ? 's' : ''} (${SEASON_LABELS.join(', ')}), ${PLAYER_RATES.length} Spieler. Minuten eintragen → Stats werden live neu berechnet.`;
+document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
+document.getElementById('footerText').textContent =
+  `Pro-Minute-Raten berechnet aus Season-Totals ÷ MPG je Saison (${SEASON_LABELS.join(', ')}). Ältere Saisons zählen fix mit Gewicht 1, die beiden jüngsten sind über die Slider oben einstellbar. Standard-Projektion = MPG der jüngsten verfügbaren Saison; manuell überschreibbar. Änderungen werden lokal im Browser gespeichert (localStorage), noch nicht synchronisiert.`;
+
+if (SEASON_LABELS.length >= 2) {
+  document.getElementById('w1Label').textContent = `Vorletztes Jahr (${SEASON_LABELS[SEASON_LABELS.length - 2]})`;
+  document.getElementById('w2Label').textContent = `Letztes Jahr (${NEWEST_LABEL})`;
+} else {
+  document.getElementById('w1Label').textContent = 'Vorletztes Jahr';
+  document.getElementById('w1Hint').textContent = 'Noch keine zweite Saison geladen — Slider wirkt sich erst mit mehr Daten aus.';
+  document.getElementById('w2Label').textContent = `Letztes Jahr (${NEWEST_LABEL || '–'})`;
+}
+
+document.getElementById('w1').value = weights.w1;
+document.getElementById('w2').value = weights.w2;
+document.getElementById('w1val').textContent = weights.w1.toFixed(2) + '×';
+document.getElementById('w2val').textContent = weights.w2.toFixed(2) + '×';
+
+// Weighted per-minute rate across a player's own available seasons.
+// The player's own two most recent seasons get the slider weights (w1 = second-most-recent, w2 = most recent);
+// any earlier seasons (for players with 3+ seasons on record) count fixed at weight 1.
+function weightedRates(p) {
+  const labels = Object.keys(p.seasons).sort(); // chronological for this player
+  const n = labels.length;
+  const sums = {}; let wsum = 0;
+  labels.forEach((label, i) => {
+    let w = 1;
+    if (i === n - 1) w = weights.w2;
+    else if (i === n - 2) w = weights.w1;
+    const rates = p.seasons[label].rates;
+    for (const key in rates) {
+      sums[key] = (sums[key] || 0) + rates[key] * w;
+    }
+    wsum += w;
+  });
+  const out = {};
+  for (const key in sums) out[key] = sums[key] / wsum;
+  return out;
+}
+
+function latestSeason(p) {
+  const labels = Object.keys(p.seasons).sort();
+  return p.seasons[labels[labels.length - 1]];
+}
+
 function computeStats(p) {
-  const min = overrides[p.name] !== undefined ? overrides[p.name] : p.mpg;
-  const r = p.rates;
+  const latest = latestSeason(p);
+  const min = overrides[p.name] !== undefined ? overrides[p.name] : latest.mpg;
+  const r = weightedRates(p);
   const fgm = r.fgm * min, fga = r.fga * min;
   const ftm = r.ftm * min, fta = r.fta * min;
   return {
@@ -228,10 +280,12 @@ function render() {
 
   document.getElementById('body').innerHTML = enriched.map(({p, s}) => {
     const isEdited = overrides[p.name] !== undefined;
+    const latest = latestSeason(p);
+    const seasonLabels = Object.keys(p.seasons).sort().join(', ');
     return `<tr>
       <td class="name-cell">
         <div class="p-name">${p.name}</div>
-        <div class="p-meta">${p.gp} GP · ${p.mpg} MPG (25-26)</div>
+        <div class="p-meta">${latest.gp} GP · ${latest.mpg} MPG · Saisons: ${seasonLabels}</div>
       </td>
       <td class="left">${p.team}</td>
       <td class="left">${p.pos}</td>
@@ -282,6 +336,19 @@ document.querySelectorAll('thead th').forEach(th => {
     if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = false; }
     render();
   });
+});
+
+document.getElementById('w1').addEventListener('input', e => {
+  weights.w1 = parseFloat(e.target.value);
+  document.getElementById('w1val').textContent = weights.w1.toFixed(2) + '×';
+  localStorage.setItem(WEIGHT_KEY, JSON.stringify(weights));
+  render();
+});
+document.getElementById('w2').addEventListener('input', e => {
+  weights.w2 = parseFloat(e.target.value);
+  document.getElementById('w2val').textContent = weights.w2.toFixed(2) + '×';
+  localStorage.setItem(WEIGHT_KEY, JSON.stringify(weights));
+  render();
 });
 
 render();
