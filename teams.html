@@ -292,8 +292,17 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
 // Rechte Spalte: tatsächliche End-Rotation der letzten Saison für dieses
 // Team (aus players-data.js gefiltert), reale Minuten/Stats, nicht editierbar.
 function renderRightRows(bbmAbbr) {
+  // Nur Spieler, deren zuletzt tatsächlich gespielte Saison auch die
+  // jüngste geladene Saison (NEWEST_LABEL) ist. Sonst rutschen Spieler
+  // rein, deren einziger Bezug zu diesem Team eine Saison von vor Jahren
+  // war (z.B. 2018-19) — die aber nie neu zugeordnet wurden, weil das
+  // "team"-Feld einfach an der letzten gespielten Saison hängt.
   const players = PLAYER_RATES
     .filter(p => p.team === bbmAbbr)
+    .filter(p => {
+      const played = mfhfbPlayedSeasonLabels(p);
+      return played.length > 0 && played[played.length - 1] === NEWEST_LABEL;
+    })
     .map(p => {
       const latest = mfhfbLatestSeason(p);
       const r = latest.rates;
