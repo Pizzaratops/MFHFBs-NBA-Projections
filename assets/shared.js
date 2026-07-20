@@ -190,13 +190,15 @@ function mfhfbSetPoolSize(v) {
 // Excel-artige bedingte Formatierung: interpoliert zwischen Rot (schlecht)
 // und Grün (gut) je nach Position von `value` zwischen `min` und `max`.
 // invert=true für Kategorien, bei denen weniger besser ist (z.B. TOV).
+// Setzt NUR die Hintergrundfarbe (leicht transparent) — die Textfarbe bleibt
+// die Theme-Textfarbe, damit es in Dark UND Light Mode lesbar ist.
 function mfhfbHeatStyle(value, min, max, invert) {
   if (max === min || !isFinite(min) || !isFinite(max)) return '';
   let t = (value - min) / (max - min);
   if (invert) t = 1 - t;
   t = Math.max(0, Math.min(1, t));
   const hue = Math.round(t * 120); // 0 = rot, 120 = grün
-  return `background-color:hsla(${hue},70%,45%,0.22);color:hsl(${hue},75%,78%);`;
+  return `background-color:hsla(${hue},70%,45%,0.22);`;
 }
 
 const MFHFB_THEME_KEY = 'mfhfb_theme_v1';

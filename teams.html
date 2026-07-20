@@ -75,41 +75,48 @@
   }
   .col-title.right{color:var(--muted);}
 
-  table.stat-table{width:100%; border-collapse:collapse; min-width:520px;}
+  table.stat-table{width:100%; border-collapse:collapse; min-width:460px;}
   table.stat-table thead th{
     text-align:right; font-size:9.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
-    color:var(--muted); padding:6px 8px; border-bottom:1px solid var(--border); white-space:nowrap;
+    color:var(--muted); padding:5px 5px; border-bottom:1px solid var(--border); white-space:nowrap;
   }
   table.stat-table thead th:first-child{text-align:left;}
   table.stat-table tbody td{
-    padding:6px 8px; border-bottom:1px solid var(--border); text-align:right; font-size:11.5px;
+    padding:4px 5px; border-bottom:1px solid var(--border); text-align:right; font-size:11px;
     font-variant-numeric:tabular-nums; white-space:nowrap;
   }
   table.stat-table tbody tr:last-child td{border-bottom:none;}
   table.stat-table tbody tr:hover{background:var(--surface2);}
-  table.stat-table td.name-cell{text-align:left; font-weight:600; font-size:12px;}
+  .left-table tbody tr:nth-child(5) td{border-bottom:2px dashed var(--accent2);}
+  table.stat-table td.name-cell{text-align:left; font-weight:600; font-size:11.5px;}
   table.stat-table tr.unmatched td{opacity:0.5; font-style:italic;}
   table.stat-table tr.manual-row td{background:rgba(108,99,255,0.06);}
   .manual-tag{font-size:9px; font-weight:700; color:var(--accent2); text-transform:uppercase; margin-left:4px;}
   .stat-input{
-    width:38px; background:var(--bg); border:1px solid var(--border); color:var(--text);
-    font-family:'DM Mono',monospace; font-size:11px; text-align:right; border-radius:5px; padding:3px 4px; outline:none;
+    width:30px; background:var(--bg); border:1px solid var(--border); color:var(--text);
+    font-family:'DM Mono',monospace; font-size:10.5px; text-align:right; border-radius:4px; padding:2px 3px; outline:none;
   }
   .stat-input:focus{border-color:var(--accent); color:var(--accent2);}
   .pause-tag{color:var(--bad); font-size:9px; font-weight:700; margin-left:5px;}
   .min-input{
-    width:44px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
-    font-family:'DM Mono',monospace; font-size:11.5px; text-align:right; border-radius:5px; padding:3px 5px; outline:none;
+    width:34px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
+    font-family:'DM Mono',monospace; font-size:11px; text-align:right; border-radius:4px; padding:2px 3px; outline:none;
   }
   .min-input:focus{border-color:var(--accent);}
   .min-input.edited{border-color:var(--accent); color:var(--warn);}
-  .reset-btn{background:none; border:none; color:var(--muted); font-size:11px; padding:0 2px; cursor:pointer;}
+  /* Zahlen-Spinner-Pfeile ausblenden, spart horizontalen Platz */
+  .min-input, .stat-input{-moz-appearance:textfield;}
+  .min-input::-webkit-outer-spin-button, .min-input::-webkit-inner-spin-button,
+  .stat-input::-webkit-outer-spin-button, .stat-input::-webkit-inner-spin-button{
+    -webkit-appearance:none; margin:0;
+  }
+  .reset-btn{background:none; border:none; color:var(--muted); font-size:10px; padding:0 1px; cursor:pointer;}
   .reset-btn:hover{color:var(--accent2);}
   .no-match-note{padding:10px 14px; font-size:11px; color:var(--muted); font-style:italic;}
   .left-table tbody tr[draggable]{cursor:grab;}
   .left-table tbody tr[draggable]:active{cursor:grabbing;}
   .left-table tbody tr.drag-over{outline:2px dashed var(--accent); outline-offset:-2px;}
-  .drag-handle{color:var(--muted); font-size:11px; margin-right:5px; user-select:none;}
+  .drag-handle{color:var(--muted); font-size:10px; margin-right:3px; user-select:none;}
 
   footer{margin-top:24px; font-size:11.5px; color:var(--muted); line-height:1.6;}
 </style>
@@ -236,6 +243,16 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
     return { key, rp, match, isEdited, latest, newestActual, minutes, s };
   });
 
+  // Standard-Reihenfolge: absteigend nach realen Minuten der letzten
+  // Saison (gleiches Kriterium wie die rechte Tabelle) — dadurch stehen
+  // Spieler, die in beiden Kadern sind, in derselben Zeile nebeneinander,
+  // und Zu-/Abgänge fallen durch die Verschiebung sofort auf. Eine per
+  // Drag & Drop gespeicherte Reihenfolge (z.B. Starting 5) hat Vorrang.
+  items.sort((a, b) => {
+    const av = a.match ? a.latest.mpg : (a.manual && a.manual.min) || -1;
+    const bv = b.match ? b.latest.mpg : (b.manual && b.manual.min) || -1;
+    return bv - av;
+  });
   items = mfhfbApplyTeamOrder(items, teamAbbr);
 
   const range = computeHeatRange(

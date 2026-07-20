@@ -126,6 +126,28 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-19 (11)
+- **Light-Mode-Bug behoben:** Heatmap-Zellen setzten bisher eine feste
+  helle Textfarbe (für Dark Mode gedacht) — im Light Mode auf weißem
+  Grund praktisch unsichtbar. Heatmap setzt jetzt nur noch die
+  Hintergrundfarbe, Text bleibt die normale Theme-Textfarbe. Funktioniert
+  jetzt in beiden Themes.
+- **Trennlinie nach Reihe 5** (gestrichelt) in der linken Team-Tabelle,
+  als visueller Marker für eine Starting 5.
+  Reine CSS-Lösung (5. Zeile), unabhängig davon ob die Reihenfolge per
+  Drag & Drop angepasst wurde oder nicht.
+- **Linke Team-Tabelle kompakter:** Zahlen-Spinner-Pfeile bei den
+  Eingabefeldern ausgeblendet (sparen unnötig Platz), Zellen-Padding und
+  Eingabefeld-Breiten reduziert. Alle 12 Spalten sollten jetzt im
+  Desktop-Modus ohne horizontales Scrollen passen — mobile Ansicht folgt
+  später.
+- **Standard-Reihenfolge links = wie rechts:** Ohne manuelles Drag & Drop
+  sortiert die linke Tabelle jetzt genau wie die rechte — absteigend nach
+  den realen Minuten der letzten Saison. Spieler, die in beiden Kadern
+  stehen, landen dadurch auf ungefähr derselben Zeile; Zu- und Abgänge
+  fallen durch die Verschiebung sofort auf. Eine gespeicherte
+  Drag-Reihenfolge hat weiterhin Vorrang vor dieser Standardsortierung.
+
 ### 2026-07-19 (10)
 - **Manuelle Stat-Eingabe für Rookies/Two-Way-Spieler ohne Rate-Daten:**
   Statt "keine Rate-Daten" gibt es jetzt editierbare Felder für Minuten,
