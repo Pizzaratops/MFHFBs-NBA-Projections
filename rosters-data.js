@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-19T10:26:03.345Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-20T11:43:37.878Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-19T10:26:03.345Z",
+ "fetchedAt": "2026-07-20T11:43:37.878Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -45,6 +45,15 @@ const ROSTERS_DATA = {
      "weight": "180 lbs",
      "age": 25,
      "espnId": "4431941"
+    },
+    {
+     "name": "Luguentz Dort",
+     "jersey": "5",
+     "position": "G",
+     "height": "6' 4\"",
+     "weight": "220 lbs",
+     "age": 27,
+     "espnId": "4397020"
     },
     {
      "name": "Zuby Ejiofor",
@@ -137,6 +146,15 @@ const ROSTERS_DATA = {
      "espnId": "2490149"
     },
     {
+     "name": "Ryan Nembhard",
+     "jersey": "9",
+     "position": "G",
+     "height": "5' 11\"",
+     "weight": "180 lbs",
+     "age": 23,
+     "espnId": "4433629"
+    },
+    {
      "name": "Asa Newell",
      "jersey": "14",
      "position": "F",
@@ -153,15 +171,6 @@ const ROSTERS_DATA = {
      "weight": "240 lbs",
      "age": 25,
      "espnId": "4431680"
-    },
-    {
-     "name": "Zaccharie Risacher",
-     "jersey": "10",
-     "position": "F",
-     "height": "6' 8\"",
-     "weight": "200 lbs",
-     "age": 21,
-     "espnId": "5211175"
     },
     {
      "name": "Henri Veesaar",
@@ -1154,15 +1163,6 @@ const ROSTERS_DATA = {
      "espnId": "3138160"
     },
     {
-     "name": "Ryan Nembhard",
-     "jersey": "9",
-     "position": "G",
-     "height": "5' 11\"",
-     "weight": "180 lbs",
-     "age": 23,
-     "espnId": "4433629"
-    },
-    {
      "name": "John Poulakidas",
      "jersey": "1",
      "position": "G",
@@ -1170,6 +1170,15 @@ const ROSTERS_DATA = {
      "weight": "205 lbs",
      "age": 23,
      "espnId": "4898238"
+    },
+    {
+     "name": "Zaccharie Risacher",
+     "jersey": "10",
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "200 lbs",
+     "age": 21,
+     "espnId": "5211175"
     },
     {
      "name": "Marcus Sasser",
@@ -2590,7 +2599,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 9\"",
      "weight": "260 lbs",
-     "age": 28,
+     "age": 29,
      "espnId": "4066261"
     },
     {
@@ -3434,15 +3443,6 @@ const ROSTERS_DATA = {
      "espnId": "5105800"
     },
     {
-     "name": "Luguentz Dort",
-     "jersey": "5",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "220 lbs",
-     "age": 27,
-     "espnId": "4397020"
-    },
-    {
      "name": "Shai Gilgeous-Alexander",
      "jersey": "2",
      "position": "G",
@@ -3598,7 +3598,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 11\"",
      "weight": "250 lbs",
-     "age": 26,
+     "age": 27,
      "espnId": "4348700"
     },
     {
@@ -3757,7 +3757,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 10\"",
      "weight": "235 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4433569"
     },
     {

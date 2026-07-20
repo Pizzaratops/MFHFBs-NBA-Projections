@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-19T10:26:03.345Z",
+ "fetchedAt": "2026-07-20T11:43:37.878Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -43,6 +43,15 @@
      "weight": "180 lbs",
      "age": 25,
      "espnId": "4431941"
+    },
+    {
+     "name": "Luguentz Dort",
+     "jersey": "5",
+     "position": "G",
+     "height": "6' 4\"",
+     "weight": "220 lbs",
+     "age": 27,
+     "espnId": "4397020"
     },
     {
      "name": "Zuby Ejiofor",
@@ -135,6 +144,15 @@
      "espnId": "2490149"
     },
     {
+     "name": "Ryan Nembhard",
+     "jersey": "9",
+     "position": "G",
+     "height": "5' 11\"",
+     "weight": "180 lbs",
+     "age": 23,
+     "espnId": "4433629"
+    },
+    {
      "name": "Asa Newell",
      "jersey": "14",
      "position": "F",
@@ -151,15 +169,6 @@
      "weight": "240 lbs",
      "age": 25,
      "espnId": "4431680"
-    },
-    {
-     "name": "Zaccharie Risacher",
-     "jersey": "10",
-     "position": "F",
-     "height": "6' 8\"",
-     "weight": "200 lbs",
-     "age": 21,
-     "espnId": "5211175"
     },
     {
      "name": "Henri Veesaar",
@@ -1152,15 +1161,6 @@
      "espnId": "3138160"
     },
     {
-     "name": "Ryan Nembhard",
-     "jersey": "9",
-     "position": "G",
-     "height": "5' 11\"",
-     "weight": "180 lbs",
-     "age": 23,
-     "espnId": "4433629"
-    },
-    {
      "name": "John Poulakidas",
      "jersey": "1",
      "position": "G",
@@ -1168,6 +1168,15 @@
      "weight": "205 lbs",
      "age": 23,
      "espnId": "4898238"
+    },
+    {
+     "name": "Zaccharie Risacher",
+     "jersey": "10",
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "200 lbs",
+     "age": 21,
+     "espnId": "5211175"
     },
     {
      "name": "Marcus Sasser",
@@ -2588,7 +2597,7 @@
      "position": "C",
      "height": "6' 9\"",
      "weight": "260 lbs",
-     "age": 28,
+     "age": 29,
      "espnId": "4066261"
     },
     {
@@ -3432,15 +3441,6 @@
      "espnId": "5105800"
     },
     {
-     "name": "Luguentz Dort",
-     "jersey": "5",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "220 lbs",
-     "age": 27,
-     "espnId": "4397020"
-    },
-    {
      "name": "Shai Gilgeous-Alexander",
      "jersey": "2",
      "position": "G",
@@ -3596,7 +3596,7 @@
      "position": "C",
      "height": "6' 11\"",
      "weight": "250 lbs",
-     "age": 26,
+     "age": 27,
      "espnId": "4348700"
     },
     {
@@ -3755,7 +3755,7 @@
      "position": "F",
      "height": "6' 10\"",
      "weight": "235 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4433569"
     },
     {
