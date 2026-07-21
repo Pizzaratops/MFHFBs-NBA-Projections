@@ -126,6 +126,25 @@ data/                          Rohdaten-Exports (Season-Stats)
 
 ## Changelog
 
+### 2026-07-20 (12)
+- **Projizierte Minuten 2026-27 als Standardwerte eingespielt**
+  (`projected-minutes.js`, 306 Spieler aus der 30-Team-Recherche). Die
+  Minuten-Vorbelegung folgt jetzt der Reihenfolge: manueller Override >
+  projizierte Minuten > reale MPG der letzten Saison. 95% der projizierten
+  Spieler matchen mit der Rate-Datenbank; der Rest sind Rookies/Neuzugänge
+  ohne Rate-Daten (brauchen weiter manuelle Eingabe). Gilt sowohl für die
+  Teams-Seite als auch für das Ranking auf der Projections-Seite.
+- **Admin-Lock:** Minuten-Eingabe, manuelle Stat-Eingabe und Drag & Drop
+  sind jetzt hinter einem **Admin-Button** (oben rechts) gesperrt.
+  Standardmäßig ist alles schreibgeschützt (Betrachter können nichts
+  versehentlich ändern). Klick auf „🔒 Admin" fragt ein Passwort ab
+  (Default `mfhfb`, in `assets/shared.js` änderbar) und schaltet die
+  Bearbeitung frei („🔓 Admin aktiv"); erneuter Klick sperrt wieder.
+  Ein Hinweistext über der Tabelle zeigt den aktuellen Status.
+  **Wichtig:** Das ist eine reine Bedien-Sperre (client-seitig) gegen
+  versehentliche Änderungen — kein kryptographischer Schutz, da jeder den
+  Quelltext einsehen kann.
+
 ### 2026-07-19 (11)
 - **Light-Mode-Bug behoben:** Heatmap-Zellen setzten bisher eine feste
   helle Textfarbe (für Dark Mode gedacht) — im Light Mode auf weißem

@@ -208,6 +208,7 @@
 </div>
 
 <script src="players-data.js"></script>
+<script src="projected-minutes.js"></script>
 <script src="assets/shared.js"></script>
 <script>
 let sortKey = 'z', sortAsc = false;
@@ -305,7 +306,7 @@ function computeAll() {
   const rows = PLAYER_RATES.map(p => {
     const latest = mfhfbLatestSeason(p);
     const key = mfhfbNormalizeName(p.name);
-    const minutes = overrides[key] !== undefined ? overrides[key] : latest.mpg;
+    const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg);
     const proj = mfhfbComputeProjection(p, minutes, weights);
     return { p, s: proj, edited: overrides[key] !== undefined, manual: false };
   });

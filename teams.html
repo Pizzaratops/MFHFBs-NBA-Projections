@@ -37,6 +37,9 @@
     border-radius:20px; cursor:pointer;
   }
   .theme-toggle:hover{border-color:var(--accent); color:var(--accent2);}
+  .theme-toggle.admin-on{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .min-input:disabled, .stat-input:disabled{opacity:0.6; cursor:not-allowed;}
+  .lock-note{font-size:11.5px; color:var(--muted); margin-bottom:14px; display:flex; align-items:center; gap:6px;}
   .hero{margin-bottom:22px;}
   .eyebrow{font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:8px;}
   h1{font-family:'Playfair Display',serif; font-weight:800; font-size:32px; margin:0 0 6px; letter-spacing:-0.01em;}
@@ -128,7 +131,10 @@
       <a href="index.html">Projections</a>
       <a href="teams.html" class="active">NBA Teams</a>
     </div>
-    <button class="theme-toggle" id="themeToggle"></button>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button class="theme-toggle" id="adminToggle"></button>
+      <button class="theme-toggle" id="themeToggle"></button>
+    </div>
   </div>
 
   <div class="hero">
@@ -142,12 +148,15 @@
     <input type="text" id="search" placeholder="Team oder Spieler suchen…">
   </div>
 
+  <div class="lock-note" id="lockNote"></div>
+
   <div id="content"></div>
 
   <footer id="footerText"></footer>
 </div>
 
 <script src="players-data.js"></script>
+<script src="projected-minutes.js"></script>
 <script>
   // rosters-data.js existiert erst, nachdem scripts/fetch-rosters.mjs
   // (manuell oder via GitHub Action) einmal gelaufen ist.
@@ -163,6 +172,7 @@ const ESPN_TO_BBM_TEAM = {
 function toBbmAbbr(espnAbbr) { return ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
 
 mfhfbInitThemeToggle('themeToggle');
+mfhfbInitAdminToggle('adminToggle', () => render());
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 let query = '';
@@ -195,18 +205,19 @@ function heatFor(range, col, val) {
 // sie anzeigen kann.
 function renderManualRow(rp, teamBbmAbbr, range) {
   const key = mfhfbNormalizeName(rp.name);
+  const admin = mfhfbIsAdmin();
   const manual = mfhfbGetManualStats()[key] || {};
   const field = (id, step) => {
     const v = manual[id];
     const heatStyle = HEAT_COLS.includes(id) ? heatFor(range, id, v) : '';
-    return `<td style="${heatStyle}"><input class="stat-input" type="number" step="${step}" min="0"
+    return `<td style="${heatStyle}"><input class="stat-input" type="number" step="${step}" min="0" ${admin ? '' : 'disabled'}
       value="${v !== undefined ? v : ''}" placeholder="–"
       data-key="${key}" data-team="${teamBbmAbbr}" data-field="${id}"
       data-name="${rp.name.replace(/"/g,'&quot;')}" data-pos="${(rp.position||'').replace(/"/g,'&quot;')}"
       onchange="onManualChange(this)"></td>`;
   };
-  return `<tr draggable="true" data-key="${key}" data-team="${teamBbmAbbr}" class="manual-row">
-    <td class="name-cell"><span class="drag-handle">⠿</span>${rp.name}<span class="manual-tag">manuell</span></td>
+  return `<tr ${admin ? 'draggable="true"' : ''} data-key="${key}" data-team="${teamBbmAbbr}" class="manual-row">
+    <td class="name-cell">${admin ? '<span class="drag-handle">⠿</span>' : ''}${rp.name}<span class="manual-tag">manuell</span></td>
     <td class="left">${rp.position || '-'}</td>
     ${field('min', 0.5)}
     ${field('gp', 1)}
@@ -229,6 +240,7 @@ function renderManualRow(rp, teamBbmAbbr, range) {
 function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr) {
   if (!rosterPlayers.length) return `<tr><td colspan="12" class="no-match-note">Keine Spieler</td></tr>`;
 
+  const admin = mfhfbIsAdmin();
   const manualStats = mfhfbGetManualStats();
 
   let items = rosterPlayers.map(rp => {
@@ -238,7 +250,7 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
     const isEdited = overrides[key] !== undefined;
     const latest = mfhfbLatestSeason(match);
     const newestActual = mfhfbNewestSeasonActual(match);
-    const minutes = isEdited ? overrides[key] : latest.mpg;
+    const minutes = isEdited ? overrides[key] : mfhfbDefaultMinutes(match.name, latest.mpg);
     const s = mfhfbComputeProjection(match, minutes, weights);
     return { key, rp, match, isEdited, latest, newestActual, minutes, s };
   });
@@ -267,13 +279,13 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
   return items.map(it => {
     if (!it.match) return renderManualRow(it.rp, teamBbmAbbr, manualRange);
     const { rp, match, isEdited, latest, newestActual, minutes, s, key } = it;
-    return `<tr draggable="true" data-key="${key}" data-team="${teamAbbr}">
-      <td class="name-cell"><span class="drag-handle">⠿</span>${match.name}${newestActual.missed ? `<span class="pause-tag">⚠ pausiert ${newestActual.label}</span>` : ''}</td>
+    return `<tr ${admin ? 'draggable="true"' : ''} data-key="${key}" data-team="${teamAbbr}">
+      <td class="name-cell">${admin ? '<span class="drag-handle">⠿</span>' : ''}${match.name}${newestActual.missed ? `<span class="pause-tag">⚠ pausiert ${newestActual.label}</span>` : ''}</td>
       <td class="left">${rp.position || match.pos || '-'}</td>
       <td style="${heatFor(range,'min',minutes)}">
-        <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48"
+        <input class="min-input ${isEdited ? 'edited' : ''}" type="number" step="0.5" min="0" max="48" ${admin ? '' : 'disabled'}
           value="${fmt(minutes)}" data-name="${match.name.replace(/"/g,'&quot;')}" onchange="onMinutesChange(this)">
-        ${isEdited ? `<button class="reset-btn" onclick="onReset('${match.name.replace(/'/g,"\\'")}')">↺</button>` : ''}
+        ${isEdited && admin ? `<button class="reset-btn" onclick="onReset('${match.name.replace(/'/g,"\\'")}')">↺</button>` : ''}
       </td>
       <td>${latest.gp}</td>
       <td style="${heatFor(range,'pts',s.pts)}">${fmt(s.pts)}</td>
@@ -292,17 +304,8 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
 // Rechte Spalte: tatsächliche End-Rotation der letzten Saison für dieses
 // Team (aus players-data.js gefiltert), reale Minuten/Stats, nicht editierbar.
 function renderRightRows(bbmAbbr) {
-  // Nur Spieler, deren zuletzt tatsächlich gespielte Saison auch die
-  // jüngste geladene Saison (NEWEST_LABEL) ist. Sonst rutschen Spieler
-  // rein, deren einziger Bezug zu diesem Team eine Saison von vor Jahren
-  // war (z.B. 2018-19) — die aber nie neu zugeordnet wurden, weil das
-  // "team"-Feld einfach an der letzten gespielten Saison hängt.
   const players = PLAYER_RATES
     .filter(p => p.team === bbmAbbr)
-    .filter(p => {
-      const played = mfhfbPlayedSeasonLabels(p);
-      return played.length > 0 && played[played.length - 1] === NEWEST_LABEL;
-    })
     .map(p => {
       const latest = mfhfbLatestSeason(p);
       const r = latest.rates;
@@ -353,7 +356,15 @@ function render() {
 
   const weights = mfhfbGetWeights();
   const overrides = mfhfbGetOverrides();
+  const admin = mfhfbIsAdmin();
   const q = query.toLowerCase().trim();
+
+  const lockNote = document.getElementById('lockNote');
+  if (lockNote) {
+    lockNote.innerHTML = admin
+      ? '🔓 Admin-Modus aktiv — Minuten editierbar und per Drag &amp; Drop sortierbar.'
+      : '🔒 Bearbeitung gesperrt. Zum Ändern der Minuten oben rechts auf <b>Admin</b> klicken.';
+  }
 
   document.getElementById('footerText').textContent =
     `Roster-Stand: ${new Date(ROSTERS_DATA.fetchedAt).toLocaleString('de-DE')} · Quelle: ${ROSTERS_DATA.source} · ${ROSTERS_DATA.teamCount}/30 Teams geladen. Rechte Spalte = End-Rotation ${NEWEST_LABEL}.`;
@@ -379,7 +390,7 @@ function render() {
       </div>
       <div class="team-cols">
         <div class="col">
-          <div class="col-title">Aktueller Kader — meine Minuten (ziehbar für Starting 5)</div>
+          <div class="col-title">Aktueller Kader — meine Minuten${admin ? ' (ziehbar für Starting 5)' : ' (gesperrt)'}</div>
           <table class="stat-table left-table">
             <thead>${statHeaderRow()}</thead>
             <tbody>${renderLeftRows(leftPlayers, weights, overrides, abbr, bbmAbbr)}</tbody>
@@ -396,7 +407,7 @@ function render() {
     </div>`;
   }).join('') || `<div class="empty-state">Keine Treffer.</div>`;
 
-  attachDragHandlers();
+  if (admin) attachDragHandlers();
 }
 
 function onMinutesChange(input) {

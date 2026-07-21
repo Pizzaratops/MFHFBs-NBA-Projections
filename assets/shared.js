@@ -290,3 +290,69 @@ function mfhfbApplyTeamOrder(items, teamAbbr) {
     return 0;
   });
 }
+
+// --- Projizierte Minuten 2026-27 als Standardwert ---
+// Reihenfolge: manueller Override (Teams-Seite) > projizierte Minuten
+// (projected-minutes.js) > reale MPG der letzten gespielten Saison.
+function mfhfbDefaultMinutes(playerName, fallbackMpg) {
+  const key = mfhfbNormalizeName(playerName);
+  if (typeof PROJECTED_MINUTES !== 'undefined' && PROJECTED_MINUTES[key]) {
+    return PROJECTED_MINUTES[key].min;
+  }
+  return fallbackMpg;
+}
+
+// True, wenn für den Spieler eine projizierte (nicht nur Vorsaison-)Minutenzahl existiert.
+function mfhfbHasProjection(playerName) {
+  const key = mfhfbNormalizeName(playerName);
+  return typeof PROJECTED_MINUTES !== 'undefined' && !!PROJECTED_MINUTES[key];
+}
+
+// --- Admin-Lock: Minuten-/Rotationsbearbeitung hinter Button sperren ---
+// Client-seitige Sperre gegen versehentliche Änderungen durch Betrachter.
+// (Hinweis: rein clientseitig, kein echter Schutz gegen jemanden, der den
+// Quelltext liest — es geht um Bedien-, nicht um Manipulationssicherheit.)
+const MFHFB_ADMIN_KEY = 'mfhfb_admin_v1';
+const MFHFB_ADMIN_PASSWORD = '2025'; // hier bei Bedarf ändern
+
+function mfhfbIsAdmin() {
+  return localStorage.getItem(MFHFB_ADMIN_KEY) === '1';
+}
+
+function mfhfbSetAdmin(on) {
+  if (on) localStorage.setItem(MFHFB_ADMIN_KEY, '1');
+  else localStorage.removeItem(MFHFB_ADMIN_KEY);
+}
+
+// Verkabelt den Admin-Button. onChange wird nach jedem Statuswechsel aufgerufen
+// (damit die Seite neu rendern und Inputs sperren/entsperren kann).
+function mfhfbInitAdminToggle(buttonId, onChange) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+  const label = () => {
+    if (mfhfbIsAdmin()) {
+      btn.textContent = '🔓 Admin aktiv';
+      btn.classList.add('admin-on');
+    } else {
+      btn.textContent = '🔒 Admin';
+      btn.classList.remove('admin-on');
+    }
+  };
+  label();
+  btn.addEventListener('click', () => {
+    if (mfhfbIsAdmin()) {
+      mfhfbSetAdmin(false); // Sperren braucht kein Passwort
+    } else {
+      const pw = prompt('Admin-Passwort eingeben, um die Bearbeitung freizuschalten:');
+      if (pw === null) return; // abgebrochen
+      if (pw === MFHFB_ADMIN_PASSWORD) {
+        mfhfbSetAdmin(true);
+      } else {
+        alert('Falsches Passwort.');
+        return;
+      }
+    }
+    label();
+    if (typeof onChange === 'function') onChange(mfhfbIsAdmin());
+  });
+}
