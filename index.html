@@ -312,9 +312,15 @@ function computeAll() {
   });
 
   // Manuell gepflegte Spieler (Rookies etc. ohne Rate-Daten, auf der
-  // Teams-Seite eingetragen) als eigenständige Zeilen mit einmischen.
+  // Teams-Seite eingetragen) als eigenständige Zeilen mit einmischen —
+  // aber nur, wenn tatsächlich Produktionswerte eingetragen sind. Rookies,
+  // für die bisher nur (projizierte) Minuten vorliegen, würden das Ranking
+  // sonst mit lauter Nullen zumüllen.
   const manualStats = mfhfbGetManualStats();
+  const PROD_CATS = ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m'];
   Object.values(manualStats).forEach(m => {
+    const hasProduction = PROD_CATS.some(c => m[c] !== undefined && m[c] !== 0);
+    if (!hasProduction) return;
     const s = {
       min: m.min || 0, pts: m.pts || 0, reb: m.reb || 0, ast: m.ast || 0,
       stl: m.stl || 0, blk: m.blk || 0, fg3m: m.fg3m || 0, tov: m.tov || 0,

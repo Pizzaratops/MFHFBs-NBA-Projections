@@ -100,6 +100,7 @@
     font-family:'DM Mono',monospace; font-size:10.5px; text-align:right; border-radius:4px; padding:2px 3px; outline:none;
   }
   .stat-input:focus{border-color:var(--accent); color:var(--accent2);}
+  .stat-input.proj-min{border-color:var(--accent2); color:var(--accent2); font-style:italic;}
   .pause-tag{color:var(--bad); font-size:9px; font-weight:700; margin-left:5px;}
   .min-input{
     width:34px; background:var(--bg); border:1px solid var(--border); color:var(--accent2);
@@ -207,10 +208,18 @@ function renderManualRow(rp, teamBbmAbbr, range) {
   const key = mfhfbNormalizeName(rp.name);
   const admin = mfhfbIsAdmin();
   const manual = mfhfbGetManualStats()[key] || {};
+  const projMin = mfhfbProjectedMin(rp.name);
   const field = (id, step) => {
-    const v = manual[id];
+    let v = manual[id];
+    let isProj = false;
+    // Minutenfeld: projizierte Minuten vorbelegen, solange nichts manuell gesetzt ist.
+    if (id === 'min' && v === undefined && projMin !== undefined) {
+      v = projMin;
+      isProj = true;
+    }
     const heatStyle = HEAT_COLS.includes(id) ? heatFor(range, id, v) : '';
-    return `<td style="${heatStyle}"><input class="stat-input" type="number" step="${step}" min="0" ${admin ? '' : 'disabled'}
+    return `<td style="${heatStyle}"><input class="stat-input${isProj ? ' proj-min' : ''}" type="number" step="${step}" min="0" ${admin ? '' : 'disabled'}
+      ${isProj ? 'title="projizierte Minuten (Rookie) — anpassbar"' : ''}
       value="${v !== undefined ? v : ''}" placeholder="–"
       data-key="${key}" data-team="${teamBbmAbbr}" data-field="${id}"
       data-name="${rp.name.replace(/"/g,'&quot;')}" data-pos="${(rp.position||'').replace(/"/g,'&quot;')}"
@@ -432,6 +441,12 @@ function onManualChange(input) {
   const stats = { ...existing };
   if (raw === '') delete stats[field];
   else stats[field] = parseFloat(raw);
+  // Wenn der User eine andere Kategorie füllt, aber noch keine Minuten gesetzt
+  // sind, die projizierten Minuten mit übernehmen (sonst stünde 0 in der Projection).
+  if (stats.min === undefined) {
+    const pm = mfhfbProjectedMin(name);
+    if (pm !== undefined) stats.min = pm;
+  }
   mfhfbSetManualStat(name, team, pos, stats);
   render();
 }

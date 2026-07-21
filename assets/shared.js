@@ -308,6 +308,15 @@ function mfhfbHasProjection(playerName) {
   return typeof PROJECTED_MINUTES !== 'undefined' && !!PROJECTED_MINUTES[key];
 }
 
+// Rohe projizierte Minuten (oder undefined) — auch für Rookies ohne Rate-Daten.
+function mfhfbProjectedMin(playerName) {
+  const key = mfhfbNormalizeName(playerName);
+  if (typeof PROJECTED_MINUTES !== 'undefined' && PROJECTED_MINUTES[key]) {
+    return PROJECTED_MINUTES[key].min;
+  }
+  return undefined;
+}
+
 // --- Admin-Lock: Minuten-/Rotationsbearbeitung hinter Button sperren ---
 // Client-seitige Sperre gegen versehentliche Änderungen durch Betrachter.
 // (Hinweis: rein clientseitig, kein echter Schutz gegen jemanden, der den
