@@ -1,4 +1,4 @@
-// Projizierte Minuten 2026-27 — automatisch generiert aus der Team-Recherche.
+// Projizierte Minuten 2026-27 — automatisch generiert + Rookie-Daten aus Rankings_and_Projections_1.xlsx
 // Key = normalisierter Spielername (siehe mfhfbNormalizeName). Dient als
 // Standard-Minutenwert auf der Teams-Seite, bis ein manueller Override gesetzt wird.
 const PROJECTED_MINUTES = {
@@ -81,10 +81,10 @@ const PROJECTED_MINUTES = {
   "name": "Egor Demin"
  },
  "mikel brown": {
-  "min": 26,
+  "min": 26.0,
   "team": "BKN",
-  "pos": "PG",
-  "name": "Mikel Brown Jr."
+  "pos": "G",
+  "name": "Mikel Brown Jr"
  },
  "dayron sharpe": {
   "min": 26,
@@ -189,9 +189,9 @@ const PROJECTED_MINUTES = {
   "name": "Josh Minott"
  },
  "brandon miller": {
-  "min": 34,
+  "min": 32.0,
   "team": "CHA",
-  "pos": "SF",
+  "pos": "F",
   "name": "Brandon Miller"
  },
  "kon knueppel": {
@@ -567,9 +567,9 @@ const PROJECTED_MINUTES = {
   "name": "Jaime Jaquez Jr."
  },
  "nate ament": {
-  "min": 24,
+  "min": 14.0,
   "team": "MIL",
-  "pos": "PF",
+  "pos": "F",
   "name": "Nate Ament"
  },
  "aj green": {
@@ -579,9 +579,9 @@ const PROJECTED_MINUTES = {
   "name": "AJ Green"
  },
  "brayden burries": {
-  "min": 18,
+  "min": 22.8,
   "team": "MIL",
-  "pos": "SG",
+  "pos": "G",
   "name": "Brayden Burries"
  },
  "kevin porter": {
@@ -771,10 +771,10 @@ const PROJECTED_MINUTES = {
   "name": "Adem Bona"
  },
  "labaron philon": {
-  "min": 18,
+  "min": 20.0,
   "team": "PHI",
-  "pos": "PG",
-  "name": "Labaron Philon Jr."
+  "pos": "G",
+  "name": "Labaron Philon Jr"
  },
  "johni broome": {
   "min": 14,
@@ -855,9 +855,9 @@ const PROJECTED_MINUTES = {
   "name": "Anthony Davis"
  },
  "aj dybantsa": {
-  "min": 30,
+  "min": 30.0,
   "team": "WAS",
-  "pos": "SF",
+  "pos": "G/F",
   "name": "AJ Dybantsa"
  },
  "bilal coulibaly": {
@@ -938,23 +938,23 @@ const PROJECTED_MINUTES = {
   "pos": "SG",
   "name": "Max Christie"
  },
+ "morez johnson": {
+  "min": 24.0,
+  "team": "DAL",
+  "pos": "F/C",
+  "name": "Morez Johnson Jr"
+ },
+ "sergio de larrea": {
+  "min": 17.0,
+  "team": "DAL",
+  "pos": "G",
+  "name": "Sergio De Larrea"
+ },
  "dereck lively": {
   "min": 18,
   "team": "DAL",
   "pos": "C",
   "name": "Dereck Lively II"
- },
- "klay thompson": {
-  "min": 18,
-  "team": "DAL",
-  "pos": "SG",
-  "name": "Klay Thompson"
- },
- "ryan nembhard": {
-  "min": 14,
-  "team": "DAL",
-  "pos": "PG",
-  "name": "Ryan Nembhard"
  },
  "santi aldama": {
   "min": 22,
@@ -1065,9 +1065,9 @@ const PROJECTED_MINUTES = {
   "name": "Al Horford"
  },
  "yaxel lendeborg": {
-  "min": 18,
+  "min": 28.0,
   "team": "GSW",
-  "pos": "PF",
+  "pos": "F",
   "name": "Yaxel Lendeborg"
  },
  "will richard": {
@@ -1185,9 +1185,9 @@ const PROJECTED_MINUTES = {
   "name": "Gradey Dick"
  },
  "keaton wagler": {
-  "min": 22,
+  "min": 28.0,
   "team": "LAC",
-  "pos": "SG",
+  "pos": "G",
   "name": "Keaton Wagler"
  },
  "kobe sanders": {
@@ -1257,9 +1257,9 @@ const PROJECTED_MINUTES = {
   "name": "Jaylen Wells"
  },
  "cameron boozer": {
-  "min": 30,
-  "team": "MEM",
-  "pos": "PF",
+  "min": 32.0,
+  "team": "GSW",
+  "pos": "F/C",
   "name": "Cameron Boozer"
  },
  "zach edey": {
@@ -1515,9 +1515,9 @@ const PROJECTED_MINUTES = {
   "name": "Khaman Maluach"
  },
  "koa peat": {
-  "min": 14,
+  "min": 15.0,
   "team": "PHX",
-  "pos": "PF",
+  "pos": "F",
   "name": "Koa Peat"
  },
  "ryan dunn": {
@@ -1617,10 +1617,10 @@ const PROJECTED_MINUTES = {
   "name": "Malik Monk"
  },
  "darius acuff": {
-  "min": 22,
+  "min": 30.0,
   "team": "SAC",
-  "pos": "PG",
-  "name": "Darius Acuff Jr."
+  "pos": "G",
+  "name": "Darius Acuff Jr"
  },
  "devin carter": {
   "min": 20,
@@ -1743,9 +1743,9 @@ const PROJECTED_MINUTES = {
   "name": "Jaxson Hayes"
  },
  "darryn peterson": {
-  "min": 26,
+  "min": 28.0,
   "team": "UTA",
-  "pos": "SG",
+  "pos": "G",
   "name": "Darryn Peterson"
  },
  "isaiah collier": {
@@ -1777,5 +1777,281 @@ const PROJECTED_MINUTES = {
   "team": "UTA",
   "pos": "C",
   "name": "Jusuf Nurkic"
+ },
+ "carlton wilson": {
+  "min": 29.0,
+  "team": "UTA",
+  "pos": "F",
+  "name": "Carlton Wilson"
+ },
+ "alijah martin": {
+  "min": 25.0,
+  "team": "",
+  "pos": "G",
+  "name": "Alijah Martin"
+ },
+ "aday mara": {
+  "min": 17.9,
+  "team": "OKC",
+  "pos": "C",
+  "name": "Aday Mara"
+ },
+ "emanuel sharp": {
+  "min": 21.2,
+  "team": "SAC",
+  "pos": "G",
+  "name": "Emanuel Sharp"
+ },
+ "kingston flemings": {
+  "min": 20.0,
+  "team": "ATL",
+  "pos": "G",
+  "name": "Kingston Flemings"
+ },
+ "terrace reed": {
+  "min": 19.5,
+  "team": "SAS",
+  "pos": "C",
+  "name": "Terrace Reed Jr"
+ },
+ "henri steinbach": {
+  "min": 16.0,
+  "team": "",
+  "pos": "C",
+  "name": "Henri Steinbach"
+ },
+ "cameron carr": {
+  "min": 25.0,
+  "team": "LAL",
+  "pos": "F",
+  "name": "Cameron Carr"
+ },
+ "deshawn swain": {
+  "min": 19.0,
+  "team": "",
+  "pos": "F",
+  "name": "DeShawn Swain"
+ },
+ "bruce thornton": {
+  "min": 14.4,
+  "team": "HOU",
+  "pos": "G",
+  "name": "Bruce Thornton"
+ },
+ "vasyl ishchenko": {
+  "min": 13.0,
+  "team": "",
+  "pos": "F",
+  "name": "Vasyl Ishchenko"
+ },
+ "trayvon brasil": {
+  "min": 12.7,
+  "team": "DEN",
+  "pos": "F/C",
+  "name": "Trayvon Brasil"
+ },
+ "mekhi thomas": {
+  "min": 22.0,
+  "team": "",
+  "pos": "G",
+  "name": "Mekhi Thomas"
+ },
+ "bryce hopkins": {
+  "min": 12.0,
+  "team": "DEN",
+  "pos": "F",
+  "name": "Bryce Hopkins"
+ },
+ "mouhamed ajayi": {
+  "min": 12.0,
+  "team": "",
+  "pos": "F",
+  "name": "Mouhamed Ajayi"
+ },
+ "kam boswell": {
+  "min": 12.0,
+  "team": "",
+  "pos": "F",
+  "name": "Kam Boswell"
+ },
+ "zuby ejiofor": {
+  "min": 12.0,
+  "team": "ATL",
+  "pos": "F/C",
+  "name": "Zuby Ejiofor"
+ },
+ "bennett stirtz": {
+  "min": 13.5,
+  "team": "OKC",
+  "pos": "G",
+  "name": "Bennett Stirtz"
+ },
+ "alex karaban": {
+  "min": 15.0,
+  "team": "CHI",
+  "pos": "F",
+  "name": "Alex Karaban"
+ },
+ "ebuka okorie": {
+  "min": 12.2,
+  "team": "DET",
+  "pos": "G",
+  "name": "Ebuka Okorie"
+ },
+ "tobi awaka": {
+  "min": 9.0,
+  "team": "",
+  "pos": "F",
+  "name": "Tobi Awaka"
+ },
+ "drake mitchell": {
+  "min": 34.0,
+  "team": "",
+  "pos": "F",
+  "name": "Drake Mitchell"
+ },
+ "trey donaldson": {
+  "min": 9.0,
+  "team": "",
+  "pos": "F",
+  "name": "Trey Donaldson"
+ },
+ "tobi lawal": {
+  "min": 9.0,
+  "team": "",
+  "pos": "F",
+  "name": "Tobi Lawal"
+ },
+ "javon bradley": {
+  "min": 9.0,
+  "team": "",
+  "pos": "F",
+  "name": "Javon Bradley"
+ },
+ "julian sellers": {
+  "min": 8.0,
+  "team": "",
+  "pos": "F",
+  "name": "Julian Sellers"
+ },
+ "jase dix": {
+  "min": 8.0,
+  "team": "",
+  "pos": "F",
+  "name": "Jase Dix"
+ },
+ "ernest udeh": {
+  "min": 8.0,
+  "team": "",
+  "pos": "F",
+  "name": "Ernest Udeh Jr"
+ },
+ "kareem lopez": {
+  "min": 7.3,
+  "team": "GSW",
+  "pos": "F",
+  "name": "Kareem Lopez"
+ },
+ "quadir copeland": {
+  "min": 7.2,
+  "team": "HOU",
+  "pos": "F",
+  "name": "Quadir Copeland"
+ },
+ "carter anderson": {
+  "min": 8.0,
+  "team": "",
+  "pos": "G",
+  "name": "Carter Anderson"
+ },
+ "chris cenac": {
+  "min": 9.2,
+  "team": "BOS",
+  "pos": "G",
+  "name": "Chris Cenac Jr"
+ },
+ "joshua jefferson": {
+  "min": 8.8,
+  "team": "BKN",
+  "pos": "F",
+  "name": "Joshua Jefferson"
+ },
+ "peter suder": {
+  "min": 6.5,
+  "team": "",
+  "pos": "F",
+  "name": "Peter Suder"
+ },
+ "andrew okereke": {
+  "min": 6.5,
+  "team": "",
+  "pos": "F",
+  "name": "Andrew Okereke"
+ },
+ "isiah nelson": {
+  "min": 6.5,
+  "team": "",
+  "pos": "F",
+  "name": "Isiah Nelson"
+ },
+ "joshua kayil": {
+  "min": 6.1,
+  "team": "",
+  "pos": "G",
+  "name": "Joshua Kayil"
+ },
+ "tyler nickel": {
+  "min": 6.1,
+  "team": "",
+  "pos": "F",
+  "name": "Tyler Nickel"
+ },
+ "frank okpara": {
+  "min": 6.0,
+  "team": "",
+  "pos": "F",
+  "name": "Frank Okpara"
+ },
+ "henri veesaar": {
+  "min": 9.0,
+  "team": "",
+  "pos": "C",
+  "name": "Henri Veesaar"
+ },
+ "ulrich onyenso": {
+  "min": 5.7,
+  "team": "",
+  "pos": "C",
+  "name": "Ulrich Onyenso"
+ },
+ "randy conwell": {
+  "min": 12.7,
+  "team": "",
+  "pos": "G",
+  "name": "Randy Conwell"
+ },
+ "tyler bilodeau": {
+  "min": 4.1,
+  "team": "BKN",
+  "pos": "F",
+  "name": "Tyler Bilodeau"
+ },
+ "isaiah evans": {
+  "min": 5.1,
+  "team": "MIN",
+  "pos": "G/F",
+  "name": "Isaiah Evans"
+ },
+ "ben smith": {
+  "min": 4.9,
+  "team": "",
+  "pos": "G",
+  "name": "Ben Smith"
+ },
+ "nathan martinelli": {
+  "min": 2.5,
+  "team": "",
+  "pos": "F",
+  "name": "Nathan Martinelli"
  }
 };
