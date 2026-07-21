@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-20T11:43:37.878Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-21T11:06:55.938Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-20T11:43:37.878Z",
+ "fetchedAt": "2026-07-21T11:06:55.938Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -1100,6 +1100,15 @@ const ROSTERS_DATA = {
      "espnId": "4278049"
     },
     {
+     "name": "Jett Howard",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 8\"",
+     "weight": "215 lbs",
+     "age": 22,
+     "espnId": "5105806"
+    },
+    {
      "name": "Kyrie Irving",
      "jersey": "11",
      "position": "G",
@@ -1190,15 +1199,6 @@ const ROSTERS_DATA = {
      "espnId": "4432107"
     },
     {
-     "name": "Tyler Smith",
-     "jersey": "23",
-     "position": "F",
-     "height": "6' 9\"",
-     "weight": "224 lbs",
-     "age": 21,
-     "espnId": "5167876"
-    },
-    {
      "name": "Klay Thompson",
      "jersey": "31",
      "position": "G",
@@ -1248,6 +1248,15 @@ const ROSTERS_DATA = {
      "weight": "220 lbs",
      "age": 23,
      "espnId": "4698719"
+    },
+    {
+     "name": "Alpha Diallo",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "210 lbs",
+     "age": 29,
+     "espnId": "4065813"
     },
     {
      "name": "Aaron Gordon",
@@ -1956,15 +1965,6 @@ const ROSTERS_DATA = {
      "weight": "203 lbs",
      "age": 30,
      "espnId": "3133603"
-    },
-    {
-     "name": "Taelon Peter",
-     "jersey": "4",
-     "position": "G",
-     "height": "6' 3\"",
-     "weight": "185 lbs",
-     "age": 24,
-     "espnId": "4703421"
     },
     {
      "name": "Ben Sheppard",
