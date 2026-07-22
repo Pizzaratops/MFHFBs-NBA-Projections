@@ -159,6 +159,7 @@
 
 <script src="players-data.js"></script>
 <script src="projected-minutes.js"></script>
+<script src="rookie-projections.js" onerror="window.__rookiesMissing=true"></script>
 <script>
   // rosters-data.js existiert erst, nachdem scripts/fetch-rosters.mjs
   // (manuell oder via GitHub Action) einmal gelaufen ist.
@@ -176,6 +177,24 @@ function toBbmAbbr(espnAbbr) { return ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
 mfhfbInitThemeToggle('themeToggle');
 mfhfbInitAdminToggle('adminToggle', () => render());
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
+
+// Rookie-Projektionen als Vorbelegung in localStorage schreiben —
+// nur wenn für den jeweiligen Spieler noch KEIN manueller Eintrag existiert.
+// So werden eigene Anpassungen niemals überschrieben.
+if (typeof ROOKIE_PROJECTIONS !== 'undefined') {
+  const existing = mfhfbGetManualStats();
+  let seeded = 0;
+  Object.entries(ROOKIE_PROJECTIONS).forEach(([key, proj]) => {
+    if (!existing[key]) {
+      existing[key] = proj;
+      seeded++;
+    }
+  });
+  if (seeded > 0) {
+    localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(existing));
+    console.log(`Rookie-Projektionen: ${seeded} neue Einträge vorbefüllt.`);
+  }
+}
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 let query = '';
 
