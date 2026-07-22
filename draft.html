@@ -477,7 +477,8 @@ function buildPlayers(){
     row.zDepth = z - bestCat.val;
     row.bestCat = bestCat.cat;
 
-    // ADP-Value: Z-Score relativ zum ADP (wird nach ADP-Zuweisung unten berechnet)    row.posList = (row.pos || '-').split('/');
+    // ADP-Value: Z-Score relativ zum ADP (wird weiter unten berechnet, nach ADP-Zuweisung)
+    row.posList = (row.pos || '-').split('/');
 
     // ADP aus zwei unabhängigen Quellen (adp-data.js, via
     // scripts/build-adp-data.py generiert):
@@ -489,14 +490,20 @@ function buildPlayers(){
     row.adpCount = adpEntry ? adpEntry.ownCount : 0;
     row.fadp = (adpEntry && adpEntry.fantraxAdp !== null && adpEntry.fantraxAdp !== undefined) ? adpEntry.fantraxAdp : null;
 
-    // ADP-Value: Z-Score ÷ ADP-Rang → positiv = unterbewertet, negativ = überbewertet
-    // Nutzt F-ADP als primäre Quelle, dann eigenen ADP, dann null
-    const adpRef = row.fadp || row.adp;
-    row.adpVal = adpRef ? parseFloat((row.z / adpRef * 10).toFixed(2)) : null;
+    // ADP-Value: eigener Z-Rank minus Fantrax-ADP-Rank
+    // Positiv = wir ranken ihn höher als der Markt → unterbewertet (Wert)
+    // Negativ = wir ranken ihn tiefer als der Markt → überbewertet (Reach)
+    // Wird erst nach rows.sort() korrekt befüllt (braucht den finalen rk)
+    row.adpVal = null; // wird unten nach dem Sort gesetzt
   });
 
   rows.sort((a,b) => b.z - a.z);
-  rows.forEach((r,i) => r.rk = i+1);
+  rows.forEach((r,i) => {
+    r.rk = i+1;
+    // ADP-Value = unser Z-Rank minus ADP-Rang (positiv = Wert, negativ = Reach)
+    const adpRef = r.fadp || r.adp;
+    r.adpVal = adpRef ? Math.round(adpRef - r.rk) : null;
+  });
   return rows;
 }
 
@@ -698,6 +705,17 @@ function renderPool(){
   const pickNo = state.picks.length + 1;
   const onClockTeam = pickNo <= TOTAL_PICKS ? pickTeamForNumber(pickNo) : null;
 
+  // Heatmap-Range für Z-Spalten (über die aktuell sichtbaren Zeilen)
+  const zVals = rows.map(r => r.z);
+  const zfVals = rows.map(r => r.zFloor);
+  const zdVals = rows.map(r => r.zDepth);
+  const zMin = Math.min(...zVals), zMax = Math.max(...zVals);
+  const zfMin = Math.min(...zfVals), zfMax = Math.max(...zfVals);
+  const zdMin = Math.min(...zdVals), zdMax = Math.max(...zdVals);
+  const hz  = v => mfhfbHeatStyle(v, zMin, zMax, false);
+  const hzf = v => mfhfbHeatStyle(v, zfMin, zfMax, false);
+  const hzd = v => mfhfbHeatStyle(v, zdMin, zdMax, false);
+
   tbody.innerHTML = rows.map(p => {
     const drafted = dm[p.rk];
     const posHtml = p.posList.map(x=>`<span class="postag">${x}</span>`).join('');
@@ -720,10 +738,10 @@ function renderPool(){
       <td>${fmtNum(p.s.fgpct)}%</td>
       <td>${fmtNum(p.s.ftpct)}%</td>
       <td>${fmtNum(p.s.tov)}</td>
-      <td class="col-z">${p.z>=0?'+':''}${fmtNum(p.z,2)}</td>
-      <td class="col-z" title="Floor — Schwächste Kat: ${p.worstCat||''}" style="font-size:11px;opacity:0.85">${p.zFloor>=0?'+':''}${fmtNum(p.zFloor,2)}</td>
-      <td class="col-z" title="Depth — Stärkste Kat: ${p.bestCat||''}" style="font-size:11px;opacity:0.85">${p.zDepth>=0?'+':''}${fmtNum(p.zDepth,2)}</td>
-      <td style="font-size:11px;font-weight:700;color:${p.adpVal===null?'var(--muted)':p.adpVal>0?'var(--good)':'var(--bad)'}">${p.adpVal!==null?(p.adpVal>0?'+':'')+fmtNum(p.adpVal,2):'—'}</td>
+      <td class="col-z" style="${hz(p.z)}">${p.z>=0?'+':''}${fmtNum(p.z,2)}</td>
+      <td style="${hzf(p.zFloor)};font-size:11px;font-weight:700" title="Floor — Schwächste Kat: ${p.worstCat||''}">${p.zFloor>=0?'+':''}${fmtNum(p.zFloor,2)}</td>
+      <td style="${hzd(p.zDepth)};font-size:11px;font-weight:700" title="Depth — Stärkste Kat: ${p.bestCat||''}">${p.zDepth>=0?'+':''}${fmtNum(p.zDepth,2)}</td>
+      <td style="font-size:11px;font-weight:700;color:${p.adpVal===null?'var(--muted)':p.adpVal>0?'var(--good)':'var(--bad)'}">${p.adpVal!==null?(p.adpVal>0?'+':'')+p.adpVal:'—'}</td>
       <td class="col-adp${p.adp===null?' no-adp':''}">${p.adp!==null ? fmtNum(p.adp,1)+` <span class="adp-n">(n=${p.adpCount})</span>` : '—'}</td>
       <td class="col-fadp${p.fadp===null?' no-adp':''}">${p.fadp!==null ? p.fadp : '—'}</td>
       <td>${statusHtml}</td>

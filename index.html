@@ -214,6 +214,7 @@
 
 <script src="players-data.js"></script>
 <script src="projected-minutes.js"></script>
+<script src="adp-data.js" onerror="window.__adpMissing=true"></script>
 <script src="assets/shared.js"></script>
 <script>
 let sortKey = 'z', sortAsc = false;
@@ -223,7 +224,7 @@ const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 const Z_CATS = ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'tov', 'ftpct', 'fgpct'];
 const CAT_LABELS = { pts:'PTS', reb:'REB', ast:'AST', stl:'STL', blk:'BLK', fg3m:'3PM', tov:'TOV', ftpct:'FT%', fgpct:'FG%' };
 // Spalten, die im Table auch farblich (Heatmap) markiert werden — TOV invertiert.
-const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'ftpct', 'tov', 'z'];
+const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'ftpct', 'tov', 'z', 'zFloor', 'zDepth'];
 const HEAT_INVERT = { tov: true };
 
 mfhfbInitThemeToggle('themeToggle');
@@ -373,10 +374,22 @@ function computeAll() {
     r.zDepth = z - best[1];
     r.bestCat = best[0];
 
-    // ADP-Value: Z relativ zu Fantrax-ADP (aus adp-data.js)
-    const adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(r.p.name)] : undefined;
-    const adpRef = adpEntry ? (adpEntry.fantraxAdp || adpEntry.ownAdp) : null;
-    r.adpVal = adpRef ? parseFloat((r.z / adpRef * 10).toFixed(2)) : null;
+    // ADP-Value: wird nach dem Sort gesetzt (braucht finalen Z-Rang)
+    r.adpVal = null;
+    r._adpRef = null;
+    const _adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(r.p.name)] : undefined;
+    if (_adpEntry) r._adpRef = _adpEntry.fantraxAdp || _adpEntry.ownAdp || null;
+  });
+
+  // ADP-Value = ADP-Rang minus unser Z-Rang: positiv = unterbewertet, negativ = überbewertet
+  rows.sort((x,y) => {
+    let av, bv;
+    // (Vorsort für ADP-Val-Berechnung — wird weiter unten nochmal sortiert)
+    return y.z - x.z;
+  });
+  rows.forEach((r,i) => {
+    r._zRank = i + 1;
+    r.adpVal = r._adpRef ? Math.round(r._adpRef - r._zRank) : null;
   });
 
   return rows;
@@ -409,7 +422,12 @@ function render() {
   // Min/Max je Heatmap-Spalte über die aktuell angezeigten (gefilterten) Zeilen.
   const heatRange = {};
   HEAT_COLS.forEach(col => {
-    const vals = rows.map(r => col === 'z' ? r.z : r.s[col]);
+    const vals = rows.map(r => {
+      if (col === 'z') return r.z;
+      if (col === 'zFloor') return r.zFloor;
+      if (col === 'zDepth') return r.zDepth;
+      return r.s[col];
+    });
     heatRange[col] = { min: Math.min(...vals), max: Math.max(...vals) };
   });
   const heat = (col, val) => mfhfbHeatStyle(val, heatRange[col].min, heatRange[col].max, !!HEAT_INVERT[col]);
@@ -437,9 +455,9 @@ function render() {
       <td style="${heat('ftpct', s.ftpct)}">${fmt(s.ftpct)}%</td>
       <td style="${heat('tov', s.tov)}">${fmt(s.tov,1)}</td>
       <td class="col-z" style="${heat('z', z)}">${z >= 0 ? '+' : ''}${fmt(z,2)}</td>
-      <td class="col-z" title="Floor — ohne ${worstCat||''}" style="font-size:11px;opacity:0.85">${zFloor >= 0 ? '+' : ''}${fmt(zFloor,2)}</td>
-      <td class="col-z" title="Depth — ohne ${bestCat||''}" style="font-size:11px;opacity:0.85">${zDepth >= 0 ? '+' : ''}${fmt(zDepth,2)}</td>
-      <td style="font-weight:700;font-size:11px;color:${adpVal===null?'var(--muted)':adpVal>0?'var(--good)':'var(--bad)'}">${adpVal!==null?(adpVal>0?'+':'')+fmt(adpVal,2):'—'}</td>
+      <td style="${heat('zFloor', zFloor)};font-size:11px;font-weight:700" title="Floor — ohne ${worstCat||''}">${zFloor >= 0 ? '+' : ''}${fmt(zFloor,2)}</td>
+      <td style="${heat('zDepth', zDepth)};font-size:11px;font-weight:700" title="Depth — ohne ${bestCat||''}">${zDepth >= 0 ? '+' : ''}${fmt(zDepth,2)}</td>
+      <td style="font-weight:700;font-size:11px;color:${adpVal===null?'var(--muted)':adpVal>0?'var(--good)':'var(--bad)'}">${adpVal!==null?(adpVal>0?'+':'')+adpVal:'—'}</td>
     </tr>`;
   }).join('');
 }
