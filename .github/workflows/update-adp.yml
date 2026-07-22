@@ -1,0 +1,38 @@
+name: Update ADP Data
+
+# Baut adp-data.js automatisch neu, sobald neue Draft-Result-CSVs nach
+# data/draft-results/ gepusht werden (z.B. per GitHub-Web-Upload direkt
+# im Browser: Ordner öffnen -> "Add file" -> "Upload files"). Committet
+# das Ergebnis automatisch zurück. Kann auch manuell angestoßen werden
+# (Actions-Tab -> "Update ADP Data" -> "Run workflow").
+
+on:
+  push:
+    paths:
+      - "data/draft-results/**.csv"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-adp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: ADP-Daten neu bauen
+        run: python3 scripts/build-adp-data.py
+
+      - name: Änderungen committen, falls vorhanden
+        run: |
+          git config user.name "mfhfb-adp-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add adp-data.js
+          if git diff --cached --quiet; then
+            echo "Keine ADP-Änderungen."
+          else
+            git commit -m "Automatisches ADP-Update ($(date -u +%Y-%m-%d))"
+            git push
+          fi

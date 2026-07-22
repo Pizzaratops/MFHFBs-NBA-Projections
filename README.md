@@ -10,6 +10,54 @@ Eigenständige Testseite für Beyaz' manuelle Dynasty-Projektionsmethodik:
 Pro-Minute-Produktion der letzten Saison(s) hochrechnen auf projizierte
 Minuten für die kommende Saison — live im Browser, ohne Excel.
 
+## Project Brief
+
+**Was das hier ist:** Eine private, statisch gehostete (GitHub Pages)
+Fantasy-Basketball-Toolseite für die eigene 9-Cat-H2H-Dynasty-Liga
+"MFHFB". Kein Produkt für Dritte — Beyaz ist gleichzeitig einziger
+Nutzer, Datenpfleger und "Product Owner". Ziel ist, Excel für die
+laufende Saisonarbeit (Projektionen, Rosterplanung, Live-Draft)
+komplett zu ersetzen, ohne die manuelle Methodik hinter den Zahlen
+aufzugeben — alle Berechnungen bleiben nachvollziehbar und lokal
+anpassbar, nichts ist eine Blackbox.
+
+**Kernidee:** Realstatistiken der letzten Saison(s) werden auf
+Pro-Minute-Raten runtergerechnet, mit einstellbarer Jahresgewichtung
+kombiniert und auf projizierte Minuten für die kommende Saison
+hochgerechnet. Daraus entstehen 9-Cat-Z-Scores, die auf drei Seiten
+verwendet werden:
+
+- **Projections** (`index.html`) — Ranking aller Spieler nach Z-Score,
+  eigene Projektion vs. Realwerte der letzten Saison im Vergleich.
+- **NBA Teams** (`teams.html`) — Kader pro Team, Minuten-Eingabe
+  (Quelle der Wahrheit für Projektionsminuten), aktueller Kader vs.
+  End-Rotation der Vorsaison.
+- **Draft Board** (`draft.html`) — Live-Draft-Tracker: Spielerpool nach
+  Z-Score **oder ADP** sortierbar, Punt-Kategorien, Kategorie-Ranks des
+  eigenen Kaders, Team-vs-Team-Matrix, Empfehlungen nach Kaderschwäche,
+  Pick-Log. Läuft komplett gegen dieselbe Projektions-Engine wie die
+  Projections-Seite.
+
+**Datenphilosophie:** Rohdaten (Season-Stats, Draft Results, Roster)
+leben als Dateien in `data/`. Kleine, dokumentierte Build-Skripte
+(`scripts/*.py`, `scripts/*.mjs`) wandeln sie in statische
+JS-Datendateien (`*-data.js`) um, die die Seiten laden. Kein Backend,
+keine Datenbank — neue Daten rein = Skript laufen lassen = neue
+`.js`-Datei committen. Wiederkehrende externe Quellen (NBA-Roster) sind
+per GitHub Action automatisiert; alles, was aus manuellen Exports kommt
+(Season-Rankings, Fantrax Draft Results), wird bei Bedarf per Skript
+neu gebaut.
+
+**Tech-Stack:** Reines HTML/CSS/Vanilla-JS (keine Frameworks, kein
+Build-Step für die Seiten selbst), Python (`pandas`) und Node.js für
+die Build-Skripte, `localStorage` für alles Nutzerspezifische
+(Minuten-Overrides, Gewichtungen, Draft-Fortschritt, Theme) — geräte-
+und browserweit, nicht account-weit.
+
+**Stand:** aktive Baustelle, kein fertiges Produkt. Features werden
+iterativ ergänzt, sobald sie in der eigenen Liga-Praxis gebraucht
+werden (siehe Changelog unten).
+
 ## Wie die Berechnung funktioniert
 
 1. **Rohdaten** (`data/`): Season-Per-Game-Stats-Export (z.B. aus BBM).
@@ -43,7 +91,17 @@ python3 build-players-data.py ../players-data.js \
 
 # Aktuelle Roster von ESPN ziehen (Node >= 18, keine Abhängigkeiten)
 node fetch-rosters.mjs
+
+# ADP aus Fantrax Draft Results neu berechnen (liest ALLE CSVs aus
+# data/draft-results/, keine Argumente nötig)
+python3 build-adp-data.py
 ```
+
+**ADP-Workflow:** Fantrax-Export ("Draft Results" → CSV) einfach in
+`data/draft-results/` ablegen (Dateiname egal, H2H/Roto/Points gemischt
+ist ok) und `build-adp-data.py` laufen lassen — oder die CSV direkt im
+GitHub-Web-UI in den Ordner hochladen, dann übernimmt die GitHub Action
+`update-adp.yml` den Rebuild automatisch.
 
 Neue Saison hinzufügen: einfach eine weitere `<label>=<datei.xls>`-Angabe an
 den Befehl anhängen — Reihenfolge der Angaben ist egal, das Skript sortiert
@@ -69,13 +127,18 @@ die Action nicht zurück committen.
 ```
 index.html                     Projections-Seite (2 Spalten: meine Projektion vs. Realwerte)
 teams.html                     NBA-Teams-Seite (Minuten-Eingabe pro Team)
+draft.html                     Draft Board (Live-Draft-Tracker, Z- und ADP-Sortierung)
 assets/shared.js               gemeinsame Logik (Name-Matching, Storage, Gewichtung)
 players-data.js                generierte Pro-Minute-Raten (Output von build-players-data.py)
 rosters-data.js                generierte Team-Kader (Output von fetch-rosters.mjs, täglich aktualisiert)
+adp-data.js                    generierte ADP-Daten (Output von build-adp-data.py)
 scripts/build-players-data.py  Konvertierungsskript Rohdaten → players-data.js
 scripts/fetch-rosters.mjs      Roster-Fetcher (ESPN) → rosters-data.js
+scripts/build-adp-data.py      Konvertierungsskript Draft Results → adp-data.js
 .github/workflows/update-rosters.yml  tägliche GitHub Action für den Roster-Fetch
+.github/workflows/update-adp.yml      GitHub Action: baut adp-data.js bei neuen CSVs in data/draft-results/
 data/                          Rohdaten-Exports (Season-Stats)
+data/draft-results/            Fantrax "Draft Results"-CSV-Exporte (Rohdaten für ADP)
 ```
 
 ## Aktueller Stand
@@ -107,6 +170,12 @@ data/                          Rohdaten-Exports (Season-Stats)
 - **Live-Reranking:** Minuten-Änderungen auf der Teams-Seite aktualisieren
   die Projections-Tabelle automatisch (per `storage`-Event, wenn beide
   Seiten offen sind; sonst beim nächsten Laden).
+- **ADP im Draft Board:** zusätzliche sortierbare Spalte neben Z-Score,
+  berechnet aus deinen hochgeladenen Fantrax Draft Results
+  (`data/draft-results/`). Aktuell 203 Spieler aus 8 Ligen erfasst.
+  Spieler ohne ADP fallen automatisch ans Tabellenende (Fallback-Sortierung
+  nach Z, bis eine Fantrax-eigene ADP-Datei als zweite Fallback-Stufe
+  ergänzt wird).
 - **Rookies:** noch kein automatischer Pfad — Minuten + Rate werden vorerst
   manuell eingetragen.
 - **Noch nicht bei TTHQ integriert** — bewusst als eigenständiges Repo, bis
@@ -125,6 +194,31 @@ data/                          Rohdaten-Exports (Season-Stats)
   nicht läuft.
 
 ## Changelog
+
+### 2026-07-22 (13)
+- **ADP-Spalte im Draft Board hinzugefügt.** Neue, sortierbare Spalte
+  neben Z, berechnet als Durchschnitts-Draftposition über beliebig viele
+  hochgeladene Fantrax "Draft Results"-Exports.
+  - Neuer Ordner `data/draft-results/`: einfach CSV-Exporte reinlegen
+    (Dateiname egal, H2H/Roto/Points werden bewusst nicht getrennt,
+    sondern zusammen gemittelt — mehr Ligen = akkurater).
+  - Neues Skript `scripts/build-adp-data.py`: aggregiert über die
+    stabile Fantrax `Player ID` (robust gegen Schreibweisen-Unterschiede),
+    schreibt `adp-data.js` mit demselben normalisierten Namensschema wie
+    `mfhfbNormalizeName()` — matcht dadurch automatisch gegen
+    `PLAYER_RATES`, kein Zusatz-Mapping nötig.
+  - Neue GitHub Action `update-adp.yml`: baut `adp-data.js` automatisch
+    neu und committet, sobald eine CSV nach `data/draft-results/`
+    gepusht wird (auch per direktem Upload im GitHub-Web-UI möglich).
+  - Sortierverhalten: Klick auf "ADP" sortiert aufsteigend (bester Pick
+    zuerst). Spieler ohne eigenen ADP (noch nicht in genug Draft Results
+    erfasst) fallen immer ans Tabellenende, unabhängig von der
+    Sortierrichtung; untereinander vorerst Fallback auf Z-Score. Eine
+    Fantrax-eigene ADP-Datei ist als zweite Fallback-Stufe vorgesehen,
+    sobald diese hochgeladen wird.
+  - Erstbefüllung: 8 Draft Results (6× H2H, 2× Roto, je 12 Teams/14
+    Runden) → 203 aggregierte Spieler. Victor Wembanyama z.B. ADP 1,2
+    (n=8, Range 1–2).
 
 ### 2026-07-20 (12)
 - **Projizierte Minuten 2026-27 als Standardwerte eingespielt**

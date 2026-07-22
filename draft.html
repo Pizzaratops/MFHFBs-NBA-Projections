@@ -128,6 +128,9 @@
   .p-meta{color:var(--muted); font-size:10.5px; margin-top:1px; font-family:'DM Mono',monospace;}
   .postag{display:inline-block; background:var(--surface2); border:1px solid var(--border); border-radius:4px; padding:1px 5px; font-size:10px; color:var(--muted); margin-right:2px;}
   .col-z{font-weight:700; color:var(--accent2);}
+  .col-adp{font-weight:700; color:var(--good);}
+  .col-adp .adp-n{color:var(--muted); font-weight:400; font-size:10px;}
+  .col-adp.no-adp{color:var(--muted); font-weight:400;}
   .draft-btn{
     background:var(--accent); color:#fff; border:none; padding:5px 11px; border-radius:7px;
     font-size:11px; font-weight:700; cursor:pointer;
@@ -266,6 +269,7 @@
               <th data-k="ftpct">FT%</th>
               <th data-k="tov">TOV</th>
               <th data-k="z">Z</th>
+              <th data-k="adp" title="Ø Draft-Position aus deinen erfassten Fantrax Draft Results">ADP</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -322,13 +326,16 @@
 
 <script src="players-data.js"></script>
 <script src="projected-minutes.js"></script>
+<script src="adp-data.js"></script>
 <script src="assets/shared.js"></script>
 <script>
 mfhfbInitThemeToggle('themeToggle');
 document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS.join(' · ');
 document.getElementById('footerText').textContent =
   'Nutzt dieselben Projections wie die Projections-Seite (inkl. Gewichtungen, Minuten-Overrides und manuellen Rookie-Stats). ' +
-  'Änderungen an Gewichtung/Z-Basis auf der Projections-Seite wirken sich sofort hier aus.';
+  'Änderungen an Gewichtung/Z-Basis auf der Projections-Seite wirken sich sofort hier aus. ' +
+  'ADP-Spalte: Durchschnitts-Draftposition aus ' + (typeof ADP_DATA !== 'undefined' ? Object.keys(ADP_DATA).length : 0) +
+  ' erfassten Spielern über deine hochgeladenen Fantrax Draft Results (siehe data/draft-results/).';
 
 const CATS = [
   {key:'pts', label:'PTS'},
@@ -411,6 +418,13 @@ function buildPlayers(){
     });
     row.z = z;
     row.posList = (row.pos || '-').split('/');
+
+    // ADP aus deinen erfassten Fantrax Draft Results (adp-data.js, via
+    // scripts/build-adp-data.py generiert). null = Spieler kam in den
+    // bisher erfassten Ligen noch nicht oft genug vor bzw. gar nicht.
+    const adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(row.n)] : undefined;
+    row.adp = adpEntry ? adpEntry.adp : null;
+    row.adpCount = adpEntry ? adpEntry.count : 0;
   });
 
   rows.sort((a,b) => b.z - a.z);
@@ -573,6 +587,17 @@ function renderPool(){
     let av, bv;
     if(state.sortKey === 'name'){ av=a.n; bv=b.n; }
     else if(state.sortKey === 'pos'){ av=a.pos; bv=b.pos; }
+    else if(state.sortKey === 'adp'){
+      // Spieler ohne ADP (noch nicht/nicht oft genug in den erfassten Draft
+      // Results) landen immer ganz unten, unabhängig von der Sortierrichtung.
+      // Untereinander vorerst Fallback auf Z-Score (später: Fantrax-ADP als
+      // zweite Fallback-Stufe, sobald diese Datei importiert wird).
+      const aNull = a.adp === null, bNull = b.adp === null;
+      if(aNull && bNull) return b.z - a.z;
+      if(aNull) return 1;
+      if(bNull) return -1;
+      av = a.adp; bv = b.adp;
+    }
     else if(state.sortKey === 'rk' || state.sortKey === 'z'){ av=a[state.sortKey]; bv=b[state.sortKey]; }
     else { av=a.s[state.sortKey]; bv=b.s[state.sortKey]; }
     if(typeof av === 'string') return dir*av.localeCompare(bv);
@@ -607,6 +632,7 @@ function renderPool(){
       <td>${fmtNum(p.s.ftpct)}%</td>
       <td>${fmtNum(p.s.tov)}</td>
       <td class="col-z">${p.z>=0?'+':''}${fmtNum(p.z,2)}</td>
+      <td class="col-adp${p.adp===null?' no-adp':''}">${p.adp!==null ? fmtNum(p.adp,1)+` <span class="adp-n">(n=${p.adpCount})</span>` : '—'}</td>
       <td>${statusHtml}</td>
     </tr>`;
   }).join('');
@@ -790,7 +816,7 @@ function initControls(){
     th.addEventListener('click', () => {
       const k = th.dataset.k;
       if(state.sortKey === k) state.sortDir = state.sortDir==='asc' ? 'desc':'asc';
-      else { state.sortKey = k; state.sortDir = (k==='name'||k==='pos') ? 'asc':'desc'; }
+      else { state.sortKey = k; state.sortDir = (k==='name'||k==='pos'||k==='adp') ? 'asc':'desc'; }
       renderPool();
     });
   });
