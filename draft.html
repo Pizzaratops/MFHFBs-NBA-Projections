@@ -1339,9 +1339,21 @@ function guessLeagueFormat(label){
   if(l.includes('points') || l.includes('punkte') || l.includes('pts')) return 'Points';
   return 'unbekannt';
 }
+// Fantrax dokumentiert den genauen Feldnamen für den Liga-Namen in
+// getLeagueInfo nicht offiziell -- probiere die plausibelsten Kandidaten
+// durch. Falls keiner passt (Fantrax hat's mal umbenannt o.ä.), fällt
+// alles unten sauber auf das manuelle Label / die ID zurück, nichts
+// bricht.
+function extractLeagueName(league){
+  if(!league) return null;
+  const candidates = [league.name, league.leagueName, league.info && league.info.name, league.league && league.league.name];
+  const found = candidates.find(v => typeof v === 'string' && v.trim());
+  return found ? found.trim() : null;
+}
 async function fetchLeagueProgress(entry){
   try{
-    const { draft } = await mfhfbFetchFantraxLeague(entry.id);
+    const { draft, league } = await mfhfbFetchFantraxLeague(entry.id);
+    const apiName = extractLeagueName(league);
     const picks = draft.draftPicks || [];
     const made = picks.filter(p => p.playerId).length;
     const total = picks.length;
@@ -1353,7 +1365,7 @@ async function fetchLeagueProgress(entry){
       round = Math.ceil(overall/teams);
       pickInRound = overall - (round-1)*teams;
     }
-    return { entry, ok:true, finished, made, total, overall, round, pickInRound };
+    return { entry, apiName, ok:true, finished, made, total, overall, round, pickInRound };
   }catch(err){
     return { entry, ok:false, error: err.message };
   }
@@ -1396,7 +1408,7 @@ async function openLeagueProgress(){
 
   const finishedByFormat = {};
   finished.forEach(r => {
-    const fmt = guessLeagueFormat(r.entry.label);
+    const fmt = guessLeagueFormat(r.apiName || r.entry.label);
     finishedByFormat[fmt] = (finishedByFormat[fmt]||0) + 1;
   });
   const fmtParts = Object.entries(finishedByFormat).map(([k,v]) => `${v}x ${k}`).join(', ');
@@ -1407,7 +1419,7 @@ async function openLeagueProgress(){
 
   const sorted = [...inProgress, ...finished, ...failed];
   listEl.innerHTML = sorted.map(r => {
-    const name = (r.entry.label || r.entry.id).replace(/</g,'&lt;');
+    const name = (r.ok && r.apiName ? r.apiName : (r.entry.label || r.entry.id)).replace(/</g,'&lt;');
     if(!r.ok){
       return `<div class="league-row"><div><div class="lg-name">${name}</div><div class="lg-id">${r.entry.id}</div></div><div class="lg-status err">nicht erreichbar</div></div>`;
     }
