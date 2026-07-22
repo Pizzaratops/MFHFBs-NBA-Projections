@@ -204,6 +204,25 @@
     padding:9px 12px; border-radius:8px; font-size:13px; font-family:'DM Sans',sans-serif; outline:none;
   }
   .league-sync-row input[type=text]:focus{border-color:var(--accent);}
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:200;
+    display:flex; align-items:center; justify-content:center; padding:16px;
+  }
+  .modal-box{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:18px; max-width:640px; width:100%; max-height:85vh; overflow-y:auto;
+  }
+  .modal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+  .league-row{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:9px 4px; border-bottom:1px solid var(--border); font-size:12.5px;
+  }
+  .league-row:last-child{ border-bottom:none; }
+  .league-row .lg-name{ font-weight:600; color:var(--text); }
+  .league-row .lg-id{ font-family:'DM Mono',monospace; font-size:10.5px; color:var(--muted); }
+  .league-row .lg-status{ text-align:right; white-space:nowrap; font-family:'DM Mono',monospace; }
+  .league-row .lg-status.done{ color:var(--good); }
+  .league-row .lg-status.err{ color:var(--bad); }
 </style>
 </head>
 <body>
@@ -230,8 +249,20 @@
     <div class="chip"><span class="num" id="pickNo">1</span><span class="lbl">Pick</span></div>
     <div class="chip"><span class="num" id="roundNo">1</span><span class="lbl">Runde</span></div>
     <div class="onclock" id="onClockChip">Team 1 an der Reihe</div>
+    <button class="sb-btn" id="leagueProgressBtn">🏁 Liga-Fortschritt</button>
     <button class="sb-btn" id="undoBtn">↩ Undo</button>
     <span class="save-indicator" id="saveIndicator"></span>
+  </div>
+
+  <div class="modal-overlay" id="leagueProgressOverlay" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="panel-title">Fortschritt in allen Ligen</div>
+        <button class="sb-btn" id="leagueProgressClose">✕</button>
+      </div>
+      <div class="note" id="leagueProgressSummary" style="margin:0 0 10px;">lädt…</div>
+      <div id="leagueProgressList"></div>
+    </div>
   </div>
 
   <div class="panel" id="setupPanel">
@@ -245,8 +276,16 @@
         <select id="myTeamSel"></select>
       </div>
       <div class="field">
+        <label>Liga-Format (steuert die Empfehlungen)</label>
+        <select id="formatSel"></select>
+      </div>
+      <div class="field" id="puntWrap">
         <label>Punt-Kategorien (bei Empfehlungen ignorieren)</label>
         <div class="punt-cats" id="puntCats"></div>
+      </div>
+      <div class="field" id="pointsWeightsWrap" style="display:none;">
+        <label>Punkte je Stat</label>
+        <div class="punt-cats" id="pointsWeights"></div>
       </div>
       <div class="field">
         <button class="sb-btn danger" id="resetBtn">Draft zurücksetzen</button>
@@ -262,12 +301,20 @@
     <div class="panel-body" style="flex-direction:column; align-items:stretch;">
       <div class="note" style="margin:0 0 10px;">
         Liga-ID eingeben (aus der Fantrax-URL: fantrax.com/fantasy/league/<b>ABC123XYZ</b>/...) und laden —
-        der aktuelle Draft-Stand kommt live direkt von Fantrax, kein manuelles Picks-Eintragen und kein
-        eigener Speicher nötig. Funktioniert auf jedem Gerät gleich, weil Fantrax selbst die Quelle ist.
+        der aktuelle Draft-Stand kommt live direkt von Fantrax. Einmal gespeicherte Ligen tauchen unten
+        im Dropdown auf und lassen sich ohne erneute Eingabe der ID nachladen (praktisch am Handy).
+      </div>
+      <div class="field" style="margin-bottom:10px;">
+        <label>Gespeicherte Liga</label>
+        <select id="savedLeagueSelect"><option value="">— Neue Liga eingeben —</option></select>
       </div>
       <div class="league-sync-row">
+        <input type="text" id="liveLeagueLabel" placeholder="Name (z.B. FBI Roto 01)" style="flex:0 0 40%;">
         <input type="text" id="liveLeagueId" placeholder="Liga-ID…">
-        <button class="sb-btn" id="liveLoadBtn">🔄 Laden</button>
+      </div>
+      <div class="league-sync-row" style="margin-top:8px;">
+        <button class="sb-btn" id="liveLoadBtn" style="flex:1;">🔄 Laden &amp; speichern</button>
+        <button class="sb-btn danger" id="liveDeleteBtn" style="display:none;">🗑 Entfernen</button>
       </div>
       <div class="field" id="liveTeamPickWrap" style="display:none; margin-top:10px;">
         <label>Welches Team ist deins?</label>
@@ -311,7 +358,7 @@
               <th data-k="z">Z</th>
               <th data-k="zFloor" title="Z-Score ohne die schlechteste Kategorie des Spielers — zeigt den Boden/Floor">Z-Floor</th>
               <th data-k="zDepth" title="Z-Score ohne die beste Kategorie — entlarvt One-Cat-Wonders; hoher Wert = gut in der Tiefe">Z-Depth</th>
-              <th data-k="adpVal" title="Z-Score ÷ ADP-Rang × 10 — positiv = unterbewertet, negativ = überbewertet">ADP-Val</th>
+              <th data-k="adpVal" title="ADP-Rang minus unser Z-Rang — grün = unterbewertet, rot = überbewertet">ADP-Val</th>
               <th data-k="adp" title="Ø Draft-Position aus deinen erfassten Fantrax Draft Results">ADP</th>
               <th data-k="fadp" title="Fantrax' eigener aktueller ADP-Snapshot (data/fantrax-adp.csv)">F-ADP</th>
               <th>Status</th>
@@ -402,6 +449,71 @@ const SLOTS_PER_TEAM = SLOT_DEFS.reduce((s,d)=>s+d[1],0); // 14
 const TOTAL_PICKS = TEAMS * SLOTS_PER_TEAM;
 
 const MFHFB_DRAFT_KEY = 'mfhfb_draft_state_v1';
+const MFHFB_POINTS_KEY = 'mfhfb_points_weights_v1';
+
+// Liga-Formate. '9cat_roto' und '9cat_h2h' nutzen dieselbe Empfehlungs-Logik
+// (Kategorie-Rang-basiert) -- der Unterschied Roto/H2H wirkt sich auf den
+// Draft-Wert kaum aus, nur auf die Matchup-Logik während der Saison selbst.
+const FORMATS = [
+  {key:'9cat_roto', label:'9-Cat Roto'},
+  {key:'9cat_h2h', label:'9-Cat H2H (Categories)'},
+  {key:'points', label:'Punkte-Liga'},
+  {key:'bestball', label:'Best Ball'},
+];
+const DEFAULT_POINTS_WEIGHTS = { pts:1, reb:1.2, ast:1.5, stl:3, blk:3, fg3m:1, tov:-1 };
+function loadPointsWeights(){
+  try{
+    const stored = JSON.parse(localStorage.getItem(MFHFB_POINTS_KEY) || 'null');
+    return stored ? { ...DEFAULT_POINTS_WEIGHTS, ...stored } : { ...DEFAULT_POINTS_WEIGHTS };
+  }catch(e){ return { ...DEFAULT_POINTS_WEIGHTS }; }
+}
+function savePointsWeights(w){ try{ localStorage.setItem(MFHFB_POINTS_KEY, JSON.stringify(w)); }catch(e){} }
+
+// Ungefähre Saison-Längen für die Verfügbarkeits-Quote (gp/max). 2020-21 war
+// coronabedingt auf 72 Spiele verkürzt, alle anderen Saisons hier 82 -- eine
+// grobe Näherung, keine exakte Schedule-Datenquelle (die gibt's im Projekt
+// nicht, siehe Chat vom 22.07.2026).
+const SEASON_MAX_GAMES = {
+  '2018-19':82, '2019-20':82, '2020-21':72, '2021-22':82,
+  '2022-23':82, '2023-24':82, '2024-25':82, '2025-26':82,
+};
+function mfhfbDurability(playerRatesEntry){
+  if(!playerRatesEntry || !playerRatesEntry.seasons) return { durability: 0.85, known:false };
+  const labels = SEASON_LABELS.filter(l => playerRatesEntry.seasons[l] && playerRatesEntry.seasons[l].gp != null).slice(-3);
+  if(!labels.length) return { durability: 0.85, known:false };
+  const ratios = labels.map(l => {
+    const max = SEASON_MAX_GAMES[l] || 82;
+    return Math.min(1, playerRatesEntry.seasons[l].gp / max);
+  });
+  return { durability: ratios.reduce((a,b)=>a+b,0)/ratios.length, known:true };
+}
+
+// ---------------- Normalverteilung (für Fall-Wahrscheinlichkeit ADP) ----------------
+function erf(x){
+  const sign = x<0?-1:1; x=Math.abs(x);
+  const a1=0.254829592,a2=-0.284496736,a3=1.421413741,a4=-1.453152027,a5=1.061405429,p=0.3275911;
+  const t=1/(1+p*x);
+  const y=1-(((((a5*t+a4)*t)+a3)*t+a2)*t+a1)*t*Math.exp(-x*x);
+  return sign*y;
+}
+function normalCdf(x){ return 0.5*(1+erf(x/Math.SQRT2)); }
+// Wahrscheinlichkeit, dass ein Spieler NACH "atPick" noch verfügbar ist,
+// geschätzt aus seiner erfassten eigenen ADP (Streuung aus ownMin/ownMax)
+// bzw. Fantrax-ADP als Fallback mit grober Default-Streuung.
+function fallProbability(p, atPick){
+  let mean = null, sd = null;
+  if(p.adp !== null && p.adpCount >= 3 && p.adpMin != null && p.adpMax != null){
+    mean = p.adp; sd = Math.max(2, (p.adpMax - p.adpMin) / 4);
+  } else if(p.adp !== null){
+    mean = p.adp; sd = Math.max(4, p.adp * 0.3);
+  } else if(p.fadp !== null){
+    mean = p.fadp; sd = Math.max(4, p.fadp * 0.3);
+  } else {
+    return null;
+  }
+  const z = (atPick - 0.5 - mean) / sd;
+  return 1 - normalCdf(z);
+}
 
 // ---------------- build player pool from the site's own projection engine ----------------
 function buildPlayers(){
@@ -419,7 +531,9 @@ function buildPlayers(){
     const r = mfhfbWeightedRates(p, weights);
     proj.fgm = r.fgm * minutes; proj.fga = r.fga * minutes;
     proj.ftm = r.ftm * minutes; proj.fta = r.fta * minutes;
-    return { rk: idx+1, n: p.name, team: p.team || '-', pos: p.pos || '-', s: proj, manual:false };
+    const dur = mfhfbDurability(p);
+    return { rk: idx+1, n: p.name, team: p.team || '-', pos: p.pos || '-', s: proj, manual:false,
+             durability: dur.durability, durabilityKnown: dur.known };
   });
 
   const manualStats = mfhfbGetManualStats();
@@ -436,7 +550,8 @@ function buildPlayers(){
     // keine Attempt-Daten für manuelle Einträge -> Minuten als Gewichtungs-Proxy
     s.fga = min; s.fgm = min * s.fgpct/100;
     s.fta = min; s.ftm = min * s.ftpct/100;
-    rows.push({ rk: rows.length+1, n: m.name, team: m.team || '-', pos: m.pos || '-', s, manual:true });
+    rows.push({ rk: rows.length+1, n: m.name, team: m.team || '-', pos: m.pos || '-', s, manual:true,
+                durability: 0.85, durabilityKnown:false });
   });
 
   // Population für Z-Score-Mittelwert/Streuung (identisch zur Projections-Seite)
@@ -463,22 +578,19 @@ function buildPlayers(){
       z += catZ * catWeights[cat];
     });
     row.z = z;
+    row.posList = (row.pos || '-').split('/');
 
-    // Z-Floor: Z ohne die schlechteste Kategorie des Spielers
-    // (Kategorie mit dem niedrigsten gewichteten Beitrag)
+    // Z-Floor: Z-Score ohne die schlechteste Kategorie des Spielers
+    // (Kategorie mit dem niedrigsten gewichteten Beitrag) — zeigt den Boden.
     const contribs = Z_CATS.map(cat => ({ cat, val: row.catZ[cat] * catWeights[cat] }));
     const worstCat = contribs.reduce((a,b) => a.val < b.val ? a : b);
     row.zFloor = z - worstCat.val;
     row.worstCat = worstCat.cat;
 
-    // Z-Depth: Z ohne die beste Kategorie des Spielers
-    // (Zeigt ob jemand ein One-Cat-Wonder ist oder tiefe Werte hat)
+    // Z-Depth: Z-Score ohne die beste Kategorie — entlarvt One-Cat-Wonders.
     const bestCat = contribs.reduce((a,b) => a.val > b.val ? a : b);
     row.zDepth = z - bestCat.val;
     row.bestCat = bestCat.cat;
-
-    // ADP-Value: Z-Score relativ zum ADP (wird weiter unten berechnet, nach ADP-Zuweisung)
-    row.posList = (row.pos || '-').split('/');
 
     // ADP aus zwei unabhängigen Quellen (adp-data.js, via
     // scripts/build-adp-data.py generiert):
@@ -488,25 +600,55 @@ function buildPlayers(){
     const adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(row.n)] : undefined;
     row.adp = (adpEntry && adpEntry.ownAdp !== null && adpEntry.ownAdp !== undefined) ? adpEntry.ownAdp : null;
     row.adpCount = adpEntry ? adpEntry.ownCount : 0;
+    row.adpMin = (adpEntry && adpEntry.ownMin !== null && adpEntry.ownMin !== undefined) ? adpEntry.ownMin : null;
+    row.adpMax = (adpEntry && adpEntry.ownMax !== null && adpEntry.ownMax !== undefined) ? adpEntry.ownMax : null;
     row.fadp = (adpEntry && adpEntry.fantraxAdp !== null && adpEntry.fantraxAdp !== undefined) ? adpEntry.fantraxAdp : null;
+    row._adpRef = row.fadp || row.adp || null;
+  });
 
-    // ADP-Value: eigener Z-Rank minus Fantrax-ADP-Rank
-    // Positiv = wir ranken ihn höher als der Markt → unterbewertet (Wert)
-    // Negativ = wir ranken ihn tiefer als der Markt → überbewertet (Reach)
-    // Wird erst nach rows.sort() korrekt befüllt (braucht den finalen rk)
-    row.adpVal = null; // wird unten nach dem Sort gesetzt
+  // Punkte-Liga-Score (für Format 'points'): einfache Summe Stat x Punktwert.
+  const pw = loadPointsWeights();
+  rows.forEach(row => {
+    row.ptsScore = (row.s.pts||0)*pw.pts + (row.s.reb||0)*pw.reb + (row.s.ast||0)*pw.ast +
+      (row.s.stl||0)*pw.stl + (row.s.blk||0)*pw.blk + (row.s.fg3m||0)*pw.fg3m + (row.s.tov||0)*pw.tov;
   });
 
   rows.sort((a,b) => b.z - a.z);
   rows.forEach((r,i) => {
     r.rk = i+1;
-    // ADP-Value = unser Z-Rank minus ADP-Rang (positiv = Wert, negativ = Reach)
-    const adpRef = r.fadp || r.adp;
-    r.adpVal = adpRef ? Math.round(adpRef - r.rk) : null;
+    // ADP-Value = ADP-Rang minus unser Z-Rang: positiv = unterbewertet (Wert),
+    // negativ = überbewertet (Reach). Braucht den finalen Z-Rang, daher erst hier.
+    r.adpVal = r._adpRef ? Math.round(r._adpRef - r.rk) : null;
   });
   return rows;
 }
 
+// Kategorie-Seltenheit LIVE aus dem aktuell noch verfügbaren Pool
+// berechnet (nicht mehr einmalig vor dem Draft) -- wenn im Draft-Room
+// gerade reihenweise z.B. Shotblocker weggehen, wird BLK während des
+// Drafts spürbar seltener, das soll sich auch in den Empfehlungen
+// niederschlagen. Gedämpft (Wurzel) + gedeckelt (±25%), damit ein
+// Ein-Kategorie-Ausreißer nicht den Gesamtwert eines Spielers dominiert
+// (das war der Bug vom 22.07.2026 mit Kadary Richmond/Tre Scott).
+function computeCatScarcity(availablePlayers){
+  const pool = availablePlayers.slice(0, TEAMS * SLOTS_PER_TEAM);
+  if(pool.length < 20) return CAT_SCARCITY; // zu wenig übrig für ein stabiles Signal -- letzten Stand behalten
+  const raw = {};
+  Z_CATS.forEach(cat => {
+    if(cat === 'tov'){ raw[cat] = 1; return; }
+    const posShare = pool.filter(r => r.catZ[cat] > 0).length / pool.length;
+    raw[cat] = 1 / Math.max(0.05, posShare);
+  });
+  const mean = Object.values(raw).reduce((a,b)=>a+b,0) / Object.values(raw).length;
+  const out = {};
+  Z_CATS.forEach(cat => {
+    const norm = Math.sqrt(raw[cat] / mean);
+    out[cat] = Math.max(0.8, Math.min(1.25, norm));
+  });
+  return out;
+}
+
+let CAT_SCARCITY = {};
 let PLAYERS = buildPlayers();
 const byRk = {};
 function reindex(){ Object.keys(byRk).forEach(k=>delete byRk[k]); PLAYERS.forEach(p=>byRk[p.rk]=p); }
@@ -526,6 +668,7 @@ let state = {
   picks: [],
   myTeam: 1,
   punt: [],
+  format: '9cat_roto',
   sortKey: 'z',
   sortDir: 'desc',
   search: '',
@@ -561,6 +704,10 @@ function pickTeamForNumber(pickNo){
   const round = Math.ceil(pickNo/TEAMS);
   const idx = pickNo - (round-1)*TEAMS;
   return (round % 2 === 1) ? idx : (TEAMS + 1 - idx);
+}
+function nextPickForTeam(fromPickNo, team){
+  for(let n=fromPickNo; n<=TOTAL_PICKS; n++){ if(pickTeamForNumber(n) === team) return n; }
+  return null;
 }
 
 // ---------------- roster slot assignment (Kuhn's matching) ----------------
@@ -705,10 +852,8 @@ function renderPool(){
   const pickNo = state.picks.length + 1;
   const onClockTeam = pickNo <= TOTAL_PICKS ? pickTeamForNumber(pickNo) : null;
 
-  // Heatmap-Range für Z-Spalten (über die aktuell sichtbaren Zeilen)
-  const zVals = rows.map(r => r.z);
-  const zfVals = rows.map(r => r.zFloor);
-  const zdVals = rows.map(r => r.zDepth);
+  // Heatmap-Range für Z-Spalten (über die aktuell sichtbaren/gefilterten Zeilen)
+  const zVals = rows.map(r => r.z), zfVals = rows.map(r => r.zFloor), zdVals = rows.map(r => r.zDepth);
   const zMin = Math.min(...zVals), zMax = Math.max(...zVals);
   const zfMin = Math.min(...zfVals), zfMax = Math.max(...zfVals);
   const zdMin = Math.min(...zdVals), zdMax = Math.max(...zdVals);
@@ -825,34 +970,86 @@ function renderLog(){
 
 function renderReco(){
   const dm = draftedMap();
-  const ranks = categoryRanks();
-  const needWeight = {};
-  CATS.forEach(c => {
-    if(state.punt.includes(c.key)){ needWeight[c.key] = 0; return; }
-    const rank = ranks[c.key][state.myTeam];
-    needWeight[c.key] = (rank-1)/(TEAMS-1);
-  });
-
+  const pickNo = state.picks.length + 1;
+  const catFormat = (state.format === '9cat_roto' || state.format === '9cat_h2h');
   const available = PLAYERS.filter(p => !dm[p.rk]);
+
+  // Seltenheit live aus dem noch verfügbaren Pool (siehe computeCatScarcity).
+  CAT_SCARCITY = computeCatScarcity(available);
+
+  let needWeight = null;
+  if(catFormat){
+    const ranks = categoryRanks();
+    // Team-Bedarf ist in den ersten Runden extrem verrauscht -- ein Team
+    // mit 1-2 Picks liegt in fast jeder Kategorie zufällig vorn/hinten,
+    // das hat noch nichts mit echtem Roster-Bedarf zu tun. Konfidenz
+    // steigt bis zu ~3 Picks pro Team linear, davor wird Richtung
+    // "neutral" (0.5) gemischt statt dem verrauschten Rang voll zu
+    // vertrauen.
+    const avgPicksPerTeam = state.picks.length / TEAMS;
+    const needConfidence = Math.min(1, avgPicksPerTeam / 3);
+    needWeight = {};
+    CATS.forEach(c => {
+      if(state.punt.includes(c.key)){ needWeight[c.key] = 0; return; }
+      const rank = ranks[c.key][state.myTeam];
+      const rawBase = (rank-1)/(TEAMS-1);
+      const base = needConfidence * rawBase + (1 - needConfidence) * 0.5;
+      const scarcity = CAT_SCARCITY[c.key] || 1;
+      needWeight[c.key] = base * scarcity;
+    });
+  }
+
+  // Wann bin ich wieder dran? Für die Fall-Wahrscheinlichkeit unten.
+  const nextMine = pickNo <= TOTAL_PICKS ? nextPickForTeam(pickNo, state.myTeam) : null;
+
   const scored = available.map(p => {
-    let score = 0;
-    CATS.forEach(c => { score += needWeight[c.key] * p.catZ[c.key]; });
-    score += 0.15 * p.z;
-    return {p, score};
+    let base;
+    if(state.format === 'bestball'){
+      base = p.z;
+    } else if(state.format === 'points'){
+      base = p.ptsScore / 40; // grob auf Z-ähnliche Größenordnung skaliert
+    } else {
+      base = 0;
+      CATS.forEach(c => { base += (needWeight[c.key]||0) * p.catZ[c.key]; });
+      base += 0.25 * p.z;
+    }
+    // i) Verfügbarkeit: Spieler mit schwacher Gesundheits-/Spielzeit-Historie
+    // etwas abwerten (max. ±15%, siehe mfhfbDurability).
+    const durMult = 0.85 + 0.15 * p.durability;
+
+    // iii) Fällt er noch bis zu meinem nächsten Pick? Wahrscheinlich-weg
+    // Spieler bekommen einen kleinen Bonus (jetzt zugreifen), Spieler die
+    // sicher noch da sein werden einen kleinen Abschlag (später holen).
+    let fallProb = null, urgencyMult = 1;
+    if(nextMine !== null && nextMine > pickNo){
+      fallProb = fallProbability(p, nextMine);
+      if(fallProb !== null) urgencyMult = 0.85 + 0.30 * (1 - fallProb);
+    }
+    return {p, score: base * durMult * urgencyMult, fallProb};
   });
   scored.sort((a,b)=>b.score-a.score);
   const top = scored.slice(0,12);
 
   const container = document.getElementById('recoList');
   if(top.length === 0){ container.innerHTML = '<div class="empty">Keine verfügbaren Spieler.</div>'; return; }
-  container.innerHTML = top.map(({p,score}) => {
-    const bestCats = CATS.filter(c=>!state.punt.includes(c.key))
-      .map(c=>({c, contrib: needWeight[c.key]*p.catZ[c.key]}))
-      .sort((a,b)=>b.contrib-a.contrib).slice(0,2)
-      .filter(x=>x.contrib>0.05).map(x=>x.c.label);
+  container.innerHTML = top.map(({p,score,fallProb}) => {
+    const tags = [];
+    if(catFormat){
+      const bestCats = CATS.filter(c=>!state.punt.includes(c.key))
+        .map(c=>({c, contrib: (needWeight[c.key]||0)*p.catZ[c.key]}))
+        .sort((a,b)=>b.contrib-a.contrib).slice(0,2)
+        .filter(x=>x.contrib>0.05).map(x=>x.c.label);
+      if(bestCats.length) tags.push('stärkt '+bestCats.join(', '));
+    }
+    if(p.durabilityKnown && p.durability < 0.82) tags.push(`⚠ Verfügbarkeit ~${Math.round(p.durability*100)}%`);
+    if(fallProb !== null && nextMine !== null){
+      if(fallProb < 0.35) tags.push(`⏳ eher weg vor Pick ${nextMine}`);
+      else if(fallProb > 0.65) tags.push(`↓ könnte bis Pick ${nextMine} fallen`);
+    }
+    if(!tags.length) tags.push('solider Gesamtwert');
     return `<div class="reco-item">
       <div><div class="reco-name">${p.n} <span class="p-meta">${p.pos}</span></div>
-      <div class="reco-tags">${bestCats.length?'stärkt '+bestCats.join(', '):'solider Gesamtwert'}</div></div>
+      <div class="reco-tags">${tags.join(' · ')}</div></div>
       <div style="display:flex; align-items:center; gap:8px;">
         <div class="reco-score">${fmtNum(score,2)}</div>
         <button class="draft-btn" data-rk="${p.rk}">Draft</button>
@@ -864,6 +1061,48 @@ function renderReco(){
   });
 }
 
+function applyFormatUI(){
+  const isPoints = state.format === 'points';
+  document.getElementById('puntWrap').style.display = isPoints ? 'none' : '';
+  document.getElementById('pointsWeightsWrap').style.display = isPoints ? '' : 'none';
+}
+function renderFormatOptions(){
+  const sel = document.getElementById('formatSel');
+  sel.innerHTML = FORMATS.map(f => `<option value="${f.key}">${f.label}</option>`).join('');
+  sel.value = state.format;
+  applyFormatUI();
+}
+function onFormatChange(newFormat){
+  state.format = newFormat;
+  applyFormatUI();
+  // Wenn gerade eine Fantrax-Liga verbunden ist, das Format direkt für
+  // diese Liga merken (siehe initLiveSyncPanel / loadFantraxLeague).
+  if(liveSync.leagueId){
+    const prefs = loadLiveSyncPrefs();
+    prefs.leagues = prefs.leagues || {};
+    if(prefs.leagues[liveSync.leagueId]) prefs.leagues[liveSync.leagueId].format = newFormat;
+    saveLiveSyncPrefs(prefs);
+  }
+  renderAll(); scheduleSave();
+}
+function renderPointsWeights(){
+  const pw = loadPointsWeights();
+  const labels = { pts:'PTS', reb:'REB', ast:'AST', stl:'STL', blk:'BLK', fg3m:'3PM', tov:'TOV' };
+  const container = document.getElementById('pointsWeights');
+  container.innerHTML = Object.keys(labels).map(k => `
+    <div style="display:flex; align-items:center; gap:4px;">
+      <span style="font-size:10.5px; color:var(--muted); font-family:'DM Mono',monospace;">${labels[k]}</span>
+      <input type="number" step="0.25" data-k="${k}" value="${pw[k]}" style="width:56px; background:var(--surface2); border:1px solid var(--border); color:var(--text); border-radius:6px; padding:4px 6px; font-size:11.5px; font-family:'DM Mono',monospace;">
+    </div>`).join('');
+  container.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('change', () => {
+      const w = loadPointsWeights();
+      w[inp.dataset.k] = parseFloat(inp.value) || 0;
+      savePointsWeights(w);
+      PLAYERS = buildPlayers(); reindex(); reindexNames(); renderAll();
+    });
+  });
+}
 function renderPuntChips(){
   const container = document.getElementById('puntCats');
   container.innerHTML = CATS.map(c => `<div class="punt-chip ${state.punt.includes(c.key)?'active':''}" data-k="${c.key}">${c.label}</div>`).join('');
@@ -872,6 +1111,7 @@ function renderPuntChips(){
       const k = chip.dataset.k;
       const i = state.punt.indexOf(k);
       if(i===-1) state.punt.push(k); else state.punt.splice(i,1);
+      chip.classList.toggle('active'); // sofortiges visuelles Feedback, kein Warten auf Re-Render
       renderAll(); scheduleSave();
     });
   });
@@ -894,10 +1134,64 @@ function renderAll(){
 const MFHFB_LIVE_KEY = 'mfhfb_live_sync_v1';
 
 function loadLiveSyncPrefs(){
-  try { return JSON.parse(localStorage.getItem(MFHFB_LIVE_KEY) || '{}'); } catch(e){ return {}; }
+  let prefs;
+  try { prefs = JSON.parse(localStorage.getItem(MFHFB_LIVE_KEY) || '{}'); } catch(e){ prefs = {}; }
+  // Migration von der alten Struktur (nur eine lastLeagueId + teamByLeague)
+  // auf das neue "Adressbuch" mit Namen + Format je Liga.
+  if(!prefs.leagues){
+    prefs.leagues = {};
+    if(prefs.teamByLeague){
+      Object.keys(prefs.teamByLeague).forEach(id => {
+        prefs.leagues[id] = { label: id, format: '9cat_roto', teamId: prefs.teamByLeague[id] };
+      });
+    }
+  }
+  return prefs;
 }
 function saveLiveSyncPrefs(prefs){
   try { localStorage.setItem(MFHFB_LIVE_KEY, JSON.stringify(prefs)); } catch(e){}
+}
+function renderSavedLeagueSelect(){
+  const prefs = loadLiveSyncPrefs();
+  const sel = document.getElementById('savedLeagueSelect');
+  const ids = Object.keys(prefs.leagues || {});
+  const current = sel.value;
+  sel.innerHTML = '<option value="">— Neue Liga eingeben —</option>' +
+    ids.map(id => `<option value="${id}">${(prefs.leagues[id].label || id).replace(/"/g,'&quot;')}</option>`).join('');
+  if(ids.includes(current)) sel.value = current;
+  document.getElementById('liveDeleteBtn').style.display = sel.value ? '' : 'none';
+}
+function onSavedLeagueSelectChange(){
+  const sel = document.getElementById('savedLeagueSelect');
+  const id = sel.value;
+  document.getElementById('liveDeleteBtn').style.display = id ? '' : 'none';
+  if(!id){
+    document.getElementById('liveLeagueId').value = '';
+    document.getElementById('liveLeagueLabel').value = '';
+    return;
+  }
+  const prefs = loadLiveSyncPrefs();
+  const entry = prefs.leagues[id];
+  if(!entry) return;
+  document.getElementById('liveLeagueId').value = id;
+  document.getElementById('liveLeagueLabel').value = entry.label || id;
+  document.getElementById('formatSel').value = entry.format || '9cat_roto';
+  onFormatChange(entry.format || '9cat_roto');
+  loadFantraxLeague();
+}
+function onDeleteSavedLeague(){
+  const sel = document.getElementById('savedLeagueSelect');
+  const id = sel.value;
+  if(!id) return;
+  const prefs = loadLiveSyncPrefs();
+  if(!confirm(`Liga "${prefs.leagues[id]?.label || id}" wirklich aus der Liste entfernen?`)) return;
+  delete prefs.leagues[id];
+  if(prefs.lastLeagueId === id) prefs.lastLeagueId = null;
+  saveLiveSyncPrefs(prefs);
+  document.getElementById('liveLeagueId').value = '';
+  document.getElementById('liveLeagueLabel').value = '';
+  sel.value = '';
+  renderSavedLeagueSelect();
 }
 
 let liveSync = {
@@ -943,6 +1237,7 @@ function applyFantraxPicks(draftPicks, players){
 
 async function loadFantraxLeague(){
   const input = document.getElementById('liveLeagueId');
+  const labelInput = document.getElementById('liveLeagueLabel');
   const leagueId = input.value.trim();
   const statusEl = document.getElementById('liveSyncStatus');
   const detailEl = document.getElementById('liveSyncDetail');
@@ -953,6 +1248,17 @@ async function loadFantraxLeague(){
     statusEl.className = 'cloud-status err';
     return;
   }
+
+  // Falls diese Liga schon im Adressbuch gespeichert ist, deren Format
+  // übernehmen (z.B. beim direkten erneuten Laden per ID, ohne Auswahl
+  // im Dropdown).
+  const existing = (loadLiveSyncPrefs().leagues || {})[leagueId];
+  if(existing && existing.format){
+    document.getElementById('formatSel').value = existing.format;
+    state.format = existing.format;
+    applyFormatUI();
+  }
+  if(existing && !labelInput.value.trim()) labelInput.value = existing.label || leagueId;
 
   statusEl.textContent = 'lädt…';
   statusEl.className = 'cloud-status';
@@ -976,8 +1282,8 @@ async function loadFantraxLeague(){
     liveSync.draftState = draft.draftState;
 
     const prefs = loadLiveSyncPrefs();
-    prefs.teamByLeague = prefs.teamByLeague || {};
-    const prevTeamId = prefs.teamByLeague[leagueId];
+    prefs.leagues = prefs.leagues || {};
+    const prevTeamId = (prefs.leagues[leagueId] || {}).teamId;
 
     const teamSel = document.getElementById('liveTeamPick');
     teamSel.innerHTML = order.map(tid =>
@@ -990,8 +1296,15 @@ async function loadFantraxLeague(){
     const unmatched = applyFantraxPicks(draft.draftPicks || [], players);
 
     prefs.lastLeagueId = leagueId;
-    prefs.teamByLeague[leagueId] = liveSync.myTeamId;
+    prefs.leagues[leagueId] = {
+      label: labelInput.value.trim() || (prefs.leagues[leagueId] && prefs.leagues[leagueId].label) || leagueId,
+      format: state.format,
+      teamId: liveSync.myTeamId,
+    };
     saveLiveSyncPrefs(prefs);
+    renderSavedLeagueSelect();
+    document.getElementById('savedLeagueSelect').value = leagueId;
+    document.getElementById('liveDeleteBtn').style.display = '';
 
     const total = (draft.draftPicks || []).length;
     const made = (draft.draftPicks || []).filter(p => p.playerId).length;
@@ -1021,8 +1334,8 @@ function onLiveTeamChange(e){
   const sel = document.getElementById('myTeamSel');
   if(sel) sel.value = state.myTeam;
   const prefs = loadLiveSyncPrefs();
-  prefs.teamByLeague = prefs.teamByLeague || {};
-  prefs.teamByLeague[liveSync.leagueId] = liveSync.myTeamId;
+  prefs.leagues = prefs.leagues || {};
+  if(prefs.leagues[liveSync.leagueId]) prefs.leagues[liveSync.leagueId].teamId = liveSync.myTeamId;
   saveLiveSyncPrefs(prefs);
   renderAll();
   scheduleSave();
@@ -1036,16 +1349,154 @@ function stopAutoRefresh(){
   if(liveSync.autoTimer){ clearInterval(liveSync.autoTimer); liveSync.autoTimer = null; }
 }
 
+// ---------------- Liga-Fortschritt (alle Ligen aus data/fantrax-leagues.txt) ----------------
+async function loadLeagueDirectoryFromRepo(){
+  // Dieselbe simple Zeilen-Liste, die auch scripts/fetch-draft-results.mjs
+  // nutzt -- wird hier direkt aus dem Repo nachgeladen (relativ zur Seite,
+  // funktioniert auf GitHub Pages ohne eigenes Backend).
+  const res = await fetch('data/fantrax-leagues.txt');
+  if(!res.ok) throw new Error(`HTTP ${res.status}`);
+  const raw = await res.text();
+  return raw.split('\n')
+    .map(l => l.split('#')[0].trim())
+    .filter(Boolean)
+    .map(l => {
+      const [id, ...rest] = l.split(',').map(s => s.trim());
+      return { id, label: rest.join(',') || id };
+    });
+}
+// Grobe Format-Erkennung nur aus dem selbstvergebenen Label (Roto/H2H/Points
+// als Stichwort) -- die Fantrax-API liefert das Scoring-Format nicht
+// zuverlässig dokumentiert mit. Ligen ohne erkennbares Stichwort im Label
+// landen unter "unbekannt".
+function guessLeagueFormat(label){
+  const l = label.toLowerCase();
+  if(l.includes('h2h')) return 'H2H';
+  if(l.includes('roto')) return 'Roto';
+  if(l.includes('points') || l.includes('punkte') || l.includes('pts')) return 'Points';
+  return 'unbekannt';
+}
+// Fantrax dokumentiert den genauen Feldnamen für den Liga-Namen in
+// getLeagueInfo nicht offiziell -- probiere die plausibelsten Kandidaten
+// durch. Falls keiner passt (Fantrax hat's mal umbenannt o.ä.), fällt
+// alles unten sauber auf das manuelle Label / die ID zurück, nichts
+// bricht.
+function extractLeagueName(league){
+  if(!league) return null;
+  const candidates = [league.name, league.leagueName, league.info && league.info.name, league.league && league.league.name];
+  const found = candidates.find(v => typeof v === 'string' && v.trim());
+  return found ? found.trim() : null;
+}
+async function fetchLeagueProgress(entry){
+  try{
+    const { draft, league } = await mfhfbFetchFantraxLeague(entry.id);
+    const apiName = extractLeagueName(league);
+    const picks = draft.draftPicks || [];
+    const made = picks.filter(p => p.playerId).length;
+    const total = picks.length;
+    const finished = total > 0 && made >= total;
+    let overall = null, round = null, pickInRound = null;
+    if(!finished && total > 0){
+      overall = made + 1;
+      const teams = draft.draftOrder ? draft.draftOrder.length : TEAMS;
+      round = Math.ceil(overall/teams);
+      pickInRound = overall - (round-1)*teams;
+    }
+    return { entry, apiName, ok:true, finished, made, total, overall, round, pickInRound };
+  }catch(err){
+    return { entry, ok:false, error: err.message };
+  }
+}
+async function runWithConcurrency(items, limit, worker){
+  const results = new Array(items.length);
+  let idx = 0;
+  async function next(){
+    while(idx < items.length){
+      const i = idx++;
+      results[i] = await worker(items[i]);
+    }
+  }
+  await Promise.all(Array.from({length: Math.min(limit, items.length)}, next));
+  return results;
+}
+async function openLeagueProgress(){
+  const overlay = document.getElementById('leagueProgressOverlay');
+  const summaryEl = document.getElementById('leagueProgressSummary');
+  const listEl = document.getElementById('leagueProgressList');
+  overlay.style.display = 'flex';
+  summaryEl.textContent = 'lädt…';
+  listEl.innerHTML = '';
+
+  let entries;
+  try{
+    entries = await loadLeagueDirectoryFromRepo();
+  }catch(err){
+    summaryEl.textContent = `Liga-Liste konnte nicht geladen werden (${err.message}).`;
+    return;
+  }
+  if(!entries.length){ summaryEl.textContent = 'Keine Ligen in data/fantrax-leagues.txt eingetragen.'; return; }
+
+  const results = await runWithConcurrency(entries, 5, fetchLeagueProgress);
+
+  const ok = results.filter(r => r.ok);
+  const finished = ok.filter(r => r.finished);
+  const inProgress = ok.filter(r => !r.finished && r.total > 0);
+  const failed = results.filter(r => !r.ok);
+
+  const finishedByFormat = {};
+  finished.forEach(r => {
+    const fmt = guessLeagueFormat(r.apiName || r.entry.label);
+    finishedByFormat[fmt] = (finishedByFormat[fmt]||0) + 1;
+  });
+  const fmtParts = Object.entries(finishedByFormat).map(([k,v]) => `${v}x ${k}`).join(', ');
+  summaryEl.textContent = `${finished.length}/${entries.length} Ligen fertig` +
+    (fmtParts ? ` (${fmtParts})` : '') +
+    (inProgress.length ? ` · ${inProgress.length} laufen noch` : '') +
+    (failed.length ? ` · ${failed.length} nicht erreichbar` : '');
+
+  const sorted = [...inProgress, ...finished, ...failed];
+  listEl.innerHTML = sorted.map(r => {
+    const name = (r.ok && r.apiName ? r.apiName : (r.entry.label || r.entry.id)).replace(/</g,'&lt;');
+    if(!r.ok){
+      return `<div class="league-row"><div><div class="lg-name">${name}</div><div class="lg-id">${r.entry.id}</div></div><div class="lg-status err">nicht erreichbar</div></div>`;
+    }
+    if(r.finished){
+      return `<div class="league-row"><div><div class="lg-name">${name}</div><div class="lg-id">${r.entry.id}</div></div><div class="lg-status done">✓ Fertig</div></div>`;
+    }
+    if(r.total === 0){
+      return `<div class="league-row"><div><div class="lg-name">${name}</div><div class="lg-id">${r.entry.id}</div></div><div class="lg-status">noch nicht gestartet</div></div>`;
+    }
+    return `<div class="league-row"><div><div class="lg-name">${name}</div><div class="lg-id">${r.entry.id}</div></div><div class="lg-status">Pick ${r.round}.${r.pickInRound} / #${r.overall} von ${r.total}</div></div>`;
+  }).join('');
+}
+function initLeagueProgressModal(){
+  document.getElementById('leagueProgressBtn').addEventListener('click', openLeagueProgress);
+  document.getElementById('leagueProgressClose').addEventListener('click', () => {
+    document.getElementById('leagueProgressOverlay').style.display = 'none';
+  });
+  document.getElementById('leagueProgressOverlay').addEventListener('click', (e) => {
+    if(e.target.id === 'leagueProgressOverlay') e.currentTarget.style.display = 'none';
+  });
+}
+
 function initLiveSyncPanel(){
   document.getElementById('liveLoadBtn').addEventListener('click', loadFantraxLeague);
   document.getElementById('liveTeamPick').addEventListener('change', onLiveTeamChange);
+  document.getElementById('savedLeagueSelect').addEventListener('change', onSavedLeagueSelectChange);
+  document.getElementById('liveDeleteBtn').addEventListener('click', onDeleteSavedLeague);
   document.getElementById('liveAutoRefresh').addEventListener('change', (e) => {
     if(e.target.checked) startAutoRefresh(); else stopAutoRefresh();
   });
 
+  renderSavedLeagueSelect();
   const prefs = loadLiveSyncPrefs();
-  if(prefs.lastLeagueId){
+  if(prefs.lastLeagueId && prefs.leagues[prefs.lastLeagueId]){
     document.getElementById('liveLeagueId').value = prefs.lastLeagueId;
+    document.getElementById('liveLeagueLabel').value = prefs.leagues[prefs.lastLeagueId].label || prefs.lastLeagueId;
+    document.getElementById('savedLeagueSelect').value = prefs.lastLeagueId;
+    document.getElementById('formatSel').value = prefs.leagues[prefs.lastLeagueId].format || '9cat_roto';
+    state.format = prefs.leagues[prefs.lastLeagueId].format || '9cat_roto';
+    applyFormatUI();
     loadFantraxLeague(); // direkt automatisch laden, wenn schon mal genutzt
   }
 }
@@ -1105,6 +1556,9 @@ function initControls(){
     });
   });
 
+  renderFormatOptions();
+  document.getElementById('formatSel').addEventListener('change', e => onFormatChange(e.target.value));
+  renderPointsWeights();
   renderPuntChips();
   renderPosFilters();
 }
@@ -1124,6 +1578,7 @@ loadState();
 initControls();
 renderAll();
 initLiveSyncPanel();
+initLeagueProgressModal();
 </script>
 </body>
 </html>
