@@ -1,6 +1,10 @@
-# Eine Fantrax-Liga-ID pro Zeile. Optional ", Name" dahinter für lesbarere
-# Logs, sonst wird die ID selbst genutzt. "#"-Kommentare & Leerzeilen okay.
-# Neue Liga = einfach eine Zeile mit der ID anhängen, fertig.
+# Eine Fantrax-Liga-ID pro Zeile. Optional ", Label" dahinter für lesbarere
+# Logs -- und fürs "🏁 Liga-Fortschritt"-Fenster auf der Draft-Board-Seite:
+# steht "Roto"/"H2H"/"Points" im Label, wird die Liga in der
+# Fertig-Zusammenfassung entsprechend gruppiert (z.B. "3x Roto, 4x H2H").
+# Ohne Label wird die ID selbst genutzt (landet dann unter "unbekannt").
+# "#"-Kommentare & Leerzeilen okay. Neue Liga = einfach eine Zeile
+# anhängen, fertig.
 pct4k2a6mr9s4u1f
 a0bbqypimrablmbu
 25j965mmmrannqbz
