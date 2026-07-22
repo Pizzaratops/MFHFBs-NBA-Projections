@@ -130,6 +130,7 @@
     <div class="topnav-links">
       <a href="index.html" class="active">Projections</a>
       <a href="teams.html">NBA Teams</a>
+      <a href="draft.html">Draft Board</a>
     </div>
     <button class="theme-toggle" id="themeToggle"></button>
   </div>
@@ -196,7 +197,6 @@
           <th data-k="blk">BLK</th>
           <th data-k="fg3m">3PM</th>
           <th data-k="fgpct">FG%</th>
-          <th data-k="ftpct">FT%</th>
           <th data-k="tov">TOV</th>
           <th data-k="z">Z</th>
         </tr>
@@ -219,7 +219,7 @@ const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 const Z_CATS = ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'tov', 'ftpct', 'fgpct'];
 const CAT_LABELS = { pts:'PTS', reb:'REB', ast:'AST', stl:'STL', blk:'BLK', fg3m:'3PM', tov:'TOV', ftpct:'FT%', fgpct:'FG%' };
 // Spalten, die im Table auch farblich (Heatmap) markiert werden — TOV invertiert.
-const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'ftpct', 'tov', 'z'];
+const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'tov', 'z'];
 const HEAT_INVERT = { tov: true };
 
 mfhfbInitThemeToggle('themeToggle');
@@ -406,7 +406,6 @@ function render() {
       <td style="${heat('blk', s.blk)}">${fmt(s.blk,1)}</td>
       <td style="${heat('fg3m', s.fg3m)}">${fmt(s.fg3m,1)}</td>
       <td style="${heat('fgpct', s.fgpct)}">${fmt(s.fgpct)}%</td>
-      <td style="${heat('ftpct', s.ftpct)}">${fmt(s.ftpct)}%</td>
       <td style="${heat('tov', s.tov)}">${fmt(s.tov,1)}</td>
       <td class="col-z" style="${heat('z', z)}">${z >= 0 ? '+' : ''}${fmt(z,2)}</td>
     </tr>`).join('');
@@ -414,12 +413,12 @@ function render() {
 
 function downloadCSV() {
   const rows = window.__mfhfbCurrentRows || computeAll();
-  const header = ['Rank','Name','Team','Pos','Min','PTS','REB','AST','STL','BLK','3PM','FG%','FT%','TOV','Z-Score','RecentGP'];
+  const header = ['Rank','Name','Team','Pos','Min','PTS','REB','AST','STL','BLK','3PM','FG%','TOV','Z-Score','RecentGP'];
   const lines = [header.join(',')];
   rows.forEach((r, i) => {
     const row = [
       i + 1, `"${r.p.name}"`, r.p.team, r.p.pos,
-      fmt(r.s.min), fmt(r.s.pts), fmt(r.s.reb), fmt(r.s.ast), fmt(r.s.stl,1), fmt(r.s.blk,1), fmt(r.s.fg3m,1), fmt(r.s.fgpct), fmt(r.s.ftpct), fmt(r.s.tov,1),
+      fmt(r.s.min), fmt(r.s.pts), fmt(r.s.reb), fmt(r.s.ast), fmt(r.s.stl,1), fmt(r.s.blk,1), fmt(r.s.fg3m,1), fmt(r.s.fgpct), fmt(r.s.tov,1),
       fmt(r.z,2),
       r.manual ? (r.p.manualGP !== undefined ? r.p.manualGP : '-') : mfhfbRecentGP(r.p),
     ];
