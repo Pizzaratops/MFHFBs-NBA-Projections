@@ -31,7 +31,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const FXEA_BASE = "https://www.fantrax.com/fxea/general";
-const LEAGUES_CONFIG = path.resolve("data/fantrax-leagues.json");
+const LEAGUES_TXT = path.resolve("data/fantrax-leagues.txt");
+const LEAGUES_CONFIG = path.resolve("data/fantrax-leagues.json"); // Legacy-Fallback
 const DRAFT_RESULTS_DIR = path.resolve("data/draft-results");
 const FANTRAX_ADP_PATH = path.resolve("data/fantrax-adp.csv");
 
@@ -87,12 +88,37 @@ function fantraxNameToDisplay(rawName) {
 const CSV_HEADER = ["Player ID", "Round", "Pick", "Ov Pick", "Pos", "Player", "Team", "Fantasy Team", "Time (CEST)"];
 
 async function loadLeaguesConfig() {
+  // Bevorzugtes Format bei vielen Ligen: data/fantrax-leagues.txt, eine
+  // Liga-ID pro Zeile. Optional ", Label" dahinter für lesbarere Logs,
+  // sonst dient die ID selbst als Label. "#"-Kommentare und Leerzeilen
+  // werden ignoriert. Kein Copy-Paste in JSON-Syntax nötig -- einfach die
+  // rohe ID-Liste reinkopieren.
+  try {
+    const raw = await fs.readFile(LEAGUES_TXT, "utf8");
+    const leagues = raw
+      .split("\n")
+      .map((l) => l.split("#")[0].trim())
+      .filter(Boolean)
+      .map((l) => {
+        const [id, ...rest] = l.split(",").map((s) => s.trim());
+        return { id, label: rest.join(",") || id };
+      });
+    if (leagues.length) {
+      console.log(`${leagues.length} Liga(en) aus ${LEAGUES_TXT} geladen.`);
+      return { sport: "NBA", leagues };
+    }
+    console.error(`${LEAGUES_TXT} existiert, enthält aber keine IDs.`);
+    process.exit(1);
+  } catch (err) {
+    if (err.code !== "ENOENT") throw err;
+  }
+
+  // Legacy-Fallback: altes JSON-Format mit einzelnen {id,label}-Objekten.
   let raw;
   try {
     raw = await fs.readFile(LEAGUES_CONFIG, "utf8");
   } catch {
-    console.error(`Konfigurationsdatei fehlt: ${LEAGUES_CONFIG}`);
-    console.error('Lege sie an mit z.B.: {"sport":"NBA","leagues":[{"id":"DEINE_LEAGUE_ID","label":"H2H 01"}]}');
+    console.error(`Keine Liga-Konfiguration gefunden. Lege data/fantrax-leagues.txt an, eine Liga-ID pro Zeile.`);
     process.exit(1);
   }
   const cfg = JSON.parse(raw);
@@ -210,7 +236,7 @@ async function processLeague(league, playerIdx, sport) {
     console.warn(`  Warnung: ${unresolvedPlayers} Spieler-ID(s) nicht im ${sport}-Index gefunden (evtl. anderer Sport-Filter nötig?).`);
   }
 
-  const outPath = path.join(DRAFT_RESULTS_DIR, `Fantrax-Draft-Results-AUTO-${league.label.replace(/[^a-z0-9]+/gi, "_")}.csv`);
+  const outPath = path.join(DRAFT_RESULTS_DIR, `Fantrax-Draft-Results-AUTO-${league.id}.csv`);
   await fs.writeFile(outPath, rows.map(csvRow).join("\r\n") + "\r\n", "utf8");
   console.log(`  -> geschrieben: ${outPath} (${rows.length - 1} Picks)`);
   return outPath;
