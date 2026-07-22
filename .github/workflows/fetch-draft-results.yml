@@ -1,0 +1,50 @@
+name: Fetch Fantrax Draft Results
+
+# Zieht Draft-Ergebnisse + Fantrax-ADP direkt über die League-IDs aus
+# data/fantrax-leagues.json (kein manueller CSV-Export mehr nötig),
+# baut adp-data.js neu und committet Änderungen automatisch.
+# Läuft 3x täglich (Drafts sind unregelmäßig verteilt über den Tag)
+# und kann jederzeit manuell angestoßen werden.
+
+on:
+  schedule:
+    - cron: "0 6,14,22 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-draft-results:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Draft Results + Fantrax-ADP von Fantrax ziehen
+        run: node scripts/fetch-draft-results.mjs
+
+      - name: ADP-Daten neu bauen
+        run: python3 scripts/build-adp-data.py
+
+      - name: Änderungen committen, falls vorhanden
+        run: |
+          git config user.name "mfhfb-draft-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/draft-results/Fantrax-Draft-Results-AUTO-*.csv data/fantrax-adp.csv adp-data.js
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Automatisches Draft-Results/ADP-Update ($(date -u +%Y-%m-%d\ %H:%M))"
+            git push
+          fi

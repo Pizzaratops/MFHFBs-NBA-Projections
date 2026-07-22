@@ -193,6 +193,17 @@
   .empty{color:var(--muted); font-size:12px; padding:10px 0; text-align:center;}
   .note{font-size:10.5px; color:var(--muted); margin-top:8px; line-height:1.5;}
   footer{margin-top:22px; font-size:11.5px; color:var(--muted); line-height:1.6;}
+
+  /* --- live sync (Fantrax league ID) --- */
+  .cloud-status{font-size:11px; font-weight:600; text-transform:none; letter-spacing:0;}
+  .cloud-status.ok{color:var(--good);}
+  .cloud-status.err{color:var(--bad);}
+  .league-sync-row{display:flex; gap:8px; width:100%;}
+  .league-sync-row input[type=text]{
+    flex:1; background:var(--surface); border:1px solid var(--border); color:var(--text);
+    padding:9px 12px; border-radius:8px; font-size:13px; font-family:'DM Sans',sans-serif; outline:none;
+  }
+  .league-sync-row input[type=text]:focus{border-color:var(--accent);}
 </style>
 </head>
 <body>
@@ -239,6 +250,33 @@
       </div>
       <div class="field">
         <button class="sb-btn danger" id="resetBtn">Draft zurücksetzen</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="leaguePanel">
+    <div class="panel-head" id="leagueHead">
+      <div class="panel-title">🔗 Live-Sync mit Fantrax — <span id="liveSyncStatus" class="cloud-status">nicht verbunden</span></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="panel-body" style="flex-direction:column; align-items:stretch;">
+      <div class="note" style="margin:0 0 10px;">
+        Liga-ID eingeben (aus der Fantrax-URL: fantrax.com/fantasy/league/<b>ABC123XYZ</b>/...) und laden —
+        der aktuelle Draft-Stand kommt live direkt von Fantrax, kein manuelles Picks-Eintragen und kein
+        eigener Speicher nötig. Funktioniert auf jedem Gerät gleich, weil Fantrax selbst die Quelle ist.
+      </div>
+      <div class="league-sync-row">
+        <input type="text" id="liveLeagueId" placeholder="Liga-ID…">
+        <button class="sb-btn" id="liveLoadBtn">🔄 Laden</button>
+      </div>
+      <div class="field" id="liveTeamPickWrap" style="display:none; margin-top:10px;">
+        <label>Welches Team ist deins?</label>
+        <select id="liveTeamPick"></select>
+      </div>
+      <div class="note" id="liveSyncDetail" style="margin-top:8px;"></div>
+      <div class="field" id="liveAutoWrap" style="display:none; margin-top:8px; flex-direction:row; align-items:center; gap:8px;">
+        <input type="checkbox" id="liveAutoRefresh" style="width:auto;">
+        <label for="liveAutoRefresh" style="text-transform:none; font-size:12px; letter-spacing:0; cursor:pointer;">Während des Drafts alle 30s automatisch aktualisieren</label>
       </div>
     </div>
   </div>
@@ -331,6 +369,7 @@
 <script src="projected-minutes.js"></script>
 <script src="adp-data.js"></script>
 <script src="assets/shared.js"></script>
+<script src="assets/fantrax-live.js"></script>
 <script>
 mfhfbInitThemeToggle('themeToggle');
 document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS.join(' · ');
@@ -443,6 +482,15 @@ let PLAYERS = buildPlayers();
 const byRk = {};
 function reindex(){ Object.keys(byRk).forEach(k=>delete byRk[k]); PLAYERS.forEach(p=>byRk[p.rk]=p); }
 reindex();
+
+// normalisierter Name -> rk, fürs Zuordnen von Fantrax-Spielernamen
+// (siehe assets/fantrax-live.js) zu unseren lokalen Player-Rows.
+let nameToRk = {};
+function reindexNames(){
+  nameToRk = {};
+  PLAYERS.forEach(p => { nameToRk[mfhfbNormalizeName(p.n)] = p.rk; });
+}
+reindexNames();
 
 // ---------------- draft state ----------------
 let state = {
@@ -796,6 +844,166 @@ function renderAll(){
   renderMatrix(); renderPower(); renderLog(); renderReco();
 }
 
+// ---------------- Live-Sync mit Fantrax ----------------
+const MFHFB_LIVE_KEY = 'mfhfb_live_sync_v1';
+
+function loadLiveSyncPrefs(){
+  try { return JSON.parse(localStorage.getItem(MFHFB_LIVE_KEY) || '{}'); } catch(e){ return {}; }
+}
+function saveLiveSyncPrefs(prefs){
+  try { localStorage.setItem(MFHFB_LIVE_KEY, JSON.stringify(prefs)); } catch(e){}
+}
+
+let liveSync = {
+  leagueId: '',
+  teamIdToNum: {},   // Fantrax-teamId -> lokale Team-Nummer 1..TEAMS
+  teamNameById: {},  // Fantrax-teamId -> Anzeigename
+  myTeamId: null,
+  draftState: null,
+  autoTimer: null,
+};
+
+function fmtDraftState(s){
+  const map = { running:'läuft', complete:'abgeschlossen', drafted:'abgeschlossen', pending:'noch nicht gestartet', notStarted:'noch nicht gestartet' };
+  return map[s] || s || 'unbekannt';
+}
+
+// Ordnet Fantrax-Picks unseren lokalen Player-Rows zu und ersetzt
+// state.picks komplett damit (Fantrax ist die Quelle der Wahrheit --
+// wir "speichern" nichts eigenes, sondern lesen bei jedem Laden neu).
+function applyFantraxPicks(draftPicks, players){
+  const sorted = [...draftPicks].sort((a,b) => (a.pick||0) - (b.pick||0));
+  const newPicks = [];
+  let unmatched = 0;
+  sorted.forEach(p => {
+    if(!p.playerId) return; // noch nicht gefallener (zukünftiger) Pick
+    const info = players[p.playerId];
+    const displayName = info ? mfhfbFantraxNameToDisplay(info.name) : null;
+    const rk = displayName ? nameToRk[mfhfbNormalizeName(displayName)] : undefined;
+    const teamNum = liveSync.teamIdToNum[p.teamId];
+    if(rk === undefined || teamNum === undefined){ unmatched++; return; }
+    newPicks.push({ rk, team: teamNum });
+  });
+  state.picks = newPicks;
+  if(liveSync.myTeamId){
+    state.myTeam = liveSync.teamIdToNum[liveSync.myTeamId] || state.myTeam;
+    const sel = document.getElementById('myTeamSel');
+    if(sel) sel.value = state.myTeam;
+  }
+  renderAll();
+  scheduleSave();
+  return unmatched;
+}
+
+async function loadFantraxLeague(){
+  const input = document.getElementById('liveLeagueId');
+  const leagueId = input.value.trim();
+  const statusEl = document.getElementById('liveSyncStatus');
+  const detailEl = document.getElementById('liveSyncDetail');
+  const btn = document.getElementById('liveLoadBtn');
+
+  if(!leagueId){
+    statusEl.textContent = 'Liga-ID fehlt';
+    statusEl.className = 'cloud-status err';
+    return;
+  }
+
+  statusEl.textContent = 'lädt…';
+  statusEl.className = 'cloud-status';
+  btn.disabled = true;
+
+  try{
+    const [{ draft, league }, players] = await Promise.all([
+      mfhfbFetchFantraxLeague(leagueId),
+      mfhfbFantraxPlayerIndex(),
+    ]);
+
+    const order = draft.draftOrder || [];
+    if(order.length && order.length !== TEAMS){
+      console.warn(`Liga hat ${order.length} Teams, unser Board ist für ${TEAMS} Teams gebaut -- Zuordnung kann ungenau sein.`);
+    }
+    liveSync.teamIdToNum = {};
+    order.forEach((tid, i) => { liveSync.teamIdToNum[tid] = i + 1; });
+    liveSync.teamNameById = {};
+    Object.entries(league.teamInfo || {}).forEach(([id, t]) => { liveSync.teamNameById[id] = t.name || id; });
+    liveSync.leagueId = leagueId;
+    liveSync.draftState = draft.draftState;
+
+    const prefs = loadLiveSyncPrefs();
+    prefs.teamByLeague = prefs.teamByLeague || {};
+    const prevTeamId = prefs.teamByLeague[leagueId];
+
+    const teamSel = document.getElementById('liveTeamPick');
+    teamSel.innerHTML = order.map(tid =>
+      `<option value="${tid}">${(liveSync.teamNameById[tid] || tid).replace(/"/g,'&quot;')}</option>`
+    ).join('');
+    if(prevTeamId && order.includes(prevTeamId)) teamSel.value = prevTeamId;
+    liveSync.myTeamId = teamSel.value || null;
+    document.getElementById('liveTeamPickWrap').style.display = order.length ? '' : 'none';
+
+    const unmatched = applyFantraxPicks(draft.draftPicks || [], players);
+
+    prefs.lastLeagueId = leagueId;
+    prefs.teamByLeague[leagueId] = liveSync.myTeamId;
+    saveLiveSyncPrefs(prefs);
+
+    const total = (draft.draftPicks || []).length;
+    const made = (draft.draftPicks || []).filter(p => p.playerId).length;
+    statusEl.textContent = 'verbunden';
+    statusEl.className = 'cloud-status ok';
+    let detail = `Draft-Status: ${fmtDraftState(draft.draftState)} · ${made}/${total} Picks gefallen · zuletzt geladen ${new Date().toLocaleTimeString('de-DE')}`;
+    if(unmatched) detail += ` · ⚠️ ${unmatched} Pick(s) nicht zuordenbar (Spieler nicht in unserer Datenbank, z.B. neue Rookies)`;
+    detailEl.textContent = detail;
+
+    document.getElementById('liveAutoWrap').style.display = '';
+    if(draft.draftState === 'running' && document.getElementById('liveAutoRefresh').checked) startAutoRefresh();
+    else if(draft.draftState !== 'running') stopAutoRefresh();
+
+  }catch(err){
+    statusEl.textContent = 'Fehler';
+    statusEl.className = 'cloud-status err';
+    detailEl.textContent = err.message;
+    console.error(err);
+  }finally{
+    btn.disabled = false;
+  }
+}
+
+function onLiveTeamChange(e){
+  liveSync.myTeamId = e.target.value;
+  state.myTeam = liveSync.teamIdToNum[liveSync.myTeamId] || state.myTeam;
+  const sel = document.getElementById('myTeamSel');
+  if(sel) sel.value = state.myTeam;
+  const prefs = loadLiveSyncPrefs();
+  prefs.teamByLeague = prefs.teamByLeague || {};
+  prefs.teamByLeague[liveSync.leagueId] = liveSync.myTeamId;
+  saveLiveSyncPrefs(prefs);
+  renderAll();
+  scheduleSave();
+}
+
+function startAutoRefresh(){
+  stopAutoRefresh();
+  liveSync.autoTimer = setInterval(loadFantraxLeague, 30000);
+}
+function stopAutoRefresh(){
+  if(liveSync.autoTimer){ clearInterval(liveSync.autoTimer); liveSync.autoTimer = null; }
+}
+
+function initLiveSyncPanel(){
+  document.getElementById('liveLoadBtn').addEventListener('click', loadFantraxLeague);
+  document.getElementById('liveTeamPick').addEventListener('change', onLiveTeamChange);
+  document.getElementById('liveAutoRefresh').addEventListener('change', (e) => {
+    if(e.target.checked) startAutoRefresh(); else stopAutoRefresh();
+  });
+
+  const prefs = loadLiveSyncPrefs();
+  if(prefs.lastLeagueId){
+    document.getElementById('liveLeagueId').value = prefs.lastLeagueId;
+    loadFantraxLeague(); // direkt automatisch laden, wenn schon mal genutzt
+  }
+}
+
 // ---------------- actions ----------------
 function draftPlayer(rk, teamOverride){
   const dm = draftedMap();
@@ -840,6 +1048,7 @@ function initControls(){
   document.getElementById('undoBtn').addEventListener('click', undoPick);
   document.getElementById('resetBtn').addEventListener('click', () => { if(confirm('Draft wirklich komplett zurücksetzen?')) resetDraft(); });
   document.getElementById('setupHead').addEventListener('click', () => document.getElementById('setupPanel').classList.toggle('collapsed'));
+  document.getElementById('leagueHead').addEventListener('click', () => document.getElementById('leaguePanel').classList.toggle('collapsed'));
 
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -860,6 +1069,7 @@ window.addEventListener('storage', (e) => {
   if(watched.includes(e.key)){
     PLAYERS = buildPlayers();
     reindex();
+    reindexNames();
     renderAll();
   }
 });
@@ -867,6 +1077,7 @@ window.addEventListener('storage', (e) => {
 loadState();
 initControls();
 renderAll();
+initLiveSyncPanel();
 </script>
 </body>
 </html>

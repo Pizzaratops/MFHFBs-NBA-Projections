@@ -111,12 +111,100 @@ python3 build-adp-data.py
   überschreiben (nicht zusätzliche Dateien anlegen, wird nicht
   gemittelt, sondern 1:1 übernommen).
 
+**Automatischer Fetch statt manuellem CSV-Export (empfohlen):**
+
+Fantrax hat eine von Fantrax selbst dokumentierte API ("fxea"), über die
+sich Draft Results UND die eigene ADP direkt per League-ID abrufen
+lassen — auch live während ein Draft läuft. Statt CSVs manuell zu
+exportieren/hochzuladen, kannst du deine Liga-IDs einmalig eintragen
+und den Rest automatisieren:
+
+1. `data/fantrax-leagues.json` öffnen, deine League-IDs eintragen (aus
+   der Fantrax-URL: `fantrax.com/fantasy/league/`**`ABC123XYZ`**`/...`)
+   ```json
+   {
+     "sport": "NBA",
+     "leagues": [
+       { "id": "ABC123XYZ", "label": "H2H 01" },
+       { "id": "DEF456UVW", "label": "Points 01" }
+     ]
+   }
+   ```
+2. Lokal testen: `node scripts/fetch-draft-results.mjs` (Node ≥ 18,
+   keine Abhängigkeiten) — schreibt automatisch CSVs nach
+   `data/draft-results/Fantrax-Draft-Results-AUTO-*.csv` und
+   überschreibt `data/fantrax-adp.csv`, exakt im selben Format wie ein
+   manueller Export. `build-adp-data.py` braucht dafür keine Änderung.
+3. Einmal `python3 scripts/build-adp-data.py` hinterher laufen lassen
+   wie gewohnt.
+4. Für vollautomatischen Betrieb: die GitHub Action
+   `fetch-draft-results.yml` läuft 3x täglich (06/14/22 Uhr UTC) und
+   bei Bedarf manuell über den Actions-Tab — zieht, baut und committet
+   automatisch, sobald Liga-IDs in `data/fantrax-leagues.json` stehen.
+
+**Wichtiger Hinweis:** Diese API ist von Fantrax dokumentiert, aber kein
+versioniertes/stabiles Public-API-Produkt — sie kann sich theoretisch
+ändern, ohne Vorwarnung. Das Skript loggt bei jedem Schritt ausführlich
+und fällt bei mehreren bekannten Endpoint-Varianten automatisch
+zurück; falls trotzdem mal etwas nicht mehr passt, reicht ein Blick in
+die Konsolen-Ausgabe, um schnell nachzujustieren. Manueller CSV-Export
+bleibt als Fallback jederzeit möglich (beide Wege schreiben ins selbe
+Verzeichnis/dieselbe Datei).
+
 Neue Saison hinzufügen: einfach eine weitere `<label>=<datei.xls>`-Angabe an
 den Befehl anhängen — Reihenfolge der Angaben ist egal, das Skript sortiert
 selbst chronologisch anhand des Labels.
 
 Danach `index.html` einfach im Browser öffnen oder per GitHub Pages hosten
 (Settings → Pages → Branch `main`, Root-Verzeichnis).
+
+### Live-Sync mit Fantrax (Draft Board, kein eigener Speicher nötig)
+
+Das Draft Board (`draft.html`) kann den aktuellen Draft-Stand einer
+Fantrax-Liga **live direkt von Fantrax** laden — per League-ID, ganz
+ohne eigenen Speicher/Backend. Fantrax selbst ist die Quelle der
+Wahrheit; wir speichern nichts eigenes, sondern fragen bei Bedarf
+einfach neu ab. Funktioniert dadurch automatisch auf jedem Gerät
+gleich (Handy, Laptop, egal), ohne Sync-Schritt.
+
+*(Frühere Versionen dieser Seite nutzten dafür Firebase/Firestore als
+eigenen Cloud-Speicher — das ist inzwischen komplett überflüssig und
+wurde entfernt, seit klar ist, dass Fantrax' eigene Draft-Daten direkt
+und live abrufbar sind.)*
+
+**Nutzung:** Im Panel "🔗 Live-Sync mit Fantrax" auf `draft.html` die
+Liga-ID eintragen (aus der Fantrax-URL:
+`fantrax.com/fantasy/league/`**`ABC123XYZ`**`/...`) → "Laden" klicken.
+Danach im Dropdown "Welches Team ist deins?" dein eigenes Team
+auswählen — das steuert "Mein Team"/Kategorie-Ranks/Empfehlungen wie
+gewohnt. Die zuletzt genutzte Liga-ID (+ deine Team-Auswahl je Liga)
+wird lokal gemerkt und beim nächsten Öffnen automatisch neu geladen.
+Während eines laufenden Drafts kann eine Checkbox "alle 30s automatisch
+aktualisieren" aktiviert werden.
+
+**Technischer Hintergrund:** Fantrax hat eine von Fantrax selbst
+dokumentierte API ("fxea"), die Draft-Ergebnisse **live während ein
+Draft läuft** per League-ID liefert — und (am 22.07.2026 getestet)
+**CORS-offen** ist, lässt sich also direkt aus dem Browser heraus
+abfragen, ohne Umweg über einen eigenen Server. Genutzt werden:
+- `getDraftResults?leagueId=X` — die Picks selbst (`draftPicks[]`,
+  `pick` = Overall-Pick-Nummer, `pickInRound` = Pick innerhalb der
+  Runde, Picks ohne `playerId` sind noch nicht gefallen)
+- `getLeagueInfo?leagueId=X` — Team-Namen
+- `getPlayerIds?sport=NBA` — Spieler-ID → Name/Team/Position (Format
+  **"Nachname, Vorname"**, wird von `mfhfbFantraxNameToDisplay()` in
+  `assets/fantrax-live.js` vor dem Namensabgleich umgedreht)
+
+**Team-Zuordnung:** `draftOrder[]` aus `getDraftResults` listet die
+Team-IDs in der Reihenfolge, in der sie in Runde 1 picken — das ist
+exakt unsere lokale 1..12-Nummerierung, wird 1:1 übernommen.
+
+**Wichtiger Hinweis:** Diese API ist von Fantrax dokumentiert, aber kein
+versioniertes/stabiles Public-API-Produkt — kann sich theoretisch
+ändern. `assets/fantrax-live.js` ist bewusst mit ausführlichen
+Kommentaren zu den Feldbedeutungen versehen, damit sich ein evtl.
+künftiges Format-Update über die Browser-Konsole schnell erkennen und
+nachbessern lässt.
 
 ### Roster-Automatisierung einrichten
 
@@ -137,17 +225,21 @@ index.html                     Projections-Seite (2 Spalten: meine Projektion vs
 teams.html                     NBA-Teams-Seite (Minuten-Eingabe pro Team)
 draft.html                     Draft Board (Live-Draft-Tracker, Z- und ADP-Sortierung)
 assets/shared.js               gemeinsame Logik (Name-Matching, Storage, Gewichtung)
+assets/fantrax-live.js         Live-Sync mit Fantrax fürs Draft Board (fxea-API, direkt im Browser, kein Backend)
 players-data.js                generierte Pro-Minute-Raten (Output von build-players-data.py)
 rosters-data.js                generierte Team-Kader (Output von fetch-rosters.mjs, täglich aktualisiert)
 adp-data.js                    generierte ADP-Daten (Output von build-adp-data.py)
 scripts/build-players-data.py  Konvertierungsskript Rohdaten → players-data.js
 scripts/fetch-rosters.mjs      Roster-Fetcher (ESPN) → rosters-data.js
 scripts/build-adp-data.py      Konvertierungsskript Draft Results → adp-data.js
+scripts/fetch-draft-results.mjs  Zieht Draft Results + Fantrax-ADP direkt per League-ID (ersetzt manuellen CSV-Export)
 .github/workflows/update-rosters.yml  tägliche GitHub Action für den Roster-Fetch
 .github/workflows/update-adp.yml      GitHub Action: baut adp-data.js bei neuen CSVs in data/draft-results/
+.github/workflows/fetch-draft-results.yml  GitHub Action: zieht Draft Results/ADP 3x täglich direkt von Fantrax
 data/                          Rohdaten-Exports (Season-Stats)
 data/draft-results/            Fantrax "Draft Results"-CSV-Exporte (Rohdaten für eigenen ADP, beliebig viele)
 data/fantrax-adp.csv           Fantrax' eigener ADP-Snapshot (genau eine Datei, wird bei Updates überschrieben)
+data/fantrax-leagues.json      Liga-IDs für den automatischen Fantrax-Fetch (scripts/fetch-draft-results.mjs)
 ```
 
 ## Aktueller Stand
@@ -179,6 +271,12 @@ data/fantrax-adp.csv           Fantrax' eigener ADP-Snapshot (genau eine Datei, 
 - **Live-Reranking:** Minuten-Änderungen auf der Teams-Seite aktualisieren
   die Projections-Tabelle automatisch (per `storage`-Event, wenn beide
   Seiten offen sind; sonst beim nächsten Laden).
+- **Live-Sync (Draft Board):** Liga-ID rein, Draft-Stand kommt live von
+  Fantrax (`assets/fantrax-live.js`) — kein eigener Speicher/Backend
+  mehr (löst die frühere Firebase/Firestore-Lösung ab, siehe
+  Changelog). Board ist fest für 12-Team/14-Runden-Ligen gebaut;
+  abweichende Liga-Größen werden geladen, aber mit Konsolen-Warnung,
+  da die Team-Zuordnung dann ungenau sein kann.
 - **ADP im Draft Board:** zwei unabhängig sortierbare Spalten neben
   Z-Score. "ADP" = eigene Fantrax Draft Results (`data/draft-results/`,
   aktuell 203 Spieler aus 8 Ligen). "F-ADP" = Fantrax' eigener
@@ -204,6 +302,85 @@ data/fantrax-adp.csv           Fantrax' eigener ADP-Snapshot (genau eine Datei, 
   nicht läuft.
 
 ## Changelog
+
+### 2026-07-22 (17)
+- **Firebase/Firestore komplett entfernt, ersetzt durch Live-Sync direkt
+  mit Fantrax.** Grund: Fantrax hat eine (von Fantrax dokumentierte,
+  CORS-offene) API, die den kompletten Draft-Stand einer Liga live per
+  League-ID liefert — ein eigener Cloud-Speicher für "meine Picks" war
+  dadurch von Anfang an unnötig, Fantrax ist ja schon die Quelle der
+  Wahrheit.
+  - `assets/firebase-sync.js` gelöscht, Firebase-SDK-`<script>`-Tags aus
+    `draft.html` entfernt.
+  - Neue Datei `assets/fantrax-live.js`: `getDraftResults`,
+    `getLeagueInfo`, `getPlayerIds` direkt im Browser abgefragt (kein
+    Backend, keine GitHub Action nötig für diesen Teil).
+  - Draft-Board-Panel umgebaut: aus "☁️ Meine Ligen" (10 Firebase-Slots)
+    wurde "🔗 Live-Sync mit Fantrax" (ein Liga-ID-Feld + Team-Auswahl).
+    Zuletzt genutzte Liga-ID + Team-Wahl je Liga wird lokal gemerkt und
+    beim nächsten Öffnen automatisch neu geladen — kein "Speichern"
+    mehr nötig, weil nichts Eigenes mehr gespeichert wird.
+  - Zwei Format-Eigenheiten der Fantrax-API entdeckt und behandelt:
+    Spielernamen kommen als "Nachname, Vorname" (wird vor dem
+    Namensabgleich umgedreht), und das Feld `pick` in den draftPicks ist
+    die Overall-Pick-Nummer (nicht Pick-in-Runde — das ist
+    `pickInRound`).
+  - Optionale Auto-Aktualisierung alle 30s, solange ein Draft laut
+    Fantrax `running` ist.
+  - Getestet mit echten Live-Daten des Nutzers (Konsolen-Abfrage einer
+    laufenden Liga) — Namensauflösung und Team-Zuordnung funktionieren
+    nachweislich korrekt.
+
+### 2026-07-22 (16)
+- **Automatischer Draft-Results/ADP-Fetch direkt von Fantrax** (löst
+  manuellen CSV-Export/Upload als Standardweg ab, der bleibt aber als
+  Fallback funktionsfähig):
+  - Neues Skript `scripts/fetch-draft-results.mjs`: nutzt Fantrax'
+    eigene (von Fantrax dokumentierte) "fxea"-API, um Draft Results und
+    Fantrax-ADP direkt per League-ID zu ziehen — auch live während ein
+    Draft noch läuft. Fällt bei mehreren dokumentierten
+    Endpoint-Varianten automatisch zurück (`getDraftResults` →
+    `getDraftPicks`; `getAdp` per GET → POST), loggt dabei ausführlich.
+  - Schreibt Ergebnisse in exakt demselben CSV-Format wie ein manueller
+    Fantrax-Export → `build-adp-data.py` brauchte dafür KEINE Änderung,
+    beide Wege laufen in dieselbe Pipeline.
+  - Neue Konfigurationsdatei `data/fantrax-leagues.json`: einfache
+    Liste von League-IDs + Label, ist die einzige Stelle, die bei einer
+    neuen Liga gepflegt werden muss.
+  - Neue GitHub Action `fetch-draft-results.yml`: läuft automatisch 3x
+    täglich (06/14/22 Uhr UTC) + manuell auslösbar, zieht/baut/committet
+    ohne Zutun.
+  - Getestet mit gemocktem Fantrax-API-Response (echte Live-Verbindung
+    ließ sich aus der Entwicklungsumgebung heraus nicht direkt prüfen,
+    daher zusätzliche Robustheit: Fallbacks, ausführliches Logging,
+    sauberes Überspringen unbekannter Spieler-IDs statt Absturz) —
+    finaler Live-Test mit echter League-ID steht noch aus.
+
+### 2026-07-22 (15)
+- **Cloud-Sync für Draft Board hinzugefügt:** neues Panel "☁️ Meine
+  Ligen" auf `draft.html` mit 10 benannten Speicher-Slots (Firebase
+  Firestore, anonyme Auth). Jeder Slot: Name, Speichern/Laden/Löschen,
+  Zeitstempel des letzten Speicherns. Ermöglicht geräteübergreifendes
+  Arbeiten (z.B. Pick am Handy machen, am Laptop weitermachen mit
+  demselben Liga-Stand) — bisher war der Draft-Fortschritt rein
+  `localStorage`-basiert und damit an ein Gerät/einen Browser gebunden.
+  - Neue Datei `assets/firebase-sync.js`: Firebase-Init, anonyme
+    Anmeldung, Save/Load/List/Delete für die 10 Slots. Ohne ausgefüllte
+    `MFHFB_FIREBASE_CONFIG` bleibt die Seite normal nutzbar (lokaler
+    Fortschritt wie bisher), das Panel zeigt dann nur einen Hinweis
+    statt der Slots — kein Hard-Fail.
+  - Setup-Anleitung fürs eigene Firebase-Projekt (kostenlos, ca. 5 Min.)
+    im README-Abschnitt "Cloud-Sync einrichten", inkl. der nötigen
+    Firestore-Security-Rules.
+  - Gespeichert wird ein Snapshot aus Picks, Punt-Kategorien,
+    Such-/Positionsfilter und Sortier-Einstellung — exakt der Zustand,
+    der auch lokal in `localStorage` liegt.
+  - "Laden" fragt vorher explizit nach Bestätigung (überschreibt den
+    aktuell angezeigten, ggf. ungespeicherten Draft-Stand).
+  - Sicherheitsmodell bewusst pragmatisch (wie der bestehende
+    Admin-Lock): Firestore-Regeln verlangen nur "irgendeine anonyme
+    Anmeldung", kein Passwort/Benutzerkonto — ausreichend für private
+    Fantasy-Draft-Picks, kein echter Zugriffsschutz.
 
 ### 2026-07-22 (14)
 - **Fantrax-ADP als zweite, unabhängige Spalte ergänzt** ("F-ADP", neben
