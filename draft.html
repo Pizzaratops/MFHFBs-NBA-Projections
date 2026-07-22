@@ -582,7 +582,15 @@ function buildPlayers(){
     rawScarcity[cat] = 1 / Math.max(0.05, posShare);
   });
   const meanScarcity = Object.values(rawScarcity).reduce((a,b)=>a+b,0) / Object.values(rawScarcity).length;
-  Z_CATS.forEach(cat => { CAT_SCARCITY[cat] = rawScarcity[cat] / meanScarcity; });
+  Z_CATS.forEach(cat => {
+    // Gedämpft (Wurzel) + gedeckelt: Seltenheit soll den Bedarf leicht
+    // verstärken, aber nicht das Gesamtbild eines Spielers dominieren.
+    // Ohne Deckel konnten Ein-Kategorie-Spezialisten (z.B. reine
+    // Block-/Steal-Bank-Spieler) durch eine einzelne extrem seltene
+    // Kategorie vor insgesamt deutlich wertvolleren Spielern landen.
+    const norm = Math.sqrt(rawScarcity[cat] / meanScarcity);
+    CAT_SCARCITY[cat] = Math.max(0.8, Math.min(1.25, norm));
+  });
 
   return rows;
 }
@@ -923,7 +931,7 @@ function renderReco(){
     } else {
       base = 0;
       CATS.forEach(c => { base += (needWeight[c.key]||0) * p.catZ[c.key]; });
-      base += 0.15 * p.z;
+      base += 0.25 * p.z;
     }
     // i) Verfügbarkeit: Spieler mit schwacher Gesundheits-/Spielzeit-Historie
     // etwas abwerten (max. ±15%, siehe mfhfbDurability).
