@@ -131,6 +131,8 @@
   .col-adp{font-weight:700; color:var(--good);}
   .col-adp .adp-n{color:var(--muted); font-weight:400; font-size:10px;}
   .col-adp.no-adp{color:var(--muted); font-weight:400;}
+  .col-fadp{font-weight:700; color:var(--accent2);}
+  .col-fadp.no-adp{color:var(--muted); font-weight:400;}
   .draft-btn{
     background:var(--accent); color:#fff; border:none; padding:5px 11px; border-radius:7px;
     font-size:11px; font-weight:700; cursor:pointer;
@@ -270,6 +272,7 @@
               <th data-k="tov">TOV</th>
               <th data-k="z">Z</th>
               <th data-k="adp" title="Ø Draft-Position aus deinen erfassten Fantrax Draft Results">ADP</th>
+              <th data-k="fadp" title="Fantrax' eigener aktueller ADP-Snapshot (data/fantrax-adp.csv)">F-ADP</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -334,8 +337,9 @@ document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS
 document.getElementById('footerText').textContent =
   'Nutzt dieselben Projections wie die Projections-Seite (inkl. Gewichtungen, Minuten-Overrides und manuellen Rookie-Stats). ' +
   'Änderungen an Gewichtung/Z-Basis auf der Projections-Seite wirken sich sofort hier aus. ' +
-  'ADP-Spalte: Durchschnitts-Draftposition aus ' + (typeof ADP_DATA !== 'undefined' ? Object.keys(ADP_DATA).length : 0) +
-  ' erfassten Spielern über deine hochgeladenen Fantrax Draft Results (siehe data/draft-results/).';
+  'ADP-Spalte: Durchschnitts-Draftposition aus ' + (typeof ADP_DATA !== 'undefined' ? Object.values(ADP_DATA).filter(d=>d.ownAdp!==null).length : 0) +
+  ' erfassten Spielern über deine hochgeladenen Fantrax Draft Results (data/draft-results/). ' +
+  'F-ADP-Spalte: Fantrax\' eigener aktueller ADP-Snapshot (data/fantrax-adp.csv, ' + (typeof ADP_DATA !== 'undefined' ? Object.values(ADP_DATA).filter(d=>d.fantraxAdp!==null).length : 0) + ' Spieler).';
 
 const CATS = [
   {key:'pts', label:'PTS'},
@@ -419,12 +423,15 @@ function buildPlayers(){
     row.z = z;
     row.posList = (row.pos || '-').split('/');
 
-    // ADP aus deinen erfassten Fantrax Draft Results (adp-data.js, via
-    // scripts/build-adp-data.py generiert). null = Spieler kam in den
-    // bisher erfassten Ligen noch nicht oft genug vor bzw. gar nicht.
+    // ADP aus zwei unabhängigen Quellen (adp-data.js, via
+    // scripts/build-adp-data.py generiert):
+    //  - row.adp  = eigener ADP aus deinen erfassten Fantrax Draft Results
+    //  - row.fadp = Fantrax' eigener aktueller ADP-Snapshot
+    // Jeweils null, wenn für den Spieler keine Daten aus der Quelle vorliegen.
     const adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(row.n)] : undefined;
-    row.adp = adpEntry ? adpEntry.adp : null;
-    row.adpCount = adpEntry ? adpEntry.count : 0;
+    row.adp = (adpEntry && adpEntry.ownAdp !== null && adpEntry.ownAdp !== undefined) ? adpEntry.ownAdp : null;
+    row.adpCount = adpEntry ? adpEntry.ownCount : 0;
+    row.fadp = (adpEntry && adpEntry.fantraxAdp !== null && adpEntry.fantraxAdp !== undefined) ? adpEntry.fantraxAdp : null;
   });
 
   rows.sort((a,b) => b.z - a.z);
@@ -598,6 +605,15 @@ function renderPool(){
       if(bNull) return -1;
       av = a.adp; bv = b.adp;
     }
+    else if(state.sortKey === 'fadp'){
+      // Gleiches Null-Handling wie bei 'adp', aber für die unabhängige
+      // Fantrax-ADP-Spalte.
+      const aNull = a.fadp === null, bNull = b.fadp === null;
+      if(aNull && bNull) return b.z - a.z;
+      if(aNull) return 1;
+      if(bNull) return -1;
+      av = a.fadp; bv = b.fadp;
+    }
     else if(state.sortKey === 'rk' || state.sortKey === 'z'){ av=a[state.sortKey]; bv=b[state.sortKey]; }
     else { av=a.s[state.sortKey]; bv=b.s[state.sortKey]; }
     if(typeof av === 'string') return dir*av.localeCompare(bv);
@@ -633,6 +649,7 @@ function renderPool(){
       <td>${fmtNum(p.s.tov)}</td>
       <td class="col-z">${p.z>=0?'+':''}${fmtNum(p.z,2)}</td>
       <td class="col-adp${p.adp===null?' no-adp':''}">${p.adp!==null ? fmtNum(p.adp,1)+` <span class="adp-n">(n=${p.adpCount})</span>` : '—'}</td>
+      <td class="col-fadp${p.fadp===null?' no-adp':''}">${p.fadp!==null ? p.fadp : '—'}</td>
       <td>${statusHtml}</td>
     </tr>`;
   }).join('');
@@ -816,7 +833,7 @@ function initControls(){
     th.addEventListener('click', () => {
       const k = th.dataset.k;
       if(state.sortKey === k) state.sortDir = state.sortDir==='asc' ? 'desc':'asc';
-      else { state.sortKey = k; state.sortDir = (k==='name'||k==='pos'||k==='adp') ? 'asc':'desc'; }
+      else { state.sortKey = k; state.sortDir = (k==='name'||k==='pos'||k==='adp'||k==='fadp') ? 'asc':'desc'; }
       renderPool();
     });
   });

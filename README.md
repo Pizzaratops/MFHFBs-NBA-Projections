@@ -92,16 +92,24 @@ python3 build-players-data.py ../players-data.js \
 # Aktuelle Roster von ESPN ziehen (Node >= 18, keine Abhängigkeiten)
 node fetch-rosters.mjs
 
-# ADP aus Fantrax Draft Results neu berechnen (liest ALLE CSVs aus
-# data/draft-results/, keine Argumente nötig)
+# ADP aus Fantrax Draft Results + Fantrax-ADP neu berechnen (liest ALLE
+# CSVs aus data/draft-results/ und die einzelne data/fantrax-adp.csv,
+# keine Argumente nötig)
 python3 build-adp-data.py
 ```
 
-**ADP-Workflow:** Fantrax-Export ("Draft Results" → CSV) einfach in
-`data/draft-results/` ablegen (Dateiname egal, H2H/Roto/Points gemischt
-ist ok) und `build-adp-data.py` laufen lassen — oder die CSV direkt im
-GitHub-Web-UI in den Ordner hochladen, dann übernimmt die GitHub Action
-`update-adp.yml` den Rebuild automatisch.
+**ADP-Workflow (zwei unabhängige Quellen):**
+- **Eigene Draft Results** (Spalte "ADP"): Fantrax-Export ("Draft Results" →
+  CSV) einfach in `data/draft-results/` ablegen (Dateiname egal,
+  H2H/Roto/Points gemischt ist ok, beliebig viele Dateien — mehr Ligen
+  = akkurater) und `build-adp-data.py` laufen lassen. Oder die CSV
+  direkt im GitHub-Web-UI hochladen, dann übernimmt die GitHub Action
+  `update-adp.yml` den Rebuild automatisch.
+- **Fantrax-ADP** (Spalte "F-ADP"): Fantrax' eigener aktueller
+  ADP-Snapshot, gleiches CSV-Format, aber als **genau eine** Datei unter
+  `data/fantrax-adp.csv` — bei einem Update diese Datei einfach
+  überschreiben (nicht zusätzliche Dateien anlegen, wird nicht
+  gemittelt, sondern 1:1 übernommen).
 
 Neue Saison hinzufügen: einfach eine weitere `<label>=<datei.xls>`-Angabe an
 den Befehl anhängen — Reihenfolge der Angaben ist egal, das Skript sortiert
@@ -138,7 +146,8 @@ scripts/build-adp-data.py      Konvertierungsskript Draft Results → adp-data.j
 .github/workflows/update-rosters.yml  tägliche GitHub Action für den Roster-Fetch
 .github/workflows/update-adp.yml      GitHub Action: baut adp-data.js bei neuen CSVs in data/draft-results/
 data/                          Rohdaten-Exports (Season-Stats)
-data/draft-results/            Fantrax "Draft Results"-CSV-Exporte (Rohdaten für ADP)
+data/draft-results/            Fantrax "Draft Results"-CSV-Exporte (Rohdaten für eigenen ADP, beliebig viele)
+data/fantrax-adp.csv           Fantrax' eigener ADP-Snapshot (genau eine Datei, wird bei Updates überschrieben)
 ```
 
 ## Aktueller Stand
@@ -170,12 +179,13 @@ data/draft-results/            Fantrax "Draft Results"-CSV-Exporte (Rohdaten fü
 - **Live-Reranking:** Minuten-Änderungen auf der Teams-Seite aktualisieren
   die Projections-Tabelle automatisch (per `storage`-Event, wenn beide
   Seiten offen sind; sonst beim nächsten Laden).
-- **ADP im Draft Board:** zusätzliche sortierbare Spalte neben Z-Score,
-  berechnet aus deinen hochgeladenen Fantrax Draft Results
-  (`data/draft-results/`). Aktuell 203 Spieler aus 8 Ligen erfasst.
-  Spieler ohne ADP fallen automatisch ans Tabellenende (Fallback-Sortierung
-  nach Z, bis eine Fantrax-eigene ADP-Datei als zweite Fallback-Stufe
-  ergänzt wird).
+- **ADP im Draft Board:** zwei unabhängig sortierbare Spalten neben
+  Z-Score. "ADP" = eigene Fantrax Draft Results (`data/draft-results/`,
+  aktuell 203 Spieler aus 8 Ligen). "F-ADP" = Fantrax' eigener
+  ADP-Snapshot (`data/fantrax-adp.csv`, aktuell 600 Spieler, wird bei
+  Updates einfach überschrieben statt gemittelt). Spieler ohne Wert in
+  einer Spalte fallen dort automatisch ans Ende (Fallback auf Z-Score
+  untereinander).
 - **Rookies:** noch kein automatischer Pfad — Minuten + Rate werden vorerst
   manuell eingetragen.
 - **Noch nicht bei TTHQ integriert** — bewusst als eigenständiges Repo, bis
@@ -194,6 +204,27 @@ data/draft-results/            Fantrax "Draft Results"-CSV-Exporte (Rohdaten fü
   nicht läuft.
 
 ## Changelog
+
+### 2026-07-22 (14)
+- **Fantrax-ADP als zweite, unabhängige Spalte ergänzt** ("F-ADP", neben
+  "ADP" für die eigenen Draft Results). Bewusst KEINE
+  Fallback-Verschmelzung zu einem Wert — beide Spalten sind einzeln
+  sortierbar, damit direkt sichtbar bleibt, welcher Wert woher kommt.
+  - Neue Datei `data/fantrax-adp.csv` (genau eine, kein Ordner — anders
+    als die Draft-Results): Fantrax' eigener ADP-Snapshot, wird bei
+    einem Update überschrieben statt gemittelt, weil er selbst schon
+    ein plattformweiter Durchschnitt ist.
+  - `scripts/build-adp-data.py` liest jetzt beide Quellen unabhängig
+    ein und führt sie pro Spieler zu `ownAdp`/`fantraxAdp` in
+    `adp-data.js` zusammen (Union der Namen aus beiden Quellen, nicht
+    nur Schnittmenge).
+  - Sortierverhalten identisch zur "ADP"-Spalte: Klick sortiert
+    aufsteigend, Spieler ohne Wert in der jeweiligen Spalte fallen ans
+    Ende, unabhängig von Sortierrichtung, mit Z-Score-Fallback
+    untereinander.
+  - Erstbefüllung: 600 Spieler aus einem Fantrax-ADP-Snapshot (Stand
+    22.07.2026) → 619 Spieler insgesamt mit mindestens einem ADP-Wert
+    (184 mit beiden, 19 nur eigener ADP, 416 nur Fantrax-ADP).
 
 ### 2026-07-22 (13)
 - **ADP-Spalte im Draft Board hinzugefügt.** Neue, sortierbare Spalte

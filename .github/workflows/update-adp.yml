@@ -10,6 +10,7 @@ on:
   push:
     paths:
       - "data/draft-results/**.csv"
+      - "data/fantrax-adp.csv"
   workflow_dispatch: {}
 
 permissions:
