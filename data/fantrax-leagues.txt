@@ -1,0 +1,41 @@
+# Eine Fantrax-Liga-ID pro Zeile. Optional ", Name" dahinter für lesbarere
+# Logs, sonst wird die ID selbst genutzt. "#"-Kommentare & Leerzeilen okay.
+# Neue Liga = einfach eine Zeile mit der ID anhängen, fertig.
+pct4k2a6mr9s4u1f
+a0bbqypimrablmbu
+25j965mmmrannqbz
+hembf3mtmraokwom
+0n42joz7mrapinh5
+286ct4uzmrapm5fq
+auubwpqdmrbmpk3h
+ua02ifq1mrbtljjl
+jkfwddasmrc2ubfh
+4cjjvk4dmrcvjknk
+j3mu7ixymrfucic8
+hdvwmdermrfwbgdo
+amyt53qkmrh14vqu
+kjuxwfi4mrh17ll1
+emeu5xuymrh1a5id
+osd7cxhzmrhramh2
+6s4kfft0mrhrd71n
+t6wu7qhgmrhrgajw
+1ycl5y6pmrhrjicv
+bbw1narimrkdo0xy
+i4wkf62umrkds58d
+f4s6y7hlmrkduxh8
+2xpavvsdmrkgdwvm
+y2el57a9mrkgi9hu
+vlz39pmpmrr5uzt8
+1qrd7f0ymrr5zner
+jj3rvaenmrr62dhn
+i4z6qm61mrshvc99
+hjqxljyfmrshydd4
+t0n2ie3mmrsi15yu
+xzqt1t8hmrsi4529
+4x4efw5amrsi6w88
+m8gqld41mrsi9o7z
+kzsdzgcrmrtq3iro
+kxmpizhrmrtq6amu
+hfw2srjjmrtq935q
+5nntjivvmrtqvmsk
+oxyp65xomrtqyfcs

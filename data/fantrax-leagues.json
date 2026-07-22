@@ -1,5 +1,5 @@
 {
-  "_comment": "Trage hier alle deine Fantrax-Ligen ein, aus denen Draft Results automatisch gezogen werden sollen. 'id' = die League-ID aus der Fantrax-URL (z.B. fantrax.com/fantasy/league/ABC123XYZ/... -> 'ABC123XYZ'). 'label' = beliebiger Name, wird für den Dateinamen und in Logs verwendet (Sonderzeichen werden automatisch entfernt).",
+  "_comment": "VERALTET seit 22.07.2026 -- wird nur noch genutzt, falls data/fantrax-leagues.txt fehlt. Neue Ligen bitte in fantrax-leagues.txt eintragen (eine ID pro Zeile, siehe Kommentar dort).",
   "sport": "NBA",
   "leagues": [
     { "id": "PUT_LEAGUE_ID_HERE", "label": "Beispiel Liga 01" }
