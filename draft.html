@@ -374,6 +374,8 @@
         <div class="tabs">
           <div class="tab active" data-tab="myteam">Mein Team</div>
           <div class="tab" data-tab="matrix">9-Cat Ranks</div>
+          <div class="tab" data-tab="scarcity">Scarcity</div>
+          <div class="tab" data-tab="puntplan">Punt-Planer</div>
           <div class="tab" data-tab="power">Best Ball Z</div>
           <div class="tab" data-tab="log">Pick-Log</div>
         </div>
@@ -390,6 +392,40 @@
           <h3>Team vs. Team — Rang je Kategorie</h3>
           <div class="matrix-wrap" id="matrixWrap"></div>
           <div class="note">1 = bestes Team, 12 = schlechtestes. Deine Spalte ist hervorgehoben.</div>
+        </div>
+
+        <div class="tabpane" id="pane-scarcity">
+          <h3>Wann kippt eine Kategorie?</h3>
+          <div class="note" style="margin-bottom:8px;">
+            Ø Kategorie-Z der noch verfügbaren Spieler, gebündelt nach Runde (12 Picks = 1 Runde).
+            Zeigt, wo eine Kategorie im verbleibenden Pool noch Tiefe hat und wo es steil bergab geht —
+            z.B. AST/PTS konzentrieren sich früh, danach reißt die Versorgung schneller ab als bei STL/BLK.
+            In jeder Zelle der stärkste noch verfügbare Name dieser Runde/Kategorie.
+          </div>
+          <div class="matrix-wrap" id="scarcityWrap"></div>
+          <div class="note" style="margin-top:8px;" id="scarcityCliffNote"></div>
+        </div>
+
+        <div class="tabpane" id="pane-puntplan">
+          <h3>Punt-Planer — Wochen-Matchup-Simulation</h3>
+          <div class="note" style="margin-bottom:8px;">
+            Rechnet deinen aktuellen Kader (Starter, live nach Draft-Stand) gegen jedes andere Team
+            kategorienweise durch. Punt-Kategorien werden als bewusst abgegebene Punkte behandelt,
+            nicht als Niederlage gezählt — Ziel ist die verbleibenden Kategorien möglichst breit zu gewinnen
+            (idealerweise 6-3, im Zweifel 5-4). Nutzt dieselben Punt-Kategorien wie "Empfehlungen" links.
+          </div>
+          <div class="field" style="margin-bottom:10px;">
+            <label>Punt-Kategorien (auch hier änderbar)</label>
+            <div class="punt-cats" id="puntCatsPlan"></div>
+          </div>
+          <div id="puntSummary" class="note" style="margin-bottom:10px;"></div>
+          <div class="matrix-wrap" id="puntMatchupWrap"></div>
+          <div class="note" style="margin-top:8px;">
+            ⚠ = Team liegt in einer deiner Punt-Kategorien selbst unter den schwächsten im Ligavergleich
+            (mögliche Mirror-Punt) — gegen dieses Team fällt die Kategorie faktisch weg, die "Gewinn-Marge"-Spalte
+            zeigt, in welcher deiner NICHT gepunteten Kategorien du gegen genau dieses Team am knappsten liegst
+            (dort lohnt sich zusätzliche Stärke am meisten).
+          </div>
         </div>
 
         <div class="tabpane" id="pane-power">
@@ -784,6 +820,122 @@ function categoryRanks(){
   return ranks;
 }
 
+// ---------------- Kategorie-Scarcity-Kurve (Runden-Cliff) ----------------
+// Bündelt den noch verfügbaren Pool pro Kategorie in Runden-Buckets (12 Picks
+// = 1 Runde) und zeigt den Ø catZ je Bucket + den stärksten verbleibenden
+// Namen. Beantwortet "welche Kat. ist ab wann noch realistisch zu holen"
+// (z.B. AST/PTS konzentrieren sich früh in den Top-Runden und fallen danach
+// steiler ab als STL/BLK, siehe Josh-Lloyd-Category-Correlation-Recherche).
+// Getrennt von computeCatScarcity() oben, die einen einzelnen Live-Multiplikator
+// für die Empfehlungs-Engine liefert -- hier geht's um die Round-by-Round-Ansicht.
+function computeScarcityCurve(availablePlayers, roundsAhead){
+  const sorted = {};
+  Z_CATS.forEach(cat => {
+    sorted[cat] = [...availablePlayers].sort((a,b) => b.catZ[cat] - a.catZ[cat]);
+  });
+  const buckets = [];
+  for(let r = 0; r < roundsAhead; r++){
+    const start = r * TEAMS, end = start + TEAMS;
+    const row = { round: r, cats: {} };
+    Z_CATS.forEach(cat => {
+      const slice = sorted[cat].slice(start, end);
+      if(!slice.length){ row.cats[cat] = null; return; }
+      const avgZ = slice.reduce((a,p) => a + p.catZ[cat], 0) / slice.length;
+      const top = slice[0];
+      row.cats[cat] = { avgZ, topName: top.n, topZ: top.catZ[cat] };
+    });
+    buckets.push(row);
+  }
+  return buckets;
+}
+
+// Größter Ein-Runden-Einbruch je Kategorie über die Buckets -- "wo reißt
+// die Versorgung am abruptesten ab", nicht nur "wo ist der Wert insgesamt
+// niedrig" (das kann auch einfach eine grundsätzlich flache Kategorie sein).
+function steepestCliff(buckets){
+  let worst = null;
+  Z_CATS.forEach(cat => {
+    for(let i=1; i<buckets.length; i++){
+      const prev = buckets[i-1].cats[cat], cur = buckets[i].cats[cat];
+      if(!prev || !cur) continue;
+      const drop = prev.avgZ - cur.avgZ;
+      if(!worst || drop > worst.drop) worst = { cat, drop, atRound: i };
+    }
+  });
+  return worst;
+}
+
+// ---------------- Punt-Planer: H2H-Matchup-Simulation ----------------
+// Vergleicht zwei Team-Totals (aus teamTotals()) kategorienweise. Gepuntete
+// Kategorien zählen als bewusst abgegeben (weder Sieg noch Niederlage in der
+// "Bilanz"), nicht als automatischer Verlust -- entspricht der Denkweise
+// "ich gebe FT% komplett auf, um in den restlichen 8 möglichst oft 6-3/5-4
+// zu gewinnen", nicht "ich spiele 9 Kategorien und verliere eine sicher".
+// Mittelwert + Streuung je Kategorie ÜBER ALLE 12 TEAM-TOTALS (nicht über
+// einzelne Spieler wie die Pool-Z-Scores) -- macht Margen zwischen Teams
+// über Kategorien mit völlig unterschiedlichen Einheiten vergleichbar
+// (z.B. "5 Punkte Vorsprung" vs. "1,5 Prozentpunkte FG%-Vorsprung").
+function computeTeamCatStats(allTotals){
+  const stats = {};
+  CATS.forEach(c => {
+    const vals = allTotals.map(t => t.totals[c.key]);
+    const m = vals.reduce((a,b)=>a+b,0)/vals.length;
+    const variance = vals.reduce((a,b)=>a+(b-m)*(b-m),0)/vals.length;
+    stats[c.key] = { mean: m, sd: Math.sqrt(variance) || 1 };
+  });
+  return stats;
+}
+
+function computeMatchupRecord(myTotals, oppTotals, puntSet, teamCatStats){
+  let wins = 0, losses = 0, ties = 0;
+  const catResults = {};
+  CATS.forEach(c => {
+    if(puntSet.has(c.key)){ catResults[c.key] = 'punt'; return; }
+    const mv = myTotals[c.key], ov = oppTotals[c.key];
+    const diff = c.invert ? (ov - mv) : (mv - ov); // positiv = ich gewinne, rohe Einheit
+    if(Math.abs(diff) < 1e-9){ ties++; catResults[c.key] = 'tie'; }
+    else if(diff > 0){ wins++; catResults[c.key] = 'win'; }
+    else { losses++; catResults[c.key] = 'loss'; }
+    catResults[c.key+'_diff'] = diff;
+    // Auf Liga-Streuung normiert -- macht Margen über Kategorien hinweg
+    // vergleichbar (für closestMargin()), rohe diff bleibt fürs Anzeigen.
+    const sd = teamCatStats ? teamCatStats[c.key].sd : 1;
+    catResults[c.key+'_diffZ'] = diff / sd;
+  });
+  return { wins, losses, ties, punted: puntSet.size, catResults };
+}
+
+// Erkennt für ein Gegner-Team, ob es in einer MEINER Punt-Kategorien selbst
+// zu den schwächsten der Liga gehört (untere 3 von 12 Teams im Kategorie-
+// Rang) -- ein starkes Indiz für "die punten das vermutlich auch", wodurch
+// die Kategorie im direkten Duell faktisch neutralisiert ist (beide schwach,
+// niemand nutzt sie aktiv als Waffe).
+function detectMirrorPunts(oppTeamIdx, puntSet, ranks){
+  const flagged = [];
+  puntSet.forEach(catKey => {
+    const rank = ranks[catKey][oppTeamIdx];
+    if(rank >= TEAMS - 2) flagged.push(catKey); // Rang 10-12 von 12
+  });
+  return flagged;
+}
+
+// Für ein Gegner-Team: unter den NICHT gepunteten Kategorien diejenige mit
+// der knappsten (kleinsten positiven ODER negativen) Marge -- dort lohnt
+// sich zusätzliche Stärke gegen genau dieses Team am meisten, besonders
+// wichtig bei Mirror-Punt-Gegnern, wo eine Kategorie schon wegfällt und man
+// sich in den verbleibenden keinen zweiten Ausfall mehr leisten kann.
+function closestMargin(catResults, puntSet){
+  let closest = null;
+  CATS.forEach(c => {
+    if(puntSet.has(c.key)) return;
+    const diffZ = catResults[c.key+'_diffZ'];
+    const diff = catResults[c.key+'_diff'];
+    if(diffZ === undefined) return;
+    if(!closest || Math.abs(diffZ) < Math.abs(closest.diffZ)) closest = { cat: c, diff, diffZ };
+  });
+  return closest;
+}
+
 // ---------------- rendering ----------------
 function fmtNum(v, digits=1){ return (Math.round(v*10**digits)/10**digits).toFixed(digits); }
 
@@ -948,6 +1100,111 @@ function renderMatrix(){
   document.getElementById('matrixWrap').innerHTML = html;
 }
 
+function renderScarcity(){
+  const dm = draftedMap();
+  const available = PLAYERS.filter(p => !dm[p.rk]);
+  const currentRound = Math.min(SLOTS_PER_TEAM, Math.ceil((state.picks.length+1)/TEAMS));
+  const roundsAhead = Math.min(8, SLOTS_PER_TEAM - currentRound + 1); // Blick max. 8 Runden voraus
+  if(roundsAhead < 1 || available.length < TEAMS){
+    document.getElementById('scarcityWrap').innerHTML = '<div class="note">Draft beendet oder zu wenig Spieler übrig.</div>';
+    document.getElementById('scarcityCliffNote').textContent = '';
+    return;
+  }
+  const buckets = computeScarcityCurve(available, roundsAhead);
+
+  // Heatmap-Range über alle sichtbaren Zellen gemeinsam, damit Kategorien
+  // untereinander vergleichbar bleiben (nicht pro Kategorie neu skaliert).
+  const allVals = [];
+  buckets.forEach(b => Z_CATS.forEach(cat => { if(b.cats[cat]) allVals.push(b.cats[cat].avgZ); }));
+  const vMin = Math.min(...allVals), vMax = Math.max(...allVals);
+
+  let html = `<table class="matrix"><thead><tr><th class="rowlabel">Kat.</th>`;
+  buckets.forEach(b => html += `<th>${b.round===0?'jetzt':'R+'+b.round}</th>`);
+  html += `</tr></thead><tbody>`;
+  CATS.filter(c => Z_CATS.includes(c.key)).forEach(c => {
+    html += `<tr><td class="rowlabel">${c.label}</td>`;
+    buckets.forEach(b => {
+      const cell = b.cats[c.key];
+      if(!cell){ html += `<td class="rankcell">—</td>`; return; }
+      const style = mfhfbHeatStyle(cell.avgZ, vMin, vMax, false);
+      html += `<td class="rankcell" style="${style}" title="Stärkster verbleibender: ${cell.topName} (${cell.topZ>=0?'+':''}${fmtNum(cell.topZ,2)})">${cell.avgZ>=0?'+':''}${fmtNum(cell.avgZ,2)}</td>`;
+    });
+    html += `</tr>`;
+  });
+  html += `</tbody></table>`;
+  document.getElementById('scarcityWrap').innerHTML = html;
+
+  const cliff = steepestCliff(buckets);
+  const cliffNote = document.getElementById('scarcityCliffNote');
+  if(cliff){
+    const catLabel = CATS.find(c=>c.key===cliff.cat).label;
+    cliffNote.textContent = `Steilster Abfall: ${catLabel} verliert zwischen Runde +${cliff.atRound-1} und +${cliff.atRound} am meisten Tiefe (Ø-Z-Rückgang ${fmtNum(cliff.drop,2)}) — falls du dort noch etwas brauchst, ist das ungefähr das letzte Fenster.`;
+  } else {
+    cliffNote.textContent = '';
+  }
+}
+
+function renderPuntPlanner(){
+  const puntSet = new Set(state.punt);
+  const ranks = categoryRanks();
+  const myTotals = teamTotals(state.myTeam).totals;
+
+  const summary = document.getElementById('puntSummary');
+  if(puntSet.size === 0){
+    summary.textContent = 'Noch keine Punt-Kategorie gewählt — wähle unten, um die Wochen-Bilanz gegen alle Gegner zu simulieren.';
+  } else {
+    const puntLabels = CATS.filter(c=>puntSet.has(c.key)).map(c=>c.label).join(', ');
+    summary.textContent = `Gepuntet: ${puntLabels} — Bilanz unten aus den verbleibenden ${CATS.length - puntSet.size} Kategorien.`;
+  }
+
+  const allTotals = allTeamTotals();
+  const teamCatStats = computeTeamCatStats(allTotals);
+
+  const opponents = [];
+  for(let t=1; t<=TEAMS; t++){
+    if(t === state.myTeam) continue;
+    const oppTotals = teamTotals(t).totals;
+    const record = computeMatchupRecord(myTotals, oppTotals, puntSet, teamCatStats);
+    const mirrors = detectMirrorPunts(t, puntSet, ranks);
+    const margin = closestMargin(record.catResults, puntSet);
+    opponents.push({ team: t, record, mirrors, margin });
+  }
+  // Schwächste Matchups zuerst -- das sind die, die im Zweifel kippen können.
+  opponents.sort((a,b) => (a.record.wins - a.record.losses) - (b.record.wins - b.record.losses));
+
+  const avgWins = opponents.reduce((s,o)=>s+o.record.wins,0) / opponents.length;
+  const avgLosses = opponents.reduce((s,o)=>s+o.record.losses,0) / opponents.length;
+  const worst = opponents[0];
+  const mirrorCount = opponents.filter(o=>o.mirrors.length>0).length;
+  if(puntSet.size > 0){
+    summary.innerHTML += `<br>Ø voraussichtliche Bilanz: <b>${fmtNum(avgWins,1)}-${fmtNum(avgLosses,1)}</b> (${puntSet.size} gepuntet).
+      Knappster Gegner: Team ${worst.team} (${worst.record.wins}-${worst.record.losses}).
+      Mögliche Mirror-Punter bei dir: ${mirrorCount}/${TEAMS-1} Gegner.`;
+  }
+
+  let html = `<table class="matrix"><thead><tr>
+    <th class="rowlabel">Gegner</th><th>Bilanz</th><th>Mirror-Punt</th><th>Knappste Kat.</th>
+  </tr></thead><tbody>`;
+  opponents.forEach(o => {
+    const net = o.record.wins - o.record.losses;
+    const color = net > 1 ? 'var(--good)' : net < 0 ? 'var(--bad)' : 'var(--warn)';
+    const mirrorHtml = o.mirrors.length
+      ? `⚠ ${o.mirrors.map(k=>CATS.find(c=>c.key===k).label).join(', ')}`
+      : '—';
+    const marginHtml = o.margin
+      ? `${o.margin.cat.label} (${o.margin.diff>=0?'+':''}${fmtNum(o.margin.diff,1)})`
+      : '—';
+    html += `<tr>
+      <td class="rowlabel">${o.team===state.myTeam?'DU':'Team '+o.team}</td>
+      <td class="rankcell" style="color:${color};">${o.record.wins}-${o.record.losses}${o.record.ties?'-'+o.record.ties:''}</td>
+      <td style="font-size:11px;">${mirrorHtml}</td>
+      <td style="font-size:11px;">${marginHtml}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  document.getElementById('puntMatchupWrap').innerHTML = html;
+}
+
 function renderPower(){
   const all = allTeamTotals().sort((a,b)=>b.zSum-a.zSum);
   document.getElementById('powerRank').innerHTML = all.map((row,i) => `
@@ -1103,16 +1360,21 @@ function renderPointsWeights(){
     });
   });
 }
+// Rendert die Punt-Chips in JEDEN übergebenen Container (Setup-Panel +
+// Punt-Planer-Tab teilen sich dasselbe state.punt-Array, damit man von
+// beiden Stellen aus ändern kann und beide immer synchron sind).
 function renderPuntChips(){
-  const container = document.getElementById('puntCats');
-  container.innerHTML = CATS.map(c => `<div class="punt-chip ${state.punt.includes(c.key)?'active':''}" data-k="${c.key}">${c.label}</div>`).join('');
-  container.querySelectorAll('.punt-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      const k = chip.dataset.k;
-      const i = state.punt.indexOf(k);
-      if(i===-1) state.punt.push(k); else state.punt.splice(i,1);
-      chip.classList.toggle('active'); // sofortiges visuelles Feedback, kein Warten auf Re-Render
-      renderAll(); scheduleSave();
+  ['puntCats', 'puntCatsPlan'].forEach(containerId => {
+    const container = document.getElementById(containerId);
+    if(!container) return;
+    container.innerHTML = CATS.map(c => `<div class="punt-chip ${state.punt.includes(c.key)?'active':''}" data-k="${c.key}">${c.label}</div>`).join('');
+    container.querySelectorAll('.punt-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const k = chip.dataset.k;
+        const i = state.punt.indexOf(k);
+        if(i===-1) state.punt.push(k); else state.punt.splice(i,1);
+        renderAll(); scheduleSave(); // rendert beide Chip-Container + alle abhängigen Tabs neu
+      });
     });
   });
 }
@@ -1127,7 +1389,8 @@ function renderPosFilters(){
 
 function renderAll(){
   renderTopbar(); renderPool(); renderSlots(); renderCatRanks();
-  renderMatrix(); renderPower(); renderLog(); renderReco();
+  renderMatrix(); renderPuntChips(); renderScarcity(); renderPuntPlanner();
+  renderPower(); renderLog(); renderReco();
 }
 
 // ---------------- Live-Sync mit Fantrax ----------------
