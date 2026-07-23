@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-22T11:08:00.255Z",
+ "fetchedAt": "2026-07-23T11:07:30.255Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -196,6 +196,15 @@
      "weight": "190 lbs",
      "age": 27,
      "espnId": "4397183"
+    },
+    {
+     "name": "Jalen Wilson",
+     "jersey": "22",
+     "position": "F",
+     "height": "6' 6\"",
+     "weight": "220 lbs",
+     "age": 25,
+     "espnId": "4431714"
     }
    ]
   },
@@ -2337,15 +2346,6 @@
      "espnId": "4277811"
     },
     {
-     "name": "Peter Suder",
-     "jersey": "35",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "213 lbs",
-     "age": 22,
-     "espnId": "5106674"
-    },
-    {
      "name": "Adou Thiero",
      "jersey": "1",
      "position": "F",
@@ -3146,7 +3146,7 @@
      "position": "C",
      "height": "6' 11\"",
      "weight": "265 lbs",
-     "age": 37,
+     "age": 38,
      "espnId": "3442"
     },
     {
@@ -4931,7 +4931,7 @@
      "position": "G",
      "height": "6' 4\"",
      "weight": "190 lbs",
-     "age": 20,
+     "age": 21,
      "espnId": "4845374"
     },
     {

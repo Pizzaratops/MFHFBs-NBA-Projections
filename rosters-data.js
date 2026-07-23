@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-22T11:08:00.255Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-23T11:07:30.255Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-22T11:08:00.255Z",
+ "fetchedAt": "2026-07-23T11:07:30.255Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -198,6 +198,15 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 27,
      "espnId": "4397183"
+    },
+    {
+     "name": "Jalen Wilson",
+     "jersey": "22",
+     "position": "F",
+     "height": "6' 6\"",
+     "weight": "220 lbs",
+     "age": 25,
+     "espnId": "4431714"
     }
    ]
   },
@@ -2339,15 +2348,6 @@ const ROSTERS_DATA = {
      "espnId": "4277811"
     },
     {
-     "name": "Peter Suder",
-     "jersey": "35",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "213 lbs",
-     "age": 22,
-     "espnId": "5106674"
-    },
-    {
      "name": "Adou Thiero",
      "jersey": "1",
      "position": "F",
@@ -3148,7 +3148,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 11\"",
      "weight": "265 lbs",
-     "age": 37,
+     "age": 38,
      "espnId": "3442"
     },
     {
@@ -4933,7 +4933,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 4\"",
      "weight": "190 lbs",
-     "age": 20,
+     "age": 21,
      "espnId": "4845374"
     },
     {
