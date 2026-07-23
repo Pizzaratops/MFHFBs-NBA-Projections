@@ -131,8 +131,30 @@
   .col-adp{font-weight:700; color:var(--good);}
   .col-adp .adp-n{color:var(--muted); font-weight:400; font-size:10px;}
   .col-adp.no-adp{color:var(--muted); font-weight:400;}
+  .col-adp.clickable{cursor:pointer; text-decoration:underline dotted; text-underline-offset:3px;}
   .col-fadp{font-weight:700; color:var(--accent2);}
   .col-fadp.no-adp{color:var(--muted); font-weight:400;}
+
+  /* Draft-Range-Popover (Klick auf ADP-Zelle) -- feste Position, wird per
+     JS über der geklickten Zelle platziert. */
+  .adp-popover{
+    position:fixed; z-index:200; background:var(--surface); border:1px solid var(--border);
+    border-radius:10px; box-shadow:0 8px 28px rgba(0,0,0,0.35); padding:12px 14px;
+    width:260px; max-height:340px; overflow-y:auto; font-size:12px;
+  }
+  .adp-popover h4{margin:0 0 8px; font-size:12.5px; display:flex; justify-content:space-between; align-items:center;}
+  .adp-popover .close-x{cursor:pointer; color:var(--muted); font-weight:700; padding:0 4px;}
+  .adp-range-bar{position:relative; height:6px; background:var(--surface2); border-radius:3px; margin:8px 0 12px;}
+  .adp-range-bar .fill{position:absolute; top:0; height:100%; background:var(--accent); border-radius:3px;}
+  .adp-range-bar .avgmark{position:absolute; top:-3px; width:2px; height:12px; background:var(--accent2);}
+  .adp-range-labels{display:flex; justify-content:space-between; font-size:10px; color:var(--muted); margin-top:-8px; margin-bottom:10px;}
+  .adp-pick-list{display:flex; flex-wrap:wrap; gap:4px;}
+  .adp-pick-chip{
+    background:var(--surface2); border:1px solid var(--border); border-radius:5px;
+    padding:2px 6px; font-family:'DM Mono',monospace; font-size:11px;
+  }
+  .adp-pick-chip.lo{border-color:var(--good); color:var(--good);}
+  .adp-pick-chip.hi{border-color:var(--bad); color:var(--bad);}
   .draft-btn{
     background:var(--accent); color:#fff; border:none; padding:5px 11px; border-radius:7px;
     font-size:11px; font-weight:700; cursor:pointer;
@@ -454,10 +476,16 @@
 <script src="players-data.js"></script>
 <script src="projected-minutes.js"></script>
 <script src="adp-data.js"></script>
+<script src="rosters-data.js" onerror="window.__rostersMissing=true"></script>
 <script src="assets/shared.js"></script>
 <script src="assets/fantrax-live.js"></script>
 <script>
 mfhfbInitThemeToggle('themeToggle');
+
+// Aktuelles Team statt historischem Vorsaison-Team (siehe ausführlicher
+// Kommentar in index.html / assets/shared.js) -- muss VOR dem ersten
+// buildPlayers()-Aufruf passieren, der p.team in row.team kopiert.
+if (typeof ROSTERS_DATA !== 'undefined') mfhfbApplyCurrentTeams(PLAYER_RATES);
 document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS.join(' · ');
 document.getElementById('footerText').textContent =
   'Nutzt dieselben Projections wie die Projections-Seite (inkl. Gewichtungen, Minuten-Overrides und manuellen Rookie-Stats). ' +
@@ -640,6 +668,10 @@ function buildPlayers(){
     row.adpMax = (adpEntry && adpEntry.ownMax !== null && adpEntry.ownMax !== undefined) ? adpEntry.ownMax : null;
     row.fadp = (adpEntry && adpEntry.fantraxAdp !== null && adpEntry.fantraxAdp !== undefined) ? adpEntry.fantraxAdp : null;
     row._adpRef = row.fadp || row.adp || null;
+    // Volle Draft-Range (alle einzelnen Picks über deine erfassten Ligen,
+    // aus data/draft-results/ via scripts/build-adp-data.py) -- fürs
+    // Klick-Popover, das "alte Excel Draft Range"-Feature.
+    row.ownPicks = (adpEntry && adpEntry.ownPicks) ? adpEntry.ownPicks : [];
   });
 
   // Punkte-Liga-Score (für Format 'points'): einfache Summe Stat x Punktwert.
@@ -963,6 +995,7 @@ function passesFilters(p, dm){
 }
 
 function renderPool(){
+  closeAdpPopover();
   const dm = draftedMap();
   let rows = PLAYERS.filter(p => passesFilters(p, dm));
   rows.sort((a,b) => {
@@ -1039,7 +1072,7 @@ function renderPool(){
       <td style="${hzf(p.zFloor)};font-size:11px;font-weight:700" title="Floor — Schwächste Kat: ${p.worstCat||''}">${p.zFloor>=0?'+':''}${fmtNum(p.zFloor,2)}</td>
       <td style="${hzd(p.zDepth)};font-size:11px;font-weight:700" title="Depth — Stärkste Kat: ${p.bestCat||''}">${p.zDepth>=0?'+':''}${fmtNum(p.zDepth,2)}</td>
       <td style="font-size:11px;font-weight:700;color:${p.adpVal===null?'var(--muted)':p.adpVal>0?'var(--good)':'var(--bad)'}">${p.adpVal!==null?(p.adpVal>0?'+':'')+p.adpVal:'—'}</td>
-      <td class="col-adp${p.adp===null?' no-adp':''}">${p.adp!==null ? fmtNum(p.adp,1)+` <span class="adp-n">(n=${p.adpCount})</span>` : '—'}</td>
+      <td class="col-adp${p.adp===null?' no-adp':''}${p.ownPicks.length?' clickable':''}" ${p.ownPicks.length?`data-adp-rk="${p.rk}"`:''}>${p.adp!==null ? fmtNum(p.adp,1)+` <span class="adp-n">(n=${p.adpCount})</span>` : '—'}</td>
       <td class="col-fadp${p.fadp===null?' no-adp':''}">${p.fadp!==null ? p.fadp : '—'}</td>
       <td>${statusHtml}</td>
     </tr>`;
@@ -1048,10 +1081,92 @@ function renderPool(){
   tbody.querySelectorAll('.draft-btn').forEach(btn => {
     btn.addEventListener('click', () => draftPlayer(Number(btn.dataset.rk)));
   });
+  tbody.querySelectorAll('[data-adp-rk]').forEach(cell => {
+    cell.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showAdpPopover(Number(cell.dataset.adpRk), cell);
+    });
+  });
   document.querySelectorAll('#poolTable thead th').forEach(th => {
     th.classList.toggle('sorted', th.dataset.k === state.sortKey);
   });
 }
+
+// ---------------- Draft-Range-Popover (Klick auf ADP-Zelle) ----------------
+// Das "alte Excel Draft Range"-Feature: alle einzelnen Draft-Positionen
+// eines Spielers über deine erfassten Ligen (data/draft-results/*.csv),
+// nicht nur der gemittelte ADP. Zeigt außerdem, aus welcher Liga-Datei
+// jeder einzelne Pick stammt (grob, siehe source_label in build-adp-data.py).
+let currentAdpPopover = null;
+function closeAdpPopover(){
+  if(currentAdpPopover){ currentAdpPopover.remove(); currentAdpPopover = null; }
+  document.removeEventListener('click', onAdpPopoverOutsideClick);
+  document.removeEventListener('keydown', onAdpPopoverEscape);
+}
+function onAdpPopoverOutsideClick(e){
+  if(currentAdpPopover && !currentAdpPopover.contains(e.target)) closeAdpPopover();
+}
+function onAdpPopoverEscape(e){
+  if(e.key === 'Escape') closeAdpPopover();
+}
+// Liga-Datei-Namen sind lange Fantrax-Hashes ohne Klarnamen (siehe
+// data/fantrax-leagues.txt) -- fürs Popover auf die letzten 6 Zeichen
+// gekürzt, nur zur groben "das war eine andere Liga"-Unterscheidung.
+function shortSource(label){
+  const s = (label||'').replace(/^Fantrax-Draft-Results-AUTO-/, '');
+  return s.length > 8 ? '…' + s.slice(-6) : s;
+}
+function showAdpPopover(rk, anchorEl){
+  const p = byRk[rk];
+  if(!p || !p.ownPicks.length) return;
+  const isSame = currentAdpPopover && currentAdpPopover.dataset.rk === String(rk);
+  closeAdpPopover();
+  if(isSame) return; // zweiter Klick auf dieselbe Zelle schließt nur
+
+  const picks = p.ownPicks.map(x=>x.pick).sort((a,b)=>a-b);
+  const min = picks[0], max = picks[picks.length-1];
+  const avg = picks.reduce((a,b)=>a+b,0)/picks.length;
+  const span = Math.max(1, max-min);
+  const chartMin = Math.max(1, min - Math.max(2, Math.round(span*0.1)));
+  const chartMax = max + Math.max(2, Math.round(span*0.1));
+  const chartSpan = chartMax - chartMin;
+  const pct = v => ((v - chartMin) / chartSpan) * 100;
+
+  const el = document.createElement('div');
+  el.className = 'adp-popover';
+  el.dataset.rk = String(rk);
+  el.innerHTML = `
+    <h4>${p.n} — Draft Range <span class="close-x">✕</span></h4>
+    <div class="note" style="margin:0 0 6px;">Ø ${fmtNum(avg,1)} · Min ${min} · Max ${max} · n=${picks.length}</div>
+    <div class="adp-range-bar">
+      <div class="fill" style="left:${pct(min)}%; width:${pct(max)-pct(min)}%;"></div>
+      <div class="avgmark" style="left:${pct(avg)}%;"></div>
+    </div>
+    <div class="adp-range-labels"><span>${chartMin}</span><span>${chartMax}</span></div>
+    <div class="adp-pick-list">
+      ${p.ownPicks.map(x => `<span class="adp-pick-chip ${x.pick===min?'lo':''}${x.pick===max?'hi':''}" title="${shortSource(x.source)}">${x.pick}</span>`).join('')}
+    </div>`;
+  document.body.appendChild(el);
+
+  // Position: unter der geklickten Zelle, aber im Viewport bleiben.
+  const rect = anchorEl.getBoundingClientRect();
+  let top = rect.bottom + 6, left = rect.left;
+  const w = 260;
+  if(left + w > window.innerWidth - 10) left = window.innerWidth - w - 10;
+  if(top + 300 > window.innerHeight) top = Math.max(10, rect.top - 306);
+  el.style.top = top + 'px';
+  el.style.left = left + 'px';
+
+  el.querySelector('.close-x').addEventListener('click', closeAdpPopover);
+  currentAdpPopover = el;
+  // setTimeout, damit der auslösende Klick nicht sofort wieder als
+  // "außerhalb geklickt" gewertet wird (Event-Bubbling-Reihenfolge).
+  setTimeout(() => {
+    document.addEventListener('click', onAdpPopoverOutsideClick);
+    document.addEventListener('keydown', onAdpPopoverEscape);
+  }, 0);
+}
+
 
 function renderSlots(){
   const {slotAssignment, unassigned} = teamRoster(state.myTeam);

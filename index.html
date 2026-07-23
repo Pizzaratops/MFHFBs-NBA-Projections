@@ -215,6 +215,7 @@
 <script src="players-data.js"></script>
 <script src="projected-minutes.js"></script>
 <script src="adp-data.js" onerror="window.__adpMissing=true"></script>
+<script src="rosters-data.js" onerror="window.__rostersMissing=true"></script>
 <script src="assets/shared.js"></script>
 <script>
 let sortKey = 'z', sortAsc = false;
@@ -228,6 +229,13 @@ const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'f
 const HEAT_INVERT = { tov: true };
 
 mfhfbInitThemeToggle('themeToggle');
+
+// Team-Anzeige auf AKTUELLES Team umstellen (aus dem täglichen ESPN-Fetch,
+// rosters-data.js) statt dem historischen Team der letzten gespielten
+// Saison aus players-data.js -- z.B. nach Trades wie Giannis -> Miami.
+// Einmalig beim Laden, danach lesen alle Renders einfach p.team wie bisher.
+// Nur hier + draft.html, NICHT auf teams.html (siehe Kommentar in shared.js).
+if (typeof ROSTERS_DATA !== 'undefined') mfhfbApplyCurrentTeams(PLAYER_RATES);
 
 document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
 
