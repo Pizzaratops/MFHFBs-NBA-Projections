@@ -1,346 +1,26 @@
 // MFHFBs NBA Projections — ADP-Daten (Output von scripts/build-adp-data.py)
-// Eigene Draft Results: 214 Spieler | Fantrax-ADP: 600 Spieler
+// Eigene Draft Results: 217 Spieler | Fantrax-ADP: 600 Spieler
 // Key = normalisierter Spielername (siehe mfhfbNormalizeName in assets/shared.js)
 // Felder: ownAdp/ownCount/ownMin/ownMax (aus data/draft-results/), fantraxAdp (aus data/fantrax-adp.csv)
 // NICHT MANUELL BEARBEITEN — Skript erneut laufen lassen, nachdem neue CSVs abgelegt wurden.
 const ADP_DATA = {
- "daniel gafford": {
-  "name": "Daniel Gafford",
-  "ownAdp": 143.8,
-  "ownCount": 5,
-  "ownMin": 126,
-  "ownMax": 159,
-  "fantraxAdp": 189,
-  "team": "DAL",
-  "pos": "C"
- },
- "cam spencer": {
-  "name": "Cam Spencer",
-  "ownAdp": 164.0,
-  "ownCount": 1,
-  "ownMin": 164,
-  "ownMax": 164,
-  "fantraxAdp": 112,
-  "team": "MEM",
-  "pos": "SG"
- },
- "tristan enaruna": {
-  "name": "Tristan Enaruna",
+ "pat spencer": {
+  "name": "Pat Spencer",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 501,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "dillon brooks": {
-  "name": "Dillon Brooks",
-  "ownAdp": 138.5,
-  "ownCount": 11,
-  "ownMin": 111,
-  "ownMax": 153,
-  "fantraxAdp": 125,
-  "team": "PHO",
-  "pos": "SF"
- },
- "nickeil alexanderwalker": {
-  "name": "Nickeil Alexander-Walker",
-  "ownAdp": 47.8,
-  "ownCount": 25,
-  "ownMin": 29,
-  "ownMax": 65,
-  "fantraxAdp": 12,
-  "team": "ATL",
-  "pos": "SG"
- },
- "javonte cooke": {
-  "name": "Javonte Cooke",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 509,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "cedric coward": {
-  "name": "Cedric Coward",
-  "ownAdp": 113.2,
-  "ownCount": 18,
-  "ownMin": 86,
-  "ownMax": 148,
-  "fantraxAdp": 116,
-  "team": "MEM",
-  "pos": "SG"
- },
- "scotty pippen": {
-  "name": "Scotty Pippen",
-  "ownAdp": 154.2,
-  "ownCount": 8,
-  "ownMin": 147,
-  "ownMax": 168,
-  "fantraxAdp": 424,
-  "team": "MEM",
-  "pos": "PG"
- },
- "jose alvarado": {
-  "name": "Jose Alvarado",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 208,
-  "team": "NY",
-  "pos": "Flx"
- },
- "christian braun": {
-  "name": "Christian Braun",
-  "ownAdp": 159.6,
-  "ownCount": 5,
-  "ownMin": 154,
-  "ownMax": 167,
-  "fantraxAdp": 246,
-  "team": "DEN",
-  "pos": "SG"
- },
- "chet holmgren": {
-  "name": "Chet Holmgren",
-  "ownAdp": 26.3,
-  "ownCount": 27,
-  "ownMin": 14,
-  "ownMax": 41,
-  "fantraxAdp": 51,
-  "team": "OKC",
-  "pos": "C"
- },
- "egor demin": {
-  "name": "Egor Demin",
-  "ownAdp": 132.4,
-  "ownCount": 15,
-  "ownMin": 107,
-  "ownMax": 164,
-  "fantraxAdp": 212,
-  "team": "BKN",
-  "pos": "PG"
- },
- "kennedy chandler": {
-  "name": "Kennedy Chandler",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 394,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jamal murray": {
-  "name": "Jamal Murray",
-  "ownAdp": 20.2,
-  "ownCount": 28,
-  "ownMin": 11,
-  "ownMax": 31,
-  "fantraxAdp": 15,
-  "team": "DEN",
-  "pos": "PG"
- },
- "rayan rupert": {
-  "name": "Rayan Rupert",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 298,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "robert williams": {
-  "name": "Robert Williams",
-  "ownAdp": 157.0,
-  "ownCount": 1,
-  "ownMin": 157,
-  "ownMax": 157,
-  "fantraxAdp": 229,
-  "team": "POR",
-  "pos": "C"
- },
- "jamison battle": {
-  "name": "Jamison Battle",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 404,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "caleb houstan": {
-  "name": "Caleb Houstan",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 500,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "chris livingston": {
-  "name": "Chris Livingston",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 553,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "orlando robinson": {
-  "name": "Orlando Robinson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 555,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "walter clayton": {
-  "name": "Walter Clayton",
-  "ownAdp": 154.0,
-  "ownCount": 1,
-  "ownMin": 154,
-  "ownMax": 154,
-  "fantraxAdp": 188,
-  "team": "MEM",
-  "pos": "PG"
- },
- "doug mcdermott": {
-  "name": "Doug McDermott",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 417,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "joan beringer": {
-  "name": "Joan Beringer",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 390,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "aaron holiday": {
-  "name": "Aaron Holiday",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 336,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "deni avdija": {
-  "name": "Deni Avdija",
-  "ownAdp": 37.2,
-  "ownCount": 25,
-  "ownMin": 20,
-  "ownMax": 56,
-  "fantraxAdp": 31,
-  "team": "POR",
-  "pos": "SF"
- },
- "bobi klintman": {
-  "name": "Bobi Klintman",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 515,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "cj huntley": {
-  "name": "CJ Huntley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 547,
+  "fantraxAdp": 241,
   "team": "PHO",
   "pos": "Flx"
  },
- "corey kispert": {
-  "name": "Corey Kispert",
+ "justin anderson": {
+  "name": "Justin Anderson",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 267,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "brandin podziemski": {
-  "name": "Brandin Podziemski",
-  "ownAdp": 130.6,
-  "ownCount": 16,
-  "ownMin": 113,
-  "ownMax": 166,
-  "fantraxAdp": 44,
-  "team": "GS",
-  "pos": "SG"
- },
- "miles mcbride": {
-  "name": "Miles McBride",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 270,
-  "team": "NY",
-  "pos": "Flx"
- },
- "bam adebayo": {
-  "name": "Bam Adebayo",
-  "ownAdp": 35.9,
-  "ownCount": 26,
-  "ownMin": 23,
-  "ownMax": 46,
-  "fantraxAdp": 16,
-  "team": "MIA",
-  "pos": "C"
- },
- "ousmane dieng": {
-  "name": "Ousmane Dieng",
-  "ownAdp": 164.0,
-  "ownCount": 1,
-  "ownMin": 164,
-  "ownMax": 164,
-  "fantraxAdp": 274,
-  "team": "MIL",
-  "pos": "C"
- },
- "domantas sabonis": {
-  "name": "Domantas Sabonis",
-  "ownAdp": 44.7,
-  "ownCount": 25,
-  "ownMin": 23,
-  "ownMax": 61,
-  "fantraxAdp": 323,
-  "team": "SAC",
-  "pos": "C"
- },
- "jaden ivey": {
-  "name": "Jaden Ivey",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 327,
+  "fantraxAdp": 595,
   "team": "(N/A)",
   "pos": "Flx"
  },
@@ -354,765 +34,25 @@ const ADP_DATA = {
   "team": "SAC",
   "pos": "Flx"
  },
- "josh green": {
-  "name": "Josh Green",
+ "myron gardner": {
+  "name": "Myron Gardner",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 344,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "lawson lovering": {
-  "name": "Lawson Lovering",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 527,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "cody williams": {
-  "name": "Cody Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 213,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "jrue holiday": {
-  "name": "Jrue Holiday",
-  "ownAdp": 134.2,
-  "ownCount": 9,
-  "ownMin": 124,
-  "ownMax": 166,
-  "fantraxAdp": 115,
-  "team": "POR",
-  "pos": "PG"
- },
- "keyonte george": {
-  "name": "Keyonte George",
-  "ownAdp": 55.3,
-  "ownCount": 25,
-  "ownMin": 41,
-  "ownMax": 76,
-  "fantraxAdp": 71,
-  "team": "UTA",
-  "pos": "PG"
- },
- "john poulakidas": {
-  "name": "John Poulakidas",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 442,
-  "team": "DAL",
-  "pos": "Flx"
- },
- "ethan thompson": {
-  "name": "Ethan Thompson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 359,
-  "team": "IND",
-  "pos": "Flx"
- },
- "thomas bryant": {
-  "name": "Thomas Bryant",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 305,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "jaxson hayes": {
-  "name": "Jaxson Hayes",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 236,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "anthony davis": {
-  "name": "Anthony Davis",
-  "ownAdp": 27.8,
-  "ownCount": 26,
-  "ownMin": 15,
-  "ownMax": 40,
-  "fantraxAdp": 292,
-  "team": "WAS",
-  "pos": "PF"
- },
- "cormac ryan": {
-  "name": "Cormac Ryan",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 415,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "riley minix": {
-  "name": "Riley Minix",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 508,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "gui santos": {
-  "name": "Gui Santos",
-  "ownAdp": 161.5,
-  "ownCount": 2,
-  "ownMin": 160,
-  "ownMax": 163,
-  "fantraxAdp": 165,
-  "team": "GS",
-  "pos": "PF"
- },
- "isaiah jackson": {
-  "name": "Isaiah Jackson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 259,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "mouhamadou gueye": {
-  "name": "Mouhamadou Gueye",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 530,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "jaylon tyson": {
-  "name": "Jaylon Tyson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 110,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "ajay mitchell": {
-  "name": "Ajay Mitchell",
-  "ownAdp": 114.8,
-  "ownCount": 19,
-  "ownMin": 95,
-  "ownMax": 133,
-  "fantraxAdp": 136,
-  "team": "OKC",
-  "pos": "SG"
- },
- "aaron wiggins": {
-  "name": "Aaron Wiggins",
-  "ownAdp": 145.0,
-  "ownCount": 2,
-  "ownMin": 142,
-  "ownMax": 148,
-  "fantraxAdp": 187,
-  "team": "ATL",
-  "pos": "SG"
- },
- "reed sheppard": {
-  "name": "Reed Sheppard",
-  "ownAdp": 107.5,
-  "ownCount": 17,
-  "ownMin": 91,
-  "ownMax": 130,
-  "fantraxAdp": 37,
-  "team": "HOU",
-  "pos": "PG"
- },
- "larry nance": {
-  "name": "Larry Nance",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 405,
-  "team": "IND",
-  "pos": "Flx"
- },
- "blake hinson": {
-  "name": "Blake Hinson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 426,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "taj gibson": {
-  "name": "Taj Gibson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 497,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "joe ingles": {
-  "name": "Joe Ingles",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 472,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "nigel hayesdavis": {
-  "name": "Nigel Hayes-Davis",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 488,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "matisse thybulle": {
-  "name": "Matisse Thybulle",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 352,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "marjon beauchamp": {
-  "name": "MarJon Beauchamp",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 444,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "hunter dickinson": {
-  "name": "Hunter Dickinson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 543,
-  "team": "NO",
-  "pos": "Flx"
- },
- "trey alexander": {
-  "name": "Trey Alexander",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 489,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "colby jones": {
-  "name": "Colby Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 567,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "garrett temple": {
-  "name": "Garrett Temple",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 512,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "mouhamed gueye": {
-  "name": "Mouhamed Gueye",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 250,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "jared harper": {
-  "name": "Jared Harper",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 589,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "isaiah livers": {
-  "name": "Isaiah Livers",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 441,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "jonas valanciunas": {
-  "name": "Jonas Valanciunas",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 235,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jamal cain": {
-  "name": "Jamal Cain",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 380,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "pascal siakam": {
-  "name": "Pascal Siakam",
-  "ownAdp": 55.3,
-  "ownCount": 25,
-  "ownMin": 39,
-  "ownMax": 78,
-  "fantraxAdp": 55,
-  "team": "IND",
-  "pos": "PF"
- },
- "will riley": {
-  "name": "Will Riley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 166,
-  "team": "WAS",
-  "pos": "Flx"
- },
- "dereck lively": {
-  "name": "Dereck Lively",
-  "ownAdp": 153.0,
-  "ownCount": 1,
-  "ownMin": 153,
-  "ownMax": 153,
-  "fantraxAdp": 477,
-  "team": "DAL",
-  "pos": "C"
- },
- "jordan miller": {
-  "name": "Jordan Miller",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 218,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "trendon watford": {
-  "name": "Trendon Watford",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 301,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "vj edgecombe": {
-  "name": "VJ Edgecombe",
-  "ownAdp": 75.7,
-  "ownCount": 23,
-  "ownMin": 45,
-  "ownMax": 101,
-  "fantraxAdp": 23,
-  "team": "PHI",
-  "pos": "SG"
- },
- "kobe brown": {
-  "name": "Kobe Brown",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 306,
-  "team": "IND",
-  "pos": "Flx"
- },
- "vit krejci": {
-  "name": "Vit Krejci",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 230,
-  "team": "POR",
-  "pos": "Flx"
- },
- "andrew wiggins": {
-  "name": "Andrew Wiggins",
-  "ownAdp": 104.2,
-  "ownCount": 20,
-  "ownMin": 90,
-  "ownMax": 142,
-  "fantraxAdp": 50,
+  "fantraxAdp": 378,
   "team": "MIA",
-  "pos": "SF"
- },
- "isaac jones": {
-  "name": "Isaac Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 552,
-  "team": "DET",
   "pos": "Flx"
  },
- "lamelo ball": {
-  "name": "LaMelo Ball",
-  "ownAdp": 24.9,
-  "ownCount": 28,
-  "ownMin": 16,
-  "ownMax": 33,
-  "fantraxAdp": 25,
-  "team": "MIN",
-  "pos": "PG"
- },
- "karlanthony towns": {
-  "name": "Karl-Anthony Towns",
-  "ownAdp": 16.9,
-  "ownCount": 28,
-  "ownMin": 13,
-  "ownMax": 24,
-  "fantraxAdp": 33,
-  "team": "NY",
-  "pos": "C"
- },
- "zaccharie risacher": {
-  "name": "Zaccharie Risacher",
-  "ownAdp": 153.0,
-  "ownCount": 2,
-  "ownMin": 138,
-  "ownMax": 168,
-  "fantraxAdp": 176,
-  "team": "DAL",
-  "pos": "SF"
- },
- "kyrie irving": {
-  "name": "Kyrie Irving",
-  "ownAdp": 61.6,
+ "darius garland": {
+  "name": "Darius Garland",
+  "ownAdp": 54.9,
   "ownCount": 25,
-  "ownMin": 35,
-  "ownMax": 81,
-  "fantraxAdp": null,
-  "team": "DAL",
-  "pos": "SG"
- },
- "pat connaughton": {
-  "name": "Pat Connaughton",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 435,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "trae young": {
-  "name": "Trae Young",
-  "ownAdp": 22.8,
-  "ownCount": 28,
-  "ownMin": 10,
-  "ownMax": 35,
-  "fantraxAdp": 341,
-  "team": "WAS",
+  "ownMin": 33,
+  "ownMax": 68,
+  "fantraxAdp": 152,
+  "team": "LAC",
   "pos": "PG"
- },
- "olivier sarr": {
-  "name": "Olivier Sarr",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 523,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "jaylin williams": {
-  "name": "Jaylin Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 174,
-  "team": "OKC",
-  "pos": "Flx"
- },
- "jordan mclaughlin": {
-  "name": "Jordan McLaughlin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 437,
-  "team": "SA",
-  "pos": "Flx"
- },
- "john konchar": {
-  "name": "John Konchar",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 252,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "tyler burton": {
-  "name": "Tyler Burton",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 425,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "dariq whitehead": {
-  "name": "Dariq Whitehead",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 464,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "ky bowman": {
-  "name": "Ky Bowman",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 580,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jarace walker": {
-  "name": "Jarace Walker",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 77,
-  "team": "IND",
-  "pos": "Flx"
- },
- "dean wade": {
-  "name": "Dean Wade",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 272,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "nicolas claxton": {
-  "name": "Nicolas Claxton",
-  "ownAdp": 101.8,
-  "ownCount": 20,
-  "ownMin": 84,
-  "ownMax": 120,
-  "fantraxAdp": 85,
-  "team": "CHI",
-  "pos": "C"
- },
- "joel embiid": {
-  "name": "Joel Embiid",
-  "ownAdp": 57.5,
-  "ownCount": 25,
-  "ownMin": 34,
-  "ownMax": 88,
-  "fantraxAdp": 124,
-  "team": "PHI",
-  "pos": "C"
- },
- "pj hall": {
-  "name": "PJ Hall",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 439,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "kasparas jakucionis": {
-  "name": "Kasparas Jakucionis",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 293,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "ochai agbaji": {
-  "name": "Ochai Agbaji",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 330,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "ja morant": {
-  "name": "Ja Morant",
-  "ownAdp": 78.7,
-  "ownCount": 22,
-  "ownMin": 57,
-  "ownMax": 119,
-  "fantraxAdp": null,
-  "team": "POR",
-  "pos": "PG"
- },
- "jaden mcdaniels": {
-  "name": "Jaden McDaniels",
-  "ownAdp": 78.2,
-  "ownCount": 22,
-  "ownMin": 63,
-  "ownMax": 88,
-  "fantraxAdp": 48,
-  "team": "MIN",
-  "pos": "PF"
- },
- "paul george": {
-  "name": "Paul George",
-  "ownAdp": 80.1,
-  "ownCount": 23,
-  "ownMin": 64,
-  "ownMax": 96,
-  "fantraxAdp": 171,
-  "team": "BOS",
-  "pos": "PF"
- },
- "nick richards": {
-  "name": "Nick Richards",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 318,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jalen johnson": {
-  "name": "Jalen Johnson",
-  "ownAdp": 9.1,
-  "ownCount": 30,
-  "ownMin": 5,
-  "ownMax": 14,
-  "fantraxAdp": 9,
-  "team": "ATL",
-  "pos": "SF"
- },
- "naz reid": {
-  "name": "Naz Reid",
-  "ownAdp": 73.9,
-  "ownCount": 23,
-  "ownMin": 53,
-  "ownMax": 90,
-  "fantraxAdp": 38,
-  "team": "CHA",
-  "pos": "C"
- },
- "jamir watkins": {
-  "name": "Jamir Watkins",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 265,
-  "team": "WAS",
-  "pos": "Flx"
- },
- "malevy leons": {
-  "name": "Malevy Leons",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 436,
-  "team": "GS",
-  "pos": "Flx"
- },
- "scoot henderson": {
-  "name": "Scoot Henderson",
-  "ownAdp": 162.0,
-  "ownCount": 2,
-  "ownMin": 156,
-  "ownMax": 168,
-  "fantraxAdp": null,
-  "team": "POR",
-  "pos": "PG"
- },
- "maxime raynaud": {
-  "name": "Maxime Raynaud",
-  "ownAdp": 126.4,
-  "ownCount": 16,
-  "ownMin": 97,
-  "ownMax": 142,
-  "fantraxAdp": 134,
-  "team": "SAC",
-  "pos": "C"
- },
- "kyshawn george": {
-  "name": "Kyshawn George",
-  "ownAdp": 119.9,
-  "ownCount": 17,
-  "ownMin": 98,
-  "ownMax": 148,
-  "fantraxAdp": 122,
-  "team": "WAS",
-  "pos": "SG"
  },
  "donte divincenzo": {
   "name": "Donte DiVincenzo",
@@ -1124,353 +64,43 @@ const ADP_DATA = {
   "team": "MIN",
   "pos": "SG"
  },
- "jacob toppin": {
-  "name": "Jacob Toppin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 560,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "scottie barnes": {
-  "name": "Scottie Barnes",
-  "ownAdp": 9.9,
-  "ownCount": 29,
-  "ownMin": 4,
-  "ownMax": 15,
-  "fantraxAdp": 3,
-  "team": "TOR",
-  "pos": "PF"
- },
- "jalen wilson": {
-  "name": "Jalen Wilson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 319,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "craig porter": {
-  "name": "Craig Porter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 245,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "rj hunter": {
-  "name": "R.J. Hunter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 593,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "kevin huerter": {
-  "name": "Kevin Huerter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 146,
-  "team": "DET",
-  "pos": "Flx"
- },
- "amen thompson": {
-  "name": "Amen Thompson",
-  "ownAdp": 23.6,
-  "ownCount": 27,
-  "ownMin": 10,
-  "ownMax": 42,
-  "fantraxAdp": 29,
-  "team": "HOU",
-  "pos": "SF"
- },
- "bronny james": {
-  "name": "Bronny James",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 423,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "deaaron fox": {
-  "name": "De'Aaron Fox",
-  "ownAdp": 67.8,
+ "ryan rollins": {
+  "name": "Ryan Rollins",
+  "ownAdp": 67.2,
   "ownCount": 25,
-  "ownMin": 41,
-  "ownMax": 92,
-  "fantraxAdp": 47,
-  "team": "SA",
+  "ownMin": 54,
+  "ownMax": 89,
+  "fantraxAdp": 28,
+  "team": "MIL",
   "pos": "PG"
  },
- "lauri markkanen": {
-  "name": "Lauri Markkanen",
-  "ownAdp": 30.8,
-  "ownCount": 25,
-  "ownMin": 22,
-  "ownMax": 40,
-  "fantraxAdp": 119,
-  "team": "UTA",
-  "pos": "PF"
- },
- "goga bitadze": {
-  "name": "Goga Bitadze",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 237,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "danny wolf": {
-  "name": "Danny Wolf",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 211,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "kentavious caldwellpope": {
-  "name": "Kentavious Caldwell-Pope",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 264,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "kelly oubre": {
-  "name": "Kelly Oubre Jr.",
-  "ownAdp": 157.5,
-  "ownCount": 2,
-  "ownMin": 148,
-  "ownMax": 167,
-  "fantraxAdp": 163,
-  "team": "IND",
-  "pos": "SF"
- },
- "julian champagnie": {
-  "name": "Julian Champagnie",
-  "ownAdp": 151.7,
-  "ownCount": 3,
-  "ownMin": 150,
-  "ownMax": 154,
-  "fantraxAdp": 68,
-  "team": "SA",
-  "pos": "SF"
- },
- "andre jackson": {
-  "name": "Andre Jackson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 407,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "monte morris": {
-  "name": "Monte Morris",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 526,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jusuf nurkic": {
-  "name": "Jusuf Nurkic",
-  "ownAdp": 123.1,
-  "ownCount": 17,
-  "ownMin": 86,
-  "ownMax": 153,
-  "fantraxAdp": 198,
-  "team": "UTA",
+ "neemias queta": {
+  "name": "Neemias Queta",
+  "ownAdp": 113.8,
+  "ownCount": 20,
+  "ownMin": 84,
+  "ownMax": 139,
+  "fantraxAdp": 94,
+  "team": "BOS",
   "pos": "C"
  },
- "phil booth": {
-  "name": "Phil Booth",
+ "kris dunn": {
+  "name": "Kris Dunn",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 574,
-  "team": "(N/A)",
+  "fantraxAdp": 126,
+  "team": "LAC",
   "pos": "Flx"
  },
- "jabari walker": {
-  "name": "Jabari Walker",
+ "isaac jones": {
+  "name": "Isaac Jones",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 326,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "jordan poole": {
-  "name": "Jordan Poole",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 253,
-  "team": "NO",
-  "pos": "Flx"
- },
- "malik monk": {
-  "name": "Malik Monk",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 167,
-  "team": "SAC",
-  "pos": "Flx"
- },
- "amari williams": {
-  "name": "Amari Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 480,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "adem bona": {
-  "name": "Adem Bona",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 244,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "christian koloko": {
-  "name": "Christian Koloko",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 421,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "kevin durant": {
-  "name": "Kevin Durant",
-  "ownAdp": 17.4,
-  "ownCount": 28,
-  "ownMin": 7,
-  "ownMax": 27,
-  "fantraxAdp": 6,
-  "team": "HOU",
-  "pos": "PF"
- },
- "noa essengue": {
-  "name": "Noa Essengue",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 571,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "dennis schroder": {
-  "name": "Dennis Schroder",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 133,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "karlo matkovic": {
-  "name": "Karlo Matkovic",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 282,
-  "team": "NO",
-  "pos": "Flx"
- },
- "ron harper": {
-  "name": "Ron Harper",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 429,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "xavier tillman": {
-  "name": "Xavier Tillman",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 469,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "alex morales": {
-  "name": "Alex Morales",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 557,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "coby white": {
-  "name": "Coby White",
-  "ownAdp": 88.2,
-  "ownCount": 23,
-  "ownMin": 72,
-  "ownMax": 101,
-  "fantraxAdp": 158,
-  "team": "CHA",
-  "pos": "SG"
- },
- "toby okani": {
-  "name": "Toby Okani",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 483,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "chaz lanier": {
-  "name": "Chaz Lanier",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 465,
+  "fantraxAdp": 552,
   "team": "DET",
   "pos": "Flx"
  },
@@ -1484,103 +114,263 @@ const ADP_DATA = {
   "team": "OKC",
   "pos": "Flx"
  },
- "daron holmes": {
-  "name": "DaRon Holmes",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 451,
-  "team": "DEN",
-  "pos": "Flx"
+ "alperen sengun": {
+  "name": "Alperen Sengun",
+  "ownAdp": 21.4,
+  "ownCount": 28,
+  "ownMin": 13,
+  "ownMax": 37,
+  "fantraxAdp": 18,
+  "team": "HOU",
+  "pos": "C"
  },
- "kj simpson": {
-  "name": "KJ Simpson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 438,
-  "team": "DEN",
-  "pos": "Flx"
+ "keldon johnson": {
+  "name": "Keldon Johnson",
+  "ownAdp": 122.0,
+  "ownCount": 3,
+  "ownMin": 78,
+  "ownMax": 161,
+  "fantraxAdp": 108,
+  "team": "SA",
+  "pos": "SF"
  },
- "tolu smith": {
-  "name": "Tolu Smith",
+ "bryce brown": {
+  "name": "Bryce Brown",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 461,
-  "team": "DET",
-  "pos": "Flx"
- },
- "naeqwan tomlin": {
-  "name": "Nae'Qwan Tomlin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 287,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "johnny furphy": {
-  "name": "Johnny Furphy",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 375,
-  "team": "IND",
-  "pos": "Flx"
- },
- "dru smith": {
-  "name": "Dru Smith",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 199,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "dario saric": {
-  "name": "Dario Saric",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 563,
+  "fantraxAdp": 585,
   "team": "(N/A)",
   "pos": "Flx"
  },
- "zach lavine": {
-  "name": "Zach LaVine",
-  "ownAdp": 121.7,
-  "ownCount": 18,
-  "ownMin": 94,
-  "ownMax": 140,
-  "fantraxAdp": 220,
-  "team": "SAC",
-  "pos": "SG"
+ "tyrese maxey": {
+  "name": "Tyrese Maxey",
+  "ownAdp": 6.4,
+  "ownCount": 31,
+  "ownMin": 1,
+  "ownMax": 11,
+  "fantraxAdp": 2,
+  "team": "PHI",
+  "pos": "PG"
  },
- "carlton carrington": {
-  "name": "Carlton Carrington",
+ "brandon ingram": {
+  "name": "Brandon Ingram",
+  "ownAdp": 68.8,
+  "ownCount": 25,
+  "ownMin": 49,
+  "ownMax": 89,
+  "fantraxAdp": 24,
+  "team": "TOR",
+  "pos": "SF"
+ },
+ "aj lawson": {
+  "name": "A.J. Lawson",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 93,
-  "team": "WAS",
+  "fantraxAdp": 440,
+  "team": "(N/A)",
   "pos": "Flx"
  },
- "john tonje": {
-  "name": "John Tonje",
+ "jalen johnson": {
+  "name": "Jalen Johnson",
+  "ownAdp": 9.1,
+  "ownCount": 30,
+  "ownMin": 5,
+  "ownMax": 14,
+  "fantraxAdp": 9,
+  "team": "ATL",
+  "pos": "SF"
+ },
+ "isaiah stevens": {
+  "name": "Isaiah Stevens",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 539,
+  "fantraxAdp": 535,
+  "team": "SAC",
+  "pos": "Flx"
+ },
+ "rayj dennis": {
+  "name": "RayJ Dennis",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 458,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "stephon castle": {
+  "name": "Stephon Castle",
+  "ownAdp": 59.0,
+  "ownCount": 25,
+  "ownMin": 38,
+  "ownMax": 84,
+  "fantraxAdp": 59,
+  "team": "SA",
+  "pos": "PG"
+ },
+ "amir coffey": {
+  "name": "Amir Coffey",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 411,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "dayron sharpe": {
+  "name": "Day'Ron Sharpe",
+  "ownAdp": 108.7,
+  "ownCount": 20,
+  "ownMin": 70,
+  "ownMax": 131,
+  "fantraxAdp": 173,
+  "team": "BKN",
+  "pos": "C"
+ },
+ "drew eubanks": {
+  "name": "Drew Eubanks",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 367,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jalen duren": {
+  "name": "Jalen Duren",
+  "ownAdp": 43.0,
+  "ownCount": 25,
+  "ownMin": 32,
+  "ownMax": 60,
+  "fantraxAdp": 73,
+  "team": "DET",
+  "pos": "C"
+ },
+ "jock landale": {
+  "name": "Jock Landale",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 160,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "markelle fultz": {
+  "name": "Markelle Fultz",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 556,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jabari smith": {
+  "name": "Jabari Smith",
+  "ownAdp": 85.3,
+  "ownCount": 23,
+  "ownMin": 71,
+  "ownMax": 107,
+  "fantraxAdp": 34,
+  "team": "HOU",
+  "pos": "PF"
+ },
+ "ziaire williams": {
+  "name": "Ziaire Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 204,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "kevon looney": {
+  "name": "Kevon Looney",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 433,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "coby white": {
+  "name": "Coby White",
+  "ownAdp": 88.2,
+  "ownCount": 23,
+  "ownMin": 72,
+  "ownMax": 101,
+  "fantraxAdp": 158,
+  "team": "CHA",
+  "pos": "SG"
+ },
+ "keshad johnson": {
+  "name": "Keshad Johnson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 414,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jamal cain": {
+  "name": "Jamal Cain",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 380,
+  "team": "ORL",
+  "pos": "Flx"
+ },
+ "nikola jokic": {
+  "name": "Nikola Jokic",
+  "ownAdp": 1.6,
+  "ownCount": 31,
+  "ownMin": 1,
+  "ownMax": 3,
+  "fantraxAdp": 4,
+  "team": "DEN",
+  "pos": "C"
+ },
+ "jonas valanciunas": {
+  "name": "Jonas Valanciunas",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 235,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "pat connaughton": {
+  "name": "Pat Connaughton",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 435,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "kevin love": {
+  "name": "Kevin Love",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 328,
   "team": "(N/A)",
   "pos": "Flx"
  },
@@ -1594,1476 +384,6 @@ const ADP_DATA = {
   "team": "MIN",
   "pos": "SG"
  },
- "josh minott": {
-  "name": "Josh Minott",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 291,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "lj cryer": {
-  "name": "L.J. Cryer",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 432,
-  "team": "GS",
-  "pos": "Flx"
- },
- "norense odiase": {
-  "name": "Norense Odiase",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 590,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "ivica zubac": {
-  "name": "Ivica Zubac",
-  "ownAdp": 70.3,
-  "ownCount": 24,
-  "ownMin": 56,
-  "ownMax": 90,
-  "fantraxAdp": 186,
-  "team": "IND",
-  "pos": "C"
- },
- "carter bryant": {
-  "name": "Carter Bryant",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 321,
-  "team": "SA",
-  "pos": "Flx"
- },
- "buddy boeheim": {
-  "name": "Buddy Boeheim",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 565,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "payton sandfort": {
-  "name": "Payton Sandfort",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 513,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "gary trent": {
-  "name": "Gary Trent",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 279,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "hugo gonzalez": {
-  "name": "Hugo Gonzalez",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 313,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "patrick williams": {
-  "name": "Patrick Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 219,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "rasheer fleming": {
-  "name": "Rasheer Fleming",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 353,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "toumani camara": {
-  "name": "Toumani Camara",
-  "ownAdp": 102.6,
-  "ownCount": 20,
-  "ownMin": 81,
-  "ownMax": 128,
-  "fantraxAdp": 41,
-  "team": "POR",
-  "pos": "PF"
- },
- "drake powell": {
-  "name": "Drake Powell",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 290,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "thanasis antetokounmpo": {
-  "name": "Thanasis Antetokounmpo",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 462,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tristan da silva": {
-  "name": "Tristan da Silva",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 129,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "anthony gill": {
-  "name": "Anthony Gill",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 316,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "pete nance": {
-  "name": "Pete Nance",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 362,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "josh okogie": {
-  "name": "Josh Okogie",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 269,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "myles turner": {
-  "name": "Myles Turner",
-  "ownAdp": 83.2,
-  "ownCount": 21,
-  "ownMin": 66,
-  "ownMax": 99,
-  "fantraxAdp": 65,
-  "team": "MIL",
-  "pos": "C"
- },
- "cade cunningham": {
-  "name": "Cade Cunningham",
-  "ownAdp": 5.5,
-  "ownCount": 31,
-  "ownMin": 4,
-  "ownMax": 7,
-  "fantraxAdp": 8,
-  "team": "DET",
-  "pos": "PG"
- },
- "dylan harper": {
-  "name": "Dylan Harper",
-  "ownAdp": 91.1,
-  "ownCount": 21,
-  "ownMin": 61,
-  "ownMax": 121,
-  "fantraxAdp": 138,
-  "team": "SA",
-  "pos": "SG"
- },
- "lonzo ball": {
-  "name": "Lonzo Ball",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 335,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "branden carlson": {
-  "name": "Branden Carlson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 363,
-  "team": "POR",
-  "pos": "Flx"
- },
- "rj barrett": {
-  "name": "RJ Barrett",
-  "ownAdp": 113.3,
-  "ownCount": 20,
-  "ownMin": 65,
-  "ownMax": 140,
-  "fantraxAdp": 98,
-  "team": "TOR",
-  "pos": "SF"
- },
- "ryan rollins": {
-  "name": "Ryan Rollins",
-  "ownAdp": 67.2,
-  "ownCount": 25,
-  "ownMin": 54,
-  "ownMax": 89,
-  "fantraxAdp": 28,
-  "team": "MIL",
-  "pos": "PG"
- },
- "caris levert": {
-  "name": "Caris LeVert",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 227,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "lindy waters": {
-  "name": "Lindy Waters",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 454,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "zyon pullin": {
-  "name": "Zyon Pullin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 525,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "johni broome": {
-  "name": "Johni Broome",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 529,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "jordan clarkson": {
-  "name": "Jordan Clarkson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 249,
-  "team": "NY",
-  "pos": "Flx"
- },
- "sion james": {
-  "name": "Sion James",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 195,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "pacome dadiet": {
-  "name": "Pacome Dadiet",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 482,
-  "team": "NY",
-  "pos": "Flx"
- },
- "svi mykhailiuk": {
-  "name": "Svi Mykhailiuk",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 300,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "jaylen clark": {
-  "name": "Jaylen Clark",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 324,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "dorian finneysmith": {
-  "name": "Dorian Finney-Smith",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 406,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "jeremiah robinsonearl": {
-  "name": "Jeremiah Robinson-Earl",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 430,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "herbert jones": {
-  "name": "Herbert Jones",
-  "ownAdp": 148.0,
-  "ownCount": 2,
-  "ownMin": 133,
-  "ownMax": 163,
-  "fantraxAdp": 181,
-  "team": "NO",
-  "pos": "SF"
- },
- "payton pritchard": {
-  "name": "Payton Pritchard",
-  "ownAdp": 73.8,
-  "ownCount": 24,
-  "ownMin": 49,
-  "ownMax": 89,
-  "fantraxAdp": 60,
-  "team": "BOS",
-  "pos": "PG"
- },
- "kelly olynyk": {
-  "name": "Kelly Olynyk",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 403,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "ben saraf": {
-  "name": "Ben Saraf",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 304,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "hunter tyson": {
-  "name": "Hunter Tyson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 478,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "neemias queta": {
-  "name": "Neemias Queta",
-  "ownAdp": 113.8,
-  "ownCount": 20,
-  "ownMin": 84,
-  "ownMax": 139,
-  "fantraxAdp": 94,
-  "team": "BOS",
-  "pos": "C"
- },
- "ben sheppard": {
-  "name": "Ben Sheppard",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 260,
-  "team": "IND",
-  "pos": "Flx"
- },
- "lachlan olbrich": {
-  "name": "Lachlan Olbrich",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 416,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "charles bassey": {
-  "name": "Charles Bassey",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 452,
-  "team": "GS",
-  "pos": "Flx"
- },
- "aj johnson": {
-  "name": "AJ Johnson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 401,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "bradley beal": {
-  "name": "Bradley Beal",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 493,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "keaton wagler": {
-  "name": "Keaton Wagler",
-  "ownAdp": 152.0,
-  "ownCount": 2,
-  "ownMin": 138,
-  "ownMax": 166,
-  "fantraxAdp": null,
-  "team": "LAC",
-  "pos": "SG"
- },
- "gradey dick": {
-  "name": "Gradey Dick",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 280,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "gg jackson": {
-  "name": "GG Jackson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 179,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "ron holland": {
-  "name": "Ron Holland",
-  "ownAdp": 156.0,
-  "ownCount": 2,
-  "ownMin": 152,
-  "ownMax": 160,
-  "fantraxAdp": 150,
-  "team": "DET",
-  "pos": "SF"
- },
- "collin murrayboyles": {
-  "name": "Collin Murray-Boyles",
-  "ownAdp": 113.4,
-  "ownCount": 19,
-  "ownMin": 80,
-  "ownMax": 147,
-  "fantraxAdp": 203,
-  "team": "TOR",
-  "pos": "PF"
- },
- "myron gardner": {
-  "name": "Myron Gardner",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 378,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "isaiah joe": {
-  "name": "Isaiah Joe",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 162,
-  "team": "DET",
-  "pos": "Flx"
- },
- "blake wesley": {
-  "name": "Blake Wesley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 402,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "julian phillips": {
-  "name": "Julian Phillips",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 409,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "ahmed hill": {
-  "name": "Ahmed Hill",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 578,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "paul reed": {
-  "name": "Paul Reed",
-  "ownAdp": 143.1,
-  "ownCount": 15,
-  "ownMin": 117,
-  "ownMax": 162,
-  "fantraxAdp": 200,
-  "team": "DET",
-  "pos": "C"
- },
- "william mcdowellwhite": {
-  "name": "William McDowell-White",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 579,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "malachi smith": {
-  "name": "Malachi Smith",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 420,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "luka doncic": {
-  "name": "Luka Doncic",
-  "ownAdp": 3.6,
-  "ownCount": 31,
-  "ownMin": 1,
-  "ownMax": 5,
-  "fantraxAdp": 1,
-  "team": "LAL",
-  "pos": "PG"
- },
- "luke kennard": {
-  "name": "Luke Kennard",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 180,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "julius randle": {
-  "name": "Julius Randle",
-  "ownAdp": 63.2,
-  "ownCount": 25,
-  "ownMin": 39,
-  "ownMax": 83,
-  "fantraxAdp": 30,
-  "team": "BKN",
-  "pos": "PF"
- },
- "cody martin": {
-  "name": "Cody Martin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 534,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "leonard miller": {
-  "name": "Leonard Miller",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 320,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "isaac okoro": {
-  "name": "Isaac Okoro",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 210,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "cam whitmore": {
-  "name": "Cam Whitmore",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 398,
-  "team": "WAS",
-  "pos": "Flx"
- },
- "jordan goodwin": {
-  "name": "Jordan Goodwin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 144,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "moses moody": {
-  "name": "Moses Moody",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 145,
-  "team": "GS",
-  "pos": "Flx"
- },
- "oliviermaxence prosper": {
-  "name": "Olivier-Maxence Prosper",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 256,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "tari eason": {
-  "name": "Tari Eason",
-  "ownAdp": 138.8,
-  "ownCount": 15,
-  "ownMin": 113,
-  "ownMax": 162,
-  "fantraxAdp": 164,
-  "team": "HOU",
-  "pos": "PF"
- },
- "draymond green": {
-  "name": "Draymond Green",
-  "ownAdp": 149.4,
-  "ownCount": 7,
-  "ownMin": 128,
-  "ownMax": 165,
-  "fantraxAdp": 107,
-  "team": "(N/A)",
-  "pos": "PF"
- },
- "tyty washington": {
-  "name": "TyTy Washington",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 505,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "buddy hield": {
-  "name": "Buddy Hield",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 307,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "wendell carter": {
-  "name": "Wendell Carter",
-  "ownAdp": 136.6,
-  "ownCount": 14,
-  "ownMin": 102,
-  "ownMax": 158,
-  "fantraxAdp": 72,
-  "team": "ORL",
-  "pos": "C"
- },
- "moritz wagner": {
-  "name": "Moritz Wagner",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 360,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "david kramer": {
-  "name": "David Kramer",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 591,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "stephen curry": {
-  "name": "Stephen Curry",
-  "ownAdp": 18.9,
-  "ownCount": 28,
-  "ownMin": 12,
-  "ownMax": 28,
-  "fantraxAdp": 87,
-  "team": "GS",
-  "pos": "PG"
- },
- "amir coffey": {
-  "name": "Amir Coffey",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 411,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tre johnson": {
-  "name": "Tre Johnson",
-  "ownAdp": 145.5,
-  "ownCount": 2,
-  "ownMin": 135,
-  "ownMax": 156,
-  "fantraxAdp": 192,
-  "team": "WAS",
-  "pos": "SG"
- },
- "nique clifford": {
-  "name": "Nique Clifford",
-  "ownAdp": 115.2,
-  "ownCount": 11,
-  "ownMin": 70,
-  "ownMax": 144,
-  "fantraxAdp": 153,
-  "team": "SAC",
-  "pos": "SG"
- },
- "jalen suggs": {
-  "name": "Jalen Suggs",
-  "ownAdp": 89.7,
-  "ownCount": 22,
-  "ownMin": 67,
-  "ownMax": 116,
-  "fantraxAdp": 70,
-  "team": "ORL",
-  "pos": "PG"
- },
- "chucky hepburn": {
-  "name": "Chucky Hepburn",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 570,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "jalen pickett": {
-  "name": "Jalen Pickett",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 345,
-  "team": "DEN",
-  "pos": "Flx"
- },
- "cameron carr": {
-  "name": "Cameron Carr",
-  "ownAdp": 161.0,
-  "ownCount": 1,
-  "ownMin": 161,
-  "ownMax": 161,
-  "fantraxAdp": null,
-  "team": "LAL",
-  "pos": "SG"
- },
- "aaron nesmith": {
-  "name": "Aaron Nesmith",
-  "ownAdp": 158.0,
-  "ownCount": 1,
-  "ownMin": 158,
-  "ownMax": 158,
-  "fantraxAdp": 214,
-  "team": "IND",
-  "pos": "SF"
- },
- "nikola vucevic": {
-  "name": "Nikola Vucevic",
-  "ownAdp": 121.6,
-  "ownCount": 5,
-  "ownMin": 97,
-  "ownMax": 155,
-  "fantraxAdp": 84,
-  "team": "ORL",
-  "pos": "C"
- },
- "vladislav goldin": {
-  "name": "Vladislav Goldin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 546,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "tyrese haliburton": {
-  "name": "Tyrese Haliburton",
-  "ownAdp": 11.7,
-  "ownCount": 29,
-  "ownMin": 7,
-  "ownMax": 21,
-  "fantraxAdp": null,
-  "team": "IND",
-  "pos": "PG"
- },
- "deandre hunter": {
-  "name": "De'Andre Hunter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 231,
-  "team": "SAC",
-  "pos": "Flx"
- },
- "isaiah stevens": {
-  "name": "Isaiah Stevens",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 535,
-  "team": "SAC",
-  "pos": "Flx"
- },
- "jevon carter": {
-  "name": "Jevon Carter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 314,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "matas buzelis": {
-  "name": "Matas Buzelis",
-  "ownAdp": 57.7,
-  "ownCount": 25,
-  "ownMin": 44,
-  "ownMax": 77,
-  "fantraxAdp": 26,
-  "team": "CHI",
-  "pos": "SF"
- },
- "devin carter": {
-  "name": "Devin Carter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 309,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "rocco zikarsky": {
-  "name": "Rocco Zikarsky",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 522,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "trentyn flowers": {
-  "name": "Trentyn Flowers",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 566,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tyler kolek": {
-  "name": "Tyler Kolek",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 333,
-  "team": "NY",
-  "pos": "Flx"
- },
- "luke kornet": {
-  "name": "Luke Kornet",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 191,
-  "team": "SA",
-  "pos": "Flx"
- },
- "keldon johnson": {
-  "name": "Keldon Johnson",
-  "ownAdp": 122.0,
-  "ownCount": 3,
-  "ownMin": 78,
-  "ownMax": 161,
-  "fantraxAdp": 108,
-  "team": "SA",
-  "pos": "SF"
- },
- "ausar thompson": {
-  "name": "Ausar Thompson",
-  "ownAdp": 78.7,
-  "ownCount": 25,
-  "ownMin": 59,
-  "ownMax": 98,
-  "fantraxAdp": 75,
-  "team": "DET",
-  "pos": "SF"
- },
- "kevin mccullar": {
-  "name": "Kevin McCullar",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 474,
-  "team": "NY",
-  "pos": "Flx"
- },
- "santi aldama": {
-  "name": "Santi Aldama",
-  "ownAdp": 166.5,
-  "ownCount": 2,
-  "ownMin": 165,
-  "ownMax": 168,
-  "fantraxAdp": 185,
-  "team": "DAL",
-  "pos": "PF"
- },
- "nate williams": {
-  "name": "Nate Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 453,
-  "team": "GS",
-  "pos": "Flx"
- },
- "aj green": {
-  "name": "AJ Green",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 161,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "brandon ingram": {
-  "name": "Brandon Ingram",
-  "ownAdp": 68.8,
-  "ownCount": 25,
-  "ownMin": 49,
-  "ownMax": 89,
-  "fantraxAdp": 24,
-  "team": "TOR",
-  "pos": "SF"
- },
- "cason wallace": {
-  "name": "Cason Wallace",
-  "ownAdp": 122.5,
-  "ownCount": 19,
-  "ownMin": 92,
-  "ownMax": 159,
-  "fantraxAdp": 109,
-  "team": "OKC",
-  "pos": "SG"
- },
- "mo bamba": {
-  "name": "Mo Bamba",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 533,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "kevin porter": {
-  "name": "Kevin Porter",
-  "ownAdp": 105.8,
-  "ownCount": 21,
-  "ownMin": 80,
-  "ownMax": 137,
-  "fantraxAdp": 140,
-  "team": "MIL",
-  "pos": "SG"
- },
- "julian reese": {
-  "name": "Julian Reese",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 386,
-  "team": "WAS",
-  "pos": "Flx"
- },
- "wendell moore": {
-  "name": "Wendell Moore",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 542,
-  "team": "DET",
-  "pos": "Flx"
- },
- "hayden gray": {
-  "name": "Hayden Gray",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 562,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "tyus jones": {
-  "name": "Tyus Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 343,
-  "team": "DEN",
-  "pos": "Flx"
- },
- "tariq owens": {
-  "name": "Tariq Owens",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 588,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "grant nelson": {
-  "name": "Grant Nelson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 517,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "liam mcneeley": {
-  "name": "Liam McNeeley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 410,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "malik pope": {
-  "name": "Malik Pope",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 594,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "emanuel miller": {
-  "name": "Emanuel Miller",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 541,
-  "team": "SA",
-  "pos": "Flx"
- },
- "guerschon yabusele": {
-  "name": "Guerschon Yabusele",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 284,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jett howard": {
-  "name": "Jett Howard",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 347,
-  "team": "DAL",
-  "pos": "Flx"
- },
- "keshad johnson": {
-  "name": "Keshad Johnson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 414,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "ty jerome": {
-  "name": "Ty Jerome",
-  "ownAdp": 91.0,
-  "ownCount": 21,
-  "ownMin": 62,
-  "ownMax": 136,
-  "fantraxAdp": 346,
-  "team": "MEM",
-  "pos": "SG"
- },
- "dalton knecht": {
-  "name": "Dalton Knecht",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 382,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "dillon jones": {
-  "name": "Dillon Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 544,
-  "team": "NY",
-  "pos": "Flx"
- },
- "quenton jackson": {
-  "name": "Quenton Jackson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 268,
-  "team": "IND",
-  "pos": "Flx"
- },
- "zion williamson": {
-  "name": "Zion Williamson",
-  "ownAdp": 82.1,
-  "ownCount": 24,
-  "ownMin": 54,
-  "ownMax": 96,
-  "fantraxAdp": 90,
-  "team": "NO",
-  "pos": "PF"
- },
- "jalen williams": {
-  "name": "Jalen Williams",
-  "ownAdp": 42.0,
-  "ownCount": 26,
-  "ownMin": 17,
-  "ownMax": 59,
-  "fantraxAdp": 233,
-  "team": "OKC",
-  "pos": "SG"
- },
- "jarred vanderbilt": {
-  "name": "Jarred Vanderbilt",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 285,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "justin champagnie": {
-  "name": "Justin Champagnie",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 169,
-  "team": "WAS",
-  "pos": "Flx"
- },
- "malaki branham": {
-  "name": "Malaki Branham",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 422,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "braxton key": {
-  "name": "Braxton Key",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 584,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "kelel ware": {
-  "name": "Kel'el Ware",
-  "ownAdp": 60.7,
-  "ownCount": 23,
-  "ownMin": 38,
-  "ownMax": 97,
-  "fantraxAdp": 91,
-  "team": "MIL",
-  "pos": "C"
- },
- "mark williams": {
-  "name": "Mark Williams",
-  "ownAdp": 113.4,
-  "ownCount": 20,
-  "ownMin": 91,
-  "ownMax": 141,
-  "fantraxAdp": 155,
-  "team": "PHO",
-  "pos": "C"
- },
- "austin reaves": {
-  "name": "Austin Reaves",
-  "ownAdp": 25.8,
-  "ownCount": 28,
-  "ownMin": 16,
-  "ownMax": 37,
-  "fantraxAdp": 76,
-  "team": "LAL",
-  "pos": "SG"
- },
- "jonathan mogbo": {
-  "name": "Jonathan Mogbo",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 445,
-  "team": "SAC",
-  "pos": "Flx"
- },
- "devin vassell": {
-  "name": "Devin Vassell",
-  "ownAdp": 130.8,
-  "ownCount": 14,
-  "ownMin": 100,
-  "ownMax": 167,
-  "fantraxAdp": null,
-  "team": "SA",
-  "pos": "SG"
- },
- "peyton watson": {
-  "name": "Peyton Watson",
-  "ownAdp": 115.8,
-  "ownCount": 19,
-  "ownMin": 87,
-  "ownMax": 138,
-  "fantraxAdp": 121,
-  "team": "DEN",
-  "pos": "SF"
- },
- "victor wembanyama": {
-  "name": "Victor Wembanyama",
-  "ownAdp": 1.6,
-  "ownCount": 31,
-  "ownMin": 1,
-  "ownMax": 3,
-  "fantraxAdp": 7,
-  "team": "SA",
-  "pos": "C"
- },
- "klay thompson": {
-  "name": "Klay Thompson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 190,
-  "team": "DAL",
-  "pos": "Flx"
- },
- "drew peterson": {
-  "name": "Drew Peterson",
-  "ownAdp": 86.0,
-  "ownCount": 1,
-  "ownMin": 86,
-  "ownMax": 86,
-  "fantraxAdp": 548,
-  "team": "(N/A)",
-  "pos": "PF"
- },
- "dylan cardwell": {
-  "name": "Dylan Cardwell",
-  "ownAdp": 159.0,
-  "ownCount": 1,
-  "ownMin": 159,
-  "ownMax": 159,
-  "fantraxAdp": 289,
-  "team": "SAC",
-  "pos": "C"
- },
- "andrew nembhard": {
-  "name": "Andrew Nembhard",
-  "ownAdp": 117.4,
-  "ownCount": 16,
-  "ownMin": 86,
-  "ownMax": 158,
-  "fantraxAdp": 104,
-  "team": "IND",
-  "pos": "SG"
- },
- "jaime jaquez": {
-  "name": "Jaime Jaquez",
-  "ownAdp": 120.8,
-  "ownCount": 16,
-  "ownMin": 74,
-  "ownMax": 156,
-  "fantraxAdp": 81,
-  "team": "MIL",
-  "pos": "SF"
- },
- "derrick white": {
-  "name": "Derrick White",
-  "ownAdp": 31.1,
-  "ownCount": 25,
-  "ownMin": 9,
-  "ownMax": 48,
-  "fantraxAdp": 5,
-  "team": "BOS",
-  "pos": "SG"
- },
- "luke travers": {
-  "name": "Luke Travers",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 490,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "bilal coulibaly": {
-  "name": "Bilal Coulibaly",
-  "ownAdp": 128.9,
-  "ownCount": 8,
-  "ownMin": 111,
-  "ownMax": 140,
-  "fantraxAdp": null,
-  "team": "WAS",
-  "pos": "SF"
- },
- "julian strawther": {
-  "name": "Julian Strawther",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 310,
-  "team": "DEN",
-  "pos": "Flx"
- },
- "dalano banton": {
-  "name": "Dalano Banton",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 521,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
  "tj mcconnell": {
   "name": "T.J. McConnell",
   "ownAdp": null,
@@ -3074,205 +394,35 @@ const ADP_DATA = {
   "team": "IND",
   "pos": "Flx"
  },
- "mikal bridges": {
-  "name": "Mikal Bridges",
-  "ownAdp": 67.3,
-  "ownCount": 25,
-  "ownMin": 46,
-  "ownMax": 89,
-  "fantraxAdp": 32,
-  "team": "NY",
-  "pos": "SF"
- },
- "caleb martin": {
-  "name": "Caleb Martin",
+ "blake hinson": {
+  "name": "Blake Hinson",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 329,
-  "team": "DAL",
+  "fantraxAdp": 426,
+  "team": "UTA",
   "pos": "Flx"
  },
- "dangelo russell": {
-  "name": "D'Angelo Russell",
+ "dariq whitehead": {
+  "name": "Dariq Whitehead",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 349,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "mason plumlee": {
-  "name": "Mason Plumlee",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 479,
+  "fantraxAdp": 464,
   "team": "(N/A)",
   "pos": "Flx"
  },
- "ryan dunn": {
-  "name": "Ryan Dunn",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 240,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "noah clowney": {
-  "name": "Noah Clowney",
-  "ownAdp": 150.5,
-  "ownCount": 2,
-  "ownMin": 147,
-  "ownMax": 154,
-  "fantraxAdp": 105,
+ "egor demin": {
+  "name": "Egor Demin",
+  "ownAdp": 132.4,
+  "ownCount": 15,
+  "ownMin": 107,
+  "ownMax": 164,
+  "fantraxAdp": 212,
   "team": "BKN",
-  "pos": "PF"
- },
- "ryan kalkbrenner": {
-  "name": "Ryan Kalkbrenner",
-  "ownAdp": 168.0,
-  "ownCount": 1,
-  "ownMin": 168,
-  "ownMax": 168,
-  "fantraxAdp": 194,
-  "team": "CHA",
-  "pos": "C"
- },
- "brandon miller": {
-  "name": "Brandon Miller",
-  "ownAdp": 44.3,
-  "ownCount": 25,
-  "ownMin": 35,
-  "ownMax": 57,
-  "fantraxAdp": 35,
-  "team": "CHA",
-  "pos": "SF"
- },
- "collin sexton": {
-  "name": "Collin Sexton",
-  "ownAdp": 132.3,
-  "ownCount": 3,
-  "ownMin": 93,
-  "ownMax": 155,
-  "fantraxAdp": 96,
-  "team": "LAL",
-  "pos": "SG"
- },
- "landry shamet": {
-  "name": "Landry Shamet",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 283,
-  "team": "NY",
-  "pos": "Flx"
- },
- "sharife cooper": {
-  "name": "Sharife Cooper",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 322,
-  "team": "WAS",
-  "pos": "Flx"
- },
- "hunter sallis": {
-  "name": "Hunter Sallis",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 558,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tyler herro": {
-  "name": "Tyler Herro",
-  "ownAdp": 61.2,
-  "ownCount": 24,
-  "ownMin": 40,
-  "ownMax": 83,
-  "fantraxAdp": 215,
-  "team": "MIL",
-  "pos": "SG"
- },
- "josh hart": {
-  "name": "Josh Hart",
-  "ownAdp": 97.5,
-  "ownCount": 20,
-  "ownMin": 78,
-  "ownMax": 114,
-  "fantraxAdp": 83,
-  "team": "NY",
-  "pos": "SG"
- },
- "harrison barnes": {
-  "name": "Harrison Barnes",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 148,
-  "team": "SA",
-  "pos": "Flx"
- },
- "royce oneale": {
-  "name": "Royce O'Neale",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 88,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "gary payton": {
-  "name": "Gary Payton II",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 225,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tre mann": {
-  "name": "Tre Mann",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 340,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "jahmai mashack": {
-  "name": "Jahmai Mashack",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 355,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "donovan mitchell": {
-  "name": "Donovan Mitchell",
-  "ownAdp": 12.9,
-  "ownCount": 29,
-  "ownMin": 9,
-  "ownMax": 19,
-  "fantraxAdp": 11,
-  "team": "CLE",
-  "pos": "SG"
+  "pos": "PG"
  },
  "keegan murray": {
   "name": "Keegan Murray",
@@ -3294,395 +444,105 @@ const ADP_DATA = {
   "team": "HOU",
   "pos": "Flx"
  },
- "tim hardaway": {
-  "name": "Tim Hardaway",
-  "ownAdp": 165.0,
-  "ownCount": 1,
-  "ownMin": 165,
-  "ownMax": 165,
-  "fantraxAdp": 118,
-  "team": "MIA",
-  "pos": "SG"
- },
- "shaedon sharpe": {
-  "name": "Shaedon Sharpe",
-  "ownAdp": 129.6,
-  "ownCount": 12,
-  "ownMin": 111,
-  "ownMax": 158,
-  "fantraxAdp": 123,
-  "team": "POR",
-  "pos": "SG"
- },
- "mychal mulder": {
-  "name": "Mychal Mulder",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 583,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "terry rozier": {
-  "name": "Terry Rozier",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 596,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "bennedict mathurin": {
-  "name": "Bennedict Mathurin",
-  "ownAdp": 144.4,
-  "ownCount": 11,
-  "ownMin": 130,
-  "ownMax": 158,
-  "fantraxAdp": 132,
-  "team": "LAC",
-  "pos": "SF"
- },
- "bez mbeng": {
-  "name": "Bez Mbeng",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 397,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "stephon castle": {
-  "name": "Stephon Castle",
-  "ownAdp": 59.0,
-  "ownCount": 25,
-  "ownMin": 38,
-  "ownMax": 84,
-  "fantraxAdp": 59,
-  "team": "SA",
-  "pos": "PG"
- },
- "adou thiero": {
-  "name": "Adou Thiero",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 475,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "mike conley": {
-  "name": "Mike Conley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 308,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "jd davison": {
-  "name": "JD Davison",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 450,
-  "team": "HOU",
-  "pos": "Flx"
- },
- "keaton wallace": {
-  "name": "Keaton Wallace",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 372,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "jeremy sochan": {
-  "name": "Jeremy Sochan",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 388,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "paolo banchero": {
-  "name": "Paolo Banchero",
-  "ownAdp": 44.2,
-  "ownCount": 25,
-  "ownMin": 18,
-  "ownMax": 68,
-  "fantraxAdp": 39,
-  "team": "ORL",
-  "pos": "PF"
- },
- "tristen newton": {
-  "name": "Tristen Newton",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 550,
-  "team": "HOU",
-  "pos": "Flx"
- },
- "ryan nembhard": {
-  "name": "Ryan Nembhard",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 288,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "jakob poeltl": {
-  "name": "Jakob Poeltl",
-  "ownAdp": 122.4,
-  "ownCount": 17,
-  "ownMin": 95,
-  "ownMax": 160,
-  "fantraxAdp": 242,
-  "team": "TOR",
-  "pos": "C"
- },
- "collin gillespie": {
-  "name": "Collin Gillespie",
-  "ownAdp": 137.0,
-  "ownCount": 10,
-  "ownMin": 115,
-  "ownMax": 154,
-  "fantraxAdp": 58,
-  "team": "PHO",
-  "pos": "PG"
- },
- "jaren jackson": {
-  "name": "Jaren Jackson",
-  "ownAdp": 44.4,
-  "ownCount": 25,
-  "ownMin": 28,
-  "ownMax": 63,
-  "fantraxAdp": 95,
-  "team": "UTA",
-  "pos": "C"
- },
- "giannis antetokounmpo": {
-  "name": "Giannis Antetokounmpo",
-  "ownAdp": 10.9,
-  "ownCount": 31,
-  "ownMin": 5,
-  "ownMax": 24,
-  "fantraxAdp": 130,
-  "team": "MIA",
-  "pos": "PF"
- },
- "nikola topic": {
-  "name": "Nikola Topic",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 470,
-  "team": "OKC",
-  "pos": "Flx"
- },
- "terrence shannon": {
-  "name": "Terrence Shannon",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 373,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "kon knueppel": {
-  "name": "Kon Knueppel",
-  "ownAdp": 44.7,
-  "ownCount": 25,
-  "ownMin": 30,
-  "ownMax": 62,
-  "fantraxAdp": 36,
-  "team": "CHA",
-  "pos": "SF"
- },
- "drew eubanks": {
-  "name": "Drew Eubanks",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 367,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jalen smith": {
-  "name": "Jalen Smith",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 207,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "dejon jarreau": {
-  "name": "DeJon Jarreau",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 434,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "colin castleton": {
-  "name": "Colin Castleton",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 559,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "harrison ingram": {
-  "name": "Harrison Ingram",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 551,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "mikel brown": {
-  "name": "Mikel Brown",
-  "ownAdp": 147.2,
-  "ownCount": 8,
-  "ownMin": 124,
-  "ownMax": 168,
-  "fantraxAdp": null,
-  "team": "BKN",
-  "pos": "PG"
- },
- "johnny juzang": {
-  "name": "Johnny Juzang",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 494,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "kevin love": {
-  "name": "Kevin Love",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 328,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "garrison mathews": {
-  "name": "Garrison Mathews",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 459,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "pj washington": {
-  "name": "P.J. Washington",
-  "ownAdp": 116.0,
-  "ownCount": 17,
-  "ownMin": 97,
-  "ownMax": 154,
-  "fantraxAdp": 103,
-  "team": "DAL",
-  "pos": "PF"
- },
- "enrique freeman": {
-  "name": "Enrique Freeman",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 531,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "miles kelly": {
-  "name": "Miles Kelly",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 487,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "alex caruso": {
-  "name": "Alex Caruso",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 262,
-  "team": "OKC",
-  "pos": "Flx"
- },
- "stanley johnson": {
-  "name": "Stanley Johnson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 600,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "og anunoby": {
-  "name": "OG Anunoby",
-  "ownAdp": 55.1,
-  "ownCount": 23,
-  "ownMin": 45,
-  "ownMax": 65,
-  "fantraxAdp": 40,
-  "team": "NY",
-  "pos": "PF"
- },
- "cj mccollum": {
-  "name": "CJ McCollum",
-  "ownAdp": 108.5,
-  "ownCount": 17,
+ "jeremiah fears": {
+  "name": "Jeremiah Fears",
+  "ownAdp": 130.1,
+  "ownCount": 15,
   "ownMin": 96,
-  "ownMax": 128,
-  "fantraxAdp": 46,
-  "team": "ATL",
+  "ownMax": 159,
+  "fantraxAdp": 56,
+  "team": "NO",
   "pos": "PG"
  },
- "devin booker": {
-  "name": "Devin Booker",
-  "ownAdp": 24.0,
-  "ownCount": 27,
-  "ownMin": 13,
-  "ownMax": 39,
-  "fantraxAdp": 61,
-  "team": "PHO",
+ "taurean prince": {
+  "name": "Taurean Prince",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 374,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "jabari walker": {
+  "name": "Jabari Walker",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 326,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "norman powell": {
+  "name": "Norman Powell",
+  "ownAdp": 92.8,
+  "ownCount": 22,
+  "ownMin": 68,
+  "ownMax": 112,
+  "fantraxAdp": 82,
+  "team": "CHI",
   "pos": "SG"
+ },
+ "rocco zikarsky": {
+  "name": "Rocco Zikarsky",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 522,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "johni broome": {
+  "name": "Johni Broome",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 529,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "chet holmgren": {
+  "name": "Chet Holmgren",
+  "ownAdp": 26.3,
+  "ownCount": 27,
+  "ownMin": 14,
+  "ownMax": 41,
+  "fantraxAdp": 51,
+  "team": "OKC",
+  "pos": "C"
+ },
+ "anthony black": {
+  "name": "Anthony Black",
+  "ownAdp": 135.2,
+  "ownCount": 13,
+  "ownMin": 107,
+  "ownMax": 157,
+  "fantraxAdp": 62,
+  "team": "ORL",
+  "pos": "PG"
+ },
+ "yanic konan niederhauser": {
+  "name": "Yanic Konan Niederhauser",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 371,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "payton pritchard": {
+  "name": "Payton Pritchard",
+  "ownAdp": 73.8,
+  "ownCount": 24,
+  "ownMin": 49,
+  "ownMax": 89,
+  "fantraxAdp": 60,
+  "team": "BOS",
+  "pos": "PG"
  },
  "will richard": {
   "name": "Will Richard",
@@ -3692,486 +552,6 @@ const ADP_DATA = {
   "ownMax": null,
   "fantraxAdp": 243,
   "team": "GS",
-  "pos": "Flx"
- },
- "jaden hardy": {
-  "name": "Jaden Hardy",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 296,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "jayson tatum": {
-  "name": "Jayson Tatum",
-  "ownAdp": 9.1,
-  "ownCount": 31,
-  "ownMin": 5,
-  "ownMax": 15,
-  "fantraxAdp": null,
-  "team": "BOS",
-  "pos": "PF"
- },
- "bruce brown": {
-  "name": "Bruce Brown",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 139,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jericho sims": {
-  "name": "Jericho Sims",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 295,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "sam merrill": {
-  "name": "Sam Merrill",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 216,
-  "team": "CLE",
-  "pos": "Flx"
- },
- "brook lopez": {
-  "name": "Brook Lopez",
-  "ownAdp": 156.5,
-  "ownCount": 2,
-  "ownMin": 155,
-  "ownMax": 158,
-  "fantraxAdp": 141,
-  "team": "LAC",
-  "pos": "C"
- },
- "chris youngblood": {
-  "name": "Chris Youngblood",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 466,
-  "team": "POR",
-  "pos": "Flx"
- },
- "robert franks": {
-  "name": "Robert Franks",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 582,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "terance mann": {
-  "name": "Terance Mann",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 234,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "alex sarr": {
-  "name": "Alex Sarr",
-  "ownAdp": 63.0,
-  "ownCount": 25,
-  "ownMin": 45,
-  "ownMax": 81,
-  "fantraxAdp": 106,
-  "team": "WAS",
-  "pos": "C"
- },
- "kristaps porzingis": {
-  "name": "Kristaps Porzingis",
-  "ownAdp": 117.4,
-  "ownCount": 16,
-  "ownMin": 91,
-  "ownMax": 153,
-  "fantraxAdp": 238,
-  "team": "GS",
-  "pos": "C"
- },
- "brandon williams": {
-  "name": "Brandon Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 131,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "andre drummond": {
-  "name": "Andre Drummond",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 221,
-  "team": "NY",
-  "pos": "Flx"
- },
- "jaylen brown": {
-  "name": "Jaylen Brown",
-  "ownAdp": 39.6,
-  "ownCount": 25,
-  "ownMin": 17,
-  "ownMax": 60,
-  "fantraxAdp": 21,
-  "team": "PHI",
-  "pos": "SF"
- },
- "drew timme": {
-  "name": "Drew Timme",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 460,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "mohamed diawara": {
-  "name": "Mohamed Diawara",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 365,
-  "team": "NY",
-  "pos": "Flx"
- },
- "norchad omier": {
-  "name": "Norchad Omier",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 538,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "zach edey": {
-  "name": "Zach Edey",
-  "ownAdp": 70.9,
-  "ownCount": 24,
-  "ownMin": 53,
-  "ownMax": 90,
-  "fantraxAdp": 391,
-  "team": "MEM",
-  "pos": "C"
- },
- "onyeka okongwu": {
-  "name": "Onyeka Okongwu",
-  "ownAdp": 49.2,
-  "ownCount": 25,
-  "ownMin": 32,
-  "ownMax": 76,
-  "fantraxAdp": 19,
-  "team": "ATL",
-  "pos": "C"
- },
- "kyle anderson": {
-  "name": "Kyle Anderson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 302,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "kyle kuzma": {
-  "name": "Kyle Kuzma",
-  "ownAdp": 141.0,
-  "ownCount": 1,
-  "ownMin": 141,
-  "ownMax": 141,
-  "fantraxAdp": 113,
-  "team": "MIL",
-  "pos": "PF"
- },
- "nikola jokic": {
-  "name": "Nikola Jokic",
-  "ownAdp": 1.6,
-  "ownCount": 31,
-  "ownMin": 1,
-  "ownMax": 3,
-  "fantraxAdp": 4,
-  "team": "DEN",
-  "pos": "C"
- },
- "jalen slawson": {
-  "name": "Jalen Slawson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 412,
-  "team": "IND",
-  "pos": "Flx"
- },
- "daniss jenkins": {
-  "name": "Daniss Jenkins",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 154,
-  "team": "DET",
-  "pos": "Flx"
- },
- "bones hyland": {
-  "name": "Bones Hyland",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 197,
-  "team": "MIN",
-  "pos": "Flx"
- },
- "sandro mamukelashvili": {
-  "name": "Sandro Mamukelashvili",
-  "ownAdp": 126.3,
-  "ownCount": 11,
-  "ownMin": 92,
-  "ownMax": 160,
-  "fantraxAdp": 78,
-  "team": "LAL",
-  "pos": "PF"
- },
- "david jones garcia": {
-  "name": "David Jones Garcia",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 496,
-  "team": "SA",
-  "pos": "Flx"
- },
- "caleb love": {
-  "name": "Caleb Love",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 275,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "deandre ayton": {
-  "name": "Deandre Ayton",
-  "ownAdp": 144.4,
-  "ownCount": 5,
-  "ownMin": 132,
-  "ownMax": 161,
-  "fantraxAdp": 143,
-  "team": "WAS",
-  "pos": "C"
- },
- "derrick jones": {
-  "name": "Derrick Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 224,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "deandre jordan": {
-  "name": "DeAndre Jordan",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 455,
-  "team": "NO",
-  "pos": "Flx"
- },
- "micah peavy": {
-  "name": "Micah Peavy",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 338,
-  "team": "NO",
-  "pos": "Flx"
- },
- "leaky black": {
-  "name": "Leaky Black",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 419,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jordan walsh": {
-  "name": "Jordan Walsh",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 261,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "christian wood": {
-  "name": "Christian Wood",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 592,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "yves missi": {
-  "name": "Yves Missi",
-  "ownAdp": 142.9,
-  "ownCount": 7,
-  "ownMin": 106,
-  "ownMax": 164,
-  "fantraxAdp": 222,
-  "team": "NO",
-  "pos": "C"
- },
- "darius acuff": {
-  "name": "Darius Acuff",
-  "ownAdp": 143.1,
-  "ownCount": 15,
-  "ownMin": 129,
-  "ownMax": 167,
-  "fantraxAdp": null,
-  "team": "SAC",
-  "pos": "PG"
- },
- "damian lillard": {
-  "name": "Damian Lillard",
-  "ownAdp": 88.6,
-  "ownCount": 22,
-  "ownMin": 63,
-  "ownMax": 112,
-  "fantraxAdp": null,
-  "team": "POR",
-  "pos": "PG"
- },
- "bismack biyombo": {
-  "name": "Bismack Biyombo",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 504,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jamal shead": {
-  "name": "Jamal Shead",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 157,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "micah potter": {
-  "name": "Micah Potter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 258,
-  "team": "POR",
-  "pos": "Flx"
- },
- "grant williams": {
-  "name": "Grant Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 331,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "ej liddell": {
-  "name": "E.J. Liddell",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 408,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jamaree bouyea": {
-  "name": "Jamaree Bouyea",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 342,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "nfaly dante": {
-  "name": "N'Faly Dante",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 564,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "miles bridges": {
-  "name": "Miles Bridges",
-  "ownAdp": 100.7,
-  "ownCount": 22,
-  "ownMin": 72,
-  "ownMax": 126,
-  "fantraxAdp": 52,
-  "team": "PHO",
-  "pos": "SF"
- },
- "alijah martin": {
-  "name": "Alijah Martin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 468,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "mac mcclung": {
-  "name": "Mac McClung",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 467,
-  "team": "CHI",
   "pos": "Flx"
  },
  "bobby portis": {
@@ -4184,64 +564,164 @@ const ADP_DATA = {
   "team": "MIA",
   "pos": "PF"
  },
- "brayden burries": {
-  "name": "Brayden Burries",
-  "ownAdp": 155.0,
-  "ownCount": 2,
-  "ownMin": 152,
-  "ownMax": 158,
-  "fantraxAdp": null,
-  "team": "MIL",
+ "mike conley": {
+  "name": "Mike Conley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 308,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "kristaps porzingis": {
+  "name": "Kristaps Porzingis",
+  "ownAdp": 117.4,
+  "ownCount": 16,
+  "ownMin": 91,
+  "ownMax": 153,
+  "fantraxAdp": 238,
+  "team": "GS",
+  "pos": "C"
+ },
+ "saddiq bey": {
+  "name": "Saddiq Bey",
+  "ownAdp": 125.0,
+  "ownCount": 14,
+  "ownMin": 86,
+  "ownMax": 152,
+  "fantraxAdp": 63,
+  "team": "NO",
+  "pos": "SF"
+ },
+ "tim hardaway": {
+  "name": "Tim Hardaway",
+  "ownAdp": 165.0,
+  "ownCount": 1,
+  "ownMin": 165,
+  "ownMax": 165,
+  "fantraxAdp": 118,
+  "team": "MIA",
   "pos": "SG"
  },
- "javon small": {
-  "name": "Javon Small",
+ "moussa diabate": {
+  "name": "Moussa Diabate",
+  "ownAdp": 144.0,
+  "ownCount": 3,
+  "ownMin": 133,
+  "ownMax": 162,
+  "fantraxAdp": 128,
+  "team": "CHA",
+  "pos": "C"
+ },
+ "alondes williams": {
+  "name": "Alondes Williams",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 271,
-  "team": "MEM",
+  "fantraxAdp": 485,
+  "team": "(N/A)",
   "pos": "Flx"
  },
- "jeremiah fears": {
-  "name": "Jeremiah Fears",
-  "ownAdp": 130.1,
-  "ownCount": 15,
-  "ownMin": 96,
-  "ownMax": 159,
-  "fantraxAdp": 56,
-  "team": "NO",
-  "pos": "PG"
+ "jordan clarkson": {
+  "name": "Jordan Clarkson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 249,
+  "team": "NY",
+  "pos": "Flx"
  },
- "fred vanvleet": {
-  "name": "Fred VanVleet",
-  "ownAdp": 111.4,
-  "ownCount": 21,
-  "ownMin": 74,
-  "ownMax": 144,
+ "mouhamadou gueye": {
+  "name": "Mouhamadou Gueye",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 530,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "aj dybantsa": {
+  "name": "AJ Dybantsa",
+  "ownAdp": 105.8,
+  "ownCount": 20,
+  "ownMin": 87,
+  "ownMax": 150,
   "fantraxAdp": null,
-  "team": "HOU",
-  "pos": "PG"
+  "team": "WAS",
+  "pos": "SF"
  },
- "tyrese proctor": {
-  "name": "Tyrese Proctor",
+ "hunter tyson": {
+  "name": "Hunter Tyson",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 348,
-  "team": "CLE",
+  "fantraxAdp": 478,
+  "team": "(N/A)",
   "pos": "Flx"
  },
- "josh oduro": {
-  "name": "Josh Oduro",
+ "kyle anderson": {
+  "name": "Kyle Anderson",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 514,
+  "fantraxAdp": 302,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "collin sexton": {
+  "name": "Collin Sexton",
+  "ownAdp": 132.3,
+  "ownCount": 3,
+  "ownMin": 93,
+  "ownMax": 155,
+  "fantraxAdp": 96,
+  "team": "LAL",
+  "pos": "SG"
+ },
+ "cade cunningham": {
+  "name": "Cade Cunningham",
+  "ownAdp": 5.5,
+  "ownCount": 31,
+  "ownMin": 4,
+  "ownMax": 7,
+  "fantraxAdp": 8,
+  "team": "DET",
+  "pos": "PG"
+ },
+ "payton sandfort": {
+  "name": "Payton Sandfort",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 513,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "micah peavy": {
+  "name": "Micah Peavy",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 338,
   "team": "NO",
+  "pos": "Flx"
+ },
+ "luke kennard": {
+  "name": "Luke Kennard",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 180,
+  "team": "PHO",
   "pos": "Flx"
  },
  "clint capela": {
@@ -4254,54 +734,404 @@ const ADP_DATA = {
   "team": "HOU",
   "pos": "Flx"
  },
- "luguentz dort": {
-  "name": "Luguentz Dort",
+ "yuki kawamura": {
+  "name": "Yuki Kawamura",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 184,
-  "team": "ATL",
+  "fantraxAdp": 447,
+  "team": "CHI",
   "pos": "Flx"
  },
- "isaiah hartenstein": {
-  "name": "Isaiah Hartenstein",
-  "ownAdp": 98.3,
-  "ownCount": 19,
-  "ownMin": 65,
-  "ownMax": 134,
-  "fantraxAdp": 205,
-  "team": "OKC",
-  "pos": "C"
- },
- "dominick barlow": {
-  "name": "Dominick Barlow",
+ "grant williams": {
+  "name": "Grant Williams",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 172,
+  "fantraxAdp": 331,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "nigel hayesdavis": {
+  "name": "Nigel Hayes-Davis",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 488,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jakobe walter": {
+  "name": "Ja'Kobe Walter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 202,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "rui hachimura": {
+  "name": "Rui Hachimura",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 201,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "koby brea": {
+  "name": "Koby Brea",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 499,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "donovan clingan": {
+  "name": "Donovan Clingan",
+  "ownAdp": 52.0,
+  "ownCount": 25,
+  "ownMin": 39,
+  "ownMax": 65,
+  "fantraxAdp": 57,
+  "team": "POR",
+  "pos": "C"
+ },
+ "vj edgecombe": {
+  "name": "VJ Edgecombe",
+  "ownAdp": 75.7,
+  "ownCount": 23,
+  "ownMin": 45,
+  "ownMax": 101,
+  "fantraxAdp": 23,
+  "team": "PHI",
+  "pos": "SG"
+ },
+ "daron holmes": {
+  "name": "DaRon Holmes",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 451,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "mark sears": {
+  "name": "Mark Sears",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 532,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "amari williams": {
+  "name": "Amari Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 480,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "drake powell": {
+  "name": "Drake Powell",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 290,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "kon knueppel": {
+  "name": "Kon Knueppel",
+  "ownAdp": 44.7,
+  "ownCount": 25,
+  "ownMin": 30,
+  "ownMax": 62,
+  "fantraxAdp": 36,
+  "team": "CHA",
+  "pos": "SF"
+ },
+ "justin champagnie": {
+  "name": "Justin Champagnie",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 169,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "isaiah jackson": {
+  "name": "Isaiah Jackson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 259,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "tre scott": {
+  "name": "Tre Scott",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 471,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "santi aldama": {
+  "name": "Santi Aldama",
+  "ownAdp": 166.5,
+  "ownCount": 2,
+  "ownMin": 165,
+  "ownMax": 168,
+  "fantraxAdp": 185,
+  "team": "DAL",
+  "pos": "PF"
+ },
+ "jusuf nurkic": {
+  "name": "Jusuf Nurkic",
+  "ownAdp": 123.1,
+  "ownCount": 17,
+  "ownMin": 86,
+  "ownMax": 153,
+  "fantraxAdp": 198,
+  "team": "UTA",
+  "pos": "C"
+ },
+ "tyrese martin": {
+  "name": "Tyrese Martin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 337,
   "team": "PHI",
   "pos": "Flx"
  },
- "khris middleton": {
-  "name": "Khris Middleton",
+ "malachi smith": {
+  "name": "Malachi Smith",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 183,
-  "team": "WAS",
+  "fantraxAdp": 420,
+  "team": "(N/A)",
   "pos": "Flx"
  },
- "tristan vukcevic": {
-  "name": "Tristan Vukcevic",
+ "jalen suggs": {
+  "name": "Jalen Suggs",
+  "ownAdp": 89.7,
+  "ownCount": 22,
+  "ownMin": 67,
+  "ownMax": 116,
+  "fantraxAdp": 70,
+  "team": "ORL",
+  "pos": "PG"
+ },
+ "corey kispert": {
+  "name": "Corey Kispert",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 273,
+  "fantraxAdp": 267,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "omer yurtseven": {
+  "name": "Omer Yurtseven",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 491,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "malik monk": {
+  "name": "Malik Monk",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 167,
+  "team": "SAC",
+  "pos": "Flx"
+ },
+ "jake laravia": {
+  "name": "Jake LaRavia",
+  "ownAdp": 162.0,
+  "ownCount": 1,
+  "ownMin": 162,
+  "ownMax": 162,
+  "fantraxAdp": 100,
+  "team": "LAL",
+  "pos": "PF"
+ },
+ "duop reath": {
+  "name": "Duop Reath",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 449,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "john poulakidas": {
+  "name": "John Poulakidas",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 442,
+  "team": "DAL",
+  "pos": "Flx"
+ },
+ "dalano banton": {
+  "name": "Dalano Banton",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 521,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "johnny juzang": {
+  "name": "Johnny Juzang",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 494,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "kasparas jakucionis": {
+  "name": "Kasparas Jakucionis",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 293,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "chris livingston": {
+  "name": "Chris Livingston",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 553,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "deandre ayton": {
+  "name": "Deandre Ayton",
+  "ownAdp": 144.4,
+  "ownCount": 5,
+  "ownMin": 132,
+  "ownMax": 161,
+  "fantraxAdp": 143,
   "team": "WAS",
+  "pos": "C"
+ },
+ "stanley johnson": {
+  "name": "Stanley Johnson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 600,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "pete nance": {
+  "name": "Pete Nance",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 362,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "ajay mitchell": {
+  "name": "Ajay Mitchell",
+  "ownAdp": 114.8,
+  "ownCount": 19,
+  "ownMin": 95,
+  "ownMax": 133,
+  "fantraxAdp": 136,
+  "team": "OKC",
+  "pos": "SG"
+ },
+ "harrison barnes": {
+  "name": "Harrison Barnes",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 148,
+  "team": "SA",
+  "pos": "Flx"
+ },
+ "kj simpson": {
+  "name": "KJ Simpson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 438,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "daquan jeffries": {
+  "name": "DaQuan Jeffries",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 518,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "sean pedulla": {
+  "name": "Sean Pedulla",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 545,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "alex morales": {
+  "name": "Alex Morales",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 557,
+  "team": "ORL",
   "pos": "Flx"
  },
  "jay huff": {
@@ -4314,33 +1144,423 @@ const ADP_DATA = {
   "team": "IND",
   "pos": "C"
  },
- "kobe sanders": {
-  "name": "Kobe Sanders",
+ "caleb houstan": {
+  "name": "Caleb Houstan",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 247,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "chris paul": {
-  "name": "Chris Paul",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 463,
+  "fantraxAdp": 500,
   "team": "(N/A)",
   "pos": "Flx"
  },
- "jahmyl telfort": {
-  "name": "Jahmyl Telfort",
+ "hayden gray": {
+  "name": "Hayden Gray",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 568,
+  "fantraxAdp": 562,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "chaz lanier": {
+  "name": "Chaz Lanier",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 465,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "dylan cardwell": {
+  "name": "Dylan Cardwell",
+  "ownAdp": 159.0,
+  "ownCount": 1,
+  "ownMin": 159,
+  "ownMax": 159,
+  "fantraxAdp": 289,
+  "team": "SAC",
+  "pos": "C"
+ },
+ "tristan da silva": {
+  "name": "Tristan da Silva",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 129,
+  "team": "ORL",
+  "pos": "Flx"
+ },
+ "cameron payne": {
+  "name": "Cameron Payne",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 383,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "mark williams": {
+  "name": "Mark Williams",
+  "ownAdp": 113.4,
+  "ownCount": 20,
+  "ownMin": 91,
+  "ownMax": 141,
+  "fantraxAdp": 155,
+  "team": "PHO",
+  "pos": "C"
+ },
+ "nicolas claxton": {
+  "name": "Nicolas Claxton",
+  "ownAdp": 101.8,
+  "ownCount": 20,
+  "ownMin": 84,
+  "ownMax": 120,
+  "fantraxAdp": 85,
+  "team": "CHI",
+  "pos": "C"
+ },
+ "gui santos": {
+  "name": "Gui Santos",
+  "ownAdp": 161.5,
+  "ownCount": 2,
+  "ownMin": 160,
+  "ownMax": 163,
+  "fantraxAdp": 165,
+  "team": "GS",
+  "pos": "PF"
+ },
+ "noah clowney": {
+  "name": "Noah Clowney",
+  "ownAdp": 150.5,
+  "ownCount": 2,
+  "ownMin": 147,
+  "ownMax": 154,
+  "fantraxAdp": 105,
+  "team": "BKN",
+  "pos": "PF"
+ },
+ "jett howard": {
+  "name": "Jett Howard",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 347,
+  "team": "DAL",
+  "pos": "Flx"
+ },
+ "max strus": {
+  "name": "Max Strus",
+  "ownAdp": 159.0,
+  "ownCount": 2,
+  "ownMin": 159,
+  "ownMax": 159,
+  "fantraxAdp": 431,
+  "team": "CLE",
+  "pos": "SF"
+ },
+ "christian braun": {
+  "name": "Christian Braun",
+  "ownAdp": 159.6,
+  "ownCount": 5,
+  "ownMin": 154,
+  "ownMax": 167,
+  "fantraxAdp": 246,
+  "team": "DEN",
+  "pos": "SG"
+ },
+ "cedric coward": {
+  "name": "Cedric Coward",
+  "ownAdp": 113.2,
+  "ownCount": 18,
+  "ownMin": 86,
+  "ownMax": 148,
+  "fantraxAdp": 116,
+  "team": "MEM",
+  "pos": "SG"
+ },
+ "karlanthony towns": {
+  "name": "Karl-Anthony Towns",
+  "ownAdp": 16.9,
+  "ownCount": 28,
+  "ownMin": 13,
+  "ownMax": 24,
+  "fantraxAdp": 33,
+  "team": "NY",
+  "pos": "C"
+ },
+ "jamir watkins": {
+  "name": "Jamir Watkins",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 265,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "kyrie irving": {
+  "name": "Kyrie Irving",
+  "ownAdp": 61.6,
+  "ownCount": 25,
+  "ownMin": 35,
+  "ownMax": 81,
+  "fantraxAdp": null,
+  "team": "DAL",
+  "pos": "SG"
+ },
+ "deandre hunter": {
+  "name": "De'Andre Hunter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 231,
+  "team": "SAC",
+  "pos": "Flx"
+ },
+ "matas buzelis": {
+  "name": "Matas Buzelis",
+  "ownAdp": 57.7,
+  "ownCount": 25,
+  "ownMin": 44,
+  "ownMax": 77,
+  "fantraxAdp": 26,
+  "team": "CHI",
+  "pos": "SF"
+ },
+ "marcus sasser": {
+  "name": "Marcus Sasser",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 379,
+  "team": "DAL",
+  "pos": "Flx"
+ },
+ "kyle kuzma": {
+  "name": "Kyle Kuzma",
+  "ownAdp": 141.0,
+  "ownCount": 1,
+  "ownMin": 141,
+  "ownMax": 141,
+  "fantraxAdp": 113,
+  "team": "MIL",
+  "pos": "PF"
+ },
+ "victor wembanyama": {
+  "name": "Victor Wembanyama",
+  "ownAdp": 1.6,
+  "ownCount": 31,
+  "ownMin": 1,
+  "ownMax": 3,
+  "fantraxAdp": 7,
+  "team": "SA",
+  "pos": "C"
+ },
+ "rayan rupert": {
+  "name": "Rayan Rupert",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 298,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "derik queen": {
+  "name": "Derik Queen",
+  "ownAdp": 92.6,
+  "ownCount": 21,
+  "ownMin": 67,
+  "ownMax": 120,
+  "fantraxAdp": 49,
+  "team": "NO",
+  "pos": "C"
+ },
+ "josh giddey": {
+  "name": "Josh Giddey",
+  "ownAdp": 27.9,
+  "ownCount": 28,
+  "ownMin": 16,
+  "ownMax": 40,
+  "fantraxAdp": 64,
+  "team": "CHI",
+  "pos": "PG"
+ },
+ "keshon gilbert": {
+  "name": "Keshon Gilbert",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 511,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "mychal mulder": {
+  "name": "Mychal Mulder",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 583,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "obi toppin": {
+  "name": "Obi Toppin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 351,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "aaron gordon": {
+  "name": "Aaron Gordon",
+  "ownAdp": 140.8,
+  "ownCount": 10,
+  "ownMin": 100,
+  "ownMax": 165,
+  "fantraxAdp": 239,
+  "team": "DEN",
+  "pos": "PF"
+ },
+ "danny wolf": {
+  "name": "Danny Wolf",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 211,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "kevin mccullar": {
+  "name": "Kevin McCullar",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 474,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "deandre jordan": {
+  "name": "DeAndre Jordan",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 455,
+  "team": "NO",
+  "pos": "Flx"
+ },
+ "rasheer fleming": {
+  "name": "Rasheer Fleming",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 353,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "josh perkins": {
+  "name": "Josh Perkins",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 577,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "will riley": {
+  "name": "Will Riley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 166,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "jayson kent": {
+  "name": "Jayson Kent",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 549,
+  "team": "POR",
+  "pos": "Flx"
+ },
+ "norense odiase": {
+  "name": "Norense Odiase",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 590,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "zach lavine": {
+  "name": "Zach LaVine",
+  "ownAdp": 121.7,
+  "ownCount": 18,
+  "ownMin": 94,
+  "ownMax": 140,
+  "fantraxAdp": 220,
+  "team": "SAC",
+  "pos": "SG"
+ },
+ "jericho sims": {
+  "name": "Jericho Sims",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 295,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "frank kaminsky": {
+  "name": "Frank Kaminsky",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 597,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "gabe vincent": {
+  "name": "Gabe Vincent",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 357,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "malik pope": {
+  "name": "Malik Pope",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 594,
   "team": "(N/A)",
   "pos": "Flx"
  },
@@ -4354,295 +1574,45 @@ const ADP_DATA = {
   "team": "LAC",
   "pos": "SF"
  },
- "baylor scheierman": {
-  "name": "Baylor Scheierman",
+ "cameron thomas": {
+  "name": "Cameron Thomas",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 257,
-  "team": "BOS",
+  "fantraxAdp": 276,
+  "team": "(N/A)",
   "pos": "Flx"
  },
- "trey murphy": {
-  "name": "Trey Murphy",
-  "ownAdp": 28.9,
-  "ownCount": 27,
-  "ownMin": 18,
-  "ownMax": 44,
-  "fantraxAdp": 27,
-  "team": "NO",
+ "kelly oubre": {
+  "name": "Kelly Oubre Jr.",
+  "ownAdp": 157.5,
+  "ownCount": 2,
+  "ownMin": 148,
+  "ownMax": 167,
+  "fantraxAdp": 163,
+  "team": "IND",
   "pos": "SF"
  },
- "james wiseman": {
-  "name": "James Wiseman",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 540,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "chris boucher": {
-  "name": "Chris Boucher",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 502,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "nikola jovic": {
-  "name": "Nikola Jovic",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 297,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "kam jones": {
-  "name": "Kam Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 385,
-  "team": "MIL",
-  "pos": "Flx"
- },
- "justise winslow": {
-  "name": "Justise Winslow",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 599,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "duncan robinson": {
-  "name": "Duncan Robinson",
-  "ownAdp": 138.0,
-  "ownCount": 1,
-  "ownMin": 138,
-  "ownMax": 138,
-  "fantraxAdp": 117,
-  "team": "DET",
-  "pos": "SF"
- },
- "rob dillingham": {
-  "name": "Rob Dillingham",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 281,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "chris manon": {
-  "name": "Chris Mañon",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 537,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "alondes williams": {
-  "name": "Alondes Williams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 485,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "chaney johnson": {
-  "name": "Chaney Johnson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 399,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "jock landale": {
-  "name": "Jock Landale",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 160,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "tidjane salaun": {
-  "name": "Tidjane Salaun",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 366,
-  "team": "CHA",
-  "pos": "Flx"
- },
- "curtis jones": {
-  "name": "Curtis Jones",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 507,
-  "team": "DEN",
-  "pos": "Flx"
- },
- "james harden": {
-  "name": "James Harden",
-  "ownAdp": 26.0,
+ "trae young": {
+  "name": "Trae Young",
+  "ownAdp": 22.8,
   "ownCount": 28,
-  "ownMin": 13,
-  "ownMax": 33,
-  "fantraxAdp": 13,
-  "team": "CLE",
+  "ownMin": 10,
+  "ownMax": 35,
+  "fantraxAdp": 341,
+  "team": "WAS",
   "pos": "PG"
  },
- "lebron james": {
-  "name": "LeBron James",
-  "ownAdp": 56.4,
-  "ownCount": 25,
-  "ownMin": 36,
-  "ownMax": 77,
-  "fantraxAdp": 53,
-  "team": "(N/A)",
-  "pos": "SF"
- },
- "dyson daniels": {
-  "name": "Dyson Daniels",
-  "ownAdp": 63.0,
-  "ownCount": 25,
-  "ownMin": 32,
-  "ownMax": 89,
-  "fantraxAdp": 67,
-  "team": "ATL",
-  "pos": "SG"
- },
- "ace bailey": {
-  "name": "Ace Bailey",
-  "ownAdp": 124.9,
-  "ownCount": 14,
-  "ownMin": 87,
-  "ownMax": 155,
-  "fantraxAdp": 89,
-  "team": "UTA",
-  "pos": "SF"
- },
- "keon ellis": {
-  "name": "Keon Ellis",
-  "ownAdp": 146.3,
-  "ownCount": 6,
-  "ownMin": 132,
-  "ownMax": 157,
-  "fantraxAdp": 206,
-  "team": "BKN",
-  "pos": "SG"
- },
- "marcus sasser": {
-  "name": "Marcus Sasser",
+ "wendell moore": {
+  "name": "Wendell Moore",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 379,
-  "team": "DAL",
+  "fantraxAdp": 542,
+  "team": "DET",
   "pos": "Flx"
- },
- "tyrese martin": {
-  "name": "Tyrese Martin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 337,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "eric gordon": {
-  "name": "Eric Gordon",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 510,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tobias harris": {
-  "name": "Tobias Harris",
-  "ownAdp": 137.9,
-  "ownCount": 8,
-  "ownMin": 124,
-  "ownMax": 164,
-  "fantraxAdp": 120,
-  "team": "SA",
-  "pos": "PF"
- },
- "saddiq bey": {
-  "name": "Saddiq Bey",
-  "ownAdp": 125.0,
-  "ownCount": 14,
-  "ownMin": 86,
-  "ownMax": 152,
-  "fantraxAdp": 63,
-  "team": "NO",
-  "pos": "SF"
- },
- "mark sears": {
-  "name": "Mark Sears",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 532,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "marvin bagley": {
-  "name": "Marvin Bagley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 193,
-  "team": "DEN",
-  "pos": "Flx"
- },
- "keshon gilbert": {
-  "name": "Keshon Gilbert",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 511,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "jabari smith": {
-  "name": "Jabari Smith",
-  "ownAdp": 85.3,
-  "ownCount": 23,
-  "ownMin": 71,
-  "ownMax": 107,
-  "fantraxAdp": 34,
-  "team": "HOU",
-  "pos": "PF"
  },
  "oso ighodaro": {
   "name": "Oso Ighodaro",
@@ -4654,124 +1624,44 @@ const ADP_DATA = {
   "team": "PHO",
   "pos": "Flx"
  },
- "yang hansen": {
-  "name": "Yang Hansen",
+ "chris youngblood": {
+  "name": "Chris Youngblood",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 428,
+  "fantraxAdp": 466,
   "team": "POR",
   "pos": "Flx"
  },
- "anthony black": {
-  "name": "Anthony Black",
-  "ownAdp": 135.2,
-  "ownCount": 13,
-  "ownMin": 107,
-  "ownMax": 157,
-  "fantraxAdp": 62,
-  "team": "ORL",
-  "pos": "PG"
- },
- "kris murray": {
-  "name": "Kris Murray",
+ "skal labissiere": {
+  "name": "Skal Labissiere",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 286,
+  "fantraxAdp": 536,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "dangelo russell": {
+  "name": "D'Angelo Russell",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 349,
   "team": "MEM",
   "pos": "Flx"
  },
- "rudy gobert": {
-  "name": "Rudy Gobert",
-  "ownAdp": 70.6,
-  "ownCount": 25,
-  "ownMin": 37,
-  "ownMax": 90,
-  "fantraxAdp": 80,
-  "team": "MIN",
-  "pos": "C"
- },
- "darion atkins": {
-  "name": "Darion Atkins",
+ "dorian finneysmith": {
+  "name": "Dorian Finney-Smith",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 598,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "haywood highsmith": {
-  "name": "Haywood Highsmith",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 498,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "tyrese maxey": {
-  "name": "Tyrese Maxey",
-  "ownAdp": 6.4,
-  "ownCount": 31,
-  "ownMin": 1,
-  "ownMax": 11,
-  "fantraxAdp": 2,
-  "team": "PHI",
-  "pos": "PG"
- },
- "john collins": {
-  "name": "John Collins",
-  "ownAdp": 108.4,
-  "ownCount": 19,
-  "ownMin": 96,
-  "ownMax": 124,
-  "fantraxAdp": 102,
-  "team": "DET",
-  "pos": "PF"
- },
- "bryce mcgowens": {
-  "name": "Bryce McGowens",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 317,
-  "team": "NO",
-  "pos": "Flx"
- },
- "taurean prince": {
-  "name": "Taurean Prince",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 374,
-  "team": "DET",
-  "pos": "Flx"
- },
- "patrick baldwin": {
-  "name": "Patrick Baldwin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 492,
-  "team": "SAC",
-  "pos": "Flx"
- },
- "shamorie ponds": {
-  "name": "Shamorie Ponds",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 576,
-  "team": "(N/A)",
+  "fantraxAdp": 406,
+  "team": "CHA",
   "pos": "Flx"
  },
  "maxi kleber": {
@@ -4784,6 +1674,16 @@ const ADP_DATA = {
   "team": "(N/A)",
   "pos": "Flx"
  },
+ "walker kessler": {
+  "name": "Walker Kessler",
+  "ownAdp": 42.2,
+  "ownCount": 25,
+  "ownMin": 30,
+  "ownMax": 66,
+  "fantraxAdp": 446,
+  "team": "LAL",
+  "pos": "C"
+ },
  "anthony edwards": {
   "name": "Anthony Edwards",
   "ownAdp": 9.8,
@@ -4794,403 +1694,73 @@ const ADP_DATA = {
   "team": "MIN",
   "pos": "SG"
  },
- "jordan hawkins": {
-  "name": "Jordan Hawkins",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 364,
-  "team": "NO",
-  "pos": "Flx"
- },
- "cameron johnson": {
-  "name": "Cameron Johnson",
-  "ownAdp": 143.5,
-  "ownCount": 6,
-  "ownMin": 120,
-  "ownMax": 168,
-  "fantraxAdp": 175,
-  "team": "DEN",
+ "jonathan kuminga": {
+  "name": "Jonathan Kuminga",
+  "ownAdp": 149.0,
+  "ownCount": 1,
+  "ownMin": 149,
+  "ownMax": 149,
+  "fantraxAdp": 278,
+  "team": "(N/A)",
   "pos": "PF"
  },
- "vince williams": {
-  "name": "Vince Williams",
+ "julian reese": {
+  "name": "Julian Reese",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 294,
+  "fantraxAdp": 386,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "dejon jarreau": {
+  "name": "DeJon Jarreau",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 434,
   "team": "(N/A)",
   "pos": "Flx"
  },
- "jonathan isaac": {
-  "name": "Jonathan Isaac",
+ "tari eason": {
+  "name": "Tari Eason",
+  "ownAdp": 138.8,
+  "ownCount": 15,
+  "ownMin": 113,
+  "ownMax": 162,
+  "fantraxAdp": 164,
+  "team": "HOU",
+  "pos": "PF"
+ },
+ "goga bitadze": {
+  "name": "Goga Bitadze",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 369,
+  "fantraxAdp": 237,
   "team": "ORL",
   "pos": "Flx"
  },
- "josh perkins": {
-  "name": "Josh Perkins",
+ "micah potter": {
+  "name": "Micah Potter",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 577,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "dayron sharpe": {
-  "name": "Day'Ron Sharpe",
-  "ownAdp": 108.7,
-  "ownCount": 20,
-  "ownMin": 70,
-  "ownMax": 131,
-  "fantraxAdp": 173,
-  "team": "BKN",
-  "pos": "C"
- },
- "tre scott": {
-  "name": "Tre Scott",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 471,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "evan mobley": {
-  "name": "Evan Mobley",
-  "ownAdp": 28.4,
-  "ownCount": 26,
-  "ownMin": 21,
-  "ownMax": 37,
-  "fantraxAdp": 42,
-  "team": "CLE",
-  "pos": "PF"
- },
- "deanthony melton": {
-  "name": "De'Anthony Melton",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 178,
-  "team": "GS",
-  "pos": "Flx"
- },
- "simi shittu": {
-  "name": "Simi Shittu",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 587,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "taylor hendricks": {
-  "name": "Taylor Hendricks",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 251,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "kyle lowry": {
-  "name": "Kyle Lowry",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 516,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "brice sensabaugh": {
-  "name": "Brice Sensabaugh",
-  "ownAdp": 146.5,
-  "ownCount": 2,
-  "ownMin": 141,
-  "ownMax": 152,
-  "fantraxAdp": 97,
-  "team": "UTA",
-  "pos": "SF"
- },
- "steven adams": {
-  "name": "Steven Adams",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 334,
-  "team": "HOU",
-  "pos": "Flx"
- },
- "frank kaminsky": {
-  "name": "Frank Kaminsky",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 597,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "sidy cissoko": {
-  "name": "Sidy Cissoko",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 255,
+  "fantraxAdp": 258,
   "team": "POR",
   "pos": "Flx"
  },
- "donovan clingan": {
-  "name": "Donovan Clingan",
-  "ownAdp": 52.0,
-  "ownCount": 25,
-  "ownMin": 39,
-  "ownMax": 65,
-  "fantraxAdp": 57,
-  "team": "POR",
-  "pos": "C"
- },
- "isaiah stewart": {
-  "name": "Isaiah Stewart",
-  "ownAdp": 157.5,
-  "ownCount": 2,
-  "ownMin": 157,
-  "ownMax": 158,
-  "fantraxAdp": 182,
-  "team": "MEM",
-  "pos": "C"
- },
- "quinten post": {
-  "name": "Quinten Post",
+ "nick richards": {
+  "name": "Nick Richards",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 232,
-  "team": "MEM",
-  "pos": "Flx"
- },
- "moussa cisse": {
-  "name": "Moussa Cisse",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 339,
-  "team": "DAL",
-  "pos": "Flx"
- },
- "yaxel lendeborg": {
-  "name": "Yaxel Lendeborg",
-  "ownAdp": 147.5,
-  "ownCount": 4,
-  "ownMin": 130,
-  "ownMax": 159,
-  "fantraxAdp": null,
-  "team": "GS",
-  "pos": "SF"
- },
- "nick smith": {
-  "name": "Nick Smith",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 413,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "simone fontecchio": {
-  "name": "Simone Fontecchio",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 209,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "zeke nnaji": {
-  "name": "Zeke Nnaji",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 358,
-  "team": "DEN",
-  "pos": "Flx"
- },
- "john egbunu": {
-  "name": "John Egbunu",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 586,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jerami grant": {
-  "name": "Jerami Grant",
-  "ownAdp": 148.0,
-  "ownCount": 1,
-  "ownMin": 148,
-  "ownMax": 148,
-  "fantraxAdp": 101,
-  "team": "MEM",
-  "pos": "PF"
- },
- "shai gilgeousalexander": {
-  "name": "Shai Gilgeous-Alexander",
-  "ownAdp": 3.5,
-  "ownCount": 31,
-  "ownMin": 3,
-  "ownMax": 5,
-  "fantraxAdp": 10,
-  "team": "OKC",
-  "pos": "PG"
- },
- "jayson kent": {
-  "name": "Jayson Kent",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 549,
-  "team": "POR",
-  "pos": "Flx"
- },
- "cooper flagg": {
-  "name": "Cooper Flagg",
-  "ownAdp": 12.9,
-  "ownCount": 29,
-  "ownMin": 7,
-  "ownMax": 19,
-  "fantraxAdp": 22,
-  "team": "DAL",
-  "pos": "SF"
- },
- "dwight powell": {
-  "name": "Dwight Powell",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 311,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "bryce brown": {
-  "name": "Bryce Brown",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 585,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "josh gray": {
-  "name": "Josh Gray",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 575,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "justin anderson": {
-  "name": "Justin Anderson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 595,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "kobe bufkin": {
-  "name": "Kobe Bufkin",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 486,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "kevon looney": {
-  "name": "Kevon Looney",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 433,
-  "team": "LAL",
-  "pos": "Flx"
- },
- "max shulga": {
-  "name": "Max Shulga",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 554,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "seth curry": {
-  "name": "Seth Curry",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 473,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "cole anthony": {
-  "name": "Cole Anthony",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 350,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "anfernee simons": {
-  "name": "Anfernee Simons",
-  "ownAdp": 138.0,
-  "ownCount": 1,
-  "ownMin": 138,
-  "ownMax": 138,
-  "fantraxAdp": 196,
-  "team": "PHI",
-  "pos": "SG"
- },
- "darius brown": {
-  "name": "Darius Brown",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 573,
+  "fantraxAdp": 318,
   "team": "(N/A)",
   "pos": "Flx"
  },
@@ -5204,34 +1774,44 @@ const ADP_DATA = {
   "team": "PHI",
   "pos": "Flx"
  },
- "killian hayes": {
-  "name": "Killian Hayes",
+ "aaron nesmith": {
+  "name": "Aaron Nesmith",
+  "ownAdp": 158.0,
+  "ownCount": 1,
+  "ownMin": 158,
+  "ownMax": 158,
+  "fantraxAdp": 214,
+  "team": "IND",
+  "pos": "SF"
+ },
+ "andre drummond": {
+  "name": "Andre Drummond",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 389,
+  "fantraxAdp": 221,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "cody martin": {
+  "name": "Cody Martin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 534,
   "team": "(N/A)",
   "pos": "Flx"
  },
- "luka garza": {
-  "name": "Luka Garza",
+ "dalton knecht": {
+  "name": "Dalton Knecht",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 228,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "taelon peter": {
-  "name": "Taelon Peter",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 387,
-  "team": "(N/A)",
+  "fantraxAdp": 382,
+  "team": "LAL",
   "pos": "Flx"
  },
  "noah penda": {
@@ -5244,335 +1824,35 @@ const ADP_DATA = {
   "team": "ORL",
   "pos": "Flx"
  },
- "davion mitchell": {
-  "name": "Davion Mitchell",
-  "ownAdp": 137.0,
-  "ownCount": 12,
-  "ownMin": 101,
-  "ownMax": 151,
-  "fantraxAdp": 159,
-  "team": "MIA",
-  "pos": "PG"
- },
- "markelle fultz": {
-  "name": "Markelle Fultz",
+ "tyler kolek": {
+  "name": "Tyler Kolek",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 556,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "duop reath": {
-  "name": "Duop Reath",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 449,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "trevor keels": {
-  "name": "Trevor Keels",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 561,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "morez johnson": {
-  "name": "Morez Johnson",
-  "ownAdp": 156.5,
-  "ownCount": 2,
-  "ownMin": 146,
-  "ownMax": 167,
-  "fantraxAdp": null,
-  "team": "DAL",
-  "pos": "PF"
- },
- "jalen duren": {
-  "name": "Jalen Duren",
-  "ownAdp": 43.0,
-  "ownCount": 25,
-  "ownMin": 32,
-  "ownMax": 60,
-  "fantraxAdp": 73,
-  "team": "DET",
-  "pos": "C"
- },
- "desmond bane": {
-  "name": "Desmond Bane",
-  "ownAdp": 46.3,
-  "ownCount": 25,
-  "ownMin": 29,
-  "ownMax": 58,
-  "fantraxAdp": 20,
-  "team": "ORL",
-  "pos": "SG"
- },
- "cameron thomas": {
-  "name": "Cameron Thomas",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 276,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "immanuel quickley": {
-  "name": "Immanuel Quickley",
-  "ownAdp": 81.0,
-  "ownCount": 22,
-  "ownMin": 69,
-  "ownMax": 96,
-  "fantraxAdp": 54,
-  "team": "TOR",
-  "pos": "PG"
- },
- "franz wagner": {
-  "name": "Franz Wagner",
-  "ownAdp": 57.8,
-  "ownCount": 25,
-  "ownMin": 41,
-  "ownMax": 77,
-  "fantraxAdp": 217,
-  "team": "ORL",
-  "pos": "SF"
- },
- "moussa diabate": {
-  "name": "Moussa Diabate",
-  "ownAdp": 144.0,
-  "ownCount": 3,
-  "ownMin": 133,
-  "ownMax": 162,
-  "fantraxAdp": 128,
-  "team": "CHA",
-  "pos": "C"
- },
- "max christie": {
-  "name": "Max Christie",
-  "ownAdp": 160.0,
-  "ownCount": 1,
-  "ownMin": 160,
-  "ownMax": 160,
-  "fantraxAdp": 99,
-  "team": "DAL",
-  "pos": "SG"
- },
- "elijah harkless": {
-  "name": "Elijah Harkless",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 361,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "quentin grimes": {
-  "name": "Quentin Grimes",
-  "ownAdp": 135.8,
-  "ownCount": 11,
-  "ownMin": 120,
-  "ownMax": 154,
-  "fantraxAdp": null,
-  "team": "LAL",
-  "pos": "SG"
- },
- "sam hauser": {
-  "name": "Sam Hauser",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 177,
-  "team": "BOS",
-  "pos": "Flx"
- },
- "asa newell": {
-  "name": "Asa Newell",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 377,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "walker kessler": {
-  "name": "Walker Kessler",
-  "ownAdp": 42.2,
-  "ownCount": 25,
-  "ownMin": 30,
-  "ownMax": 66,
-  "fantraxAdp": 446,
-  "team": "LAL",
-  "pos": "C"
- },
- "josh giddey": {
-  "name": "Josh Giddey",
-  "ownAdp": 27.9,
-  "ownCount": 28,
-  "ownMin": 16,
-  "ownMax": 40,
-  "fantraxAdp": 64,
-  "team": "CHI",
-  "pos": "PG"
- },
- "caleb wilson": {
-  "name": "Caleb Wilson",
-  "ownAdp": 99.2,
-  "ownCount": 21,
-  "ownMin": 51,
-  "ownMax": 125,
-  "fantraxAdp": null,
-  "team": "CHI",
-  "pos": "PF"
- },
- "derik queen": {
-  "name": "Derik Queen",
-  "ownAdp": 92.6,
-  "ownCount": 21,
-  "ownMin": 67,
-  "ownMax": 120,
-  "fantraxAdp": 49,
-  "team": "NO",
-  "pos": "C"
- },
- "darryn peterson": {
-  "name": "Darryn Peterson",
-  "ownAdp": 116.4,
-  "ownCount": 17,
-  "ownMin": 87,
-  "ownMax": 144,
-  "fantraxAdp": null,
-  "team": "UTA",
-  "pos": "SG"
- },
- "demar derozan": {
-  "name": "DeMar DeRozan",
-  "ownAdp": 143.2,
-  "ownCount": 10,
-  "ownMin": 122,
-  "ownMax": 167,
-  "fantraxAdp": 74,
-  "team": "(N/A)",
-  "pos": "SF"
- },
- "michael porter": {
-  "name": "Michael Porter",
-  "ownAdp": 61.8,
-  "ownCount": 25,
-  "ownMin": 41,
-  "ownMax": 86,
-  "fantraxAdp": 66,
-  "team": "BKN",
-  "pos": "SF"
- },
- "trey jemison": {
-  "name": "Trey Jemison",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 524,
+  "fantraxAdp": 333,
   "team": "NY",
   "pos": "Flx"
  },
- "andersson garcia": {
-  "name": "Andersson Garcia",
+ "jordan miller": {
+  "name": "Jordan Miller",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 484,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "rui hachimura": {
-  "name": "Rui Hachimura",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 201,
+  "fantraxAdp": 218,
   "team": "LAC",
   "pos": "Flx"
  },
- "jalen green": {
-  "name": "Jalen Green",
-  "ownAdp": 116.4,
-  "ownCount": 18,
-  "ownMin": 75,
-  "ownMax": 156,
-  "fantraxAdp": 263,
-  "team": "PHO",
-  "pos": "SG"
- },
- "brooks barnhizer": {
-  "name": "Brooks Barnhizer",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 443,
-  "team": "OKC",
-  "pos": "Flx"
- },
- "nolan traore": {
-  "name": "Nolan Traore",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 223,
-  "team": "BKN",
-  "pos": "Flx"
- },
- "omer yurtseven": {
-  "name": "Omer Yurtseven",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 491,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "daquan jeffries": {
-  "name": "DaQuan Jeffries",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 518,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "tony bradley": {
-  "name": "Tony Bradley",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 400,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "cameron payne": {
-  "name": "Cameron Payne",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 383,
-  "team": "(N/A)",
-  "pos": "Flx"
+ "isaiah stewart": {
+  "name": "Isaiah Stewart",
+  "ownAdp": 157.5,
+  "ownCount": 2,
+  "ownMin": 157,
+  "ownMax": 158,
+  "fantraxAdp": 182,
+  "team": "MEM",
+  "pos": "C"
  },
  "jaesean tate": {
   "name": "Jae'Sean Tate",
@@ -5584,385 +1864,25 @@ const ADP_DATA = {
   "team": "(N/A)",
   "pos": "Flx"
  },
- "mitchell robinson": {
-  "name": "Mitchell Robinson",
-  "ownAdp": 145.0,
-  "ownCount": 3,
-  "ownMin": 133,
-  "ownMax": 163,
-  "fantraxAdp": 226,
-  "team": "BOS",
-  "pos": "C"
- },
- "gabe vincent": {
-  "name": "Gabe Vincent",
+ "jaden ivey": {
+  "name": "Jaden Ivey",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 357,
+  "fantraxAdp": 327,
   "team": "(N/A)",
   "pos": "Flx"
  },
- "dejounte murray": {
-  "name": "Dejounte Murray",
-  "ownAdp": 63.1,
-  "ownCount": 25,
-  "ownMin": 42,
-  "ownMax": 79,
-  "fantraxAdp": 354,
-  "team": "NO",
-  "pos": "PG"
- },
- "kyle filipowski": {
-  "name": "Kyle Filipowski",
-  "ownAdp": 152.4,
-  "ownCount": 9,
-  "ownMin": 135,
-  "ownMax": 165,
-  "fantraxAdp": 69,
-  "team": "UTA",
-  "pos": "C"
- },
- "sean pedulla": {
-  "name": "Sean Pedulla",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 545,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "rayj dennis": {
-  "name": "RayJ Dennis",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 458,
-  "team": "ATL",
-  "pos": "Flx"
- },
- "gary harris": {
-  "name": "Gary Harris",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 395,
-  "team": "DET",
-  "pos": "Flx"
- },
- "jonathan kuminga": {
-  "name": "Jonathan Kuminga",
-  "ownAdp": 149.0,
-  "ownCount": 1,
-  "ownMin": 149,
-  "ownMax": 149,
-  "fantraxAdp": 278,
-  "team": "(N/A)",
-  "pos": "PF"
- },
- "jahmir young": {
-  "name": "Jahmir Young",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 520,
-  "team": "MIA",
-  "pos": "Flx"
- },
- "jalen brunson": {
-  "name": "Jalen Brunson",
-  "ownAdp": 32.2,
-  "ownCount": 25,
-  "ownMin": 17,
-  "ownMax": 48,
-  "fantraxAdp": 43,
-  "team": "NY",
-  "pos": "PG"
- },
- "aaron gordon": {
-  "name": "Aaron Gordon",
-  "ownAdp": 140.8,
-  "ownCount": 10,
-  "ownMin": 100,
-  "ownMax": 165,
-  "fantraxAdp": 239,
-  "team": "DEN",
-  "pos": "PF"
- },
- "lucas williamson": {
-  "name": "Lucas Williamson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 456,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "precious achiuwa": {
-  "name": "Precious Achiuwa",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 137,
-  "team": "SAC",
-  "pos": "Flx"
- },
- "al horford": {
-  "name": "Al Horford",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 248,
-  "team": "GS",
-  "pos": "Flx"
- },
- "aj dybantsa": {
-  "name": "AJ Dybantsa",
-  "ownAdp": 105.8,
-  "ownCount": 20,
-  "ownMin": 87,
-  "ownMax": 150,
-  "fantraxAdp": null,
-  "team": "WAS",
-  "pos": "SF"
- },
- "oscar tshiebwe": {
-  "name": "Oscar Tshiebwe",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 376,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "darius garland": {
-  "name": "Darius Garland",
-  "ownAdp": 54.9,
-  "ownCount": 25,
-  "ownMin": 33,
-  "ownMax": 68,
-  "fantraxAdp": 152,
-  "team": "LAC",
-  "pos": "PG"
- },
- "skal labissiere": {
-  "name": "Skal Labissiere",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 536,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "jarrett allen": {
-  "name": "Jarrett Allen",
-  "ownAdp": 85.0,
+ "myles turner": {
+  "name": "Myles Turner",
+  "ownAdp": 83.2,
   "ownCount": 21,
-  "ownMin": 71,
+  "ownMin": 66,
   "ownMax": 99,
-  "fantraxAdp": 127,
-  "team": "CLE",
+  "fantraxAdp": 65,
+  "team": "MIL",
   "pos": "C"
- },
- "tosan evbuomwan": {
-  "name": "Tosan Evbuomwan",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 572,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "aj lawson": {
-  "name": "A.J. Lawson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 440,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "zach collins": {
-  "name": "Zach Collins",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 448,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "marcus smart": {
-  "name": "Marcus Smart",
-  "ownAdp": 148.0,
-  "ownCount": 1,
-  "ownMin": 148,
-  "ownMax": 148,
-  "fantraxAdp": 147,
-  "team": "HOU",
-  "pos": "PG"
- },
- "naji marshall": {
-  "name": "Naji Marshall",
-  "ownAdp": 156.7,
-  "ownCount": 3,
-  "ownMin": 152,
-  "ownMax": 159,
-  "fantraxAdp": 79,
-  "team": "DAL",
-  "pos": "SF"
- },
- "alperen sengun": {
-  "name": "Alperen Sengun",
-  "ownAdp": 21.4,
-  "ownCount": 28,
-  "ownMin": 13,
-  "ownMax": 37,
-  "fantraxAdp": 18,
-  "team": "HOU",
-  "pos": "C"
- },
- "yuki kawamura": {
-  "name": "Yuki Kawamura",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 447,
-  "team": "CHI",
-  "pos": "Flx"
- },
- "kris dunn": {
-  "name": "Kris Dunn",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 126,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "bogdan bogdanovic": {
-  "name": "Bogdan Bogdanovic",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 393,
-  "team": "HOU",
-  "pos": "Flx"
- },
- "cameron boozer": {
-  "name": "Cameron Boozer",
-  "ownAdp": 60.1,
-  "ownCount": 25,
-  "ownMin": 32,
-  "ownMax": 83,
-  "fantraxAdp": null,
-  "team": "MEM",
-  "pos": "PF"
- },
- "trayce jacksondavis": {
-  "name": "Trayce Jackson-Davis",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 356,
-  "team": "TOR",
-  "pos": "Flx"
- },
- "koby brea": {
-  "name": "Koby Brea",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 499,
-  "team": "PHO",
-  "pos": "Flx"
- },
- "jase richardson": {
-  "name": "Jase Richardson",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 370,
-  "team": "ORL",
-  "pos": "Flx"
- },
- "tre jones": {
-  "name": "Tre Jones",
-  "ownAdp": 144.5,
-  "ownCount": 12,
-  "ownMin": 110,
-  "ownMax": 163,
-  "fantraxAdp": 114,
-  "team": "CHI",
-  "pos": "PG"
- },
- "jake laravia": {
-  "name": "Jake LaRavia",
-  "ownAdp": 162.0,
-  "ownCount": 1,
-  "ownMin": 162,
-  "ownMax": 162,
-  "fantraxAdp": 100,
-  "team": "LAL",
-  "pos": "PF"
- },
- "jeff green": {
-  "name": "Jeff Green",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 476,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "yanic konan niederhauser": {
-  "name": "Yanic Konan Niederhauser",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 371,
-  "team": "LAC",
-  "pos": "Flx"
- },
- "isaiah collier": {
-  "name": "Isaiah Collier",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 151,
-  "team": "UTA",
-  "pos": "Flx"
- },
- "norman powell": {
-  "name": "Norman Powell",
-  "ownAdp": 92.8,
-  "ownCount": 22,
-  "ownMin": 68,
-  "ownMax": 112,
-  "fantraxAdp": 82,
-  "team": "CHI",
-  "pos": "SG"
  },
  "stanley umude": {
   "name": "Stanley Umude",
@@ -5974,33 +1894,353 @@ const ADP_DATA = {
   "team": "(N/A)",
   "pos": "Flx"
  },
- "khaman maluach": {
-  "name": "Khaman Maluach",
-  "ownAdp": 152.0,
-  "ownCount": 1,
-  "ownMin": 152,
-  "ownMax": 152,
-  "fantraxAdp": 384,
-  "team": "PHO",
-  "pos": "C"
- },
- "alex antetokounmpo": {
-  "name": "Alex Antetokounmpo",
+ "christian wood": {
+  "name": "Christian Wood",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 528,
-  "team": "MIL",
+  "fantraxAdp": 592,
+  "team": "(N/A)",
   "pos": "Flx"
  },
- "kadary richmond": {
-  "name": "Kadary Richmond",
+ "jordan goodwin": {
+  "name": "Jordan Goodwin",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 506,
+  "fantraxAdp": 144,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "david kramer": {
+  "name": "David Kramer",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 591,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "shaedon sharpe": {
+  "name": "Shaedon Sharpe",
+  "ownAdp": 129.6,
+  "ownCount": 12,
+  "ownMin": 111,
+  "ownMax": 158,
+  "fantraxAdp": 123,
+  "team": "POR",
+  "pos": "SG"
+ },
+ "pj washington": {
+  "name": "P.J. Washington",
+  "ownAdp": 116.0,
+  "ownCount": 17,
+  "ownMin": 97,
+  "ownMax": 154,
+  "fantraxAdp": 103,
+  "team": "DAL",
+  "pos": "PF"
+ },
+ "zaccharie risacher": {
+  "name": "Zaccharie Risacher",
+  "ownAdp": 153.0,
+  "ownCount": 2,
+  "ownMin": 138,
+  "ownMax": 168,
+  "fantraxAdp": 176,
+  "team": "DAL",
+  "pos": "SF"
+ },
+ "taylor hendricks": {
+  "name": "Taylor Hendricks",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 251,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "branden carlson": {
+  "name": "Branden Carlson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 363,
+  "team": "POR",
+  "pos": "Flx"
+ },
+ "svi mykhailiuk": {
+  "name": "Svi Mykhailiuk",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 300,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "john egbunu": {
+  "name": "John Egbunu",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 586,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "andrew wiggins": {
+  "name": "Andrew Wiggins",
+  "ownAdp": 104.2,
+  "ownCount": 20,
+  "ownMin": 90,
+  "ownMax": 142,
+  "fantraxAdp": 50,
+  "team": "MIA",
+  "pos": "SF"
+ },
+ "riley minix": {
+  "name": "Riley Minix",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 508,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "derrick jones": {
+  "name": "Derrick Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 224,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "aaron holiday": {
+  "name": "Aaron Holiday",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 336,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "colby jones": {
+  "name": "Colby Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 567,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jaxson hayes": {
+  "name": "Jaxson Hayes",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 236,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "pelle larsson": {
+  "name": "Pelle Larsson",
+  "ownAdp": 153.0,
+  "ownCount": 9,
+  "ownMin": 143,
+  "ownMax": 166,
+  "fantraxAdp": 135,
+  "team": "MIA",
+  "pos": "SG"
+ },
+ "brice sensabaugh": {
+  "name": "Brice Sensabaugh",
+  "ownAdp": 146.5,
+  "ownCount": 2,
+  "ownMin": 141,
+  "ownMax": 152,
+  "fantraxAdp": 97,
+  "team": "UTA",
+  "pos": "SF"
+ },
+ "lindy waters": {
+  "name": "Lindy Waters",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 454,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "bilal coulibaly": {
+  "name": "Bilal Coulibaly",
+  "ownAdp": 128.9,
+  "ownCount": 8,
+  "ownMin": 111,
+  "ownMax": 140,
+  "fantraxAdp": null,
+  "team": "WAS",
+  "pos": "SF"
+ },
+ "mikel brown": {
+  "name": "Mikel Brown",
+  "ownAdp": 147.2,
+  "ownCount": 8,
+  "ownMin": 124,
+  "ownMax": 168,
+  "fantraxAdp": null,
+  "team": "BKN",
+  "pos": "PG"
+ },
+ "cam spencer": {
+  "name": "Cam Spencer",
+  "ownAdp": 164.0,
+  "ownCount": 1,
+  "ownMin": 164,
+  "ownMax": 164,
+  "fantraxAdp": 112,
+  "team": "MEM",
+  "pos": "SG"
+ },
+ "jaime jaquez": {
+  "name": "Jaime Jaquez",
+  "ownAdp": 120.8,
+  "ownCount": 16,
+  "ownMin": 74,
+  "ownMax": 156,
+  "fantraxAdp": 81,
+  "team": "MIL",
+  "pos": "SF"
+ },
+ "donovan mitchell": {
+  "name": "Donovan Mitchell",
+  "ownAdp": 12.9,
+  "ownCount": 29,
+  "ownMin": 9,
+  "ownMax": 19,
+  "fantraxAdp": 11,
+  "team": "CLE",
+  "pos": "SG"
+ },
+ "leonard miller": {
+  "name": "Leonard Miller",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 320,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "zeke nnaji": {
+  "name": "Zeke Nnaji",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 358,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "keaton wallace": {
+  "name": "Keaton Wallace",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 372,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "nikola vucevic": {
+  "name": "Nikola Vucevic",
+  "ownAdp": 121.6,
+  "ownCount": 5,
+  "ownMin": 97,
+  "ownMax": 155,
+  "fantraxAdp": 84,
+  "team": "ORL",
+  "pos": "C"
+ },
+ "joe ingles": {
+  "name": "Joe Ingles",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 472,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "gary payton": {
+  "name": "Gary Payton II",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 225,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jaylen brown": {
+  "name": "Jaylen Brown",
+  "ownAdp": 39.6,
+  "ownCount": 25,
+  "ownMin": 17,
+  "ownMax": 60,
+  "fantraxAdp": 21,
+  "team": "PHI",
+  "pos": "SF"
+ },
+ "jarred vanderbilt": {
+  "name": "Jarred Vanderbilt",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 285,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "drew peterson": {
+  "name": "Drew Peterson",
+  "ownAdp": 86.0,
+  "ownCount": 1,
+  "ownMin": 86,
+  "ownMax": 86,
+  "fantraxAdp": 548,
+  "team": "(N/A)",
+  "pos": "PF"
+ },
+ "ryan nembhard": {
+  "name": "Ryan Nembhard",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 288,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "grant nelson": {
+  "name": "Grant Nelson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 517,
   "team": "(N/A)",
   "pos": "Flx"
  },
@@ -6014,55 +2254,335 @@ const ADP_DATA = {
   "team": "(N/A)",
   "pos": "Flx"
  },
- "tyson etienne": {
-  "name": "Tyson Etienne",
+ "deaaron fox": {
+  "name": "De'Aaron Fox",
+  "ownAdp": 67.8,
+  "ownCount": 25,
+  "ownMin": 41,
+  "ownMax": 92,
+  "fantraxAdp": 47,
+  "team": "SA",
+  "pos": "PG"
+ },
+ "josh green": {
+  "name": "Josh Green",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 396,
+  "fantraxAdp": 344,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "sidy cissoko": {
+  "name": "Sidy Cissoko",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 255,
+  "team": "POR",
+  "pos": "Flx"
+ },
+ "tyty washington": {
+  "name": "TyTy Washington",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 505,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "gary trent": {
+  "name": "Gary Trent",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 279,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "terry rozier": {
+  "name": "Terry Rozier",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 596,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "nikola jovic": {
+  "name": "Nikola Jovic",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 297,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "sandro mamukelashvili": {
+  "name": "Sandro Mamukelashvili",
+  "ownAdp": 126.3,
+  "ownCount": 11,
+  "ownMin": 92,
+  "ownMax": 160,
+  "fantraxAdp": 78,
+  "team": "LAL",
+  "pos": "PF"
+ },
+ "dru smith": {
+  "name": "Dru Smith",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 199,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "lj cryer": {
+  "name": "L.J. Cryer",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 432,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "miles mcbride": {
+  "name": "Miles McBride",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 270,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "trey jemison": {
+  "name": "Trey Jemison",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 524,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "daniss jenkins": {
+  "name": "Daniss Jenkins",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 154,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "trendon watford": {
+  "name": "Trendon Watford",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 301,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "christian koloko": {
+  "name": "Christian Koloko",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 421,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "miles bridges": {
+  "name": "Miles Bridges",
+  "ownAdp": 100.7,
+  "ownCount": 22,
+  "ownMin": 72,
+  "ownMax": 126,
+  "fantraxAdp": 52,
+  "team": "PHO",
+  "pos": "SF"
+ },
+ "joan beringer": {
+  "name": "Joan Beringer",
+  "ownAdp": 149.0,
+  "ownCount": 1,
+  "ownMin": 149,
+  "ownMax": 149,
+  "fantraxAdp": 390,
+  "team": "MIN",
+  "pos": "PF"
+ },
+ "jeremy sochan": {
+  "name": "Jeremy Sochan",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 388,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "josh minott": {
+  "name": "Josh Minott",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 291,
   "team": "BKN",
   "pos": "Flx"
  },
- "grayson allen": {
-  "name": "Grayson Allen",
-  "ownAdp": 143.2,
-  "ownCount": 6,
-  "ownMin": 124,
-  "ownMax": 164,
-  "fantraxAdp": 111,
+ "tristen newton": {
+  "name": "Tristen Newton",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 550,
+  "team": "HOU",
+  "pos": "Flx"
+ },
+ "pj hall": {
+  "name": "PJ Hall",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 439,
   "team": "CHA",
-  "pos": "SG"
- },
- "pat spencer": {
-  "name": "Pat Spencer",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 241,
-  "team": "PHO",
   "pos": "Flx"
  },
- "justin edwards": {
-  "name": "Justin Edwards",
+ "tyler burton": {
+  "name": "Tyler Burton",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 299,
+  "fantraxAdp": 425,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "sion james": {
+  "name": "Sion James",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 195,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "fred vanvleet": {
+  "name": "Fred VanVleet",
+  "ownAdp": 111.4,
+  "ownCount": 21,
+  "ownMin": 74,
+  "ownMax": 144,
+  "fantraxAdp": null,
+  "team": "HOU",
+  "pos": "PG"
+ },
+ "toumani camara": {
+  "name": "Toumani Camara",
+  "ownAdp": 102.6,
+  "ownCount": 20,
+  "ownMin": 81,
+  "ownMax": 128,
+  "fantraxAdp": 41,
+  "team": "POR",
+  "pos": "PF"
+ },
+ "collin murrayboyles": {
+  "name": "Collin Murray-Boyles",
+  "ownAdp": 113.4,
+  "ownCount": 19,
+  "ownMin": 80,
+  "ownMax": 147,
+  "fantraxAdp": 203,
+  "team": "TOR",
+  "pos": "PF"
+ },
+ "jaylon tyson": {
+  "name": "Jaylon Tyson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 110,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "killian hayes": {
+  "name": "Killian Hayes",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 389,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "mohamed diawara": {
+  "name": "Mohamed Diawara",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 365,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "paul george": {
+  "name": "Paul George",
+  "ownAdp": 80.1,
+  "ownCount": 23,
+  "ownMin": 64,
+  "ownMax": 96,
+  "fantraxAdp": 171,
+  "team": "BOS",
+  "pos": "PF"
+ },
+ "immanuel quickley": {
+  "name": "Immanuel Quickley",
+  "ownAdp": 81.0,
+  "ownCount": 22,
+  "ownMin": 69,
+  "ownMax": 96,
+  "fantraxAdp": 54,
+  "team": "TOR",
+  "pos": "PG"
+ },
+ "oscar tshiebwe": {
+  "name": "Oscar Tshiebwe",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 376,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "anfernee simons": {
+  "name": "Anfernee Simons",
+  "ownAdp": 138.0,
+  "ownCount": 1,
+  "ownMin": 138,
+  "ownMax": 138,
+  "fantraxAdp": 196,
   "team": "PHI",
-  "pos": "Flx"
- },
- "javonte green": {
-  "name": "Javonte Green",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 168,
-  "team": "DET",
-  "pos": "Flx"
+  "pos": "SG"
  },
  "jimmy butler": {
   "name": "Jimmy Butler",
@@ -6074,63 +2594,33 @@ const ADP_DATA = {
   "team": "GS",
   "pos": "SF"
  },
- "obi toppin": {
-  "name": "Obi Toppin",
+ "isaiah collier": {
+  "name": "Isaiah Collier",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 351,
-  "team": "IND",
+  "fantraxAdp": 151,
+  "team": "UTA",
   "pos": "Flx"
  },
- "cam christie": {
-  "name": "Cam Christie",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 392,
-  "team": "LAC",
-  "pos": "Flx"
+ "naz reid": {
+  "name": "Naz Reid",
+  "ownAdp": 73.9,
+  "ownCount": 23,
+  "ownMin": 53,
+  "ownMax": 90,
+  "fantraxAdp": 38,
+  "team": "CHA",
+  "pos": "C"
  },
- "javon bess": {
-  "name": "Javon Bess",
+ "hunter sallis": {
+  "name": "Hunter Sallis",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 581,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "adama bal": {
-  "name": "Adama Bal",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 457,
-  "team": "(N/A)",
-  "pos": "Flx"
- },
- "dalen terry": {
-  "name": "Dalen Terry",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 368,
-  "team": "PHI",
-  "pos": "Flx"
- },
- "antonio reeves": {
-  "name": "Antonio Reeves",
-  "ownAdp": null,
-  "ownCount": 0,
-  "ownMin": null,
-  "ownMax": null,
-  "fantraxAdp": 519,
+  "fantraxAdp": 558,
   "team": "(N/A)",
   "pos": "Flx"
  },
@@ -6144,6 +2634,2296 @@ const ADP_DATA = {
   "team": "DEN",
   "pos": "Flx"
  },
+ "franz wagner": {
+  "name": "Franz Wagner",
+  "ownAdp": 57.8,
+  "ownCount": 25,
+  "ownMin": 41,
+  "ownMax": 77,
+  "fantraxAdp": 217,
+  "team": "ORL",
+  "pos": "SF"
+ },
+ "kevin durant": {
+  "name": "Kevin Durant",
+  "ownAdp": 17.4,
+  "ownCount": 28,
+  "ownMin": 7,
+  "ownMax": 27,
+  "fantraxAdp": 6,
+  "team": "HOU",
+  "pos": "PF"
+ },
+ "larry nance": {
+  "name": "Larry Nance",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 405,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "james harden": {
+  "name": "James Harden",
+  "ownAdp": 26.0,
+  "ownCount": 28,
+  "ownMin": 13,
+  "ownMax": 33,
+  "fantraxAdp": 13,
+  "team": "CLE",
+  "pos": "PG"
+ },
+ "caleb wilson": {
+  "name": "Caleb Wilson",
+  "ownAdp": 99.2,
+  "ownCount": 21,
+  "ownMin": 51,
+  "ownMax": 125,
+  "fantraxAdp": null,
+  "team": "CHI",
+  "pos": "PF"
+ },
+ "patrick williams": {
+  "name": "Patrick Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 219,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "ahmed hill": {
+  "name": "Ahmed Hill",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 578,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "alex antetokounmpo": {
+  "name": "Alex Antetokounmpo",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 528,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "dwight powell": {
+  "name": "Dwight Powell",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 311,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "darion atkins": {
+  "name": "Darion Atkins",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 598,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "hugo gonzalez": {
+  "name": "Hugo Gonzalez",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 313,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "michael porter": {
+  "name": "Michael Porter",
+  "ownAdp": 61.8,
+  "ownCount": 25,
+  "ownMin": 41,
+  "ownMax": 86,
+  "fantraxAdp": 66,
+  "team": "BKN",
+  "pos": "SF"
+ },
+ "john collins": {
+  "name": "John Collins",
+  "ownAdp": 108.4,
+  "ownCount": 19,
+  "ownMin": 96,
+  "ownMax": 124,
+  "fantraxAdp": 102,
+  "team": "DET",
+  "pos": "PF"
+ },
+ "julian champagnie": {
+  "name": "Julian Champagnie",
+  "ownAdp": 151.7,
+  "ownCount": 3,
+  "ownMin": 150,
+  "ownMax": 154,
+  "fantraxAdp": 68,
+  "team": "SA",
+  "pos": "SF"
+ },
+ "maxime raynaud": {
+  "name": "Maxime Raynaud",
+  "ownAdp": 126.4,
+  "ownCount": 16,
+  "ownMin": 97,
+  "ownMax": 142,
+  "fantraxAdp": 134,
+  "team": "SAC",
+  "pos": "C"
+ },
+ "dario saric": {
+  "name": "Dario Saric",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 563,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "tariq owens": {
+  "name": "Tariq Owens",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 588,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "trayce jacksondavis": {
+  "name": "Trayce Jackson-Davis",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 356,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "andre jackson": {
+  "name": "Andre Jackson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 407,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "dennis schroder": {
+  "name": "Dennis Schroder",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 133,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "kennedy chandler": {
+  "name": "Kennedy Chandler",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 394,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "bradley beal": {
+  "name": "Bradley Beal",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 493,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "demar derozan": {
+  "name": "DeMar DeRozan",
+  "ownAdp": 143.2,
+  "ownCount": 10,
+  "ownMin": 122,
+  "ownMax": 167,
+  "fantraxAdp": 74,
+  "team": "(N/A)",
+  "pos": "SF"
+ },
+ "buddy boeheim": {
+  "name": "Buddy Boeheim",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 565,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "derrick white": {
+  "name": "Derrick White",
+  "ownAdp": 31.1,
+  "ownCount": 25,
+  "ownMin": 9,
+  "ownMax": 48,
+  "fantraxAdp": 5,
+  "team": "BOS",
+  "pos": "SG"
+ },
+ "keaton wagler": {
+  "name": "Keaton Wagler",
+  "ownAdp": 152.0,
+  "ownCount": 2,
+  "ownMin": 138,
+  "ownMax": 166,
+  "fantraxAdp": null,
+  "team": "LAC",
+  "pos": "SG"
+ },
+ "brandon miller": {
+  "name": "Brandon Miller",
+  "ownAdp": 44.3,
+  "ownCount": 25,
+  "ownMin": 35,
+  "ownMax": 57,
+  "fantraxAdp": 35,
+  "team": "CHA",
+  "pos": "SF"
+ },
+ "toby okani": {
+  "name": "Toby Okani",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 483,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "peyton watson": {
+  "name": "Peyton Watson",
+  "ownAdp": 115.8,
+  "ownCount": 19,
+  "ownMin": 87,
+  "ownMax": 138,
+  "fantraxAdp": 121,
+  "team": "DEN",
+  "pos": "SF"
+ },
+ "cj mccollum": {
+  "name": "CJ McCollum",
+  "ownAdp": 108.5,
+  "ownCount": 17,
+  "ownMin": 96,
+  "ownMax": 128,
+  "fantraxAdp": 46,
+  "team": "ATL",
+  "pos": "PG"
+ },
+ "kobe sanders": {
+  "name": "Kobe Sanders",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 247,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "cameron boozer": {
+  "name": "Cameron Boozer",
+  "ownAdp": 60.1,
+  "ownCount": 25,
+  "ownMin": 32,
+  "ownMax": 83,
+  "fantraxAdp": null,
+  "team": "MEM",
+  "pos": "PF"
+ },
+ "cormac ryan": {
+  "name": "Cormac Ryan",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 415,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "joel embiid": {
+  "name": "Joel Embiid",
+  "ownAdp": 57.5,
+  "ownCount": 25,
+  "ownMin": 34,
+  "ownMax": 88,
+  "fantraxAdp": 124,
+  "team": "PHI",
+  "pos": "C"
+ },
+ "andrew nembhard": {
+  "name": "Andrew Nembhard",
+  "ownAdp": 117.4,
+  "ownCount": 16,
+  "ownMin": 86,
+  "ownMax": 158,
+  "fantraxAdp": 104,
+  "team": "IND",
+  "pos": "SG"
+ },
+ "colin castleton": {
+  "name": "Colin Castleton",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 559,
+  "team": "ORL",
+  "pos": "Flx"
+ },
+ "bennedict mathurin": {
+  "name": "Bennedict Mathurin",
+  "ownAdp": 144.4,
+  "ownCount": 11,
+  "ownMin": 130,
+  "ownMax": 158,
+  "fantraxAdp": 132,
+  "team": "LAC",
+  "pos": "SF"
+ },
+ "trey murphy": {
+  "name": "Trey Murphy",
+  "ownAdp": 28.9,
+  "ownCount": 27,
+  "ownMin": 18,
+  "ownMax": 44,
+  "fantraxAdp": 27,
+  "team": "NO",
+  "pos": "SF"
+ },
+ "bronny james": {
+  "name": "Bronny James",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 423,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "sam hauser": {
+  "name": "Sam Hauser",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 177,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "caleb martin": {
+  "name": "Caleb Martin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 329,
+  "team": "DAL",
+  "pos": "Flx"
+ },
+ "blake wesley": {
+  "name": "Blake Wesley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 402,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "cason wallace": {
+  "name": "Cason Wallace",
+  "ownAdp": 122.5,
+  "ownCount": 19,
+  "ownMin": 92,
+  "ownMax": 159,
+  "fantraxAdp": 109,
+  "team": "OKC",
+  "pos": "SG"
+ },
+ "cameron carr": {
+  "name": "Cameron Carr",
+  "ownAdp": 161.0,
+  "ownCount": 1,
+  "ownMin": 161,
+  "ownMax": 161,
+  "fantraxAdp": null,
+  "team": "LAL",
+  "pos": "SG"
+ },
+ "kobe brown": {
+  "name": "Kobe Brown",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 306,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "deanthony melton": {
+  "name": "De'Anthony Melton",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 178,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "julius randle": {
+  "name": "Julius Randle",
+  "ownAdp": 63.2,
+  "ownCount": 25,
+  "ownMin": 39,
+  "ownMax": 83,
+  "fantraxAdp": 30,
+  "team": "BKN",
+  "pos": "PF"
+ },
+ "patrick baldwin": {
+  "name": "Patrick Baldwin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 492,
+  "team": "SAC",
+  "pos": "Flx"
+ },
+ "jacob toppin": {
+  "name": "Jacob Toppin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 560,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "chris boucher": {
+  "name": "Chris Boucher",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 502,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "lawson lovering": {
+  "name": "Lawson Lovering",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 527,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "aj johnson": {
+  "name": "AJ Johnson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 401,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "tolu smith": {
+  "name": "Tolu Smith",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 461,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "jeremiah robinsonearl": {
+  "name": "Jeremiah Robinson-Earl",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 430,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "josh oduro": {
+  "name": "Josh Oduro",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 514,
+  "team": "NO",
+  "pos": "Flx"
+ },
+ "sam merrill": {
+  "name": "Sam Merrill",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 216,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "giannis antetokounmpo": {
+  "name": "Giannis Antetokounmpo",
+  "ownAdp": 10.9,
+  "ownCount": 31,
+  "ownMin": 5,
+  "ownMax": 24,
+  "fantraxAdp": 130,
+  "team": "MIA",
+  "pos": "PF"
+ },
+ "lucas williamson": {
+  "name": "Lucas Williamson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 456,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "cameron johnson": {
+  "name": "Cameron Johnson",
+  "ownAdp": 143.5,
+  "ownCount": 6,
+  "ownMin": 120,
+  "ownMax": 168,
+  "fantraxAdp": 175,
+  "team": "DEN",
+  "pos": "PF"
+ },
+ "herbert jones": {
+  "name": "Herbert Jones",
+  "ownAdp": 148.0,
+  "ownCount": 2,
+  "ownMin": 133,
+  "ownMax": 163,
+  "fantraxAdp": 181,
+  "team": "NO",
+  "pos": "SF"
+ },
+ "jalen wilson": {
+  "name": "Jalen Wilson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 319,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "ryan kalkbrenner": {
+  "name": "Ryan Kalkbrenner",
+  "ownAdp": 168.0,
+  "ownCount": 1,
+  "ownMin": 168,
+  "ownMax": 168,
+  "fantraxAdp": 194,
+  "team": "CHA",
+  "pos": "C"
+ },
+ "pacome dadiet": {
+  "name": "Pacome Dadiet",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 482,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "jalen slawson": {
+  "name": "Jalen Slawson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 412,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "javonte cooke": {
+  "name": "Javonte Cooke",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 509,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "orlando robinson": {
+  "name": "Orlando Robinson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 555,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "devin carter": {
+  "name": "Devin Carter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 309,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "scoot henderson": {
+  "name": "Scoot Henderson",
+  "ownAdp": 162.0,
+  "ownCount": 2,
+  "ownMin": 156,
+  "ownMax": 168,
+  "fantraxAdp": null,
+  "team": "POR",
+  "pos": "PG"
+ },
+ "tyrese haliburton": {
+  "name": "Tyrese Haliburton",
+  "ownAdp": 11.7,
+  "ownCount": 29,
+  "ownMin": 7,
+  "ownMax": 21,
+  "fantraxAdp": null,
+  "team": "IND",
+  "pos": "PG"
+ },
+ "nique clifford": {
+  "name": "Nique Clifford",
+  "ownAdp": 115.2,
+  "ownCount": 11,
+  "ownMin": 70,
+  "ownMax": 144,
+  "fantraxAdp": 153,
+  "team": "SAC",
+  "pos": "SG"
+ },
+ "julian phillips": {
+  "name": "Julian Phillips",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 409,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "andersson garcia": {
+  "name": "Andersson Garcia",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 484,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "mikal bridges": {
+  "name": "Mikal Bridges",
+  "ownAdp": 67.3,
+  "ownCount": 25,
+  "ownMin": 46,
+  "ownMax": 89,
+  "fantraxAdp": 32,
+  "team": "NY",
+  "pos": "SF"
+ },
+ "ochai agbaji": {
+  "name": "Ochai Agbaji",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 330,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jd davison": {
+  "name": "JD Davison",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 450,
+  "team": "HOU",
+  "pos": "Flx"
+ },
+ "cody williams": {
+  "name": "Cody Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 213,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "amen thompson": {
+  "name": "Amen Thompson",
+  "ownAdp": 23.6,
+  "ownCount": 27,
+  "ownMin": 10,
+  "ownMax": 42,
+  "fantraxAdp": 29,
+  "team": "HOU",
+  "pos": "SF"
+ },
+ "brayden burries": {
+  "name": "Brayden Burries",
+  "ownAdp": 155.0,
+  "ownCount": 2,
+  "ownMin": 152,
+  "ownMax": 158,
+  "fantraxAdp": null,
+  "team": "MIL",
+  "pos": "SG"
+ },
+ "onyeka okongwu": {
+  "name": "Onyeka Okongwu",
+  "ownAdp": 49.2,
+  "ownCount": 25,
+  "ownMin": 32,
+  "ownMax": 76,
+  "fantraxAdp": 19,
+  "team": "ATL",
+  "pos": "C"
+ },
+ "jarrett allen": {
+  "name": "Jarrett Allen",
+  "ownAdp": 85.0,
+  "ownCount": 21,
+  "ownMin": 71,
+  "ownMax": 99,
+  "fantraxAdp": 127,
+  "team": "CLE",
+  "pos": "C"
+ },
+ "cj huntley": {
+  "name": "CJ Huntley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 547,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "luke kornet": {
+  "name": "Luke Kornet",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 191,
+  "team": "SA",
+  "pos": "Flx"
+ },
+ "nickeil alexanderwalker": {
+  "name": "Nickeil Alexander-Walker",
+  "ownAdp": 47.8,
+  "ownCount": 25,
+  "ownMin": 29,
+  "ownMax": 65,
+  "fantraxAdp": 12,
+  "team": "ATL",
+  "pos": "SG"
+ },
+ "james wiseman": {
+  "name": "James Wiseman",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 540,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "scotty pippen": {
+  "name": "Scotty Pippen",
+  "ownAdp": 154.2,
+  "ownCount": 8,
+  "ownMin": 147,
+  "ownMax": 168,
+  "fantraxAdp": 424,
+  "team": "MEM",
+  "pos": "PG"
+ },
+ "jaden mcdaniels": {
+  "name": "Jaden McDaniels",
+  "ownAdp": 78.2,
+  "ownCount": 22,
+  "ownMin": 63,
+  "ownMax": 88,
+  "fantraxAdp": 48,
+  "team": "MIN",
+  "pos": "PF"
+ },
+ "cooper flagg": {
+  "name": "Cooper Flagg",
+  "ownAdp": 12.9,
+  "ownCount": 29,
+  "ownMin": 7,
+  "ownMax": 19,
+  "fantraxAdp": 22,
+  "team": "DAL",
+  "pos": "SF"
+ },
+ "tre johnson": {
+  "name": "Tre Johnson",
+  "ownAdp": 145.5,
+  "ownCount": 2,
+  "ownMin": 135,
+  "ownMax": 156,
+  "fantraxAdp": 192,
+  "team": "WAS",
+  "pos": "SG"
+ },
+ "malevy leons": {
+  "name": "Malevy Leons",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 436,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "carter bryant": {
+  "name": "Carter Bryant",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 321,
+  "team": "SA",
+  "pos": "Flx"
+ },
+ "kelel ware": {
+  "name": "Kel'el Ware",
+  "ownAdp": 60.7,
+  "ownCount": 23,
+  "ownMin": 38,
+  "ownMax": 97,
+  "fantraxAdp": 91,
+  "team": "MIL",
+  "pos": "C"
+ },
+ "shai gilgeousalexander": {
+  "name": "Shai Gilgeous-Alexander",
+  "ownAdp": 3.5,
+  "ownCount": 31,
+  "ownMin": 3,
+  "ownMax": 5,
+  "fantraxAdp": 10,
+  "team": "OKC",
+  "pos": "PG"
+ },
+ "bryce mcgowens": {
+  "name": "Bryce McGowens",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 317,
+  "team": "NO",
+  "pos": "Flx"
+ },
+ "sharife cooper": {
+  "name": "Sharife Cooper",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 322,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "marjon beauchamp": {
+  "name": "MarJon Beauchamp",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 444,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "ben sheppard": {
+  "name": "Ben Sheppard",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 260,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "simi shittu": {
+  "name": "Simi Shittu",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 587,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jarace walker": {
+  "name": "Jarace Walker",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 77,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "dalen terry": {
+  "name": "Dalen Terry",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 368,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "ausar thompson": {
+  "name": "Ausar Thompson",
+  "ownAdp": 78.7,
+  "ownCount": 25,
+  "ownMin": 59,
+  "ownMax": 98,
+  "fantraxAdp": 75,
+  "team": "DET",
+  "pos": "SF"
+ },
+ "tony bradley": {
+  "name": "Tony Bradley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 400,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "shamorie ponds": {
+  "name": "Shamorie Ponds",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 576,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "bones hyland": {
+  "name": "Bones Hyland",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 197,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "kadary richmond": {
+  "name": "Kadary Richmond",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 506,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "kobe bufkin": {
+  "name": "Kobe Bufkin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 486,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "hunter dickinson": {
+  "name": "Hunter Dickinson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 543,
+  "team": "NO",
+  "pos": "Flx"
+ },
+ "jamaree bouyea": {
+  "name": "Jamaree Bouyea",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 342,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "doug mcdermott": {
+  "name": "Doug McDermott",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 417,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "garrison mathews": {
+  "name": "Garrison Mathews",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 459,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "luke travers": {
+  "name": "Luke Travers",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 490,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "ron holland": {
+  "name": "Ron Holland",
+  "ownAdp": 156.0,
+  "ownCount": 2,
+  "ownMin": 152,
+  "ownMax": 160,
+  "fantraxAdp": 150,
+  "team": "DET",
+  "pos": "SF"
+ },
+ "braxton key": {
+  "name": "Braxton Key",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 584,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "john tonje": {
+  "name": "John Tonje",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 539,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "nolan traore": {
+  "name": "Nolan Traore",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 223,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "john konchar": {
+  "name": "John Konchar",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 252,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "jeff green": {
+  "name": "Jeff Green",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 476,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "oliviermaxence prosper": {
+  "name": "Olivier-Maxence Prosper",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 256,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "seth curry": {
+  "name": "Seth Curry",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 473,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "chaney johnson": {
+  "name": "Chaney Johnson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 399,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "jaylin williams": {
+  "name": "Jaylin Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 174,
+  "team": "OKC",
+  "pos": "Flx"
+ },
+ "william mcdowellwhite": {
+  "name": "William McDowell-White",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 579,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "tristan vukcevic": {
+  "name": "Tristan Vukcevic",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 273,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "javonte green": {
+  "name": "Javonte Green",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 168,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "josh okogie": {
+  "name": "Josh Okogie",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 269,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "karlo matkovic": {
+  "name": "Karlo Matkovic",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 282,
+  "team": "NO",
+  "pos": "Flx"
+ },
+ "jordan walsh": {
+  "name": "Jordan Walsh",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 261,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "scottie barnes": {
+  "name": "Scottie Barnes",
+  "ownAdp": 9.9,
+  "ownCount": 29,
+  "ownMin": 4,
+  "ownMax": 15,
+  "fantraxAdp": 3,
+  "team": "TOR",
+  "pos": "PF"
+ },
+ "jordan poole": {
+  "name": "Jordan Poole",
+  "ownAdp": 157.0,
+  "ownCount": 1,
+  "ownMin": 157,
+  "ownMax": 157,
+  "fantraxAdp": 253,
+  "team": "NO",
+  "pos": "SG"
+ },
+ "jonathan isaac": {
+  "name": "Jonathan Isaac",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 369,
+  "team": "ORL",
+  "pos": "Flx"
+ },
+ "simone fontecchio": {
+  "name": "Simone Fontecchio",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 209,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "jonathan mogbo": {
+  "name": "Jonathan Mogbo",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 445,
+  "team": "SAC",
+  "pos": "Flx"
+ },
+ "ej liddell": {
+  "name": "E.J. Liddell",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 408,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "cole anthony": {
+  "name": "Cole Anthony",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 350,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "caris levert": {
+  "name": "Caris LeVert",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 227,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "tobias harris": {
+  "name": "Tobias Harris",
+  "ownAdp": 137.9,
+  "ownCount": 8,
+  "ownMin": 124,
+  "ownMax": 164,
+  "fantraxAdp": 120,
+  "team": "SA",
+  "pos": "PF"
+ },
+ "jahmai mashack": {
+  "name": "Jahmai Mashack",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 355,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "rj hunter": {
+  "name": "R.J. Hunter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 593,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "trevor keels": {
+  "name": "Trevor Keels",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 561,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "moritz wagner": {
+  "name": "Moritz Wagner",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 360,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "reed sheppard": {
+  "name": "Reed Sheppard",
+  "ownAdp": 107.5,
+  "ownCount": 17,
+  "ownMin": 91,
+  "ownMax": 130,
+  "fantraxAdp": 37,
+  "team": "HOU",
+  "pos": "PG"
+ },
+ "desmond bane": {
+  "name": "Desmond Bane",
+  "ownAdp": 46.3,
+  "ownCount": 25,
+  "ownMin": 29,
+  "ownMax": 58,
+  "fantraxAdp": 20,
+  "team": "ORL",
+  "pos": "SG"
+ },
+ "bruce brown": {
+  "name": "Bruce Brown",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 139,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "antonio reeves": {
+  "name": "Antonio Reeves",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 519,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jahmyl telfort": {
+  "name": "Jahmyl Telfort",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 568,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "matisse thybulle": {
+  "name": "Matisse Thybulle",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 352,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "pascal siakam": {
+  "name": "Pascal Siakam",
+  "ownAdp": 55.3,
+  "ownCount": 25,
+  "ownMin": 39,
+  "ownMax": 78,
+  "fantraxAdp": 55,
+  "team": "IND",
+  "pos": "PF"
+ },
+ "jordan mclaughlin": {
+  "name": "Jordan McLaughlin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 437,
+  "team": "SA",
+  "pos": "Flx"
+ },
+ "stephen curry": {
+  "name": "Stephen Curry",
+  "ownAdp": 18.9,
+  "ownCount": 28,
+  "ownMin": 12,
+  "ownMax": 28,
+  "fantraxAdp": 87,
+  "team": "GS",
+  "pos": "PG"
+ },
+ "jalen green": {
+  "name": "Jalen Green",
+  "ownAdp": 116.4,
+  "ownCount": 18,
+  "ownMin": 75,
+  "ownMax": 156,
+  "fantraxAdp": 263,
+  "team": "PHO",
+  "pos": "SG"
+ },
+ "khris middleton": {
+  "name": "Khris Middleton",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 183,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "thomas bryant": {
+  "name": "Thomas Bryant",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 305,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "vince williams": {
+  "name": "Vince Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 294,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "aj green": {
+  "name": "AJ Green",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 161,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "austin reaves": {
+  "name": "Austin Reaves",
+  "ownAdp": 25.8,
+  "ownCount": 28,
+  "ownMin": 16,
+  "ownMax": 37,
+  "fantraxAdp": 76,
+  "team": "LAL",
+  "pos": "SG"
+ },
+ "kyle filipowski": {
+  "name": "Kyle Filipowski",
+  "ownAdp": 152.4,
+  "ownCount": 9,
+  "ownMin": 135,
+  "ownMax": 165,
+  "fantraxAdp": 69,
+  "team": "UTA",
+  "pos": "C"
+ },
+ "isaiah joe": {
+  "name": "Isaiah Joe",
+  "ownAdp": 155.0,
+  "ownCount": 1,
+  "ownMin": 155,
+  "ownMax": 155,
+  "fantraxAdp": 162,
+  "team": "DET",
+  "pos": "SG"
+ },
+ "jerami grant": {
+  "name": "Jerami Grant",
+  "ownAdp": 148.0,
+  "ownCount": 1,
+  "ownMin": 148,
+  "ownMax": 148,
+  "fantraxAdp": 101,
+  "team": "MEM",
+  "pos": "PF"
+ },
+ "jamison battle": {
+  "name": "Jamison Battle",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 404,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "dereck lively": {
+  "name": "Dereck Lively",
+  "ownAdp": 153.0,
+  "ownCount": 1,
+  "ownMin": 153,
+  "ownMax": 153,
+  "fantraxAdp": 477,
+  "team": "DAL",
+  "pos": "C"
+ },
+ "zyon pullin": {
+  "name": "Zyon Pullin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 525,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "damian lillard": {
+  "name": "Damian Lillard",
+  "ownAdp": 88.6,
+  "ownCount": 22,
+  "ownMin": 63,
+  "ownMax": 112,
+  "fantraxAdp": null,
+  "team": "POR",
+  "pos": "PG"
+ },
+ "javon bess": {
+  "name": "Javon Bess",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 581,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "david jones garcia": {
+  "name": "David Jones Garcia",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 496,
+  "team": "SA",
+  "pos": "Flx"
+ },
+ "rj barrett": {
+  "name": "RJ Barrett",
+  "ownAdp": 113.3,
+  "ownCount": 20,
+  "ownMin": 65,
+  "ownMax": 140,
+  "fantraxAdp": 98,
+  "team": "TOR",
+  "pos": "SF"
+ },
+ "marvin bagley": {
+  "name": "Marvin Bagley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 193,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "tyler herro": {
+  "name": "Tyler Herro",
+  "ownAdp": 61.2,
+  "ownCount": 24,
+  "ownMin": 40,
+  "ownMax": 83,
+  "fantraxAdp": 215,
+  "team": "MIL",
+  "pos": "SG"
+ },
+ "adama bal": {
+  "name": "Adama Bal",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 457,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "dean wade": {
+  "name": "Dean Wade",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 272,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "devin vassell": {
+  "name": "Devin Vassell",
+  "ownAdp": 130.8,
+  "ownCount": 14,
+  "ownMin": 100,
+  "ownMax": 167,
+  "fantraxAdp": null,
+  "team": "SA",
+  "pos": "SG"
+ },
+ "ja morant": {
+  "name": "Ja Morant",
+  "ownAdp": 78.7,
+  "ownCount": 22,
+  "ownMin": 57,
+  "ownMax": 119,
+  "fantraxAdp": null,
+  "team": "POR",
+  "pos": "PG"
+ },
+ "craig porter": {
+  "name": "Craig Porter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 245,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "darius acuff": {
+  "name": "Darius Acuff",
+  "ownAdp": 143.1,
+  "ownCount": 15,
+  "ownMin": 129,
+  "ownMax": 167,
+  "fantraxAdp": null,
+  "team": "SAC",
+  "pos": "PG"
+ },
+ "gary harris": {
+  "name": "Gary Harris",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 395,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "tyson etienne": {
+  "name": "Tyson Etienne",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 396,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "jamal shead": {
+  "name": "Jamal Shead",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 157,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "adou thiero": {
+  "name": "Adou Thiero",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 475,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "liam mcneeley": {
+  "name": "Liam McNeeley",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 410,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "jalen brunson": {
+  "name": "Jalen Brunson",
+  "ownAdp": 32.2,
+  "ownCount": 25,
+  "ownMin": 17,
+  "ownMax": 48,
+  "fantraxAdp": 43,
+  "team": "NY",
+  "pos": "PG"
+ },
+ "chucky hepburn": {
+  "name": "Chucky Hepburn",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 570,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "harrison ingram": {
+  "name": "Harrison Ingram",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 551,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "buddy hield": {
+  "name": "Buddy Hield",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 307,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "lamelo ball": {
+  "name": "LaMelo Ball",
+  "ownAdp": 24.9,
+  "ownCount": 28,
+  "ownMin": 16,
+  "ownMax": 33,
+  "fantraxAdp": 25,
+  "team": "MIN",
+  "pos": "PG"
+ },
+ "ivica zubac": {
+  "name": "Ivica Zubac",
+  "ownAdp": 70.3,
+  "ownCount": 24,
+  "ownMin": 56,
+  "ownMax": 90,
+  "fantraxAdp": 186,
+  "team": "IND",
+  "pos": "C"
+ },
+ "jaylen clark": {
+  "name": "Jaylen Clark",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 324,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "leaky black": {
+  "name": "Leaky Black",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 419,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "anthony gill": {
+  "name": "Anthony Gill",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 316,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "marcus smart": {
+  "name": "Marcus Smart",
+  "ownAdp": 148.0,
+  "ownCount": 1,
+  "ownMin": 148,
+  "ownMax": 148,
+  "fantraxAdp": 147,
+  "team": "HOU",
+  "pos": "PG"
+ },
+ "aaron wiggins": {
+  "name": "Aaron Wiggins",
+  "ownAdp": 145.0,
+  "ownCount": 2,
+  "ownMin": 142,
+  "ownMax": 148,
+  "fantraxAdp": 187,
+  "team": "ATL",
+  "pos": "SG"
+ },
+ "phil booth": {
+  "name": "Phil Booth",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 574,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "landry shamet": {
+  "name": "Landry Shamet",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 283,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "quentin grimes": {
+  "name": "Quentin Grimes",
+  "ownAdp": 135.8,
+  "ownCount": 11,
+  "ownMin": 120,
+  "ownMax": 154,
+  "fantraxAdp": null,
+  "team": "LAL",
+  "pos": "SG"
+ },
+ "nate williams": {
+  "name": "Nate Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 453,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "chris paul": {
+  "name": "Chris Paul",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 463,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "robert franks": {
+  "name": "Robert Franks",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 582,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "daniel gafford": {
+  "name": "Daniel Gafford",
+  "ownAdp": 143.8,
+  "ownCount": 5,
+  "ownMin": 126,
+  "ownMax": 159,
+  "fantraxAdp": 189,
+  "team": "DAL",
+  "pos": "C"
+ },
+ "dillon jones": {
+  "name": "Dillon Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 544,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "keon ellis": {
+  "name": "Keon Ellis",
+  "ownAdp": 146.3,
+  "ownCount": 6,
+  "ownMin": 132,
+  "ownMax": 157,
+  "fantraxAdp": 206,
+  "team": "BKN",
+  "pos": "SG"
+ },
+ "isaiah hartenstein": {
+  "name": "Isaiah Hartenstein",
+  "ownAdp": 98.3,
+  "ownCount": 19,
+  "ownMin": 65,
+  "ownMax": 134,
+  "fantraxAdp": 205,
+  "team": "OKC",
+  "pos": "C"
+ },
+ "jaden hardy": {
+  "name": "Jaden Hardy",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 296,
+  "team": "LAL",
+  "pos": "Flx"
+ },
+ "mo bamba": {
+  "name": "Mo Bamba",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 533,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "norchad omier": {
+  "name": "Norchad Omier",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 538,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "naeqwan tomlin": {
+  "name": "Nae'Qwan Tomlin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 287,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "luka garza": {
+  "name": "Luka Garza",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 228,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "cam christie": {
+  "name": "Cam Christie",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 392,
+  "team": "LAC",
+  "pos": "Flx"
+ },
+ "haywood highsmith": {
+  "name": "Haywood Highsmith",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 498,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "tidjane salaun": {
+  "name": "Tidjane Salaun",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 366,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "nick smith": {
+  "name": "Nick Smith",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 413,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "josh hart": {
+  "name": "Josh Hart",
+  "ownAdp": 97.5,
+  "ownCount": 20,
+  "ownMin": 78,
+  "ownMax": 114,
+  "fantraxAdp": 83,
+  "team": "NY",
+  "pos": "SG"
+ },
+ "bismack biyombo": {
+  "name": "Bismack Biyombo",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 504,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "tre jones": {
+  "name": "Tre Jones",
+  "ownAdp": 144.5,
+  "ownCount": 12,
+  "ownMin": 110,
+  "ownMax": 163,
+  "fantraxAdp": 114,
+  "team": "CHI",
+  "pos": "PG"
+ },
+ "josh gray": {
+  "name": "Josh Gray",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 575,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "alijah martin": {
+  "name": "Alijah Martin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 468,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "draymond green": {
+  "name": "Draymond Green",
+  "ownAdp": 149.4,
+  "ownCount": 7,
+  "ownMin": 128,
+  "ownMax": 165,
+  "fantraxAdp": 107,
+  "team": "(N/A)",
+  "pos": "PF"
+ },
+ "baylor scheierman": {
+  "name": "Baylor Scheierman",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 257,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "kyle lowry": {
+  "name": "Kyle Lowry",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 516,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "julian strawther": {
+  "name": "Julian Strawther",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 310,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "mason plumlee": {
+  "name": "Mason Plumlee",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 479,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "royce oneale": {
+  "name": "Royce O'Neale",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 88,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "max christie": {
+  "name": "Max Christie",
+  "ownAdp": 160.0,
+  "ownCount": 1,
+  "ownMin": 160,
+  "ownMax": 160,
+  "fantraxAdp": 99,
+  "team": "DAL",
+  "pos": "SG"
+ },
+ "darius brown": {
+  "name": "Darius Brown",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 573,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "davion mitchell": {
+  "name": "Davion Mitchell",
+  "ownAdp": 137.0,
+  "ownCount": 12,
+  "ownMin": 101,
+  "ownMax": 151,
+  "fantraxAdp": 159,
+  "team": "MIA",
+  "pos": "PG"
+ },
+ "cam whitmore": {
+  "name": "Cam Whitmore",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 398,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "al horford": {
+  "name": "Al Horford",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 248,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "kentavious caldwellpope": {
+  "name": "Kentavious Caldwell-Pope",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 264,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "javon small": {
+  "name": "Javon Small",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 271,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "elijah harkless": {
+  "name": "Elijah Harkless",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 361,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "luguentz dort": {
+  "name": "Luguentz Dort",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 184,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "thanasis antetokounmpo": {
+  "name": "Thanasis Antetokounmpo",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 462,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "yang hansen": {
+  "name": "Yang Hansen",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 428,
+  "team": "POR",
+  "pos": "Flx"
+ },
  "jaylen wells": {
   "name": "Jaylen Wells",
   "ownAdp": null,
@@ -6154,25 +4934,695 @@ const ADP_DATA = {
   "team": "MEM",
   "pos": "Flx"
  },
- "ziaire williams": {
-  "name": "Ziaire Williams",
+ "adem bona": {
+  "name": "Adem Bona",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 204,
+  "fantraxAdp": 244,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "gradey dick": {
+  "name": "Gradey Dick",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 280,
+  "team": "TOR",
+  "pos": "Flx"
+ },
+ "domantas sabonis": {
+  "name": "Domantas Sabonis",
+  "ownAdp": 44.7,
+  "ownCount": 25,
+  "ownMin": 23,
+  "ownMax": 61,
+  "fantraxAdp": 323,
+  "team": "SAC",
+  "pos": "C"
+ },
+ "morez johnson": {
+  "name": "Morez Johnson",
+  "ownAdp": 156.5,
+  "ownCount": 2,
+  "ownMin": 146,
+  "ownMax": 167,
+  "fantraxAdp": null,
+  "team": "DAL",
+  "pos": "PF"
+ },
+ "vladislav goldin": {
+  "name": "Vladislav Goldin",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 546,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "caleb love": {
+  "name": "Caleb Love",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 275,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "isaiah livers": {
+  "name": "Isaiah Livers",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 441,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "alex sarr": {
+  "name": "Alex Sarr",
+  "ownAdp": 63.0,
+  "ownCount": 25,
+  "ownMin": 45,
+  "ownMax": 81,
+  "fantraxAdp": 106,
+  "team": "WAS",
+  "pos": "C"
+ },
+ "zach edey": {
+  "name": "Zach Edey",
+  "ownAdp": 70.9,
+  "ownCount": 24,
+  "ownMin": 53,
+  "ownMax": 90,
+  "fantraxAdp": 391,
+  "team": "MEM",
+  "pos": "C"
+ },
+ "jrue holiday": {
+  "name": "Jrue Holiday",
+  "ownAdp": 134.2,
+  "ownCount": 9,
+  "ownMin": 124,
+  "ownMax": 166,
+  "fantraxAdp": 115,
+  "team": "POR",
+  "pos": "PG"
+ },
+ "evan mobley": {
+  "name": "Evan Mobley",
+  "ownAdp": 28.4,
+  "ownCount": 26,
+  "ownMin": 21,
+  "ownMax": 37,
+  "fantraxAdp": 42,
+  "team": "CLE",
+  "pos": "PF"
+ },
+ "alex caruso": {
+  "name": "Alex Caruso",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 262,
+  "team": "OKC",
+  "pos": "Flx"
+ },
+ "brandon williams": {
+  "name": "Brandon Williams",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 131,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "johnny furphy": {
+  "name": "Johnny Furphy",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 375,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "terrence shannon": {
+  "name": "Terrence Shannon",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 373,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "paul reed": {
+  "name": "Paul Reed",
+  "ownAdp": 143.1,
+  "ownCount": 15,
+  "ownMin": 117,
+  "ownMax": 162,
+  "fantraxAdp": 200,
+  "team": "DET",
+  "pos": "C"
+ },
+ "ryan dunn": {
+  "name": "Ryan Dunn",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 240,
+  "team": "PHO",
+  "pos": "Flx"
+ },
+ "paolo banchero": {
+  "name": "Paolo Banchero",
+  "ownAdp": 44.2,
+  "ownCount": 25,
+  "ownMin": 18,
+  "ownMax": 68,
+  "fantraxAdp": 39,
+  "team": "ORL",
+  "pos": "PF"
+ },
+ "isaac okoro": {
+  "name": "Isaac Okoro",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 210,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "jakob poeltl": {
+  "name": "Jakob Poeltl",
+  "ownAdp": 122.4,
+  "ownCount": 17,
+  "ownMin": 95,
+  "ownMax": 160,
+  "fantraxAdp": 242,
+  "team": "TOR",
+  "pos": "C"
+ },
+ "vit krejci": {
+  "name": "Vit Krejci",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 230,
+  "team": "POR",
+  "pos": "Flx"
+ },
+ "lonzo ball": {
+  "name": "Lonzo Ball",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 335,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "curtis jones": {
+  "name": "Curtis Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 507,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "tosan evbuomwan": {
+  "name": "Tosan Evbuomwan",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 572,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "max shulga": {
+  "name": "Max Shulga",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 554,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "collin gillespie": {
+  "name": "Collin Gillespie",
+  "ownAdp": 137.0,
+  "ownCount": 10,
+  "ownMin": 115,
+  "ownMax": 154,
+  "fantraxAdp": 58,
+  "team": "PHO",
+  "pos": "PG"
+ },
+ "justise winslow": {
+  "name": "Justise Winslow",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 599,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "dejounte murray": {
+  "name": "Dejounte Murray",
+  "ownAdp": 63.1,
+  "ownCount": 25,
+  "ownMin": 42,
+  "ownMax": 79,
+  "fantraxAdp": 354,
+  "team": "NO",
+  "pos": "PG"
+ },
+ "bobi klintman": {
+  "name": "Bobi Klintman",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 515,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "lauri markkanen": {
+  "name": "Lauri Markkanen",
+  "ownAdp": 30.8,
+  "ownCount": 25,
+  "ownMin": 22,
+  "ownMax": 40,
+  "fantraxAdp": 119,
+  "team": "UTA",
+  "pos": "PF"
+ },
+ "darryn peterson": {
+  "name": "Darryn Peterson",
+  "ownAdp": 116.4,
+  "ownCount": 17,
+  "ownMin": 87,
+  "ownMax": 144,
+  "fantraxAdp": null,
+  "team": "UTA",
+  "pos": "SG"
+ },
+ "jahmir young": {
+  "name": "Jahmir Young",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 520,
+  "team": "MIA",
+  "pos": "Flx"
+ },
+ "lachlan olbrich": {
+  "name": "Lachlan Olbrich",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 416,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "ace bailey": {
+  "name": "Ace Bailey",
+  "ownAdp": 124.9,
+  "ownCount": 14,
+  "ownMin": 87,
+  "ownMax": 155,
+  "fantraxAdp": 89,
+  "team": "UTA",
+  "pos": "SF"
+ },
+ "moses moody": {
+  "name": "Moses Moody",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 145,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "brooks barnhizer": {
+  "name": "Brooks Barnhizer",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 443,
+  "team": "OKC",
+  "pos": "Flx"
+ },
+ "kam jones": {
+  "name": "Kam Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 385,
+  "team": "MIL",
+  "pos": "Flx"
+ },
+ "miles kelly": {
+  "name": "Miles Kelly",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 487,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "nfaly dante": {
+  "name": "N'Faly Dante",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 564,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "bogdan bogdanovic": {
+  "name": "Bogdan Bogdanovic",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 393,
+  "team": "HOU",
+  "pos": "Flx"
+ },
+ "tyus jones": {
+  "name": "Tyus Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 343,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "noa essengue": {
+  "name": "Noa Essengue",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 571,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "chris manon": {
+  "name": "Chris Mañon",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 537,
   "team": "LAL",
   "pos": "Flx"
  },
- "spencer jones": {
-  "name": "Spencer Jones",
+ "wendell carter": {
+  "name": "Wendell Carter",
+  "ownAdp": 136.6,
+  "ownCount": 14,
+  "ownMin": 102,
+  "ownMax": 158,
+  "fantraxAdp": 72,
+  "team": "ORL",
+  "pos": "C"
+ },
+ "mouhamed gueye": {
+  "name": "Mouhamed Gueye",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 277,
-  "team": "DEN",
+  "fantraxAdp": 250,
+  "team": "ATL",
   "pos": "Flx"
+ },
+ "monte morris": {
+  "name": "Monte Morris",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 526,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "moussa cisse": {
+  "name": "Moussa Cisse",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 339,
+  "team": "DAL",
+  "pos": "Flx"
+ },
+ "trentyn flowers": {
+  "name": "Trentyn Flowers",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 566,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "ethan thompson": {
+  "name": "Ethan Thompson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 359,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "jalen williams": {
+  "name": "Jalen Williams",
+  "ownAdp": 42.0,
+  "ownCount": 26,
+  "ownMin": 17,
+  "ownMax": 59,
+  "fantraxAdp": 233,
+  "team": "OKC",
+  "pos": "SG"
+ },
+ "enrique freeman": {
+  "name": "Enrique Freeman",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 531,
+  "team": "MIN",
+  "pos": "Flx"
+ },
+ "jalen smith": {
+  "name": "Jalen Smith",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 207,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "anthony davis": {
+  "name": "Anthony Davis",
+  "ownAdp": 27.8,
+  "ownCount": 26,
+  "ownMin": 15,
+  "ownMax": 40,
+  "fantraxAdp": 292,
+  "team": "WAS",
+  "pos": "PF"
+ },
+ "terance mann": {
+  "name": "Terance Mann",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 234,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "zion williamson": {
+  "name": "Zion Williamson",
+  "ownAdp": 82.1,
+  "ownCount": 24,
+  "ownMin": 54,
+  "ownMax": 96,
+  "fantraxAdp": 90,
+  "team": "NO",
+  "pos": "PF"
+ },
+ "nikola topic": {
+  "name": "Nikola Topic",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 470,
+  "team": "OKC",
+  "pos": "Flx"
+ },
+ "naji marshall": {
+  "name": "Naji Marshall",
+  "ownAdp": 156.7,
+  "ownCount": 3,
+  "ownMin": 152,
+  "ownMax": 159,
+  "fantraxAdp": 79,
+  "team": "DAL",
+  "pos": "SF"
+ },
+ "olivier sarr": {
+  "name": "Olivier Sarr",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 523,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "dillon brooks": {
+  "name": "Dillon Brooks",
+  "ownAdp": 138.5,
+  "ownCount": 11,
+  "ownMin": 111,
+  "ownMax": 153,
+  "fantraxAdp": 125,
+  "team": "PHO",
+  "pos": "SF"
+ },
+ "deni avdija": {
+  "name": "Deni Avdija",
+  "ownAdp": 37.2,
+  "ownCount": 25,
+  "ownMin": 20,
+  "ownMax": 56,
+  "fantraxAdp": 31,
+  "team": "POR",
+  "pos": "SF"
+ },
+ "rob dillingham": {
+  "name": "Rob Dillingham",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 281,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "brandin podziemski": {
+  "name": "Brandin Podziemski",
+  "ownAdp": 130.6,
+  "ownCount": 16,
+  "ownMin": 113,
+  "ownMax": 166,
+  "fantraxAdp": 44,
+  "team": "GS",
+  "pos": "SG"
+ },
+ "jayson tatum": {
+  "name": "Jayson Tatum",
+  "ownAdp": 9.1,
+  "ownCount": 31,
+  "ownMin": 5,
+  "ownMax": 15,
+  "fantraxAdp": null,
+  "team": "BOS",
+  "pos": "PF"
+ },
+ "bam adebayo": {
+  "name": "Bam Adebayo",
+  "ownAdp": 35.9,
+  "ownCount": 26,
+  "ownMin": 23,
+  "ownMax": 46,
+  "fantraxAdp": 16,
+  "team": "MIA",
+  "pos": "C"
+ },
+ "dyson daniels": {
+  "name": "Dyson Daniels",
+  "ownAdp": 63.0,
+  "ownCount": 25,
+  "ownMin": 32,
+  "ownMax": 89,
+  "fantraxAdp": 67,
+  "team": "ATL",
+  "pos": "SG"
+ },
+ "gg jackson": {
+  "name": "GG Jackson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 179,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "ousmane dieng": {
+  "name": "Ousmane Dieng",
+  "ownAdp": 164.0,
+  "ownCount": 1,
+  "ownMin": 164,
+  "ownMax": 164,
+  "fantraxAdp": 274,
+  "team": "MIL",
+  "pos": "C"
+ },
+ "keyonte george": {
+  "name": "Keyonte George",
+  "ownAdp": 55.3,
+  "ownCount": 25,
+  "ownMin": 41,
+  "ownMax": 76,
+  "fantraxAdp": 71,
+  "team": "UTA",
+  "pos": "PG"
+ },
+ "dylan harper": {
+  "name": "Dylan Harper",
+  "ownAdp": 91.1,
+  "ownCount": 21,
+  "ownMin": 61,
+  "ownMax": 121,
+  "fantraxAdp": 138,
+  "team": "SA",
+  "pos": "SG"
  },
  "tyler smith": {
   "name": "Tyler Smith",
@@ -6184,34 +5634,584 @@ const ADP_DATA = {
   "team": "(N/A)",
   "pos": "Flx"
  },
- "max strus": {
-  "name": "Max Strus",
-  "ownAdp": 159.0,
-  "ownCount": 2,
-  "ownMin": 159,
-  "ownMax": 159,
-  "fantraxAdp": 431,
-  "team": "CLE",
+ "lebron james": {
+  "name": "LeBron James",
+  "ownAdp": 56.4,
+  "ownCount": 25,
+  "ownMin": 36,
+  "ownMax": 77,
+  "fantraxAdp": 53,
+  "team": "(N/A)",
   "pos": "SF"
  },
- "pelle larsson": {
-  "name": "Pelle Larsson",
-  "ownAdp": 153.0,
-  "ownCount": 9,
-  "ownMin": 143,
-  "ownMax": 166,
-  "fantraxAdp": 135,
-  "team": "MIA",
-  "pos": "SG"
- },
- "jakobe walter": {
-  "name": "Ja'Kobe Walter",
+ "steven adams": {
+  "name": "Steven Adams",
   "ownAdp": null,
   "ownCount": 0,
   "ownMin": null,
   "ownMax": null,
-  "fantraxAdp": 202,
-  "team": "TOR",
+  "fantraxAdp": 334,
+  "team": "HOU",
   "pos": "Flx"
+ },
+ "robert williams": {
+  "name": "Robert Williams",
+  "ownAdp": 157.0,
+  "ownCount": 1,
+  "ownMin": 157,
+  "ownMax": 157,
+  "fantraxAdp": 229,
+  "team": "POR",
+  "pos": "C"
+ },
+ "mitchell robinson": {
+  "name": "Mitchell Robinson",
+  "ownAdp": 145.0,
+  "ownCount": 3,
+  "ownMin": 133,
+  "ownMax": 163,
+  "fantraxAdp": 226,
+  "team": "BOS",
+  "pos": "C"
+ },
+ "quinten post": {
+  "name": "Quinten Post",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 232,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "luka doncic": {
+  "name": "Luka Doncic",
+  "ownAdp": 3.6,
+  "ownCount": 31,
+  "ownMin": 1,
+  "ownMax": 5,
+  "fantraxAdp": 1,
+  "team": "LAL",
+  "pos": "PG"
+ },
+ "taj gibson": {
+  "name": "Taj Gibson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 497,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "jalen pickett": {
+  "name": "Jalen Pickett",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 345,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "kris murray": {
+  "name": "Kris Murray",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 286,
+  "team": "MEM",
+  "pos": "Flx"
+ },
+ "yves missi": {
+  "name": "Yves Missi",
+  "ownAdp": 142.9,
+  "ownCount": 7,
+  "ownMin": 106,
+  "ownMax": 164,
+  "fantraxAdp": 222,
+  "team": "NO",
+  "pos": "C"
+ },
+ "kyshawn george": {
+  "name": "Kyshawn George",
+  "ownAdp": 119.9,
+  "ownCount": 17,
+  "ownMin": 98,
+  "ownMax": 148,
+  "fantraxAdp": 122,
+  "team": "WAS",
+  "pos": "SG"
+ },
+ "malaki branham": {
+  "name": "Malaki Branham",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 422,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "dominick barlow": {
+  "name": "Dominick Barlow",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 172,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "guerschon yabusele": {
+  "name": "Guerschon Yabusele",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 284,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "ben saraf": {
+  "name": "Ben Saraf",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 304,
+  "team": "BKN",
+  "pos": "Flx"
+ },
+ "kevin huerter": {
+  "name": "Kevin Huerter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 146,
+  "team": "DET",
+  "pos": "Flx"
+ },
+ "kevin porter": {
+  "name": "Kevin Porter",
+  "ownAdp": 105.8,
+  "ownCount": 21,
+  "ownMin": 80,
+  "ownMax": 137,
+  "fantraxAdp": 140,
+  "team": "MIL",
+  "pos": "SG"
+ },
+ "drew timme": {
+  "name": "Drew Timme",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 460,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "duncan robinson": {
+  "name": "Duncan Robinson",
+  "ownAdp": 138.0,
+  "ownCount": 1,
+  "ownMin": 138,
+  "ownMax": 138,
+  "fantraxAdp": 117,
+  "team": "DET",
+  "pos": "SF"
+ },
+ "asa newell": {
+  "name": "Asa Newell",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 377,
+  "team": "ATL",
+  "pos": "Flx"
+ },
+ "justin edwards": {
+  "name": "Justin Edwards",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 299,
+  "team": "PHI",
+  "pos": "Flx"
+ },
+ "eric gordon": {
+  "name": "Eric Gordon",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 510,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "walter clayton": {
+  "name": "Walter Clayton",
+  "ownAdp": 154.0,
+  "ownCount": 1,
+  "ownMin": 154,
+  "ownMax": 154,
+  "fantraxAdp": 188,
+  "team": "MEM",
+  "pos": "PG"
+ },
+ "bez mbeng": {
+  "name": "Bez Mbeng",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 397,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "tristan enaruna": {
+  "name": "Tristan Enaruna",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 501,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "charles bassey": {
+  "name": "Charles Bassey",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 452,
+  "team": "GS",
+  "pos": "Flx"
+ },
+ "ky bowman": {
+  "name": "Ky Bowman",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 580,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "ty jerome": {
+  "name": "Ty Jerome",
+  "ownAdp": 91.0,
+  "ownCount": 21,
+  "ownMin": 62,
+  "ownMax": 136,
+  "fantraxAdp": 346,
+  "team": "MEM",
+  "pos": "SG"
+ },
+ "jordan hawkins": {
+  "name": "Jordan Hawkins",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 364,
+  "team": "NO",
+  "pos": "Flx"
+ },
+ "yaxel lendeborg": {
+  "name": "Yaxel Lendeborg",
+  "ownAdp": 147.5,
+  "ownCount": 4,
+  "ownMin": 130,
+  "ownMax": 159,
+  "fantraxAdp": null,
+  "team": "GS",
+  "pos": "SF"
+ },
+ "klay thompson": {
+  "name": "Klay Thompson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 190,
+  "team": "DAL",
+  "pos": "Flx"
+ },
+ "jaren jackson": {
+  "name": "Jaren Jackson",
+  "ownAdp": 44.4,
+  "ownCount": 25,
+  "ownMin": 28,
+  "ownMax": 63,
+  "fantraxAdp": 95,
+  "team": "UTA",
+  "pos": "C"
+ },
+ "jared harper": {
+  "name": "Jared Harper",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 589,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "devin booker": {
+  "name": "Devin Booker",
+  "ownAdp": 24.0,
+  "ownCount": 27,
+  "ownMin": 13,
+  "ownMax": 39,
+  "fantraxAdp": 61,
+  "team": "PHO",
+  "pos": "SG"
+ },
+ "kelly olynyk": {
+  "name": "Kelly Olynyk",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 403,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "mac mcclung": {
+  "name": "Mac McClung",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 467,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "garrett temple": {
+  "name": "Garrett Temple",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 512,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "brook lopez": {
+  "name": "Brook Lopez",
+  "ownAdp": 156.5,
+  "ownCount": 2,
+  "ownMin": 155,
+  "ownMax": 158,
+  "fantraxAdp": 141,
+  "team": "LAC",
+  "pos": "C"
+ },
+ "tre mann": {
+  "name": "Tre Mann",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 340,
+  "team": "CHA",
+  "pos": "Flx"
+ },
+ "jevon carter": {
+  "name": "Jevon Carter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 314,
+  "team": "ORL",
+  "pos": "Flx"
+ },
+ "taelon peter": {
+  "name": "Taelon Peter",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 387,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "jose alvarado": {
+  "name": "Jose Alvarado",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 208,
+  "team": "NY",
+  "pos": "Flx"
+ },
+ "rudy gobert": {
+  "name": "Rudy Gobert",
+  "ownAdp": 70.6,
+  "ownCount": 25,
+  "ownMin": 37,
+  "ownMax": 90,
+  "fantraxAdp": 80,
+  "team": "MIN",
+  "pos": "C"
+ },
+ "grayson allen": {
+  "name": "Grayson Allen",
+  "ownAdp": 143.2,
+  "ownCount": 6,
+  "ownMin": 124,
+  "ownMax": 164,
+  "fantraxAdp": 111,
+  "team": "CHA",
+  "pos": "SG"
+ },
+ "spencer jones": {
+  "name": "Spencer Jones",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 277,
+  "team": "DEN",
+  "pos": "Flx"
+ },
+ "jase richardson": {
+  "name": "Jase Richardson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 370,
+  "team": "ORL",
+  "pos": "Flx"
+ },
+ "precious achiuwa": {
+  "name": "Precious Achiuwa",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 137,
+  "team": "SAC",
+  "pos": "Flx"
+ },
+ "khaman maluach": {
+  "name": "Khaman Maluach",
+  "ownAdp": 152.0,
+  "ownCount": 1,
+  "ownMin": 152,
+  "ownMax": 152,
+  "fantraxAdp": 384,
+  "team": "PHO",
+  "pos": "C"
+ },
+ "emanuel miller": {
+  "name": "Emanuel Miller",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 541,
+  "team": "SA",
+  "pos": "Flx"
+ },
+ "og anunoby": {
+  "name": "OG Anunoby",
+  "ownAdp": 55.1,
+  "ownCount": 23,
+  "ownMin": 45,
+  "ownMax": 65,
+  "fantraxAdp": 40,
+  "team": "NY",
+  "pos": "PF"
+ },
+ "tyrese proctor": {
+  "name": "Tyrese Proctor",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 348,
+  "team": "CLE",
+  "pos": "Flx"
+ },
+ "carlton carrington": {
+  "name": "Carlton Carrington",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 93,
+  "team": "WAS",
+  "pos": "Flx"
+ },
+ "ron harper": {
+  "name": "Ron Harper",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 429,
+  "team": "BOS",
+  "pos": "Flx"
+ },
+ "quenton jackson": {
+  "name": "Quenton Jackson",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 268,
+  "team": "IND",
+  "pos": "Flx"
+ },
+ "trey alexander": {
+  "name": "Trey Alexander",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 489,
+  "team": "UTA",
+  "pos": "Flx"
+ },
+ "xavier tillman": {
+  "name": "Xavier Tillman",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 469,
+  "team": "(N/A)",
+  "pos": "Flx"
+ },
+ "zach collins": {
+  "name": "Zach Collins",
+  "ownAdp": null,
+  "ownCount": 0,
+  "ownMin": null,
+  "ownMax": null,
+  "fantraxAdp": 448,
+  "team": "CHI",
+  "pos": "Flx"
+ },
+ "jamal murray": {
+  "name": "Jamal Murray",
+  "ownAdp": 20.2,
+  "ownCount": 28,
+  "ownMin": 11,
+  "ownMax": 31,
+  "fantraxAdp": 15,
+  "team": "DEN",
+  "pos": "PG"
  }
 };
