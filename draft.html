@@ -380,6 +380,8 @@
               <th data-k="z">Z</th>
               <th data-k="zFloor" title="Z-Score ohne die schlechteste Kategorie des Spielers — zeigt den Boden/Floor">Z-Floor</th>
               <th data-k="zDepth" title="Z-Score ohne die beste Kategorie — entlarvt One-Cat-Wonders; hoher Wert = gut in der Tiefe">Z-Depth</th>
+              <th data-k="zPunt" title="Z-Score mit deinen aktuellen Punt-Kategorien auf Gewicht 0 — wie Basketball Monsters 'Punt Columns': kompletter Rerank ohne die gepuntete(n) Kategorie(n), Guard-/Big-Build-Spieler steigen dadurch automatisch">Z-Punt</th>
+              <th data-k="hscore" title="H-Score (Beta) — vereinfachte Umsetzung von Rosenof (2024) H-Scoring: simuliert die Restauffüllung über bis zu 2 gepuntete Kategorien und schätzt die Ø-Kategorie-Gewinnwahrscheinlichkeit gegen die Liga (0-9). Absolute Werte mit Vorsicht genießen, siehe Code-Kommentar für Annahmen/Vereinfachungen.">H-Score</th>
               <th data-k="adpVal" title="ADP-Rang minus unser Z-Rang — grün = unterbewertet, rot = überbewertet">ADP-Val</th>
               <th data-k="adp" title="Ø Draft-Position aus deinen erfassten Fantrax Draft Results">ADP</th>
               <th data-k="fadp" title="Fantrax' eigener aktueller ADP-Snapshot (data/fantrax-adp.csv)">F-ADP</th>
@@ -852,6 +854,185 @@ function categoryRanks(){
   return ranks;
 }
 
+// ---------------- Mathe-Hilfsfunktionen (H-Score) ----------------
+// Abramowitz-Stegun-Approximation der Fehlerfunktion (~1.5e-7 Genauigkeit),
+// JS hat keine eingebaute erf(). Für die Normalverteilungs-CDF gebraucht,
+// die H0 (Rosenof 2024) für Kategorie-Gewinnwahrscheinlichkeiten nutzt.
+function erf(x){
+  const sign = x < 0 ? -1 : 1; x = Math.abs(x);
+  const a1=0.254829592, a2=-0.284496736, a3=1.421413741, a4=-1.453152027, a5=1.061405429, p=0.3275911;
+  const t = 1/(1+p*x);
+  const y = 1 - (((((a5*t+a4)*t)+a3)*t+a2)*t+a1)*t*Math.exp(-x*x);
+  return sign*y;
+}
+// P(meine Kategorie-Differenz > 0), modelliert als Normalverteilung mit
+// Mittelwert `diff` und Streuung `sigma` -- Sigma kommt aus der Liga-weiten
+// Team-Streuung (computeTeamCatStats), dieselbe Quelle wie im Punt-Planer.
+function normalCDF(diff, sigma){
+  if(sigma <= 0) return diff > 0 ? 1 : (diff < 0 ? 0 : 0.5);
+  return 0.5 * (1 + erf(diff / (Math.SQRT2 * sigma)));
+}
+
+// Rohe, summierbare Größen -- bewusst GETRENNT von CATS/Z_CATS, weil FG%/FT%
+// NICHT direkt summiert werden dürfen (sonst falsches Ergebnis). Makes/
+// Attempts werden aufsummiert, die Quote erst am Schluss daraus berechnet
+// (exakt wie in teamTotals() weiter oben).
+const RAW_SUM_KEYS = ['pts','reb','ast','stl','blk','fg3m','tov','fgm','fga','ftm','fta'];
+function finalizeCatTotals(raw){
+  const out = {};
+  RAW_SUM_KEYS.forEach(k => { if(k!=='fgm'&&k!=='fga'&&k!=='ftm'&&k!=='fta') out[k] = raw[k]; });
+  out.fgpct = raw.fga > 0 ? (raw.fgm/raw.fga)*100 : 0;
+  out.ftpct = raw.fta > 0 ? (raw.ftm/raw.fta)*100 : 0;
+  return out;
+}
+function emptyRawSums(){ const o={}; RAW_SUM_KEYS.forEach(k=>o[k]=0); return o; }
+function addRawSums(a, b){ const o={}; RAW_SUM_KEYS.forEach(k=>o[k]=a[k]+b[k]); return o; }
+// Mirror von teamTotals(), aber gibt die ROHEN Summen zurück statt der
+// fertigen Kategorie-Totals -- wird für die H-Score-Simulation gebraucht,
+// wo bekannte + simulierte zukünftige Picks VOR der %-Berechnung addiert
+// werden müssen.
+function rawTeamSums(teamIdx){
+  const {startingPlayers} = teamRoster(teamIdx);
+  let sums = emptyRawSums();
+  startingPlayers.forEach(p => { sums = addRawSums(sums, p.s); });
+  return sums;
+}
+
+// ---------------- H-Score (Beta) ----------------
+// Vereinfachte, datengetriebene Umsetzung von Rosenof (2024) "Dynamic
+// quantification of player value for fantasy basketball" (H-scoring,
+// https://arxiv.org/abs/2409.09884). Kernidee dort: Statt einer statischen
+// Rangliste wird für jeden Kandidaten simuliert, wie das Restteam aussehen
+// wird, und daraus eine Kategorie-Gewinnwahrscheinlichkeit gegen die Liga
+// berechnet -- Punten entsteht dabei IMPLIZIT, ohne dass man es vorgibt.
+//
+// Das Original nutzt Gradient Descent über eine Kovarianzmatrix + eine
+// geschlossene Normalverteilungs-Näherung, weil die Autoren keine echten
+// Spielerdaten zur Simulation hatten. Wir haben aber echte Projektionen für
+// den kompletten Pool -- deshalb simulieren wir die Restauffüllung direkt
+// mit den tatsächlich verfügbaren Spielern statt mit einer Verteilungs-
+// Annahme. Bewusste Vereinfachungen ggü. dem Paper:
+//  - Diskrete Suche über bis zu 2 gleichzeitig gepuntete Kategorien (46
+//    Kombinationen) statt kontinuierlichem Gradient Descent über 9 Gewichte
+//  - Keine Positions-/Slot-Modellierung für zukünftige Picks (nur Kategorien)
+//  - Gegner-Restauffüllung wird pro Gegner UNABHÄNGIG aus dem Pool gezogen,
+//    ohne Überschneidungen zwischen simulierten Gegner-Kadern auszuschließen.
+//    Macht alle Gewinnwahrscheinlichkeiten gleichmäßig etwas optimistisch --
+//    verzerrt also primär die absoluten %, kaum die RANGFOLGE der Kandidaten
+//    (worum es hier geht: "wen sollte ich JETZT nehmen").
+const MFHFB_HSCORE_MAX_PUNT = 2;
+
+function generatePuntMasks(){
+  const masks = [new Set()]; // leere Maske = Standard-Gewichtung, kein Punt
+  Z_CATS.forEach(c => masks.push(new Set([c])));
+  for(let i=0;i<Z_CATS.length;i++){
+    for(let j=i+1;j<Z_CATS.length;j++){
+      masks.push(new Set([Z_CATS[i], Z_CATS[j]]));
+    }
+  }
+  return masks; // 1 + 9 + 36 = 46 bei MFHFB_HSCORE_MAX_PUNT=2
+}
+const MFHFB_PUNT_MASKS = generatePuntMasks();
+
+// Für JEDE der 46 Masken: verfügbare Spieler nach maskiertem Z sortiert +
+// Präfixsummen ihrer ROHEN Kategorie-Totals. Macht "Summe der besten K
+// Spieler unter dieser Maske" zu einem O(1)-Lookup statt einer Neu-
+// berechnung pro Kandidat -- Kosten fallen nur einmal pro Draft-Stand an,
+// nicht pro Kandidat.
+function buildMaskIndex(availableRows, catWeights){
+  return MFHFB_PUNT_MASKS.map(mask => {
+    const sorted = [...availableRows].sort((a,b) => {
+      let za=0, zb=0;
+      Z_CATS.forEach(c => { if(!mask.has(c)){ za += a.catZ[c]*catWeights[c]; zb += b.catZ[c]*catWeights[c]; } });
+      return zb - za;
+    });
+    const prefix = [emptyRawSums()];
+    const rank = new Map();
+    sorted.forEach((row, i) => {
+      rank.set(row.rk, i);
+      prefix.push(addRawSums(prefix[i], row.s));
+    });
+    return { mask, sorted, prefix, rank };
+  });
+}
+
+// Summe der rohen Kategorie-Totals der besten `k` Spieler laut Maske, ohne
+// `excludeRk` doppelt zu zählen, falls er selbst unter den Top-k wäre
+// (er wird ja separat als der aktuelle Pick dazugerechnet).
+function topKRawExcluding(maskEntry, k, excludeRk){
+  const n = maskEntry.sorted.length;
+  const kk = Math.max(0, Math.min(k, n));
+  const idx = excludeRk != null ? maskEntry.rank.get(excludeRk) : undefined;
+  if(idx !== undefined && idx < kk){
+    const kPlus1 = Math.min(kk+1, n);
+    const totals = addRawSums(maskEntry.prefix[kPlus1], emptyRawSums());
+    const player = maskEntry.sorted[idx];
+    RAW_SUM_KEYS.forEach(key => { totals[key] -= player.s[key]; });
+    return totals;
+  }
+  return maskEntry.prefix[kk];
+}
+
+// Einmal pro renderPool()-Aufruf: teurer Teil (Masken-Index, Gegner-Basis)
+// gebündelt, damit computeHScore() pro Kandidat nur noch billige Lookups macht.
+function computeHScoreContext(){
+  const dm = draftedMap();
+  const availableRows = PLAYERS.filter(p => !dm[p.rk]);
+  if(availableRows.length === 0) return null;
+  const catWeights = mfhfbGetCategoryWeights();
+  const maskIndex = buildMaskIndex(availableRows, catWeights);
+  const defaultMaskEntry = maskIndex[0]; // Standard-Gewichtung, fürs Gegner-Modell
+
+  const myRaw = rawTeamSums(state.myTeam);
+  const myPicksMade = state.picks.filter(pk => pk.team === state.myTeam).length;
+
+  const teamCatStats = computeTeamCatStats(allTeamTotals()); // schon vorhanden (Punt-Planer)
+
+  const opponents = [];
+  for(let t=1; t<=TEAMS; t++){
+    if(t === state.myTeam) continue;
+    const picksMade = state.picks.filter(pk => pk.team === t).length;
+    opponents.push({ team: t, raw: rawTeamSums(t), remaining: Math.max(0, SLOTS_PER_TEAM - picksMade) });
+  }
+
+  return { maskIndex, defaultMaskEntry, myRaw, myPicksMade, opponents, teamCatStats };
+}
+
+// H-Score eines Kandidaten: bester über alle 46 Masken erreichbare V(j) --
+// Summe der 9 Kategorie-Gewinnwahrscheinlichkeiten (Ø über alle Gegner),
+// WENN ich diesen Spieler jetzt nehme und den Rest laut dieser Maske auffülle.
+// Bereich: 0 (verliere alles) bis 9 (gewinne alles), 4.5 = Erwartungswert bei
+// einer Liga aus lauter gleich starken Teams.
+function computeHScore(row, ctx){
+  if(!ctx) return null;
+  const myRemainingAfterPick = Math.max(0, SLOTS_PER_TEAM - ctx.myPicksMade - 1);
+  let best = -Infinity;
+  ctx.maskIndex.forEach(maskEntry => {
+    const myFuture = topKRawExcluding(maskEntry, myRemainingAfterPick, row.rk);
+    const myRawTotal = addRawSums(addRawSums(ctx.myRaw, row.s), myFuture);
+    const myTotal = finalizeCatTotals(myRawTotal);
+
+    let vSum = 0;
+    ctx.opponents.forEach(opp => {
+      // Gegner füllen IMMER nach Standard-Gewichtung auf, nicht nach meiner
+      // Maske (Annahme aus dem Paper: andere Manager draften "generisch").
+      const oppFuture = topKRawExcluding(ctx.defaultMaskEntry, opp.remaining, row.rk);
+      const oppTotal = finalizeCatTotals(addRawSums(opp.raw, oppFuture));
+      let v = 0;
+      CATS.forEach(c => {
+        const mv = myTotal[c.key], ov = oppTotal[c.key];
+        const diff = c.invert ? (ov - mv) : (mv - ov);
+        const sigma = (ctx.teamCatStats[c.key] && ctx.teamCatStats[c.key].sd) || 1;
+        v += normalCDF(diff, sigma);
+      });
+      vSum += v;
+    });
+    const vAvg = ctx.opponents.length ? vSum / ctx.opponents.length : 0;
+    if(vAvg > best) best = vAvg;
+  });
+  return best;
+}
+
 // ---------------- Kategorie-Scarcity-Kurve (Runden-Cliff) ----------------
 // Bündelt den noch verfügbaren Pool pro Kategorie in Runden-Buckets (12 Picks
 // = 1 Runde) und zeigt den Ø catZ je Bucket + den stärksten verbleibenden
@@ -997,6 +1178,21 @@ function passesFilters(p, dm){
 function renderPool(){
   closeAdpPopover();
   const dm = draftedMap();
+
+  // Z-Punt (gepuntete Kategorien mit Gewicht 0) + H-Score (Beta) einmal pro
+  // Render für alle Spieler berechnen -- MUSS vor dem Sort passieren, da
+  // beide als Sortier-Spalten dienen. H-Score nur für noch verfügbare
+  // Spieler (für gedraftete ist er bedeutungslos).
+  const puntSet = new Set(state.punt);
+  const catWeightsForPunt = mfhfbGetCategoryWeights();
+  PLAYERS.forEach(p => {
+    let zp = 0;
+    Z_CATS.forEach(cat => { if(!puntSet.has(cat)) zp += p.catZ[cat] * catWeightsForPunt[cat]; });
+    p.zPunt = zp;
+  });
+  const hscoreCtx = computeHScoreContext();
+  PLAYERS.forEach(p => { p.hscore = dm[p.rk] ? null : computeHScore(p, hscoreCtx); });
+
   let rows = PLAYERS.filter(p => passesFilters(p, dm));
   rows.sort((a,b) => {
     const dir = state.sortDir === 'asc' ? 1 : -1;
@@ -1026,6 +1222,8 @@ function renderPool(){
     else if(state.sortKey === 'rk' || state.sortKey === 'z'){ av=a[state.sortKey]; bv=b[state.sortKey]; }
     else if(state.sortKey === 'zFloor'){ av=a.zFloor; bv=b.zFloor; }
     else if(state.sortKey === 'zDepth'){ av=a.zDepth; bv=b.zDepth; }
+    else if(state.sortKey === 'zPunt'){ av=a.zPunt; bv=b.zPunt; }
+    else if(state.sortKey === 'hscore'){ av=a.hscore??-999; bv=b.hscore??-999; }
     else if(state.sortKey === 'adpVal'){ av=a.adpVal??-999; bv=b.adpVal??-999; }
     else { av=a.s[state.sortKey]; bv=b.s[state.sortKey]; }
     if(typeof av === 'string') return dir*av.localeCompare(bv);
@@ -1039,12 +1237,18 @@ function renderPool(){
 
   // Heatmap-Range für Z-Spalten (über die aktuell sichtbaren/gefilterten Zeilen)
   const zVals = rows.map(r => r.z), zfVals = rows.map(r => r.zFloor), zdVals = rows.map(r => r.zDepth);
+  const zpVals = rows.map(r => r.zPunt);
+  const hsVals = rows.map(r => r.hscore).filter(v => v !== null && v !== undefined);
   const zMin = Math.min(...zVals), zMax = Math.max(...zVals);
   const zfMin = Math.min(...zfVals), zfMax = Math.max(...zfVals);
   const zdMin = Math.min(...zdVals), zdMax = Math.max(...zdVals);
+  const zpMin = Math.min(...zpVals), zpMax = Math.max(...zpVals);
+  const hsMin = hsVals.length ? Math.min(...hsVals) : 0, hsMax = hsVals.length ? Math.max(...hsVals) : 9;
   const hz  = v => mfhfbHeatStyle(v, zMin, zMax, false);
   const hzf = v => mfhfbHeatStyle(v, zfMin, zfMax, false);
   const hzd = v => mfhfbHeatStyle(v, zdMin, zdMax, false);
+  const hzp = v => mfhfbHeatStyle(v, zpMin, zpMax, false);
+  const hhs = v => mfhfbHeatStyle(v, hsMin, hsMax, false);
 
   tbody.innerHTML = rows.map(p => {
     const drafted = dm[p.rk];
@@ -1071,6 +1275,8 @@ function renderPool(){
       <td class="col-z" style="${hz(p.z)}">${p.z>=0?'+':''}${fmtNum(p.z,2)}</td>
       <td style="${hzf(p.zFloor)};font-size:11px;font-weight:700" title="Floor — Schwächste Kat: ${p.worstCat||''}">${p.zFloor>=0?'+':''}${fmtNum(p.zFloor,2)}</td>
       <td style="${hzd(p.zDepth)};font-size:11px;font-weight:700" title="Depth — Stärkste Kat: ${p.bestCat||''}">${p.zDepth>=0?'+':''}${fmtNum(p.zDepth,2)}</td>
+      <td style="${hzp(p.zPunt)};font-size:11px;font-weight:700">${p.zPunt>=0?'+':''}${fmtNum(p.zPunt,2)}</td>
+      <td style="${p.hscore!==null&&p.hscore!==undefined?hhs(p.hscore):''};font-size:11px;font-weight:700">${p.hscore!==null&&p.hscore!==undefined?fmtNum(p.hscore,2):'—'}</td>
       <td style="font-size:11px;font-weight:700;color:${p.adpVal===null?'var(--muted)':p.adpVal>0?'var(--good)':'var(--bad)'}">${p.adpVal!==null?(p.adpVal>0?'+':'')+p.adpVal:'—'}</td>
       <td class="col-adp${p.adp===null?' no-adp':''}${p.ownPicks.length?' clickable':''}" ${p.ownPicks.length?`data-adp-rk="${p.rk}"`:''}>${p.adp!==null ? fmtNum(p.adp,1)+` <span class="adp-n">(n=${p.adpCount})</span>` : '—'}</td>
       <td class="col-fadp${p.fadp===null?' no-adp':''}">${p.fadp!==null ? p.fadp : '—'}</td>
