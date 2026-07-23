@@ -381,7 +381,7 @@
               <th data-k="zFloor" title="Z-Score ohne die schlechteste Kategorie des Spielers — zeigt den Boden/Floor">Z-Floor</th>
               <th data-k="zDepth" title="Z-Score ohne die beste Kategorie — entlarvt One-Cat-Wonders; hoher Wert = gut in der Tiefe">Z-Depth</th>
               <th data-k="zPunt" title="Z-Score mit deinen aktuellen Punt-Kategorien auf Gewicht 0 — wie Basketball Monsters 'Punt Columns': kompletter Rerank ohne die gepuntete(n) Kategorie(n), Guard-/Big-Build-Spieler steigen dadurch automatisch">Z-Punt</th>
-              <th data-k="hscore" title="H-Score (Beta) — vereinfachte Umsetzung von Rosenof (2024) H-Scoring: simuliert die Restauffüllung über bis zu 2 gepuntete Kategorien und schätzt die Ø-Kategorie-Gewinnwahrscheinlichkeit gegen die Liga (0-9). Absolute Werte mit Vorsicht genießen, siehe Code-Kommentar für Annahmen/Vereinfachungen.">H-Score</th>
+              <th data-k="hscore" title="H-Score (Beta) — vereinfachte Umsetzung von Rosenof (2024) H-Scoring: simuliert den kompletten Rest-Draft in echter Snake-Reihenfolge (ein gemeinsam schrumpfender Pool) über bis zu 2 gepuntete Kategorien und schätzt die Ø-Kategorie-Gewinnwahrscheinlichkeit gegen die Liga (0-9). Nur für die Top ~80 verfügbaren Spieler berechnet — Tiefenkader/Free Agents zeigen bewusst '—'.">H-Score</th>
               <th data-k="adpVal" title="ADP-Rang minus unser Z-Rang — grün = unterbewertet, rot = überbewertet">ADP-Val</th>
               <th data-k="adp" title="Ø Draft-Position aus deinen erfassten Fantrax Draft Results">ADP</th>
               <th data-k="fadp" title="Fantrax' eigener aktueller ADP-Snapshot (data/fantrax-adp.csv)">F-ADP</th>
@@ -909,36 +909,45 @@ function rawTeamSums(teamIdx){
 // Das Original nutzt Gradient Descent über eine Kovarianzmatrix + eine
 // geschlossene Normalverteilungs-Näherung, weil die Autoren keine echten
 // Spielerdaten zur Simulation hatten. Wir haben aber echte Projektionen für
-// den kompletten Pool -- deshalb simulieren wir die Restauffüllung direkt
-// mit den tatsächlich verfügbaren Spielern statt mit einer Verteilungs-
-// Annahme. Bewusste Vereinfachungen ggü. dem Paper:
+// den kompletten Pool -- deshalb simulieren wir den kompletten Rest-Draft
+// direkt mit den tatsächlich verfügbaren Spielern statt mit einer
+// Verteilungs-Annahme (echte Snake-Reihenfolge, EIN gemeinsam schrumpfender
+// Pool -- kein Overlap zwischen simulierten Kadern). Bewusste
+// Vereinfachungen ggü. dem Paper:
 //  - Diskrete Suche über bis zu 2 gleichzeitig gepuntete Kategorien (46
 //    Kombinationen) statt kontinuierlichem Gradient Descent über 9 Gewichte
 //  - Keine Positions-/Slot-Modellierung für zukünftige Picks (nur Kategorien)
-//  - Gegner-Restauffüllung wird pro Gegner UNABHÄNGIG aus dem Pool gezogen,
-//    ohne Überschneidungen zwischen simulierten Gegner-Kadern auszuschließen.
-//    Macht alle Gewinnwahrscheinlichkeiten gleichmäßig etwas optimistisch --
-//    verzerrt also primär die absoluten %, kaum die RANGFOLGE der Kandidaten
-//    (worum es hier geht: "wen sollte ich JETZT nehmen").
-const MFHFB_HSCORE_MAX_PUNT = 2;
+//  - Alle Gegner draften "generisch" (Standard-Gewichtung) -- ihre eigenen
+//    Punt-Strategien werden nicht modelliert
+//  - Aus Performancegründen nur für die Top-Kandidaten (MFHFB_HSCORE_SHORTLIST)
+//    berechnet, nicht für den kompletten Pool -- Tiefenkader-/Free-Agent-
+//    Spieler zeigen bewusst keinen H-Score ("—") statt eines irreführenden Werts.
+//  - Simulations-Horizont auf MFHFB_HSCORE_HORIZON Picks begrenzt (nicht bis
+//    zum Draft-Ende) -- das Signal "wer wird mir zwischen jetzt und meinem
+//    nächsten Picks weggeschnappt" kommt ohnehin fast komplett aus den
+//    nächsten paar Runden, Pick 150 beeinflusst die Entscheidung JETZT kaum
+//    noch, kostet aber genauso viel Rechenzeit wie Pick 20.
+const MFHFB_HSCORE_MAX_PUNT = 1;
+const MFHFB_HSCORE_SHORTLIST = 50;
+const MFHFB_HSCORE_HORIZON = 48; // ~4 Runden voraus bei 12 Teams
 
 function generatePuntMasks(){
   const masks = [new Set()]; // leere Maske = Standard-Gewichtung, kein Punt
   Z_CATS.forEach(c => masks.push(new Set([c])));
-  for(let i=0;i<Z_CATS.length;i++){
-    for(let j=i+1;j<Z_CATS.length;j++){
-      masks.push(new Set([Z_CATS[i], Z_CATS[j]]));
+  if(MFHFB_HSCORE_MAX_PUNT >= 2){
+    for(let i=0;i<Z_CATS.length;i++){
+      for(let j=i+1;j<Z_CATS.length;j++){
+        masks.push(new Set([Z_CATS[i], Z_CATS[j]]));
+      }
     }
   }
-  return masks; // 1 + 9 + 36 = 46 bei MFHFB_HSCORE_MAX_PUNT=2
+  return masks; // MAX_PUNT=1 -> 1+9=10 Masken, MAX_PUNT=2 -> 1+9+36=46
 }
 const MFHFB_PUNT_MASKS = generatePuntMasks();
 
-// Für JEDE der 46 Masken: verfügbare Spieler nach maskiertem Z sortiert +
-// Präfixsummen ihrer ROHEN Kategorie-Totals. Macht "Summe der besten K
-// Spieler unter dieser Maske" zu einem O(1)-Lookup statt einer Neu-
-// berechnung pro Kandidat -- Kosten fallen nur einmal pro Draft-Stand an,
-// nicht pro Kandidat.
+// Für JEDE der 46 Masken: verfügbare Spieler nach maskiertem Z sortiert.
+// Wird für die Fortsetzungs-Simulation als Ziehungsreihenfolge benutzt
+// (Zeiger läuft nur vorwärts, s.u.).
 function buildMaskIndex(availableRows, catWeights){
   return MFHFB_PUNT_MASKS.map(mask => {
     const sorted = [...availableRows].sort((a,b) => {
@@ -946,35 +955,12 @@ function buildMaskIndex(availableRows, catWeights){
       Z_CATS.forEach(c => { if(!mask.has(c)){ za += a.catZ[c]*catWeights[c]; zb += b.catZ[c]*catWeights[c]; } });
       return zb - za;
     });
-    const prefix = [emptyRawSums()];
-    const rank = new Map();
-    sorted.forEach((row, i) => {
-      rank.set(row.rk, i);
-      prefix.push(addRawSums(prefix[i], row.s));
-    });
-    return { mask, sorted, prefix, rank };
+    return { mask, sorted };
   });
 }
 
-// Summe der rohen Kategorie-Totals der besten `k` Spieler laut Maske, ohne
-// `excludeRk` doppelt zu zählen, falls er selbst unter den Top-k wäre
-// (er wird ja separat als der aktuelle Pick dazugerechnet).
-function topKRawExcluding(maskEntry, k, excludeRk){
-  const n = maskEntry.sorted.length;
-  const kk = Math.max(0, Math.min(k, n));
-  const idx = excludeRk != null ? maskEntry.rank.get(excludeRk) : undefined;
-  if(idx !== undefined && idx < kk){
-    const kPlus1 = Math.min(kk+1, n);
-    const totals = addRawSums(maskEntry.prefix[kPlus1], emptyRawSums());
-    const player = maskEntry.sorted[idx];
-    RAW_SUM_KEYS.forEach(key => { totals[key] -= player.s[key]; });
-    return totals;
-  }
-  return maskEntry.prefix[kk];
-}
-
-// Einmal pro renderPool()-Aufruf: teurer Teil (Masken-Index, Gegner-Basis)
-// gebündelt, damit computeHScore() pro Kandidat nur noch billige Lookups macht.
+// Einmal pro renderPool()-Aufruf: teurer Teil (Masken-Index, Gegner-Basis,
+// aktuelle Pick-Nummer) gebündelt.
 function computeHScoreContext(){
   const dm = draftedMap();
   const availableRows = PLAYERS.filter(p => !dm[p.rk]);
@@ -984,40 +970,73 @@ function computeHScoreContext(){
   const defaultMaskEntry = maskIndex[0]; // Standard-Gewichtung, fürs Gegner-Modell
 
   const myRaw = rawTeamSums(state.myTeam);
-  const myPicksMade = state.picks.filter(pk => pk.team === state.myTeam).length;
-
   const teamCatStats = computeTeamCatStats(allTeamTotals()); // schon vorhanden (Punt-Planer)
 
   const opponents = [];
   for(let t=1; t<=TEAMS; t++){
     if(t === state.myTeam) continue;
-    const picksMade = state.picks.filter(pk => pk.team === t).length;
-    opponents.push({ team: t, raw: rawTeamSums(t), remaining: Math.max(0, SLOTS_PER_TEAM - picksMade) });
+    opponents.push({ team: t, raw: rawTeamSums(t) });
   }
 
-  return { maskIndex, defaultMaskEntry, myRaw, myPicksMade, opponents, teamCatStats };
+  // Pick-Nummer DIREKT NACH dem aktuellen Pick (der Kandidat selbst gilt als
+  // der aktuelle Pick) -- ab hier wird die Fortsetzung simuliert.
+  const nextPickNo = state.picks.length + 2;
+
+  return { maskIndex, defaultMaskEntry, myRaw, opponents, teamCatStats, nextPickNo, dm };
 }
 
-// H-Score eines Kandidaten: bester über alle 46 Masken erreichbare V(j) --
-// Summe der 9 Kategorie-Gewinnwahrscheinlichkeiten (Ø über alle Gegner),
-// WENN ich diesen Spieler jetzt nehme und den Rest laut dieser Maske auffülle.
-// Bereich: 0 (verliere alles) bis 9 (gewinne alles), 4.5 = Erwartungswert bei
-// einer Liga aus lauter gleich starken Teams.
+// H-Score eines Kandidaten: bester über alle 46 Masken erreichbare V(j).
+//
+// Anders als eine simple "nimm die besten K verbleibenden Spieler"-Näherung
+// wird hier der ECHTE Rest-Draft in Snake-Reihenfolge simuliert: für jeden
+// kommenden Pick schaut die Simulation, wem er gehört (pickTeamForNumber),
+// und zieht für MICH den besten verbleibenden Spieler laut Maske, für JEDEN
+// Gegner den besten laut Standard-Gewichtung -- aus EINEM gemeinsam
+// schrumpfenden Pool, nicht aus 12 unabhängigen Kopien. Das behebt einen
+// echten Bug der Vorversion: dort wurde für "meine Restauffüllung" immer
+// die objektiv beste verfügbare Auswahl angenommen, UNABHÄNGIG vom
+// aktuellen Kandidaten -- bei vielen offenen Slots hat das den Effekt
+// eines einzelnen (guten oder schlechten) Picks fast weggemittelt, wodurch
+// z.B. Tiefenkader-/Free-Agent-Spieler fast gleichauf mit Stars landeten.
+// Jetzt nehmen Gegner echten Spielern zwischen meinen Picks weg, wodurch
+// ein starker JETZT-Pick spürbar mehr wert ist als ein schwacher.
 function computeHScore(row, ctx){
   if(!ctx) return null;
-  const myRemainingAfterPick = Math.max(0, SLOTS_PER_TEAM - ctx.myPicksMade - 1);
   let best = -Infinity;
   ctx.maskIndex.forEach(maskEntry => {
-    const myFuture = topKRawExcluding(maskEntry, myRemainingAfterPick, row.rk);
-    const myRawTotal = addRawSums(addRawSums(ctx.myRaw, row.s), myFuture);
-    const myTotal = finalizeCatTotals(myRawTotal);
+    const removed = new Set(row.rk === undefined ? [] : [row.rk]);
+    Object.keys(ctx.dm).forEach(rk => removed.add(Number(rk)));
 
+    const mySorted = maskEntry.sorted, defSorted = ctx.defaultMaskEntry.sorted;
+    let myPtr = 0, defPtr = 0;
+    function drawNext(sortedArr, ptr){
+      while(ptr.i < sortedArr.length && removed.has(sortedArr[ptr.i].rk)) ptr.i++;
+      if(ptr.i >= sortedArr.length) return null;
+      const p = sortedArr[ptr.i]; ptr.i++;
+      removed.add(p.rk);
+      return p;
+    }
+    const myPtrObj = {i:0}, defPtrObj = {i:0};
+
+    let myRaw = addRawSums(ctx.myRaw, row.s);
+    const oppRaw = {};
+    ctx.opponents.forEach(o => { oppRaw[o.team] = {...o.raw}; });
+
+    for(let pickNo = ctx.nextPickNo; pickNo <= Math.min(TOTAL_PICKS, ctx.nextPickNo + MFHFB_HSCORE_HORIZON - 1); pickNo++){
+      const owner = pickTeamForNumber(pickNo);
+      if(owner === state.myTeam){
+        const p = drawNext(mySorted, myPtrObj);
+        if(p) myRaw = addRawSums(myRaw, p.s);
+      } else {
+        const p = drawNext(defSorted, defPtrObj);
+        if(p) oppRaw[owner] = addRawSums(oppRaw[owner], p.s);
+      }
+    }
+
+    const myTotal = finalizeCatTotals(myRaw);
     let vSum = 0;
     ctx.opponents.forEach(opp => {
-      // Gegner füllen IMMER nach Standard-Gewichtung auf, nicht nach meiner
-      // Maske (Annahme aus dem Paper: andere Manager draften "generisch").
-      const oppFuture = topKRawExcluding(ctx.defaultMaskEntry, opp.remaining, row.rk);
-      const oppTotal = finalizeCatTotals(addRawSums(opp.raw, oppFuture));
+      const oppTotal = finalizeCatTotals(oppRaw[opp.team]);
       let v = 0;
       CATS.forEach(c => {
         const mv = myTotal[c.key], ov = oppTotal[c.key];
@@ -1191,7 +1210,13 @@ function renderPool(){
     p.zPunt = zp;
   });
   const hscoreCtx = computeHScoreContext();
-  PLAYERS.forEach(p => { p.hscore = dm[p.rk] ? null : computeHScore(p, hscoreCtx); });
+  if(hscoreCtx){
+    const shortlist = PLAYERS.filter(p => !dm[p.rk]).sort((a,b) => b.z - a.z).slice(0, MFHFB_HSCORE_SHORTLIST);
+    const shortlistSet = new Set(shortlist.map(p => p.rk));
+    PLAYERS.forEach(p => { p.hscore = shortlistSet.has(p.rk) ? computeHScore(p, hscoreCtx) : null; });
+  } else {
+    PLAYERS.forEach(p => { p.hscore = null; });
+  }
 
   let rows = PLAYERS.filter(p => passesFilters(p, dm));
   rows.sort((a,b) => {
