@@ -269,6 +269,63 @@ function mfhfbHeatStyle(value, min, max, invert) {
   return `background-color:hsla(${hue},70%,45%,0.22);`;
 }
 
+// --- Aktuelles Team pro Spieler (aus dem täglichen ESPN-Roster-Fetch) ---
+// PLAYER_RATES/players-data.js "team"-Feld ist historisch (Team der letzten
+// GESPIELTEN Saison, aus dem BBM-Export) -- das ist auf teams.html bewusst
+// so gewollt (rechte Spalte = tatsächliche End-Rotation der Vorsaison, siehe
+// dortiger Kommentar). Für die Projections- und Draft-Board-Seite wollen wir
+// aber das AKTUELLE Team zeigen (nach Trades/Free Agency), das schon täglich
+// automatisch in rosters-data.js (ROSTERS_DATA) landet -- nur wurde es dort
+// bisher nicht genutzt. mfhfbApplyCurrentTeams() gleicht beides ab.
+
+// ESPN- und BBM-Team-Kürzel weichen bei ein paar Teams voneinander ab
+// (einzige zentrale Stelle -- vorher in teams.html dupliziert).
+const MFHFB_ESPN_TO_BBM_TEAM = {
+  GS: 'GSW', NO: 'NOR', NY: 'NYK', PHX: 'PHO', SA: 'SAS', UTAH: 'UTA', WSH: 'WAS',
+};
+function mfhfbToBbmAbbr(espnAbbr) { return MFHFB_ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
+
+let _mfhfbCurrentTeamIndex = null;
+function mfhfbBuildCurrentTeamIndex() {
+  if (_mfhfbCurrentTeamIndex) return _mfhfbCurrentTeamIndex;
+  const idx = new Map();
+  if (typeof ROSTERS_DATA !== 'undefined' && ROSTERS_DATA && ROSTERS_DATA.rosters) {
+    Object.entries(ROSTERS_DATA.rosters).forEach(([espnAbbr, team]) => {
+      const bbmAbbr = mfhfbToBbmAbbr(espnAbbr);
+      (team.players || []).forEach(pl => {
+        idx.set(mfhfbNormalizeName(pl.name), bbmAbbr);
+      });
+    });
+  }
+  _mfhfbCurrentTeamIndex = idx;
+  return idx;
+}
+
+// Aktuelles Team eines Spielers (BBM-Kürzel-Format), oder fallbackAbbr falls
+// er auf keinem der 30 ESPN-Roster auftaucht (z.B. Free Agent gerade ohne
+// Team, oder rosters-data.js fehlt/ist nicht geladen -- dann einfach das
+// historische Team aus PLAYER_RATES weiterverwenden statt "-" anzuzeigen).
+function mfhfbCurrentTeamAbbr(playerName, fallbackAbbr) {
+  const idx = mfhfbBuildCurrentTeamIndex();
+  return idx.get(mfhfbNormalizeName(playerName)) || fallbackAbbr;
+}
+
+// Überschreibt in-place das "team"-Feld einer Liste von Spielerobjekten
+// (z.B. PLAYER_RATES) mit dem aktuellen Team, wo bekannt. NUR auf Seiten
+// aufrufen, die das historische Team NICHT separat brauchen (index.html,
+// draft.html) -- NICHT auf teams.html, deren rechte Spalte bewusst nach dem
+// historischen Team filtert (siehe renderRightRows dort).
+function mfhfbApplyCurrentTeams(playerRates) {
+  const idx = mfhfbBuildCurrentTeamIndex();
+  if (idx.size === 0) return 0; // rosters-data.js nicht geladen -- nichts zu tun
+  let updated = 0;
+  playerRates.forEach(p => {
+    const current = idx.get(mfhfbNormalizeName(p.name));
+    if (current && current !== p.team) { p.team = current; updated++; }
+  });
+  return updated;
+}
+
 const MFHFB_THEME_KEY = 'mfhfb_theme_v1';
 
 function mfhfbGetTheme() {
