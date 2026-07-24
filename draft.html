@@ -358,7 +358,17 @@
           <input type="text" id="searchInput" placeholder="Spieler, Team oder Position suchen…">
         </div>
         <div id="posFilters" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+        <button class="tag-btn" id="statFilterToggle">Stat-Filter</button>
         <button class="tag-btn" id="hideDraftedBtn">Gedraftete ausblenden</button>
+      </div>
+
+      <div id="statFilterPanel" class="panel" style="display:none; padding:12px 14px;">
+        <div class="note" style="margin-bottom:8px;">
+          Bis zu 3 Bedingungen gleichzeitig (UND-verknüpft), z.B. FG% &gt; 50 UND AST &gt; 5,5 UND POS = C
+          (Position über die Filter-Buttons oben kombinieren). Wirkt zusätzlich zur Text-/Positionssuche.
+        </div>
+        <div id="statFilterRows"></div>
+        <button class="tag-btn" id="statFilterClear" style="margin-top:6px;">Zurücksetzen</button>
       </div>
 
       <div class="table-wrap">
@@ -588,10 +598,12 @@ function buildPlayers(){
   const poolSize = mfhfbGetPoolSize();
   const overrides = mfhfbGetOverrides();
 
-  let rows = PLAYER_RATES.map((p, idx) => {
+  let rows = PLAYER_RATES
+    .filter(p => mfhfbIsValidCurrentTeam(p.team))
+    .map((p, idx) => {
     const latest = mfhfbLatestSeason(p);
     const key = mfhfbNormalizeName(p.name);
-    const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg);
+    const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg, latest.gp);
     const proj = mfhfbComputeProjection(p, minutes, weights);
     // Für saubere Team-FG%/FT%-Aggregation (attempt-gewichtet statt Minuten-Proxy)
     const r = mfhfbWeightedRates(p, weights);
@@ -646,9 +658,30 @@ function buildPlayers(){
     const n = poolSize === '200' ? 200 : 400;
     pool = [...rows].sort((a,b) => b.s.pts - a.s.pts).slice(0, n);
   }
+
+  // FG%/FT%: NICHT die rohe Quote z-scoren -- ein Spieler mit 1/1 (100%)
+  // sähe sonst identisch aus wie einer mit 9/10 (90%) auf echtem Volumen,
+  // verzerrt Ranking/Score massiv nach oben für Kleinst-Stichproben. Statt-
+  // dessen der tatsächliche IMPACT auf die Team-Quote: (eigene Quote minus
+  // Liga-Schnitt) mal eigene Versuche -- exakt wie Team-FG%/FT% selbst schon
+  // über Makes/Attempts aggregiert wird (siehe teamTotals()), nicht über den
+  // Durchschnitt der Einzelquoten. Liga-Schnitt kommt aus derselben Pool-
+  // Population wie Mittelwert/Streuung, für Konsistenz.
+  const poolFga = pool.reduce((a,r)=>a+r.s.fga,0), poolFgm = pool.reduce((a,r)=>a+r.s.fgm,0);
+  const poolFta = pool.reduce((a,r)=>a+r.s.fta,0), poolFtm = pool.reduce((a,r)=>a+r.s.ftm,0);
+  const leagueFgPct = poolFga > 0 ? poolFgm / poolFga : 0;
+  const leagueFtPct = poolFta > 0 ? poolFtm / poolFta : 0;
+  rows.forEach(r => {
+    r._fgImpact = (r.s.fgpct/100 - leagueFgPct) * r.s.fga;
+    r._ftImpact = (r.s.ftpct/100 - leagueFtPct) * r.s.fta;
+  });
+
   const stats = {};
   Z_CATS.forEach(cat => {
-    const vals = pool.map(r => r.s[cat]);
+    let vals;
+    if (cat === 'fgpct') vals = pool.map(r => r._fgImpact);
+    else if (cat === 'ftpct') vals = pool.map(r => r._ftImpact);
+    else vals = pool.map(r => r.s[cat]);
     const m = vals.reduce((a,b)=>a+b,0)/vals.length;
     const variance = vals.reduce((a,b)=>a+(b-m)*(b-m),0)/vals.length;
     stats[cat] = { mean: m, sd: Math.sqrt(variance) || 1 };
@@ -658,7 +691,11 @@ function buildPlayers(){
     row.catZ = {};
     let z = 0;
     Z_CATS.forEach(cat => {
-      let catZ = (row.s[cat] - stats[cat].mean) / stats[cat].sd;
+      let basis;
+      if (cat === 'fgpct') basis = row._fgImpact;
+      else if (cat === 'ftpct') basis = row._ftImpact;
+      else basis = row.s[cat];
+      let catZ = (basis - stats[cat].mean) / stats[cat].sd;
       if (cat === 'tov') catZ = -catZ;
       row.catZ[cat] = catZ;
       z += catZ * catWeights[cat];
@@ -764,6 +801,9 @@ let state = {
   search: '',
   posFilter: null,
   hideDrafted: false,
+  // Barttorvik-artiger Stat-Filter: bis zu 3 Bedingungen, UND-verknüpft.
+  // Jede: {cat: 'fgpct', op: '>', val: 50}. cat aus STAT_FILTER_CATS.
+  statFilters: [null, null, null],
 };
 
 function loadState(){
@@ -1204,9 +1244,66 @@ function renderTopbar(){
   document.getElementById('undoBtn').disabled = state.picks.length === 0;
 }
 
+// Barttorvik-artiger Stat-Filter: Kategorien + Operatoren, die zur Auswahl
+// stehen. 'z' verweist auf den gewichteten Gesamt-Score, alle anderen auf
+// den entsprechenden rohen Pro-Spiel-Wert (row.s[cat]).
+const STAT_FILTER_CATS = [
+  {key:'pts', label:'PTS'}, {key:'reb', label:'REB'}, {key:'ast', label:'AST'},
+  {key:'stl', label:'STL'}, {key:'blk', label:'BLK'}, {key:'fg3m', label:'3PM'},
+  {key:'fgpct', label:'FG%'}, {key:'ftpct', label:'FT%'}, {key:'tov', label:'TOV'},
+  {key:'z', label:'Z-Score'},
+];
+const STAT_FILTER_OPS = ['>', '>=', '<', '<='];
+
+function statFilterValue(p, cat){
+  return cat === 'z' ? p.z : p.s[cat];
+}
+function passesStatFilters(p){
+  return state.statFilters.every(f => {
+    if(!f || !f.cat || !f.op || f.val === null || f.val === undefined || f.val === '') return true;
+    const v = statFilterValue(p, f.cat);
+    const target = Number(f.val);
+    if(Number.isNaN(target)) return true;
+    switch(f.op){
+      case '>': return v > target;
+      case '>=': return v >= target;
+      case '<': return v < target;
+      case '<=': return v <= target;
+      default: return true;
+    }
+  });
+}
+
+function renderStatFilterRows(){
+  const container = document.getElementById('statFilterRows');
+  container.innerHTML = state.statFilters.map((f, i) => `
+    <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;">
+      <select data-i="${i}" data-field="cat" style="padding:5px 8px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); color:var(--text);">
+        <option value="">–</option>
+        ${STAT_FILTER_CATS.map(c => `<option value="${c.key}" ${f&&f.cat===c.key?'selected':''}>${c.label}</option>`).join('')}
+      </select>
+      <select data-i="${i}" data-field="op" style="padding:5px 8px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); color:var(--text);">
+        ${STAT_FILTER_OPS.map(o => `<option value="${o}" ${f&&f.op===o?'selected':''}>${o}</option>`).join('')}
+      </select>
+      <input data-i="${i}" data-field="val" type="number" step="0.1" placeholder="Wert" value="${f&&f.val!==undefined?f.val:''}"
+        style="width:90px; padding:5px 8px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); color:var(--text);">
+    </div>
+  `).join('');
+  container.querySelectorAll('select,input').forEach(el => {
+    el.addEventListener('change', () => {
+      const i = Number(el.dataset.i), field = el.dataset.field;
+      if(!state.statFilters[i]) state.statFilters[i] = {cat:'', op:'>', val:''};
+      state.statFilters[i][field] = el.value;
+      if(!state.statFilters[i].cat) state.statFilters[i] = null;
+      renderPool(); scheduleSave();
+    });
+  });
+}
+
 function passesFilters(p, dm){
   if(state.hideDrafted && dm[p.rk]) return false;
   if(state.posFilter && !p.posList.includes(state.posFilter)) return false;
+  if(!passesStatFilters(p)) return false;
   if(state.search){
     const s = state.search.toLowerCase();
     if(!p.n.toLowerCase().includes(s) && !p.team.toLowerCase().includes(s)) return false;
@@ -2188,6 +2285,17 @@ function initControls(){
     e.target.classList.toggle('active', state.hideDrafted);
     renderPool(); scheduleSave();
   });
+  document.getElementById('statFilterToggle').addEventListener('click', e => {
+    const panel = document.getElementById('statFilterPanel');
+    const nowVisible = panel.style.display === 'none';
+    panel.style.display = nowVisible ? 'block' : 'none';
+    e.target.classList.toggle('active', nowVisible);
+  });
+  document.getElementById('statFilterClear').addEventListener('click', () => {
+    state.statFilters = [null, null, null];
+    renderStatFilterRows(); renderPool(); scheduleSave();
+  });
+  renderStatFilterRows();
   document.querySelectorAll('#poolTable thead th[data-k]').forEach(th => {
     th.addEventListener('click', () => {
       const k = th.dataset.k;
