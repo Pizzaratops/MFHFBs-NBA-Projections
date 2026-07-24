@@ -72,7 +72,11 @@ def normalize_name(name: str) -> str:
 def load_own_draft_results():
     """Liest alle CSVs aus data/draft-results/ und berechnet pro Spieler
     den eigenen ADP (Mittelwert über alle Ligen). Rückgabe: dict
-    normalisierter_name -> {name, adp, count, min, max, team, pos}."""
+    normalisierter_name -> {name, adp, count, min, max, team, pos, picks}.
+    "picks" ist die volle Liste aller einzelnen Draft-Positionen (+ aus
+    welcher Datei/Liga sie stammen) — die "Draft Range" fürs Klick-Popover
+    auf die ADP-Zelle in draft.html, aus denselben Rohdaten gespeist statt
+    verworfen."""
     files = sorted(glob.glob(os.path.join(INPUT_DIR, "*.csv")))
     if not files:
         print(f"Keine eigenen Draft-Result-CSVs in {INPUT_DIR} gefunden (übersprungen).")
@@ -80,12 +84,16 @@ def load_own_draft_results():
 
     print(f"Gefundene eigene Draft-Result-Dateien: {len(files)}")
 
-    # player_id -> {name, team, pos, picks: [ov_pick, ...]}
+    # player_id -> {name, team, pos, picks: [{pick, source}, ...]}
     players = {}
     leagues_processed = 0
     skipped_rows = 0
 
     for path in files:
+        # Dateiname (ohne Endung) als grobes Liga-Label fürs Popover, z.B.
+        # "Fantrax-Draft-Results-AUTO-H2H01" -> "H2H01". Rein kosmetisch,
+        # kein stabiler Identifier, nur zur Einordnung "aus welcher Liga".
+        source_label = os.path.splitext(os.path.basename(path))[0]
         with open(path, encoding="utf-8-sig", newline="") as fh:
             rows = list(csv.DictReader(fh))
         if not rows:
@@ -110,7 +118,7 @@ def load_own_draft_results():
             entry["name"] = name
             entry["team"] = row.get("Team") or entry["team"]
             entry["pos"] = row.get("Pos") or entry["pos"]
-            entry["picks"].append(ov_pick)
+            entry["picks"].append({"pick": ov_pick, "source": source_label})
 
     if skipped_rows:
         print(f"Warnung: {skipped_rows} Zeile(n) übersprungen (fehlende Felder, z.B. unvollständige letzte Runde).")
@@ -118,15 +126,17 @@ def load_own_draft_results():
     out = {}
     for pid, p in players.items():
         picks = p["picks"]
+        pick_nums = [pk["pick"] for pk in picks]
         key = normalize_name(p["name"])
         out[key] = {
             "name": p["name"],
-            "adp": round(sum(picks) / len(picks), 1),
-            "count": len(picks),
-            "min": min(picks),
-            "max": max(picks),
+            "adp": round(sum(pick_nums) / len(pick_nums), 1),
+            "count": len(pick_nums),
+            "min": min(pick_nums),
+            "max": max(pick_nums),
             "team": p["team"],
             "pos": p["pos"],
+            "picks": sorted(picks, key=lambda pk: pk["pick"]),
         }
     print(f"  -> {len(out)} Spieler aus {leagues_processed} eigenen Ligen aggregiert.")
     return out
@@ -182,6 +192,7 @@ def build() -> None:
             "ownCount": own["count"] if own else 0,
             "ownMin": own["min"] if own else None,
             "ownMax": own["max"] if own else None,
+            "ownPicks": own["picks"] if own else [],
             "fantraxAdp": fx["adp"] if fx else None,
             "team": (own or {}).get("team") or (fx or {}).get("team", ""),
             "pos": (own or {}).get("pos") or (fx or {}).get("pos", ""),
@@ -191,7 +202,7 @@ def build() -> None:
         f.write("// MFHFBs NBA Projections — ADP-Daten (Output von scripts/build-adp-data.py)\n")
         f.write(f"// Eigene Draft Results: {len(own_adp)} Spieler | Fantrax-ADP: {len(fantrax_adp)} Spieler\n")
         f.write("// Key = normalisierter Spielername (siehe mfhfbNormalizeName in assets/shared.js)\n")
-        f.write("// Felder: ownAdp/ownCount/ownMin/ownMax (aus data/draft-results/), fantraxAdp (aus data/fantrax-adp.csv)\n")
+        f.write("// Felder: ownAdp/ownCount/ownMin/ownMax/ownPicks (aus data/draft-results/), fantraxAdp (aus data/fantrax-adp.csv)\n")
         f.write("// NICHT MANUELL BEARBEITEN — Skript erneut laufen lassen, nachdem neue CSVs abgelegt wurden.\n")
         f.write("const ADP_DATA = ")
         f.write(json.dumps(adp_data, indent=1, ensure_ascii=False))
