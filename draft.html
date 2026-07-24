@@ -607,10 +607,24 @@ function buildPlayers(){
   Object.values(manualStats).forEach(m => {
     const hasProduction = PROD_CATS.some(c => m[c] !== undefined && m[c] !== 0);
     if (!hasProduction) return;
+    // Einträge ohne Team (z.B. aus rookie-projections.js vorbefüllte
+    // Spekulations-Prospects ohne realen Rosterplatz, wie "Drake Mitchell")
+    // NICHT ins Draft Board -- dort sollen nur Spieler auftauchen, die auch
+    // auf teams.html unter einem echten Team stehen. Wer wirklich gedraftet
+    // werden könnte, dem trägst du auf teams.html ein Team ein, dann taucht
+    // er automatisch wieder auf.
+    if (!m.team || !m.team.trim()) return;
     const min = m.min || 0;
+    // PROVISORISCHE Untergrenze bei 0, bis die eigentliche Ursache in
+    // rookie-projections.js behoben ist (Stand jetzt: 50 von 63 Rookies
+    // haben negative PTS-Werte -- sieht nach einer falsch gemappten Spalte
+    // beim xlsx-Import aus, nicht nach Einzelfällen). Verhindert nur, dass
+    // Minus-Punkte im Draft Board auftauchen -- macht die Zahl nicht korrekt,
+    // nur nicht mehr offensichtlich kaputt.
+    const clamp0 = v => Math.max(0, v || 0);
     const s = {
-      min, pts: m.pts || 0, reb: m.reb || 0, ast: m.ast || 0,
-      stl: m.stl || 0, blk: m.blk || 0, fg3m: m.fg3m || 0, tov: m.tov || 0,
+      min, pts: clamp0(m.pts), reb: clamp0(m.reb), ast: clamp0(m.ast),
+      stl: clamp0(m.stl), blk: clamp0(m.blk), fg3m: clamp0(m.fg3m), tov: clamp0(m.tov),
       fgpct: m.fgpct || 0, ftpct: m.ftpct || 0,
     };
     // keine Attempt-Daten für manuelle Einträge -> Minuten als Gewichtungs-Proxy
