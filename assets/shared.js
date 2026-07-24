@@ -285,6 +285,29 @@ const MFHFB_ESPN_TO_BBM_TEAM = {
 };
 function mfhfbToBbmAbbr(espnAbbr) { return MFHFB_ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
 
+let _mfhfbValidTeamSet = null;
+// Menge aller aktuell echten NBA-Team-Kürzel (BBM-Format) -- aus
+// ROSTERS_DATA abgeleitet (30 Teams), mit einer festen Fallback-Liste falls
+// rosters-data.js auf einer Seite nicht geladen ist. Für den Filter
+// "Spieler ohne echtes aktuelles Team raus" (Free Agents, ligafremd, etc.).
+const MFHFB_STATIC_TEAM_FALLBACK = [
+  'ATL','BOS','BKN','CHA','CHI','CLE','DAL','DEN','DET','GSW','HOU','IND',
+  'LAC','LAL','MEM','MIA','MIL','MIN','NOR','NYK','OKC','ORL','PHI','PHO',
+  'POR','SAC','SAS','TOR','UTA','WAS',
+];
+function mfhfbValidTeamSet() {
+  if (_mfhfbValidTeamSet) return _mfhfbValidTeamSet;
+  if (typeof ROSTERS_DATA !== 'undefined' && ROSTERS_DATA && ROSTERS_DATA.rosters) {
+    _mfhfbValidTeamSet = new Set(Object.keys(ROSTERS_DATA.rosters).map(mfhfbToBbmAbbr));
+  } else {
+    _mfhfbValidTeamSet = new Set(MFHFB_STATIC_TEAM_FALLBACK);
+  }
+  return _mfhfbValidTeamSet;
+}
+function mfhfbIsValidCurrentTeam(teamAbbr) {
+  return mfhfbValidTeamSet().has(teamAbbr);
+}
+
 let _mfhfbCurrentTeamIndex = null;
 function mfhfbBuildCurrentTeamIndex() {
   if (_mfhfbCurrentTeamIndex) return _mfhfbCurrentTeamIndex;
@@ -419,10 +442,25 @@ function mfhfbApplyTeamOrder(items, teamAbbr) {
 // --- Projizierte Minuten 2026-27 als Standardwert ---
 // Reihenfolge: manueller Override (Teams-Seite) > projizierte Minuten
 // (projected-minutes.js) > reale MPG der letzten gespielten Saison.
-function mfhfbDefaultMinutes(playerName, fallbackMpg) {
+//
+// Bei der reinen MPG-Rückfall-Option (keine explizite Projektion hinterlegt)
+// ist eine sehr kleine Stichprobe (wenige gespielte Spiele) oft Rauschen --
+// z.B. Tre Scott: 6 Spiele mit 30,4 MPG (Verletzungsvertretung), daraus wird
+// sonst blind "30 Minuten nächste Saison" gemacht. Ab MFHFB_MIN_GP_FOR_TRUST
+// gespielten Spielen volles Vertrauen in die MPG, darunter wird proportional
+// Richtung einer konservativen Bankspieler-Baseline geshrinkt. Werte sind
+// Heuristik/Erfahrungswert, nicht exakt hergeleitet -- bei Bedarf anpassen.
+const MFHFB_MIN_GP_FOR_TRUST = 20;
+const MFHFB_FRINGE_BASELINE_MIN = 6;
+function mfhfbDefaultMinutes(playerName, fallbackMpg, fallbackGp) {
   const key = mfhfbNormalizeName(playerName);
   if (typeof PROJECTED_MINUTES !== 'undefined' && PROJECTED_MINUTES[key]) {
     return PROJECTED_MINUTES[key].min;
+  }
+  if (fallbackGp !== undefined && fallbackGp > 0 && fallbackGp < MFHFB_MIN_GP_FOR_TRUST) {
+    const confidence = fallbackGp / MFHFB_MIN_GP_FOR_TRUST;
+    const baseline = Math.min(fallbackMpg, MFHFB_FRINGE_BASELINE_MIN);
+    return confidence * fallbackMpg + (1 - confidence) * baseline;
   }
   return fallbackMpg;
 }
