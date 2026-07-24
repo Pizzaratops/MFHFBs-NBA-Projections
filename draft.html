@@ -384,7 +384,9 @@
               <th data-k="stl">STL</th>
               <th data-k="blk">BLK</th>
               <th data-k="fg3m">3PM</th>
+              <th data-k="fga" title="Field Goals Made-Attempted — die Basis, aus der der volumen-gewichtete FG%-Score berechnet wird (siehe Z-Spalte)">FGM-FGA</th>
               <th data-k="fgpct">FG%</th>
+              <th data-k="fta" title="Free Throws Made-Attempted — die Basis, aus der der volumen-gewichtete FT%-Score berechnet wird (siehe Z-Spalte)">FTM-FTA</th>
               <th data-k="ftpct">FT%</th>
               <th data-k="tov">TOV</th>
               <th data-k="z">Z</th>
@@ -1425,7 +1427,9 @@ function renderPool(){
       <td>${fmtNum(p.s.stl)}</td>
       <td>${fmtNum(p.s.blk)}</td>
       <td>${fmtNum(p.s.fg3m)}</td>
+      <td style="font-size:11px; color:var(--muted);">${fmtNum(p.s.fgm,1)}-${fmtNum(p.s.fga,1)}</td>
       <td>${fmtNum(p.s.fgpct)}%</td>
+      <td style="font-size:11px; color:var(--muted);">${fmtNum(p.s.ftm,1)}-${fmtNum(p.s.fta,1)}</td>
       <td>${fmtNum(p.s.ftpct)}%</td>
       <td>${fmtNum(p.s.tov)}</td>
       <td class="col-z" style="${hz(p.z)}">${p.z>=0?'+':''}${fmtNum(p.z,2)}</td>
