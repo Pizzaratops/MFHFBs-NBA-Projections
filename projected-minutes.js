@@ -723,34 +723,52 @@ const PROJECTED_MINUTES = {
   "name": "Noah Penda"
  },
  "tyrese maxey": {
-  "min": 36,
+  "min": 34,
   "team": "PHI",
   "pos": "PG",
   "name": "Tyrese Maxey"
  },
  "jaylen brown": {
-  "min": 34,
+  "min": 32,
   "team": "PHI",
   "pos": "SF",
   "name": "Jaylen Brown"
  },
  "vj edgecombe": {
-  "min": 30,
+  "min": 27,
   "team": "PHI",
   "pos": "SG",
   "name": "VJ Edgecombe"
  },
  "joel embiid": {
-  "min": 28,
+  "min": 25,
   "team": "PHI",
   "pos": "C",
   "name": "Joel Embiid"
  },
  "dean wade": {
-  "min": 26,
+  "min": 20,
   "team": "PHI",
   "pos": "PF",
   "name": "Dean Wade"
+ },
+ "lebron james": {
+  "min": 26,
+  "team": "PHI",
+  "pos": "SF",
+  "name": "LeBron James"
+ },
+ "anfernee simons": {
+  "min": 23,
+  "team": "PHI",
+  "pos": "SG",
+  "name": "Anfernee Simons"
+ },
+ "justin edwards": {
+  "min": 13,
+  "team": "PHI",
+  "pos": "SF",
+  "name": "Justin Edwards"
  },
  "quentin grimes": {
   "min": 24,
@@ -765,7 +783,7 @@ const PROJECTED_MINUTES = {
   "name": "Jared McCain"
  },
  "adem bona": {
-  "min": 20,
+  "min": 22,
   "team": "PHI",
   "pos": "C",
   "name": "Adem Bona"
