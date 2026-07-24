@@ -1216,20 +1216,34 @@ function renderPool(){
   // Render für alle Spieler berechnen -- MUSS vor dem Sort passieren, da
   // beide als Sortier-Spalten dienen. H-Score nur für noch verfügbare
   // Spieler (für gedraftete ist er bedeutungslos).
-  const puntSet = new Set(state.punt);
-  const catWeightsForPunt = mfhfbGetCategoryWeights();
-  PLAYERS.forEach(p => {
-    let zp = 0;
-    Z_CATS.forEach(cat => { if(!puntSet.has(cat)) zp += p.catZ[cat] * catWeightsForPunt[cat]; });
-    p.zPunt = zp;
-  });
-  const hscoreCtx = computeHScoreContext();
-  if(hscoreCtx){
-    const shortlist = PLAYERS.filter(p => !dm[p.rk]).sort((a,b) => b.z - a.z).slice(0, MFHFB_HSCORE_SHORTLIST);
-    const shortlistSet = new Set(shortlist.map(p => p.rk));
-    PLAYERS.forEach(p => { p.hscore = shortlistSet.has(p.rk) ? computeHScore(p, hscoreCtx) : null; });
-  } else {
-    PLAYERS.forEach(p => { p.hscore = null; });
+  //
+  // Beides in try/catch: das ist neuer, komplexer Code (Simulation über
+  // 168 Picks), der an einem Draft-Stand mit Kanten-Fällen (z.B. Picks, die
+  // sich keinem Spieler zuordnen lassen) theoretisch crashen könnte. Ohne
+  // dieses try/catch würde ein Fehler hier den KOMPLETTEN restlichen
+  // renderPool()-Aufruf abbrechen -- der Punt-Chip würde sich zwar noch
+  // umfärben (das passiert vorher), aber Tabelle/Sortierung/Empfehlungen
+  // würden nicht mehr aktualisiert wirken. Bei einem Fehler bekommen
+  // Z-Punt/H-Score einfach neutrale Werte statt die ganze Seite einzufrieren.
+  try {
+    const puntSet = new Set(state.punt);
+    const catWeightsForPunt = mfhfbGetCategoryWeights();
+    PLAYERS.forEach(p => {
+      let zp = 0;
+      Z_CATS.forEach(cat => { if(!puntSet.has(cat)) zp += p.catZ[cat] * catWeightsForPunt[cat]; });
+      p.zPunt = zp;
+    });
+    const hscoreCtx = computeHScoreContext();
+    if(hscoreCtx){
+      const shortlist = PLAYERS.filter(p => !dm[p.rk]).sort((a,b) => b.z - a.z).slice(0, MFHFB_HSCORE_SHORTLIST);
+      const shortlistSet = new Set(shortlist.map(p => p.rk));
+      PLAYERS.forEach(p => { p.hscore = shortlistSet.has(p.rk) ? computeHScore(p, hscoreCtx) : null; });
+    } else {
+      PLAYERS.forEach(p => { p.hscore = null; });
+    }
+  } catch(err) {
+    console.error('Z-Punt/H-Score-Berechnung fehlgeschlagen, Rest der Seite läuft trotzdem weiter:', err);
+    PLAYERS.forEach(p => { if(p.zPunt === undefined) p.zPunt = p.z; if(p.hscore === undefined) p.hscore = null; });
   }
 
   let rows = PLAYERS.filter(p => passesFilters(p, dm));
@@ -1748,9 +1762,20 @@ function renderPosFilters(){
 }
 
 function renderAll(){
-  renderTopbar(); renderPool(); renderSlots(); renderCatRanks();
-  renderMatrix(); renderPuntChips(); renderScarcity(); renderPuntPlanner();
-  renderPower(); renderLog(); renderReco();
+  // Jeder Schritt einzeln in try/catch: eine Exception in EINEM Tab (z.B.
+  // Scarcity oder Punt-Planer bei einem ungewöhnlichen Draft-Stand) soll
+  // nicht dazu führen, dass der Rest der Seite (Tabelle, Empfehlungen,
+  // Slots) stumm einfriert. Fehler landen in der Browser-Konsole statt
+  // die ganze Seite lahmzulegen.
+  const steps = [
+    ['renderTopbar', renderTopbar], ['renderPool', renderPool], ['renderSlots', renderSlots],
+    ['renderCatRanks', renderCatRanks], ['renderMatrix', renderMatrix], ['renderPuntChips', renderPuntChips],
+    ['renderScarcity', renderScarcity], ['renderPuntPlanner', renderPuntPlanner],
+    ['renderPower', renderPower], ['renderLog', renderLog], ['renderReco', renderReco],
+  ];
+  steps.forEach(([name, fn]) => {
+    try { fn(); } catch(err) { console.error(name + '() fehlgeschlagen:', err); }
+  });
 }
 
 // ---------------- Live-Sync mit Fantrax ----------------
