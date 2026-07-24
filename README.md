@@ -58,6 +58,172 @@ und browserweit, nicht account-weit.
 iterativ ergänzt, sobald sie in der eigenen Liga-Praxis gebraucht
 werden (siehe Changelog unten).
 
+## Architektur & Datenfluss
+
+### Flowchart
+
+```mermaid
+flowchart TD
+    subgraph Roh["Rohdaten (data/, manuell oder extern)"]
+        A1["Season-Stats Exports<br/>BBM_Rankings_Redraft_*.xls"]
+        A2["Fantrax Draft Results<br/>data/draft-results/*.csv"]
+        A3["Fantrax ADP Snapshot<br/>data/fantrax-adp.csv"]
+        A4["Rookie-Prospect-Liste<br/>Rankings_and_Projections_*.xlsx"]
+        A5["ESPN Live-Roster<br/>via GitHub Action, täglich"]
+    end
+
+    subgraph Build["Build-Skripte (scripts/)"]
+        B1["build-players-data.py"]
+        B2["build-adp-data.py"]
+        B3["fetch-rosters.mjs"]
+    end
+
+    subgraph Gen["Generierte *-data.js (statisch, committed)"]
+        C1["players-data.js<br/>PLAYER_RATES"]
+        C2["adp-data.js<br/>ADP_DATA"]
+        C3["rosters-data.js<br/>ROSTERS_DATA"]
+        C4["rookie-projections.js<br/>ROOKIE_PROJECTIONS"]
+        C5["projected-minutes.js<br/>PROJECTED_MINUTES"]
+    end
+
+    subgraph Engine["assets/shared.js — gemeinsame Engine (alle 3 Seiten nutzen dieselbe)"]
+        D1["mfhfbWeightedRates / mfhfbComputeProjection<br/>Rate × Minuten, Season-Weighting, Stability-Shrink"]
+        D2["mfhfbDefaultMinutes<br/>Override → Projection → MPG-Fallback (Sample-Size-Shrink)"]
+        D3["mfhfbApplyCurrentTeams / mfhfbSyncManualTeams<br/>Team-Feld laufend gegen ROSTERS_DATA korrigieren"]
+        D4["mfhfbGetManualStats / mfhfbGetOverrides<br/>localStorage-Zugriff"]
+    end
+
+    subgraph Seiten["Die drei Seiten"]
+        E1["index.html — Projections<br/>Ranking nach Z-Score"]
+        E2["teams.html — NBA Teams<br/>Minuten-Eingabe = Quelle der Wahrheit"]
+        E3["draft.html — Draft Board<br/>Live-Draft-Tracker"]
+    end
+
+    subgraph Store["localStorage (geräte-/browserlokal, nicht account-weit)"]
+        F1["Minuten-Overrides"]
+        F2["Manuelle Stats / Rookies"]
+        F3["Gewichtungen"]
+        F4["Draft-Status"]
+    end
+
+    A1 --> B1 --> C1
+    A2 --> B2 --> C2
+    A3 --> B2
+    A5 --> B3 --> C3
+    A4 -. "manuell übertragen" .-> C4
+
+    C1 --> D1
+    C5 --> D2
+    C3 --> D3
+    C1 --> Engine
+    C2 --> Engine
+    C3 --> Engine
+    C4 --> Engine
+    C5 --> Engine
+
+    Engine --> E1
+    Engine --> E2
+    Engine --> E3
+
+    E2 -- "Minuten eintragen" --> F1
+    F1 -- "gelesen von" --> D2
+    E2 -- "Rookie-Stats bearbeiten/korrigieren" --> F2
+    F2 -- "gelesen von" --> E1
+    F2 -- "gelesen von" --> E3
+    E1 -- "Gewichtung ändern" --> F3
+    F3 --> D1
+    E3 -- "Picks, Punt-Auswahl, Sortierung" --> F4
+    F4 --> E3
+```
+
+### Grundidee in einem Satz
+
+Realstatistiken werden auf Pro-Minute-Raten runtergerechnet, mit
+Jahresgewichtung kombiniert, auf projizierte Minuten hochgerechnet und
+zu 9-Cat-Z-Scores verdichtet — alle drei Seiten sind nur verschiedene
+Ansichten auf **dieselbe** Engine (`assets/shared.js`) und **dieselben**
+Rohdaten, nicht drei getrennte Systeme.
+
+### Datenquellen im Detail
+
+| Datei | Quelle | Build | Update-Rhythmus |
+|---|---|---|---|
+| `players-data.js` (`PLAYER_RATES`) | BBM-Redraft-Exports mehrerer Saisons | `scripts/build-players-data.py` | bei Bedarf, wenn neue Saison-Exports vorliegen |
+| `projected-minutes.js` (`PROJECTED_MINUTES`) | manuelle Recherche (Rotationsprognosen) | Hand-gepflegt | vor Saisonstart / bei größeren Rollen-Änderungen |
+| `rookie-projections.js` (`ROOKIE_PROJECTIONS`) | Rookie-Prospect-Xlsx | manuell übertragen, `ROOKIE_PROJECTIONS_VERSION` bei inhaltlichen Korrekturen hochzählen | einmalig pro Draft-Klasse, Korrekturen bei Bedarf |
+| `adp-data.js` (`ADP_DATA`) | `data/draft-results/*.csv` (eigene Ligen) + `data/fantrax-adp.csv` (Fantrax-Snapshot) | `scripts/build-adp-data.py` | nach jedem neuen Draft-Result-Export |
+| `rosters-data.js` (`ROSTERS_DATA`) | ESPN API | `scripts/fetch-rosters.mjs`, **täglich automatisch** via GitHub Action | täglich |
+
+`PLAYER_RATES`/`ROOKIE_PROJECTIONS` tragen jeweils ein **statisches**
+`team`-Feld (Stand zum Build-Zeitpunkt bzw. Pre-Draft-Schätzung). Damit
+das nicht veraltet (Trades, Waives, Signings, Rookie tritt echtem Team
+bei), gleichen `mfhfbApplyCurrentTeams()` und `mfhfbSyncManualTeams()`
+es bei jedem Seitenaufruf gegen die tagesaktuellen `ROSTERS_DATA` ab —
+außer auf `teams.html`s rechter Spalte, die bewusst die historische
+Vorsaison-Zuordnung zeigt.
+
+### Die drei Seiten
+
+**`index.html` — Projections.** Reine Rangliste, alle Spieler nach
+Z-Score. Zeigt eigene Projektion und Realwerte der letzten Saison
+nebeneinander. Hier werden Jahresgewichtungen justiert
+(`mfhfbGetWeights()`/`mfhfbSetWeights()`, bis zu 2× für die letzten
+zwei Saisons).
+
+**`teams.html` — NBA Teams.** Kader pro Team (linke Spalte = aktueller
+ESPN-Kader, rechte Spalte = tatsächliche End-Rotation der Vorsaison,
+bewusst unterschiedliche Quellen). Hier werden Minuten eingetragen
+(`mfhfbGetOverrides()`/`mfhfbSetOverrides()`) — das ist die **einzige
+Stelle**, an der Projektionsminuten von Hand gesetzt werden, alle
+anderen Seiten lesen diese Overrides nur. Rookie-Stats werden hier
+ebenfalls gepflegt (`ROOKIE_PROJECTIONS` wird beim ersten Aufruf nach
+einer Versions-Änderung automatisch neu eingespielt, siehe
+`ROOKIE_PROJECTIONS_VERSION`).
+
+**`draft.html` — Draft Board.** Live-Draft-Tracker, läuft gegen
+dieselbe Engine, plus draft-spezifische Zusatzschicht:
+- **Z / Z-Floor / Z-Depth / Z-Punt** — Standard-Score, Score ohne
+  schwächste/stärkste Kategorie, Score mit gepunkteten Kategorien auf
+  Gewicht 0 (Basketball-Monster-"Punt-Columns"-Prinzip).
+- **FG%/FT%** fließen volumen-gewichtet ein (Impact = eigene Quote
+  minus Liga-Schnitt, mal eigene Versuche), nicht als rohe Quote —
+  sonst verzerren Kleinst-Stichproben (1/1 = 100%) das Ranking.
+- **H-Score (Beta)** — vereinfachte Umsetzung von Rosenof (2024)
+  H-Scoring: simuliert den Rest-Draft in echter Snake-Reihenfolge über
+  bis zu 2 gepuntete Kategorien, schätzt Kategorie-Gewinnwahrscheinlich-
+  keit gegen die Liga. Nur für die Top-Kandidaten berechnet
+  (Performance), Punt-Auswahl der Chips beeinflusst H-Score NICHT — es
+  sucht selbst die beste Strategie pro Kandidat.
+- **Scarcity** — Runden-Cliff pro Kategorie: wie schnell dünnt der
+  verfügbare Pool in einer Kategorie aus.
+- **Punt-Planer** — simuliert Wochen-Matchups gegen alle Gegner unter
+  der aktuellen Punt-Auswahl, erkennt mögliche Mirror-Punter.
+- **Stat-Filter** — Barttorvik-artige Mehrfachbedingungen (z.B. FG%>50
+  UND AST>5,5), kombinierbar mit Positions-Filter.
+- **ADP-Popover** — Klick auf die ADP-Zelle zeigt alle einzelnen
+  Draft-Positionen aus den eigenen Ligen, nicht nur den Durchschnitt.
+- Live-Sync mit Fantrax (`assets/fantrax-live.js`) ordnet echte Picks
+  per normalisiertem Namens-Lookup den lokalen Spieler-Zeilen zu.
+
+### Gemeinsamer Speicher (localStorage, browser-/gerätelokal)
+
+| Key | Gesetzt auf | Gelesen von | Inhalt |
+|---|---|---|---|
+| `mfhfb_proj_minutes_v1` | teams.html | alle 3 Seiten | Minuten-Overrides pro Spieler |
+| `mfhfb_manual_stats_v1` | teams.html (Rookie-Seed + Edits) | alle 3 Seiten | manuelle/Rookie-Statzeilen |
+| `mfhfb_proj_weights_v1` | index.html | alle 3 Seiten | Jahresgewichtung (Season-Weighting) |
+| `mfhfb_cat_weights_v1` | draft.html-Einstellungen | draft.html | Kategorie-Gewichte für Z-Score |
+| `mfhfb_zscore_pool_v1` | index.html/draft.html | alle 3 Seiten | Pool-Größe für Z-Mittelwert/Streuung |
+| `mfhfb_team_order_v1` | teams.html (Drag&Drop) | teams.html | Sortierreihenfolge pro Team-Karte |
+| `mfhfb_rookie_seed_version` | teams.html | teams.html | Versions-Marker fürs Rookie-Reseeding |
+| `mfhfb_draft_state_v1` | draft.html | draft.html | Picks, Punt-Auswahl, Sortierung, Filter |
+| `mfhfb_live_sync_v1` | draft.html | draft.html | gespeicherte Fantrax-Liga-IDs |
+| `mfhfb_admin_v1` | teams.html | teams.html | Admin-Lock für Minuten-Bearbeitung |
+| `mfhfb_theme_v1` | alle 3 Seiten | alle 3 Seiten | Hell/Dunkel-Modus |
+
+Alles geräte-/browserlokal, nicht account- oder cloudweit — auf einem
+anderen Gerät/Browser startet alles wieder mit den `*-data.js`-Defaults.
+
 ## Wie die Berechnung funktioniert
 
 1. **Rohdaten** (`data/`): Season-Per-Game-Stats-Export (z.B. aus BBM).
