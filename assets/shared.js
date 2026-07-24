@@ -349,6 +349,28 @@ function mfhfbApplyCurrentTeams(playerRates) {
   return updated;
 }
 
+// Dasselbe für manuelle/Rookie-Einträge (mfhfbGetManualStats()) -- deren
+// "team"-Feld ist ein STATISCHES Vorab-Schätzung (z.B. Pre-Draft-Mock in
+// rookie-projections.js) und wird NIE automatisch aktualisiert, wenn der
+// Spieler später tatsächlich einem echten Team beitritt. teams.html zeigt
+// ihn in dem Fall schon korrekt beim echten Team (linke Spalte kommt direkt
+// aus ROSTERS_DATA, nicht aus dem manuellen Eintrag), aber Draft Board und
+// Projections lesen p.team direkt -- ohne diesen Sync bleiben die
+// veraltet, obwohl der Spieler längst einem echten Kader zugeordnet ist
+// (Beispiel: Cameron Boozer, Rookie-Datei sagt GSW, ESPN sagt inzwischen MEM).
+function mfhfbSyncManualTeams() {
+  const idx = mfhfbBuildCurrentTeamIndex();
+  if (idx.size === 0) return 0;
+  const manual = mfhfbGetManualStats();
+  let updated = 0;
+  Object.values(manual).forEach(m => {
+    const current = idx.get(mfhfbNormalizeName(m.name));
+    if (current && current !== m.team) { m.team = current; updated++; }
+  });
+  if (updated > 0) localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(manual));
+  return updated;
+}
+
 const MFHFB_THEME_KEY = 'mfhfb_theme_v1';
 
 function mfhfbGetTheme() {
