@@ -198,13 +198,22 @@ if (typeof ROOKIE_PROJECTIONS !== 'undefined') {
       overwritten++;
     }
   });
-  if (seeded > 0 || overwritten > 0) {
+
+  // Genereller Schutz (nicht nur einmalig): ein manueller Eintrag darf NIE
+  // einen Spieler überschatten, für den wir schon echte Saisondaten haben
+  // (players-data.js) -- sonst entsteht genau der Bug, der Brandon Miller
+  // getroffen hat: Namens-Lookup findet zwei Kandidaten, Fantrax-Picks
+  // werden dem falschen zugeordnet. Betrifft nicht nur Rookie-Vorbelegungen,
+  // sondern auch versehentlich von Hand angelegte Duplikate.
+  const realPlayerNames = new Set(PLAYER_RATES.map(p => mfhfbNormalizeName(p.name)));
+  let removed = 0;
+  Object.keys(existing).forEach(key => {
+    if (realPlayerNames.has(key)) { delete existing[key]; removed++; }
+  });
+
+  if (seeded > 0 || overwritten > 0 || removed > 0) {
     localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(existing));
-    if (overwritten > 0) {
-      console.log(`Rookie-Projektionen: ${seeded} neu vorbefüllt, ${overwritten} auf korrigierte Version aktualisiert (v${storedVersion}→v${ROOKIE_PROJECTIONS_VERSION}).`);
-    } else {
-      console.log(`Rookie-Projektionen: ${seeded} neue Einträge vorbefüllt.`);
-    }
+    console.log(`Rookie-Projektionen: ${seeded} neu, ${overwritten} auf v${ROOKIE_PROJECTIONS_VERSION} aktualisiert, ${removed} entfernt (kollidierten mit echten Spielerdaten).`);
   }
   if (typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined') {
     localStorage.setItem(MFHFB_ROOKIE_VERSION_KEY, String(ROOKIE_PROJECTIONS_VERSION));

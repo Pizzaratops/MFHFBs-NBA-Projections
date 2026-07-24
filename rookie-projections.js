@@ -2,19 +2,19 @@
 // Quelle: Rookies_Only.xlsx -- PTS korrekt aus der (im Sheet irrefuehrend
 // "USG" benannten) Spalte extrahiert, NICHT aus "PTS"/"CATV"/"Minus1V" --
 // die drei enthalten einen Value-Score (Bereich ca. +1 bis -0.85), keine
-// echten Punkte pro Spiel. Das war der Bug in der Vorversion: 50 von 63
-// Rookies hatten dadurch negative PTS. Alle anderen Kategorien (REB, AST,
-// STL, BLK, 3PM, TOV, FG%, FT%) waren bereits vorher korrekt und unveraendert.
+// echten Punkte pro Spiel.
+// "brandon miller" ENTFERNT (v3): war der echte, bereits aktive Charlotte-
+// Hornets-Spieler (players-data.js hat ihn schon mit 3 echten Saisons) --
+// offenbar ein Kopierfehler in der Quell-Prospect-Liste, kein echter
+// 2026er-Rookie. Kollidierte per Namens-Lookup mit dem echten Draft-Board-
+// Matching und verursachte falsch zugeordnete Fantrax-Picks.
 // Wird von teams.html als Vorbelegung der manuellen Stat-Felder genutzt.
 // Format identisch zu mfhfbGetManualStats() -- wird beim ersten Seitenaufruf
 // in localStorage geschrieben, sofern noch kein eigener Eintrag existiert.
 //
-// ROOKIE_PROJECTIONS_VERSION erhoeht sich bei inhaltlichen Korrekturen wie
-// dieser -- teams.html erzwingt dann ein einmaliges Re-Seeding, auch wenn
-// schon (fehlerhafte) eigene Eintraege in localStorage stehen. Sonst wuerden
-// alte manuelle Zwischen-Fixes (z.B. "auf 0 gesetzt gegen Minus-Werte")
-// fuer immer haengen bleiben, weil das Seeding sonst nur Luecken auffuellt.
-const ROOKIE_PROJECTIONS_VERSION = 2;
+// ROOKIE_PROJECTIONS_VERSION erhoeht sich bei inhaltlichen Korrekturen --
+// teams.html erzwingt dann ein einmaliges Re-Seeding/Aufraeumen.
+const ROOKIE_PROJECTIONS_VERSION = 3;
 const ROOKIE_PROJECTIONS = {
  "cameron boozer": {
   "name": "Cameron Boozer",
@@ -879,22 +879,6 @@ const ROOKIE_PROJECTIONS = {
   "fgpct": 46.5,
   "ftpct": 74.7,
   "tov": 0.3
- },
- "brandon miller": {
-  "name": "Brandon Miller",
-  "team": "CHA",
-  "pos": "F",
-  "min": 32,
-  "gp": 43,
-  "pts": 28.4,
-  "fg3m": 3,
-  "reb": 5.1,
-  "ast": 3.7,
-  "stl": 1.1,
-  "blk": 0.7,
-  "fgpct": 44.3,
-  "ftpct": 86.7,
-  "tov": 2.6
  },
  "randy conwell": {
   "name": "Randy Conwell",
