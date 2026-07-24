@@ -175,21 +175,39 @@ mfhfbInitAdminToggle('adminToggle', () => render());
 // jetzt auch index.html/draft.html sie brauchen (siehe mfhfbApplyCurrentTeams).
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
 
-// Rookie-Projektionen als Vorbelegung in localStorage schreiben —
-// nur wenn für den jeweiligen Spieler noch KEIN manueller Eintrag existiert.
-// So werden eigene Anpassungen niemals überschrieben.
+// Rookie-Projektionen als Vorbelegung in localStorage schreiben.
+// Normalfall: nur wenn für den jeweiligen Spieler noch KEIN manueller
+// Eintrag existiert, damit eigene Anpassungen nicht überschrieben werden.
+// AUSNAHME: wenn sich ROOKIE_PROJECTIONS_VERSION geändert hat (inhaltliche
+// Korrektur der Quelldaten, z.B. der PTS-Bug), wird EINMALIG erzwungen neu
+// geseedet -- sonst würden alte, fehlerhafte oder als Notlösung von Hand auf
+// 0 gesetzte Werte für immer bestehen bleiben, weil das normale Seeding nur
+// Lücken auffüllt, nie vorhandene Einträge ersetzt.
+const MFHFB_ROOKIE_VERSION_KEY = 'mfhfb_rookie_seed_version';
 if (typeof ROOKIE_PROJECTIONS !== 'undefined') {
   const existing = mfhfbGetManualStats();
-  let seeded = 0;
+  const storedVersion = Number(localStorage.getItem(MFHFB_ROOKIE_VERSION_KEY) || 0);
+  const forceReseed = typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined' && storedVersion < ROOKIE_PROJECTIONS_VERSION;
+  let seeded = 0, overwritten = 0;
   Object.entries(ROOKIE_PROJECTIONS).forEach(([key, proj]) => {
     if (!existing[key]) {
       existing[key] = proj;
       seeded++;
+    } else if (forceReseed) {
+      existing[key] = proj;
+      overwritten++;
     }
   });
-  if (seeded > 0) {
+  if (seeded > 0 || overwritten > 0) {
     localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(existing));
-    console.log(`Rookie-Projektionen: ${seeded} neue Einträge vorbefüllt.`);
+    if (overwritten > 0) {
+      console.log(`Rookie-Projektionen: ${seeded} neu vorbefüllt, ${overwritten} auf korrigierte Version aktualisiert (v${storedVersion}→v${ROOKIE_PROJECTIONS_VERSION}).`);
+    } else {
+      console.log(`Rookie-Projektionen: ${seeded} neue Einträge vorbefüllt.`);
+    }
+  }
+  if (typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined') {
+    localStorage.setItem(MFHFB_ROOKIE_VERSION_KEY, String(ROOKIE_PROJECTIONS_VERSION));
   }
 }
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
