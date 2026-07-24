@@ -607,10 +607,9 @@ function buildPlayers(){
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg, latest.gp);
     const proj = mfhfbComputeProjection(p, minutes, weights);
-    // Für saubere Team-FG%/FT%-Aggregation (attempt-gewichtet statt Minuten-Proxy)
-    const r = mfhfbWeightedRates(p, weights);
-    proj.fgm = r.fgm * minutes; proj.fga = r.fga * minutes;
-    proj.ftm = r.ftm * minutes; proj.fta = r.fta * minutes;
+    // fgm/fga/ftm/fta kommen jetzt direkt aus mfhfbComputeProjection() mit
+    // (früher hier separat nachgerechnet, seit dem FG%/FT%-Volumen-Fix
+    // zentral in shared.js miterledigt -- kein Duplikat mehr nötig).
     const dur = mfhfbDurability(p);
     return { rk: idx+1, n: p.name, team: p.team || '-', pos: p.pos || '-', s: proj, manual:false,
              durability: dur.durability, durabilityKnown: dur.known };

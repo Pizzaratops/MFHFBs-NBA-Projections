@@ -233,7 +233,7 @@ let query = '';
 function fmt(v, d=1) { return v.toFixed(d); }
 
 function statHeaderRow() {
-  return `<tr><th>Spieler</th><th>Pos</th><th>Min</th><th>GP</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>3PM</th><th>FG%</th><th>FT%</th><th>TO</th></tr>`;
+  return `<tr><th>Spieler</th><th>Pos</th><th>Min</th><th>GP</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>3PM</th><th>FGM-FGA</th><th>FG%</th><th>FTM-FTA</th><th>FT%</th><th>TO</th></tr>`;
 }
 
 const HEAT_COLS = ['min', 'pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'fgpct', 'ftpct', 'tov'];
@@ -277,6 +277,14 @@ function renderManualRow(rp, teamBbmAbbr, range) {
       data-name="${rp.name.replace(/"/g,'&quot;')}" data-pos="${(rp.position||'').replace(/"/g,'&quot;')}"
       onchange="onManualChange(this)"></td>`;
   };
+  // Für manuelle Einträge gibt es keine echten Attempt-Daten -- Anzeige
+  // als Schätzung Min × Quote, nur informativ, nicht editierbar (die
+  // Quote selbst bleibt das editierbare Feld, wie bisher).
+  const minVal = manual.min !== undefined ? manual.min : (projMin !== undefined ? projMin : 0);
+  const attemptProxy = (pctId) => {
+    const est = minVal * (manual[pctId] || 0) / 100;
+    return `<td style="font-size:11px; color:var(--muted);" title="Geschätzt aus Min × Quote — keine echten Attempt-Daten für manuelle/Rookie-Einträge">${fmt(est,1)}</td>`;
+  };
   return `<tr ${admin ? 'draggable="true"' : ''} data-key="${key}" data-team="${teamBbmAbbr}" class="manual-row">
     <td class="name-cell">${admin ? '<span class="drag-handle">⠿</span>' : ''}${rp.name}<span class="manual-tag">manuell</span></td>
     <td class="left">${rp.position || '-'}</td>
@@ -288,7 +296,9 @@ function renderManualRow(rp, teamBbmAbbr, range) {
     ${field('stl', 0.1)}
     ${field('blk', 0.1)}
     ${field('fg3m', 0.1)}
+    ${attemptProxy('fgpct')}
     ${field('fgpct', 0.5)}
+    ${attemptProxy('ftpct')}
     ${field('ftpct', 0.5)}
     ${field('tov', 0.1)}
   </tr>`;
@@ -299,7 +309,7 @@ function renderManualRow(rp, teamBbmAbbr, range) {
 // pro Team (also innerhalb dieser Liste) berechnet. Reihenfolge kann per
 // Drag & Drop angepasst werden (z.B. für eine Starting 5 oben).
 function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr) {
-  if (!rosterPlayers.length) return `<tr><td colspan="12" class="no-match-note">Keine Spieler</td></tr>`;
+  if (!rosterPlayers.length) return `<tr><td colspan="14" class="no-match-note">Keine Spieler</td></tr>`;
 
   const admin = mfhfbIsAdmin();
   const manualStats = mfhfbGetManualStats();
@@ -355,7 +365,9 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
       <td style="${heatFor(range,'stl',s.stl)}">${fmt(s.stl,1)}</td>
       <td style="${heatFor(range,'blk',s.blk)}">${fmt(s.blk,1)}</td>
       <td style="${heatFor(range,'fg3m',s.fg3m)}">${fmt(s.fg3m,1)}</td>
+      <td style="font-size:11px; color:var(--muted);">${fmt(s.fgm,1)}-${fmt(s.fga,1)}</td>
       <td style="${heatFor(range,'fgpct',s.fgpct)}">${fmt(s.fgpct)}%</td>
+      <td style="font-size:11px; color:var(--muted);">${fmt(s.ftm,1)}-${fmt(s.fta,1)}</td>
       <td style="${heatFor(range,'ftpct',s.ftpct)}">${fmt(s.ftpct)}%</td>
       <td style="${heatFor(range,'tov',s.tov)}">${fmt(s.tov,1)}</td>
     </tr>`;
@@ -375,12 +387,14 @@ function renderRightRows(bbmAbbr) {
         min: latest.mpg, gp: latest.gp,
         pts: r.pts * latest.mpg, reb: r.reb * latest.mpg, ast: r.ast * latest.mpg,
         stl: r.stl * latest.mpg, blk: r.blk * latest.mpg, fg3m: r.fg3m * latest.mpg,
+        fgm: r.fgm * latest.mpg, fga: r.fga * latest.mpg,
+        ftm: r.ftm * latest.mpg, fta: r.fta * latest.mpg,
         fgpct: (r.fgm / r.fga) * 100 || 0, ftpct: (r.ftm / r.fta) * 100 || 0, tov: r.tov * latest.mpg,
       };
     })
     .sort((a, b) => b.min - a.min);
 
-  if (!players.length) return `<tr><td colspan="12" class="no-match-note">Keine Daten für ${bbmAbbr}</td></tr>`;
+  if (!players.length) return `<tr><td colspan="14" class="no-match-note">Keine Daten für ${bbmAbbr}</td></tr>`;
 
   const range = computeHeatRange(players, (it, col) => it[col]);
 
@@ -395,7 +409,9 @@ function renderRightRows(bbmAbbr) {
       <td style="${heatFor(range,'stl',it.stl)}">${fmt(it.stl,1)}</td>
       <td style="${heatFor(range,'blk',it.blk)}">${fmt(it.blk,1)}</td>
       <td style="${heatFor(range,'fg3m',it.fg3m)}">${fmt(it.fg3m,1)}</td>
+      <td style="font-size:11px; color:var(--muted);">${fmt(it.fgm,1)}-${fmt(it.fga,1)}</td>
       <td style="${heatFor(range,'fgpct',it.fgpct)}">${fmt(it.fgpct)}%</td>
+      <td style="font-size:11px; color:var(--muted);">${fmt(it.ftm,1)}-${fmt(it.fta,1)}</td>
       <td style="${heatFor(range,'ftpct',it.ftpct)}">${fmt(it.ftpct)}%</td>
       <td style="${heatFor(range,'tov',it.tov)}">${fmt(it.tov,1)}</td>
     </tr>`).join('');

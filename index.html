@@ -196,7 +196,9 @@
           <th data-k="stl">STL</th>
           <th data-k="blk">BLK</th>
           <th data-k="fg3m">3PM</th>
+          <th data-k="fga" title="Field Goals Made-Attempted">FGM-FGA</th>
           <th data-k="fgpct">FG%</th>
+          <th data-k="fta" title="Free Throws Made-Attempted">FTM-FTA</th>
           <th data-k="ftpct">FT%</th>
           <th data-k="tov">TOV</th>
           <th data-k="z">Z</th>
@@ -459,7 +461,9 @@ function render() {
       <td style="${heat('stl', s.stl)}">${fmt(s.stl,1)}</td>
       <td style="${heat('blk', s.blk)}">${fmt(s.blk,1)}</td>
       <td style="${heat('fg3m', s.fg3m)}">${fmt(s.fg3m,1)}</td>
+      <td style="font-size:11px; color:var(--muted);">${fmt(s.fgm,1)}-${fmt(s.fga,1)}</td>
       <td style="${heat('fgpct', s.fgpct)}">${fmt(s.fgpct)}%</td>
+      <td style="font-size:11px; color:var(--muted);">${fmt(s.ftm,1)}-${fmt(s.fta,1)}</td>
       <td style="${heat('ftpct', s.ftpct)}">${fmt(s.ftpct)}%</td>
       <td style="${heat('tov', s.tov)}">${fmt(s.tov,1)}</td>
       <td class="col-z" style="${heat('z', z)}">${z >= 0 ? '+' : ''}${fmt(z,2)}</td>
