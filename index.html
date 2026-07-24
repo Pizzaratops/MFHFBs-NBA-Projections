@@ -235,7 +235,7 @@ mfhfbInitThemeToggle('themeToggle');
 // Saison aus players-data.js -- z.B. nach Trades wie Giannis -> Miami.
 // Einmalig beim Laden, danach lesen alle Renders einfach p.team wie bisher.
 // Nur hier + draft.html, NICHT auf teams.html (siehe Kommentar in shared.js).
-if (typeof ROSTERS_DATA !== 'undefined') mfhfbApplyCurrentTeams(PLAYER_RATES);
+if (typeof ROSTERS_DATA !== 'undefined') { mfhfbApplyCurrentTeams(PLAYER_RATES); mfhfbSyncManualTeams(); }
 
 document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
 
@@ -320,7 +320,7 @@ function computeAll() {
   const rows = PLAYER_RATES.map(p => {
     const latest = mfhfbLatestSeason(p);
     const key = mfhfbNormalizeName(p.name);
-    const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg);
+    const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg, latest.gp);
     const proj = mfhfbComputeProjection(p, minutes, weights);
     return { p, s: proj, edited: overrides[key] !== undefined, manual: false };
   });

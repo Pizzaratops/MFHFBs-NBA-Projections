@@ -497,7 +497,7 @@ mfhfbInitThemeToggle('themeToggle');
 // Aktuelles Team statt historischem Vorsaison-Team (siehe ausführlicher
 // Kommentar in index.html / assets/shared.js) -- muss VOR dem ersten
 // buildPlayers()-Aufruf passieren, der p.team in row.team kopiert.
-if (typeof ROSTERS_DATA !== 'undefined') mfhfbApplyCurrentTeams(PLAYER_RATES);
+if (typeof ROSTERS_DATA !== 'undefined') { mfhfbApplyCurrentTeams(PLAYER_RATES); mfhfbSyncManualTeams(); }
 document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS.join(' · ');
 document.getElementById('footerText').textContent =
   'Nutzt dieselben Projections wie die Projections-Seite (inkl. Gewichtungen, Minuten-Overrides und manuellen Rookie-Stats). ' +

@@ -219,6 +219,14 @@ if (typeof ROOKIE_PROJECTIONS !== 'undefined') {
     localStorage.setItem(MFHFB_ROOKIE_VERSION_KEY, String(ROOKIE_PROJECTIONS_VERSION));
   }
 }
+// Team-Feld manueller Einträge gegen die echten ESPN-Kader abgleichen --
+// z.B. wenn ein Rookie inzwischen wirklich einem Team beigetreten ist, aber
+// rookie-projections.js noch die statische Pre-Draft-Schätzung hat (siehe
+// mfhfbSyncManualTeams() in shared.js). Betrifft hier primär die Draft-
+// Board-/Projections-Anzeige, nicht die linke Spalte dieser Seite (die
+// kommt ohnehin direkt aus ROSTERS_DATA), hält aber den gemeinsamen
+// localStorage-Eintrag für alle drei Seiten konsistent.
+if (typeof ROSTERS_DATA !== 'undefined') mfhfbSyncManualTeams();
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 let query = '';
 
@@ -303,7 +311,7 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
     const isEdited = overrides[key] !== undefined;
     const latest = mfhfbLatestSeason(match);
     const newestActual = mfhfbNewestSeasonActual(match);
-    const minutes = isEdited ? overrides[key] : mfhfbDefaultMinutes(match.name, latest.mpg);
+    const minutes = isEdited ? overrides[key] : mfhfbDefaultMinutes(match.name, latest.mpg, latest.gp);
     const s = mfhfbComputeProjection(match, minutes, weights);
     return { key, rp, match, isEdited, latest, newestActual, minutes, s };
   });
