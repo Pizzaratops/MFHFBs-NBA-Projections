@@ -240,6 +240,7 @@ function mfhfbComputeProjection(player, minutes, weights) {
     blk: r.blk * minutes,
     fg3m: r.fg3m * minutes,
     tov: r.tov * minutes,
+    fgm, fga, ftm, fta,
     fgpct: fga > 0 ? (fgm / fga) * 100 : 0,
     ftpct: fta > 0 ? (ftm / fta) * 100 : 0,
   };
