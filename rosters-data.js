@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-24T11:09:40.574Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-25T10:25:37.436Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-24T11:09:40.574Z",
+ "fetchedAt": "2026-07-25T10:25:37.436Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -1432,7 +1432,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 5\"",
      "weight": "205 lbs",
-     "age": 32,
+     "age": 33,
      "espnId": "2596112"
     },
     {
@@ -2821,7 +2821,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 8\"",
      "weight": "221 lbs",
-     "age": 30,
+     "age": 31,
      "espnId": "3134907"
     },
     {
@@ -3806,6 +3806,15 @@ const ROSTERS_DATA = {
      "espnId": "4871141"
     },
     {
+     "name": "LeBron James",
+     "jersey": "23",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "250 lbs",
+     "age": 41,
+     "espnId": "1966"
+    },
+    {
      "name": "Caleb Love",
      "jersey": "9",
      "position": "G",
@@ -3813,15 +3822,6 @@ const ROSTERS_DATA = {
      "weight": "212 lbs",
      "age": 24,
      "espnId": "4433144"
-    },
-    {
-     "name": "Tyrese Martin",
-     "jersey": "23",
-     "position": "G",
-     "height": "6' 6\"",
-     "weight": "215 lbs",
-     "age": 27,
-     "espnId": "4397179"
     },
     {
      "name": "Tyrese Maxey",
@@ -4714,7 +4714,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 1\"",
      "weight": "200 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4432241"
     },
     {
