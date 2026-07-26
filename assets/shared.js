@@ -59,6 +59,31 @@ function mfhfbNormalizeName(name) {
     .trim();
 }
 
+// Bekannte Namens-Varianten, bei denen Fantrax einen anderen Namen nutzt
+// als unsere Datenbank (z.B. "Alex Sarr" bei Fantrax vs. "Alexandre Sarr"
+// bei uns, aus den BBM-Season-Exports übernommen). Key = normalisierter
+// Alias, Value = normalisierter kanonischer Name (wie er in PLAYER_RATES/
+// ROOKIE_PROJECTIONS steht). Nur als FALLBACK genutzt, wenn die direkte
+// Namenssuche nichts findet -- neue Fälle einfach als Zeile ergänzen,
+// sobald der "X Pick(s) nicht zuordenbar"-Hinweis im Draft Board wieder
+// auf einen Namens-Mismatch statt auf eine echte Datenlücke hinweist.
+const MFHFB_NAME_ALIASES = {
+  'alex sarr': 'alexandre sarr',
+};
+function mfhfbResolveAlias(normalizedName) {
+  return MFHFB_NAME_ALIASES[normalizedName] || normalizedName;
+}
+// Umgekehrte Richtung: kanonischer Name (wie in PLAYER_RATES) -> Fantrax-
+// Alias. Gebraucht für ADP-Daten, die SELBST aus Fantrax-Exports kommen
+// und deshalb unter dem Fantrax-Namen gespeichert sind, nicht unter unserem
+// kanonischen -- die umgekehrte Nachschlagerichtung zu mfhfbResolveAlias().
+const MFHFB_NAME_ALIASES_REVERSE = Object.fromEntries(
+  Object.entries(MFHFB_NAME_ALIASES).map(([alias, canonical]) => [canonical, alias])
+);
+function mfhfbResolveAliasReverse(normalizedName) {
+  return MFHFB_NAME_ALIASES_REVERSE[normalizedName] || normalizedName;
+}
+
 // Baut eine Lookup-Map normalisierter Name -> Spieler-Objekt aus PLAYER_RATES.
 function mfhfbBuildNameIndex(playerRates) {
   const idx = new Map();
