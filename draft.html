@@ -392,11 +392,8 @@
               <th data-k="z">Z</th>
               <th data-k="zFloor" title="Z-Score ohne die schlechteste Kategorie des Spielers — zeigt den Boden/Floor">Z-Floor</th>
               <th data-k="zDepth" title="Z-Score ohne die beste Kategorie — entlarvt One-Cat-Wonders; hoher Wert = gut in der Tiefe">Z-Depth</th>
-<<<<<<< HEAD
-=======
               <th data-k="zPunt" title="Z-Score mit deinen aktuellen Punt-Kategorien auf Gewicht 0 — wie Basketball Monsters 'Punt Columns': kompletter Rerank ohne die gepuntete(n) Kategorie(n), Guard-/Big-Build-Spieler steigen dadurch automatisch">Z-Punt</th>
               <th data-k="hscore" title="H-Score (Beta) — vereinfachte Umsetzung von Rosenof (2024) H-Scoring: simuliert den kompletten Rest-Draft in echter Snake-Reihenfolge (ein gemeinsam schrumpfender Pool) über bis zu 2 gepuntete Kategorien und schätzt die Ø-Kategorie-Gewinnwahrscheinlichkeit gegen die Liga (0-9). Nur für die Top ~80 verfügbaren Spieler berechnet — Tiefenkader/Free Agents zeigen bewusst '—'.">H-Score</th>
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
               <th data-k="adpVal" title="ADP-Rang minus unser Z-Rang — grün = unterbewertet, rot = überbewertet">ADP-Val</th>
               <th data-k="adp" title="Ø Draft-Position aus deinen erfassten Fantrax Draft Results">ADP</th>
               <th data-k="fadp" title="Fantrax' eigener aktueller ADP-Snapshot (data/fantrax-adp.csv)">F-ADP</th>
@@ -502,11 +499,7 @@ mfhfbInitThemeToggle('themeToggle');
 // Aktuelles Team statt historischem Vorsaison-Team (siehe ausführlicher
 // Kommentar in index.html / assets/shared.js) -- muss VOR dem ersten
 // buildPlayers()-Aufruf passieren, der p.team in row.team kopiert.
-<<<<<<< HEAD
-if (typeof ROSTERS_DATA !== 'undefined') mfhfbApplyCurrentTeams(PLAYER_RATES);
-=======
 if (typeof ROSTERS_DATA !== 'undefined') { mfhfbApplyCurrentTeams(PLAYER_RATES); mfhfbSyncManualTeams(); }
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS.join(' · ');
 document.getElementById('footerText').textContent =
   'Nutzt dieselben Projections wie die Projections-Seite (inkl. Gewichtungen, Minuten-Overrides und manuellen Rookie-Stats). ' +
@@ -614,16 +607,9 @@ function buildPlayers(){
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg, latest.gp);
     const proj = mfhfbComputeProjection(p, minutes, weights);
-<<<<<<< HEAD
-    // Für saubere Team-FG%/FT%-Aggregation (attempt-gewichtet statt Minuten-Proxy)
-    const r = mfhfbWeightedRates(p, weights);
-    proj.fgm = r.fgm * minutes; proj.fga = r.fga * minutes;
-    proj.ftm = r.ftm * minutes; proj.fta = r.fta * minutes;
-=======
     // fgm/fga/ftm/fta kommen jetzt direkt aus mfhfbComputeProjection() mit
     // (früher hier separat nachgerechnet, seit dem FG%/FT%-Volumen-Fix
     // zentral in shared.js miterledigt -- kein Duplikat mehr nötig).
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
     const dur = mfhfbDurability(p);
     return { rk: idx+1, n: p.name, team: p.team || '-', pos: p.pos || '-', s: proj, manual:false,
              durability: dur.durability, durabilityKnown: dur.known };
@@ -661,10 +647,6 @@ function buildPlayers(){
       fgpct: m.fgpct || 0, ftpct: m.ftpct || 0,
     };
     // keine Attempt-Daten für manuelle Einträge -> Minuten als Gewichtungs-Proxy
-<<<<<<< HEAD
-    s.fga = min; s.fgm = min * s.fgpct/100;
-    s.fta = min; s.ftm = min * s.ftpct/100;
-=======
     // Keine echten Attempt-Daten für manuelle Einträge -- 1:1 Minuten als
     // Proxy war zu grob (unterstellt einen Freiwurf/Feldwurf JEDE Minute,
     // sprengt bei hoher Quote den Z-Score massiv, siehe Kingston-Flemings-
@@ -672,7 +654,6 @@ function buildPlayers(){
     // Schnittwerte: ~0,35 FGA/Min, ~0,12 FTA/Min (grobe NBA-Durchschnitte).
     s.fga = min * 0.35; s.fgm = s.fga * s.fgpct/100;
     s.fta = min * 0.12; s.ftm = s.fta * s.ftpct/100;
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
     rows.push({ rk: rows.length+1, n: m.name, team: m.team || '-', pos: m.pos || '-', s, manual:true,
                 durability: 0.85, durabilityKnown:false });
   });
@@ -950,8 +931,6 @@ function categoryRanks(){
   return ranks;
 }
 
-<<<<<<< HEAD
-=======
 // ---------------- Mathe-Hilfsfunktionen (H-Score) ----------------
 // Abramowitz-Stegun-Approximation der Fehlerfunktion (~1.5e-7 Genauigkeit),
 // JS hat keine eingebaute erf(). Für die Normalverteilungs-CDF gebraucht,
@@ -1150,7 +1129,6 @@ function computeHScore(row, ctx){
   return best;
 }
 
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 // ---------------- Kategorie-Scarcity-Kurve (Runden-Cliff) ----------------
 // Bündelt den noch verfügbaren Pool pro Kategorie in Runden-Buckets (12 Picks
 // = 1 Runde) und zeigt den Ø catZ je Bucket + den stärksten verbleibenden
@@ -1432,11 +1410,8 @@ function renderPool(){
 
   // Heatmap-Range für Z-Spalten (über die aktuell sichtbaren/gefilterten Zeilen)
   const zVals = rows.map(r => r.z), zfVals = rows.map(r => r.zFloor), zdVals = rows.map(r => r.zDepth);
-<<<<<<< HEAD
-=======
   const zpVals = rows.map(r => r.zPunt);
   const hsVals = rows.map(r => r.hscore).filter(v => v !== null && v !== undefined);
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
   const zMin = Math.min(...zVals), zMax = Math.max(...zVals);
   const zfMin = Math.min(...zfVals), zfMax = Math.max(...zfVals);
   const zdMin = Math.min(...zdVals), zdMax = Math.max(...zdVals);
@@ -1909,11 +1884,6 @@ function renderPosFilters(){
 }
 
 function renderAll(){
-<<<<<<< HEAD
-  renderTopbar(); renderPool(); renderSlots(); renderCatRanks();
-  renderMatrix(); renderPuntChips(); renderScarcity(); renderPuntPlanner();
-  renderPower(); renderLog(); renderReco();
-=======
   // Jeder Schritt einzeln in try/catch: eine Exception in EINEM Tab (z.B.
   // Scarcity oder Punt-Planer bei einem ungewöhnlichen Draft-Stand) soll
   // nicht dazu führen, dass der Rest der Seite (Tabelle, Empfehlungen,
@@ -1928,7 +1898,6 @@ function renderAll(){
   steps.forEach(([name, fn]) => {
     try { fn(); } catch(err) { console.error(name + '() fehlgeschlagen:', err); }
   });
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 }
 
 // ---------------- Live-Sync mit Fantrax ----------------

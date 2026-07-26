@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-21T11:06:55.938Z
-// Quelle: ESPN (site.api.espn.com)
-const ROSTERS_DATA = {
- "fetchedAt": "2026-07-21T11:06:55.938Z",
-=======
 // Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-26T10:43:32.994Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
  "fetchedAt": "2026-07-26T10:43:32.994Z",
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],

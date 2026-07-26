@@ -311,8 +311,6 @@ const MFHFB_ESPN_TO_BBM_TEAM = {
 };
 function mfhfbToBbmAbbr(espnAbbr) { return MFHFB_ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
 
-<<<<<<< HEAD
-=======
 let _mfhfbValidTeamSet = null;
 // Menge aller aktuell echten NBA-Team-Kürzel (BBM-Format) -- aus
 // ROSTERS_DATA abgeleitet (30 Teams), mit einer festen Fallback-Liste falls
@@ -336,7 +334,6 @@ function mfhfbIsValidCurrentTeam(teamAbbr) {
   return mfhfbValidTeamSet().has(teamAbbr);
 }
 
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 let _mfhfbCurrentTeamIndex = null;
 function mfhfbBuildCurrentTeamIndex() {
   if (_mfhfbCurrentTeamIndex) return _mfhfbCurrentTeamIndex;
@@ -378,8 +375,6 @@ function mfhfbApplyCurrentTeams(playerRates) {
   return updated;
 }
 
-<<<<<<< HEAD
-=======
 // Dasselbe für manuelle/Rookie-Einträge (mfhfbGetManualStats()) -- deren
 // "team"-Feld ist ein STATISCHES Vorab-Schätzung (z.B. Pre-Draft-Mock in
 // rookie-projections.js) und wird NIE automatisch aktualisiert, wenn der
@@ -402,7 +397,6 @@ function mfhfbSyncManualTeams() {
   return updated;
 }
 
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 const MFHFB_THEME_KEY = 'mfhfb_theme_v1';
 
 function mfhfbGetTheme() {
