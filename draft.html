@@ -178,9 +178,9 @@
   .cat-rank{font-size:11px; font-family:'DM Mono',monospace; font-weight:700; text-align:right;}
 
   .slot-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin-bottom:12px;}
-  .slot-pill{border:1px solid var(--border); border-radius:7px; padding:5px 4px; text-align:center; font-size:10.5px; background:var(--surface2);}
+  .slot-pill{border:1px solid var(--border); border-radius:7px; padding:5px 4px; text-align:center; font-size:10.5px; background:var(--surface2); min-width:0;}
   .slot-pill .k{color:var(--muted); display:block; font-size:9.5px; text-transform:uppercase;}
-  .slot-pill .v{font-family:'DM Mono',monospace; font-weight:600; font-size:12.5px;}
+  .slot-pill .v{font-family:'DM Mono',monospace; font-weight:600; font-size:12.5px; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
   .slot-pill.full{border-color:var(--good); background:rgba(76,175,129,.08);}
   .slot-pill.full .v{color:var(--good);}
   .slot-pill.open .v{color:var(--accent2);}
@@ -355,7 +355,7 @@
       <div class="pool-toolbar">
         <div class="search-row">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="searchInput" placeholder="Spieler, Team oder Position suchen…">
+          <input type="text" id="searchInput" autocomplete="off" placeholder="Spieler, Team oder Position suchen…">
         </div>
         <div id="posFilters" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
         <button class="tag-btn" id="statFilterToggle">Stat-Filter</button>
@@ -818,6 +818,16 @@ function loadState(){
     const raw = localStorage.getItem(MFHFB_DRAFT_KEY);
     if(raw){ state = Object.assign(state, JSON.parse(raw)); }
   }catch(e){}
+  // Suchtext, Stat-Filter und Positions-Filter bewusst NICHT übers Laden
+  // hinweg mitnehmen -- die wurden zwar mitgespeichert, aber das Such-
+  // feld/Filter-Panel wird beim Laden nie visuell synchronisiert, weil
+  // beides standardmäßig leer/eingeklappt aussieht. Ergebnis: die Spieler-
+  // liste war unsichtbar nach einem Suchbegriff gefiltert (z.B. "Zubac"),
+  // ohne dass irgendwo sichtbar war, warum. Picks/Punt/Sortierung bleiben
+  // dagegen bewusst erhalten -- das ist echter Draft-Fortschritt.
+  state.search = '';
+  state.posFilter = null;
+  state.statFilters = [null, null, null];
 }
 let saveTimeout = null;
 function scheduleSave(){
@@ -1545,7 +1555,7 @@ function renderSlots(){
   grid.innerHTML = slotAssignment.map(s => `
     <div class="slot-pill ${s.player?'full':'open'}">
       <span class="k">${s.slot}</span>
-      <span class="v">${s.player ? s.player.n.split(' ').slice(-1)[0] : '—'}</span>
+      <span class="v" title="${s.player ? s.player.n : ''}">${s.player ? s.player.n.split(' ').slice(-1)[0] : '—'}</span>
     </div>`).join('');
   if(unassigned.length){
     grid.innerHTML += `<div class="slot-pill slot-warn"><span class="k">Kein Slot frei</span><span class="v">${unassigned.map(p=>p.n).join(', ')}</span></div>`;
@@ -2304,7 +2314,9 @@ function initControls(){
   myTeamSel.value = state.myTeam;
   myTeamSel.addEventListener('change', () => { state.myTeam = Number(myTeamSel.value); renderAll(); scheduleSave(); });
 
-  document.getElementById('searchInput').addEventListener('input', e => { state.search = e.target.value; renderPool(); });
+  const searchInputEl = document.getElementById('searchInput');
+  searchInputEl.value = ''; // gegen Browser-eigene Formularwert-Wiederherstellung beim Reload
+  searchInputEl.addEventListener('input', e => { state.search = e.target.value; renderPool(); });
   document.getElementById('hideDraftedBtn').addEventListener('click', e => {
     state.hideDrafted = !state.hideDrafted;
     e.target.classList.toggle('active', state.hideDrafted);
