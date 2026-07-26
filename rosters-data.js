@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 // Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-21T11:06:55.938Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
  "fetchedAt": "2026-07-21T11:06:55.938Z",
+=======
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-26T10:43:32.994Z
+// Quelle: ESPN (site.api.espn.com)
+const ROSTERS_DATA = {
+ "fetchedAt": "2026-07-26T10:43:32.994Z",
+>>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -198,6 +205,15 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 27,
      "espnId": "4397183"
+    },
+    {
+     "name": "Jalen Wilson",
+     "jersey": "22",
+     "position": "F",
+     "height": "6' 6\"",
+     "weight": "220 lbs",
+     "age": 25,
+     "espnId": "4431714"
     }
    ]
   },
@@ -1423,7 +1439,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 5\"",
      "weight": "205 lbs",
-     "age": 32,
+     "age": 33,
      "espnId": "2596112"
     },
     {
@@ -1813,7 +1829,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 11\"",
      "weight": "243 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4871144"
     },
     {
@@ -1999,7 +2015,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "5' 10\"",
      "weight": "167 lbs",
-     "age": 22,
+     "age": 23,
      "espnId": "5105854"
     },
     {
@@ -2050,7 +2066,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 5\"",
      "weight": "190 lbs",
-     "age": 20,
+     "age": 21,
      "espnId": "4845363"
     },
     {
@@ -2337,15 +2353,6 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 27,
      "espnId": "4277811"
-    },
-    {
-     "name": "Peter Suder",
-     "jersey": "35",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "213 lbs",
-     "age": 22,
-     "espnId": "5106674"
     },
     {
      "name": "Adou Thiero",
@@ -2821,7 +2828,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 8\"",
      "weight": "221 lbs",
-     "age": 30,
+     "age": 31,
      "espnId": "3134907"
     },
     {
@@ -3148,7 +3155,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 11\"",
      "weight": "265 lbs",
-     "age": 37,
+     "age": 38,
      "espnId": "3442"
     },
     {
@@ -3806,6 +3813,15 @@ const ROSTERS_DATA = {
      "espnId": "4871141"
     },
     {
+     "name": "LeBron James",
+     "jersey": "23",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "250 lbs",
+     "age": 41,
+     "espnId": "1966"
+    },
+    {
      "name": "Caleb Love",
      "jersey": "9",
      "position": "G",
@@ -3813,15 +3829,6 @@ const ROSTERS_DATA = {
      "weight": "212 lbs",
      "age": 24,
      "espnId": "4433144"
-    },
-    {
-     "name": "Tyrese Martin",
-     "jersey": "23",
-     "position": "G",
-     "height": "6' 6\"",
-     "weight": "215 lbs",
-     "age": 27,
-     "espnId": "4397179"
     },
     {
      "name": "Tyrese Maxey",
@@ -4714,7 +4721,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 1\"",
      "weight": "200 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4432241"
     },
     {
@@ -4924,7 +4931,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "7' 0\"",
      "weight": "252 lbs",
-     "age": 27,
+     "age": 28,
      "espnId": "4278129"
     },
     {
@@ -4933,7 +4940,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 4\"",
      "weight": "190 lbs",
-     "age": 20,
+     "age": 21,
      "espnId": "4845374"
     },
     {

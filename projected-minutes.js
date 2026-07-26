@@ -5,17 +5,17 @@ const PROJECTED_MINUTES = {
  "jalen johnson": {
   "min": 35,
   "team": "ATL",
-  "pos": "SF/PF",
+  "pos": "PF",
   "name": "Jalen Johnson"
  },
  "dyson daniels": {
-  "min": 33,
+  "min": 32,
   "team": "ATL",
-  "pos": "PG",
+  "pos": "SF",
   "name": "Dyson Daniels"
  },
  "nickeil alexanderwalker": {
-  "min": 32,
+  "min": 34,
   "team": "ATL",
   "pos": "SG",
   "name": "Nickeil Alexander-Walker"
@@ -27,25 +27,25 @@ const PROJECTED_MINUTES = {
   "name": "Onyeka Okongwu"
  },
  "cj mccollum": {
-  "min": 28,
+  "min": 30,
   "team": "ATL",
-  "pos": "SG/PG",
+  "pos": "PG",
   "name": "CJ McCollum"
  },
  "zaccharie risacher": {
-  "min": 26,
-  "team": "ATL",
+  "min": 20,
+  "team": "DAL",
   "pos": "SF",
   "name": "Zaccharie Risacher"
  },
  "kristaps porzingis": {
-  "min": 28,
+  "min": 25,
   "team": "GSW",
   "pos": "C",
   "name": "Kristaps Porzingis"
  },
  "asa newell": {
-  "min": 18,
+  "min": 12,
   "team": "ATL",
   "pos": "PF",
   "name": "Asa Newell"
@@ -57,37 +57,37 @@ const PROJECTED_MINUTES = {
   "name": "Corey Kispert"
  },
  "vit krejci": {
-  "min": 14,
-  "team": "ATL",
-  "pos": "G",
+  "min": 18,
+  "team": "POR",
+  "pos": "SF",
   "name": "Vit Krejci"
  },
  "michael porter": {
   "min": 33,
   "team": "BKN",
   "pos": "SF",
-  "name": "Michael Porter Jr."
+  "name": "Michael Porter Jr"
  },
  "julius randle": {
-  "min": 32,
+  "min": 33,
   "team": "BKN",
   "pos": "PF",
   "name": "Julius Randle"
  },
  "egor demin": {
-  "min": 28,
+  "min": 30,
   "team": "BKN",
   "pos": "SG",
   "name": "Egor Demin"
  },
  "mikel brown": {
-  "min": 26.0,
+  "min": 28,
   "team": "BKN",
-  "pos": "G",
+  "pos": "PG",
   "name": "Mikel Brown Jr"
  },
  "dayron sharpe": {
-  "min": 26,
+  "min": 28,
   "team": "BKN",
   "pos": "C",
   "name": "Day'Ron Sharpe"
@@ -111,97 +111,97 @@ const PROJECTED_MINUTES = {
   "name": "Nolan Traore"
  },
  "ziaire williams": {
-  "min": 20,
-  "team": "BKN",
+  "min": 18,
+  "team": "LAL",
   "pos": "SF",
   "name": "Ziaire Williams"
  },
  "danny wolf": {
   "min": 14,
   "team": "BKN",
-  "pos": "C",
+  "pos": "PF/C",
   "name": "Danny Wolf"
  },
  "drake powell": {
-  "min": 12,
+  "min": 14,
   "team": "BKN",
-  "pos": "SG",
+  "pos": "SF",
   "name": "Drake Powell"
  },
  "jayson tatum": {
-  "min": 35,
+  "min": 33,
   "team": "BOS",
   "pos": "SF/PF",
   "name": "Jayson Tatum"
  },
  "paul george": {
-  "min": 30,
+  "min": 31,
   "team": "BOS",
   "pos": "SF",
   "name": "Paul George"
  },
  "derrick white": {
-  "min": 33,
+  "min": 34,
   "team": "BOS",
-  "pos": "PG/SG",
+  "pos": "PG",
   "name": "Derrick White"
  },
  "payton pritchard": {
-  "min": 30,
+  "min": 32,
   "team": "BOS",
   "pos": "PG",
   "name": "Payton Pritchard"
  },
  "mitchell robinson": {
-  "min": 26,
+  "min": 23,
   "team": "BOS",
   "pos": "C",
   "name": "Mitchell Robinson"
  },
  "sam hauser": {
-  "min": 22,
+  "min": 26,
   "team": "BOS",
   "pos": "SF",
   "name": "Sam Hauser"
  },
  "mike conley": {
-  "min": 16,
-  "team": "MIN",
+  "min": 15,
+  "team": "BOS",
   "pos": "PG",
   "name": "Mike Conley"
  },
  "neemias queta": {
-  "min": 20,
+  "min": 26,
   "team": "BOS",
   "pos": "C",
   "name": "Neemias Queta"
  },
  "baylor scheierman": {
-  "min": 18,
+  "min": 24,
   "team": "BOS",
-  "pos": "SG",
+  "pos": "SG/SF",
   "name": "Baylor Scheierman"
  },
  "josh minott": {
   "min": 14,
-  "team": "BOS",
-  "pos": "PF",
+  "team": "BKN",
+  "pos": "SF/PF",
   "name": "Josh Minott"
  },
  "brandon miller": {
-  "min": 32.0,
+  "min": 32,
   "team": "CHA",
-  "pos": "F",
+  "pos": "SF",
   "name": "Brandon Miller"
  },
  "kon knueppel": {
-  "min": 31,
+  "min": 32,
   "team": "CHA",
   "pos": "SG",
   "name": "Kon Knueppel"
  },
  "coby white": {
-  "min": 30,
+  "min": 32,
   "team": "CHA",
   "pos": "PG",
   "name": "Coby White"
@@ -209,55 +209,55 @@ const PROJECTED_MINUTES = {
  "naz reid": {
   "min": 29,
   "team": "CHA",
-  "pos": "PF/C",
+  "pos": "PF",
   "name": "Naz Reid"
  },
  "dorian finneysmith": {
-  "min": 22,
-  "team": "HOU",
+  "min": 12,
+  "team": "CHA",
   "pos": "SF",
   "name": "Dorian Finney-Smith"
  },
  "grant williams": {
-  "min": 22,
+  "min": 20,
   "team": "CHA",
   "pos": "PF",
   "name": "Grant Williams"
  },
  "tidjane salaun": {
-  "min": 22,
+  "min": 10,
   "team": "CHA",
-  "pos": "PF",
+  "pos": "SF/PF",
   "name": "Tidjane Salaun"
  },
  "moussa diabate": {
-  "min": 22,
+  "min": 26,
   "team": "CHA",
   "pos": "C",
   "name": "Moussa Diabate"
  },
  "josh okogie": {
-  "min": 14,
-  "team": "CHA",
+  "min": 16,
+  "team": "UTA",
   "pos": "SG",
   "name": "Josh Okogie"
  },
  "josh giddey": {
-  "min": 33,
+  "min": 31,
   "team": "CHI",
   "pos": "PG",
   "name": "Josh Giddey"
  },
  "norman powell": {
-  "min": 31,
+  "min": 30,
   "team": "CHI",
   "pos": "SG",
   "name": "Norman Powell"
  },
  "matas buzelis": {
-  "min": 30,
+  "min": 32,
   "team": "CHI",
-  "pos": "SF/PF",
+  "pos": "SF",
   "name": "Matas Buzelis"
  },
  "nicolas claxton": {
@@ -267,31 +267,31 @@ const PROJECTED_MINUTES = {
   "name": "Nicolas Claxton"
  },
  "rob dillingham": {
-  "min": 26,
+  "min": 15,
   "team": "CHI",
   "pos": "PG",
   "name": "Rob Dillingham"
  },
  "patrick williams": {
-  "min": 26,
+  "min": 20,
   "team": "CHI",
   "pos": "PF",
   "name": "Patrick Williams"
  },
  "isaac okoro": {
-  "min": 22,
+  "min": 24,
   "team": "CHI",
   "pos": "SF",
   "name": "Isaac Okoro"
  },
  "jalen smith": {
-  "min": 16,
+  "min": 18,
   "team": "CHI",
-  "pos": "C",
+  "pos": "PF/C",
   "name": "Jalen Smith"
  },
  "tre jones": {
-  "min": 16,
+  "min": 27,
   "team": "CHI",
   "pos": "PG",
   "name": "Tre Jones"
@@ -309,19 +309,19 @@ const PROJECTED_MINUTES = {
   "name": "Donovan Mitchell"
  },
  "james harden": {
-  "min": 32,
+  "min": 34,
   "team": "CLE",
   "pos": "PG",
   "name": "James Harden"
  },
  "evan mobley": {
-  "min": 33,
+  "min": 32,
   "team": "CLE",
-  "pos": "PF/C",
+  "pos": "PF",
   "name": "Evan Mobley"
  },
  "jarrett allen": {
-  "min": 30,
+  "min": 28,
   "team": "CLE",
   "pos": "C",
   "name": "Jarrett Allen"
@@ -333,27 +333,27 @@ const PROJECTED_MINUTES = {
   "name": "Max Strus"
  },
  "sam merrill": {
-  "min": 24,
+  "min": 27,
   "team": "CLE",
   "pos": "SG",
   "name": "Sam Merrill"
  },
  "craig porter": {
-  "min": 16,
+  "min": 15,
   "team": "CLE",
   "pos": "PG",
-  "name": "Craig Porter Jr."
+  "name": "Craig Porter Jr"
  },
  "larry nance": {
-  "min": 14,
+  "min": 12,
   "team": "IND",
-  "pos": "C",
-  "name": "Larry Nance Jr."
+  "pos": "PF/C",
+  "name": "Larry Nance Jr"
  },
  "jaylon tyson": {
-  "min": 16,
+  "min": 25,
   "team": "CLE",
-  "pos": "SF",
+  "pos": "SG/SF",
   "name": "Jaylon Tyson"
  },
  "cade cunningham": {
@@ -363,49 +363,49 @@ const PROJECTED_MINUTES = {
   "name": "Cade Cunningham"
  },
  "jalen duren": {
-  "min": 30,
+  "min": 29,
   "team": "DET",
   "pos": "C",
   "name": "Jalen Duren"
  },
  "ausar thompson": {
-  "min": 30,
+  "min": 28,
   "team": "DET",
   "pos": "SF",
   "name": "Ausar Thompson"
  },
  "john collins": {
-  "min": 28,
+  "min": 30,
   "team": "DET",
   "pos": "PF",
   "name": "John Collins"
  },
  "duncan robinson": {
-  "min": 26,
+  "min": 27,
   "team": "DET",
-  "pos": "SG",
+  "pos": "SG/SF",
   "name": "Duncan Robinson"
  },
  "ron holland": {
-  "min": 24,
+  "min": 20,
   "team": "DET",
   "pos": "SF/PF",
   "name": "Ron Holland II"
  },
  "isaiah joe": {
-  "min": 22,
+  "min": 26,
   "team": "DET",
   "pos": "SG",
   "name": "Isaiah Joe"
  },
  "caris levert": {
-  "min": 20,
-  "team": "DET",
+  "min": 10,
+  "team": "MIL",
   "pos": "SG",
   "name": "Caris LeVert"
  },
  "taurean prince": {
-  "min": 16,
+  "min": 15,
   "team": "DET",
   "pos": "SF",
   "name": "Taurean Prince"
@@ -425,7 +425,7 @@ const PROJECTED_MINUTES = {
  "andrew nembhard": {
   "min": 31,
   "team": "IND",
-  "pos": "PG",
+  "pos": "SG",
   "name": "Andrew Nembhard"
  },
  "ivica zubac": {
@@ -435,28 +435,28 @@ const PROJECTED_MINUTES = {
   "name": "Ivica Zubac"
  },
  "aaron nesmith": {
-  "min": 29,
+  "min": 28,
   "team": "IND",
   "pos": "SF",
   "name": "Aaron Nesmith"
  },
  "tyrese haliburton": {
-  "min": 26,
+  "min": 33,
   "team": "IND",
   "pos": "PG",
   "name": "Tyrese Haliburton"
  },
  "bennedict mathurin": {
-  "min": 22,
+  "min": 27,
   "team": "LAC",
-  "pos": "SG",
+  "pos": "SG/SF",
   "name": "Bennedict Mathurin"
  },
  "kelly oubre": {
-  "min": 24,
+  "min": 27,
   "team": "IND",
   "pos": "SF",
-  "name": "Kelly Oubre Jr."
+  "name": "Kelly Oubre Jr"
  },
  "obi toppin": {
   "min": 22,
@@ -471,13 +471,13 @@ const PROJECTED_MINUTES = {
   "name": "Jarace Walker"
  },
  "jay huff": {
-  "min": 12,
+  "min": 18,
   "team": "IND",
   "pos": "C",
   "name": "Jay Huff"
  },
  "giannis antetokounmpo": {
-  "min": 35,
+  "min": 33,
   "team": "MIA",
   "pos": "PF",
   "name": "Giannis Antetokounmpo"
@@ -495,37 +495,37 @@ const PROJECTED_MINUTES = {
   "name": "Andrew Wiggins"
  },
  "davion mitchell": {
-  "min": 30,
+  "min": 29,
   "team": "MIA",
   "pos": "PG",
   "name": "Davion Mitchell"
  },
  "tim hardaway": {
-  "min": 24,
+  "min": 27,
   "team": "MIA",
-  "pos": "SG",
-  "name": "Tim Hardaway Jr."
+  "pos": "SG/SF",
+  "name": "Tim Hardaway Jr"
  },
  "pelle larsson": {
-  "min": 22,
+  "min": 28,
   "team": "MIA",
   "pos": "SG",
   "name": "Pelle Larsson"
  },
  "bobby portis": {
-  "min": 22,
-  "team": "MIA",
-  "pos": "PF/C",
-  "name": "Bobby Portis"
- },
- "nikola jovic": {
-  "min": 22,
+  "min": 24,
   "team": "MIA",
   "pos": "PF",
+  "name": "Bobby Portis Jr"
+ },
+ "nikola jovic": {
+  "min": 18,
+  "team": "MIA",
+  "pos": "SF/PF",
   "name": "Nikola Jovic"
  },
  "dru smith": {
-  "min": 16,
+  "min": 18,
   "team": "MIA",
   "pos": "PG",
   "name": "Dru Smith"
@@ -543,55 +543,55 @@ const PROJECTED_MINUTES = {
   "name": "Ryan Rollins"
  },
  "kyle kuzma": {
-  "min": 28,
+  "min": 20,
   "team": "MIL",
-  "pos": "SF/PF",
+  "pos": "PF",
   "name": "Kyle Kuzma"
  },
  "myles turner": {
-  "min": 28,
+  "min": 27,
   "team": "MIL",
-  "pos": "C",
+  "pos": "PF/C",
   "name": "Myles Turner"
  },
  "kelel ware": {
-  "min": 26,
+  "min": 28,
   "team": "MIL",
   "pos": "C",
   "name": "Kel'el Ware"
  },
  "jaime jaquez": {
-  "min": 26,
+  "min": 28,
   "team": "MIL",
   "pos": "SF",
-  "name": "Jaime Jaquez Jr."
+  "name": "Jaime Jaquez Jr"
  },
  "nate ament": {
-  "min": 14.0,
+  "min": 18,
   "team": "MIL",
-  "pos": "F",
+  "pos": "SF",
   "name": "Nate Ament"
  },
  "aj green": {
-  "min": 22,
+  "min": 25,
   "team": "MIL",
   "pos": "SG",
   "name": "AJ Green"
  },
  "brayden burries": {
-  "min": 22.8,
+  "min": 22,
   "team": "MIL",
-  "pos": "G",
+  "pos": "SG",
   "name": "Brayden Burries"
  },
  "kevin porter": {
-  "min": 18,
+  "min": 20,
   "team": "MIL",
   "pos": "PG",
-  "name": "Kevin Porter Jr."
+  "name": "Kevin Porter Jr"
  },
  "bogoljub markovic": {
-  "min": 12,
+  "min": 10,
   "team": "MIL",
   "pos": "PF",
   "name": "Bogoljub Markovic"
@@ -603,31 +603,31 @@ const PROJECTED_MINUTES = {
   "name": "Jalen Brunson"
  },
  "karlanthony towns": {
-  "min": 34,
+  "min": 31,
   "team": "NYK",
   "pos": "C",
   "name": "Karl-Anthony Towns"
  },
  "mikal bridges": {
-  "min": 34,
+  "min": 32,
   "team": "NYK",
-  "pos": "SF",
+  "pos": "SG/SF",
   "name": "Mikal Bridges"
  },
  "og anunoby": {
   "min": 33,
   "team": "NYK",
-  "pos": "PF",
+  "pos": "SF/PF",
   "name": "OG Anunoby"
  },
  "josh hart": {
-  "min": 30,
+  "min": 32,
   "team": "NYK",
-  "pos": "SG",
+  "pos": "SG/SF",
   "name": "Josh Hart"
  },
  "jordan clarkson": {
-  "min": 22,
+  "min": 15,
   "team": "NYK",
   "pos": "SG",
   "name": "Jordan Clarkson"
@@ -635,7 +635,7 @@ const PROJECTED_MINUTES = {
  "miles mcbride": {
   "min": 24,
   "team": "NYK",
-  "pos": "PG",
+  "pos": "PG/SG",
   "name": "Miles McBride"
  },
  "guerschon yabusele": {
@@ -645,7 +645,7 @@ const PROJECTED_MINUTES = {
   "name": "Guerschon Yabusele"
  },
  "andre drummond": {
-  "min": 16,
+  "min": 19,
   "team": "NYK",
   "pos": "C",
   "name": "Andre Drummond"
@@ -657,7 +657,7 @@ const PROJECTED_MINUTES = {
   "name": "Tyler Kolek"
  },
  "paolo banchero": {
-  "min": 34,
+  "min": 35,
   "team": "ORL",
   "pos": "PF",
   "name": "Paolo Banchero"
@@ -669,7 +669,7 @@ const PROJECTED_MINUTES = {
   "name": "Franz Wagner"
  },
  "desmond bane": {
-  "min": 32,
+  "min": 34,
   "team": "ORL",
   "pos": "SG",
   "name": "Desmond Bane"
@@ -681,31 +681,31 @@ const PROJECTED_MINUTES = {
   "name": "Jalen Suggs"
  },
  "wendell carter": {
-  "min": 27,
+  "min": 28,
   "team": "ORL",
   "pos": "C",
-  "name": "Wendell Carter Jr."
+  "name": "Wendell Carter Jr"
  },
  "anthony black": {
-  "min": 24,
+  "min": 29,
   "team": "ORL",
-  "pos": "PG/SG",
+  "pos": "SG",
   "name": "Anthony Black"
  },
  "tristan da silva": {
-  "min": 22,
+  "min": 24,
   "team": "ORL",
   "pos": "SF",
   "name": "Tristan da Silva"
  },
  "jonathan isaac": {
-  "min": 18,
+  "min": 10,
   "team": "ORL",
   "pos": "PF",
   "name": "Jonathan Isaac"
  },
  "goga bitadze": {
-  "min": 18,
+  "min": 15,
   "team": "ORL",
   "pos": "C",
   "name": "Goga Bitadze"
@@ -717,13 +717,13 @@ const PROJECTED_MINUTES = {
   "name": "Jase Richardson"
  },
  "noah penda": {
-  "min": 12,
+  "min": 15,
   "team": "ORL",
   "pos": "SF",
   "name": "Noah Penda"
  },
  "tyrese maxey": {
-  "min": 36,
+  "min": 35,
   "team": "PHI",
   "pos": "PG",
   "name": "Tyrese Maxey"
@@ -735,85 +735,103 @@ const PROJECTED_MINUTES = {
   "name": "Jaylen Brown"
  },
  "vj edgecombe": {
-  "min": 30,
+  "min": 33,
   "team": "PHI",
   "pos": "SG",
   "name": "VJ Edgecombe"
  },
  "joel embiid": {
-  "min": 28,
+  "min": 30,
   "team": "PHI",
   "pos": "C",
   "name": "Joel Embiid"
  },
  "dean wade": {
-  "min": 26,
+  "min": 22,
   "team": "PHI",
   "pos": "PF",
   "name": "Dean Wade"
  },
- "quentin grimes": {
+ "lebron james": {
+  "min": 33,
+  "team": "PHI",
+  "pos": "SF/PF",
+  "name": "LeBron James"
+ },
+ "anfernee simons": {
   "min": 24,
+  "team": "PHI",
+  "pos": "SG",
+  "name": "Anfernee Simons"
+ },
+ "justin edwards": {
+  "min": 15,
+  "team": "PHI",
+  "pos": "SF",
+  "name": "Justin Edwards"
+ },
+ "quentin grimes": {
+  "min": 30,
   "team": "LAL",
   "pos": "SG",
   "name": "Quentin Grimes"
  },
  "jared mccain": {
-  "min": 16,
+  "min": 24,
   "team": "OKC",
   "pos": "SG",
   "name": "Jared McCain"
  },
  "adem bona": {
-  "min": 20,
+  "min": 19,
   "team": "PHI",
   "pos": "C",
   "name": "Adem Bona"
  },
  "labaron philon": {
-  "min": 20.0,
+  "min": 15,
   "team": "PHI",
-  "pos": "G",
+  "pos": "PG",
   "name": "Labaron Philon Jr"
  },
  "johni broome": {
-  "min": 14,
+  "min": 8,
   "team": "PHI",
   "pos": "PF/C",
   "name": "Johni Broome"
  },
  "scottie barnes": {
-  "min": 35,
+  "min": 34,
   "team": "TOR",
   "pos": "PF",
   "name": "Scottie Barnes"
  },
  "immanuel quickley": {
-  "min": 32,
+  "min": 33,
   "team": "TOR",
   "pos": "PG",
   "name": "Immanuel Quickley"
  },
  "kawhi leonard": {
-  "min": 28,
+  "min": 33,
   "team": "TOR",
   "pos": "SF",
   "name": "Kawhi Leonard"
  },
  "rj barrett": {
-  "min": 32,
+  "min": 28,
   "team": "TOR",
   "pos": "SG/SF",
   "name": "RJ Barrett"
  },
  "jakob poeltl": {
-  "min": 28,
+  "min": 24,
   "team": "TOR",
   "pos": "C",
   "name": "Jakob Poeltl"
  },
  "collin murrayboyles": {
-  "min": 22,
+  "min": 29,
   "team": "TOR",
   "pos": "PF",
   "name": "Collin Murray-Boyles"
@@ -831,19 +849,19 @@ const PROJECTED_MINUTES = {
   "name": "Ochai Agbaji"
  },
  "sandro mamukelashvili": {
-  "min": 16,
+  "min": 28,
   "team": "LAL",
-  "pos": "PF/C",
+  "pos": "PF",
   "name": "Sandro Mamukelashvili"
  },
  "jamal shead": {
-  "min": 15,
+  "min": 22,
   "team": "TOR",
   "pos": "PG",
   "name": "Jamal Shead"
  },
  "trae young": {
-  "min": 33,
+  "min": 32,
   "team": "WAS",
   "pos": "PG",
   "name": "Trae Young"
@@ -851,17 +869,17 @@ const PROJECTED_MINUTES = {
  "anthony davis": {
   "min": 32,
   "team": "WAS",
-  "pos": "PF/C",
+  "pos": "PF",
   "name": "Anthony Davis"
  },
  "aj dybantsa": {
-  "min": 30.0,
+  "min": 30,
   "team": "WAS",
-  "pos": "G/F",
+  "pos": "SF",
   "name": "AJ Dybantsa"
  },
  "bilal coulibaly": {
-  "min": 28,
+  "min": 24,
   "team": "WAS",
   "pos": "SF",
   "name": "Bilal Coulibaly"
@@ -879,15 +897,15 @@ const PROJECTED_MINUTES = {
   "name": "Tre Johnson"
  },
  "bub carrington": {
-  "min": 24,
+  "min": 20,
   "team": "WAS",
-  "pos": "PG/SG",
+  "pos": "PG",
   "name": "Bub Carrington"
  },
  "kyshawn george": {
-  "min": 24,
+  "min": 29,
   "team": "WAS",
-  "pos": "SF/PF",
+  "pos": "SG",
   "name": "Kyshawn George"
  },
  "will riley": {
@@ -897,79 +915,79 @@ const PROJECTED_MINUTES = {
   "name": "Will Riley"
  },
  "khris middleton": {
-  "min": 14,
+  "min": 20,
   "team": "WAS",
   "pos": "SF",
   "name": "Khris Middleton"
  },
  "cooper flagg": {
-  "min": 36,
+  "min": 34,
   "team": "DAL",
-  "pos": "SF/PF",
+  "pos": "SF",
   "name": "Cooper Flagg"
  },
  "kyrie irving": {
-  "min": 30,
+  "min": 34,
   "team": "DAL",
   "pos": "PG",
   "name": "Kyrie Irving"
  },
  "pj washington": {
-  "min": 31,
+  "min": 30,
   "team": "DAL",
   "pos": "PF",
-  "name": "P.J. Washington"
+  "name": "PJ Washington"
  },
  "naji marshall": {
-  "min": 28,
+  "min": 27,
   "team": "DAL",
   "pos": "SF",
   "name": "Naji Marshall"
  },
  "daniel gafford": {
-  "min": 26,
+  "min": 20,
   "team": "DAL",
   "pos": "C",
   "name": "Daniel Gafford"
  },
  "max christie": {
-  "min": 26,
+  "min": 30,
   "team": "DAL",
   "pos": "SG",
   "name": "Max Christie"
  },
  "morez johnson": {
-  "min": 24.0,
+  "min": 19,
   "team": "DAL",
-  "pos": "F/C",
+  "pos": "PF",
   "name": "Morez Johnson Jr"
  },
  "sergio de larrea": {
-  "min": 17.0,
+  "min": 14,
   "team": "DAL",
-  "pos": "G",
+  "pos": "PG",
   "name": "Sergio De Larrea"
  },
  "dereck lively": {
-  "min": 18,
+  "min": 22,
   "team": "DAL",
   "pos": "C",
   "name": "Dereck Lively II"
  },
  "santi aldama": {
-  "min": 22,
-  "team": "MEM",
-  "pos": "PF/C",
+  "min": 28,
+  "team": "DAL",
+  "pos": "PF",
   "name": "Santi Aldama"
  },
  "nikola jokic": {
-  "min": 35,
+  "min": 36,
   "team": "DEN",
   "pos": "C",
   "name": "Nikola Jokic"
  },
  "jamal murray": {
-  "min": 34,
+  "min": 35,
   "team": "DEN",
   "pos": "PG",
   "name": "Jamal Murray"
@@ -987,13 +1005,13 @@ const PROJECTED_MINUTES = {
   "name": "Christian Braun"
  },
  "peyton watson": {
-  "min": 28,
+  "min": 30,
   "team": "DEN",
   "pos": "SF",
   "name": "Peyton Watson"
  },
  "tyus jones": {
-  "min": 20,
+  "min": 17,
   "team": "DEN",
   "pos": "PG",
   "name": "Tyus Jones"
@@ -1005,15 +1023,15 @@ const PROJECTED_MINUTES = {
   "name": "Jonas Valanciunas"
  },
  "julian strawther": {
-  "min": 16,
+  "min": 18,
   "team": "DEN",
   "pos": "SG",
   "name": "Julian Strawther"
  },
  "marvin bagley": {
-  "min": 14,
+  "min": 17,
   "team": "DEN",
-  "pos": "PF/C",
+  "pos": "PF",
   "name": "Marvin Bagley III"
  },
  "daron holmes": {
@@ -1023,19 +1041,19 @@ const PROJECTED_MINUTES = {
   "name": "DaRon Holmes II"
  },
  "spencer jones": {
-  "min": 12,
+  "min": 20,
   "team": "DEN",
   "pos": "SF",
   "name": "Spencer Jones"
  },
  "stephen curry": {
-  "min": 33,
+  "min": 31,
   "team": "GSW",
   "pos": "PG",
   "name": "Stephen Curry"
  },
  "brandin podziemski": {
-  "min": 30,
+  "min": 28,
   "team": "GSW",
   "pos": "SG",
   "name": "Brandin Podziemski"
@@ -1047,31 +1065,31 @@ const PROJECTED_MINUTES = {
   "name": "Draymond Green"
  },
  "jimmy butler": {
-  "min": 30,
+  "min": 28,
   "team": "GSW",
   "pos": "SF",
-  "name": "Jimmy Butler III"
+  "name": "Jimmy Butler"
  },
  "gui santos": {
-  "min": 24,
+  "min": 29,
   "team": "GSW",
   "pos": "SF",
   "name": "Gui Santos"
  },
  "al horford": {
-  "min": 18,
+  "min": 22,
   "team": "GSW",
-  "pos": "C/PF",
+  "pos": "C",
   "name": "Al Horford"
  },
  "yaxel lendeborg": {
-  "min": 28.0,
+  "min": 25,
   "team": "GSW",
-  "pos": "F",
+  "pos": "PF",
   "name": "Yaxel Lendeborg"
  },
  "will richard": {
-  "min": 16,
+  "min": 18,
   "team": "GSW",
   "pos": "SG",
   "name": "Will Richard"
@@ -1083,51 +1101,51 @@ const PROJECTED_MINUTES = {
   "name": "Moses Moody"
  },
  "gary payton": {
-  "min": 12,
+  "min": 16,
   "team": "GSW",
-  "pos": "G",
+  "pos": "PG",
   "name": "Gary Payton II"
  },
  "kevin durant": {
-  "min": 34,
+  "min": 35,
   "team": "HOU",
-  "pos": "SF/PF",
+  "pos": "SG/SF",
   "name": "Kevin Durant"
  },
  "alperen sengun": {
-  "min": 33,
+  "min": 32,
   "team": "HOU",
   "pos": "C",
   "name": "Alperen Sengun"
  },
  "amen thompson": {
-  "min": 32,
+  "min": 34,
   "team": "HOU",
-  "pos": "PG/SG",
+  "pos": "SF",
   "name": "Amen Thompson"
  },
  "jabari smith": {
-  "min": 30,
+  "min": 32,
   "team": "HOU",
   "pos": "PF",
-  "name": "Jabari Smith Jr."
+  "name": "Jabari Smith Jr"
  },
  "reed sheppard": {
-  "min": 28,
+  "min": 27,
   "team": "HOU",
-  "pos": "SG",
+  "pos": "PG",
   "name": "Reed Sheppard"
  },
  "fred vanvleet": {
-  "min": 22,
+  "min": 30,
   "team": "HOU",
   "pos": "PG",
   "name": "Fred VanVleet"
  },
  "tari eason": {
-  "min": 24,
+  "min": 26,
   "team": "HOU",
-  "pos": "SF",
+  "pos": "PF",
   "name": "Tari Eason"
  },
  "steven adams": {
@@ -1137,163 +1155,163 @@ const PROJECTED_MINUTES = {
   "name": "Steven Adams"
  },
  "marcus smart": {
-  "min": 20,
+  "min": 27,
   "team": "HOU",
   "pos": "PG",
   "name": "Marcus Smart"
  },
  "brandon ingram": {
-  "min": 31,
+  "min": 34,
   "team": "LAC",
   "pos": "SF",
   "name": "Brandon Ingram"
  },
  "darius garland": {
-  "min": 30,
+  "min": 33,
   "team": "LAC",
   "pos": "PG",
   "name": "Darius Garland"
  },
  "derrick jones": {
-  "min": 26,
+  "min": 25,
   "team": "LAC",
-  "pos": "PF",
-  "name": "Derrick Jones Jr."
+  "pos": "SF",
+  "name": "Derrick Jones Jr"
  },
  "brook lopez": {
-  "min": 24,
+  "min": 28,
   "team": "LAC",
   "pos": "C",
   "name": "Brook Lopez"
  },
  "kris dunn": {
-  "min": 24,
+  "min": 27,
   "team": "LAC",
-  "pos": "PG/SG",
+  "pos": "SG",
   "name": "Kris Dunn"
  },
  "rui hachimura": {
-  "min": 24,
+  "min": 28,
   "team": "LAC",
   "pos": "PF",
   "name": "Rui Hachimura"
  },
  "gradey dick": {
-  "min": 22,
+  "min": 12,
   "team": "LAC",
   "pos": "SG",
   "name": "Gradey Dick"
  },
  "keaton wagler": {
-  "min": 28.0,
+  "min": 27,
   "team": "LAC",
-  "pos": "G",
+  "pos": "SG",
   "name": "Keaton Wagler"
  },
  "kobe sanders": {
-  "min": 18,
+  "min": 17,
   "team": "LAC",
-  "pos": "SF",
+  "pos": "SG",
   "name": "Kobe Sanders"
  },
  "luka doncic": {
   "min": 36,
   "team": "LAL",
-  "pos": "PG",
+  "pos": "SF",
   "name": "Luka Doncic"
  },
  "austin reaves": {
-  "min": 33,
+  "min": 35,
   "team": "LAL",
-  "pos": "SG",
+  "pos": "PG",
   "name": "Austin Reaves"
  },
  "walker kessler": {
-  "min": 28,
+  "min": 31,
   "team": "LAL",
   "pos": "C",
   "name": "Walker Kessler"
  },
  "jake laravia": {
-  "min": 26,
+  "min": 24,
   "team": "LAL",
-  "pos": "SF",
+  "pos": "PF",
   "name": "Jake LaRavia"
  },
  "jarred vanderbilt": {
-  "min": 24,
+  "min": 16,
   "team": "LAL",
   "pos": "PF",
   "name": "Jarred Vanderbilt"
  },
  "collin sexton": {
-  "min": 22,
+  "min": 24,
   "team": "LAL",
   "pos": "PG",
   "name": "Collin Sexton"
  },
  "adou thiero": {
-  "min": 14,
+  "min": 12,
   "team": "LAL",
   "pos": "SF",
   "name": "Adou Thiero"
  },
  "kevon looney": {
-  "min": 14,
-  "team": "NOP",
+  "min": 16,
+  "team": "LAL",
   "pos": "C",
   "name": "Kevon Looney"
  },
  "ty jerome": {
-  "min": 31,
+  "min": 28,
   "team": "MEM",
   "pos": "PG",
   "name": "Ty Jerome"
  },
  "jaylen wells": {
-  "min": 30,
+  "min": 28,
   "team": "MEM",
-  "pos": "SG/SF",
+  "pos": "SF",
   "name": "Jaylen Wells"
  },
  "cameron boozer": {
-  "min": 32.0,
-  "team": "GSW",
-  "pos": "F/C",
+  "min": 30,
+  "team": "MEM",
+  "pos": "PF",
   "name": "Cameron Boozer"
  },
  "zach edey": {
-  "min": 28,
+  "min": 27,
   "team": "MEM",
   "pos": "C",
   "name": "Zach Edey"
  },
  "jerami grant": {
-  "min": 28,
+  "min": 29,
   "team": "MEM",
   "pos": "SF",
   "name": "Jerami Grant"
  },
  "cam spencer": {
-  "min": 22,
+  "min": 25,
   "team": "MEM",
   "pos": "SG",
   "name": "Cam Spencer"
  },
  "taylor hendricks": {
-  "min": 24,
+  "min": 12,
   "team": "MEM",
   "pos": "PF",
   "name": "Taylor Hendricks"
  },
  "scotty pippen": {
-  "min": 18,
+  "min": 23,
   "team": "MEM",
   "pos": "PG",
-  "name": "Scotty Pippen Jr."
+  "name": "Scotty Pippen Jr"
  },
  "kris murray": {
-  "min": 16,
+  "min": 10,
   "team": "MEM",
   "pos": "SF",
   "name": "Kris Murray"
@@ -1301,11 +1319,11 @@ const PROJECTED_MINUTES = {
  "anthony edwards": {
   "min": 36,
   "team": "MIN",
-  "pos": "SG/SF",
+  "pos": "SF",
   "name": "Anthony Edwards"
  },
  "lamelo ball": {
-  "min": 33,
+  "min": 29,
   "team": "MIN",
   "pos": "PG",
   "name": "LaMelo Ball"
@@ -1317,13 +1335,13 @@ const PROJECTED_MINUTES = {
   "name": "Jaden McDaniels"
  },
  "rudy gobert": {
-  "min": 30,
+  "min": 31,
   "team": "MIN",
   "pos": "C",
   "name": "Rudy Gobert"
  },
  "ayo dosunmu": {
-  "min": 26,
+  "min": 28,
   "team": "MIN",
   "pos": "SG",
   "name": "Ayo Dosunmu"
@@ -1335,33 +1353,33 @@ const PROJECTED_MINUTES = {
   "name": "Donte DiVincenzo"
  },
  "terrence shannon": {
-  "min": 22,
+  "min": 17,
   "team": "MIN",
-  "pos": "SG/SF",
-  "name": "Terrence Shannon Jr."
+  "pos": "SG",
+  "name": "Terrence Shannon Jr"
  },
  "josh green": {
-  "min": 20,
+  "min": 18,
   "team": "MIN",
-  "pos": "SF",
+  "pos": "SG",
   "name": "Josh Green"
  },
  "luka garza": {
-  "min": 12,
-  "team": "MIN",
+  "min": 15,
+  "team": "BOS",
   "pos": "C",
   "name": "Luka Garza"
  },
  "zion williamson": {
-  "min": 30,
+  "min": 31,
   "team": "NOP",
-  "pos": "PF",
+  "pos": "PF/C",
   "name": "Zion Williamson"
  },
  "trey murphy": {
-  "min": 33,
+  "min": 34,
   "team": "NOP",
-  "pos": "SF",
+  "pos": "SG",
   "name": "Trey Murphy III"
  },
  "herb jones": {
@@ -1371,39 +1389,39 @@ const PROJECTED_MINUTES = {
   "name": "Herb Jones"
  },
  "jordan poole": {
-  "min": 28,
+  "min": 18,
   "team": "NOP",
   "pos": "SG",
   "name": "Jordan Poole"
  },
  "jeremiah fears": {
-  "min": 28,
+  "min": 27,
   "team": "NOP",
   "pos": "PG",
   "name": "Jeremiah Fears"
  },
  "yves missi": {
-  "min": 26,
+  "min": 21,
   "team": "NOP",
   "pos": "C",
   "name": "Yves Missi"
  },
  "dejounte murray": {
-  "min": 24,
+  "min": 31,
   "team": "NOP",
   "pos": "PG",
   "name": "Dejounte Murray"
  },
  "saddiq bey": {
-  "min": 20,
+  "min": 28,
   "team": "NOP",
-  "pos": "SF/PF",
+  "pos": "PF",
   "name": "Saddiq Bey"
  },
  "derik queen": {
-  "min": 16,
+  "min": 28,
   "team": "NOP",
-  "pos": "C",
+  "pos": "PF/C",
   "name": "Derik Queen"
  },
  "shai gilgeousalexander": {
@@ -1413,129 +1431,129 @@ const PROJECTED_MINUTES = {
   "name": "Shai Gilgeous-Alexander"
  },
  "jalen williams": {
-  "min": 33,
+  "min": 32,
   "team": "OKC",
-  "pos": "SF/PF",
+  "pos": "SF",
   "name": "Jalen Williams"
  },
  "chet holmgren": {
-  "min": 32,
+  "min": 30,
   "team": "OKC",
-  "pos": "C/PF",
+  "pos": "PF",
   "name": "Chet Holmgren"
  },
  "luguentz dort": {
-  "min": 30,
-  "team": "OKC",
+  "min": 26,
+  "team": "ATL",
   "pos": "SF",
   "name": "Luguentz Dort"
  },
  "isaiah hartenstein": {
-  "min": 28,
+  "min": 25,
   "team": "OKC",
   "pos": "C",
   "name": "Isaiah Hartenstein"
  },
  "cason wallace": {
-  "min": 26,
+  "min": 30,
   "team": "OKC",
   "pos": "SG",
   "name": "Cason Wallace"
  },
  "alex caruso": {
-  "min": 24,
+  "min": 19,
   "team": "OKC",
   "pos": "SG",
   "name": "Alex Caruso"
  },
  "ajay mitchell": {
-  "min": 22,
+  "min": 30,
   "team": "OKC",
   "pos": "PG",
   "name": "Ajay Mitchell"
  },
  "jaylin williams": {
-  "min": 15,
+  "min": 20,
   "team": "OKC",
   "pos": "PF/C",
   "name": "Jaylin Williams"
  },
  "devin booker": {
-  "min": 36,
-  "team": "PHX",
-  "pos": "PG/SG",
+  "min": 33,
+  "team": "PHO",
+  "pos": "PG",
   "name": "Devin Booker"
  },
  "jalen green": {
   "min": 30,
-  "team": "PHX",
+  "team": "PHO",
   "pos": "SG",
   "name": "Jalen Green"
  },
  "dillon brooks": {
   "min": 30,
-  "team": "PHX",
+  "team": "PHO",
   "pos": "SF",
   "name": "Dillon Brooks"
  },
  "miles bridges": {
-  "min": 32,
-  "team": "PHX",
+  "min": 31,
+  "team": "PHO",
   "pos": "PF",
   "name": "Miles Bridges"
  },
  "mark williams": {
-  "min": 26,
-  "team": "PHX",
+  "min": 23,
+  "team": "PHO",
   "pos": "C",
   "name": "Mark Williams"
  },
  "collin gillespie": {
-  "min": 24,
-  "team": "PHX",
+  "min": 28,
+  "team": "PHO",
   "pos": "PG",
   "name": "Collin Gillespie"
  },
  "jordan goodwin": {
-  "min": 18,
-  "team": "PHX",
-  "pos": "PG/SG",
+  "min": 20,
+  "team": "PHO",
+  "pos": "PG",
   "name": "Jordan Goodwin"
  },
  "oso ighodaro": {
-  "min": 16,
-  "team": "PHX",
+  "min": 17,
+  "team": "PHO",
   "pos": "PF/C",
   "name": "Oso Ighodaro"
  },
  "khaman maluach": {
-  "min": 16,
-  "team": "PHX",
+  "min": 20,
+  "team": "PHO",
   "pos": "C",
   "name": "Khaman Maluach"
  },
  "koa peat": {
-  "min": 15.0,
-  "team": "PHX",
-  "pos": "F",
+  "min": 12,
+  "team": "PHO",
+  "pos": "PF",
   "name": "Koa Peat"
  },
  "ryan dunn": {
-  "min": 16,
-  "team": "PHX",
+  "min": 17,
+  "team": "PHO",
   "pos": "SF",
   "name": "Ryan Dunn"
  },
  "deni avdija": {
-  "min": 34,
+  "min": 32,
   "team": "POR",
-  "pos": "SF/PF",
+  "pos": "PF",
   "name": "Deni Avdija"
  },
  "toumani camara": {
   "min": 32,
   "team": "POR",
-  "pos": "SF/PF",
+  "pos": "SF",
   "name": "Toumani Camara"
  },
  "ja morant": {
@@ -1553,41 +1571,41 @@ const PROJECTED_MINUTES = {
  "jrue holiday": {
   "min": 28,
   "team": "POR",
-  "pos": "SG",
+  "pos": "PG",
   "name": "Jrue Holiday"
  },
  "shaedon sharpe": {
-  "min": 28,
+  "min": 24,
   "team": "POR",
   "pos": "SG",
   "name": "Shaedon Sharpe"
  },
  "damian lillard": {
-  "min": 24,
+  "min": 30,
   "team": "POR",
-  "pos": "PG",
+  "pos": "SG",
   "name": "Damian Lillard"
  },
  "scoot henderson": {
-  "min": 18,
+  "min": 20,
   "team": "POR",
   "pos": "PG",
   "name": "Scoot Henderson"
  },
  "matisse thybulle": {
-  "min": 16,
-  "team": "POR",
-  "pos": "SF",
+  "min": 17,
+  "team": "LAL",
+  "pos": "SG",
   "name": "Matisse Thybulle"
  },
  "robert williams": {
-  "min": 14,
+  "min": 19,
   "team": "POR",
   "pos": "C",
   "name": "Robert Williams III"
  },
  "domantas sabonis": {
-  "min": 33,
+  "min": 32,
   "team": "SAC",
   "pos": "C",
   "name": "Domantas Sabonis"
@@ -1599,55 +1617,55 @@ const PROJECTED_MINUTES = {
   "name": "Zach LaVine"
  },
  "keegan murray": {
-  "min": 32,
+  "min": 35,
   "team": "SAC",
-  "pos": "SF",
+  "pos": "PF",
   "name": "Keegan Murray"
  },
  "deandre hunter": {
-  "min": 28,
+  "min": 30,
   "team": "SAC",
-  "pos": "SF/PF",
+  "pos": "SF",
   "name": "De'Andre Hunter"
  },
  "malik monk": {
-  "min": 28,
+  "min": 22,
   "team": "SAC",
-  "pos": "PG/SG",
+  "pos": "SG",
   "name": "Malik Monk"
  },
  "darius acuff": {
-  "min": 30.0,
+  "min": 30,
   "team": "SAC",
-  "pos": "G",
+  "pos": "PG",
   "name": "Darius Acuff Jr"
  },
  "devin carter": {
-  "min": 20,
-  "team": "SAC",
-  "pos": "PG/SG",
+  "min": 10,
+  "team": "ATL",
+  "pos": "SG",
   "name": "Devin Carter"
  },
  "maxime raynaud": {
-  "min": 18,
+  "min": 20,
   "team": "SAC",
   "pos": "C",
   "name": "Maxime Raynaud"
  },
  "nique clifford": {
-  "min": 18,
+  "min": 20,
   "team": "SAC",
-  "pos": "SG/SF",
+  "pos": "SF",
   "name": "Nique Clifford"
  },
  "precious achiuwa": {
-  "min": 16,
+  "min": 20,
   "team": "SAC",
-  "pos": "PF/C",
+  "pos": "PF",
   "name": "Precious Achiuwa"
  },
  "demar derozan": {
-  "min": 24,
+  "min": 30,
   "team": "SAC",
   "pos": "SF",
   "name": "DeMar DeRozan"
@@ -1659,43 +1677,43 @@ const PROJECTED_MINUTES = {
   "name": "Victor Wembanyama"
  },
  "deaaron fox": {
-  "min": 31,
+  "min": 30,
   "team": "SAS",
   "pos": "PG",
   "name": "De'Aaron Fox"
  },
  "stephon castle": {
-  "min": 31,
+  "min": 30,
   "team": "SAS",
   "pos": "SG",
   "name": "Stephon Castle"
  },
  "devin vassell": {
-  "min": 29,
+  "min": 31,
   "team": "SAS",
   "pos": "SF",
   "name": "Devin Vassell"
  },
  "julian champagnie": {
-  "min": 26,
+  "min": 27,
   "team": "SAS",
-  "pos": "PF",
+  "pos": "SF",
   "name": "Julian Champagnie"
  },
  "dylan harper": {
-  "min": 26,
+  "min": 29,
   "team": "SAS",
-  "pos": "SG/PG",
+  "pos": "PG",
   "name": "Dylan Harper"
  },
  "carter bryant": {
-  "min": 20,
+  "min": 18,
   "team": "SAS",
-  "pos": "PF",
+  "pos": "SF/PF",
   "name": "Carter Bryant"
  },
  "keldon johnson": {
-  "min": 20,
+  "min": 22,
   "team": "SAS",
   "pos": "SF",
   "name": "Keldon Johnson"
@@ -1715,14 +1733,14 @@ const PROJECTED_MINUTES = {
  "lauri markkanen": {
   "min": 33,
   "team": "UTA",
-  "pos": "SF/PF",
+  "pos": "SF",
   "name": "Lauri Markkanen"
  },
  "jaren jackson": {
-  "min": 32,
+  "min": 31,
   "team": "UTA",
-  "pos": "PF/C",
-  "name": "Jaren Jackson Jr."
+  "pos": "PF",
+  "name": "Jaren Jackson Jr"
  },
  "keyonte george": {
   "min": 32,
@@ -1737,15 +1755,15 @@ const PROJECTED_MINUTES = {
   "name": "Ace Bailey"
  },
  "jaxson hayes": {
-  "min": 24,
+  "min": 17,
   "team": "UTA",
   "pos": "C",
   "name": "Jaxson Hayes"
  },
  "darryn peterson": {
-  "min": 28.0,
+  "min": 28,
   "team": "UTA",
-  "pos": "G",
+  "pos": "SG",
   "name": "Darryn Peterson"
  },
  "isaiah collier": {
@@ -1755,25 +1773,25 @@ const PROJECTED_MINUTES = {
   "name": "Isaiah Collier"
  },
  "cody williams": {
-  "min": 20,
+  "min": 12,
   "team": "UTA",
   "pos": "SF",
   "name": "Cody Williams"
  },
  "brice sensabaugh": {
-  "min": 18,
+  "min": 20,
   "team": "UTA",
   "pos": "SF",
   "name": "Brice Sensabaugh"
  },
  "kyle filipowski": {
-  "min": 18,
+  "min": 20,
   "team": "UTA",
   "pos": "PF/C",
   "name": "Kyle Filipowski"
  },
  "jusuf nurkic": {
-  "min": 14,
+  "min": 28,
   "team": "UTA",
   "pos": "C",
   "name": "Jusuf Nurkic"
@@ -1785,27 +1803,27 @@ const PROJECTED_MINUTES = {
   "name": "Carlton Wilson"
  },
  "alijah martin": {
-  "min": 25.0,
-  "team": "",
-  "pos": "G",
+  "min": 10,
+  "team": "TOR",
+  "pos": "SG",
   "name": "Alijah Martin"
  },
  "aday mara": {
-  "min": 17.9,
+  "min": 14,
   "team": "OKC",
   "pos": "C",
   "name": "Aday Mara"
  },
  "emanuel sharp": {
-  "min": 21.2,
+  "min": 15,
   "team": "SAC",
-  "pos": "G",
+  "pos": "SG",
   "name": "Emanuel Sharp"
  },
  "kingston flemings": {
-  "min": 20.0,
+  "min": 20,
   "team": "ATL",
-  "pos": "G",
+  "pos": "PG",
   "name": "Kingston Flemings"
  },
  "terrace reed": {
@@ -1821,9 +1839,9 @@ const PROJECTED_MINUTES = {
   "name": "Henri Steinbach"
  },
  "cameron carr": {
-  "min": 25.0,
+  "min": 14,
   "team": "LAL",
-  "pos": "F",
+  "pos": "SG",
   "name": "Cameron Carr"
  },
  "deshawn swain": {
@@ -1833,9 +1851,9 @@ const PROJECTED_MINUTES = {
   "name": "DeShawn Swain"
  },
  "bruce thornton": {
-  "min": 14.4,
+  "min": 9,
   "team": "HOU",
-  "pos": "G",
+  "pos": "PG",
   "name": "Bruce Thornton"
  },
  "vasyl ishchenko": {
@@ -1875,27 +1893,27 @@ const PROJECTED_MINUTES = {
   "name": "Kam Boswell"
  },
  "zuby ejiofor": {
-  "min": 12.0,
+  "min": 12,
   "team": "ATL",
-  "pos": "F/C",
+  "pos": "PF",
   "name": "Zuby Ejiofor"
  },
  "bennett stirtz": {
-  "min": 13.5,
+  "min": 12,
   "team": "OKC",
-  "pos": "G",
+  "pos": "PG",
   "name": "Bennett Stirtz"
  },
  "alex karaban": {
-  "min": 15.0,
-  "team": "CHI",
-  "pos": "F",
+  "min": 14,
+  "team": "SAC",
+  "pos": "SF",
   "name": "Alex Karaban"
  },
  "ebuka okorie": {
-  "min": 12.2,
+  "min": 15,
   "team": "DET",
-  "pos": "G",
+  "pos": "SG",
   "name": "Ebuka Okorie"
  },
  "tobi awaka": {
@@ -1917,9 +1935,9 @@ const PROJECTED_MINUTES = {
   "name": "Trey Donaldson"
  },
  "tobi lawal": {
-  "min": 9.0,
-  "team": "",
-  "pos": "F",
+  "min": 7,
+  "team": "DAL",
+  "pos": "PF",
   "name": "Tobi Lawal"
  },
  "javon bradley": {
@@ -1941,9 +1959,9 @@ const PROJECTED_MINUTES = {
   "name": "Jase Dix"
  },
  "ernest udeh": {
-  "min": 8.0,
-  "team": "",
-  "pos": "F",
+  "min": 7,
+  "team": "CLE",
+  "pos": "C",
   "name": "Ernest Udeh Jr"
  },
  "kareem lopez": {
@@ -1953,9 +1971,9 @@ const PROJECTED_MINUTES = {
   "name": "Kareem Lopez"
  },
  "quadir copeland": {
-  "min": 7.2,
+  "min": 7,
   "team": "HOU",
-  "pos": "F",
+  "pos": "PG",
   "name": "Quadir Copeland"
  },
  "carter anderson": {
@@ -1965,15 +1983,15 @@ const PROJECTED_MINUTES = {
   "name": "Carter Anderson"
  },
  "chris cenac": {
-  "min": 9.2,
+  "min": 10,
   "team": "BOS",
-  "pos": "G",
+  "pos": "PF/C",
   "name": "Chris Cenac Jr"
  },
  "joshua jefferson": {
-  "min": 8.8,
+  "min": 10,
   "team": "BKN",
-  "pos": "F",
+  "pos": "PF",
   "name": "Joshua Jefferson"
  },
  "peter suder": {
@@ -2001,9 +2019,9 @@ const PROJECTED_MINUTES = {
   "name": "Joshua Kayil"
  },
  "tyler nickel": {
-  "min": 6.1,
-  "team": "",
-  "pos": "F",
+  "min": 7,
+  "team": "NYK",
+  "pos": "SF",
   "name": "Tyler Nickel"
  },
  "frank okpara": {
@@ -2013,8 +2031,8 @@ const PROJECTED_MINUTES = {
   "name": "Frank Okpara"
  },
  "henri veesaar": {
-  "min": 9.0,
-  "team": "",
+  "min": 10,
+  "team": "ATL",
   "pos": "C",
   "name": "Henri Veesaar"
  },
@@ -2031,15 +2049,15 @@ const PROJECTED_MINUTES = {
   "name": "Randy Conwell"
  },
  "tyler bilodeau": {
-  "min": 4.1,
+  "min": 7,
   "team": "BKN",
-  "pos": "F",
+  "pos": "PF",
   "name": "Tyler Bilodeau"
  },
  "isaiah evans": {
-  "min": 5.1,
+  "min": 10,
   "team": "MIN",
-  "pos": "G/F",
+  "pos": "SG",
   "name": "Isaiah Evans"
  },
  "ben smith": {
@@ -2053,5 +2071,1229 @@ const PROJECTED_MINUTES = {
   "team": "",
   "pos": "F",
   "name": "Nathan Martinelli"
- }
+ },
+ "jordan walsh": {
+  "min": 16,
+  "team": "BOS",
+  "pos": "SF",
+  "name": "Jordan Walsh"
+ },
+ "hugo gonzalez": {
+  "min": 20,
+  "team": "BOS",
+  "pos": "SF",
+  "name": "Hugo Gonzalez"
+ },
+ "ron harper": {
+  "min": 10,
+  "team": "BOS",
+  "pos": "SG/SF",
+  "name": "Ron Harper Jr"
+ },
+ "dillon mitchell": {
+  "min": 7,
+  "team": "BOS",
+  "pos": "SF",
+  "name": "Dillon Mitchell"
+ },
+ "amari williams": {
+  "min": 9,
+  "team": "BOS",
+  "pos": "C",
+  "name": "Amari Williams"
+ },
+ "keon ellis": {
+  "min": 20,
+  "team": "BKN",
+  "pos": "SG",
+  "name": "Keon Ellis"
+ },
+ "moritz wagner": {
+  "min": 18,
+  "team": "BKN",
+  "pos": "C",
+  "name": "Moritz Wagner"
+ },
+ "ben saraf": {
+  "min": 14,
+  "team": "BKN",
+  "pos": "PG",
+  "name": "Ben Saraf"
+ },
+ "chaney johnson": {
+  "min": 7,
+  "team": "BKN",
+  "pos": "SF",
+  "name": "Chaney Johnson"
+ },
+ "jose alvarado": {
+  "min": 15,
+  "team": "NYK",
+  "pos": "PG",
+  "name": "Jose Alvarado"
+ },
+ "landry shamet": {
+  "min": 22,
+  "team": "NYK",
+  "pos": "SG",
+  "name": "Landry Shamet"
+ },
+ "mohamed diawara": {
+  "min": 15,
+  "team": "NYK",
+  "pos": "PF",
+  "name": "Mohamed Diawara"
+ },
+ "pacome dadiet": {
+  "min": 8,
+  "team": "NYK",
+  "pos": "SF",
+  "name": "Pacome Dadiet"
+ },
+ "kentavious caldwellpope": {
+  "min": 19,
+  "team": "PHI",
+  "pos": "SG/SF",
+  "name": "Kentavious Caldwell-Pope"
+ },
+ "dominick barlow": {
+  "min": 20,
+  "team": "PHI",
+  "pos": "PF",
+  "name": "Dominick Barlow"
+ },
+ "ariel hukporti": {
+  "min": 16,
+  "team": "PHI",
+  "pos": "C",
+  "name": "Ariel Hukporti"
+ },
+ "dalen terry": {
+  "min": 12,
+  "team": "PHI",
+  "pos": "SF",
+  "name": "Dalen Terry"
+ },
+ "jabari walker": {
+  "min": 12,
+  "team": "PHI",
+  "pos": "PF",
+  "name": "Jabari Walker"
+ },
+ "rayan rupert": {
+  "min": 7,
+  "team": "PHI",
+  "pos": "SG/SF",
+  "name": "Rayan Rupert"
+ },
+ "caleb love": {
+  "min": 7,
+  "team": "PHI",
+  "pos": "PG/SG",
+  "name": "Caleb Love"
+ },
+ "kyle anderson": {
+  "min": 19,
+  "team": "TOR",
+  "pos": "SF/PF",
+  "name": "Kyle Anderson"
+ },
+ "allen graves": {
+  "min": 17,
+  "team": "TOR",
+  "pos": "SF",
+  "name": "Allen Graves"
+ },
+ "jamison battle": {
+  "min": 14,
+  "team": "TOR",
+  "pos": "SF",
+  "name": "Jamison Battle"
+ },
+ "trayce jacksondavis": {
+  "min": 12,
+  "team": "TOR",
+  "pos": "PF/C",
+  "name": "Trayce Jackson-Davis"
+ },
+ "jaden bradley": {
+  "min": 7,
+  "team": "TOR",
+  "pos": "PG",
+  "name": "Jaden Bradley"
+ },
+ "chucky hepburn": {
+  "min": 7,
+  "team": "TOR",
+  "pos": "PG",
+  "name": "Chucky Hepburn"
+ },
+ "caleb wilson": {
+  "min": 30,
+  "team": "CHI",
+  "pos": "PF",
+  "name": "Caleb Wilson"
+ },
+ "nicolas claxton": {
+  "min": 28,
+  "team": "CHI",
+  "pos": "C",
+  "name": "Nicolas Claxton"
+ },
+ "zach collins": {
+  "min": 18,
+  "team": "CHI",
+  "pos": "C",
+  "name": "Zach Collins"
+ },
+ "dailyn swain": {
+  "min": 15,
+  "team": "CHI",
+  "pos": "SF",
+  "name": "Dailyn Swain"
+ },
+ "leonard miller": {
+  "min": 14,
+  "team": "CHI",
+  "pos": "PF",
+  "name": "Leonard Miller"
+ },
+ "tobe awaka": {
+  "min": 7,
+  "team": "CHI",
+  "pos": "PF/C",
+  "name": "Tobe Awaka"
+ },
+ "jaylin sellers": {
+  "min": 7,
+  "team": "CHI",
+  "pos": "SG",
+  "name": "Jaylin Sellers"
+ },
+ "dennis schroder": {
+  "min": 22,
+  "team": "CLE",
+  "pos": "PG",
+  "name": "Dennis Schroder"
+ },
+ "naeqwan tomlin": {
+  "min": 17,
+  "team": "CLE",
+  "pos": "PF",
+  "name": "Nae'Qwan Tomlin"
+ },
+ "thomas bryant": {
+  "min": 12,
+  "team": "CLE",
+  "pos": "C",
+  "name": "Thomas Bryant"
+ },
+ "tyrese proctor": {
+  "min": 12,
+  "team": "CLE",
+  "pos": "PG",
+  "name": "Tyrese Proctor"
+ },
+ "meleek thomas": {
+  "min": 10,
+  "team": "CLE",
+  "pos": "SG",
+  "name": "Meleek Thomas"
+ },
+ "riley minix": {
+  "min": 7,
+  "team": "CLE",
+  "pos": "SF",
+  "name": "Riley Minix"
+ },
+ "tristan enaruna": {
+  "min": 7,
+  "team": "CLE",
+  "pos": "SF",
+  "name": "Tristan Enaruna"
+ },
+ "daniss jenkins": {
+  "min": 24,
+  "team": "DET",
+  "pos": "PG",
+  "name": "Daniss Jenkins"
+ },
+ "javonte green": {
+  "min": 20,
+  "team": "DET",
+  "pos": "SF",
+  "name": "Javonte Green"
+ },
+ "paul reed": {
+  "min": 17,
+  "team": "DET",
+  "pos": "PF/C",
+  "name": "Paul Reed"
+ },
+ "kevin huerter": {
+  "min": 17,
+  "team": "DET",
+  "pos": "SG",
+  "name": "Kevin Huerter"
+ },
+ "gary harris": {
+  "min": 10,
+  "team": "DET",
+  "pos": "SG",
+  "name": "Gary Harris"
+ },
+ "chaz lanier": {
+  "min": 10,
+  "team": "DET",
+  "pos": "SG",
+  "name": "Chaz Lanier"
+ },
+ "tolu smith": {
+  "min": 9,
+  "team": "DET",
+  "pos": "PF/C",
+  "name": "Tolu Smith III"
+ },
+ "ugonna onyenso": {
+  "min": 7,
+  "team": "DET",
+  "pos": "C",
+  "name": "Ugonna Onyenso"
+ },
+ "isaac jones": {
+  "min": 7,
+  "team": "DET",
+  "pos": "PF",
+  "name": "Isaac Jones"
+ },
+ "elijah harkless": {
+  "min": 7,
+  "team": "DET",
+  "pos": "SG",
+  "name": "Elijah Harkless"
+ },
+ "tj mcconnell": {
+  "min": 18,
+  "team": "IND",
+  "pos": "PG",
+  "name": "T.J. McConnell"
+ },
+ "ben sheppard": {
+  "min": 17,
+  "team": "IND",
+  "pos": "SG/SF",
+  "name": "Ben Sheppard"
+ },
+ "quenton jackson": {
+  "min": 14,
+  "team": "IND",
+  "pos": "PG/SG",
+  "name": "Quenton Jackson"
+ },
+ "johnny furphy": {
+  "min": 9,
+  "team": "IND",
+  "pos": "SF",
+  "name": "Johnny Furphy"
+ },
+ "braden smith": {
+  "min": 7,
+  "team": "IND",
+  "pos": "PG",
+  "name": "Braden Smith"
+ },
+ "jalen slawson": {
+  "min": 7,
+  "team": "IND",
+  "pos": "SF",
+  "name": "Jalen Slawson"
+ },
+ "gary trent": {
+  "min": 20,
+  "team": "MIL",
+  "pos": "SG",
+  "name": "Gary Trent Jr"
+ },
+ "kasparas jakucionis": {
+  "min": 17,
+  "team": "MIL",
+  "pos": "PG",
+  "name": "Kasparas Jakucionis"
+ },
+ "jericho sims": {
+  "min": 15,
+  "team": "MIL",
+  "pos": "C",
+  "name": "Jericho Sims"
+ },
+ "ousmane dieng": {
+  "min": 15,
+  "team": "MIL",
+  "pos": "SF/PF",
+  "name": "Ousmane Dieng"
+ },
+ "cormac ryan": {
+  "min": 7,
+  "team": "MIL",
+  "pos": "SG",
+  "name": "Cormac Ryan"
+ },
+ "kam jones": {
+  "min": 7,
+  "team": "MIL",
+  "pos": "PG",
+  "name": "Kam Jones"
+ },
+ "rafael castro": {
+  "min": 7,
+  "team": "MIL",
+  "pos": "PG",
+  "name": "Rafael Castro"
+ },
+ "aaron wiggins": {
+  "min": 20,
+  "team": "ATL",
+  "pos": "SG",
+  "name": "Aaron Wiggins"
+ },
+ "jock landale": {
+  "min": 18,
+  "team": "ATL",
+  "pos": "C",
+  "name": "Jock Landale"
+ },
+ "ryan nembhard": {
+  "min": 14,
+  "team": "ATL",
+  "pos": "PG",
+  "name": "Ryan Nembhard"
+ },
+ "buddy hield": {
+  "min": 14,
+  "team": "ATL",
+  "pos": "SG",
+  "name": "Buddy Hield"
+ },
+ "mouhamed gueye": {
+  "min": 10,
+  "team": "ATL",
+  "pos": "PF",
+  "name": "Mouhamed Gueye"
+ },
+ "rayj dennis": {
+  "min": 7,
+  "team": "ATL",
+  "pos": "PG",
+  "name": "RayJ Dennis"
+ },
+ "keshon gilbert": {
+  "min": 7,
+  "team": "ATL",
+  "pos": "PG",
+  "name": "Keshon Gilbert"
+ },
+ "jalen wilson": {
+  "min": 7,
+  "team": "ATL",
+  "pos": "SF",
+  "name": "Jalen Wilson"
+ },
+ "jonathan kuminga": {
+  "min": 20,
+  "team": "ATL",
+  "pos": "SF/PF",
+  "name": "Jonathan Kuminga"
+ },
+ "christian anderson": {
+  "min": 18,
+  "team": "CHA",
+  "pos": "PG",
+  "name": "Christian Anderson Jr"
+ },
+ "grayson allen": {
+  "min": 24,
+  "team": "CHA",
+  "pos": "SG",
+  "name": "Grayson Allen"
+ },
+ "royce oneale": {
+  "min": 26,
+  "team": "CHA",
+  "pos": "SF",
+  "name": "Royce O'Neale"
+ },
+ "hannes steinbach": {
+  "min": 20,
+  "team": "CHA",
+  "pos": "PF",
+  "name": "Hannes Steinbach"
+ },
+ "ryan kalkbrenner": {
+  "min": 15,
+  "team": "CHA",
+  "pos": "C",
+  "name": "Ryan Kalkbrenner"
+ },
+ "sion james": {
+  "min": 15,
+  "team": "CHA",
+  "pos": "SG/SF",
+  "name": "Sion James"
+ },
+ "liam mcneeley": {
+  "min": 10,
+  "team": "CHA",
+  "pos": "SF",
+  "name": "Liam McNeeley"
+ },
+ "tre mann": {
+  "min": 10,
+  "team": "CHA",
+  "pos": "PG",
+  "name": "Tre Mann"
+ },
+ "michael ajayi": {
+  "min": 7,
+  "team": "CHA",
+  "pos": "SF",
+  "name": "Michael Ajayi"
+ },
+ "pj hall": {
+  "min": 7,
+  "team": "CHA",
+  "pos": "PF/C",
+  "name": "PJ Hall"
+ },
+ "kylan boswell": {
+  "min": 7,
+  "team": "CHA",
+  "pos": "PG",
+  "name": "Kylan Boswell"
+ },
+ "simone fontecchio": {
+  "min": 17,
+  "team": "MIA",
+  "pos": "SF",
+  "name": "Simone Fontecchio"
+ },
+ "myron gardner": {
+  "min": 10,
+  "team": "MIA",
+  "pos": "SG",
+  "name": "Myron Gardner"
+ },
+ "ryan conwell": {
+  "min": 10,
+  "team": "MIA",
+  "pos": "SG",
+  "name": "Ryan Conwell"
+ },
+ "vladislav goldin": {
+  "min": 9,
+  "team": "MIA",
+  "pos": "C",
+  "name": "Vladislav Goldin"
+ },
+ "tre donaldson": {
+  "min": 7,
+  "team": "MIA",
+  "pos": "PG",
+  "name": "Tre Donaldson"
+ },
+ "jevon carter": {
+  "min": 18,
+  "team": "ORL",
+  "pos": "PG",
+  "name": "Jevon Carter"
+ },
+ "jamal cain": {
+  "min": 17,
+  "team": "ORL",
+  "pos": "SF",
+  "name": "Jamal Cain"
+ },
+ "nikola vucevic": {
+  "min": 20,
+  "team": "ORL",
+  "pos": "C",
+  "name": "Nikola Vucevic"
+ },
+ "colin castleton": {
+  "min": 7,
+  "team": "ORL",
+  "pos": "C",
+  "name": "Colin Castleton"
+ },
+ "izaiyah nelson": {
+  "min": 7,
+  "team": "ORL",
+  "pos": "SG",
+  "name": "Izaiyah Nelson"
+ },
+ "alex morales": {
+  "min": 7,
+  "team": "ORL",
+  "pos": "SF",
+  "name": "Alex Morales"
+ },
+ "deandre ayton": {
+  "min": 18,
+  "team": "WAS",
+  "pos": "C",
+  "name": "Deandre Ayton"
+ },
+ "justin champagnie": {
+  "min": 17,
+  "team": "WAS",
+  "pos": "SF",
+  "name": "Justin Champagnie"
+ },
+ "tristan vukcevic": {
+  "min": 14,
+  "team": "WAS",
+  "pos": "PF/C",
+  "name": "Tristan Vukcevic"
+ },
+ "cam whitmore": {
+  "min": 10,
+  "team": "WAS",
+  "pos": "SF",
+  "name": "Cam Whitmore"
+ },
+ "jamir watkins": {
+  "min": 10,
+  "team": "WAS",
+  "pos": "SF",
+  "name": "Jamir Watkins"
+ },
+ "julian reese": {
+  "min": 7,
+  "team": "WAS",
+  "pos": "PF",
+  "name": "Julian Reese"
+ },
+ "felix okpara": {
+  "min": 7,
+  "team": "WAS",
+  "pos": "C",
+  "name": "Felix Okpara"
+ },
+ "klay thompson": {
+  "min": 20,
+  "team": "DAL",
+  "pos": "SG",
+  "name": "Klay Thompson"
+ },
+ "marcus sasser": {
+  "min": 15,
+  "team": "DAL",
+  "pos": "PG",
+  "name": "Marcus Sasser"
+ },
+ "moussa cisse": {
+  "min": 12,
+  "team": "DAL",
+  "pos": "C",
+  "name": "Moussa Cisse"
+ },
+ "caleb martin": {
+  "min": 12,
+  "team": "DAL",
+  "pos": "SF",
+  "name": "Caleb Martin"
+ },
+ "tarik biberovic": {
+  "min": 10,
+  "team": "DAL",
+  "pos": "SF",
+  "name": "Tarik Biberovic"
+ },
+ "jett howard": {
+  "min": 7,
+  "team": "DAL",
+  "pos": "SG",
+  "name": "Jett Howard"
+ },
+ "john poulakidas": {
+  "min": 7,
+  "team": "DAL",
+  "pos": "SG",
+  "name": "John Poulakidas"
+ },
+ "clint capela": {
+  "min": 12,
+  "team": "HOU",
+  "pos": "C",
+  "name": "Clint Capela"
+ },
+ "bogdan bogdanovic": {
+  "min": 12,
+  "team": "HOU",
+  "pos": "SG",
+  "name": "Bogdan Bogdanovic"
+ },
+ "jaesean tate": {
+  "min": 9,
+  "team": "HOU",
+  "pos": "SF/PF",
+  "name": "Jae'Sean Tate"
+ },
+ "isaiah crawford": {
+  "min": 9,
+  "team": "HOU",
+  "pos": "SF",
+  "name": "Isaiah Crawford"
+ },
+ "oscar tshiebwe": {
+  "min": 9,
+  "team": "HOU",
+  "pos": "C",
+  "name": "Oscar Tshiebwe"
+ },
+ "jd davison": {
+  "min": 8,
+  "team": "HOU",
+  "pos": "PG",
+  "name": "JD Davison"
+ },
+ "tristen newton": {
+  "min": 7,
+  "team": "HOU",
+  "pos": "PG",
+  "name": "Tristen Newton"
+ },
+ "cedric coward": {
+  "min": 29,
+  "team": "MEM",
+  "pos": "SG",
+  "name": "Cedric Coward"
+ },
+ "isaiah stewart": {
+  "min": 25,
+  "team": "MEM",
+  "pos": "PF/C",
+  "name": "Isaiah Stewart"
+ },
+ "quinten post": {
+  "min": 18,
+  "team": "MEM",
+  "pos": "C",
+  "name": "Quinten Post"
+ },
+ "gg jackson": {
+  "min": 16,
+  "team": "MEM",
+  "pos": "PF",
+  "name": "GG Jackson"
+ },
+ "oliviermaxence prosper": {
+  "min": 15,
+  "team": "MEM",
+  "pos": "SF",
+  "name": "Olivier-Maxence Prosper"
+ },
+ "walter clayton": {
+  "min": 14,
+  "team": "MEM",
+  "pos": "PG",
+  "name": "Walter Clayton Jr"
+ },
+ "karim lopez": {
+  "min": 9,
+  "team": "MEM",
+  "pos": "SF",
+  "name": "Karim Lopez"
+ },
+ "richie saunders": {
+  "min": 9,
+  "team": "MEM",
+  "pos": "SG",
+  "name": "Richie Saunders"
+ },
+ "javon small": {
+  "min": 14,
+  "team": "MEM",
+  "pos": "PG",
+  "name": "Javon Small"
+ },
+ "jahmai mashack": {
+  "min": 8,
+  "team": "MEM",
+  "pos": "SG",
+  "name": "Jahmai Mashack"
+ },
+ "carson cooper": {
+  "min": 7,
+  "team": "MEM",
+  "pos": "C",
+  "name": "Carson Cooper"
+ },
+ "aj johnson": {
+  "min": 9,
+  "team": "MEM",
+  "pos": "PG",
+  "name": "AJ Johnson"
+ },
+ "dangelo russell": {
+  "min": 17,
+  "team": "MEM",
+  "pos": "PG",
+  "name": "D'Angelo Russell"
+ },
+ "herb jones": {
+  "min": 30,
+  "team": "NOP",
+  "pos": "SF",
+  "name": "Herb Jones"
+ },
+ "micah peavy": {
+  "min": 17,
+  "team": "NOP",
+  "pos": "SF",
+  "name": "Micah Peavy"
+ },
+ "karlo matkovic": {
+  "min": 15,
+  "team": "NOP",
+  "pos": "PF",
+  "name": "Karlo Matkovic"
+ },
+ "bryce mcgowens": {
+  "min": 15,
+  "team": "NOP",
+  "pos": "SG",
+  "name": "Bryce McGowens"
+ },
+ "jordan hawkins": {
+  "min": 14,
+  "team": "NOP",
+  "pos": "SG",
+  "name": "Jordan Hawkins"
+ },
+ "deandre jordan": {
+  "min": 12,
+  "team": "NOP",
+  "pos": "C",
+  "name": "DeAndre Jordan"
+ },
+ "david jones garcia": {
+  "min": 7,
+  "team": "NOP",
+  "pos": "SF",
+  "name": "David Jones Garcia"
+ },
+ "jakobi gillespie": {
+  "min": 7,
+  "team": "NOP",
+  "pos": "PG",
+  "name": "Ja'Kobi Gillespie"
+ },
+ "maliq brown": {
+  "min": 7,
+  "team": "NOP",
+  "pos": "PF",
+  "name": "Maliq Brown"
+ },
+ "tobias harris": {
+  "min": 27,
+  "team": "SAS",
+  "pos": "PF",
+  "name": "Tobias Harris"
+ },
+ "tarris reed": {
+  "min": 12,
+  "team": "SAS",
+  "pos": "C",
+  "name": "Tarris Reed Jr"
+ },
+ "jordan mclaughlin": {
+  "min": 10,
+  "team": "SAS",
+  "pos": "PG",
+  "name": "Jordan McLaughlin"
+ },
+ "jayden quaintance": {
+  "min": 9,
+  "team": "SAS",
+  "pos": "PF/C",
+  "name": "Jayden Quaintance"
+ },
+ "cam johnson": {
+  "min": 30,
+  "team": "DEN",
+  "pos": "SF",
+  "name": "Cam Johnson"
+ },
+ "alpha diallo": {
+  "min": 14,
+  "team": "DEN",
+  "pos": "SF",
+  "name": "Alpha Diallo"
+ },
+ "zeke nnaji": {
+  "min": 12,
+  "team": "DEN",
+  "pos": "PF",
+  "name": "Zeke Nnaji"
+ },
+ "trevon brazile": {
+  "min": 8,
+  "team": "DEN",
+  "pos": "PF",
+  "name": "Trevon Brazile"
+ },
+ "kj simpson": {
+  "min": 7,
+  "team": "DEN",
+  "pos": "PG",
+  "name": "KJ Simpson"
+ },
+ "bones hyland": {
+  "min": 18,
+  "team": "MIN",
+  "pos": "PG",
+  "name": "Bones Hyland"
+ },
+ "trey lyles": {
+  "min": 18,
+  "team": "MIN",
+  "pos": "PF",
+  "name": "Trey Lyles"
+ },
+ "joan beringer": {
+  "min": 20,
+  "team": "MIN",
+  "pos": "C",
+  "name": "Joan Beringer"
+ },
+ "jaylen clark": {
+  "min": 16,
+  "team": "MIN",
+  "pos": "SG",
+  "name": "Jaylen Clark"
+ },
+ "rocco zikarsky": {
+  "min": 7,
+  "team": "MIN",
+  "pos": "C",
+  "name": "Rocco Zikarsky"
+ },
+ "zyon pullin": {
+  "min": 10,
+  "team": "MIN",
+  "pos": "PG",
+  "name": "Zyon Pullin"
+ },
+ "enrique freeman": {
+  "min": 7,
+  "team": "MIN",
+  "pos": "PF",
+  "name": "Enrique Freeman"
+ },
+ "trey kaufmanrenn": {
+  "min": 7,
+  "team": "MIN",
+  "pos": "PF",
+  "name": "Trey Kaufman-Renn"
+ },
+ "kenrich williams": {
+  "min": 17,
+  "team": "OKC",
+  "pos": "PF",
+  "name": "Kenrich Williams"
+ },
+ "nikola topic": {
+  "min": 14,
+  "team": "OKC",
+  "pos": "PG",
+  "name": "Nikola Topic"
+ },
+ "thomas sorber": {
+  "min": 11,
+  "team": "OKC",
+  "pos": "C",
+  "name": "Thomas Sorber"
+ },
+ "brooks barnhizer": {
+  "min": 11,
+  "team": "OKC",
+  "pos": "SG/SF",
+  "name": "Brooks Barnhizer"
+ },
+ "josh dix": {
+  "min": 7,
+  "team": "OKC",
+  "pos": "SG",
+  "name": "Josh Dix"
+ },
+ "otega oweh": {
+  "min": 7,
+  "team": "OKC",
+  "pos": "SG",
+  "name": "Otega Oweh"
+ },
+ "yang hansen": {
+  "min": 15,
+  "team": "POR",
+  "pos": "C",
+  "name": "Yang Hansen"
+ },
+ "sidy cissoko": {
+  "min": 14,
+  "team": "POR",
+  "pos": "SF",
+  "name": "Sidy Cissoko"
+ },
+ "branden carlson": {
+  "min": 10,
+  "team": "POR",
+  "pos": "C",
+  "name": "Branden Carlson"
+ },
+ "micah potter": {
+  "min": 10,
+  "team": "POR",
+  "pos": "PF/C",
+  "name": "Micah Potter"
+ },
+ "chris youngblood": {
+  "min": 7,
+  "team": "POR",
+  "pos": "SG",
+  "name": "Chris Youngblood"
+ },
+ "jayson kent": {
+  "min": 7,
+  "team": "POR",
+  "pos": "SF",
+  "name": "Jayson Kent"
+ },
+ "john tonje": {
+  "min": 7,
+  "team": "POR",
+  "pos": "SG",
+  "name": "John Tonje"
+ },
+ "svi mykhailiuk": {
+  "min": 17,
+  "team": "UTA",
+  "pos": "SG",
+  "name": "Svi Mykhailiuk"
+ },
+ "john konchar": {
+  "min": 10,
+  "team": "UTA",
+  "pos": "SG/SF",
+  "name": "John Konchar"
+ },
+ "mo bamba": {
+  "min": 10,
+  "team": "UTA",
+  "pos": "C",
+  "name": "Mo Bamba"
+ },
+ "blake hinson": {
+  "min": 7,
+  "team": "UTA",
+  "pos": "SF",
+  "name": "Blake Hinson"
+ },
+ "tamar bates": {
+  "min": 7,
+  "team": "UTA",
+  "pos": "SG",
+  "name": "Tamar Bates"
+ },
+ "trey alexander": {
+  "min": 7,
+  "team": "UTA",
+  "pos": "PG",
+  "name": "Trey Alexander"
+ },
+ "deanthony melton": {
+  "min": 26,
+  "team": "GSW",
+  "pos": "PG",
+  "name": "De'Anthony Melton"
+ },
+ "charles bassey": {
+  "min": 12,
+  "team": "GSW",
+  "pos": "C",
+  "name": "Charles Bassey"
+ },
+ "lj cryer": {
+  "min": 9,
+  "team": "GSW",
+  "pos": "PG",
+  "name": "L.J. Cryer"
+ },
+ "malevy leons": {
+  "min": 7,
+  "team": "GSW",
+  "pos": "SF",
+  "name": "Malevy Leons"
+ },
+ "lajae jones": {
+  "min": 7,
+  "team": "GSW",
+  "pos": "SG",
+  "name": "Lajae Jones"
+ },
+ "jordan miller": {
+  "min": 20,
+  "team": "LAC",
+  "pos": "SF",
+  "name": "Jordan Miller"
+ },
+ "yanic konan niederhauser": {
+  "min": 19,
+  "team": "LAC",
+  "pos": "C",
+  "name": "Yanic Konan Niederhauser"
+ },
+ "isaiah jackson": {
+  "min": 15,
+  "team": "LAC",
+  "pos": "PF/C",
+  "name": "Isaiah Jackson"
+ },
+ "cam christie": {
+  "min": 9,
+  "team": "LAC",
+  "pos": "SG",
+  "name": "Cam Christie"
+ },
+ "baba miller": {
+  "min": 9,
+  "team": "LAC",
+  "pos": "PF",
+  "name": "Baba Miller"
+ },
+ "nick martinelli": {
+  "min": 7,
+  "team": "LAC",
+  "pos": "SF",
+  "name": "Nick Martinelli"
+ },
+ "sean pedulla": {
+  "min": 7,
+  "team": "LAC",
+  "pos": "PG",
+  "name": "Sean Pedulla"
+ },
+ "jamarion sharp": {
+  "min": 7,
+  "team": "LAC",
+  "pos": "C",
+  "name": "Jamarion Sharp"
+ },
+ "bradley beal": {
+  "min": 28,
+  "team": "LAC",
+  "pos": "SG",
+  "name": "Bradley Beal"
+ },
+ "jaden hardy": {
+  "min": 10,
+  "team": "LAL",
+  "pos": "SG",
+  "name": "Jaden Hardy"
+ },
+ "dalton knecht": {
+  "min": 10,
+  "team": "LAL",
+  "pos": "SG/SF",
+  "name": "Dalton Knecht"
+ },
+ "bronny james": {
+  "min": 10,
+  "team": "LAL",
+  "pos": "PG",
+  "name": "Bronny James"
+ },
+ "chris manon": {
+  "min": 9,
+  "team": "LAL",
+  "pos": "SG",
+  "name": "Chris Manon"
+ },
+ "ak okereke": {
+  "min": 7,
+  "team": "LAL",
+  "pos": "PF",
+  "name": "AK Okereke"
+ },
+ "arthur kaluma": {
+  "min": 9,
+  "team": "LAL",
+  "pos": "SF",
+  "name": "Arthur Kaluma"
+ },
+ "luke kennard": {
+  "min": 18,
+  "team": "PHO",
+  "pos": "SG",
+  "name": "Luke Kennard"
+ },
+ "rasheer fleming": {
+  "min": 17,
+  "team": "PHO",
+  "pos": "PF",
+  "name": "Rasheer Fleming"
+ },
+ "jamaree bouyea": {
+  "min": 12,
+  "team": "PHO",
+  "pos": "PG",
+  "name": "Jamaree Bouyea"
+ },
+ "pat spencer": {
+  "min": 10,
+  "team": "PHO",
+  "pos": "PG",
+  "name": "Pat Spencer"
+ },
+ "cj huntley": {
+  "min": 7,
+  "team": "PHO",
+  "pos": "PF",
+  "name": "CJ Huntley"
+ },
+ "koby brea": {
+  "min": 7,
+  "team": "PHO",
+  "pos": "SG",
+  "name": "Koby Brea"
+ },
+ "dylan cardwell": {
+  "min": 18,
+  "team": "SAC",
+  "pos": "C",
+  "name": "Dylan Cardwell"
+ },
+ "daeqwon plowden": {
+  "min": 9,
+  "team": "SAC",
+  "pos": "SF",
+  "name": "Daeqwon Plowden"
+ },
+ "jonathan mogbo": {
+  "min": 9,
+  "team": "SAC",
+  "pos": "PF",
+  "name": "Jonathan Mogbo"
+ },
+ "adam flagler": {
+  "min": 7,
+  "team": "SAC",
+  "pos": "PG",
+  "name": "Adam Flagler"
+ },
+ "russell westbrook": {
+  "min": 24,
+  "team": "SAC",
+  "pos": "PG",
+  "name": "Russell Westbrook"
+ },
 };

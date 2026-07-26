@@ -59,6 +59,31 @@ function mfhfbNormalizeName(name) {
     .trim();
 }
 
+// Bekannte Namens-Varianten, bei denen Fantrax einen anderen Namen nutzt
+// als unsere Datenbank (z.B. "Alex Sarr" bei Fantrax vs. "Alexandre Sarr"
+// bei uns, aus den BBM-Season-Exports übernommen). Key = normalisierter
+// Alias, Value = normalisierter kanonischer Name (wie er in PLAYER_RATES/
+// ROOKIE_PROJECTIONS steht). Nur als FALLBACK genutzt, wenn die direkte
+// Namenssuche nichts findet -- neue Fälle einfach als Zeile ergänzen,
+// sobald der "X Pick(s) nicht zuordenbar"-Hinweis im Draft Board wieder
+// auf einen Namens-Mismatch statt auf eine echte Datenlücke hinweist.
+const MFHFB_NAME_ALIASES = {
+  'alex sarr': 'alexandre sarr',
+};
+function mfhfbResolveAlias(normalizedName) {
+  return MFHFB_NAME_ALIASES[normalizedName] || normalizedName;
+}
+// Umgekehrte Richtung: kanonischer Name (wie in PLAYER_RATES) -> Fantrax-
+// Alias. Gebraucht für ADP-Daten, die SELBST aus Fantrax-Exports kommen
+// und deshalb unter dem Fantrax-Namen gespeichert sind, nicht unter unserem
+// kanonischen -- die umgekehrte Nachschlagerichtung zu mfhfbResolveAlias().
+const MFHFB_NAME_ALIASES_REVERSE = Object.fromEntries(
+  Object.entries(MFHFB_NAME_ALIASES).map(([alias, canonical]) => [canonical, alias])
+);
+function mfhfbResolveAliasReverse(normalizedName) {
+  return MFHFB_NAME_ALIASES_REVERSE[normalizedName] || normalizedName;
+}
+
 // Baut eine Lookup-Map normalisierter Name -> Spieler-Objekt aus PLAYER_RATES.
 function mfhfbBuildNameIndex(playerRates) {
   const idx = new Map();
@@ -240,6 +265,7 @@ function mfhfbComputeProjection(player, minutes, weights) {
     blk: r.blk * minutes,
     fg3m: r.fg3m * minutes,
     tov: r.tov * minutes,
+    fgm, fga, ftm, fta,
     fgpct: fga > 0 ? (fgm / fga) * 100 : 0,
     ftpct: fta > 0 ? (ftm / fta) * 100 : 0,
   };
@@ -285,6 +311,32 @@ const MFHFB_ESPN_TO_BBM_TEAM = {
 };
 function mfhfbToBbmAbbr(espnAbbr) { return MFHFB_ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
 
+<<<<<<< HEAD
+=======
+let _mfhfbValidTeamSet = null;
+// Menge aller aktuell echten NBA-Team-Kürzel (BBM-Format) -- aus
+// ROSTERS_DATA abgeleitet (30 Teams), mit einer festen Fallback-Liste falls
+// rosters-data.js auf einer Seite nicht geladen ist. Für den Filter
+// "Spieler ohne echtes aktuelles Team raus" (Free Agents, ligafremd, etc.).
+const MFHFB_STATIC_TEAM_FALLBACK = [
+  'ATL','BOS','BKN','CHA','CHI','CLE','DAL','DEN','DET','GSW','HOU','IND',
+  'LAC','LAL','MEM','MIA','MIL','MIN','NOR','NYK','OKC','ORL','PHI','PHO',
+  'POR','SAC','SAS','TOR','UTA','WAS',
+];
+function mfhfbValidTeamSet() {
+  if (_mfhfbValidTeamSet) return _mfhfbValidTeamSet;
+  if (typeof ROSTERS_DATA !== 'undefined' && ROSTERS_DATA && ROSTERS_DATA.rosters) {
+    _mfhfbValidTeamSet = new Set(Object.keys(ROSTERS_DATA.rosters).map(mfhfbToBbmAbbr));
+  } else {
+    _mfhfbValidTeamSet = new Set(MFHFB_STATIC_TEAM_FALLBACK);
+  }
+  return _mfhfbValidTeamSet;
+}
+function mfhfbIsValidCurrentTeam(teamAbbr) {
+  return mfhfbValidTeamSet().has(teamAbbr);
+}
+
+>>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 let _mfhfbCurrentTeamIndex = null;
 function mfhfbBuildCurrentTeamIndex() {
   if (_mfhfbCurrentTeamIndex) return _mfhfbCurrentTeamIndex;
@@ -326,6 +378,31 @@ function mfhfbApplyCurrentTeams(playerRates) {
   return updated;
 }
 
+<<<<<<< HEAD
+=======
+// Dasselbe für manuelle/Rookie-Einträge (mfhfbGetManualStats()) -- deren
+// "team"-Feld ist ein STATISCHES Vorab-Schätzung (z.B. Pre-Draft-Mock in
+// rookie-projections.js) und wird NIE automatisch aktualisiert, wenn der
+// Spieler später tatsächlich einem echten Team beitritt. teams.html zeigt
+// ihn in dem Fall schon korrekt beim echten Team (linke Spalte kommt direkt
+// aus ROSTERS_DATA, nicht aus dem manuellen Eintrag), aber Draft Board und
+// Projections lesen p.team direkt -- ohne diesen Sync bleiben die
+// veraltet, obwohl der Spieler längst einem echten Kader zugeordnet ist
+// (Beispiel: Cameron Boozer, Rookie-Datei sagt GSW, ESPN sagt inzwischen MEM).
+function mfhfbSyncManualTeams() {
+  const idx = mfhfbBuildCurrentTeamIndex();
+  if (idx.size === 0) return 0;
+  const manual = mfhfbGetManualStats();
+  let updated = 0;
+  Object.values(manual).forEach(m => {
+    const current = idx.get(mfhfbNormalizeName(m.name));
+    if (current && current !== m.team) { m.team = current; updated++; }
+  });
+  if (updated > 0) localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(manual));
+  return updated;
+}
+
+>>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 const MFHFB_THEME_KEY = 'mfhfb_theme_v1';
 
 function mfhfbGetTheme() {
@@ -419,10 +496,25 @@ function mfhfbApplyTeamOrder(items, teamAbbr) {
 // --- Projizierte Minuten 2026-27 als Standardwert ---
 // Reihenfolge: manueller Override (Teams-Seite) > projizierte Minuten
 // (projected-minutes.js) > reale MPG der letzten gespielten Saison.
-function mfhfbDefaultMinutes(playerName, fallbackMpg) {
+//
+// Bei der reinen MPG-Rückfall-Option (keine explizite Projektion hinterlegt)
+// ist eine sehr kleine Stichprobe (wenige gespielte Spiele) oft Rauschen --
+// z.B. Tre Scott: 6 Spiele mit 30,4 MPG (Verletzungsvertretung), daraus wird
+// sonst blind "30 Minuten nächste Saison" gemacht. Ab MFHFB_MIN_GP_FOR_TRUST
+// gespielten Spielen volles Vertrauen in die MPG, darunter wird proportional
+// Richtung einer konservativen Bankspieler-Baseline geshrinkt. Werte sind
+// Heuristik/Erfahrungswert, nicht exakt hergeleitet -- bei Bedarf anpassen.
+const MFHFB_MIN_GP_FOR_TRUST = 20;
+const MFHFB_FRINGE_BASELINE_MIN = 6;
+function mfhfbDefaultMinutes(playerName, fallbackMpg, fallbackGp) {
   const key = mfhfbNormalizeName(playerName);
   if (typeof PROJECTED_MINUTES !== 'undefined' && PROJECTED_MINUTES[key]) {
     return PROJECTED_MINUTES[key].min;
+  }
+  if (fallbackGp !== undefined && fallbackGp > 0 && fallbackGp < MFHFB_MIN_GP_FOR_TRUST) {
+    const confidence = fallbackGp / MFHFB_MIN_GP_FOR_TRUST;
+    const baseline = Math.min(fallbackMpg, MFHFB_FRINGE_BASELINE_MIN);
+    return confidence * fallbackMpg + (1 - confidence) * baseline;
   }
   return fallbackMpg;
 }
