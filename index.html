@@ -342,6 +342,11 @@ function computeAll() {
       stl: m.stl || 0, blk: m.blk || 0, fg3m: m.fg3m || 0, tov: m.tov || 0,
       fgpct: m.fgpct || 0, ftpct: m.ftpct || 0,
     };
+    // Keine echten Attempt-Daten für manuelle/Rookie-Einträge -- Minuten als
+    // Volumen-Proxy (gleiche Näherung wie in draft.html/teams.html), sonst
+    // fehlen fgm/fga/ftm/fta komplett und die FGM-FGA-Zelle crasht beim Rendern.
+    s.fga = s.min; s.fgm = s.min * s.fgpct/100;
+    s.fta = s.min; s.ftm = s.min * s.ftpct/100;
     rows.push({
       p: { name: m.name, team: m.team || '-', pos: m.pos || '-', seasons: {}, manualGP: m.gp },
       s, edited: true, manual: true,
@@ -357,9 +362,25 @@ function computeAll() {
     pool = [...rows].sort((a, b) => b.s.pts - a.s.pts).slice(0, n);
   }
 
+  // FG%/FT%: NICHT die rohe Quote z-scoren -- ein Spieler mit 1/1 (100%)
+  // sähe sonst identisch aus wie einer mit 9/10 (90%) auf echtem Volumen.
+  // Stattdessen der tatsächliche Impact auf die Team-Quote: (eigene Quote
+  // minus Liga-Schnitt) mal eigene Versuche -- exakt wie im Draft Board.
+  const poolFga = pool.reduce((a,r)=>a+r.s.fga,0), poolFgm = pool.reduce((a,r)=>a+r.s.fgm,0);
+  const poolFta = pool.reduce((a,r)=>a+r.s.fta,0), poolFtm = pool.reduce((a,r)=>a+r.s.ftm,0);
+  const leagueFgPct = poolFga > 0 ? poolFgm / poolFga : 0;
+  const leagueFtPct = poolFta > 0 ? poolFtm / poolFta : 0;
+  rows.forEach(r => {
+    r._fgImpact = (r.s.fgpct/100 - leagueFgPct) * r.s.fga;
+    r._ftImpact = (r.s.ftpct/100 - leagueFtPct) * r.s.fta;
+  });
+
   const stats = {};
   Z_CATS.forEach(cat => {
-    const vals = pool.map(r => r.s[cat]);
+    let vals;
+    if (cat === 'fgpct') vals = pool.map(r => r._fgImpact);
+    else if (cat === 'ftpct') vals = pool.map(r => r._ftImpact);
+    else vals = pool.map(r => r.s[cat]);
     const m = mean(vals);
     stats[cat] = { mean: m, sd: stdev(vals, m) };
   });
@@ -367,7 +388,11 @@ function computeAll() {
     let z = 0;
     const catContribs = {};
     Z_CATS.forEach(cat => {
-      let catZ = (r.s[cat] - stats[cat].mean) / stats[cat].sd;
+      let basis;
+      if (cat === 'fgpct') basis = r._fgImpact;
+      else if (cat === 'ftpct') basis = r._ftImpact;
+      else basis = r.s[cat];
+      let catZ = (basis - stats[cat].mean) / stats[cat].sd;
       if (cat === 'tov') catZ = -catZ;
       catContribs[cat] = catZ * catWeights[cat];
       z += catContribs[cat];
@@ -406,6 +431,7 @@ function computeAll() {
 }
 
 function render() {
+ try {
   const q = query.toLowerCase().trim();
   let rows = computeAll();
   rows = rows.filter(r =>
@@ -472,6 +498,16 @@ function render() {
       <td style="font-weight:700;font-size:11px;color:${adpVal===null?'var(--muted)':adpVal>0?'var(--good)':'var(--bad)'}">${adpVal!==null?(adpVal>0?'+':'')+adpVal:'—'}</td>
     </tr>`;
   }).join('');
+ } catch(err) {
+   console.error('render() fehlgeschlagen:', err);
+   document.getElementById('count').textContent = 'Fehler beim Rendern (siehe Browser-Konsole)';
+   document.getElementById('body').innerHTML =
+     `<tr><td colspan="20" style="padding:16px; color:var(--bad);">
+       Fehler beim Anzeigen der Projections — Details in der Browser-Konsole (F12).
+       Häufigste Ursache: veraltete Daten in localStorage nach einem Update.
+       Falls das Problem bleibt: localStorage für diese Seite leeren und neu laden.
+     </td></tr>`;
+ }
 }
 
 function downloadCSV() {
