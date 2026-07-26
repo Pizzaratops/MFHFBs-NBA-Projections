@@ -8,11 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>
   // Theme so frueh wie moeglich setzen, damit die Seite nicht kurz im
-  // falschen Theme aufblitzt.
+  // falschen Theme aufblitzt. Wenn eingebettet (?theme=dark|light von
+  // Taco Tuesday HQ), hat der URL-Parameter Vorrang vor dem eigenen
+  // gespeicherten Theme.
   (function(){
-    var t = localStorage.getItem('mfhfb_theme_v1') || 'dark';
+    var params = new URLSearchParams(location.search);
+    var urlTheme = params.get('theme');
+    var t = (urlTheme === 'light' || urlTheme === 'dark')
+      ? urlTheme
+      : (localStorage.getItem('mfhfb_theme_v1') || 'dark');
     document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('mfhfb_theme_v1', t); } catch(e) {}
   })();
+  // Live-Theme-Wechsel von Taco Tuesday HQ annehmen, wenn als Iframe eingebettet
+  window.addEventListener('message', function(ev){
+    if (!ev || !ev.data || ev.data.type !== 'mfhfb-theme') return;
+    var t = ev.data.theme === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('mfhfb_theme_v1', t); } catch(e) {}
+  });
 </script>
 <style>
   :root{
@@ -237,11 +251,7 @@ mfhfbInitThemeToggle('themeToggle');
 // Saison aus players-data.js -- z.B. nach Trades wie Giannis -> Miami.
 // Einmalig beim Laden, danach lesen alle Renders einfach p.team wie bisher.
 // Nur hier + draft.html, NICHT auf teams.html (siehe Kommentar in shared.js).
-<<<<<<< HEAD
-if (typeof ROSTERS_DATA !== 'undefined') mfhfbApplyCurrentTeams(PLAYER_RATES);
-=======
 if (typeof ROSTERS_DATA !== 'undefined') { mfhfbApplyCurrentTeams(PLAYER_RATES); mfhfbSyncManualTeams(); }
->>>>>>> e4ac8a7024e258bca54110697cb1fc46152b2cd2
 
 document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
 
