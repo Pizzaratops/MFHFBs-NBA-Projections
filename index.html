@@ -131,6 +131,13 @@
   td.rank-cell{text-align:center; color:var(--muted); font-family:'DM Mono',monospace; font-size:12px;}
   td.name-cell{text-align:left;}
   .p-name{font-weight:700; font-size:13.5px;}
+  .ext-badge{
+    display:inline-block; margin-left:6px; font-size:9.5px; font-weight:700;
+    background:var(--accent-light, rgba(108,99,255,0.12)); color:var(--accent);
+    border:1px solid var(--border); border-radius:8px; padding:1px 6px; cursor:pointer;
+    white-space:nowrap;
+  }
+  .ext-badge:hover{border-color:var(--accent);}
   .p-meta{color:var(--muted); font-size:11px; margin-top:1px; font-family:'DM Mono',monospace;}
   td.left{text-align:left;}
   td.sep-col{border-left:1px solid var(--border);}
@@ -146,7 +153,10 @@
       <a href="teams.html">NBA Teams</a>
       <a href="draft.html">Draft Board</a>
     </div>
-    <button class="theme-toggle" id="themeToggle"></button>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button class="theme-toggle" id="adminToggle"></button>
+      <button class="theme-toggle" id="themeToggle"></button>
+    </div>
   </div>
 
   <div class="hero">
@@ -186,7 +196,52 @@
     </div>
   </div>
 
-  <div class="toolbar">
+  <div class="panel collapsed" id="livePanel">
+    <div class="panel-head" id="livePanelHead">
+      <div class="panel-title">Live &amp; externe Quellen <span class="badge" id="liveBadge">…</span></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="panel-body">
+      <div class="pool-hint" id="liveStatusText">Lade Live-Daten…</div>
+      <button class="reset-weights" onclick="refreshLiveData()">🔄 Live-Daten neu laden</button>
+
+      <div id="adminExtProjArea" style="display:none; margin-top:16px; border-top:1px solid var(--border); padding-top:14px;">
+        <div class="pool-title">Anzeige-Modus (nur du siehst das, Admin)</div>
+        <label style="display:flex; align-items:center; gap:7px; font-size:12.5px; margin:6px 0 14px;">
+          <input type="checkbox" id="baselineOnlyToggle">
+          Nur eigene Minuten-Baseline zeigen (externe Quellen &amp; Live-Blend ignorieren)
+        </label>
+
+        <div class="pool-title">Externe Projections — Bulk-Import</div>
+        <div class="pool-hint">Erste Zeile = Header (Name, Min, PTS, REB, AST, STL, BLK, 3PM, TOV, FG%, FT% — beliebige Reihenfolge, Komma oder Tab getrennt). Direkt aus Excel/Sheets reinkopierbar.</div>
+        <input type="text" id="extSourceName" placeholder="Quellenname (z.B. FantasyEdge, Josh Lloyd)" style="width:100%; margin:8px 0 6px; padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:12.5px;">
+        <textarea id="extBulkText" rows="6" placeholder="Name,PTS,REB,AST&#10;Shai Gilgeous-Alexander,32,5.5,6.1&#10;Nikola Jokic,26,12.8,10.2" style="width:100%; padding:8px; background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text); font-family:'DM Mono',monospace; font-size:11.5px; resize:vertical;"></textarea>
+        <button class="reset-weights" onclick="runBulkImport()">⬆ Importieren</button>
+        <div id="bulkImportResult" class="pool-hint" style="margin-top:6px;"></div>
+
+        <div class="pool-title" style="margin-top:16px;">Einzelner Spieler</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px;">
+          <input type="text" id="extPlayerSearch" placeholder="Spielername…" style="flex:1; min-width:160px; padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:12.5px;">
+          <input type="text" id="extPlayerSource" placeholder="Quelle" style="width:140px; padding:6px 8px; background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:12.5px;">
+        </div>
+        <div class="cat-grid" id="extSingleGrid"></div>
+        <button class="reset-weights" onclick="saveSingleExternal()">💾 Quelle speichern</button>
+        <div id="extPlayerSourcesList" class="pool-hint" style="margin-top:8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="cmpModal" style="display:none; position:fixed; inset:0; z-index:50; background:rgba(0,0,0,0.55); padding:40px 16px;">
+    <div style="max-width:520px; margin:0 auto; background:var(--card-bg, var(--bg)); border:1px solid var(--border); border-radius:12px; padding:18px; max-height:85vh; overflow:auto;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <div class="panel-title" id="cmpTitle" style="font-size:15px;"></div>
+        <button class="reset-btn" style="font-size:16px;" onclick="closeComparison()">✕</button>
+      </div>
+      <div id="cmpBody"></div>
+    </div>
+  </div>
+
+
     <div class="search-row">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="search" placeholder="Spieler, Team oder Position suchen…">
@@ -233,9 +288,11 @@
 <script src="adp-data.js" onerror="window.__adpMissing=true"></script>
 <script src="rosters-data.js" onerror="window.__rostersMissing=true"></script>
 <script src="assets/shared.js"></script>
+<script src="assets/inseason-blend.js"></script>
 <script>
 let sortKey = 'z', sortAsc = false;
 let query = '';
+let showBaselineOnly = false;
 
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 const Z_CATS = ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'tov', 'ftpct', 'fgpct'];
@@ -340,7 +397,10 @@ function computeAll() {
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg, latest.gp);
     const proj = mfhfbComputeProjection(p, minutes, weights);
-    return { p, s: proj, edited: overrides[key] !== undefined, manual: false };
+    const live = showBaselineOnly
+      ? { values: mfhfbBaselineOnly(proj), meta: { gamesPlayed: 0, usingLiveData: false, sourceCount: 0 } }
+      : mfhfbComputeLiveProjection(p.name, proj);
+    return { p, s: live.values, edited: overrides[key] !== undefined, manual: false, liveMeta: live.meta, _base: proj };
   });
 
   // Manuell gepflegte Spieler (Rookies etc. ohne Rate-Daten, auf der
@@ -371,9 +431,12 @@ function computeAll() {
     // Fall). Realistischere Liga-Schnittwerte: ~0,35 FGA/Min, ~0,12 FTA/Min.
     s.fga = s.min * 0.35; s.fgm = s.fga * s.fgpct/100;
     s.fta = s.min * 0.12; s.ftm = s.fta * s.ftpct/100;
+    const live = showBaselineOnly
+      ? { values: mfhfbBaselineOnly(s), meta: { gamesPlayed: 0, usingLiveData: false, sourceCount: 0 } }
+      : mfhfbComputeLiveProjection(m.name, s);
     rows.push({
       p: { name: m.name, team: m.team || '-', pos: m.pos || '-', seasons: {}, manualGP: m.gp },
-      s, edited: true, manual: true,
+      s: live.values, edited: true, manual: true, liveMeta: live.meta, _base: s,
     });
   });
 
@@ -500,7 +563,7 @@ function render() {
     return `<tr>
       <td class="rank-cell">${i + 1}.</td>
       <td class="name-cell">
-        <div class="p-name">${p.name}${manual ? '<span style="color:var(--accent2);font-size:9px;font-weight:700;margin-left:5px;">MANUELL</span>' : ''}</div>
+        <div class="p-name">${p.name}${manual ? '<span style="color:var(--accent2);font-size:9px;font-weight:700;margin-left:5px;">MANUELL</span>' : ''}${mfhfbNameBadge(row)}</div>
         <div class="p-meta">GP: ${manual ? (p.manualGP !== undefined ? p.manualGP : '-') : mfhfbRecentGP(p)}</div>
       </td>
       <td class="left">${p.team}</td>
@@ -595,6 +658,182 @@ window.addEventListener('storage', (e) => {
     render();
   }
 });
+
+// ============================================================
+//  LIVE-BLENDING / EXTERNE QUELLEN — UI-Verkabelung
+//  (Engine: assets/inseason-blend.js)
+// ============================================================
+
+// Badge neben dem Spielernamen: 🔗n = n externe Quellen eingeflossen,
+// 🏀n = n Live-Spiele dieser Saison eingeflossen. Klick öffnet den
+// Preseason-vs-Live-Vergleich für diesen Spieler.
+function mfhfbNameBadge(row) {
+  const meta = row.liveMeta;
+  if (!meta) return '';
+  const parts = [];
+  if (meta.sourceCount) parts.push(`🔗${meta.sourceCount}`);
+  if (meta.usingLiveData) parts.push(`🏀${meta.gamesPlayed}`);
+  if (!parts.length) return '';
+  const safeName = row.p.name.replace(/'/g, "\\'");
+  return `<span class="ext-badge" onclick="openComparison('${safeName}')" title="Preseason vs. Live vergleichen">${parts.join(' ')}</span>`;
+}
+
+function openComparison(name) {
+  const row = (window.__mfhfbCurrentRows || []).find(r => r.p.name === name);
+  if (!row || !row._base) return;
+  const cmp = mfhfbProjectionComparisonRow(name, row._base);
+  const cats = [
+    ['min', 'MIN'], ['pts', 'PTS'], ['reb', 'REB'], ['ast', 'AST'], ['stl', 'STL'],
+    ['blk', 'BLK'], ['fg3m', '3PM'], ['tov', 'TOV'], ['fgpct', 'FG%'], ['ftpct', 'FT%'],
+  ];
+  const fv = (v, c) => (v === undefined || v === null) ? '—' : ((c === 'fgpct' || c === 'ftpct') ? v.toFixed(1) + '%' : v.toFixed(1));
+  const rowsHtml = cats.map(([c, label]) => `<tr>
+      <td style="text-align:left;color:var(--muted);">${label}</td>
+      <td>${fv(cmp.baseline[c], c)}</td>
+      <td>${fv(cmp.preseasonBlended[c], c)}</td>
+      <td style="font-weight:700;">${fv(cmp.live[c], c)}</td>
+      <td>${cmp.seasonActualAvg ? fv(cmp.seasonActualAvg[c], c) : '—'}</td>
+    </tr>`).join('');
+
+  let statusText;
+  if (cmp.usingLiveData) {
+    statusText = `Live-Blend aktiv — ${cmp.gamesPlayed} Spiel${cmp.gamesPlayed === 1 ? '' : 'e'} dieser Saison bereits eingerechnet.`;
+  } else if (cmp.preseasonBlended.sourceCount) {
+    statusText = `Geblendete Preseason-Projection (${cmp.preseasonBlended.sourceCount} externe Quelle${cmp.preseasonBlended.sourceCount === 1 ? '' : 'n'}), noch keine Live-Saison-Daten.`;
+  } else {
+    statusText = 'Reine Minuten-Baseline — keine externen Quellen, noch keine Live-Daten.';
+  }
+
+  document.getElementById('cmpTitle').textContent = name;
+  document.getElementById('cmpBody').innerHTML = `
+    <div class="pool-hint" style="margin-bottom:10px;">${statusText}</div>
+    <table style="width:100%; font-size:12px; border-collapse:collapse;">
+      <thead><tr style="color:var(--muted);">
+        <th style="text-align:left;">Kat.</th><th>Baseline</th><th>+Quellen</th><th>Live</th><th>Season-Ø</th>
+      </tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>`;
+  document.getElementById('cmpModal').style.display = 'block';
+}
+function closeComparison() { document.getElementById('cmpModal').style.display = 'none'; }
+document.getElementById('cmpModal').addEventListener('click', (e) => {
+  if (e.target.id === 'cmpModal') closeComparison();
+});
+
+document.getElementById('livePanelHead').addEventListener('click', () => {
+  document.getElementById('livePanel').classList.toggle('collapsed');
+});
+
+function updateLiveStatusUI() {
+  const actuals = mfhfbGetLiveActualsSync();
+  const nPlayers = Object.keys(actuals).length;
+  const badge = document.getElementById('liveBadge');
+  const text = document.getElementById('liveStatusText');
+  if (nPlayers === 0) {
+    badge.textContent = 'Vorsaison';
+    text.textContent = 'Noch keine Live-Saison-Daten von Taco Tuesday HQ (vor Saisonstart normal) — Projections laufen auf der (ggf. mit externen Quellen geblendeten) Preseason-Projection.';
+  } else {
+    badge.textContent = nPlayers + ' Spieler live';
+    text.textContent = `Live-Daten geladen: ${nPlayers} Spieler mit Season-Actuals aus Taco Tuesday HQ. Wird automatisch spätestens alle ${MFHFB_LIVE_CACHE_HOURS}h neu geholt.`;
+  }
+}
+
+async function refreshLiveData() {
+  document.getElementById('liveStatusText').textContent = 'Lade Live-Daten…';
+  await mfhfbFetchInSeasonActuals(true);
+  updateLiveStatusUI();
+  render();
+}
+
+// --- Admin-Bereich (externe Quellen pflegen) ---
+mfhfbInitAdminToggle('adminToggle', (isAdmin) => {
+  document.getElementById('adminExtProjArea').style.display = isAdmin ? 'block' : 'none';
+  render();
+});
+if (mfhfbIsAdmin()) document.getElementById('adminExtProjArea').style.display = 'block';
+
+document.getElementById('baselineOnlyToggle').addEventListener('change', (e) => {
+  showBaselineOnly = e.target.checked;
+  render();
+});
+
+function mfhfbAllKnownPlayerNames() {
+  const names = PLAYER_RATES.map(p => p.name);
+  if (typeof ROOKIE_PROJECTIONS !== 'undefined') names.push(...Object.values(ROOKIE_PROJECTIONS).map(r => r.name));
+  names.push(...Object.values(mfhfbGetManualStats()).map(m => m.name));
+  return names;
+}
+
+function runBulkImport() {
+  const source = document.getElementById('extSourceName').value.trim();
+  const text = document.getElementById('extBulkText').value;
+  const resultEl = document.getElementById('bulkImportResult');
+  if (!source) { resultEl.textContent = 'Bitte zuerst einen Quellennamen eingeben.'; return; }
+  if (!text.trim()) { resultEl.textContent = 'Keine Daten zum Importieren im Textfeld.'; return; }
+
+  const result = mfhfbImportExternalBulk(source, text, mfhfbAllKnownPlayerNames());
+  let msg = `${result.imported} importiert, ${result.skipped} übersprungen.`;
+  if (result.error) msg += ` Fehler: ${result.error}`;
+  if (result.unmatched && result.unmatched.length) {
+    msg += `<br>Nicht zugeordnet (Tippfehler o.ä.?): ${result.unmatched.join(', ')}`;
+  }
+  resultEl.innerHTML = msg;
+  render();
+}
+
+// --- Einzel-Editor ---
+document.getElementById('extSingleGrid').innerHTML = MFHFB_EXT_CATS.map(cat => `
+  <div class="cat-row">
+    <div class="cat-label"><span>${(CAT_LABELS[cat] || cat).toUpperCase()}</span></div>
+    <input type="number" step="0.1" id="extcat_${cat}" style="width:70px; padding:4px 6px; background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:12px;">
+  </div>
+`).join('');
+
+function renderExtPlayerSourcesList() {
+  const name = document.getElementById('extPlayerSearch').value.trim();
+  const listEl = document.getElementById('extPlayerSourcesList');
+  if (!name) { listEl.innerHTML = ''; return; }
+  const sources = mfhfbGetExternalSourcesFor(name);
+  const names = Object.keys(sources);
+  if (!names.length) { listEl.innerHTML = 'Noch keine externen Quellen für diesen Spieler.'; return; }
+  listEl.innerHTML = names.map(s => {
+    const vals = MFHFB_EXT_CATS.filter(c => sources[s][c] !== undefined).map(c => `${(CAT_LABELS[c] || c)}: ${sources[s][c]}`).join(', ');
+    return `<div style="display:flex; justify-content:space-between; gap:8px; padding:3px 0;">
+      <span><strong>${s}</strong> (${sources[s].updatedAt}) — ${vals}</span>
+      <button class="reset-btn" onclick="deleteExtSource('${name.replace(/'/g, "\\'")}','${s.replace(/'/g, "\\'")}')">✕ löschen</button>
+    </div>`;
+  }).join('');
+}
+document.getElementById('extPlayerSearch').addEventListener('input', renderExtPlayerSourcesList);
+
+function saveSingleExternal() {
+  const name = document.getElementById('extPlayerSearch').value.trim();
+  const source = document.getElementById('extPlayerSource').value.trim();
+  if (!name || !source) { alert('Bitte Spielername UND Quelle angeben.'); return; }
+  if (!mfhfbAllKnownPlayerNames().some(n => mfhfbNormalizeName(n) === mfhfbNormalizeName(name))) {
+    if (!confirm(`"${name}" wurde in keiner bekannten Spielerliste gefunden — trotzdem als Quelle speichern (z.B. bei Namens-Tippfehler)?`)) return;
+  }
+  const stats = {};
+  MFHFB_EXT_CATS.forEach(cat => {
+    const v = document.getElementById(`extcat_${cat}`).value;
+    if (v !== '') stats[cat] = v;
+  });
+  mfhfbSetExternalSource(name, source, stats);
+  renderExtPlayerSourcesList();
+  render();
+}
+
+function deleteExtSource(name, source) {
+  mfhfbDeleteExternalSource(name, source);
+  renderExtPlayerSourcesList();
+  render();
+}
+
+// Live-Daten einmal beim Laden holen (gecacht, siehe MFHFB_LIVE_CACHE_HOURS),
+// dann neu rendern -- vor Saisonstart liefert das einfach "keine Daten" und
+// die Projections bleiben unverändert auf dem Preseason-Blend.
+mfhfbFetchInSeasonActuals().then(() => { updateLiveStatusUI(); render(); });
+updateLiveStatusUI();
 
 render();
 </script>
