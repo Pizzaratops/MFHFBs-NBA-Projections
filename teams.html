@@ -168,14 +168,11 @@
 <script src="rosters-data.js" onerror="window.__rostersMissing = true"></script>
 <script src="assets/shared.js"></script>
 <script>
-// ESPN- und BBM-Team-Kürzel weichen bei ein paar Teams voneinander ab.
-const ESPN_TO_BBM_TEAM = {
-  GS: 'GSW', NO: 'NOR', NY: 'NYK', PHX: 'PHO', SA: 'SAS', UTAH: 'UTA', WSH: 'WAS',
-};
-function toBbmAbbr(espnAbbr) { return ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
-
 mfhfbInitThemeToggle('themeToggle');
 mfhfbInitAdminToggle('adminToggle', () => render());
+// ESPN_TO_BBM_TEAM/toBbmAbbr wurden nach assets/shared.js verschoben
+// (MFHFB_ESPN_TO_BBM_TEAM/mfhfbToBbmAbbr) -- zentral statt dupliziert, da
+// jetzt auch index.html/draft.html sie brauchen (siehe mfhfbApplyCurrentTeams).
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
 
 // Rookie-Projektionen als Vorbelegung in localStorage schreiben —
@@ -407,7 +404,7 @@ function render() {
   });
 
   container.innerHTML = filtered.map(([abbr, team]) => {
-    const bbmAbbr = toBbmAbbr(abbr);
+    const bbmAbbr = mfhfbToBbmAbbr(abbr);
     const leftPlayers = q
       ? team.players.filter(p => p.name.toLowerCase().includes(q) || team.name.toLowerCase().includes(q) || abbr.toLowerCase().includes(q))
       : team.players;

@@ -13,6 +13,39 @@ const MFHFB_DEFAULT_CATEGORY_WEIGHTS = {
   tov: 0.25, ftpct: 0.9, fgpct: 1,
 };
 
+// --- Year-to-Year-Stabilität pro Kategorie (Josh Lloyd, Locked On Fantasy
+// Basketball, "Year To Year Statistical Correlation") ---
+// Lloyd hat pro Kategorie den Pearson-R zwischen Season N und Season N+1
+// gemessen (Sample: Top-184-250 Spieler über mehrere Jahres-Paare). Manche
+// Kategorien sind extrem "sticky" (Rebounds/Assists/Blocks/3PM: R ≈ 0.87–0.92
+// — der Vorjahreswert ist schon ein sehr guter Prädiktor), andere schwanken
+// stark von Jahr zu Jahr (Steals, FT%: R ≈ 0.67–0.73 — hier auf das letzte
+// Jahr zu vertrauen heißt oft, Rauschen zu jagen statt Signal).
+//
+// ALPHA steuert pro Rate-Key, wie stark die normale Recency-Gewichtung
+// (Slider w1/w2, siehe mfhfbWeightedRates) noch zusätzlich Richtung eines
+// flachen Mehrjahres-Durchschnitts (mfhfbFlatAverageRates) geshrinkt wird:
+//   alpha = 1   -> unverändertes Verhalten wie bisher (volles Vertrauen
+//                  in die Recency-Gewichtung, z.B. Rebounds/Assists/Blocks)
+//   alpha < 1   -> Rate wird zusätzlich Richtung Karriere-/Mehrjahres-
+//                  Schnitt gezogen (dämpft Ausreißer bei volatilen Kategorien
+//                  wie Steals/FT%), Stärke proportional zu (1 - Stabilität)
+// Grob aus Lloyds R-Werten abgeleitet (R > 0.85 -> alpha 0.9-1.0, R ~ 0.7
+// -> alpha ~0.55-0.6). fgm/fga bestimmen FG% (R 0.83), ftm/fta FT% (R 0.67-0.73).
+const MFHFB_STABILITY_ALPHA = {
+  reb: 1.0,   // R ≈ 0.90–0.92, stabilste Kategorie überhaupt
+  ast: 1.0,   // R ≈ 0.90
+  blk: 1.0,   // R ≈ 0.91–0.92
+  fg3m: 0.95, // R ≈ 0.87–0.89
+  pts: 0.9,   // R ≈ 0.86
+  fgm: 0.85,  // treibt FG%, R(FG%) ≈ 0.83
+  fga: 0.85,
+  tov: 0.85,  // R ≈ 0.77–0.88, ohnehin schon niedrig cat-gewichtet (0.25)
+  ftm: 0.55,  // treibt FT%, R(FT%) ≈ 0.67–0.73 — deutlich shrinken
+  fta: 0.55,
+  stl: 0.55,  // R ≈ 0.67–0.71, am wenigsten stabile Zählkategorie
+};
+
 // Namen aus unterschiedlichen Quellen (BBM-Export vs. ESPN) normalisieren,
 // damit z.B. "Nikola Jokić" (ESPN) und "Nikola Jokic" (BBM) gematcht werden.
 function mfhfbNormalizeName(name) {
@@ -107,11 +140,34 @@ function mfhfbRecentGP(player) {
   }).join('/');
 }
 
+// Flacher (ungewichteter) Durchschnitt der Pro-Minute-Rate über alle
+// tatsächlich gespielten Saisons eines Spielers — der "Karriere-Schnitt"
+// als Shrinkage-Ziel für volatile Kategorien (siehe MFHFB_STABILITY_ALPHA).
+// Bei nur einer gespielten Saison identisch zur gewichteten Rate dieser
+// einen Saison, hat also keinen Effekt für Rookies/Spieler mit kurzer Historie.
+function mfhfbFlatAverageRates(player) {
+  const labels = mfhfbPlayedSeasonLabels(player);
+  const sums = {};
+  labels.forEach((label) => {
+    const rates = player.seasons[label].rates;
+    for (const key in rates) sums[key] = (sums[key] || 0) + rates[key];
+  });
+  const out = {};
+  for (const key in sums) out[key] = sums[key] / labels.length;
+  return out;
+}
+
 // Gewichtete Pro-Minute-Rate über die tatsächlich gespielten Saisons eines
 // Spielers ("missed"-Saisons mit 0 GP fließen NICHT in die Rate ein, sonst
 // würde eine Verletzungssaison die Projektion künstlich auf 0 drücken).
 // Die zwei jüngsten GESPIELTEN Saisons bekommen die Slider-Gewichte,
 // ältere zählen fix 1.
+//
+// Zusätzlich wird das Ergebnis pro Kategorie per MFHFB_STABILITY_ALPHA
+// Richtung Mehrjahres-Schnitt geshrinkt (Josh-Lloyd-Year-to-Year-Stabilität,
+// siehe Kommentar dort) — bei stabilen Kategorien (alpha=1) ändert sich
+// dadurch nichts am bisherigen Verhalten, bei volatilen (Steals, FT%) wird
+// ein reiner Ein-Jahres-Ausreißer gedämpft statt voll durchgereicht.
 function mfhfbWeightedRates(player, weights) {
   const labels = mfhfbPlayedSeasonLabels(player);
   const n = labels.length;
@@ -125,8 +181,20 @@ function mfhfbWeightedRates(player, weights) {
     for (const key in rates) sums[key] = (sums[key] || 0) + rates[key] * w;
     wsum += w;
   });
+  const recencyWeighted = {};
+  for (const key in sums) recencyWeighted[key] = sums[key] / wsum;
+
+  // Bei nur einer Saison Historie gibt es keinen sinnvollen "Mehrjahres-
+  // Schnitt" zum Shrinken -> unverändert die reine Recency-Rate zurückgeben.
+  if (n <= 1) return recencyWeighted;
+
+  const flat = mfhfbFlatAverageRates(player);
   const out = {};
-  for (const key in sums) out[key] = sums[key] / wsum;
+  for (const key in recencyWeighted) {
+    const alpha = MFHFB_STABILITY_ALPHA[key] ?? 1.0;
+    const flatVal = flat[key] ?? recencyWeighted[key];
+    out[key] = alpha * recencyWeighted[key] + (1 - alpha) * flatVal;
+  }
   return out;
 }
 
@@ -199,6 +267,63 @@ function mfhfbHeatStyle(value, min, max, invert) {
   t = Math.max(0, Math.min(1, t));
   const hue = Math.round(t * 120); // 0 = rot, 120 = grün
   return `background-color:hsla(${hue},70%,45%,0.22);`;
+}
+
+// --- Aktuelles Team pro Spieler (aus dem täglichen ESPN-Roster-Fetch) ---
+// PLAYER_RATES/players-data.js "team"-Feld ist historisch (Team der letzten
+// GESPIELTEN Saison, aus dem BBM-Export) -- das ist auf teams.html bewusst
+// so gewollt (rechte Spalte = tatsächliche End-Rotation der Vorsaison, siehe
+// dortiger Kommentar). Für die Projections- und Draft-Board-Seite wollen wir
+// aber das AKTUELLE Team zeigen (nach Trades/Free Agency), das schon täglich
+// automatisch in rosters-data.js (ROSTERS_DATA) landet -- nur wurde es dort
+// bisher nicht genutzt. mfhfbApplyCurrentTeams() gleicht beides ab.
+
+// ESPN- und BBM-Team-Kürzel weichen bei ein paar Teams voneinander ab
+// (einzige zentrale Stelle -- vorher in teams.html dupliziert).
+const MFHFB_ESPN_TO_BBM_TEAM = {
+  GS: 'GSW', NO: 'NOR', NY: 'NYK', PHX: 'PHO', SA: 'SAS', UTAH: 'UTA', WSH: 'WAS',
+};
+function mfhfbToBbmAbbr(espnAbbr) { return MFHFB_ESPN_TO_BBM_TEAM[espnAbbr] || espnAbbr; }
+
+let _mfhfbCurrentTeamIndex = null;
+function mfhfbBuildCurrentTeamIndex() {
+  if (_mfhfbCurrentTeamIndex) return _mfhfbCurrentTeamIndex;
+  const idx = new Map();
+  if (typeof ROSTERS_DATA !== 'undefined' && ROSTERS_DATA && ROSTERS_DATA.rosters) {
+    Object.entries(ROSTERS_DATA.rosters).forEach(([espnAbbr, team]) => {
+      const bbmAbbr = mfhfbToBbmAbbr(espnAbbr);
+      (team.players || []).forEach(pl => {
+        idx.set(mfhfbNormalizeName(pl.name), bbmAbbr);
+      });
+    });
+  }
+  _mfhfbCurrentTeamIndex = idx;
+  return idx;
+}
+
+// Aktuelles Team eines Spielers (BBM-Kürzel-Format), oder fallbackAbbr falls
+// er auf keinem der 30 ESPN-Roster auftaucht (z.B. Free Agent gerade ohne
+// Team, oder rosters-data.js fehlt/ist nicht geladen -- dann einfach das
+// historische Team aus PLAYER_RATES weiterverwenden statt "-" anzuzeigen).
+function mfhfbCurrentTeamAbbr(playerName, fallbackAbbr) {
+  const idx = mfhfbBuildCurrentTeamIndex();
+  return idx.get(mfhfbNormalizeName(playerName)) || fallbackAbbr;
+}
+
+// Überschreibt in-place das "team"-Feld einer Liste von Spielerobjekten
+// (z.B. PLAYER_RATES) mit dem aktuellen Team, wo bekannt. NUR auf Seiten
+// aufrufen, die das historische Team NICHT separat brauchen (index.html,
+// draft.html) -- NICHT auf teams.html, deren rechte Spalte bewusst nach dem
+// historischen Team filtert (siehe renderRightRows dort).
+function mfhfbApplyCurrentTeams(playerRates) {
+  const idx = mfhfbBuildCurrentTeamIndex();
+  if (idx.size === 0) return 0; // rosters-data.js nicht geladen -- nichts zu tun
+  let updated = 0;
+  playerRates.forEach(p => {
+    const current = idx.get(mfhfbNormalizeName(p.name));
+    if (current && current !== p.team) { p.team = current; updated++; }
+  });
+  return updated;
 }
 
 const MFHFB_THEME_KEY = 'mfhfb_theme_v1';
