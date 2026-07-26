@@ -1968,14 +1968,22 @@ function fmtDraftState(s){
 function applyFantraxPicks(draftPicks, players){
   const sorted = [...draftPicks].sort((a,b) => (a.pick||0) - (b.pick||0));
   const newPicks = [];
-  let unmatched = 0;
+  const unmatchedNames = [];
   sorted.forEach(p => {
     if(!p.playerId) return; // noch nicht gefallener (zukünftiger) Pick
     const info = players[p.playerId];
     const displayName = info ? mfhfbFantraxNameToDisplay(info.name) : null;
     const rk = displayName ? nameToRk[mfhfbNormalizeName(displayName)] : undefined;
     const teamNum = liveSync.teamIdToNum[p.teamId];
-    if(rk === undefined || teamNum === undefined){ unmatched++; return; }
+    if(rk === undefined || teamNum === undefined){
+      // Für die UI merken, WELCHER Spieler nicht zugeordnet werden konnte --
+      // displayName falls Fantrax den Namen kennt aber wir ihn nicht in
+      // unserer DB haben (häufigster Fall: neuer Rookie), sonst die
+      // Fantrax-Player-ID als letzter Hinweis (falls Fantrax selbst schon
+      // keine Namensauflösung liefert).
+      unmatchedNames.push(displayName || `Fantrax-ID ${p.playerId}`);
+      return;
+    }
     newPicks.push({ rk, team: teamNum });
   });
   state.picks = newPicks;
@@ -1986,7 +1994,7 @@ function applyFantraxPicks(draftPicks, players){
   }
   renderAll();
   scheduleSave();
-  return unmatched;
+  return { unmatched: unmatchedNames.length, names: unmatchedNames };
 }
 
 async function loadFantraxLeague(){
@@ -2047,7 +2055,7 @@ async function loadFantraxLeague(){
     liveSync.myTeamId = teamSel.value || null;
     document.getElementById('liveTeamPickWrap').style.display = order.length ? '' : 'none';
 
-    const unmatched = applyFantraxPicks(draft.draftPicks || [], players);
+    const syncResult = applyFantraxPicks(draft.draftPicks || [], players);
 
     prefs.lastLeagueId = leagueId;
     prefs.leagues[leagueId] = {
@@ -2065,8 +2073,15 @@ async function loadFantraxLeague(){
     statusEl.textContent = 'verbunden';
     statusEl.className = 'cloud-status ok';
     let detail = `Draft-Status: ${fmtDraftState(draft.draftState)} · ${made}/${total} Picks gefallen · zuletzt geladen ${new Date().toLocaleTimeString('de-DE')}`;
-    if(unmatched) detail += ` · ⚠️ ${unmatched} Pick(s) nicht zuordenbar (Spieler nicht in unserer Datenbank, z.B. neue Rookies)`;
-    detailEl.textContent = detail;
+    if(syncResult.unmatched){
+      const namesShort = syncResult.names.slice(0, 3).join(', ') + (syncResult.names.length > 3 ? ` +${syncResult.names.length-3} weitere` : '');
+      detail += ` · ⚠️ ${syncResult.unmatched} Pick(s) nicht zuordenbar: `
+        + `<span title="${syncResult.names.join(', ').replace(/"/g,'&quot;')}" style="text-decoration:underline dotted; cursor:help;">${namesShort}</span>`
+        + ` (Spieler nicht in unserer Datenbank, z.B. neue Rookies)`;
+      detailEl.innerHTML = detail;
+    } else {
+      detailEl.textContent = detail;
+    }
 
     document.getElementById('liveAutoWrap').style.display = '';
     if(draft.draftState === 'running' && document.getElementById('liveAutoRefresh').checked) startAutoRefresh();
