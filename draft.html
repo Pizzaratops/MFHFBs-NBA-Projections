@@ -647,8 +647,13 @@ function buildPlayers(){
       fgpct: m.fgpct || 0, ftpct: m.ftpct || 0,
     };
     // keine Attempt-Daten für manuelle Einträge -> Minuten als Gewichtungs-Proxy
-    s.fga = min; s.fgm = min * s.fgpct/100;
-    s.fta = min; s.ftm = min * s.ftpct/100;
+    // Keine echten Attempt-Daten für manuelle Einträge -- 1:1 Minuten als
+    // Proxy war zu grob (unterstellt einen Freiwurf/Feldwurf JEDE Minute,
+    // sprengt bei hoher Quote den Z-Score massiv, siehe Kingston-Flemings-
+    // Fall: FT%-catZ von +10,75 durch diesen Bug). Realistischere Liga-
+    // Schnittwerte: ~0,35 FGA/Min, ~0,12 FTA/Min (grobe NBA-Durchschnitte).
+    s.fga = min * 0.35; s.fgm = s.fga * s.fgpct/100;
+    s.fta = min * 0.12; s.ftm = s.fta * s.ftpct/100;
     rows.push({ rk: rows.length+1, n: m.name, team: m.team || '-', pos: m.pos || '-', s, manual:true,
                 durability: 0.85, durabilityKnown:false });
   });
@@ -721,7 +726,8 @@ function buildPlayers(){
     //  - row.adp  = eigener ADP aus deinen erfassten Fantrax Draft Results
     //  - row.fadp = Fantrax' eigener aktueller ADP-Snapshot
     // Jeweils null, wenn für den Spieler keine Daten aus der Quelle vorliegen.
-    const adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(row.n)] : undefined;
+    const normRowName = mfhfbNormalizeName(row.n);
+    const adpEntry = (typeof ADP_DATA !== 'undefined') ? (ADP_DATA[normRowName] || ADP_DATA[mfhfbResolveAliasReverse(normRowName)]) : undefined;
     row.adp = (adpEntry && adpEntry.ownAdp !== null && adpEntry.ownAdp !== undefined) ? adpEntry.ownAdp : null;
     row.adpCount = adpEntry ? adpEntry.ownCount : 0;
     row.adpMin = (adpEntry && adpEntry.ownMin !== null && adpEntry.ownMin !== undefined) ? adpEntry.ownMin : null;
@@ -1973,7 +1979,8 @@ function applyFantraxPicks(draftPicks, players){
     if(!p.playerId) return; // noch nicht gefallener (zukünftiger) Pick
     const info = players[p.playerId];
     const displayName = info ? mfhfbFantraxNameToDisplay(info.name) : null;
-    const rk = displayName ? nameToRk[mfhfbNormalizeName(displayName)] : undefined;
+    const normDisplay = displayName ? mfhfbNormalizeName(displayName) : null;
+    const rk = normDisplay ? (nameToRk[normDisplay] ?? nameToRk[mfhfbResolveAlias(normDisplay)]) : undefined;
     const teamNum = liveSync.teamIdToNum[p.teamId];
     if(rk === undefined || teamNum === undefined){
       // Für die UI merken, WELCHER Spieler nicht zugeordnet werden konnte --

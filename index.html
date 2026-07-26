@@ -352,8 +352,11 @@ function computeAll() {
     // Keine echten Attempt-Daten für manuelle/Rookie-Einträge -- Minuten als
     // Volumen-Proxy (gleiche Näherung wie in draft.html/teams.html), sonst
     // fehlen fgm/fga/ftm/fta komplett und die FGM-FGA-Zelle crasht beim Rendern.
-    s.fga = s.min; s.fgm = s.min * s.fgpct/100;
-    s.fta = s.min; s.ftm = s.min * s.ftpct/100;
+    // Keine echten Attempt-Daten für manuelle Einträge -- 1:1 Minuten als
+    // Proxy war zu grob, siehe Kommentar in draft.html (Kingston-Flemings-
+    // Fall). Realistischere Liga-Schnittwerte: ~0,35 FGA/Min, ~0,12 FTA/Min.
+    s.fga = s.min * 0.35; s.fgm = s.fga * s.fgpct/100;
+    s.fta = s.min * 0.12; s.ftm = s.fta * s.ftpct/100;
     rows.push({
       p: { name: m.name, team: m.team || '-', pos: m.pos || '-', seasons: {}, manualGP: m.gp },
       s, edited: true, manual: true,
@@ -419,7 +422,8 @@ function computeAll() {
     // ADP-Value: wird nach dem Sort gesetzt (braucht finalen Z-Rang)
     r.adpVal = null;
     r._adpRef = null;
-    const _adpEntry = (typeof ADP_DATA !== 'undefined') ? ADP_DATA[mfhfbNormalizeName(r.p.name)] : undefined;
+    const _normName = mfhfbNormalizeName(r.p.name);
+    const _adpEntry = (typeof ADP_DATA !== 'undefined') ? (ADP_DATA[_normName] || ADP_DATA[mfhfbResolveAliasReverse(_normName)]) : undefined;
     if (_adpEntry) r._adpRef = _adpEntry.fantraxAdp || _adpEntry.ownAdp || null;
   });
 

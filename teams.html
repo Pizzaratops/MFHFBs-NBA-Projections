@@ -282,8 +282,9 @@ function renderManualRow(rp, teamBbmAbbr, range) {
   // Quote selbst bleibt das editierbare Feld, wie bisher).
   const minVal = manual.min !== undefined ? manual.min : (projMin !== undefined ? projMin : 0);
   const attemptProxy = (pctId) => {
-    const est = minVal * (manual[pctId] || 0) / 100;
-    return `<td style="font-size:11px; color:var(--muted);" title="Geschätzt aus Min × Quote — keine echten Attempt-Daten für manuelle/Rookie-Einträge">${fmt(est,1)}</td>`;
+    const rate = pctId === 'ftpct' ? 0.12 : 0.35; // ~FTA/Min bzw. ~FGA/Min, grober Liga-Schnitt
+    const est = minVal * rate;
+    return `<td style="font-size:11px; color:var(--muted);" title="Geschätzte Versuche aus Min × Liga-Schnittrate — keine echten Attempt-Daten für manuelle/Rookie-Einträge">${fmt(est,1)}</td>`;
   };
   return `<tr ${admin ? 'draggable="true"' : ''} data-key="${key}" data-team="${teamBbmAbbr}" class="manual-row">
     <td class="name-cell">${admin ? '<span class="drag-handle">⠿</span>' : ''}${rp.name}<span class="manual-tag">manuell</span></td>
