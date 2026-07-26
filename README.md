@@ -27,8 +27,10 @@ kombiniert und auf projizierte Minuten für die kommende Saison
 hochgerechnet. Daraus entstehen 9-Cat-Z-Scores, die auf drei Seiten
 verwendet werden:
 
-- **Projections** (`index.html`) — Ranking aller Spieler nach Z-Score,
-  eigene Projektion vs. Realwerte der letzten Saison im Vergleich.
+- **Projections** (`index.html`) — Ranking aller Spieler nach Z-Score.
+  Zeigt eigene Projektion, wahlweise geblendet mit externen Quellen
+  und/oder Live-Season-Daten (siehe "In-Season-Blending & externe
+  Quellen" unten), im Vergleich zu Realwerten der letzten Saison.
 - **NBA Teams** (`teams.html`) — Kader pro Team, Minuten-Eingabe
   (Quelle der Wahrheit für Projektionsminuten), aktueller Kader vs.
   End-Rotation der Vorsaison.
@@ -70,6 +72,8 @@ flowchart TD
         A3["Fantrax ADP Snapshot<br/>data/fantrax-adp.csv"]
         A4["Rookie-Prospect-Liste<br/>Rankings_and_Projections_*.xlsx"]
         A5["ESPN Live-Roster<br/>via GitHub Action, täglich"]
+        A6["Externe Projections<br/>FantasyEdge, Josh Lloyd, Hashtag Basketball, ..."]
+        A7["Taco Tuesday HQ<br/>livescores-daily.js (fremdes Repo)"]
     end
 
     subgraph Build["Build-Skripte (scripts/)"]
@@ -93,6 +97,12 @@ flowchart TD
         D4["mfhfbGetManualStats / mfhfbGetOverrides<br/>localStorage-Zugriff"]
     end
 
+    subgraph LiveEngine["assets/inseason-blend.js — In-Season-Blending (nur index.html, opt-in)"]
+        G1["mfhfbBlendedPreseasonProjection<br/>Baseline + externe Quellen mitteln"]
+        G2["mfhfbFetchInSeasonActuals<br/>livescores-daily.js clientseitig laden (raw.githubusercontent.com)"]
+        G3["mfhfbComputeLiveProjection<br/>Phantom-Games-Formel: (N_prior×Preseason + Σechte Spiele) / (N_prior + n)"]
+    end
+
     subgraph Seiten["Die drei Seiten"]
         E1["index.html — Projections<br/>Ranking nach Z-Score"]
         E2["teams.html — NBA Teams<br/>Minuten-Eingabe = Quelle der Wahrheit"]
@@ -104,6 +114,7 @@ flowchart TD
         F2["Manuelle Stats / Rookies"]
         F3["Gewichtungen"]
         F4["Draft-Status"]
+        F5["Externe Projections<br/>(mfhfb_external_proj_v1)"]
     end
 
     A1 --> B1 --> C1
@@ -134,6 +145,14 @@ flowchart TD
     F3 --> D1
     E3 -- "Picks, Punt-Auswahl, Sortierung" --> F4
     F4 --> E3
+
+    A6 -- "Admin-Panel: Bulk-Paste/Einzeleditor" --> F5
+    F5 --> G1
+    Engine -- "Baseline-Projection (mfhfbComputeProjection)" --> G1
+    A7 -- "fetch() beim Laden, gecacht (sessionStorage)" --> G2
+    G1 --> G3
+    G2 --> G3
+    G3 -- "ersetzt Baseline, wenn nicht 'nur Baseline'-Modus" --> E1
 ```
 
 ### Grundidee in einem Satz
@@ -168,7 +187,12 @@ Vorsaison-Zuordnung zeigt.
 Z-Score. Zeigt eigene Projektion und Realwerte der letzten Saison
 nebeneinander. Hier werden Jahresgewichtungen justiert
 (`mfhfbGetWeights()`/`mfhfbSetWeights()`, bis zu 2× für die letzten
-zwei Saisons).
+zwei Saisons). Zusätzlich Panel "Live & externe Quellen": Live-Status
+der aktuellen Saison, und (hinter dem Admin-Lock) Bulk-Import/
+Einzeleditor für externe Projections plus "Nur Baseline zeigen"-Schalter
+— Details siehe eigener Abschnitt unten. 🔗/🏀-Badge neben dem
+Spielernamen öffnet den Vergleich Baseline → +Quellen → Live →
+Season-Schnitt.
 
 **`teams.html` — NBA Teams.** Kader pro Team (linke Spalte = aktueller
 ESPN-Kader, rechte Spalte = tatsächliche End-Rotation der Vorsaison,
@@ -218,8 +242,14 @@ dieselbe Engine, plus draft-spezifische Zusatzschicht:
 | `mfhfb_rookie_seed_version` | teams.html | teams.html | Versions-Marker fürs Rookie-Reseeding |
 | `mfhfb_draft_state_v1` | draft.html | draft.html | Picks, Punt-Auswahl, Sortierung, Filter |
 | `mfhfb_live_sync_v1` | draft.html | draft.html | gespeicherte Fantrax-Liga-IDs |
-| `mfhfb_admin_v1` | teams.html | teams.html | Admin-Lock für Minuten-Bearbeitung |
+| `mfhfb_admin_v1` | teams.html | teams.html, index.html | Admin-Lock (Minuten-Bearbeitung + externe Quellen) |
 | `mfhfb_theme_v1` | alle 3 Seiten | alle 3 Seiten | Hell/Dunkel-Modus |
+| `mfhfb_external_proj_v1` | index.html (Admin-Bereich) | index.html | externe Projections pro Spieler/Quelle/Kategorie |
+| `mfhfb_inseason_priors_v1` | index.html (falls justiert) | index.html | N_prior-Overrides fürs In-Season-Blending, pro Kategorie |
+
+Zusätzlich `sessionStorage` (nur Tab-Sitzung, kein `localStorage`):
+`mfhfb_inseason_actuals_cache_v1` — gecachte Season-Actuals aus dem
+Taco-Tuesday-HQ-Live-Feed, max. 6h alt (siehe In-Season-Blending-Abschnitt).
 
 Alles geräte-/browserlokal, nicht account- oder cloudweit — auf einem
 anderen Gerät/Browser startet alles wieder mit den `*-data.js`-Defaults.
@@ -384,6 +414,72 @@ Falls das fehlschlägt: unter **Settings → Actions → General → Workflow
 permissions** muss "Read and write permissions" aktiviert sein, sonst darf
 die Action nicht zurück committen.
 
+### In-Season-Blending & externe Quellen (`assets/inseason-blend.js`)
+
+Bildet den bisherigen manuellen Excel-Workflow nach: eigene
+Minuten-Baseline gegen gefundene externe Projections (FantasyEdge, Josh
+Lloyd, Hashtag Basketball, ...) mitteln, und sobald die Saison läuft
+laufend gegen echte Spiele nachjustieren — automatisch statt von Hand.
+
+**Zwei unabhängige Bausteine:**
+
+1. **Externe Projections ("Konsens-Layer").** Die reine Minuten-Rate-
+   Baseline bleibt immer bestehen (`mfhfbComputeProjection`,
+   admin-sichtbar über "Nur eigene Minuten-Baseline zeigen"). Externe
+   Quellen werden pro Spieler/Kategorie in `localStorage`
+   (`mfhfb_external_proj_v1`) gespeichert und beim Rendern zu einem
+   einfachen Mittelwert aus Baseline + allen Quellen geblendet
+   (`mfhfbBlendedPreseasonProjection`) — exakt die alte
+   "34 + 32 → 33"-Excel-Logik, nur für beliebig viele Quellen
+   gleichzeitig. Zwei Eingabewege (beide im Admin-Bereich von
+   `index.html`, Panel "Live & externe Quellen"):
+   - **Bulk-Import** — ganze Tabelle aus Excel/Sheets reinkopieren
+     (Komma oder Tab getrennt, Header-Zeile mit beliebiger Spalten-
+     reihenfolge, erkennt Aliase wie `PTS`/`PPG`).
+   - **Einzeleditor** — ein Spieler, eine Quelle, Kategorien einzeln.
+2. **In-Season-Live-Blending.** Sobald echte Spiele da sind, wird die
+   geblendete Preseason-Projection mit den bisherigen Season-Actuals
+   nach der Formel
+   ```
+   neuer_wert = (N_prior × preseason_wert + Σ echte_spiele) / (N_prior + anzahl_spiele)
+   ```
+   kombiniert (`mfhfbComputeLiveProjection`) — mathematisch identisch zu
+   "N_prior Phantom-Spielen mit dem Preseason-Wert". `N_prior`
+   ("Phantom-Spiele") ist pro Kategorie kalibriert, abgeleitet aus
+   `MFHFB_STABILITY_ALPHA` in `shared.js`: stabile Kategorien (REB/AST/
+   BLK) bewegen sich langsam, volatile (STL/FT%) reagieren schneller auf
+   echte Daten. Startwerte in `MFHFB_INSEASON_PRIOR_DEFAULTS`, über
+   `mfhfbSetInSeasonPrior()` justierbar.
+
+**Datenquelle für (2):** kein eigener Fetch/Backend nötig — der
+bestehende tägliche Live-Score-Feed aus dem separaten
+**Taco-Tuesday-HQ-Repo** (`data/livescores-daily.js`, dort per eigener
+GitHub Action gefüllt) wird clientseitig direkt von
+`raw.githubusercontent.com` geladen (`mfhfbFetchInSeasonActuals`,
+gecacht in `sessionStorage`, max. alle 6h neu). Der Regular-Season-
+League-Key dort ist `"nba"` (`MFHFB_LIVE_LEAGUE` in
+`inseason-blend.js`) — vor Saisonstart schlicht leer, dann liefert die
+Funktion sauber "keine Live-Daten" statt eines Fehlers.
+
+**Einschränkung:** Die Live-Daten liefern nur FG%/FT%-Quoten pro Spiel,
+keine rohen Attempts (FGA/FTA) — Volumen-Gewichtung wie bei der
+Preseason-Engine ist für den In-Season-Teil dieser beiden Kategorien
+daher nicht möglich, geblendet wird direkt auf der Quote. `fgm`/`ftm`
+werden nach jedem Blend-Schritt aus den (unveränderten) Attempts der
+Baseline neu abgeleitet, damit Quote und Volumen in derselben Zeile
+konsistent bleiben (relevant für die Liga-Schnitt-FG%-Berechnung, die
+beides parallel nutzt).
+
+**Vergleich:** Klick auf das 🔗/🏀-Badge neben einem Spielernamen auf
+`index.html` öffnet ein Modal mit Baseline / +Quellen / Live / reinem
+Season-Schnitt nebeneinander (`mfhfbProjectionComparisonRow`).
+
+**Noch nicht gebaut:** UI für `teams.html`/`draft.html` (Engine ist dort
+per `<script>`-Include verfügbar, aber ungenutzt), Rolling-Window/
+Recency-Gewichtung statt kumulativem Season-Schnitt, automatisches
+Tracking der Preseason-vs-Actual-Abweichung pro Kategorie zur
+Kalibrierung der `N_prior`-Werte über mehrere Saisons.
+
 ## Struktur
 
 ```
@@ -392,6 +488,7 @@ teams.html                     NBA-Teams-Seite (Minuten-Eingabe pro Team)
 draft.html                     Draft Board (Live-Draft-Tracker, Z- und ADP-Sortierung)
 assets/shared.js               gemeinsame Logik (Name-Matching, Storage, Gewichtung)
 assets/fantrax-live.js         Live-Sync mit Fantrax fürs Draft Board (fxea-API, direkt im Browser, kein Backend)
+assets/inseason-blend.js       In-Season-Blending-Engine (externe Quellen + Live-Actuals von Taco Tuesday HQ), aktuell nur index.html
 players-data.js                generierte Pro-Minute-Raten (Output von build-players-data.py)
 rosters-data.js                generierte Team-Kader (Output von fetch-rosters.mjs, täglich aktualisiert)
 adp-data.js                    generierte ADP-Daten (Output von build-adp-data.py)
@@ -430,10 +527,15 @@ data/fantrax-leagues.json      Liga-IDs für den automatischen Fantrax-Fetch (sc
   Rate-Daten" markiert statt falsch gematcht.
 - **Zwei-Spalten-Ansicht** auf der Projections-Seite: links deine
   Projektion (editierbar nur noch über die Teams-Seite), rechts die realen
-  Season-Averages der Saison 2025–26 als Referenz. Sobald 2026-27 läuft,
-  ersetzt ein Live-Stats-Fetch diese rechte Spalte täglich — dafür fehlt
-  aktuell noch die Datenquelle/das Skript (folgt, sobald die Saison näher
-  rückt).
+  Season-Averages der Saison 2025–26 als Referenz.
+- **In-Season-Blending & externe Quellen:** gebaut und deploybar (siehe
+  eigener Abschnitt oben), aber noch nicht scharf im Live-Betrieb
+  getestet, weil die 2026–27-Saison noch nicht läuft. Der
+  Regular-Season-Live-Feed aus Taco Tuesday HQ liefert aktuell nur
+  Summer-League-Daten (Key `"nba"` in `livescores-daily.js` existiert
+  erst ab Saisonstart) — Panel zeigt bis dahin korrekt "Vorsaison" an.
+  Externe Quellen können schon jetzt eingespeist werden, sobald sie
+  auftauchen.
 - **Live-Reranking:** Minuten-Änderungen auf der Teams-Seite aktualisieren
   die Projections-Tabelle automatisch (per `storage`-Event, wenn beide
   Seiten offen sind; sonst beim nächsten Laden).
@@ -468,6 +570,53 @@ data/fantrax-leagues.json      Liga-IDs für den automatischen Fantrax-Fetch (sc
   nicht läuft.
 
 ## Changelog
+
+### 2026-07-26 (18)
+- **In-Season-Blending-Engine + externe Projections** (neu:
+  `assets/inseason-blend.js`, verkabelt in `index.html`, Script-Include
+  auch in `teams.html`/`draft.html` für spätere Nutzung):
+  - Bildet den bisherigen manuellen Excel-Workflow nach: eigene
+    Minuten-Baseline gegen externe Quellen mitteln
+    (`mfhfbBlendedPreseasonProjection`), dann während der Saison laufend
+    gegen echte Spiele nachjustieren
+    (`mfhfbComputeLiveProjection`) — Formel:
+    `(N_prior × preseason + Σ echte_spiele) / (N_prior + n)`, `N_prior`
+    pro Kategorie aus `MFHFB_STABILITY_ALPHA` abgeleitet (stabile Kats
+    bewegen sich langsam, volatile schneller).
+  - Externe Quellen: Bulk-Paste-Import (Excel/Sheets-CSV/TSV,
+    Header-Erkennung mit Aliasen) + Einzeleditor pro Spieler, beide im
+    neuen Admin-Panel "Live & externe Quellen" auf `index.html`
+    (gleicher Admin-Lock wie `teams.html`, jetzt auch dort verfügbar).
+  - Live-Actuals kommen ohne eigene Datenpipeline aus dem bereits
+    bestehenden täglichen Live-Score-Feed des separaten
+    Taco-Tuesday-HQ-Repos (`livescores-daily.js`), clientseitig per
+    `fetch()` von `raw.githubusercontent.com` geladen und in
+    `sessionStorage` gecacht (max. 6h). Datei ist reines JS-Objektliteral
+    (keine quoted keys), daher `new Function`-Auswertung statt
+    `JSON.parse` — beim Bauen erst falsch angenommen und gegen die
+    echte Datei korrigiert.
+  - `fgm`/`ftm` werden nach jedem Blend-Schritt aus den unveränderten
+    Attempts neu abgeleitet, damit FG%/FT%-Quote und Volumen in
+    derselben Zeile konsistent bleiben (Live-Daten liefern nur Quoten,
+    keine FGA/FTA).
+  - Vergleichs-Feature: 🔗/🏀-Badge neben dem Spielernamen öffnet Modal
+    mit Baseline vs. +Quellen vs. Live vs. Season-Schnitt
+    (`mfhfbProjectionComparisonRow`).
+  - Getestet: Blend-Formeln per Unit-Tests (Node, gemockte
+    Browser-Globals), reales Parsing/Aggregieren gegen die echte
+    Taco-Tuesday-HQ-Datei (116 Spieler aus Summer-League-Daten korrekt
+    aggregiert), und ein voller Headless-DOM-Smoke-Test des produktiven
+    `index.html` (jsdom + `vm.runInContext`, um mehrere `<script>`-Tags
+    inkl. `const`/`let`-Bindungen realistisch nachzubilden) — 983
+    Spieler gerendert, Bulk-Import, Blend-Mathematik, Vergleichsmodal
+    und Baseline-Toggle alle verifiziert.
+  - Ein Verschachtelungsfehler beim ersten Einbau (fehlendes öffnendes
+    `<div class="toolbar">`, dadurch Tabelle ohne Rahmen/randlos) wurde
+    im Nachgang gefunden und gefixt.
+  - Noch offen: UI auch für `teams.html`/`draft.html`, Rolling-Window
+    statt kumulativem Season-Schnitt, automatisches Tracking der
+    Preseason-vs-Actual-Abweichung zur `N_prior`-Kalibrierung über
+    mehrere Saisons.
 
 ### 2026-07-22 (17)
 - **Firebase/Firestore komplett entfernt, ersetzt durch Live-Sync direkt
