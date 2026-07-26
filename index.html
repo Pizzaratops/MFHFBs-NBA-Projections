@@ -319,7 +319,9 @@ function stdev(arr, m) {
 
 function computeAll() {
   const overrides = mfhfbGetOverrides();
-  const rows = PLAYER_RATES.map(p => {
+  const rows = PLAYER_RATES
+    .filter(p => mfhfbIsValidCurrentTeam(p.team))
+    .map(p => {
     const latest = mfhfbLatestSeason(p);
     const key = mfhfbNormalizeName(p.name);
     const minutes = overrides[key] !== undefined ? overrides[key] : mfhfbDefaultMinutes(p.name, latest.mpg, latest.gp);
@@ -337,6 +339,11 @@ function computeAll() {
   Object.values(manualStats).forEach(m => {
     const hasProduction = PROD_CATS.some(c => m[c] !== undefined && m[c] !== 0);
     if (!hasProduction) return;
+    // Einträge ohne Team (z.B. Spekulations-Prospects ohne realen Rosterplatz,
+    // wie "Drake Mitchell") NICHT in die Projections -- gleiche Regel wie im
+    // Draft Board. Sobald du ihm auf teams.html ein Team einträgst, taucht er
+    // automatisch wieder auf.
+    if (!m.team || !m.team.trim()) return;
     const s = {
       min: m.min || 0, pts: m.pts || 0, reb: m.reb || 0, ast: m.ast || 0,
       stl: m.stl || 0, blk: m.blk || 0, fg3m: m.fg3m || 0, tov: m.tov || 0,
