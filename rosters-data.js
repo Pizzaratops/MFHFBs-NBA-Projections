@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-26T10:43:32.994Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-27T12:21:25.553Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-26T10:43:32.994Z",
+ "fetchedAt": "2026-07-27T12:21:25.553Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -330,15 +330,6 @@ const ROSTERS_DATA = {
      "weight": "210 lbs",
      "age": 28,
      "espnId": "4065648"
-    },
-    {
-     "name": "John Tonje",
-     "jersey": "8",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "225 lbs",
-     "age": 25,
-     "espnId": "4593043"
     },
     {
      "name": "Jordan Walsh",
@@ -921,6 +912,15 @@ const ROSTERS_DATA = {
      "weight": "220 lbs",
      "age": 36,
      "espnId": "3992"
+    },
+    {
+     "name": "Mario Hezonja",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "220 lbs",
+     "age": 31,
+     "espnId": "2995706"
     },
     {
      "name": "Sam Merrill",
@@ -1567,7 +1567,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 11\"",
      "weight": "250 lbs",
-     "age": 25,
+     "age": 26,
      "espnId": "4397882"
     },
     {
@@ -1741,7 +1741,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 11\"",
      "weight": "265 lbs",
-     "age": 32,
+     "age": 33,
      "espnId": "2991235"
     },
     {
@@ -1851,6 +1851,15 @@ const ROSTERS_DATA = {
      "weight": "220 lbs",
      "age": 23,
      "espnId": "4432639"
+    },
+    {
+     "name": "Jae'Sean Tate",
+     "jersey": "8",
+     "position": "F",
+     "height": "6' 4\"",
+     "weight": "230 lbs",
+     "age": 30,
+     "espnId": "3136777"
     },
     {
      "name": "Amen Thompson",
@@ -2272,7 +2281,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "7' 2\"",
      "weight": "245 lbs",
-     "age": 24,
+     "age": 25,
      "espnId": "4433136"
     },
     {
@@ -2388,15 +2397,6 @@ const ROSTERS_DATA = {
      "weight": "253 lbs",
      "age": 19,
      "espnId": "5041935"
-    },
-    {
-     "name": "Kentavious Caldwell-Pope",
-     "jersey": "3",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "204 lbs",
-     "age": 33,
-     "espnId": "2581018"
     },
     {
      "name": "Walter Clayton Jr.",
@@ -3770,6 +3770,15 @@ const ROSTERS_DATA = {
      "espnId": "3917376"
     },
     {
+     "name": "Kentavious Caldwell-Pope",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "204 lbs",
+     "age": 33,
+     "espnId": "2581018"
+    },
+    {
      "name": "VJ Edgecombe",
      "jersey": "77",
      "position": "G",
@@ -3867,15 +3876,6 @@ const ROSTERS_DATA = {
      "weight": "200 lbs",
      "age": 27,
      "espnId": "4351851"
-    },
-    {
-     "name": "Dalen Terry",
-     "jersey": "14",
-     "position": "F",
-     "height": "6' 6\"",
-     "weight": "195 lbs",
-     "age": 24,
-     "espnId": "4433159"
     },
     {
      "name": "Dean Wade",
@@ -4212,6 +4212,15 @@ const ROSTERS_DATA = {
      "weight": "210 lbs",
      "age": 23,
      "espnId": "4914336"
+    },
+    {
+     "name": "John Tonje",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 5\"",
+     "weight": "225 lbs",
+     "age": 25,
+     "espnId": "4593043"
     },
     {
      "name": "Robert Williams III",
@@ -4960,7 +4969,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 7\"",
      "weight": "195 lbs",
-     "age": 21,
+     "age": 22,
      "espnId": "5104155"
     },
     {
