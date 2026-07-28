@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-27T12:21:25.553Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-28T11:15:43.224Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-27T12:21:25.553Z",
+ "fetchedAt": "2026-07-28T11:15:43.224Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -2366,6 +2366,15 @@ const ROSTERS_DATA = {
      "espnId": "5060631"
     },
     {
+     "name": "Matisse Thybulle",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "202 lbs",
+     "age": 29,
+     "espnId": "3907498"
+    },
+    {
      "name": "Jarred Vanderbilt",
      "jersey": "2",
      "position": "F",
@@ -3307,7 +3316,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 9\"",
      "weight": "210 lbs",
-     "age": 20,
+     "age": 21,
      "espnId": "5211983"
     },
     {
@@ -4380,15 +4389,6 @@ const ROSTERS_DATA = {
      "weight": "208 lbs",
      "age": 22,
      "espnId": "5106058"
-    },
-    {
-     "name": "Isaiah Stevens",
-     "jersey": "24",
-     "position": "G",
-     "height": "5' 11\"",
-     "weight": "185 lbs",
-     "age": 25,
-     "espnId": "4432117"
     }
    ]
   },
