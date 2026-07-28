@@ -69,6 +69,7 @@ function mfhfbNormalizeName(name) {
 // auf einen Namens-Mismatch statt auf eine echte Datenlücke hinweist.
 const MFHFB_NAME_ALIASES = {
   'alex sarr': 'alexandre sarr',
+  'cam boozer': 'cameron boozer',
 };
 function mfhfbResolveAlias(normalizedName) {
   return MFHFB_NAME_ALIASES[normalizedName] || normalizedName;
