@@ -14,11 +14,26 @@
 //
 // ROOKIE_PROJECTIONS_VERSION erhoeht sich bei inhaltlichen Korrekturen --
 // teams.html erzwingt dann ein einmaliges Re-Seeding/Aufraeumen.
-const ROOKIE_PROJECTIONS_VERSION = 4;
+// v5: "Carlton Wilson" -> "Caleb Wilson" (falsche Vornamen-Aufloesung aus
+// der Kuerzel-Quelle "C. WILSON"), dadurch war er unter zwei Namen im
+// System (echter Draft-Pick landete auf einem leeren manuellen Eintrag
+// ohne Stats). Ausserdem Team-Korrekturen von Mock-Draft- auf echte
+// Draft-Ergebnisse (Boozer -> MEM, Wilson -> CHI).
+// v6: systematischer Check aller 62 Rookies gegen die echten Ergebnisse
+// des NBA-Drafts vom 23./24.6.2026 + UDFA-Signings. 28 weitere Korrekturen
+// (Namen und/oder Teams) -- v.a. wieder falsch aufgeloeste Vornamen aus
+// Kuerzeln (gleiches Muster wie Wilson), siehe Commit-Historie fuer die
+// volle Liste. NICHT verifizieren konnte ich: "Ernest Udeh Jr" (Team
+// unklar), "Quadir Copeland" (Team unbestaetigt, aktuell HOU stehen
+// gelassen), "Carter Anderson", "Peter Suder", "Rafael Castro",
+// "Marcus Brown" -- keine dieser vier tauchte in Draft- oder
+// UDFA-Trackern auf, moeglicherweise Karteileichen aus einem frueheren
+// fehlerhaften Import. Bitte bei Gelegenheit einzeln pruefen/entfernen.
+const ROOKIE_PROJECTIONS_VERSION = 6;
 const ROOKIE_PROJECTIONS = {
  "cameron boozer": {
   "name": "Cameron Boozer",
-  "team": "GSW",
+  "team": "MEM",
   "pos": "F/C",
   "min": 32,
   "gp": 75,
@@ -32,9 +47,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 78.3,
   "tov": 2.4
  },
- "carlton wilson": {
-  "name": "Carlton Wilson",
-  "team": "UTA",
+ "caleb wilson": {
+  "name": "Caleb Wilson",
+  "team": "CHI",
   "pos": "F",
   "min": 29,
   "gp": 69,
@@ -64,9 +79,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 83.6,
   "tov": 1
  },
- "alijah graves": {
-  "name": "Alijah Graves",
-  "team": "",
+ "allen graves": {
+  "name": "Allen Graves",
+  "team": "TOR",
   "pos": "G",
   "min": 25,
   "gp": 63,
@@ -224,8 +239,8 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 78.9,
   "tov": 1.6
  },
- "terrace reed": {
-  "name": "Terrace Reed Jr",
+ "tarris reed": {
+  "name": "Tarris Reed Jr",
   "team": "SAS",
   "pos": "C",
   "min": 19.5,
@@ -240,9 +255,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 67.4,
   "tov": 1
  },
- "henri steinbach": {
-  "name": "Henri Steinbach",
-  "team": "",
+ "hannes steinbach": {
+  "name": "Hannes Steinbach",
+  "team": "CHA",
   "pos": "C",
   "min": 16,
   "gp": 72,
@@ -272,9 +287,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 69.3,
   "tov": 1.1
  },
- "deshawn swain": {
-  "name": "DeShawn Swain",
-  "team": "",
+ "dailyn swain": {
+  "name": "Dailyn Swain",
+  "team": "CHI",
   "pos": "F",
   "min": 19,
   "gp": 50,
@@ -336,9 +351,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.7
  },
- "vasyl ishchenko": {
-  "name": "Vasyl Ishchenko",
-  "team": "",
+ "vsevolod ishchenko": {
+  "name": "Vsevolod Ishchenko",
+  "team": "DAL",
   "pos": "F",
   "min": 13,
   "gp": 15,
@@ -352,8 +367,8 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.7
  },
- "trayvon brasil": {
-  "name": "Trayvon Brasil",
+ "trevon brazile": {
+  "name": "Trevon Brazile",
   "team": "DEN",
   "pos": "F/C",
   "min": 12.7,
@@ -368,9 +383,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.7,
   "tov": 0.7
  },
- "mekhi thomas": {
-  "name": "Mekhi Thomas",
-  "team": "",
+ "meleek thomas": {
+  "name": "Meleek Thomas",
+  "team": "CLE",
   "pos": "G",
   "min": 22,
   "gp": 44,
@@ -400,9 +415,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.6
  },
- "mouhamed ajayi": {
-  "name": "Mouhamed Ajayi",
-  "team": "",
+ "michael ajayi": {
+  "name": "Michael Ajayi",
+  "team": "CHA",
   "pos": "F",
   "min": 12,
   "gp": 10,
@@ -416,9 +431,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.6
  },
- "kam boswell": {
-  "name": "Kam Boswell",
-  "team": "",
+ "kylan boswell": {
+  "name": "Kylan Boswell",
+  "team": "CHA",
   "pos": "F",
   "min": 12,
   "gp": 10,
@@ -482,7 +497,7 @@ const ROOKIE_PROJECTIONS = {
  },
  "alex karaban": {
   "name": "Alex Karaban",
-  "team": "CHI",
+  "team": "SAC",
   "pos": "F",
   "min": 15,
   "gp": 41,
@@ -528,9 +543,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 84.2,
   "tov": 0.6
  },
- "tobi awaka": {
-  "name": "Tobi Awaka",
-  "team": "",
+ "tobe awaka": {
+  "name": "Tobe Awaka",
+  "team": "CHI",
   "pos": "F",
   "min": 9,
   "gp": 9,
@@ -544,9 +559,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.7,
   "tov": 0.5
  },
- "drake mitchell": {
-  "name": "Drake Mitchell",
-  "team": "",
+ "dillon mitchell": {
+  "name": "Dillon Mitchell",
+  "team": "BOS",
   "pos": "F",
   "min": 34,
   "gp": 44,
@@ -560,9 +575,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 84.3,
   "tov": 2.6
  },
- "trey donaldson": {
-  "name": "Trey Donaldson",
-  "team": "",
+ "tre donaldson": {
+  "name": "Tre Donaldson",
+  "team": "MIA",
   "pos": "F",
   "min": 9,
   "gp": 10,
@@ -578,7 +593,7 @@ const ROOKIE_PROJECTIONS = {
  },
  "tobi lawal": {
   "name": "Tobi Lawal",
-  "team": "",
+  "team": "DAL",
   "pos": "F",
   "min": 9,
   "gp": 8,
@@ -592,9 +607,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.5
  },
- "javon bradley": {
-  "name": "Javon Bradley",
-  "team": "",
+ "jaden bradley": {
+  "name": "Jaden Bradley",
+  "team": "TOR",
   "pos": "F",
   "min": 9,
   "gp": 11,
@@ -624,9 +639,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 73.2,
   "tov": 0.6
  },
- "julian sellers": {
-  "name": "Julian Sellers",
-  "team": "",
+ "jaylin sellers": {
+  "name": "Jaylin Sellers",
+  "team": "CHI",
   "pos": "F",
   "min": 8,
   "gp": 9,
@@ -640,9 +655,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.7,
   "tov": 0.4
  },
- "jase dix": {
-  "name": "Jase Dix",
-  "team": "",
+ "josh dix": {
+  "name": "Josh Dix",
+  "team": "OKC",
   "pos": "F",
   "min": 8,
   "gp": 13,
@@ -672,9 +687,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.4
  },
- "kareem lopez": {
-  "name": "Kareem Lopez",
-  "team": "GSW",
+ "karim lopez": {
+  "name": "Karim Lopez",
+  "team": "MEM",
   "pos": "F",
   "min": 7.3,
   "gp": 18,
@@ -770,7 +785,7 @@ const ROOKIE_PROJECTIONS = {
  },
  "andrew okereke": {
   "name": "Andrew Okereke",
-  "team": "",
+  "team": "LAL",
   "pos": "F",
   "min": 6.5,
   "gp": 13,
@@ -784,9 +799,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.5,
   "tov": 0.3
  },
- "isiah nelson": {
-  "name": "Isiah Nelson",
-  "team": "",
+ "izaiyah nelson": {
+  "name": "Izaiyah Nelson",
+  "team": "ORL",
   "pos": "F",
   "min": 6.5,
   "gp": 14,
@@ -800,9 +815,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.6,
   "tov": 0.3
  },
- "joshua kayil": {
-  "name": "Joshua Kayil",
-  "team": "",
+ "jack kayil": {
+  "name": "Jack Kayil",
+  "team": "NYK",
   "pos": "G",
   "min": 6.1,
   "gp": 16,
@@ -818,7 +833,7 @@ const ROOKIE_PROJECTIONS = {
  },
  "tyler nickel": {
   "name": "Tyler Nickel",
-  "team": "",
+  "team": "NYK",
   "pos": "F",
   "min": 6.1,
   "gp": 14,
@@ -832,9 +847,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.7,
   "tov": 0.3
  },
- "frank okpara": {
-  "name": "Frank Okpara",
-  "team": "",
+ "felix okpara": {
+  "name": "Felix Okpara",
+  "team": "WAS",
   "pos": "F",
   "min": 6,
   "gp": 8,
@@ -850,7 +865,7 @@ const ROOKIE_PROJECTIONS = {
  },
  "henri veesaar": {
   "name": "Henri Veesaar",
-  "team": "",
+  "team": "ATL",
   "pos": "C",
   "min": 9,
   "gp": 40,
@@ -864,9 +879,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 56.3,
   "tov": 0.3
  },
- "ulrich onyenso": {
-  "name": "Ulrich Onyenso",
-  "team": "",
+ "ugonna onyenso": {
+  "name": "Ugonna Onyenso",
+  "team": "DET",
   "pos": "C",
   "min": 5.7,
   "gp": 14,
@@ -880,9 +895,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 74.7,
   "tov": 0.3
  },
- "randy conwell": {
-  "name": "Randy Conwell",
-  "team": "",
+ "ryan conwell": {
+  "name": "Ryan Conwell",
+  "team": "MIA",
   "pos": "G",
   "min": 12.7,
   "gp": 53,
@@ -928,9 +943,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 85.9,
   "tov": 0.2
  },
- "ben smith": {
-  "name": "Ben Smith",
-  "team": "",
+ "braden smith": {
+  "name": "Braden Smith",
+  "team": "IND",
   "pos": "G",
   "min": 4.9,
   "gp": 44,
@@ -944,9 +959,9 @@ const ROOKIE_PROJECTIONS = {
   "ftpct": 82.7,
   "tov": 0.4
  },
- "nathan martinelli": {
-  "name": "Nathan Martinelli",
-  "team": "",
+ "nick martinelli": {
+  "name": "Nick Martinelli",
+  "team": "LAC",
   "pos": "F",
   "min": 2.5,
   "gp": 11,
