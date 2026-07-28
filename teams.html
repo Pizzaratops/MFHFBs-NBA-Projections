@@ -378,20 +378,32 @@ function renderLeftRows(rosterPlayers, weights, overrides, teamAbbr, teamBbmAbbr
 
 // Rechte Spalte: tatsächliche End-Rotation der letzten Saison für dieses
 // Team (aus players-data.js gefiltert), reale Minuten/Stats, nicht editierbar.
+//
+// WICHTIG: hier bewusst NICHT mfhfbLatestSeason() (= letzte Saison, für die
+// DIESER Spieler Daten hat -- bei längst inaktiven/retired Spielern kann
+// das Jahre zurückliegen, z.B. Rajon Rondo). Stattdessen NUR Spieler mit
+// echten Daten in der tatsächlich neuesten geladenen Saison (NEWEST_LABEL,
+// aktuell 2025-26) -- alles andere gehört fachlich nicht in "End-Rotation
+// [aktuelle Saison]" und wird rausgefiltert statt stillschweigend mit
+// veralteten Zahlen angezeigt.
 function renderRightRows(bbmAbbr) {
   const players = PLAYER_RATES
     .filter(p => p.team === bbmAbbr)
+    .filter(p => {
+      const s = p.seasons[NEWEST_LABEL];
+      return s && !s.missed;
+    })
     .map(p => {
-      const latest = mfhfbLatestSeason(p);
-      const r = latest.rates;
+      const s = p.seasons[NEWEST_LABEL];
+      const r = s.rates;
       return {
-        p, latest,
-        min: latest.mpg, gp: latest.gp,
-        pts: r.pts * latest.mpg, reb: r.reb * latest.mpg, ast: r.ast * latest.mpg,
-        stl: r.stl * latest.mpg, blk: r.blk * latest.mpg, fg3m: r.fg3m * latest.mpg,
-        fgm: r.fgm * latest.mpg, fga: r.fga * latest.mpg,
-        ftm: r.ftm * latest.mpg, fta: r.fta * latest.mpg,
-        fgpct: (r.fgm / r.fga) * 100 || 0, ftpct: (r.ftm / r.fta) * 100 || 0, tov: r.tov * latest.mpg,
+        p, latest: s,
+        min: s.mpg, gp: s.gp,
+        pts: r.pts * s.mpg, reb: r.reb * s.mpg, ast: r.ast * s.mpg,
+        stl: r.stl * s.mpg, blk: r.blk * s.mpg, fg3m: r.fg3m * s.mpg,
+        fgm: r.fgm * s.mpg, fga: r.fga * s.mpg,
+        ftm: r.ftm * s.mpg, fta: r.fta * s.mpg,
+        fgpct: (r.fgm / r.fga) * 100 || 0, ftpct: (r.ftm / r.fta) * 100 || 0, tov: r.tov * s.mpg,
       };
     })
     .sort((a, b) => b.min - a.min);
