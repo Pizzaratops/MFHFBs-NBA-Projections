@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-28T11:15:43.224Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-29T11:24:46.996Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-28T11:15:43.224Z",
+ "fetchedAt": "2026-07-29T11:24:46.996Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -2063,6 +2063,15 @@ const ROSTERS_DATA = {
    "name": "LA Clippers",
    "players": [
     {
+     "name": "Johni Broome",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 10\"",
+     "weight": "235 lbs",
+     "age": 24,
+     "espnId": "4433569"
+    },
+    {
      "name": "Cam Christie",
      "jersey": "24",
      "position": "G",
@@ -3761,15 +3770,6 @@ const ROSTERS_DATA = {
      "espnId": "5105637"
     },
     {
-     "name": "Johni Broome",
-     "jersey": "22",
-     "position": "F",
-     "height": "6' 10\"",
-     "weight": "235 lbs",
-     "age": 24,
-     "espnId": "4433569"
-    },
-    {
      "name": "Jaylen Brown",
      "jersey": "7",
      "position": "G",
@@ -4051,7 +4051,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 6\"",
      "weight": "232 lbs",
-     "age": 27,
+     "age": 28,
      "espnId": "4277957"
     },
     {
@@ -4642,7 +4642,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 8\"",
      "weight": "225 lbs",
-     "age": 19,
+     "age": 20,
      "espnId": "5149115"
     },
     {
