@@ -70,6 +70,7 @@ function mfhfbNormalizeName(name) {
 const MFHFB_NAME_ALIASES = {
   'alex sarr': 'alexandre sarr',
   'cam boozer': 'cameron boozer',
+  'cameron johnson': 'cam johnson',
 };
 function mfhfbResolveAlias(normalizedName) {
   return MFHFB_NAME_ALIASES[normalizedName] || normalizedName;
