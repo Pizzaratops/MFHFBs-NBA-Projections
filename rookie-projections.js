@@ -29,7 +29,11 @@
 // "Marcus Brown" -- keine dieser vier tauchte in Draft- oder
 // UDFA-Trackern auf, moeglicherweise Karteileichen aus einem frueheren
 // fehlerhaften Import. Bitte bei Gelegenheit einzeln pruefen/entfernen.
-const ROOKIE_PROJECTIONS_VERSION = 6;
+// v7: Dillon Mitchell hatte eine falsche Statzeile aus der Quelldatei
+// geerbt (passte nicht zu seinem echten College-Profil -- Rebounder/
+// Energy-Forward, kein High-Usage-Scorer). Durch realistische
+// Tiefenbank-Projektion ersetzt.
+const ROOKIE_PROJECTIONS_VERSION = 7;
 const ROOKIE_PROJECTIONS = {
  "cameron boozer": {
   "name": "Cameron Boozer",
@@ -563,17 +567,17 @@ const ROOKIE_PROJECTIONS = {
   "name": "Dillon Mitchell",
   "team": "BOS",
   "pos": "F",
-  "min": 34,
-  "gp": 44,
-  "pts": 25.8,
-  "fg3m": 2.9,
-  "reb": 3.9,
-  "ast": 4.6,
-  "stl": 1.3,
-  "blk": 0.3,
-  "fgpct": 46.2,
-  "ftpct": 84.3,
-  "tov": 2.6
+  "min": 12,
+  "gp": 50,
+  "pts": 3.5,
+  "fg3m": 0.1,
+  "reb": 3.2,
+  "ast": 0.6,
+  "stl": 0.4,
+  "blk": 0.4,
+  "fgpct": 54.0,
+  "ftpct": 50.0,
+  "tov": 0.6
  },
  "tre donaldson": {
   "name": "Tre Donaldson",
