@@ -481,6 +481,23 @@ function onManualChange(input) {
   const stats = { ...existing };
   if (raw === '') delete stats[field];
   else stats[field] = parseFloat(raw);
+
+  // Minuten geändert -> Zählstats proportional mitskalieren, damit "Minuten
+  // hoch/runter" sich sofort live in den Stats niederschlägt (Quoten FG%/FT%
+  // und GP bleiben davon unberührt, die sind minutenunabhängig).
+  if (field === 'min' && raw !== '') {
+    const newMin = stats.min;
+    const oldMin = existing.min !== undefined ? existing.min : mfhfbProjectedMin(name);
+    if (oldMin && oldMin > 0 && newMin >= 0 && newMin !== oldMin) {
+      const ratio = newMin / oldMin;
+      ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'tov'].forEach(c => {
+        if (existing[c] !== undefined) {
+          stats[c] = Math.round(existing[c] * ratio * 10) / 10;
+        }
+      });
+    }
+  }
+
   // Wenn der User eine andere Kategorie füllt, aber noch keine Minuten gesetzt
   // sind, die projizierten Minuten mit übernehmen (sonst stünde 0 in der Projection).
   if (stats.min === undefined) {
