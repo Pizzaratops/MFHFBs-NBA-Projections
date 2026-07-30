@@ -176,50 +176,8 @@ mfhfbInitAdminToggle('adminToggle', () => render());
 // jetzt auch index.html/draft.html sie brauchen (siehe mfhfbApplyCurrentTeams).
 const nameIndex = mfhfbBuildNameIndex(PLAYER_RATES);
 
-// Rookie-Projektionen als Vorbelegung in localStorage schreiben.
-// Normalfall: nur wenn für den jeweiligen Spieler noch KEIN manueller
-// Eintrag existiert, damit eigene Anpassungen nicht überschrieben werden.
-// AUSNAHME: wenn sich ROOKIE_PROJECTIONS_VERSION geändert hat (inhaltliche
-// Korrektur der Quelldaten, z.B. der PTS-Bug), wird EINMALIG erzwungen neu
-// geseedet -- sonst würden alte, fehlerhafte oder als Notlösung von Hand auf
-// 0 gesetzte Werte für immer bestehen bleiben, weil das normale Seeding nur
-// Lücken auffüllt, nie vorhandene Einträge ersetzt.
-const MFHFB_ROOKIE_VERSION_KEY = 'mfhfb_rookie_seed_version';
-if (typeof ROOKIE_PROJECTIONS !== 'undefined') {
-  const existing = mfhfbGetManualStats();
-  const storedVersion = Number(localStorage.getItem(MFHFB_ROOKIE_VERSION_KEY) || 0);
-  const forceReseed = typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined' && storedVersion < ROOKIE_PROJECTIONS_VERSION;
-  let seeded = 0, overwritten = 0;
-  Object.entries(ROOKIE_PROJECTIONS).forEach(([key, proj]) => {
-    if (!existing[key]) {
-      existing[key] = proj;
-      seeded++;
-    } else if (forceReseed) {
-      existing[key] = proj;
-      overwritten++;
-    }
-  });
-
-  // Genereller Schutz (nicht nur einmalig): ein manueller Eintrag darf NIE
-  // einen Spieler überschatten, für den wir schon echte Saisondaten haben
-  // (players-data.js) -- sonst entsteht genau der Bug, der Brandon Miller
-  // getroffen hat: Namens-Lookup findet zwei Kandidaten, Fantrax-Picks
-  // werden dem falschen zugeordnet. Betrifft nicht nur Rookie-Vorbelegungen,
-  // sondern auch versehentlich von Hand angelegte Duplikate.
-  const realPlayerNames = new Set(PLAYER_RATES.map(p => mfhfbNormalizeName(p.name)));
-  let removed = 0;
-  Object.keys(existing).forEach(key => {
-    if (realPlayerNames.has(key)) { delete existing[key]; removed++; }
-  });
-
-  if (seeded > 0 || overwritten > 0 || removed > 0) {
-    localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(existing));
-    console.log(`Rookie-Projektionen: ${seeded} neu, ${overwritten} auf v${ROOKIE_PROJECTIONS_VERSION} aktualisiert, ${removed} entfernt (kollidierten mit echten Spielerdaten).`);
-  }
-  if (typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined') {
-    localStorage.setItem(MFHFB_ROOKIE_VERSION_KEY, String(ROOKIE_PROJECTIONS_VERSION));
-  }
-}
+// Rookie-Seeding läuft jetzt zentral in assets/shared.js
+// (mfhfbSeedRookieProjections), für alle 3 Seiten, nicht nur hier.
 // Team-Feld manueller Einträge gegen die echten ESPN-Kader abgleichen --
 // z.B. wenn ein Rookie inzwischen wirklich einem Team beigetreten ist, aber
 // rookie-projections.js noch die statische Pre-Draft-Schätzung hat (siehe

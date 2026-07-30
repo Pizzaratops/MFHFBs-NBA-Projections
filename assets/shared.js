@@ -456,6 +456,65 @@ function mfhfbDeleteManualStat(playerName) {
   return all;
 }
 
+// Rookie-Projektionen als Vorbelegung in localStorage schreiben. Laeuft
+// beim Laden JEDER Seite (nicht nur teams.html!) -- vorher war das nur in
+// teams.html verdrahtet, wodurch auf einem Geraet/Browser, auf dem
+// teams.html noch nie geoeffnet wurde (z.B. Handy nur fuers Draft Board,
+// oder ein zweiter Rechner), localStorage leer blieb und Rookies im Draft
+// Board als "nicht zuordenbar" auftauchten, obwohl die Daten laengst
+// korrekt in rookie-projections.js standen.
+//
+// Normalfall: nur wenn fuer den jeweiligen Spieler noch KEIN manueller
+// Eintrag existiert, damit eigene Anpassungen nicht ueberschrieben werden.
+// AUSNAHME: wenn sich ROOKIE_PROJECTIONS_VERSION geaendert hat (inhaltliche
+// Korrektur der Quelldaten), wird EINMALIG erzwungen neu geseedet -- sonst
+// wuerden alte, fehlerhafte Werte fuer immer bestehen bleiben, weil das
+// normale Seeding nur Luecken auffuellt, nie vorhandene Eintraege ersetzt.
+//
+// Voraussetzung: rookie-projections.js muss VOR assets/shared.js geladen
+// werden (siehe <script>-Reihenfolge in index.html/teams.html/draft.html).
+// Ist die Datei auf einer Seite gar nicht eingebunden, ist dieser Block
+// ein no-op (typeof-Check) -- kein Fehler, nur kein Seeding dort.
+const MFHFB_ROOKIE_VERSION_KEY = 'mfhfb_rookie_seed_version';
+function mfhfbSeedRookieProjections() {
+  if (typeof ROOKIE_PROJECTIONS === 'undefined') return;
+  if (typeof PLAYER_RATES === 'undefined') return; // Kollisions-Schutz unten braucht PLAYER_RATES
+  const existing = mfhfbGetManualStats();
+  const storedVersion = Number(localStorage.getItem(MFHFB_ROOKIE_VERSION_KEY) || 0);
+  const forceReseed = typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined' && storedVersion < ROOKIE_PROJECTIONS_VERSION;
+  let seeded = 0, overwritten = 0;
+  Object.entries(ROOKIE_PROJECTIONS).forEach(([key, proj]) => {
+    if (!existing[key]) {
+      existing[key] = proj;
+      seeded++;
+    } else if (forceReseed) {
+      existing[key] = proj;
+      overwritten++;
+    }
+  });
+
+  // Genereller Schutz (nicht nur einmalig): ein manueller Eintrag darf NIE
+  // einen Spieler ueberschatten, fuer den wir schon echte Saisondaten haben
+  // (players-data.js) -- sonst entsteht genau der Bug, der Brandon Miller
+  // getroffen hat: Namens-Lookup findet zwei Kandidaten, Fantrax-Picks
+  // werden dem falschen zugeordnet. Betrifft nicht nur Rookie-Vorbelegungen,
+  // sondern auch versehentlich von Hand angelegte Duplikate.
+  const realPlayerNames = new Set(PLAYER_RATES.map(p => mfhfbNormalizeName(p.name)));
+  let removed = 0;
+  Object.keys(existing).forEach(key => {
+    if (realPlayerNames.has(key)) { delete existing[key]; removed++; }
+  });
+
+  if (seeded > 0 || overwritten > 0 || removed > 0) {
+    localStorage.setItem(MFHFB_MANUAL_KEY, JSON.stringify(existing));
+    console.log(`Rookie-Projektionen: ${seeded} neu, ${overwritten} auf v${ROOKIE_PROJECTIONS_VERSION} aktualisiert, ${removed} entfernt (kollidierten mit echten Spielerdaten).`);
+  }
+  if (typeof ROOKIE_PROJECTIONS_VERSION !== 'undefined') {
+    localStorage.setItem(MFHFB_ROOKIE_VERSION_KEY, String(ROOKIE_PROJECTIONS_VERSION));
+  }
+}
+mfhfbSeedRookieProjections();
+
 // --- Reihenfolge innerhalb eines Teams (Drag & Drop, z.B. fuer Starting 5) ---
 const MFHFB_ORDER_KEY = 'mfhfb_team_order_v1';
 
