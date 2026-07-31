@@ -112,6 +112,14 @@
     border-radius:10px; cursor:pointer; white-space:nowrap; display:flex; align-items:center; gap:6px;
   }
   .csv-btn:hover{border-color:var(--accent); color:var(--accent2);}
+  .tag-btn{
+    background:var(--surface2); border:1px solid var(--border); color:var(--muted);
+    font-family:'DM Sans',sans-serif; font-size:12.5px; font-weight:600; padding:10px 14px;
+    border-radius:10px; cursor:pointer; white-space:nowrap;
+  }
+  .tag-btn.active{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .tag-btn:hover:not(.active){border-color:var(--accent); color:var(--accent2);}
+  .note{font-size:10.5px; color:var(--muted); margin-top:8px; line-height:1.5;}
   .count{font-size:12px; color:var(--muted); margin-bottom:10px;}
 
   .table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow-x:auto;}
@@ -165,7 +173,7 @@
 
   <div class="panel collapsed" id="weightPanel">
     <div class="panel-head" id="weightPanelHead">
-      <div class="panel-title">Gewichtung <span class="badge" id="seasonBadge"></span></div>
+      <div class="panel-title">Gewichtung</div>
       <span class="chevron">▾</span>
     </div>
     <div class="panel-body">
@@ -247,8 +255,18 @@
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="search" placeholder="Spieler, Team oder Position suchen…">
     </div>
+    <button class="tag-btn" id="statFilterToggle">Stat-Filter</button>
     <button class="csv-btn" onclick="downloadCSV()">⬇ CSV Export</button>
   </div>
+
+  <div id="statFilterPanel" class="panel" style="display:none; padding:12px 14px;">
+    <div class="note" style="margin-bottom:8px;">
+      Bis zu 3 Bedingungen gleichzeitig (UND-verknüpft), z.B. FG% &lt; 52 UND 3PM &lt; 2,1. Wirkt zusätzlich zur Textsuche.
+    </div>
+    <div id="statFilterRows"></div>
+    <button class="tag-btn" id="statFilterClear" style="margin-top:6px;">Zurücksetzen</button>
+  </div>
+
   <div class="count" id="count"></div>
 
   <div class="table-wrap">
@@ -295,6 +313,9 @@
 let sortKey = 'z', sortAsc = false;
 let query = '';
 let showBaselineOnly = false;
+// Barttorvik-artiger Stat-Filter: bis zu 3 Bedingungen, UND-verknüpft.
+// Jede: {cat: 'fgpct', op: '>', val: 50}. cat aus STAT_FILTER_CATS.
+let statFilters = [null, null, null];
 
 const NEWEST_LABEL = SEASON_LABELS[SEASON_LABELS.length - 1];
 const Z_CATS = ['pts', 'reb', 'ast', 'stl', 'blk', 'fg3m', 'tov', 'ftpct', 'fgpct'];
@@ -311,8 +332,6 @@ mfhfbInitThemeToggle('themeToggle');
 // Einmalig beim Laden, danach lesen alle Renders einfach p.team wie bisher.
 // Nur hier + draft.html, NICHT auf teams.html (siehe Kommentar in shared.js).
 if (typeof ROSTERS_DATA !== 'undefined') { mfhfbApplyCurrentTeams(PLAYER_RATES); mfhfbSyncManualTeams(); }
-
-document.getElementById('seasonBadge').textContent = SEASON_LABELS.join(' · ');
 
 if (SEASON_LABELS.length >= 2) {
   document.getElementById('w1Label').textContent = `Vorletztes Jahr (${SEASON_LABELS[SEASON_LABELS.length - 2]})`;
@@ -520,6 +539,75 @@ function computeAll() {
   return rows;
 }
 
+// Barttorvik-artiger Stat-Filter: Kategorien + Operatoren, die zur Auswahl
+// stehen. 'z' verweist auf den gewichteten Gesamt-Score, alle anderen auf
+// den entsprechenden rohen Pro-Spiel-Wert (row.s[cat]).
+const STAT_FILTER_CATS = [
+  {key:'min', label:'MIN'}, {key:'pts', label:'PTS'}, {key:'reb', label:'REB'}, {key:'ast', label:'AST'},
+  {key:'stl', label:'STL'}, {key:'blk', label:'BLK'}, {key:'fg3m', label:'3PM'},
+  {key:'fgpct', label:'FG%'}, {key:'ftpct', label:'FT%'}, {key:'tov', label:'TOV'},
+  {key:'z', label:'Z-Score'},
+];
+const STAT_FILTER_OPS = ['>', '>=', '<', '<='];
+
+function statFilterValue(row, cat){
+  return cat === 'z' ? row.z : row.s[cat];
+}
+function passesStatFilters(row){
+  return statFilters.every(f => {
+    if(!f || !f.cat || !f.op || f.val === null || f.val === undefined || f.val === '') return true;
+    const v = statFilterValue(row, f.cat);
+    const target = Number(f.val);
+    if(Number.isNaN(target)) return true;
+    switch(f.op){
+      case '>': return v > target;
+      case '>=': return v >= target;
+      case '<': return v < target;
+      case '<=': return v <= target;
+      default: return true;
+    }
+  });
+}
+
+function renderStatFilterRows(){
+  const container = document.getElementById('statFilterRows');
+  container.innerHTML = statFilters.map((f, i) => `
+    <div style="display:flex; gap:6px; align-items:center; margin-bottom:6px;">
+      <select data-i="${i}" data-field="cat" style="padding:5px 8px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); color:var(--text);">
+        <option value="">–</option>
+        ${STAT_FILTER_CATS.map(c => `<option value="${c.key}" ${f&&f.cat===c.key?'selected':''}>${c.label}</option>`).join('')}
+      </select>
+      <select data-i="${i}" data-field="op" style="padding:5px 8px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); color:var(--text);">
+        ${STAT_FILTER_OPS.map(o => `<option value="${o}" ${f&&f.op===o?'selected':''}>${o}</option>`).join('')}
+      </select>
+      <input data-i="${i}" data-field="val" type="number" step="0.1" placeholder="Wert" value="${f&&f.val!==undefined?f.val:''}"
+        style="width:90px; padding:5px 8px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); color:var(--text);">
+    </div>
+  `).join('');
+  container.querySelectorAll('select,input').forEach(el => {
+    el.addEventListener('change', () => {
+      const i = Number(el.dataset.i), field = el.dataset.field;
+      if(!statFilters[i]) statFilters[i] = {cat:'', op:'>', val:''};
+      statFilters[i][field] = el.value;
+      if(!statFilters[i].cat) statFilters[i] = null;
+      render();
+    });
+  });
+}
+
+document.getElementById('statFilterToggle').addEventListener('click', () => {
+  const panel = document.getElementById('statFilterPanel');
+  const open = panel.style.display !== 'none';
+  panel.style.display = open ? 'none' : 'block';
+  document.getElementById('statFilterToggle').classList.toggle('active', !open);
+  if (!open) renderStatFilterRows();
+});
+document.getElementById('statFilterClear').addEventListener('click', () => {
+  statFilters = [null, null, null];
+  renderStatFilterRows();
+  render();
+});
+
 function render() {
  try {
   const q = query.toLowerCase().trim();
@@ -527,6 +615,7 @@ function render() {
   rows = rows.filter(r =>
     !q || r.p.name.toLowerCase().includes(q) || r.p.team.toLowerCase().includes(q) || r.p.pos.toLowerCase().includes(q)
   );
+  rows = rows.filter(r => passesStatFilters(r));
 
   rows.sort((x, y) => {
     let av, bv;
@@ -732,7 +821,7 @@ function updateLiveStatusUI() {
   const badge = document.getElementById('liveBadge');
   const text = document.getElementById('liveStatusText');
   if (nPlayers === 0) {
-    badge.textContent = 'Vorsaison';
+    badge.textContent = 'Pre Season';
     text.textContent = 'Noch keine Live-Saison-Daten von Taco Tuesday HQ (vor Saisonstart normal) — Projections laufen auf der (ggf. mit externen Quellen geblendeten) Preseason-Projection.';
   } else {
     badge.textContent = nPlayers + ' Spieler live';

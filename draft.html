@@ -260,7 +260,6 @@
 
   <div class="hero">
     <div>
-      <div class="eyebrow" id="seasonBadge"></div>
       <h1>Draft Board</h1>
       <div class="sub">Live-Draft-Tracker auf Basis deiner aktuellen Projections. Trage jeden Pick ein, sobald er in Fantrax fällt.</div>
     </div>
@@ -502,7 +501,6 @@ mfhfbInitThemeToggle('themeToggle');
 // Kommentar in index.html / assets/shared.js) -- muss VOR dem ersten
 // buildPlayers()-Aufruf passieren, der p.team in row.team kopiert.
 if (typeof ROSTERS_DATA !== 'undefined') { mfhfbApplyCurrentTeams(PLAYER_RATES); mfhfbSyncManualTeams(); }
-document.getElementById('seasonBadge').textContent = 'MFHFB · ' + SEASON_LABELS.join(' · ');
 document.getElementById('footerText').textContent =
   'Nutzt dieselben Projections wie die Projections-Seite (inkl. Gewichtungen, Minuten-Overrides und manuellen Rookie-Stats). ' +
   'Änderungen an Gewichtung/Z-Basis auf der Projections-Seite wirken sich sofort hier aus. ' +
