@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-30T11:06:05.217Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-07-31T11:28:36.252Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-07-30T11:06:05.217Z",
+ "fetchedAt": "2026-07-31T11:28:36.252Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -585,15 +585,6 @@ const ROSTERS_DATA = {
      "weight": "220 lbs",
      "age": 33,
      "espnId": "2578185"
-    },
-    {
-     "name": "Mouhamadou Gueye",
-     "jersey": "16",
-     "position": "F",
-     "height": "6' 9\"",
-     "weight": "210 lbs",
-     "age": 28,
-     "espnId": "4592933"
     },
     {
      "name": "PJ Hall",
@@ -3016,7 +3007,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 9\"",
      "weight": "220 lbs",
-     "age": 25,
+     "age": 26,
      "espnId": "4592699"
     },
     {
@@ -3901,7 +3892,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 7\"",
      "weight": "237 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4432446"
     },
     {
