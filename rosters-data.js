@@ -1,12 +1,10 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-08-06T11:21:40.786Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-08-07T09:59:27.207Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-08-06T11:21:40.786Z",
+ "fetchedAt": "2026-08-07T09:59:27.207Z",
  "source": "ESPN (site.api.espn.com)",
- "teamCount": 29,
- "errors": [
-  "MEM: HTTP 404 for https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/29/roster"
- ],
+ "teamCount": 30,
+ "errors": [],
  "rosters": {
   "ATL": {
    "teamId": "1",
@@ -1002,7 +1000,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 3\"",
      "weight": "190 lbs",
-     "age": 19,
+     "age": 20,
      "espnId": "5041951"
     },
     {
@@ -1687,6 +1685,15 @@ const ROSTERS_DATA = {
      "espnId": "4432171"
     },
     {
+     "name": "Gary Payton II",
+     "jersey": "0",
+     "position": "G",
+     "height": "6' 2\"",
+     "weight": "195 lbs",
+     "age": 33,
+     "espnId": "3134903"
+    },
+    {
      "name": "Brandin Podziemski",
      "jersey": "2",
      "position": "G",
@@ -2209,6 +2216,15 @@ const ROSTERS_DATA = {
      "espnId": "4702352"
     },
     {
+     "name": "Jamarion Sharp",
+     "jersey": null,
+     "position": "C",
+     "height": "7' 5\"",
+     "weight": "235 lbs",
+     "age": 24,
+     "espnId": "4897696"
+    },
+    {
      "name": "Keaton Wagler",
      "jersey": null,
      "position": "G",
@@ -2393,6 +2409,210 @@ const ROSTERS_DATA = {
      "weight": "185 lbs",
      "age": 24,
      "espnId": "4433137"
+    }
+   ]
+  },
+  "MEM": {
+   "teamId": "29",
+   "name": "Memphis Grizzlies",
+   "players": [
+    {
+     "name": "Cameron Boozer",
+     "jersey": "27",
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "253 lbs",
+     "age": 19,
+     "espnId": "5041935"
+    },
+    {
+     "name": "Walter Clayton Jr.",
+     "jersey": "4",
+     "position": "G",
+     "height": "6' 4\"",
+     "weight": "195 lbs",
+     "age": 23,
+     "espnId": "4896372"
+    },
+    {
+     "name": "Cedric Coward",
+     "jersey": "23",
+     "position": "F",
+     "height": "6' 5\"",
+     "weight": "206 lbs",
+     "age": 22,
+     "espnId": "4903027"
+    },
+    {
+     "name": "Zach Edey",
+     "jersey": "14",
+     "position": "C",
+     "height": "7' 3\"",
+     "weight": "305 lbs",
+     "age": 24,
+     "espnId": "4600663"
+    },
+    {
+     "name": "Taj Gibson",
+     "jersey": "67",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "232 lbs",
+     "age": 41,
+     "espnId": "3986"
+    },
+    {
+     "name": "Jerami Grant",
+     "jersey": "9",
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "213 lbs",
+     "age": 32,
+     "espnId": "2991070"
+    },
+    {
+     "name": "Taylor Hendricks",
+     "jersey": "22",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "215 lbs",
+     "age": 22,
+     "espnId": "4684806"
+    },
+    {
+     "name": "GG Jackson",
+     "jersey": "45",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "210 lbs",
+     "age": 21,
+     "espnId": "5105550"
+    },
+    {
+     "name": "Ty Jerome",
+     "jersey": "2",
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "195 lbs",
+     "age": 29,
+     "espnId": "4065733"
+    },
+    {
+     "name": "AJ Johnson",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "160 lbs",
+     "age": 21,
+     "espnId": "5170947"
+    },
+    {
+     "name": "Karim Lopez",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "222 lbs",
+     "age": 19,
+     "espnId": "5231919"
+    },
+    {
+     "name": "Jahmai Mashack",
+     "jersey": "21",
+     "position": "G",
+     "height": "6' 3\"",
+     "weight": "197 lbs",
+     "age": 23,
+     "espnId": "4683934"
+    },
+    {
+     "name": "Kris Murray",
+     "jersey": "24",
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "218 lbs",
+     "age": 25,
+     "espnId": "4594326"
+    },
+    {
+     "name": "Scotty Pippen Jr.",
+     "jersey": "1",
+     "position": "G",
+     "height": "6' 2\"",
+     "weight": "170 lbs",
+     "age": 25,
+     "espnId": "4431785"
+    },
+    {
+     "name": "Quinten Post",
+     "jersey": null,
+     "position": "C",
+     "height": "7' 0\"",
+     "weight": "238 lbs",
+     "age": 26,
+     "espnId": "4593016"
+    },
+    {
+     "name": "Olivier-Maxence Prosper",
+     "jersey": "18",
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "230 lbs",
+     "age": 24,
+     "espnId": "4595400"
+    },
+    {
+     "name": "D'Angelo Russell",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 3\"",
+     "weight": "193 lbs",
+     "age": 30,
+     "espnId": "3136776"
+    },
+    {
+     "name": "Richie Saunders",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "205 lbs",
+     "age": 24,
+     "espnId": "5105462"
+    },
+    {
+     "name": "Javon Small",
+     "jersey": "10",
+     "position": "G",
+     "height": "6' 1\"",
+     "weight": "190 lbs",
+     "age": 23,
+     "espnId": "4781746"
+    },
+    {
+     "name": "Cam Spencer",
+     "jersey": "24",
+     "position": "G",
+     "height": "6' 3\"",
+     "weight": "205 lbs",
+     "age": 26,
+     "espnId": "4433083"
+    },
+    {
+     "name": "Isaiah Stewart",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "250 lbs",
+     "age": 25,
+     "espnId": "4432810"
+    },
+    {
+     "name": "Jaylen Wells",
+     "jersey": "0",
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "206 lbs",
+     "age": 22,
+     "espnId": "5112087"
     }
    ]
   },
@@ -2787,7 +3007,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 4\"",
      "weight": "225 lbs",
-     "age": 24,
+     "age": 25,
      "espnId": "4594268"
     },
     {
@@ -3143,15 +3363,6 @@ const ROSTERS_DATA = {
      "weight": "215 lbs",
      "age": 31,
      "espnId": "3062679"
-    },
-    {
-     "name": "Trey Jemison III",
-     "jersey": "50",
-     "position": "F",
-     "height": "6' 10\"",
-     "weight": "270 lbs",
-     "age": 26,
-     "espnId": "4395623"
     },
     {
      "name": "Jack Kayil",
@@ -4478,6 +4689,15 @@ const ROSTERS_DATA = {
      "weight": "245 lbs",
      "age": 26,
      "espnId": "4431684"
+    },
+    {
+     "name": "Trey Jemison III",
+     "jersey": null,
+     "position": "C",
+     "height": "6' 10\"",
+     "weight": "270 lbs",
+     "age": 26,
+     "espnId": "4395623"
     },
     {
      "name": "A.J. Lawson",
