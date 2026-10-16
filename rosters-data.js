@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-15T13:56:35.131Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-16T13:44:20.653Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-15T13:56:35.131Z",
+ "fetchedAt": "2026-10-16T13:44:20.653Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -1997,6 +1997,15 @@ const ROSTERS_DATA = {
      "espnId": "4433192"
     },
     {
+     "name": "Cameron Matthews",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "235 lbs",
+     "age": 24,
+     "espnId": "4432394"
+    },
+    {
      "name": "Sean Pedulla",
      "jersey": "0",
      "position": "G",
@@ -2188,7 +2197,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 5\"",
      "weight": "215 lbs",
-     "age": 26,
+     "age": 27,
      "espnId": "4396909"
     },
     {
@@ -5303,6 +5312,15 @@ const ROSTERS_DATA = {
      "espnId": "5149115"
     },
     {
+     "name": "Chucky Hepburn",
+     "jersey": "24",
+     "position": "G",
+     "height": "6' 0\"",
+     "weight": "193 lbs",
+     "age": 23,
+     "espnId": "4590360"
+    },
+    {
      "name": "Andre Jackson Jr.",
      "jersey": "44",
      "position": "G",
@@ -5319,6 +5337,15 @@ const ROSTERS_DATA = {
      "weight": "245 lbs",
      "age": 26,
      "espnId": "4431684"
+    },
+    {
+     "name": "Trey Jemison III",
+     "jersey": "50",
+     "position": "C",
+     "height": "6' 10\"",
+     "weight": "270 lbs",
+     "age": 26,
+     "espnId": "4395623"
     },
     {
      "name": "Tyreke Key",
