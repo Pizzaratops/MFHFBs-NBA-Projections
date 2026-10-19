@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-18T12:58:22.655Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-19T16:11:09.458Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-18T12:58:22.655Z",
+ "fetchedAt": "2026-10-19T16:11:09.458Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -406,7 +406,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 6\"",
      "weight": "215 lbs",
-     "age": 29,
+     "age": 30,
      "espnId": "3907823"
     },
     {
@@ -992,15 +992,6 @@ const ROSTERS_DATA = {
    "name": "Dallas Mavericks",
    "players": [
     {
-     "name": "Quincy Acy",
-     "jersey": null,
-     "position": "F",
-     "height": "6' 7\"",
-     "weight": "240 lbs",
-     "age": 36,
-     "espnId": "6576"
-    },
-    {
      "name": "Santi Aldama",
      "jersey": "34",
      "position": "F",
@@ -1125,15 +1116,6 @@ const ROSTERS_DATA = {
      "weight": "205 lbs",
      "age": 31,
      "espnId": "3138160"
-    },
-    {
-     "name": "Dwight Powell",
-     "jersey": "7",
-     "position": "F",
-     "height": "6' 10\"",
-     "weight": "240 lbs",
-     "age": 35,
-     "espnId": "2531367"
     },
     {
      "name": "Zaccharie Risacher",
@@ -1689,15 +1671,6 @@ const ROSTERS_DATA = {
      "weight": "256 lbs",
      "age": 32,
      "espnId": "3102529"
-    },
-    {
-     "name": "Tyson Chandler",
-     "jersey": "19",
-     "position": "C",
-     "height": "7' 0\"",
-     "weight": "235 lbs",
-     "age": 44,
-     "espnId": "984"
     },
     {
      "name": "Quadir Copeland",
@@ -2594,15 +2567,6 @@ const ROSTERS_DATA = {
      "espnId": "4700818"
     },
     {
-     "name": "J'Vonne Hadley",
-     "jersey": "14",
-     "position": "F",
-     "height": "6' 5\"",
-     "weight": "210 lbs",
-     "age": 24,
-     "espnId": "4702784"
-    },
-    {
      "name": "Tim Hardaway Jr.",
      "jersey": "10",
      "position": "G",
@@ -2657,15 +2621,6 @@ const ROSTERS_DATA = {
      "espnId": "3064482"
     },
     {
-     "name": "Lester Quinones",
-     "jersey": "25",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "208 lbs",
-     "age": 25,
-     "espnId": "4431720"
-    },
-    {
      "name": "Nick Richards",
      "jersey": "8",
      "position": "C",
@@ -2682,15 +2637,6 @@ const ROSTERS_DATA = {
      "weight": "200 lbs",
      "age": 28,
      "espnId": "4066993"
-    },
-    {
-     "name": "Dennis Smith Jr.",
-     "jersey": null,
-     "position": "G",
-     "height": "6' 2\"",
-     "weight": "205 lbs",
-     "age": 28,
-     "espnId": "4065697"
     },
     {
      "name": "Klay Thompson",
@@ -2733,15 +2679,6 @@ const ROSTERS_DATA = {
      "weight": "215 lbs",
      "age": 21,
      "espnId": "5082206"
-    },
-    {
-     "name": "John Butler Jr.",
-     "jersey": "27",
-     "position": "F",
-     "height": "7' 0\"",
-     "weight": "212 lbs",
-     "age": 23,
-     "espnId": "4432588"
     },
     {
      "name": "Ousmane Dieng",
@@ -3098,15 +3035,6 @@ const ROSTERS_DATA = {
      "espnId": "3442"
     },
     {
-     "name": "Christian Koloko",
-     "jersey": "35",
-     "position": "C",
-     "height": "6' 11\"",
-     "weight": "225 lbs",
-     "age": 26,
-     "espnId": "4431778"
-    },
-    {
      "name": "Bennedict Mathurin",
      "jersey": "24",
      "position": "G",
@@ -3452,15 +3380,6 @@ const ROSTERS_DATA = {
      "espnId": "4683778"
     },
     {
-     "name": "Robert McCray V",
-     "jersey": "16",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "188 lbs",
-     "age": 24,
-     "espnId": "4685802"
-    },
-    {
      "name": "Ajay Mitchell",
      "jersey": "25",
      "position": "G",
@@ -3672,15 +3591,6 @@ const ROSTERS_DATA = {
      "weight": "180 lbs",
      "age": 21,
      "espnId": "5239561"
-    },
-    {
-     "name": "Mike Sharavjamts",
-     "jersey": null,
-     "position": "G",
-     "height": "6' 9\"",
-     "weight": "195 lbs",
-     "age": 24,
-     "espnId": "5105875"
     },
     {
      "name": "Jalen Suggs",
@@ -4140,15 +4050,6 @@ const ROSTERS_DATA = {
      "weight": "200 lbs",
      "age": 36,
      "espnId": "6606"
-    },
-    {
-     "name": "Jaylen Martin",
-     "jersey": null,
-     "position": "G",
-     "height": "6' 6\"",
-     "weight": "216 lbs",
-     "age": 22,
-     "espnId": "4684737"
     },
     {
      "name": "Ja Morant",
@@ -4707,21 +4608,12 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Tony Bradley",
-     "jersey": null,
+     "jersey": "13",
      "position": "C",
      "height": "6' 10\"",
      "weight": "248 lbs",
      "age": 28,
      "espnId": "4065673"
-    },
-    {
-     "name": "Terrell Brown Jr.",
-     "jersey": "16",
-     "position": "G",
-     "height": "6' 3\"",
-     "weight": "180 lbs",
-     "age": 28,
-     "espnId": "4395997"
     },
     {
      "name": "Isaiah Collier",
@@ -4857,7 +4749,7 @@ const ROSTERS_DATA = {
    "players": [
     {
      "name": "Deandre Ayton",
-     "jersey": "6",
+     "jersey": "8",
      "position": "C",
      "height": "7' 0\"",
      "weight": "252 lbs",
@@ -4937,15 +4829,6 @@ const ROSTERS_DATA = {
      "espnId": "2581184"
     },
     {
-     "name": "Jazian Gortman",
-     "jersey": null,
-     "position": "G",
-     "height": "6' 1\"",
-     "weight": "175 lbs",
-     "age": 23,
-     "espnId": "4708972"
-    },
-    {
      "name": "Tre Johnson",
      "jersey": "12",
      "position": "G",
@@ -4998,15 +4881,6 @@ const ROSTERS_DATA = {
      "weight": "205 lbs",
      "age": 21,
      "espnId": "5160992"
-    },
-    {
-     "name": "Steve Settle III",
-     "jersey": "14",
-     "position": "F",
-     "height": "6' 10\"",
-     "weight": "192 lbs",
-     "age": 25,
-     "espnId": "4704043"
     },
     {
      "name": "Tristan Vukcevic",
