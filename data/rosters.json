@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-19T16:11:09.458Z",
+ "fetchedAt": "2026-10-20T14:06:07.713Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -73,7 +73,7 @@
     },
     {
      "name": "Keshon Gilbert",
-     "jersey": "51",
+     "jersey": "00",
      "position": "G",
      "height": "6' 4\"",
      "weight": "200 lbs",
@@ -787,15 +787,6 @@
      "weight": "215 lbs",
      "age": 26,
      "espnId": "4397189"
-    },
-    {
-     "name": "Isaiah Stevens",
-     "jersey": "99",
-     "position": "G",
-     "height": "5' 11\"",
-     "weight": "185 lbs",
-     "age": 25,
-     "espnId": "4432117"
     },
     {
      "name": "Dailyn Swain",
@@ -1707,15 +1698,6 @@
      "espnId": "4433192"
     },
     {
-     "name": "Sean Pedulla",
-     "jersey": "0",
-     "position": "G",
-     "height": "6' 1\"",
-     "weight": "195 lbs",
-     "age": 24,
-     "espnId": "4709131"
-    },
-    {
      "name": "Julian Phillips",
      "jersey": "3",
      "position": "F",
@@ -1930,7 +1912,7 @@
     },
     {
      "name": "Braden Smith",
-     "jersey": "18",
+     "jersey": "3",
      "position": "G",
      "height": "5' 10\"",
      "weight": "167 lbs",
@@ -2202,15 +2184,6 @@
      "espnId": "4433136"
     },
     {
-     "name": "Dalton Knecht",
-     "jersey": "4",
-     "position": "F",
-     "height": "6' 6\"",
-     "weight": "215 lbs",
-     "age": 25,
-     "espnId": "4897943"
-    },
-    {
      "name": "Jake LaRavia",
      "jersey": "12",
      "position": "F",
@@ -2325,15 +2298,6 @@
      "espnId": "5041935"
     },
     {
-     "name": "Walter Clayton Jr.",
-     "jersey": "4",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "195 lbs",
-     "age": 23,
-     "espnId": "4896372"
-    },
-    {
      "name": "Carson Cooper",
      "jersey": "20",
      "position": "C",
@@ -2422,15 +2386,6 @@
      "weight": "218 lbs",
      "age": 26,
      "espnId": "4594326"
-    },
-    {
-     "name": "Micah Peavy",
-     "jersey": "7",
-     "position": "G",
-     "height": "6' 7\"",
-     "weight": "220 lbs",
-     "age": 25,
-     "espnId": "4432185"
     },
     {
      "name": "Scotty Pippen Jr.",
@@ -2760,15 +2715,6 @@
      "espnId": "5214989"
     },
     {
-     "name": "Kevin Porter Jr.",
-     "jersey": "7",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "203 lbs",
-     "age": 26,
-     "espnId": "4397140"
-    },
-    {
      "name": "Ryan Rollins",
      "jersey": "13",
      "position": "G",
@@ -2792,7 +2738,7 @@
      "position": "C",
      "height": "6' 10\"",
      "weight": "250 lbs",
-     "age": 27,
+     "age": 28,
      "espnId": "4277922"
     },
     {
@@ -3801,15 +3747,6 @@
      "espnId": "4280245"
     },
     {
-     "name": "Koby Brea",
-     "jersey": "14",
-     "position": "G",
-     "height": "6' 6\"",
-     "weight": "215 lbs",
-     "age": 23,
-     "espnId": "4591259"
-    },
-    {
      "name": "Miles Bridges",
      "jersey": "22",
      "position": "F",
@@ -3873,15 +3810,6 @@
      "espnId": "4437244"
     },
     {
-     "name": "CJ Huntley",
-     "jersey": "21",
-     "position": "F",
-     "height": "6' 10\"",
-     "weight": "230 lbs",
-     "age": 24,
-     "espnId": "4702602"
-    },
-    {
      "name": "Oso Ighodaro",
      "jersey": "11",
      "position": "F",
@@ -3934,6 +3862,15 @@
      "weight": "205 lbs",
      "age": 30,
      "espnId": "4592714"
+    },
+    {
+     "name": "Drew Timme",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 10\"",
+     "weight": "235 lbs",
+     "age": 26,
+     "espnId": "4431695"
     },
     {
      "name": "Mark Williams",
@@ -4153,15 +4090,6 @@
      "weight": "175 lbs",
      "age": 24,
      "espnId": "4702384"
-    },
-    {
-     "name": "Adam Flagler",
-     "jersey": "20",
-     "position": "G",
-     "height": "6' 1\"",
-     "weight": "180 lbs",
-     "age": 26,
-     "espnId": "4397654"
     },
     {
      "name": "De'Andre Hunter",
