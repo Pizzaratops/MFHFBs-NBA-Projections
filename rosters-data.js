@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-21T14:20:30.440Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-22T14:20:16.189Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-21T14:20:30.440Z",
+ "fetchedAt": "2026-10-22T14:20:16.189Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -1019,6 +1019,15 @@ const ROSTERS_DATA = {
      "espnId": "4701208"
     },
     {
+     "name": "Walter Clayton Jr.",
+     "jersey": "1",
+     "position": "G",
+     "height": "6' 4\"",
+     "weight": "195 lbs",
+     "age": 23,
+     "espnId": "4896372"
+    },
+    {
      "name": "Sergio de Larrea",
      "jersey": "55",
      "position": "F",
@@ -1909,7 +1918,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 7\"",
      "weight": "215 lbs",
-     "age": 26,
+     "age": 27,
      "espnId": "4398207"
     },
     {
@@ -2086,7 +2095,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 2\"",
      "weight": "202 lbs",
-     "age": 26,
+     "age": 27,
      "espnId": "4398390"
     },
     {
@@ -2259,7 +2268,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Matisse Thybulle",
-     "jersey": "26",
+     "jersey": "4",
      "position": "G",
      "height": "6' 5\"",
      "weight": "202 lbs",
@@ -2715,6 +2724,15 @@ const ROSTERS_DATA = {
      "weight": "210 lbs",
      "age": 21,
      "espnId": "5214989"
+    },
+    {
+     "name": "Pete Nance",
+     "jersey": "35",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "225 lbs",
+     "age": 26,
+     "espnId": "4397233"
     },
     {
      "name": "Ryan Rollins",
