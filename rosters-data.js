@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-22T14:20:16.189Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-23T14:03:29.991Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-22T14:20:16.189Z",
+ "fetchedAt": "2026-10-23T14:03:29.991Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -842,15 +842,6 @@ const ROSTERS_DATA = {
      "espnId": "3934723"
     },
     {
-     "name": "Khalifa Diop",
-     "jersey": "18",
-     "position": "C",
-     "height": "6' 11\"",
-     "weight": "231 lbs",
-     "age": 24,
-     "espnId": "4997530"
-    },
-    {
      "name": "Tristan Enaruna",
      "jersey": "21",
      "position": "F",
@@ -941,15 +932,6 @@ const ROSTERS_DATA = {
      "espnId": "5041951"
     },
     {
-     "name": "Nae'Qwan Tomlin",
-     "jersey": "35",
-     "position": "F",
-     "height": "6' 8\"",
-     "weight": "210 lbs",
-     "age": 25,
-     "espnId": "5106268"
-    },
-    {
      "name": "Jaylon Tyson",
      "jersey": "20",
      "position": "G",
@@ -957,15 +939,6 @@ const ROSTERS_DATA = {
      "weight": "215 lbs",
      "age": 23,
      "espnId": "4683747"
-    },
-    {
-     "name": "Ernest Udeh Jr.",
-     "jersey": "39",
-     "position": "C",
-     "height": "6' 11\"",
-     "weight": "266 lbs",
-     "age": 22,
-     "espnId": "5106261"
     },
     {
      "name": "Peyton Watson",
@@ -3817,7 +3790,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 3\"",
      "weight": "215 lbs",
-     "age": 27,
+     "age": 28,
      "espnId": "4278402"
     },
     {
