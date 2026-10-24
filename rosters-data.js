@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-23T14:03:29.991Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-24T13:06:05.045Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-23T14:03:29.991Z",
+ "fetchedAt": "2026-10-24T13:06:05.045Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -3176,6 +3176,15 @@ const ROSTERS_DATA = {
      "espnId": "3062679"
     },
     {
+     "name": "Dalton Knecht",
+     "jersey": "99",
+     "position": "F",
+     "height": "6' 6\"",
+     "weight": "215 lbs",
+     "age": 25,
+     "espnId": "4897943"
+    },
+    {
      "name": "Tyler Kolek",
      "jersey": "13",
      "position": "G",
@@ -3192,15 +3201,6 @@ const ROSTERS_DATA = {
      "weight": "195 lbs",
      "age": 26,
      "espnId": "4431823"
-    },
-    {
-     "name": "Kevin McCullar Jr.",
-     "jersey": "9",
-     "position": "G",
-     "height": "6' 6\"",
-     "weight": "210 lbs",
-     "age": 25,
-     "espnId": "4411057"
     },
     {
      "name": "Tyler Nickel",
@@ -3333,6 +3333,15 @@ const ROSTERS_DATA = {
      "weight": "217 lbs",
      "age": 23,
      "espnId": "5106270"
+    },
+    {
+     "name": "Micah Peavy",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 7\"",
+     "weight": "220 lbs",
+     "age": 25,
+     "espnId": "4432185"
     },
     {
      "name": "Thomas Sorber",
@@ -3544,7 +3553,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 9\"",
      "weight": "260 lbs",
-     "age": 35,
+     "age": 36,
      "espnId": "6478"
     },
     {
@@ -4137,6 +4146,15 @@ const ROSTERS_DATA = {
      "weight": "225 lbs",
      "age": 26,
      "espnId": "4594327"
+    },
+    {
+     "name": "Sean Pedulla",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 1\"",
+     "weight": "195 lbs",
+     "age": 24,
+     "espnId": "4709131"
     },
     {
      "name": "Daeqwon Plowden",
