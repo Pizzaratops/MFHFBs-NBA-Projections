@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-24T13:06:05.045Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-25T13:33:32.293Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-24T13:06:05.045Z",
+ "fetchedAt": "2026-10-25T13:33:32.293Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -115,7 +115,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 11\"",
      "weight": "255 lbs",
-     "age": 30,
+     "age": 31,
      "espnId": "3146557"
     },
     {
@@ -3595,7 +3595,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 6\"",
      "weight": "223 lbs",
-     "age": 29,
+     "age": 30,
      "espnId": "3917376"
     },
     {
@@ -4149,7 +4149,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Sean Pedulla",
-     "jersey": null,
+     "jersey": "3",
      "position": "G",
      "height": "6' 1\"",
      "weight": "195 lbs",
