@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-27T15:07:22.187Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-28T15:43:48.625Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-27T15:07:22.187Z",
+ "fetchedAt": "2026-10-28T15:43:48.625Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -1732,7 +1732,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 4\"",
      "weight": "230 lbs",
-     "age": 30,
+     "age": 31,
      "espnId": "3136777"
     },
     {
@@ -2829,6 +2829,15 @@ const ROSTERS_DATA = {
      "weight": "186 lbs",
      "age": 20,
      "espnId": "5061585"
+    },
+    {
+     "name": "Enrique Freeman",
+     "jersey": "25",
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "220 lbs",
+     "age": 26,
+     "espnId": "4592699"
     },
     {
      "name": "Rudy Gobert",
