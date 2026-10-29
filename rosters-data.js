@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-28T15:43:48.625Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-29T15:51:22.824Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-28T15:43:48.625Z",
+ "fetchedAt": "2026-10-29T15:51:22.824Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -1456,7 +1456,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 10\"",
      "weight": "230 lbs",
-     "age": 25,
+     "age": 26,
      "espnId": "4397886"
     },
     {
@@ -2184,6 +2184,15 @@ const ROSTERS_DATA = {
      "weight": "222 lbs",
      "age": 30,
      "espnId": "3155535"
+    },
+    {
+     "name": "Lawson Lovering",
+     "jersey": null,
+     "position": "C",
+     "height": "7' 1\"",
+     "weight": "233 lbs",
+     "age": 23,
+     "espnId": "4596528"
     },
     {
      "name": "Sandro Mamukelashvili",
@@ -3333,15 +3342,6 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 24,
      "espnId": "4900671"
-    },
-    {
-     "name": "Otega Oweh",
-     "jersey": "13",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "217 lbs",
-     "age": 23,
-     "espnId": "5106270"
     },
     {
      "name": "Micah Peavy",
