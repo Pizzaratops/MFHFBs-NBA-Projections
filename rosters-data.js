@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-29T15:51:22.824Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-30T15:31:40.035Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-29T15:51:22.824Z",
+ "fetchedAt": "2026-10-30T15:31:40.035Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -939,6 +939,15 @@ const ROSTERS_DATA = {
      "weight": "215 lbs",
      "age": 23,
      "espnId": "4683747"
+    },
+    {
+     "name": "Ernest Udeh Jr.",
+     "jersey": "88",
+     "position": "C",
+     "height": "6' 9\"",
+     "weight": "266 lbs",
+     "age": 22,
+     "espnId": "5106261"
     },
     {
      "name": "Peyton Watson",
@@ -2097,6 +2106,15 @@ const ROSTERS_DATA = {
      "weight": "188 lbs",
      "age": 19,
      "espnId": "5254165"
+    },
+    {
+     "name": "Blake Wesley",
+     "jersey": "20",
+     "position": "G",
+     "height": "6' 4\"",
+     "weight": "190 lbs",
+     "age": 23,
+     "espnId": "4683935"
     }
    ]
   },
@@ -4135,7 +4153,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 9\"",
      "weight": "225 lbs",
-     "age": 24,
+     "age": 25,
      "espnId": "5107897"
     },
     {
@@ -4684,7 +4702,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 6\"",
      "weight": "235 lbs",
-     "age": 22,
+     "age": 23,
      "espnId": "5105839"
     }
    ]
