@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-30T15:31:40.035Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-31T15:01:41.010Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-30T15:31:40.035Z",
+ "fetchedAt": "2026-10-31T15:01:41.010Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -3281,6 +3281,15 @@ const ROSTERS_DATA = {
    "name": "Oklahoma City Thunder",
    "players": [
     {
+     "name": "Ochai Agbaji",
+     "jersey": "30",
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "215 lbs",
+     "age": 26,
+     "espnId": "4397018"
+    },
+    {
      "name": "Brooks Barnhizer",
      "jersey": "23",
      "position": "F",
@@ -3763,7 +3772,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 5\"",
      "weight": "206 lbs",
-     "age": 29,
+     "age": 30,
      "espnId": "3136193"
     },
     {
