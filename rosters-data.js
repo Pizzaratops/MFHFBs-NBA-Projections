@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-10-31T15:01:41.010Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-01T15:44:41.868Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-10-31T15:01:41.010Z",
+ "fetchedAt": "2026-11-01T15:44:41.868Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -3281,15 +3281,6 @@ const ROSTERS_DATA = {
    "name": "Oklahoma City Thunder",
    "players": [
     {
-     "name": "Ochai Agbaji",
-     "jersey": "30",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "215 lbs",
-     "age": 26,
-     "espnId": "4397018"
-    },
-    {
      "name": "Brooks Barnhizer",
      "jersey": "23",
      "position": "F",
@@ -4589,6 +4580,15 @@ const ROSTERS_DATA = {
      "espnId": "4065673"
     },
     {
+     "name": "Kobe Bufkin",
+     "jersey": "4",
+     "position": "G",
+     "height": "6' 4\"",
+     "weight": "195 lbs",
+     "age": 23,
+     "espnId": "4683736"
+    },
+    {
      "name": "Isaiah Collier",
      "jersey": "8",
      "position": "G",
@@ -4632,15 +4632,6 @@ const ROSTERS_DATA = {
      "weight": "220 lbs",
      "age": 26,
      "espnId": "4397077"
-    },
-    {
-     "name": "Blake Hinson",
-     "jersey": "25",
-     "position": "F",
-     "height": "6' 8\"",
-     "weight": "230 lbs",
-     "age": 26,
-     "espnId": "4396963"
     },
     {
      "name": "Harrison Ingram",
