@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-03T16:49:44.773Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-04T16:49:37.244Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-03T16:49:44.773Z",
+ "fetchedAt": "2026-11-04T16:49:37.244Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -2191,7 +2191,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 7\"",
      "weight": "235 lbs",
-     "age": 24,
+     "age": 25,
      "espnId": "4592691"
     },
     {
@@ -2858,15 +2858,6 @@ const ROSTERS_DATA = {
      "espnId": "5061585"
     },
     {
-     "name": "Enrique Freeman",
-     "jersey": "25",
-     "position": "F",
-     "height": "6' 9\"",
-     "weight": "220 lbs",
-     "age": 26,
-     "espnId": "4592699"
-    },
-    {
      "name": "Rudy Gobert",
      "jersey": "27",
      "position": "C",
@@ -3387,6 +3378,15 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 23,
      "espnId": "5241364"
+    },
+    {
+     "name": "Dalen Terry",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 6\"",
+     "weight": "210 lbs",
+     "age": 24,
+     "espnId": "4433159"
     },
     {
      "name": "Nikola Topic",
