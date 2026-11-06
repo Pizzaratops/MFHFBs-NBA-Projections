@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-05T17:05:51.480Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-06T16:35:42.010Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-05T17:05:51.480Z",
+ "fetchedAt": "2026-11-06T16:35:42.010Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -186,15 +186,6 @@ const ROSTERS_DATA = {
      "weight": "188 lbs",
      "age": 24,
      "espnId": "4433188"
-    },
-    {
-     "name": "Chris Cenac Jr.",
-     "jersey": "12",
-     "position": "F",
-     "height": "6' 11\"",
-     "weight": "240 lbs",
-     "age": 19,
-     "espnId": "5142621"
     },
     {
      "name": "Mike Conley",
@@ -505,6 +496,15 @@ const ROSTERS_DATA = {
    "teamId": "30",
    "name": "Charlotte Hornets",
    "players": [
+    {
+     "name": "Michael Ajayi",
+     "jersey": "10",
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "228 lbs",
+     "age": 23,
+     "espnId": "5176517"
+    },
     {
      "name": "Grayson Allen",
      "jersey": "8",
@@ -878,15 +878,6 @@ const ROSTERS_DATA = {
      "espnId": "4066757"
     },
     {
-     "name": "Riley Minix",
-     "jersey": "12",
-     "position": "F",
-     "height": "6' 7\"",
-     "weight": "230 lbs",
-     "age": 26,
-     "espnId": "5177362"
-    },
-    {
      "name": "Donovan Mitchell",
      "jersey": "45",
      "position": "G",
@@ -903,6 +894,15 @@ const ROSTERS_DATA = {
      "weight": "215 lbs",
      "age": 25,
      "espnId": "4432158"
+    },
+    {
+     "name": "Norchad Omier",
+     "jersey": "15",
+     "position": "C",
+     "height": "6' 7\"",
+     "weight": "248 lbs",
+     "age": 25,
+     "espnId": "4702134"
     },
     {
      "name": "Craig Porter Jr.",
@@ -1515,7 +1515,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Graham Ike",
-     "jersey": null,
+     "jersey": "45",
      "position": "F",
      "height": "6' 9\"",
      "weight": "250 lbs",
@@ -1752,15 +1752,6 @@ const ROSTERS_DATA = {
      "weight": "200 lbs",
      "age": 23,
      "espnId": "4684740"
-    },
-    {
-     "name": "Bruce Thornton",
-     "jersey": "2",
-     "position": "G",
-     "height": "6' 0\"",
-     "weight": "223 lbs",
-     "age": 23,
-     "espnId": "5105837"
     },
     {
      "name": "Oscar Tshiebwe",
@@ -3894,7 +3885,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Drew Timme",
-     "jersey": null,
+     "jersey": "2",
      "position": "F",
      "height": "6' 10\"",
      "weight": "235 lbs",
@@ -4431,7 +4422,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Nate Bittle",
-     "jersey": null,
+     "jersey": "12",
      "position": "C",
      "height": "7' 0\"",
      "weight": "250 lbs",
@@ -4482,6 +4473,15 @@ const ROSTERS_DATA = {
      "weight": "212 lbs",
      "age": 24,
      "espnId": "4702656"
+    },
+    {
+     "name": "Kevin McCullar Jr.",
+     "jersey": "9",
+     "position": "G",
+     "height": "6' 6\"",
+     "weight": "210 lbs",
+     "age": 25,
+     "espnId": "4411057"
     },
     {
      "name": "Collin Murray-Boyles",
@@ -4823,7 +4823,7 @@ const ROSTERS_DATA = {
      "name": "Felix Okpara",
      "jersey": "34",
      "position": "F",
-     "height": "6' 10\"",
+     "height": "6' 11\"",
      "weight": "237 lbs",
      "age": 22,
      "espnId": "5105841"
