@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-07T15:24:38.156Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-08T15:47:18.159Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-07T15:24:38.156Z",
+ "fetchedAt": "2026-11-08T15:47:18.159Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -842,15 +842,6 @@ const ROSTERS_DATA = {
      "espnId": "3934723"
     },
     {
-     "name": "Tristan Enaruna",
-     "jersey": "21",
-     "position": "F",
-     "height": "6' 8\"",
-     "weight": "220 lbs",
-     "age": 25,
-     "espnId": "4431734"
-    },
-    {
      "name": "James Harden",
      "jersey": "1",
      "position": "G",
@@ -876,6 +867,15 @@ const ROSTERS_DATA = {
      "weight": "205 lbs",
      "age": 30,
      "espnId": "4066757"
+    },
+    {
+     "name": "Riley Minix",
+     "jersey": "12",
+     "position": "F",
+     "height": "6' 7\"",
+     "weight": "230 lbs",
+     "age": 26,
+     "espnId": "5177362"
     },
     {
      "name": "Donovan Mitchell",
@@ -1754,6 +1754,15 @@ const ROSTERS_DATA = {
      "espnId": "4684740"
     },
     {
+     "name": "Bruce Thornton",
+     "jersey": "2",
+     "position": "G",
+     "height": "6' 0\"",
+     "weight": "229 lbs",
+     "age": 23,
+     "espnId": "5105837"
+    },
+    {
      "name": "Oscar Tshiebwe",
      "jersey": "9",
      "position": "C",
@@ -2417,6 +2426,15 @@ const ROSTERS_DATA = {
      "espnId": "4595400"
     },
     {
+     "name": "Richie Saunders",
+     "jersey": "5",
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "205 lbs",
+     "age": 25,
+     "espnId": "5105462"
+    },
+    {
      "name": "Javon Small",
      "jersey": "10",
      "position": "G",
@@ -3013,7 +3031,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 6\"",
      "weight": "190 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4576086"
     },
     {
@@ -4612,7 +4630,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 4\"",
      "weight": "185 lbs",
-     "age": 22,
+     "age": 23,
      "espnId": "4433627"
     },
     {
