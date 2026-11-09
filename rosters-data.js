@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-08T15:47:18.159Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-09T19:29:15.375Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-08T15:47:18.159Z",
+ "fetchedAt": "2026-11-09T19:29:15.375Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -88,7 +88,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 11\"",
      "weight": "210 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4712863"
     },
     {
@@ -3299,6 +3299,15 @@ const ROSTERS_DATA = {
      "espnId": "2991350"
     },
     {
+     "name": "Nique Clifford",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "175 lbs",
+     "age": 24,
+     "espnId": "4702384"
+    },
+    {
      "name": "Josh Dix",
      "jersey": "21",
      "position": "G",
@@ -3387,15 +3396,6 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 23,
      "espnId": "5241364"
-    },
-    {
-     "name": "Dalen Terry",
-     "jersey": null,
-     "position": "G",
-     "height": "6' 6\"",
-     "weight": "210 lbs",
-     "age": 24,
-     "espnId": "4433159"
     },
     {
      "name": "Nikola Topic",
@@ -4119,15 +4119,6 @@ const ROSTERS_DATA = {
      "weight": "255 lbs",
      "age": 24,
      "espnId": "4433174"
-    },
-    {
-     "name": "Nique Clifford",
-     "jersey": "10",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "175 lbs",
-     "age": 24,
-     "espnId": "4702384"
     },
     {
      "name": "De'Andre Hunter",
