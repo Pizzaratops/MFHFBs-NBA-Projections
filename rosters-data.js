@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-10T16:47:07.115Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-11T16:52:41.004Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-10T16:47:07.115Z",
+ "fetchedAt": "2026-11-11T16:52:41.004Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -186,6 +186,15 @@ const ROSTERS_DATA = {
      "weight": "188 lbs",
      "age": 24,
      "espnId": "4433188"
+    },
+    {
+     "name": "Chris Cenac Jr.",
+     "jersey": "12",
+     "position": "F",
+     "height": "6' 11\"",
+     "weight": "240 lbs",
+     "age": 19,
+     "espnId": "5142621"
     },
     {
      "name": "Mike Conley",
@@ -1382,15 +1391,6 @@ const ROSTERS_DATA = {
      "espnId": "5107818"
     },
     {
-     "name": "Chaz Lanier",
-     "jersey": "8",
-     "position": "G",
-     "height": "6' 3\"",
-     "weight": "206 lbs",
-     "age": 24,
-     "espnId": "4700852"
-    },
-    {
      "name": "Ebuka Okorie",
      "jersey": "23",
      "position": "G",
@@ -2132,6 +2132,15 @@ const ROSTERS_DATA = {
      "espnId": "5113969"
     },
     {
+     "name": "Carson Cooper",
+     "jersey": null,
+     "position": "C",
+     "height": "6' 11\"",
+     "weight": "245 lbs",
+     "age": 22,
+     "espnId": "5105817"
+    },
+    {
      "name": "Luka Doncic",
      "jersey": "77",
      "position": "G",
@@ -2202,15 +2211,6 @@ const ROSTERS_DATA = {
      "weight": "222 lbs",
      "age": 30,
      "espnId": "3155535"
-    },
-    {
-     "name": "Lawson Lovering",
-     "jersey": null,
-     "position": "C",
-     "height": "7' 1\"",
-     "weight": "233 lbs",
-     "age": 23,
-     "espnId": "4596528"
     },
     {
      "name": "Sandro Mamukelashvili",
@@ -2309,15 +2309,6 @@ const ROSTERS_DATA = {
      "espnId": "5041935"
     },
     {
-     "name": "Carson Cooper",
-     "jersey": "20",
-     "position": "C",
-     "height": "6' 11\"",
-     "weight": "245 lbs",
-     "age": 22,
-     "espnId": "5105817"
-    },
-    {
      "name": "Cedric Coward",
      "jersey": "23",
      "position": "F",
@@ -2404,7 +2395,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 2\"",
      "weight": "170 lbs",
-     "age": 25,
+     "age": 26,
      "espnId": "4431785"
     },
     {
@@ -2818,7 +2809,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 11\"",
      "weight": "230 lbs",
-     "age": 19,
+     "age": 20,
      "espnId": "5279133"
     },
     {
@@ -2856,15 +2847,6 @@ const ROSTERS_DATA = {
      "weight": "225 lbs",
      "age": 25,
      "espnId": "4594268"
-    },
-    {
-     "name": "Isaiah Evans",
-     "jersey": "33",
-     "position": "F",
-     "height": "6' 6\"",
-     "weight": "186 lbs",
-     "age": 20,
-     "espnId": "5061585"
     },
     {
      "name": "Rudy Gobert",
@@ -4135,7 +4117,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 7\"",
      "weight": "225 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4917149"
     },
     {
