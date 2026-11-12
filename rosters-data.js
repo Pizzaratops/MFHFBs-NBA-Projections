@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-11T16:52:41.004Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-12T17:20:53.885Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-11T16:52:41.004Z",
+ "fetchedAt": "2026-11-12T17:20:53.885Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -3436,7 +3436,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 10\"",
      "weight": "250 lbs",
-     "age": 23,
+     "age": 24,
      "espnId": "4432573"
     },
     {
@@ -4173,6 +4173,15 @@ const ROSTERS_DATA = {
      "weight": "216 lbs",
      "age": 28,
      "espnId": "4279318"
+    },
+    {
+     "name": "Mason Plumlee",
+     "jersey": null,
+     "position": "C",
+     "height": "7' 0\"",
+     "weight": "254 lbs",
+     "age": 36,
+     "espnId": "2488653"
     },
     {
      "name": "Maxime Raynaud",
