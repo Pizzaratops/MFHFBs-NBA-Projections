@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-12T17:20:53.885Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-13T16:56:29.998Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-12T17:20:53.885Z",
+ "fetchedAt": "2026-11-13T16:56:29.998Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -2847,6 +2847,15 @@ const ROSTERS_DATA = {
      "weight": "225 lbs",
      "age": 25,
      "espnId": "4594268"
+    },
+    {
+     "name": "Isaiah Evans",
+     "jersey": "33",
+     "position": "F",
+     "height": "6' 6\"",
+     "weight": "186 lbs",
+     "age": 20,
+     "espnId": "5061585"
     },
     {
      "name": "Rudy Gobert",
