@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-13T16:56:29.998Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-14T15:33:16.585Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-13T16:56:29.998Z",
+ "fetchedAt": "2026-11-14T15:33:16.585Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -782,6 +782,15 @@ const ROSTERS_DATA = {
      "espnId": "2595516"
     },
     {
+     "name": "Orlando Robinson",
+     "jersey": "00",
+     "position": "C",
+     "height": "6' 10\"",
+     "weight": "235 lbs",
+     "age": 26,
+     "espnId": "4593049"
+    },
+    {
      "name": "Jaylin Sellers",
      "jersey": "22",
      "position": "G",
@@ -851,6 +860,15 @@ const ROSTERS_DATA = {
      "espnId": "3934723"
     },
     {
+     "name": "Khalifa Diop",
+     "jersey": "18",
+     "position": "C",
+     "height": "6' 11\"",
+     "weight": "231 lbs",
+     "age": 24,
+     "espnId": "4997530"
+    },
+    {
      "name": "James Harden",
      "jersey": "1",
      "position": "G",
@@ -906,7 +924,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Norchad Omier",
-     "jersey": "15",
+     "jersey": "77",
      "position": "C",
      "height": "6' 7\"",
      "weight": "248 lbs",
@@ -939,6 +957,15 @@ const ROSTERS_DATA = {
      "weight": "190 lbs",
      "age": 20,
      "espnId": "5041951"
+    },
+    {
+     "name": "Nae'Qwan Tomlin",
+     "jersey": "35",
+     "position": "F",
+     "height": "6' 8\"",
+     "weight": "210 lbs",
+     "age": 25,
+     "espnId": "5106268"
     },
     {
      "name": "Jaylon Tyson",
@@ -2813,6 +2840,15 @@ const ROSTERS_DATA = {
      "espnId": "5279133"
     },
     {
+     "name": "Johni Broome",
+     "jersey": "22",
+     "position": "F",
+     "height": "6' 10\"",
+     "weight": "235 lbs",
+     "age": 24,
+     "espnId": "4433569"
+    },
+    {
      "name": "Jaylen Clark",
      "jersey": "7",
      "position": "G",
@@ -3204,7 +3240,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Dalton Knecht",
-     "jersey": "99",
+     "jersey": "1",
      "position": "F",
      "height": "6' 6\"",
      "weight": "215 lbs",
@@ -4590,7 +4626,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Kobe Bufkin",
-     "jersey": "4",
+     "jersey": "0",
      "position": "G",
      "height": "6' 4\"",
      "weight": "195 lbs",
