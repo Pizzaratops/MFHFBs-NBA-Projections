@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-15T16:03:43.751Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-16T19:15:42.734Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-15T16:03:43.751Z",
+ "fetchedAt": "2026-11-16T19:15:42.734Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -18,6 +18,15 @@ const ROSTERS_DATA = {
      "weight": "205 lbs",
      "age": 28,
      "espnId": "4278039"
+    },
+    {
+     "name": "Rafael Castro",
+     "jersey": null,
+     "position": "F",
+     "height": "6' 9\"",
+     "weight": "224 lbs",
+     "age": 23,
+     "espnId": "4684443"
     },
     {
      "name": "Dyson Daniels",
@@ -72,15 +81,6 @@ const ROSTERS_DATA = {
      "weight": "183 lbs",
      "age": 19,
      "espnId": "5149077"
-    },
-    {
-     "name": "Keshon Gilbert",
-     "jersey": "00",
-     "position": "G",
-     "height": "6' 4\"",
-     "weight": "200 lbs",
-     "age": 23,
-     "espnId": "4585618"
     },
     {
      "name": "Mouhamed Gueye",
@@ -4126,7 +4126,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 2\"",
      "weight": "186 lbs",
-     "age": 19,
+     "age": 20,
      "espnId": "5142620"
     },
     {
@@ -4221,7 +4221,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Mason Plumlee",
-     "jersey": null,
+     "jersey": "24",
      "position": "C",
      "height": "7' 0\"",
      "weight": "254 lbs",
