@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-16T19:15:42.734Z",
+ "fetchedAt": "2026-11-17T18:08:10.615Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -4587,15 +4587,6 @@
    "name": "Utah Jazz",
    "players": [
     {
-     "name": "Trey Alexander",
-     "jersey": "15",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "185 lbs",
-     "age": 23,
-     "espnId": "4433268"
-    },
-    {
      "name": "Ace Bailey",
      "jersey": "19",
      "position": "G",
@@ -4664,7 +4655,7 @@
      "position": "G",
      "height": "6' 6\"",
      "weight": "200 lbs",
-     "age": 25,
+     "age": 26,
      "espnId": "4432811"
     },
     {

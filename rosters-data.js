@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-16T19:15:42.734Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-17T18:08:10.615Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-16T19:15:42.734Z",
+ "fetchedAt": "2026-11-17T18:08:10.615Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -4589,15 +4589,6 @@ const ROSTERS_DATA = {
    "name": "Utah Jazz",
    "players": [
     {
-     "name": "Trey Alexander",
-     "jersey": "15",
-     "position": "G",
-     "height": "6' 5\"",
-     "weight": "185 lbs",
-     "age": 23,
-     "espnId": "4433268"
-    },
-    {
      "name": "Ace Bailey",
      "jersey": "19",
      "position": "G",
@@ -4666,7 +4657,7 @@ const ROSTERS_DATA = {
      "position": "G",
      "height": "6' 6\"",
      "weight": "200 lbs",
-     "age": 25,
+     "age": 26,
      "espnId": "4432811"
     },
     {
