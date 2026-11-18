@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-17T18:08:10.615Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-18T17:46:40.509Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-17T18:08:10.615Z",
+ "fetchedAt": "2026-11-18T17:46:40.509Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -851,6 +851,15 @@ const ROSTERS_DATA = {
      "espnId": "4066328"
     },
     {
+     "name": "Zack Austin",
+     "jersey": "55",
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "216 lbs",
+     "age": 25,
+     "espnId": "4702099"
+    },
+    {
      "name": "Thomas Bryant",
      "jersey": "3",
      "position": "C",
@@ -1351,7 +1360,7 @@ const ROSTERS_DATA = {
      "position": "C",
      "height": "6' 10\"",
      "weight": "250 lbs",
-     "age": 22,
+     "age": 23,
      "espnId": "4433621"
     },
     {
@@ -1416,6 +1425,15 @@ const ROSTERS_DATA = {
      "weight": "245 lbs",
      "age": 26,
      "espnId": "5107818"
+    },
+    {
+     "name": "Chaz Lanier",
+     "jersey": "8",
+     "position": "G",
+     "height": "6' 3\"",
+     "weight": "206 lbs",
+     "age": 24,
+     "espnId": "4700852"
     },
     {
      "name": "Ebuka Okorie",
@@ -4588,6 +4606,15 @@ const ROSTERS_DATA = {
    "teamId": "26",
    "name": "Utah Jazz",
    "players": [
+    {
+     "name": "Jonas Aidoo",
+     "jersey": "13",
+     "position": "C",
+     "height": "6' 11\"",
+     "weight": "240 lbs",
+     "age": 23,
+     "espnId": "4684682"
+    },
     {
      "name": "Ace Bailey",
      "jersey": "19",
