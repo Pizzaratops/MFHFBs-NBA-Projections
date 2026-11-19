@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-18T17:46:40.509Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-19T17:57:41.632Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-18T17:46:40.509Z",
+ "fetchedAt": "2026-11-19T17:57:41.632Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -3345,7 +3345,7 @@ const ROSTERS_DATA = {
     },
     {
      "name": "Nique Clifford",
-     "jersey": null,
+     "jersey": "18",
      "position": "G",
      "height": "6' 5\"",
      "weight": "175 lbs",
