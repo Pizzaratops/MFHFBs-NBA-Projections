@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-23T20:52:04.343Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-24T19:55:39.801Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-23T20:52:04.343Z",
+ "fetchedAt": "2026-11-24T19:55:39.801Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -4281,6 +4281,15 @@ const ROSTERS_DATA = {
      "weight": "240 lbs",
      "age": 30,
      "espnId": "3907387"
+    },
+    {
+     "name": "Gabe Vincent",
+     "jersey": null,
+     "position": "G",
+     "height": "6' 2\"",
+     "weight": "200 lbs",
+     "age": 30,
+     "espnId": "3137259"
     }
    ]
   },
