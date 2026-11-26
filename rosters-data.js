@@ -1,7 +1,7 @@
-// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-25T18:58:11.445Z
+// Automatisch generiert von scripts/fetch-rosters.mjs — 2026-11-26T18:49:32.603Z
 // Quelle: ESPN (site.api.espn.com)
 const ROSTERS_DATA = {
- "fetchedAt": "2026-11-25T18:58:11.445Z",
+ "fetchedAt": "2026-11-26T18:49:32.603Z",
  "source": "ESPN (site.api.espn.com)",
  "teamCount": 30,
  "errors": [],
@@ -760,7 +760,7 @@ const ROSTERS_DATA = {
      "position": "F",
      "height": "6' 10\"",
      "weight": "220 lbs",
-     "age": 22,
+     "age": 23,
      "espnId": "5044385"
     },
     {
@@ -3609,6 +3609,15 @@ const ROSTERS_DATA = {
      "weight": "215 lbs",
      "age": 21,
      "espnId": "5214637"
+    },
+    {
+     "name": "Kevin Porter Jr.",
+     "jersey": "7",
+     "position": "G",
+     "height": "6' 5\"",
+     "weight": "203 lbs",
+     "age": 26,
+     "espnId": "4397140"
     },
     {
      "name": "Jase Richardson",
